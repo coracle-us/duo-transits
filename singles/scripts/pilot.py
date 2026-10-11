@@ -125,7 +125,7 @@ def add_own_photometry(tic, ra, dec):
         return []
     added = []
     for sec in secs:
-        if sec >= OWN_MIN_SECTOR and sec not in have:
+        if OWN_MIN_SECTOR <= sec <= 200 and sec not in have:  # >200: mislabelled MAST product
             try:
                 tp.photometry(tic, sec, ra, dec)
                 added.append(sec)

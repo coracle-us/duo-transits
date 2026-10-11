@@ -156,3 +156,35 @@ interpretation there.
 - TIC 100776118 (also Hawthorn; Gaia SB1)
 
 **Outreach log.** 2026-10-11: email with the TIC 147035057 write-up sent by Jon to S. Gill and D. Bayliss (Warwick), asking them to forward it to the CTOI submitter. Draft: `writeups/tic147035057/email_draft.md`. The earlier Hawthorn-catalogue email (`../results/outreach/`) has not been sent as of this date.
+
+## Batch 3 (20 Gaia-clean targets, depth 0.2–1.2%, by expected SNR; 2026-10-11)
+
+New since batch 2: pilot.py measures unprocessed recent sectors (≥ 100) with our own TESScut
+photometry, and selection keeps only Gaia-clean stars (`gaia_binarity_flags.csv`: no NSS
+solution, not RV-variable, RUWE ≤ 1.4).
+
+- **Gate:** difference images conclusive for 50% of targets.
+- **Unique periods (4), all off-target:**
+
+  | TIC | Period | Source evidence | Depths (ppt) |
+  |---|---|---|---|
+  | 197736350 | 29.55 d | 77–104″ offset, 7–23σ | 2.2–5.3 (inconsistent) |
+  | 290686569 | 29.16 d | 19–21″ offset, 6–20σ | |
+  | 356868485 | 27.91 d (23 repeats) | 19–20″ offset, 23–42σ | alternate 1.4× and 0.6× (EB primary/secondary pattern) |
+  | 427344083 | 82.73 d | 13–14″ offset, 6–9σ | 7.3–12 (inconsistent) |
+
+- **New duotransits:**
+  - 58946313 (ΔT 719.8 d) is on target (0.6″, 3.1″) but the two depths differ at 8σ in the same SPOC 2-min product (11.1 vs 7.5 ppt). EB-like.
+  - 814205011 (ΔT 1499 d) is off-target (36–38″, 40–70σ).
+- **Other:** 12 still single; 1 event not recovered; 1 with inconsistent repeats.
+
+### Running tally after 60 targets
+
+Every repeating signal found so far is a binary star or a blend:
+- **Gaia-confirmed or Gaia-flagged EBs on the target:** 53847727, 231969683, 230130556, 458419988,
+  270450687, 30836645, 206666063, and probably 147035057.
+- **Off-target (nearby-star EB):** 89620053, 6610653, 431945694, 77437461, 197736350, 290686569,
+  356868485, 427344083, 814205011, 190989264, 173639849.
+
+No planet-like periodic signal has survived. The useful product is a classification of these
+stale "single-transit planet candidates" (EB, blend, or still single with excluded period ranges).

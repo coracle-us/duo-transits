@@ -1,0 +1,155 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 290686569,
+ "CTOI": 290686569.01,
+ "Tmag": 11.3953,
+ "depth_ppm": 5560.0,
+ "dur_h": 5.267,
+ "epoch_btjd": 2427.316000000108,
+ "n_sectors": 5,
+ "event_verdict": "supported",
+ "event_depth_ppm": 5815.7,
+ "event_snr": 23.3,
+ "repeats": [
+  {
+   "T": 1727.4891,
+   "sector": 15,
+   "product": "QLP",
+   "depth_ppm": 8829,
+   "snr": 27.2
+  },
+  {
+   "T": 2806.3463,
+   "sector": 55,
+   "product": "TESS-SPOC",
+   "depth_ppm": 3508,
+   "snr": 10.4
+  },
+  {
+   "T": 3535.332,
+   "sector": 82,
+   "product": "QLP",
+   "depth_ppm": 8371,
+   "snr": 18.0
+  }
+ ],
+ "n_repeats": 3,
+ "frac_logP_excluded": 0.5608333333333333,
+ "min_allowed_P": 25.269096307323483,
+ "n_allowed_ranges": 163,
+ "allowed_ranges": [
+  [
+   25.27,
+   25.27
+  ],
+  [
+   26.98,
+   26.98
+  ],
+  [
+   27.03,
+   27.03
+  ],
+  [
+   27.16,
+   27.16
+  ],
+  [
+   28.35,
+   28.35
+  ],
+  [
+   30.59,
+   30.74
+  ],
+  [
+   31.54,
+   31.54
+  ],
+  [
+   33.29,
+   33.51
+  ],
+  [
+   34.42,
+   34.45
+  ],
+  [
+   36.51,
+   36.51
+  ],
+  [
+   36.61,
+   36.61
+  ],
+  [
+   36.79,
+   36.86
+  ],
+  [
+   37.85,
+   37.85
+  ],
+  [
+   37.92,
+   37.96
+  ],
+  [
+   38.03,
+   38.07
+  ],
+  [
+   "...",
+   163
+  ]
+ ],
+ "frac_conclusive_windows": 0.8585157501334757,
+ "candidate_periods": [
+  [
+   13,
+   29.15867
+  ]
+ ],
+ "n_candidate_periods": 1,
+ "event_T": 2427.3079458334414,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 41,
+   "offset_arcsec": 20.8,
+   "offset_err_arcsec": 3.4,
+   "offset_sigma": 6.1,
+   "snr_peak": 16.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 13.08,
+   "nearest_gaia_sep": 20.4
+  },
+  {
+   "kind": "repeat",
+   "sector": 15,
+   "offset_arcsec": 159.6,
+   "offset_err_arcsec": 41.3,
+   "offset_sigma": 3.9,
+   "snr_peak": 1.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.83,
+   "nearest_gaia_sep": 146.1
+  },
+  {
+   "kind": "repeat",
+   "sector": 82,
+   "offset_arcsec": 19.2,
+   "offset_err_arcsec": 1.0,
+   "offset_sigma": 19.9,
+   "snr_peak": 22.6,
+   "crowded_reference": false,
+   "nearest_gaia_G": 13.08,
+   "nearest_gaia_sep": 20.4
+  },
+  {
+   "kind": "repeat",
+   "sector": 55,
+   "error": "Initial guess is outside of provided bounds"
+  }
+ ]
+}
