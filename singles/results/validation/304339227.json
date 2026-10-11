@@ -1,0 +1,120 @@
+{
+ "TIC": 304339227,
+ "CTOI": "hawthorn-304339227",
+ "Tmag": 8.66,
+ "depth_ppm": 493.0,
+ "dur_h": 5.79,
+ "epoch_btjd": 1673.33918,
+ "n_sectors": 8,
+ "event_verdict": "supported",
+ "event_depth_ppm": 604.3,
+ "event_snr": 8.9,
+ "repeats": [
+  {
+   "T": 2388.0136,
+   "sector": 39,
+   "product": "SPOC_120",
+   "depth_ppm": 473,
+   "snr": 8.9
+  },
+  {
+   "T": 3102.7167,
+   "sector": 66,
+   "product": "SPOC_120",
+   "depth_ppm": 415,
+   "snr": 8.6
+  },
+  {
+   "T": 4123.6867,
+   "sector": 101,
+   "product": "SPOC_120",
+   "depth_ppm": 489,
+   "snr": 10.5
+  },
+  {
+   "T": 4174.7714,
+   "sector": 103,
+   "product": "SPOC_120",
+   "depth_ppm": 529,
+   "snr": 9.6
+  }
+ ],
+ "n_repeats": 4,
+ "frac_logP_excluded": 0.672,
+ "min_allowed_P": 39.84552215753561,
+ "n_allowed_ranges": 300,
+ "allowed_ranges": [
+  [
+   39.85,
+   39.85
+  ],
+  [
+   44.83,
+   44.83
+  ],
+  [
+   48.56,
+   48.56
+  ],
+  [
+   51.07,
+   51.07
+  ],
+  [
+   52.45,
+   52.45
+  ],
+  [
+   56.16,
+   56.16
+  ],
+  [
+   56.75,
+   56.75
+  ],
+  [
+   59.86,
+   59.91
+  ],
+  [
+   61.01,
+   61.01
+  ],
+  [
+   61.35,
+   61.41
+  ],
+  [
+   64.53,
+   64.53
+  ],
+  [
+   65.2,
+   65.2
+  ],
+  [
+   65.95,
+   65.95
+  ],
+  [
+   66.33,
+   66.39
+  ],
+  [
+   66.65,
+   66.65
+  ],
+  [
+   "...",
+   300
+  ]
+ ],
+ "frac_conclusive_windows": 0.7647440051847051,
+ "candidate_periods": [
+  [
+   14,
+   51.04986
+  ]
+ ],
+ "n_candidate_periods": 1
+}

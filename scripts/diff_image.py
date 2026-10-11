@@ -53,7 +53,7 @@ def gaussian(p, yy, xx):
     return a * np.exp(-((xx - x0) ** 2 + (yy - y0) ** 2) / (2 * s ** 2)) + c
 
 
-def analyse(tic, P, T0, D, sector, ra, dec, gaia):
+def analyse(tic, P, T0, D, sector, ra, dec, gaia, out_dir=None):
     path = get_cutout(tic, ra, dec, sector)
     if path is None:
         return None
@@ -151,23 +151,29 @@ def analyse(tic, P, T0, D, sector, ra, dec, gaia):
                  f"source (offset {off*21:.1f}\" +/- {off_err*21:.1f}\"); circles Gaia (G<target+5)",
                  fontsize=9)
     fig.tight_layout()
-    OUT.mkdir(parents=True, exist_ok=True)
-    fig.savefig(OUT / f"{tic}_diffimg_s{sector}.png", dpi=85)
+    out_dir = Path(out_dir) if out_dir else OUT
+    out_dir.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_dir / f"{tic}_diffimg_s{sector}.png", dpi=85)
     plt.close(fig)
     return res
+
+
+def gaia_field(ra, dec):
+    """Gaia DR3 sources (G < 19) covering the cutout, nearest first (row 0 = target)."""
+    from astroquery.gaia import Gaia
+    q = f"""SELECT source_id, ra, dec, phot_g_mean_mag,
+            DISTANCE(POINT({ra},{dec}), POINT(ra,dec))*3600 AS sep
+            FROM gaiadr3.gaia_source
+            WHERE 1=CONTAINS(POINT(ra,dec), CIRCLE({ra},{dec},{SIZE*21/2*1.5/3600}))
+            AND phot_g_mean_mag < 19 ORDER BY sep"""
+    return Gaia.launch_job(q).get_results().to_pandas()
 
 
 def main():
     tic, P, T0, dur_h = int(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4])
     sectors = [int(s) for s in sys.argv[5:]]
     c = pd.read_csv(CAT / "candidates.csv").set_index("TIC").loc[tic]
-    from astroquery.gaia import Gaia
-    q = f"""SELECT source_id, ra, dec, phot_g_mean_mag,
-            DISTANCE(POINT({c.RA},{c.Dec}), POINT(ra,dec))*3600 AS sep
-            FROM gaiadr3.gaia_source
-            WHERE 1=CONTAINS(POINT(ra,dec), CIRCLE({c.RA},{c.Dec},{SIZE*21/2*1.5/3600}))
-            AND phot_g_mean_mag < 19 ORDER BY sep"""
-    gaia = Gaia.launch_job(q).get_results().to_pandas()
+    gaia = gaia_field(c.RA, c.Dec)
     tgt = gaia.iloc[0]
     for s in sectors:
         r = analyse(tic, P, T0, dur_h / 24, s, tgt.ra, tgt.dec, gaia)

@@ -1,0 +1,127 @@
+{
+ "TIC": 265465927,
+ "CTOI": "hawthorn-265465927",
+ "Tmag": 12.08,
+ "depth_ppm": 8699.000000000002,
+ "dur_h": 6.05,
+ "epoch_btjd": 1342.64749,
+ "n_sectors": 9,
+ "event_verdict": "supported",
+ "event_depth_ppm": 9565.8,
+ "event_snr": 26.4,
+ "repeats": [
+  {
+   "T": 2058.5959,
+   "sector": 27,
+   "product": "TESS-SPOC",
+   "depth_ppm": 9468,
+   "snr": 24.4
+  },
+  {
+   "T": 3148.1001,
+   "sector": 67,
+   "product": "SPOC_120",
+   "depth_ppm": 7686,
+   "snr": 26.1
+  },
+  {
+   "T": 3864.0797,
+   "sector": 94,
+   "product": "SPOC_120",
+   "depth_ppm": 9497,
+   "snr": 36.7
+  },
+  {
+   "T": 4144.2073,
+   "sector": 102,
+   "product": "QLP",
+   "depth_ppm": 7949,
+   "snr": 32.7
+  },
+  {
+   "T": 4175.3396,
+   "sector": 103,
+   "product": "QLP",
+   "depth_ppm": 8343,
+   "snr": 30.0
+  }
+ ],
+ "n_repeats": 5,
+ "frac_logP_excluded": 0.6973333333333334,
+ "min_allowed_P": 25.656444338132026,
+ "n_allowed_ranges": 281,
+ "allowed_ranges": [
+  [
+   25.66,
+   25.66
+  ],
+  [
+   32.98,
+   32.98
+  ],
+  [
+   51.8,
+   51.8
+  ],
+  [
+   52.8,
+   52.8
+  ],
+  [
+   59.8,
+   59.8
+  ],
+  [
+   61.06,
+   61.06
+  ],
+  [
+   62.59,
+   62.59
+  ],
+  [
+   64.16,
+   64.16
+  ],
+  [
+   65.14,
+   65.14
+  ],
+  [
+   65.95,
+   65.95
+  ],
+  [
+   67.54,
+   67.54
+  ],
+  [
+   67.86,
+   67.86
+  ],
+  [
+   68.25,
+   68.25
+  ],
+  [
+   70.56,
+   70.56
+  ],
+  [
+   72.53,
+   72.53
+  ],
+  [
+   "...",
+   281
+  ]
+ ],
+ "frac_conclusive_windows": 0.8746051800379027,
+ "candidate_periods": [
+  [
+   23,
+   31.12862
+  ]
+ ],
+ "n_candidate_periods": 1
+}
