@@ -113,3 +113,44 @@ than by brightness alone should do much better. That is a hypothesis to test, no
 - **No secondary eclipse at phase 0.5:** −0.05 ± 0.07 ppt.
 - **Gaia DR3: strongly RV-variable** (rv_chisq_pvalue 0, rv_renormalised_gof 99.8, rv_amplitude_robust 49.8 km/s, 27 epochs; RUWE 1.12; no NSS orbit). This points to a massive, probably stellar companion. An eccentric grazing EB is favoured; a planet or BD in a binary is not excluded. RV monitoring is needed.
 - **Write-up and draft email for observers:** `writeups/tic147035057/`.
+
+## Batch 2 (20 targets ordered by expected SNR, depth 0.02–5%; 2026-10-11)
+
+`select_pilot.py --by-snr --exclude data/pilot_targets.csv --out batch2_targets`, then
+`pilot.py data/batch2_targets.csv batch2` and `summarize_pilot.py batch2`. The selection excluded 15 CTOIs with
+implausible listed depths (e.g. 95–99%, a units or entry error) or depths below 200 ppm.
+
+- **Gate:** difference images conclusive for **65%** of targets, which passes the 60% bar (the pilot reached 35%).
+- **Period verdicts:**
+
+  | Verdict | Count |
+  |---|---|
+  | Unique period | 3 |
+  | Narrowed | 2 |
+  | Many aliases (new or extended duotransits) | 3 |
+  | Repeats inconsistent | 1 |
+  | Catalogued event not seen | 4 |
+  | Still single | 7 |
+
+- **Source verdicts:** 8 on-target, 3 off-target, 2 mixed, 7 inconclusive.
+
+**Unique periods, all eclipsing binaries.** Gaia DR3 SB1 orbits match the TESS periods independently:
+
+| TIC | TESS period | Gaia SB1 period | e | K1 | Notes |
+|---|---|---|---|---|---|
+| 231969683 | 21.978 d (5 eclipses) | 21.969 ± 0.005 d | 0.36 | 32.6 km/s | CTOI by steuer, 2021 |
+| 230130556 | 22.259 d (33 eclipses since S15) | 22.245 ± 0.024 d | 0.32 | 12.3 km/s | companion ≈ 0.2 M☉; CTOI by vogl, 2022 |
+| 6610653 | 16.134 d | — | — | — | off-target in all 4 difference images (13–18″, 13–32σ); nearby EB |
+
+**Lesson.** Gaia binarity flags (NSS orbit, RV variability, RUWE) are cheap and catch these before
+any light-curve work, so `scripts/gaia_flags.py` now computes them for every target
+(`data/gaia_binarity_flags.csv`). TIC 147035057 shows the same pattern (RV-variable F star, P of
+tens of days) without a published Gaia orbit, which strengthens the eclipsing-binary
+interpretation there.
+
+**Still to vet from batch 2:**
+- TIC 270450687 (4% deep, ΔT 680 d)
+- TIC 206666063 (narrowed to 231.7/115.9/77.2/57.9/29.0 d; S2 difference image off 6.4″)
+- TIC 30836645 (ΔT 2525 d)
+- TIC 458419988 (ΔT 734.6 d)
+- TIC 100776118 (also Hawthorn; Gaia SB1)
