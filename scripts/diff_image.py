@@ -96,8 +96,11 @@ def analyse(tic, P, T0, D, sector, ra, dec, gaia, out_dir=None):
     gx, gy = wcs.all_world2pix(gaia.ra.values, gaia.dec.values, 0)
     yy, xx = np.mgrid[0:SIZE, 0:SIZE]
     iy, ix = np.unravel_index(np.argmax(diff), diff.shape)
+    # starting values strictly inside the bounds (a peak on the cutout edge or an all-negative
+    # difference image made least_squares refuse to start)
+    ix0, iy0 = float(np.clip(ix, 0.01, SIZE - 1.01)), float(np.clip(iy, 0.01, SIZE - 1.01))
     r = least_squares(lambda p: ((gaussian(p, yy, xx) - diff) / derr).ravel(),
-                      [diff.max(), ix, iy, 0.8, 0.0],
+                      [max(float(diff.max()), 1e-6), ix0, iy0, 0.8, 0.0],
                       bounds=([0, 0, 0, 0.4, -np.inf], [np.inf, SIZE - 1, SIZE - 1, 2.0, np.inf]))
     try:
         cov = np.linalg.inv(r.jac.T @ r.jac) * max(1, np.sum(r.fun ** 2) / (r.fun.size - 5))
@@ -113,7 +116,8 @@ def analyse(tic, P, T0, D, sector, ra, dec, gaia, out_dir=None):
     m_img = mean_img[sl]
     myy, mxx = yy[sl], xx[sl]
     rm = least_squares(lambda p: (gaussian(p, myy, mxx) - m_img).ravel(),
-                       [m_img.max() - np.median(mean_img), bx0, by0, 0.8, np.median(mean_img)],
+                       [max(float(m_img.max() - np.median(mean_img)), 1e-6), bx0, by0, 0.8,
+                        float(np.median(mean_img))],
                        bounds=([0, bx0 - 2, by0 - 2, 0.4, -np.inf], [np.inf, bx0 + 2, by0 + 2, 2.0, np.inf]))
     cx, cy = rm.x[1], rm.x[2]
     wcs_off = float(np.hypot(cx - tx, cy - ty))
