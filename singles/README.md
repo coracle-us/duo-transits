@@ -154,3 +154,5 @@ interpretation there.
 - TIC 30836645 (ΔT 2525 d)
 - TIC 458419988 (ΔT 734.6 d)
 - TIC 100776118 (also Hawthorn; Gaia SB1)
+
+**Outreach log.** 2026-10-11: email with the TIC 147035057 write-up sent by Jon to S. Gill and D. Bayliss (Warwick), asking them to forward it to the CTOI submitter. Draft: `writeups/tic147035057/email_draft.md`. The earlier Hawthorn-catalogue email (`../results/outreach/`) has not been sent as of this date.
