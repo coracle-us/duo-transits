@@ -35,6 +35,14 @@ def query(sql):
     return None
 
 
+def rv_variable(p, gof, n):
+    """Katz et al. 2023 cut. NaN/None means 'not tested' (False). Note a p-value of exactly 0
+    is the most variable case; an earlier `(p or 1)` idiom wrongly turned it into 1."""
+    if any(v is None or pd.isna(v) for v in (p, gof, n)):
+        return False
+    return bool(p <= 0.01 and gof > 4 and n >= 10)
+
+
 def main():
     c = pd.read_csv(ROOT / "singles" / "data" / "ctoi_singles.csv").drop_duplicates("TIC")
     done = pd.read_csv(OUT) if OUT.exists() else pd.DataFrame(columns=["tic"])
@@ -56,14 +64,17 @@ def main():
             rows.append(dict(tic=int(r.TIC), note="no Gaia source within 5.4 arcsec"))
             continue
         s = g.iloc[0].to_dict()
+        # source_id must stay an exact int64: a row Series of all-numeric columns is float64,
+        # which corrupts 19-digit IDs (bug fixed 2026-10-11)
+        sid = int(g["source_id"].iloc[0])
+        s["source_id"] = sid
         s["tic"] = int(r.TIC)
         n = query(f"SELECT nss_solution_type, period, eccentricity, semi_amplitude_primary "
-                  f"FROM gaiadr3.nss_two_body_orbit WHERE source_id = {int(s['source_id'])}")
+                  f"FROM gaiadr3.nss_two_body_orbit WHERE source_id = {sid}")
         if n is not None and len(n):
             s.update({f"nss_{k}": v for k, v in n.iloc[0].to_dict().items()})
-        s["rv_variable"] = bool((s.get("rv_chisq_pvalue") or 1) <= 0.01
-                                and (s.get("rv_renormalised_gof") or 0) > 4
-                                and (s.get("rv_nb_transits") or 0) >= 10)
+        s["rv_variable"] = rv_variable(s.get("rv_chisq_pvalue"), s.get("rv_renormalised_gof"),
+                                       s.get("rv_nb_transits"))
         rows.append(s)
         if i % 20 == 0:
             pd.DataFrame(rows).to_csv(OUT, index=False)
