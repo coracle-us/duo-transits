@@ -1,0 +1,118 @@
+TIC,source,name,disposition,period,epoch_btjd,n_alias,frac_P_err,Tc1_phase_off_h,ref,note,same_signal
+1504460,CTOI,CTOI-1504460.01,TFOPWG=nan user=PC promoted=nan,,1528.3969999998808,,,,,nan|434070|new CTOI,False
+2669681,CTOI,CTOI-2669681.01,TFOPWG=nan user=PC promoted=nan,,1676.7330000000075,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+9844069,CTOI,CTOI-9844069.01,TFOPWG=nan user=PC promoted=nan,,1431.1650000000373,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+13072758,CTOI,CTOI-13072758.01,TFOPWG=nan user=PC promoted=nan,,1455.5945299998857,,,,,nan|92662|WINE single transit,False
+13713700,CTOI,CTOI-13713700.01,TFOPWG=nan user=PC promoted=nan,,1536.9819999998435,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+14445414,CTOI,CTOI-14445414.01,TFOPWG=nan user=PC promoted=nan,,1497.555999999866,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+20904104,CTOI,CTOI-20904104.01,TFOPWG=nan user=PC promoted=nan,,1390.1120000001974,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+25194908,CTOI,CTOI-25194908.01,TFOPWG=nan user=PC promoted=nan,,1402.2949999999255,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+25194908,CTOI,CTOI-25194908.02,TFOPWG=nan user=nan promoted=nan,337.45806,2077.241020000074,2.0,0.00010727258966625708,-0.7197600017789227,,tfopwg|460695|nan,True
+32179255,CTOI,CTOI-32179255.01,TFOPWG=nan user=PC promoted=nan,,1345.87900000019,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+38138512,CTOI,CTOI-38138512.01,TFOPWG=nan user=PC promoted=nan,,1559.9509999998845,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+39167176,CTOI,CTOI-39167176.01,TFOPWG=nan user=PC promoted=nan,,1470.6230000001378,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+42428568,CTOI,CTOI-42428568.01,TFOPWG=nan user=PC promoted=nan,,1475.691000000108,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+52195587,CTOI,CTOI-52195587.01,TFOPWG=nan user=PC promoted=nan,,1350.277999999933,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+66439839,CTOI,CTOI-66439839.01,TFOPWG=nan user=PC promoted=nan,,1386.344000000041,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+67599025,CTOI,CTOI-67599025.01,TFOPWG=nan user=PC promoted=nan,,1404.0200000000186,,,,,"nan|92990|WINE single transit, another transit in S30",False
+70561926,CTOI,CTOI-70561926.01,TFOPWG=nan user=PC promoted=nan,,1523.0639999997802,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+71028120,CTOI,CTOI-71028120.01,TFOPWG=nan user=PC promoted=nan,,1445.8110000002198,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+71028120,CTOI,CTOI-71028120.02,TFOPWG=nan user=PC promoted=nan,19.58205,1445.825319999829,38.0,3.358338779371611e-05,-0.338159995893875,,nan|460699|Impact parameter and R2 high in this fit,True
+77437543,CTOI,CTOI-77437543.01,TFOPWG=nan user=PC promoted=2490.01,,1456.69859000016,,,,,nan|92658|WINE single transit,False
+77437543,TOI,TOI-2490.01,TFOPWG=PC TESS=PC,0.0,2180.6914670001715,,,,,CTOI from Rafael Brahm; single at TBJD ~2181,False
+81089255,CTOI,CTOI-81089255.01,TFOPWG=nan user=PC promoted=6480.01,,2260.2069999999367,,,,,nan|97181|PHT single transit event. Note that the field is very crowded.,False
+81089255,TOI,TOI-6480.01,TFOPWG=PC TESS=PC,750.2395535,3010.4459520000964,1.0,2.981247775559892e-05,-0.5247600023121777,,found in faint-star QLP search; period likely shorter,True
+100776118,CTOI,CTOI-100776118.01,TFOPWG=nan user=PC promoted=nan,,2219.652999999933,,,,,nan|94485|Single transit event,False
+101824521,CTOI,CTOI-101824521.01,TFOPWG=nan user=PC promoted=nan,,1620.3539999998175,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+107113345,CTOI,CTOI-107113345.01,TFOPWG=nan user=PC promoted=nan,,1576.3280000002123,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+118339710,CTOI,CTOI-118339710.01,TFOPWG=nan user=PC promoted=6695.01,,1525.648109999951,,,,,nan|92682|WINE single transit,False
+118339710,TOI,TOI-6695.01,TFOPWG=PC TESS=PC,0.0,2249.5471390001476,,,,,single transit; possible additional transit at 1525.64811 TBJD; CTOI from Rafael Brahm,False
+118339710,pscomppars,TOI-6695 c,CONFIRMED,242.4,,3.0,0.004538311331133359,,<a refstr=EBERHARDT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169..298E/abstract target=ref>Eberhardt et al. 2025</a>,<a refstr=EBERHARDT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169..298E/abstract target=ref>Eberhardt et al. 2025</a>,False
+118339710,pscomppars,TOI-6695 b,CONFIRMED,80.389,2249.5471390001476,9.0,0.0005511257068060976,-9.58725600354046,<a refstr=EBERHARDT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169..298E/abstract target=ref>Eberhardt et al. 2025</a>,<a refstr=EBERHARDT_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025AJ....169..298E/abstract target=ref>Eberhardt et al. 2025</a>,True
+123763494,CTOI,CTOI-123763494.01,TFOPWG=nan user=PC promoted=nan,,1486.9290000000037,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+124029677,CTOI,CTOI-124029677.01,TFOPWG=nan user=PC promoted=5153.01,,2218.0118999998085,,,,,nan|94390|Found with our in-house single transit finder,False
+124029677,TOI,TOI-5153.01,TFOPWG=CP TESS=PC,20.9108406,2197.0929330000654,35.0,5.149755399454718e-06,-0.08286240157030988,,CTOI from Sol¿¿ne Ulmer-Moll,True
+124029677,pscomppars,TOI-5153 b,CONFIRMED,20.33003,1486.123900000006,36.0,2.882982027629178e-06,-0.07200000014563557,<a refstr=ULMER_MOLL_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...666A..46U/abstract target=ref>Ulmer-Moll et al. 2022</a>,<a refstr=ULMER_MOLL_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...666A..46U/abstract target=ref>Ulmer-Moll et al. 2022</a>,True
+140215502,CTOI,CTOI-140215502.01,TFOPWG=nan user=PC promoted=nan,,2194.4500000001863,,,,,nan|93812|Found with our in-house single transit finder; Sector 32,False
+140750416,CTOI,CTOI-140750416.01,TFOPWG=nan user=PC promoted=nan,,1504.8020000001416,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+142278054,CTOI,CTOI-142278054.01,TFOPWG=nan user=PC promoted=nan,,1595.0249999999069,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+145006304,CTOI,CTOI-145006304.01,TFOPWG=nan user=PC promoted=nan,,1579.50400000019,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+145913596,CTOI,CTOI-145913596.01,TFOPWG=nan user=PC promoted=nan,,1539.5169999999925,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+153838604,CTOI,CTOI-153838604.01,TFOPWG=nan user=PC promoted=nan,,1447.1019999999553,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+156716001,CTOI,CTOI-156716001.01,TFOPWG=nan user=PC promoted=7602.01,,1485.405999999959,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+156716001,TOI,TOI-7602.01,TFOPWG=PC TESS=PC,10.29778812572357,3700.427709000185,72.0,0.003140810735905286,-23.926847270811777,,found in faint-star QLP search; also a CTOI from Faith Hawthorn,False
+157119927,CTOI,CTOI-157119927.01,TFOPWG=nan user=PC promoted=nan,,1591.621999999974,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+157698565,CTOI,CTOI-157698565.01,TFOPWG=nan user=PC promoted=2589.01,,1494.5809599999338,,,,,nan|92673|WINE single transit,False
+157698565,TOI,TOI-2589.01,TFOPWG=CP TESS=CP,61.6277,2973.6400120002218,12.0,1.98774252515617e-06,0.10843199467308295,,TOI-2589 b,True
+157698565,pscomppars,TOI-2589 b,CONFIRMED,61.6277,1494.5789999999106,12.0,1.98774252515617e-06,0.017520002144010505,<a refstr=BRAHM_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....165..227B/abstract target=ref>Brahm et al. 2023</a>,<a refstr=BRAHM_ET_AL_2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....165..227B/abstract target=ref>Brahm et al. 2023</a>,True
+159490807,CTOI,CTOI-159490807.01,TFOPWG=nan user=PC promoted=nan,,1606.2259999997914,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+161169240,CTOI,CTOI-161169240.01,TFOPWG=nan user=PC promoted=6667.01,,2083.3250000001863,,,,,nan|36245|Found with our in-house single transit finder; transit finder output attached under 'Files',False
+161169240,TOI,TOI-6667.01,TFOPWG=APC TESS=PC,0.0,2083.3106510001235,,,,,single transit; CTOI from Jana Steuer; still a single transit as of s68,False
+176518126,CTOI,CTOI-176518126.01,TFOPWG=nan user=PC promoted=nan,,1489.0550000001676,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+188620407,CTOI,CTOI-188620407.01,TFOPWG=nan user=PC promoted=7869.01,,1375.5,,,,,nan|92707|WINE single transit,False
+188620407,TOI,TOI-7869.01,TFOPWG=PC TESS=PC,43.44881820192871,3200.335930999834,25.0,8.741483553857936e-08,0.024803548118143226,,found in faint-star QLP search; also a single transit CTOI from WINE group with a period constrained to 43.4487161 d by Ian Mason (PHT),True
+193318850,CTOI,CTOI-193318850.01,TFOPWG=nan user=PC promoted=7762.01,,1553.7700000000186,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+193318850,TOI,TOI-7762.01,TFOPWG=PC TESS=PC,15.717856274800084,3754.277052000165,47.0,7.513942164039739e-07,-0.1647246756710956,,found in faint-star QLP search,True
+207783865,CTOI,CTOI-207783865.01,TFOPWG=nan user=PC promoted=nan,,1608.936999999918,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+211409161,CTOI,CTOI-211409161.01,TFOPWG=nan user=PC promoted=nan,,1335.1009999997914,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+215402824,CTOI,CTOI-215402824.01,TFOPWG=nan user=PC promoted=nan,,1413.6269999998622,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+218977148,CTOI,CTOI-218977148.01,TFOPWG=nan user=PC promoted=nan,,1355.4709999999031,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+220622886,CTOI,CTOI-220622886.01,TFOPWG=nan user=PC promoted=nan,,1479.5249999999069,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+221915858,CTOI,CTOI-221915858.01,TFOPWG=nan user=PC promoted=nan,,1643.3580000000075,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+224279805,CTOI,CTOI-224279805.01,TFOPWG=nan user=PC promoted=nan,,2105.228000000119,,,,,nan|51788|Found with our in-house single transit finder; transit finder output attached under 'Files',False
+235058563,CTOI,CTOI-235058563.01,TFOPWG=nan user=PC promoted=nan,,1416.6110000000335,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+237605045,CTOI,CTOI-237605045.01,TFOPWG=nan user=PC promoted=nan,,1489.0430000000633,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+242241304,CTOI,CTOI-242241304.01,TFOPWG=nan user=PC promoted=nan,,2345.373999999836,,,,,nan|98520|PHT candidate. Additional transit in FFI sector 11 (BTJD ~ 1623.08).,False
+251057075,CTOI,CTOI-251057075.01,TFOPWG=nan user=PC promoted=nan,,1426.3179999999702,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+256912435,CTOI,CTOI-256912435.01,TFOPWG=nan user=PC promoted=nan,,1623.438000000082,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+265465927,CTOI,CTOI-265465927.01,TFOPWG=nan user=PC promoted=nan,,1342.6499999999069,,,,,nan|92702|WINE single transit,False
+265466589,CTOI,CTOI-265466589.01,TFOPWG=nan user=PC promoted=nan,,1352.5240000002086,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+268534931,CTOI,CTOI-268534931.01,TFOPWG=nan user=PC promoted=nan,,2139.1009999997914,,,,,nan|52187|PHT candidate. Single transit event.,False
+269333648,CTOI,CTOI-269333648.01,TFOPWG=nan user=PC promoted=2529.01,,1538.5,,,,,nan|92676|WINE single transit,False
+269333648,TOI,TOI-2529.01,TFOPWG=CP TESS=CP,64.5947,3734.7356529999524,11.0,1.6508531448691697e-05,0.20008800115101621,,TOI-2529 b; CTOI from Rafael Brahm,True
+269333648,pscomppars,TOI-2529 b,CONFIRMED,64.5949,1538.5150999999605,11.0,1.960470000512787e-05,0.2181600009498652,<a refstr=JONES_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...683A.192J/abstract target=ref>Jones et al. 2024</a>,<a refstr=JONES_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024A&A...683A.192J/abstract target=ref>Jones et al. 2024</a>,True
+275878706,CTOI,CTOI-275878706.01,TFOPWG=nan user=PC promoted=nan,,1621.0800000000745,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+279727635,CTOI,CTOI-279727635.01,TFOPWG=nan user=PC promoted=nan,,1343.2269999999553,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+287204963,CTOI,CTOI-287204963.01,TFOPWG=nan user=PC promoted=nan,,1402.9360000002198,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+289840544,CTOI,CTOI-289840544.01,TFOPWG=nan user=PC promoted=nan,,1331.2900000000373,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+290165539,CTOI,CTOI-290165539.01,TFOPWG=nan user=PC promoted=nan,,1332.7560000000522,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+292719109,CTOI,CTOI-292719109.01,TFOPWG=nan user=PC promoted=nan,,1499.7020000000484,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+294097549,CTOI,CTOI-294097549.01,TFOPWG=nan user=PC promoted=nan,,1657.7409999999218,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+294097549,CTOI,CTOI-294097549.02,TFOPWG=nan user=PC promoted=nan,199.53498,1657.7472700001672,3.0,6.565264897217844e-06,-0.13872000400988327,,nan|460698|nan,True
+296737508,CTOI,CTOI-296737508.01,TFOPWG=nan user=PC promoted=6267.01,,1538.0,,,,,nan|3571|Planethunters-TESS candidate (single event),False
+296737508,TOI,TOI-6267.01,TFOPWG=PC TESS=PC,733.99109376,3005.986483000219,1.0,8.804466507087042e-07,0.04618847474739596,,3 transits; actual period likely shorter than max period of ~733.9904 days,True
+300394149,CTOI,CTOI-300394149.01,TFOPWG=nan user=PC promoted=nan,,1576.8859999999404,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+303317324,CTOI,CTOI-303317324.01,TFOPWG=nan user=PC promoted=4310.01,,1365.1899999999441,,,,,nan|51731|PHT candidate. Two transits separated by 739 d.,False
+303317324,TOI,TOI-4310.01,TFOPWG=CP TESS=PC,29.566735526960965,1365.1787999998778,25.0,1.133941923619679e-06,-0.07151999706911738,,formerly a duotransit with a maximum period of ~739 days; additional transit in qlp-s96-ffi combined with spoc-s01-s69 multisector constrains period to 29.567 d,True
+303317324,pscomppars,TOI-4310 b,CONFIRMED,29.566602,1365.1822999999858,25.0,3.3821945452802582e-06,-0.15551999966191943,<a refstr=COLLIER_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026arXiv260821560C/abstract target=ref>Collier et al. 2026</a>,<a refstr=COLLIER_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026arXiv260821560C/abstract target=ref>Collier et al. 2026</a>,True
+304339227,CTOI,CTOI-304339227.01,TFOPWG=nan user=PC promoted=4629.01,0.0,1673.3300000000745,,,,,nan|19241|PHT candidate. Single transit event.,False
+304339227,TOI,TOI-4629.01,TFOPWG=PC TESS=PC,714.697095595839,1673.3337960001081,1.0,2.4018001394574393e-05,0.12921599740366219,,three transits each two years apart; period likely shorter than max period of~715 days,True
+306249066,TOI,TOI-6596.01,TFOPWG=PC TESS=PC,26.1622122,3059.0585850002244,28.0,5.571831137972075e-06,0.03379679461431806,,found in faint-star QLP search,True
+313671132,TOI,TOI-6559.01,TFOPWG=PC TESS=PC,733.3796728,3071.1078710001893,1.0,9.903192397647757e-06,0.1438703954572702,,3 transits; one each in s11 s38 and s65; ~733 d is maximum period; true period is likely shorter,True
+317923092,CTOI,CTOI-317923092.01,TFOPWG=nan user=PC promoted=nan,,1479.8179999999702,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+323295479,CTOI,CTOI-323295479.01,TFOPWG=nan user=PC promoted=1861.01,,1622.9300000001676,,,,,nan|19146|PHT candidate. Single transit event.,False
+323295479,TOI,TOI-1861.01,TFOPWG=PC TESS=PC,742.512660117,3782.9623409998603,1.0,3.865096387283338e-06,1620.0112644273504,,also CTOI from Nora Eisner; previous single now duotransit; period likely shorter than longest possible period (~742.5 days); see observing notes regarding observations solving orbital period,False
+332697924,CTOI,CTOI-332697924.01,TFOPWG=nan user=PC promoted=nan,,1445.75,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+333736132,CTOI,CTOI-333736132.01,TFOPWG=nan user=PC promoted=6669.01,,2283.5449999999255,,,,,"nan|96946|newCTOI, Single transit",False
+333736132,TOI,TOI-6669.01,TFOPWG=CP TESS=PC,731.996653902604,2283.5474740001373,1.0,3.775840489815914e-06,0.05039765920446371,,additional transit in Y1; minimum period is ~22.9 d; maximum period is 732 d; CTOI from Guoyou Sun,True
+333736132,pscomppars,NGTS-35 b,CONFIRMED,25.241192,2334.0296299997717,29.0,9.262363820266384e-07,0.005808005480503198,<a refstr=KENDALL_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026MNRAS.547f2189K/abstract target=ref>Kendall et al. 2026</a>,<a refstr=KENDALL_ET_AL_2026 href=https://ui.adsabs.harvard.edu/abs/2026MNRAS.547f2189K/abstract target=ref>Kendall et al. 2026</a>,True
+339399841,CTOI,CTOI-339399841.01,TFOPWG=nan user=PC promoted=nan,,1662.1099999998696,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+349091983,CTOI,CTOI-349091983.01,TFOPWG=nan user=PC promoted=nan,,1603.1030000001192,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+381553868,CTOI,CTOI-381553868.01,TFOPWG=nan user=PC promoted=nan,,1677.3259999998845,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+393229954,CTOI,CTOI-393229954.01,TFOPWG=nan user=PC promoted=nan,,1446.7999999998137,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+394340183,CTOI,CTOI-394340183.01,TFOPWG=nan user=PC promoted=nan,,1664.842999999877,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+396720998,TOI,TOI-709.01,TFOPWG=APC TESS=PC,32.3766006435432,1392.822000999935,24.0,1.7636907893973263e-05,153.54381600156012,,TFOP work in progress.,False
+396720998,TOI,TOI-709.02,TFOPWG=PC TESS=PC,777.051674199127,1399.2211350002326,1.0,5.737081430784355e-07,-0.03540000558314205,,1.3 Re candidate around a white dwarf; potential multi-planet system,True
+404518509,CTOI,CTOI-404518509.01,TFOPWG=nan user=PC promoted=4320.01,0.0,1431.2900000000373,,,,,nan|19130|PHT candidate. Single transit event.,False
+404518509,TOI,TOI-4320.01,TFOPWG=CP TESS=PC,25.1290153,2160.014156000223,28.0,6.198867194522116e-06,-0.1574952053542802,,originally released as two TOIs; follow-up has determined that TOI 4320.02 (now retired as FA) and this signal are actually one planet orbiting at ~25 days; period updated to reflect this based on reprocessed qlp-s31 report,True
+404518509,TOI,TOI-4320.02,TFOPWG=FA TESS=O,46.4093732462209,1417.4663320002146,15.0,0.010739484697085092,331.19563199484764,,two transits; actual period likely shorter than 742.55 days; possible multi; determined to be part of 25 days transitting planet identified with other alerted TOI; retired as FA,False
+404518509,pscomppars,HD 21520 b,CONFIRMED,25.1292,2160.0156999998726,28.0,1.151193489172384e-06,-0.06599999694662984,<a refstr=NIES_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024MNRAS.534.3744N/abstract target=ref>Nies et al. 2024</a>,<a refstr=NIES_ET_AL_2024 href=https://ui.adsabs.harvard.edu/abs/2024MNRAS.534.3744N/abstract target=ref>Nies et al. 2024</a>,True
+412386707,CTOI,CTOI-412386707.01,TFOPWG=nan user=PC promoted=7619.01,,1493.9539999999106,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+412386707,TOI,TOI-7619.01,TFOPWG=PC TESS=PC,39.29595089873448,3694.523694000207,19.0,8.112629012365675e-06,0.07695189417790971,,found in faint-star QLP search,True
+437293313,CTOI,CTOI-437293313.01,TFOPWG=nan user=PC promoted=nan,,1578.4470000001602,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+439491923,CTOI,CTOI-439491923.01,TFOPWG=nan user=PC promoted=nan,,1405.4109999998473,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+442893494,CTOI,CTOI-442893494.01,TFOPWG=nan user=PC promoted=nan,,1472.658999999985,,,,,"nan|434070|new CTOI, https://arxiv.org/abs/2310.17268",False
+457649900,TOI,TOI-4958.01,TFOPWG=PC TESS=PC,748.8277169,1606.9706979999319,1.0,3.120744528153985e-06,-0.020591998365489417,,period likely several times shorter than max period of ~748.8 days; found in faint-star QLP search,True
+466206508,CTOI,CTOI-466206508.01,TFOPWG=nan user=PC promoted=5542.01,,2054.9789999998175,,,,,nan|36164|Found with our in-house single transit finder; transit finder output attached under 'Files',False
+466206508,TOI,TOI-5542.01,TFOPWG=CP TESS=CP,75.1247037,1979.8459729999304,5.0,5.46158560069544e-06,-0.03355679833111935,,TOI request from Nolan Grieves (paper in prep); TOI-5542 b,True
+466206508,pscomppars,TOI-5542 b,CONFIRMED,75.12375,1679.3475999999791,5.0,1.8156708098052175e-05,-0.044159999501061975,<a refstr=GRIEVES_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...668A..29G/abstract target=ref>Grieves et al. 2022</a>,<a refstr=GRIEVES_ET_AL_2022 href=https://ui.adsabs.harvard.edu/abs/2022A&A...668A..29G/abstract target=ref>Grieves et al. 2022</a>,True
