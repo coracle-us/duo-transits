@@ -1,0 +1,21 @@
+TIC 442893494: dT=721.7257 d, depth=6.12 ppt, dur=7.70 h, N_alias(paper)=22, Tmag=12.41, b=0.34
+aliases: {'conflict': 68, 'excluded': 59, 'supported': 9, 'allowed': 8}
+
+supported dips (merged): 5
+  T=1472.659 s6 depth=5.76+/-0.42 ppt snr=13.9 cover=1.00 beta=1.21 robust=True (T-Tc1)/dT=0.0000 consistent n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ...
+  T=2194.371 s32 depth=6.56+/-0.36 ppt snr=18.4 cover=0.99 beta=1.00 robust=True (T-Tc1)/dT=1.0000 consistent n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ...
+  T=3998.709 s98 depth=5.59+/-0.46 ppt snr=12.3 cover=1.00 beta=1.70 robust=True (T-Tc1)/dT=3.5000 consistent n: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] ...
+  T=4003.100 s98 depth=3.21+/-0.33 ppt snr=9.9 cover=0.51 beta=1.00 robust=False (T-Tc1)/dT=3.5061 consistent n: [79, 81, 83, 85]
+  T=4009.676 s98 depth=3.64+/-0.37 ppt snr=9.9 cover=0.52 beta=1.00 robust=False (T-Tc1)/dT=3.5152 consistent n: [33, 66, 97, 99, 130, 132, 134]
+
+excluding windows used most often (time, sector, #aliases killed):
+  T=4026.457 s98 kills 11 aliases: depth=0.36+/-0.28 ppt beta=1.00 cover=1.00
+  T=4031.504 s98 kills 9 aliases: depth=-0.30+/-0.37 ppt beta=1.00 cover=0.43
+  T=1442.587 s5 kills 6 aliases: depth=0.54+/-0.36 ppt beta=1.00 cover=0.93
+  T=4045.768 s98 kills 6 aliases: depth=0.36+/-0.40 ppt beta=1.00 cover=0.45
+  T=1441.279 s5 kills 6 aliases: depth=-0.41+/-0.34 ppt beta=1.00 cover=0.83
+  T=4014.388 s98 kills 6 aliases: depth=0.07+/-0.47 ppt beta=1.77 cover=1.00
+  T=4028.771 s98 kills 6 aliases: depth=0.32+/-0.29 ppt beta=1.00 cover=0.99
+  T=1438.291 s5 kills 6 aliases: depth=0.26+/-0.26 ppt beta=1.00 cover=1.00
+  T=4015.883 s98 kills 6 aliases: depth=0.67+/-0.25 ppt beta=1.00 cover=0.99
+  T=4043.807 s98 kills 6 aliases: depth=0.09+/-0.32 ppt beta=1.00 cover=0.78

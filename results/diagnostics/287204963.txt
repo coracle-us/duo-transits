@@ -1,0 +1,22 @@
+TIC 287204963: dT=729.3980 d, depth=10.84 ppt, dur=4.73 h, N_alias(paper)=42, Tmag=13.25, b=0.41
+aliases: {'conflict': 61, 'excluded': 60, 'supported': 15, 'allowed': 9}
+
+supported dips (merged): 6
+  T=1402.929 s3 depth=11.66+/-0.72 ppt snr=16.2 cover=1.00 beta=1.00 robust=True (T-Tc1)/dT=-0.0000 consistent n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ...
+  T=2132.334 s30 depth=9.44+/-0.76 ppt snr=12.4 cover=1.00 beta=1.00 robust=True (T-Tc1)/dT=1.0000 consistent n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ...
+  T=3946.736 s97 depth=26.43+/-3.19 ppt snr=8.3 cover=1.00 beta=3.77 robust=False (T-Tc1)/dT=3.4875 consistent n: [80, 119, 121]
+  T=3955.814 s97 depth=9.80+/-0.65 ppt snr=15.1 cover=0.99 beta=1.00 robust=True (T-Tc1)/dT=3.5000 consistent n: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24] ...
+  T=3960.208 s97 depth=12.58+/-2.24 ppt snr=5.6 cover=0.92 beta=2.77 robust=False (T-Tc1)/dT=3.5060 consistent n: [81, 83, 85]
+  T=3970.116 s97 depth=51.41+/-0.69 ppt snr=74.1 cover=0.99 beta=1.00 robust=False (T-Tc1)/dT=3.5196 consistent n: [77, 102, 127]
+
+excluding windows used most often (time, sector, #aliases killed):
+  T=3983.883 s97 kills 8 aliases: depth=0.30+/-0.60 ppt beta=1.00 cover=1.00
+  T=3980.143 s97 kills 7 aliases: depth=-0.11+/-0.77 ppt beta=1.00 cover=0.65
+  T=3971.686 s97 kills 6 aliases: depth=0.21+/-0.94 ppt beta=1.41 cover=0.99
+  T=3986.221 s97 kills 6 aliases: depth=1.46+/-0.73 ppt beta=1.13 cover=0.99
+  T=3939.973 s97 kills 6 aliases: depth=0.91+/-0.64 ppt beta=1.00 cover=0.99
+  T=3938.463 s97 kills 6 aliases: depth=-0.32+/-0.66 ppt beta=1.00 cover=1.00
+  T=3987.089 s97 kills 4 aliases: depth=0.15+/-0.71 ppt beta=1.00 cover=0.99
+  T=3966.881 s97 kills 4 aliases: depth=0.42+/-1.20 ppt beta=1.70 cover=0.96
+  T=3978.623 s97 kills 4 aliases: depth=-0.98+/-1.11 ppt beta=1.66 cover=0.99
+  T=3968.405 s97 kills 4 aliases: depth=0.04+/-0.67 ppt beta=1.00 cover=1.00

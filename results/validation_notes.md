@@ -8,7 +8,8 @@ per-alias tables in `results/aliases/{all,maxs39}/` are gitignored; regenerate w
 ## A. Known periods, all TESS data (26 candidates)
 
 - **26/26 PASS**: the true alias is never excluded.
-- **19/26 uniquely recovered** from TESS alone (only the true alias survives).
+- **19/26 uniquely recovered** from TESS alone (only the true alias survives). This is the first
+  version; it is **13/26 after revision 2** (see below).
 - The 7 non-unique cases keep the true alias among the survivors. In these, the extra transits
   fall on the shared Tc1 + m·dT grid or in gaps, or are too weak to count as detections:
   - TOI-2589: 17 survivors
@@ -57,9 +58,27 @@ Thresholds were set before the run except for two fixes, each prompted by a fail
    from windows with red-noise factor β > 3 or a significant brightening. Both false exclusions
    came from such windows: an edge ramp with β ≈ 9.5, and a β ≈ 8.5 window.
 
-Part B results did not change after fix 2. Both fixes make the pipeline more conservative,
-never less. Thresholds are now frozen. Any further change should be re-validated on all of
-A and B.
+Part B results did not change after fix 2.
+
+### Revision 2 (same day), prompted by diagnosing open candidates with zero survivors
+
+Running the pipeline on open candidates gave 5 with *zero* surviving aliases. Diagnosis
+(`scripts/diagnose_candidate.py`, `results/diagnostics/`) found three more flaws, fixed:
+
+3. **"Excluded" now requires a flat window.** The measured depth must be consistent with zero
+   (|d| < 3 sigma) as well as inconsistent with half the expected depth. Before, a significant but
+   shallower dip (6 sigma at 25% depth, TIC 300394149, S63) counted as "absent".
+4. **Off-grid dips prune aliases only if corroborated.** A detected dip excludes the aliases that miss it only when it lies on the ephemeris of a surviving alias that also explains at least one *other* detected dip. Two dips aligning with one alias by chance is about 1%; a single stray dip aligning with some alias is about 40%.
+   - The old rule let one systematic, or a second transiting object, kill the true alias (TIC 381553868, 275878706, 300394149).
+   - Uncorroborated dips are now listed per candidate (`uncorroborated_dips`) for vetting.
+5. **Segment-aware baselines.** The baseline gets a free offset per data segment (gap > 0.5 d), and the first 0.5 d of every QLP segment is trimmed.
+   - QLP SAP flux in Sectors 97, 98 and 103 has strong ramps and jumps at segment starts. Newer QLP files carry no detrended KSPSAP column. Windows straddling a break produced fake 20–76 ppt dips.
+
+After revision 2:
+
+- **A:** 26/26 PASS (unchanged). **Unique recoveries fall from 19 to 13**: the 6 lost cases each rested on a single new dip, which no longer prunes on its own, and now need vetting to confirm.
+- **B:** count equal 36, within +1 59, within +3 75, fewer than paper 0 (of 85).
+- Thresholds are frozen again at this state. Any further change must be re-validated on all of A and B.
 
 ## Caveats
 

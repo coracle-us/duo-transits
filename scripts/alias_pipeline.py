@@ -15,12 +15,14 @@ inside the light curves, and test each predicted window:
 Per-epoch verdict (delta = expected depth from Tc1/Tc2, a conservative threshold
 DEPTH_FRAC * delta is what we test against):
   excluded       at EVERY trial offset: enough in-transit coverage AND d + K_SIG*sigma < DEPTH_FRAC*delta
-                 AND d > -K_SIG*sigma (no brightening) AND beta <= BETA_MAX_EXCL
+                 AND |d| < K_SIG*sigma (flat: no significant dip or brightening)
+                 AND beta <= BETA_MAX_EXCL
   supported      at SOME offset: d > DEPTH_FRAC*delta and d/sigma > SNR_MIN
   unconstrained  not enough data in the window at some offset (could hide in a gap)
   ambiguous      covered, but neither excluded nor supported
-Per-alias verdict: excluded if any epoch is excluded (and none supported -> otherwise
-'conflict'); supported if any epoch supported; else allowed (not ruled out).
+Per-alias verdict (see summarize_aliases): excluded (a flat window; 'conflict' if it also has
+informative support), excluded-by-transits (misses a corroborated detected dip), supported,
+or allowed (not ruled out). Survivors = supported + allowed.
 
 The known transits (k = 0, n) are tested the same way as a built-in sanity check: they
 should come out 'supported' whenever the data covers them.
@@ -61,6 +63,9 @@ DEPTH_MAX_FRAC = 2.0   # depth between DEPTH_FRAC and this times the expected de
 DETECT_COVER = 0.8     # in-transit coverage
 DETECT_SIDE = 0.5      # baseline on BOTH sides, >= this fraction of a full BASE_W of cadences
 PRODUCT_RANK = ["SPOC_120", "TESS-SPOC", "QLP", "SPOC_20"]
+SEG_GAP = 0.5          # d; a gap longer than this starts a new data segment
+QLP_TRIM = 0.5         # d trimmed from the start of each QLP segment (raw SAP ramps; newer
+                       # QLP files carry no detrended KSPSAP flux)
 
 
 # ------------------------------------------------------------------ light curves
@@ -85,27 +90,39 @@ def load_lightcurves(tic, max_sector=None, products=PRODUCT_RANK):
         df = df[np.isfinite(df.time) & np.isfinite(df.flux) & (df.quality == 0)]
         if len(df) < 50:
             continue
+        df = df.sort_values("time")
+        seg = np.concatenate([[0], np.cumsum(np.diff(df.time.values) > SEG_GAP)])
+        if key == "QLP":
+            seg_start = pd.Series(df.time.values).groupby(seg).transform("min").values
+            keep = df.time.values - seg_start >= QLP_TRIM
+            df, seg = df[keep], seg[keep]
         med = np.nanmedian(df.flux)
         err = df.flux_err / med if np.isfinite(df.flux_err).any() else np.nan
         parts.append(pd.DataFrame({"time": df.time.values, "flux": df.flux.values / med,
-                                   "err": np.asarray(err, dtype=float), "sector": sec, "product": key}))
+                                   "err": np.asarray(err, dtype=float), "sector": sec, "product": key,
+                                   "segment": sec * 1000 + seg}))
     if not parts:
-        return pd.DataFrame(columns=["time", "flux", "err", "sector", "product"])
+        return pd.DataFrame(columns=["time", "flux", "err", "sector", "product", "segment"])
     return pd.concat(parts, ignore_index=True).sort_values("time").reset_index(drop=True)
 
 
 # ------------------------------------------------------------------ one window
-def test_window(lc_t, lc_f, T, sigT, D, delta):
-    """Test one predicted transit time. lc_t/lc_f: arrays (sorted). Returns dict."""
+def test_window(lc_t, lc_f, T, sigT, D, delta, lc_seg=None):
+    """Test one predicted transit time. lc_t/lc_f/lc_seg: arrays (sorted). Returns dict.
+    The baseline is a polynomial in time plus a free offset for each data segment, so jumps
+    across data gaps are not mistaken for dips; segments without baseline points are dropped."""
     half = D / 2
     mask_half = half + 3 * sigT + 0.02          # region masked from the baseline fit
     lo, hi = T - mask_half - BASE_W, T + mask_half + BASE_W
     i0, i1 = np.searchsorted(lc_t, [lo, hi])
     t, f = lc_t[i0:i1], lc_f[i0:i1]
+    sg = lc_seg[i0:i1] if lc_seg is not None else np.zeros(len(t), dtype=int)
+    oot = np.abs(t - T) > mask_half
+    anchored = np.isin(sg, np.unique(sg[oot])) if oot.any() else np.zeros(len(t), bool)
+    t, f, sg, oot = t[anchored], f[anchored], sg[anchored], oot[anchored]
     res = dict(T_pred=T, sigma_T=sigT, n_window=len(t))
     if len(t) == 0:
         return {**res, "verdict": "no-data"}
-    oot = np.abs(t - T) > mask_half
     n_left, n_right = np.sum(oot & (t < T)), np.sum(oot & (t > T))
     res.update(n_oot_left=int(n_left), n_oot_right=int(n_right))
     if n_left + n_right < 10:
@@ -113,9 +130,11 @@ def test_window(lc_t, lc_f, T, sigT, D, delta):
         flat_any = np.sum(np.abs(t - T) < FLAT * half)
         return {**res, "verdict": "unconstrained" if flat_any else "no-data"}
     deg = 2 if (n_left >= 10 and n_right >= 10) else (1 if min(n_left, n_right) >= 5 else 0)
-    x0 = T
-    coef = np.polyfit(t[oot] - x0, f[oot], deg)
-    model = np.polyval(coef, t - x0)
+    segs = np.unique(sg)
+    X = np.column_stack([(t - T) ** p for p in range(1, deg + 1)]
+                        + [(sg == u).astype(float) for u in segs]) if (deg or len(segs)) else None
+    coef, *_ = np.linalg.lstsq(X[oot], f[oot], rcond=None)
+    model = X @ coef
     r = f / model - 1.0
     r_oot = r[oot]
     sig_w = 1.4826 * np.median(np.abs(r_oot - np.median(r_oot)))  # robust white scatter
@@ -137,9 +156,11 @@ def test_window(lc_t, lc_f, T, sigT, D, delta):
             continue
         d = -np.mean(r[inn])
         s = beta * sig_w / np.sqrt(n_in)
-        # Absence of a transit is only credible in a clean window: low red noise and no
-        # significant brightening (a negative "depth" means systematics, e.g. an edge ramp).
-        excl = (d + K_SIG * s < DEPTH_FRAC * delta) and (d > -K_SIG * s) and (beta <= BETA_MAX_EXCL)
+        # Absence of a transit is only credible in a clean, FLAT window: low red noise, no
+        # significant brightening (systematics, e.g. an edge ramp) and no significant dip
+        # (a real but shallower/shifted event is evidence of something, not of absence).
+        excl = ((d + K_SIG * s < DEPTH_FRAC * delta) and (abs(d) < K_SIG * s)
+                and (beta <= BETA_MAX_EXCL))
         supp = (d > DEPTH_FRAC * delta) and (d / s > SNR_MIN)
         all_excl &= excl
         cand = dict(offset=tau, depth=d, depth_err=s, snr=d / s, n_in=n_in, cover=min(cover, 1.0),
@@ -184,6 +205,7 @@ def run_candidate(c, lc, p_floor=P_FLOOR):
     delta = 1e-3 * np.nanmean([c.Depth1_ppt, c.Depth2_ppt])
     t, f = lc.time.to_numpy(), lc.flux.to_numpy()
     sec = lc.sector.to_numpy()
+    sg_all = lc.segment.to_numpy()
     if len(t) == 0:
         return pd.DataFrame(), pd.DataFrame()
     tmin, tmax = t.min() - 1, t.max() + 1
@@ -202,7 +224,7 @@ def run_candidate(c, lc, p_floor=P_FLOOR):
                 continue
             u = k / n
             sigT = np.hypot((1 - u) * s1, u * s2)
-            r = test_window(t, f, T, sigT, D, delta)
+            r = test_window(t, f, T, sigT, D, delta, sg_all)
             jj = min(j, len(t) - 1)
             r.update(n=n, P=P, k=k, known=(k in (0, n)), sector=int(sec[jj]))
             ep_rows.append(r)
@@ -215,58 +237,79 @@ def summarize_aliases(ep, c, n_max, D, s1, s2):
 
     - Epochs at Tc1 + m*dT (k a multiple of n) are predicted by EVERY alias, so support there
       is uninformative ('common'); only other epochs count as informative support.
-    - Detected transits: supported epochs passing the stricter DETECT_* cuts (SNR, depth,
-      coverage, baseline on both sides), merged by time. An alias whose ephemeris does not pass through a detected
-      transit (within D/2 + 3 sigma_T) is excluded: the true period must explain every transit.
+    - Flat windows (epoch verdict 'excluded') rule an alias out: 'excluded'.
+    - Detected dips: supported epochs passing the stricter DETECT_* cuts (SNR, depth,
+      coverage, baseline on both sides), merged by time, excluding the Tc1 + m*dT grid.
+    - Corroboration: a dip is corroborated if it lies on the ephemeris of an alias that
+      survives the flat-window test AND that ephemeris also passes through at least one other
+      detected dip (two dips aligning by chance with one alias is ~1% vs ~40% for one).
+      Aliases that miss a corroborated dip are 'excluded-by-transits' (they cannot explain an
+      observed transit, e.g. sub-harmonics at 2x, 3x the true period).
+    - Uncorroborated dips never exclude; they are listed in `uncorroborated_dips` for vetting
+      (systematics, a second planet, or an eclipsing binary).
     """
     dT = c.Tc2 - c.Tc1
     delta = 1e-3 * np.nanmean([c.Depth1_ppt, c.Depth2_ppt])
+    detected = np.array([])
     if len(ep):
         ep["common"] = (ep.k % ep.n) == 0
         side_min = DETECT_SIDE * BASE_W / ep.cadence
-        det = ep[(ep.verdict == "supported") & (ep.snr >= DETECT_SNR)
+        det = ep[(ep.verdict == "supported") & (ep.snr >= DETECT_SNR) & ~ep.known
                  & (ep.depth <= DEPTH_MAX_FRAC * delta) & (ep.cover >= DETECT_COVER)
                  & (ep.n_oot_left >= side_min) & (ep.n_oot_right >= side_min)]
-        det_times = np.sort((det.T_pred + det.offset).to_numpy())
         merged = []
-        for tt in det_times:
+        for tt in np.sort((det.T_pred + det.offset).to_numpy()):
             if not merged or tt - merged[-1] > D:
                 merged.append(tt)
-        detected = np.array(merged)
-    else:
-        detected = np.array([])
-    rows = []
-    for n in range(1, n_max + 1):
+        # drop dips on the common Tc1 + m*dT grid (they discriminate nothing)
+        detected = np.array([tt for tt in merged
+                             if abs(tt - (c.Tc1 + np.round((tt - c.Tc1) / dT) * dT)) > D])
+
+    def on_grid(tt, n):
         P = dT / n
-        e = ep[(ep.n == n) & ~ep.known] if len(ep) else pd.DataFrame(columns=["verdict", "common"])
+        k = np.round((tt - c.Tc1) / P)
+        u = k / n
+        return abs(tt - (c.Tc1 + k * P)) <= D / 2 + 3 * np.hypot((1 - u) * s1, u * s2)
+
+    per = {}
+    for n in range(1, n_max + 1):
+        e = ep[(ep.n == n) & ~ep.known] if len(ep) else pd.DataFrame(
+            columns=["verdict", "common", "T_pred", "sector"])
+        per[n] = e
+    flat_ok = [n for n in per if not (per[n].verdict == "excluded").any()]
+    corroborated = set()
+    for n in flat_ok:
+        hits = [tt for tt in detected if on_grid(tt, n)]
+        if len(hits) >= 2:
+            corroborated.update(hits)
+    uncorroborated = [tt for tt in detected if tt not in corroborated]
+
+    rows = []
+    for n, e in per.items():
         inf = e[~e.common] if len(e) else e
         n_ex = int((e.verdict == "excluded").sum())
         n_su_inf = int((inf.verdict == "supported").sum())
-        n_su_com = int(((e.verdict == "supported") & e.common).sum()) if len(e) else 0
-        # detected transits not on this alias's grid
-        missed = []
-        for tt in detected:
-            k = np.round((tt - c.Tc1) / P)
-            u = k / n
-            sigT = np.hypot((1 - u) * s1, u * s2)
-            if abs(tt - (c.Tc1 + k * P)) > D / 2 + 3 * sigT:
-                missed.append(tt)
+        missed = [tt for tt in sorted(corroborated) if not on_grid(tt, n)]
         if n_ex and n_su_inf:
             verdict = "conflict"
-        elif n_ex or missed:
+        elif n_ex:
             verdict = "excluded"
+        elif missed:
+            verdict = "excluded-by-transits"
         elif n_su_inf:
             verdict = "supported"
         else:
             verdict = "allowed"
         fmt = lambda d: " ".join(f"{T:.2f}(s{sec})" for T, sec in zip(d.T_pred, d.sector))
         rows.append(dict(
-            TIC=c.TIC, n=n, P=P, verdict=verdict, n_excluded=n_ex, n_supported_informative=n_su_inf,
-            n_supported_common=n_su_com, n_ambiguous=int((e.verdict == "ambiguous").sum()),
+            TIC=c.TIC, n=n, P=dT / n, verdict=verdict, n_excluded=n_ex, n_supported_informative=n_su_inf,
+            n_supported_common=int(((e.verdict == "supported") & e.common).sum()) if len(e) else 0,
+            n_ambiguous=int((e.verdict == "ambiguous").sum()),
             n_unconstrained=int((e.verdict == "unconstrained").sum()),
             n_informative_tested=int(inf.verdict.isin(["excluded", "supported", "ambiguous"]).sum()),
             excluded_by=fmt(e[e.verdict == "excluded"]) if n_ex else "",
-            inconsistent_with_detected=" ".join(f"{tt:.2f}" for tt in missed),
+            misses_corroborated=" ".join(f"{tt:.2f}" for tt in missed),
+            uncorroborated_dips=" ".join(f"{tt:.2f}" for tt in uncorroborated),
             supported_at=fmt(inf[inf.verdict == "supported"]) if n_su_inf else ""))
     return pd.DataFrame(rows)
 

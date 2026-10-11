@@ -1,0 +1,23 @@
+TIC 317923092: dT=729.6085 d, depth=5.54 ppt, dur=12.96 h, N_alias(paper)=39, Tmag=12.26, b=0.928
+aliases: {'excluded': 109, 'conflict': 36}
+
+supported dips (merged): 7
+  T=1479.844 s6 depth=3.04+/-0.28 ppt snr=11.0 cover=0.99 beta=1.19 robust=True (T-Tc1)/dT=0.0000 consistent n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ...
+  T=2209.401 s33 depth=6.79+/-0.21 ppt snr=32.3 cover=0.99 beta=1.00 robust=True (T-Tc1)/dT=1.0000 consistent n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ...
+  T=3996.167 s98 depth=8.04+/-0.22 ppt snr=37.4 cover=1.00 beta=1.00 robust=False (T-Tc1)/dT=3.4489 consistent n: [49, 69, 78, 98, 107, 118, 127, 136, 138]
+  T=4002.509 s98 depth=6.43+/-0.20 ppt snr=32.3 cover=1.00 beta=1.00 robust=False (T-Tc1)/dT=3.4576 consistent n: [35, 59, 70, 83, 94, 105, 107, 118, 129, 131, 140, 142]
+  T=4010.377 s98 depth=8.08+/-0.19 ppt snr=42.5 cover=1.00 beta=1.00 robust=False (T-Tc1)/dT=3.4684 consistent n: [32, 47, 64, 79, 94, 96, 109, 111, 126, 128, 141, 143]
+  T=4024.852 s98 depth=5.83+/-0.23 ppt snr=25.6 cover=1.00 beta=1.00 robust=False (T-Tc1)/dT=3.4882 consistent n: [41, 43, 82, 84, 86, 88, 123, 125, 127, 129, 131, 133]
+  T=4039.219 s98 depth=4.76+/-0.19 ppt snr=24.6 cover=1.00 beta=1.00 robust=False (T-Tc1)/dT=3.5079 consistent n: [61, 63, 65, 67, 120, 122, 124, 126, 128, 130, 132, 134]
+
+excluding windows used most often (time, sector, #aliases killed):
+  T=3668.643 s87 kills 143 aliases: depth=-0.23+/-0.23 ppt beta=1.00 cover=1.00
+  T=4000.283 s98 kills 11 aliases: depth=0.11+/-0.21 ppt beta=1.05 cover=1.00
+  T=4016.076 s98 kills 5 aliases: depth=-0.08+/-0.20 ppt beta=1.00 cover=0.94
+  T=4044.502 s98 kills 4 aliases: depth=-0.13+/-0.29 ppt beta=1.00 cover=0.53
+  T=4014.247 s98 kills 4 aliases: depth=0.49+/-0.19 ppt beta=1.00 cover=1.00
+  T=4045.215 s98 kills 4 aliases: depth=0.68+/-0.27 ppt beta=1.00 cover=0.53
+  T=3998.144 s98 kills 4 aliases: depth=0.38+/-0.18 ppt beta=1.00 cover=1.00
+  T=3689.489 s87 kills 4 aliases: depth=0.58+/-0.26 ppt beta=1.00 cover=0.87
+  T=3688.910 s87 kills 4 aliases: depth=0.63+/-0.31 ppt beta=1.28 cover=0.91
+  T=3684.167 s87 kills 3 aliases: depth=-0.03+/-0.36 ppt beta=1.57 cover=1.00

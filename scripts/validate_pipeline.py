@@ -61,7 +61,8 @@ def part_a(cand, status):
             survivors=" ".join(map(str, survivors[:30])) + (" ..." if len(survivors) > 30 else ""),
             true_supported_at=al.set_index("n").supported_at.get(n_true, ""),
             true_excluded_by=al.set_index("n").excluded_by.get(n_true, ""),
-            true_inconsistent_with=al.set_index("n").inconsistent_with_detected.get(n_true, ""),
+            true_misses_corroborated=al.set_index("n").misses_corroborated.get(n_true, ""),
+            uncorroborated_dips=al.uncorroborated_dips.iloc[0] if len(al) else "",
             known_transits=" ".join(known), flags=s.flags))
     out = pd.DataFrame(rows)
     out.to_csv(RES / "validation_known.csv", index=False)
