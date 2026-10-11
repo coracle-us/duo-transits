@@ -1,0 +1,148 @@
+{
+ "TIC": 270450687,
+ "CTOI": 270450687.02,
+ "Tmag": 9.74467,
+ "depth_ppm": 39500.0,
+ "dur_h": 9.43,
+ "epoch_btjd": 2031.7949999999253,
+ "n_sectors": 10,
+ "event_verdict": "supported",
+ "event_depth_ppm": 37552.2,
+ "event_snr": 555.9,
+ "repeats": [
+  {
+   "T": 2712.2595,
+   "sector": 51,
+   "product": "SPOC_120",
+   "depth_ppm": 34602,
+   "snr": 320.8
+  }
+ ],
+ "n_repeats": 1,
+ "frac_logP_excluded": 0.6753333333333333,
+ "min_allowed_P": 61.70549056382329,
+ "n_allowed_ranges": 136,
+ "allowed_ranges": [
+  [
+   61.71,
+   61.76
+  ],
+  [
+   67.35,
+   67.35
+  ],
+  [
+   73.78,
+   73.78
+  ],
+  [
+   74.13,
+   74.13
+  ],
+  [
+   77.67,
+   77.67
+  ],
+  [
+   81.92,
+   82.46
+  ],
+  [
+   82.7,
+   82.7
+  ],
+  [
+   82.86,
+   82.86
+  ],
+  [
+   83.01,
+   83.09
+  ],
+  [
+   83.41,
+   83.41
+  ],
+  [
+   87.39,
+   87.39
+  ],
+  [
+   88.22,
+   88.22
+  ],
+  [
+   90.0,
+   90.0
+  ],
+  [
+   92.52,
+   92.69
+  ],
+  [
+   93.49,
+   93.49
+  ],
+  [
+   "...",
+   136
+  ]
+ ],
+ "frac_conclusive_windows": 0.8263950398582817,
+ "candidate_periods": [
+  [
+   1,
+   680.4645
+  ],
+  [
+   2,
+   340.23225
+  ],
+  [
+   3,
+   226.8215
+  ],
+  [
+   4,
+   170.11613
+  ],
+  [
+   5,
+   136.0929
+  ],
+  [
+   6,
+   113.41075
+  ],
+  [
+   7,
+   97.20921
+  ]
+ ],
+ "n_candidate_periods": 7,
+ "event_T": 2031.7949999999253,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 26,
+   "offset_arcsec": 1.6,
+   "offset_err_arcsec": 0.3,
+   "offset_sigma": 5.3,
+   "snr_peak": 36.4,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.22,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 51,
+   "offset_arcsec": 0.6,
+   "offset_err_arcsec": 0.3,
+   "offset_sigma": 1.8,
+   "snr_peak": 95.7,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.22,
+   "nearest_gaia_sep": 0.0
+  }
+ ]
+}

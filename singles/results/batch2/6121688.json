@@ -1,0 +1,183 @@
+{
+ "TIC": 6121688,
+ "CTOI": 6121688.01,
+ "Tmag": 9.3574,
+ "depth_ppm": 13856.0,
+ "dur_h": 3.1,
+ "epoch_btjd": 2693.657085000072,
+ "n_sectors": 2,
+ "event_verdict": "ambiguous",
+ "event_depth_ppm": 583.3,
+ "event_snr": 0.7,
+ "repeats": [
+  {
+   "T": 2699.579,
+   "sector": 51,
+   "product": "SPOC_120",
+   "depth_ppm": 12316,
+   "snr": 15.6
+  },
+  {
+   "T": 2702.2593,
+   "sector": 51,
+   "product": "SPOC_120",
+   "depth_ppm": 12775,
+   "snr": 16.5
+  },
+  {
+   "T": 2715.7895,
+   "sector": 51,
+   "product": "SPOC_120",
+   "depth_ppm": 12813,
+   "snr": 17.5
+  },
+  {
+   "T": 3778.4113,
+   "sector": 91,
+   "product": "QLP",
+   "depth_ppm": 12087,
+   "snr": 19.1
+  },
+  {
+   "T": 3791.9415,
+   "sector": 91,
+   "product": "QLP",
+   "depth_ppm": 12243,
+   "snr": 19.6
+  },
+  {
+   "T": 3794.654,
+   "sector": 91,
+   "product": "QLP",
+   "depth_ppm": 12000,
+   "snr": 17.1
+  },
+  {
+   "T": 3797.3343,
+   "sector": 91,
+   "product": "QLP",
+   "depth_ppm": 11859,
+   "snr": 16.3
+  }
+ ],
+ "n_repeats": 7,
+ "frac_logP_excluded": 0.0695,
+ "min_allowed_P": 4.999999999999999,
+ "n_allowed_ranges": 191,
+ "allowed_ranges": [
+  [
+   5.0,
+   5.0
+  ],
+  [
+   5.01,
+   5.03
+  ],
+  [
+   5.04,
+   5.05
+  ],
+  [
+   5.06,
+   5.07
+  ],
+  [
+   5.08,
+   5.09
+  ],
+  [
+   5.1,
+   5.18
+  ],
+  [
+   5.47,
+   5.48
+  ],
+  [
+   5.49,
+   5.52
+  ],
+  [
+   5.54,
+   5.54
+  ],
+  [
+   5.55,
+   5.55
+  ],
+  [
+   5.56,
+   5.57
+  ],
+  [
+   5.58,
+   5.59
+  ],
+  [
+   5.61,
+   5.63
+  ],
+  [
+   5.64,
+   5.64
+  ],
+  [
+   5.65,
+   5.68
+  ],
+  [
+   "...",
+   191
+  ]
+ ],
+ "frac_conclusive_windows": 0.13846153846153847,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 2693.657085000072,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 51,
+   "offset_arcsec": 22.7,
+   "offset_err_arcsec": 266.2,
+   "offset_sigma": 0.1,
+   "snr_peak": 5.0,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.63,
+   "nearest_gaia_sep": 7.8
+  },
+  {
+   "kind": "repeat",
+   "sector": 91,
+   "offset_arcsec": 1.8,
+   "offset_err_arcsec": 0.7,
+   "offset_sigma": 2.6,
+   "snr_peak": 33.0,
+   "crowded_reference": false,
+   "nearest_gaia_G": 9.67,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 91,
+   "offset_arcsec": 3.8,
+   "offset_err_arcsec": 0.8,
+   "offset_sigma": 4.9,
+   "snr_peak": 27.0,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.89,
+   "nearest_gaia_sep": 6.7
+  },
+  {
+   "kind": "repeat",
+   "sector": 51,
+   "offset_arcsec": 1.8,
+   "offset_err_arcsec": 0.5,
+   "offset_sigma": 3.5,
+   "snr_peak": 33.4,
+   "crowded_reference": false,
+   "nearest_gaia_G": 9.67,
+   "nearest_gaia_sep": 0.0
+  }
+ ]
+}

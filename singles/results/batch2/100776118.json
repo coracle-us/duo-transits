@@ -1,0 +1,168 @@
+{
+ "TIC": 100776118,
+ "CTOI": 100776118.01,
+ "Tmag": 11.5108,
+ "depth_ppm": 12500.0,
+ "dur_h": 21.6,
+ "epoch_btjd": 2219.652999999933,
+ "n_sectors": 6,
+ "event_verdict": "supported",
+ "event_depth_ppm": 11666.7,
+ "event_snr": 115.8,
+ "repeats": [
+  {
+   "T": 1472.7885,
+   "sector": 6,
+   "product": "TESS-SPOC",
+   "depth_ppm": 11980,
+   "snr": 91.5
+  }
+ ],
+ "n_repeats": 1,
+ "frac_logP_excluded": 0.5931666666666666,
+ "min_allowed_P": 32.69577762714791,
+ "n_allowed_ranges": 255,
+ "allowed_ranges": [
+  [
+   32.7,
+   32.79
+  ],
+  [
+   33.42,
+   33.42
+  ],
+  [
+   37.6,
+   37.6
+  ],
+  [
+   37.74,
+   37.74
+  ],
+  [
+   39.77,
+   39.77
+  ],
+  [
+   41.63,
+   41.63
+  ],
+  [
+   42.43,
+   42.43
+  ],
+  [
+   46.26,
+   46.3
+  ],
+  [
+   46.48,
+   46.48
+  ],
+  [
+   46.66,
+   46.7
+  ],
+  [
+   47.01,
+   47.01
+  ],
+  [
+   47.24,
+   47.24
+  ],
+  [
+   47.37,
+   47.37
+  ],
+  [
+   47.73,
+   47.73
+  ],
+  [
+   47.92,
+   47.92
+  ],
+  [
+   "...",
+   255
+  ]
+ ],
+ "frac_conclusive_windows": 0.7128851540616247,
+ "candidate_periods": [
+  [
+   1,
+   746.8645
+  ],
+  [
+   2,
+   373.43225
+  ],
+  [
+   3,
+   248.95483
+  ],
+  [
+   4,
+   186.71612
+  ],
+  [
+   5,
+   149.3729
+  ],
+  [
+   6,
+   124.47742
+  ],
+  [
+   7,
+   106.69493
+  ],
+  [
+   8,
+   93.35806
+  ],
+  [
+   10,
+   74.68645
+  ],
+  [
+   11,
+   67.89677
+  ],
+  [
+   12,
+   62.23871
+  ],
+  [
+   14,
+   53.34746
+  ]
+ ],
+ "n_candidate_periods": 12,
+ "event_T": 2219.652999999933,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 33,
+   "offset_arcsec": 1.8,
+   "offset_err_arcsec": 0.5,
+   "offset_sigma": 3.6,
+   "snr_peak": 55.0,
+   "crowded_reference": false,
+   "nearest_gaia_G": 11.85,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 6,
+   "offset_arcsec": 3.2,
+   "offset_err_arcsec": 0.6,
+   "offset_sigma": 5.6,
+   "snr_peak": 29.4,
+   "crowded_reference": false,
+   "nearest_gaia_G": 11.85,
+   "nearest_gaia_sep": 0.0
+  }
+ ]
+}
