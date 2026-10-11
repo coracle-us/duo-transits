@@ -22,31 +22,28 @@ the orbital fingerprints of how giant planets migrate, which is why they matter.
 ## 2. The source catalog
 
 **Hawthorn, Gill, Bayliss et al., "TESS Duotransit Candidates from the Southern Ecliptic
-Hemisphere", MNRAS (2024), arXiv:2310.17268 (v2).**
+Hemisphere", MNRAS 528, 1841 (2024), arXiv:2310.17268 (v2).** ADS: 2024MNRAS.528.1841H,
+DOI 10.1093/mnras/stad3783.
 
 - 85 candidates (25 previously known, 60 new), from SPOC FFI light curves.
-- Data used: Cycle 1 (Sectors 1–13) and Cycle 3 (Sectors 27–38) only. Cycle 5 was **not**
+- Data used: Cycle 1 (Sectors 1–13) and Cycle 3 (Sectors 27–39; one Tc2 is in S42) only. Cycle 5 was **not**
   used; the authors explicitly name "search Cycle 5 for third transits" as a way to cut
   aliases. TESS has revisited the south since then (Cycle 5, Cycle 7, possibly later):
   **that newer data is our opportunity.**
 - Appendix tables: A1 host properties, A2 transit events (Tc1, Tc2 in TBJD, depths,
   durations), A3 aliases (N_alias, most probable period P_marg; "shown in full online").
+  In the LaTeX these are `table_1.tex`, `table_4.tex`, `table_5.tex`.
+- N_alias behaves as a *count* of allowed aliases (despite the caption); for 71/85 rows it
+  equals n_max+1 where P_min = dT/n_max, which looks like an off-by-one in their counting.
 - Notable long-period candidates: TIC 294097549 (~200 d), TIC 25194908 (~338 d),
   TIC 349091983 (~549 d).
 
 ## 3. Data provenance — IMPORTANT
 
-`data/transcribed/` was produced in a cloud session by a web-reading model, not from the
-LaTeX source. Treat it as **unverified**:
-
-- `hosts_tableA1.csv`: all 85 rows. Row 41 distance garbled.
-- `transits_tableA2_partial.csv`: rows 1–76 only (77–85 missing).
-- Table A3 (aliases) not obtained.
-
-**First task:** run `scripts/fetch_data.py`, which downloads the arXiv LaTeX source into
-`data/raw/paper_src/`. Parse Tables A1–A3 from the `.tex`, write
-`data/catalog/candidates.csv`, and diff it against the transcribed files. Any disagreement
-is resolved in favor of the LaTeX source. Do not use the transcribed files for analysis.
+`data/catalog/candidates.csv` (all 85 rows, Tables A1–A3) is parsed from the arXiv LaTeX
+source by `scripts/parse_catalog.py`. **Use it, not `data/transcribed/`.** The web
+transcription agreed with the LaTeX everywhere it had data; differences (distance strings
+in A1 rows 33/36/38/41/53, A2 rows 77–85 missing) are in `data/catalog/transcription_diff.csv`.
 
 ## 4. Plan
 
@@ -111,9 +108,30 @@ is resolved in favor of the LaTeX source. Do not use the transcribed files for a
 - MonoTools (H. Osborn) — the duo/monotransit alias-probability code used in the field.
 - Hawthorn et al. 2024 for method details (their alias definitions and vetting flags).
 
-## 8. Status at handoff (2026-10-11)
+## 8. Status (updated 2026-10-11)
 
-- Topic chosen and literature gap checked (active area; newer TESS sectors unexploited
-  for this catalog as far as we found — re-check during triage).
-- Fetch script written, syntax-checked, **not yet run**.
-- Nothing analyzed yet.
+Done (steps 1–2 + catalog + coverage):
+- `.venv` with requirements; `scripts/fetch_data.py` fixed and run: paper source, pscomppars,
+  TOI/CTOI tables, 1,354 light curves for all 85 TICs (`data/raw/`, gitignored, ~750 MB).
+- `data/catalog/candidates.csv` from LaTeX (see §3).
+- Triage → `data/catalog/status.csv` (`scripts/build_status.py`, sources per row):
+  49 open, 26 resolved, 7 unclear, 3 false-positive. Resolved tiers: 9 peer-reviewed,
+  1 catalog paper (549 d), 5 Hawthorn PhD thesis (Warwick 2024, NGTS-solved), 8 ExoFOP/TFOP
+  community, 3 TOI periods from QLP faint-star search.
+- Coverage beyond the paper's data → `data/catalog/coverage.csv` (`scripts/coverage_summary.py`):
+  78/85 have new sectors (up to S107); 7 have none.
+
+Lessons that change the plan:
+- **The novelty gap is narrower than assumed.** ExoFOP community users (2025–26) already used
+  S87–S103 to pin periods for ≥8 candidates, and Hawthorn's thesis solved 5 more with NGTS.
+  Always check per-target ExoFOP uploads/notes (`scripts/fetch_exofop.py`), not just the bulk
+  TOI table, which can be stale (e.g. still lists max periods for solved TOIs).
+- Those community periods are our **validation set** (step 4); independent confirmation is
+  reportable, but cite the upload and don't claim discovery.
+- 104 of 276 new target-sectors are QLP-only (TESS-SPOC stops at S72, TGLC has no recent
+  sectors) → independent-reduction vetting needs our own TESSCut photometry.
+- Sectors 97 and 98 are ~55 d long (genuine). MAST has a mislabelled "Sector 1751" product.
+- Open conflict: TIC 13072758 thesis 23.794 d (n=31) vs ExoFOP 49.17 d (n=15).
+
+Next: step 3 (alias pipeline) + step 4 (validation), then CVZ targets 25194908/294097549,
+TIC 13072758, then open candidates with most expected new transits.
