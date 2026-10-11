@@ -11,6 +11,8 @@ Keep a CTOI if:
 Drop (with a recorded reason) if the star:
   - hosts a confirmed planet in NASA pscomppars (matched by TIC)
   - has any TOI (the TOI process is handling it)
+  - is a known TESS eclipsing binary (Prsa et al. 2022, ApJS 258, 16; VizieR J/ApJS/258/16,
+    Sectors 1-26; saved as data/raw/tess_eb_prsa2022.tsv)
 
 Inputs : data/raw/exofop_ctoi.csv, data/raw/exofop_toi.csv, data/raw/nasa_pscomppars.csv
 Outputs: singles/data/ctoi_singles.csv  (kept), singles/data/ctoi_singles_dropped.csv
@@ -34,6 +36,10 @@ def main():
     ps = pd.read_csv(RAW / "nasa_pscomppars.csv")
     ps_tic = set(pd.to_numeric(ps.tic_id.str.replace("TIC ", ""), errors="coerce").dropna().astype(int))
     toi_tic = set(toi["TIC ID"].astype(int))
+    eb = pd.read_csv(RAW / "tess_eb_prsa2022.tsv", sep="\t", comment="#", skiprows=[1, 2],
+                     dtype=str).dropna(subset=["TIC"])
+    eb = eb[eb.TIC.str.strip().str.isdigit()]
+    eb_per = dict(zip(eb.TIC.str.strip().astype(int), pd.to_numeric(eb.Per, errors="coerce")))
 
     notes = (c["Notes"].astype(str) + " " + c["Tag"].astype(str)).str.lower()
     per = pd.to_numeric(c["Period (days)"], errors="coerce")
@@ -48,6 +54,9 @@ def main():
     base.loc[~has_params.loc[base.index], "drop_reason"] = "missing epoch/depth/duration"
     base.loc[base["TIC ID"].isin(ps_tic) & (base.drop_reason == ""), "drop_reason"] = "host has confirmed planet (pscomppars)"
     base.loc[base["TIC ID"].isin(toi_tic) & (base.drop_reason == ""), "drop_reason"] = "star has a TOI"
+    is_eb = base["TIC ID"].isin(eb_per.keys()) & (base.drop_reason == "")
+    base.loc[is_eb, "drop_reason"] = [f"known TESS EB (Prsa+2022), P={eb_per[t]:.4f} d"
+                                      for t in base.loc[is_eb, "TIC ID"]]
     kept = base[base.drop_reason == ""].copy()
     dropped = base[base.drop_reason != ""]
 
@@ -62,7 +71,7 @@ def main():
     kept.to_csv(OUT / "ctoi_singles.csv", index=False)
     dropped.to_csv(OUT / "ctoi_singles_dropped.csv", index=False)
     print(f"kept {len(kept)} CTOIs on {kept.TIC.nunique()} TICs; dropped {len(dropped)}:")
-    print(dropped.drop_reason.value_counts().to_string())
+    print(dropped.drop_reason.str.split(",").str[0].value_counts().to_string())
     print("kept by uploader:", kept.User.value_counts().head(8).to_dict())
     print("Tmag quartiles:", kept.Tmag.quantile([.25, .5, .75]).round(2).tolist(),
           "| depth_ppm median:", round(kept.depth_ppm.median()), "| dur_h median:", round(kept.dur_h.median(), 2))

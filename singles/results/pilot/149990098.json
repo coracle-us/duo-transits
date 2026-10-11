@@ -1,0 +1,138 @@
+{
+ "TIC": 149990098,
+ "CTOI": 149990098.01,
+ "Tmag": 8.3642,
+ "depth_ppm": 320.95,
+ "dur_h": 8.07,
+ "epoch_btjd": 2234.671999999788,
+ "n_sectors": 38,
+ "event_verdict": "supported",
+ "event_depth_ppm": 301.3,
+ "event_snr": 8.7,
+ "repeats": [
+  {
+   "T": 1430.4576,
+   "sector": 4,
+   "product": "SPOC_120",
+   "depth_ppm": 422,
+   "snr": 11.1
+  },
+  {
+   "T": 1511.1576,
+   "sector": 7,
+   "product": "SPOC_120",
+   "depth_ppm": 288,
+   "snr": 8.0
+  }
+ ],
+ "n_repeats": 2,
+ "frac_logP_excluded": 0.8436666666666667,
+ "min_allowed_P": 161.97202342880686,
+ "n_allowed_ranges": 209,
+ "allowed_ranges": [
+  [
+   161.97,
+   161.97
+  ],
+  [
+   163.52,
+   163.52
+  ],
+  [
+   175.27,
+   175.27
+  ],
+  [
+   175.94,
+   175.94
+  ],
+  [
+   181.03,
+   181.03
+  ],
+  [
+   186.62,
+   186.62
+  ],
+  [
+   191.66,
+   191.66
+  ],
+  [
+   199.85,
+   199.85
+  ],
+  [
+   200.99,
+   200.99
+  ],
+  [
+   202.52,
+   203.88
+  ],
+  [
+   204.85,
+   205.04
+  ],
+  [
+   205.82,
+   205.82
+  ],
+  [
+   206.22,
+   206.22
+  ],
+  [
+   221.46,
+   221.46
+  ],
+  [
+   226.14,
+   226.14
+  ],
+  [
+   "...",
+   209
+  ]
+ ],
+ "frac_conclusive_windows": 0.6206769344277414,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 34,
+   "offset_arcsec": 2.6,
+   "offset_err_arcsec": 9.6,
+   "offset_sigma": 0.3,
+   "snr_peak": 29.4,
+   "crowded_reference": false,
+   "nearest_gaia_G": 8.73,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 4,
+   "offset_arcsec": 11.7,
+   "offset_err_arcsec": 12.9,
+   "offset_sigma": 0.9,
+   "snr_peak": 15.5,
+   "crowded_reference": false,
+   "nearest_gaia_G": 8.73,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 7,
+   "offset_arcsec": 22.3,
+   "offset_err_arcsec": 12.7,
+   "offset_sigma": 1.8,
+   "snr_peak": 3.2,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.02,
+   "nearest_gaia_sep": 33.6
+  }
+ ],
+ "event_T": 2234.671999999788,
+ "diff_images_version": "wcs-reference (2026-10-11 fix)"
+}

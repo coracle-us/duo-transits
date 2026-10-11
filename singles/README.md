@@ -51,3 +51,53 @@ frozen values.
   signals. Stale CTOIs may be shallower or noisier.
 - Difference imaging was validated earlier on TOI-5542 b and TOI-2589 b
   (`results/validation_notes.md`).
+
+## Pilot results (20 brightest eligible targets, 2026-10-11)
+
+Run: `pilot.py` then `pilot.py --redo-diffs` (after the difference-image reference-point fix),
+then `summarize_pilot.py`, giving `results/pilot/classified.csv`. Classification rules were
+fixed in code before the outcomes were seen.
+
+| Outcome | Count | Targets |
+|---|---|---|
+| Still single, no repeat in new sectors | 12 | 28–84% of log-period space 5–1500 d now excluded |
+| **New duotransit** | 1 | **TIC 147035057** (see below) |
+| Period narrowed | 1 | TIC 51079186: 21.17 / 10.59 / 5.3 d; weak dips (event SNR 5.9), unvetted |
+| Short-period periodic signal, not a long-period planet | 4 | 53847727, 89620053, 140298355, 235060821 |
+| Catalogued event not seen in our data | 1 | TIC 152283270 (10 ppt CTOI) |
+
+Notes on the short-period signals:
+- **53847727** is the known EB P = 3.0113 d (Prša+2022). We rediscovered it independently:
+  3.011 d, secondary eclipse at phase 0.499.
+- **89620053:** the event is 51″ off-target at 113σ, on a G = 11.6 neighbour. Likely a nearby
+  eclipsing binary.
+- **140298355** and **235060821:** their 6–7 dips also align at about 1 d, but that alignment is
+  weak because few dips plus short trial periods line up by chance.
+
+Since the pilot, the target builder also drops known TESS EBs (Prša+2022): 24 CTOIs on 19 stars.
+
+**Go/no-go gate: FAILED as specified.** Only 7/20 targets (35%) have a conclusive difference
+image, against the ≥60% bar. Picking the brightest stars first selected mostly shallow events
+(0.3–0.7 ppt), whose difference images in 30-min/10-min FFIs are too weak. The full list has a
+median depth of 3 ppt, so selecting by expected difference-image SNR (depth × brightness) rather
+than by brightness alone should do much better. That is a hypothesis to test, not a result.
+
+### TIC 147035057: new duotransit candidate
+
+- **Star:** TYC 5963-01913-1, Tmag 8.49, Teff 6480 K, R* ≈ 2.0 R☉.
+- **CTOI history:** 147035057.01, posted 2021-02 by the Single Transit Finder group as a single
+  transit in S33. ExoFOP has no follow-up of any kind.
+- **Second transit found:** S7 (BTJD 1515.065), in addition to the catalogued S33 event (BTJD 2224.051).
+  - Depths agree: χ² 0.08/1. The two depths are 3.19 and 3.28 ppt; the model depth is 3.6 ppt.
+  - QLP, TESS-SPOC and SPOC 2-min depths agree to within 4%.
+  - No centroid shift; nothing near momentum dumps or segment edges.
+- **Period:** ΔT = 708.976 d, and 15 aliases survive all TESS data to date (37.3–709 d). This is
+  a warm-Jupiter-size candidate (CTOI radius 11.8 R⊕).
+- **Difference images:**
+  - S33 is on target (2.9″ ± 1.0, SNR 15).
+  - S7 is 6.3″ ± 1.1 (0.3 px). The pre-registered rule therefore classifies the source as
+    "mixed". In both images the missing light is a compact blob on the target pixel, and the
+    G = 13.5 neighbours at 17″ and 24″ (each needing a ~25% eclipse) are not favoured. The
+    Cycle-1 control TOI-2589 showed 3″ offsets, so a 6″ systematic in S7 is plausible but not proven.
+- **Not in Hawthorn+24**, although it matches their S1–13 + S27–39 two-transit pattern.
+- **Files:** `results/vetting/147035057_n1.*`, `results/pilot/147035057*`.

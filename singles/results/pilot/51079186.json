@@ -1,0 +1,155 @@
+{
+ "TIC": 51079186,
+ "CTOI": 51079186.01,
+ "Tmag": 7.5048,
+ "depth_ppm": 681.0,
+ "dur_h": 2.8,
+ "epoch_btjd": 1658.7063119998202,
+ "n_sectors": 3,
+ "event_verdict": "supported",
+ "event_depth_ppm": 816.2,
+ "event_snr": 5.9,
+ "repeats": [
+  {
+   "T": 3776.0736,
+   "sector": 91,
+   "product": "SPOC_120",
+   "depth_ppm": 915,
+   "snr": 14.1
+  },
+  {
+   "T": 3797.2486,
+   "sector": 91,
+   "product": "SPOC_120",
+   "depth_ppm": 849,
+   "snr": 8.5
+  }
+ ],
+ "n_repeats": 2,
+ "frac_logP_excluded": 0.3715,
+ "min_allowed_P": 5.268424179590143,
+ "n_allowed_ranges": 542,
+ "allowed_ranges": [
+  [
+   5.27,
+   5.27
+  ],
+  [
+   5.28,
+   5.28
+  ],
+  [
+   5.29,
+   5.29
+  ],
+  [
+   6.85,
+   6.85
+  ],
+  [
+   8.21,
+   8.21
+  ],
+  [
+   8.24,
+   8.24
+  ],
+  [
+   8.49,
+   8.49
+  ],
+  [
+   8.85,
+   8.85
+  ],
+  [
+   9.05,
+   9.05
+  ],
+  [
+   9.08,
+   9.08
+  ],
+  [
+   9.31,
+   9.31
+  ],
+  [
+   9.52,
+   9.52
+  ],
+  [
+   10.02,
+   10.02
+  ],
+  [
+   10.07,
+   10.07
+  ],
+  [
+   10.31,
+   10.31
+  ],
+  [
+   "...",
+   542
+  ]
+ ],
+ "frac_conclusive_windows": 0.41391614629794826,
+ "candidate_periods": [
+  [
+   100,
+   21.17363
+  ],
+  [
+   200,
+   10.58681
+  ],
+  [
+   399,
+   5.30661
+  ],
+  [
+   400,
+   5.29341
+  ]
+ ],
+ "n_candidate_periods": 4,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 13,
+   "offset_arcsec": 26.3,
+   "offset_err_arcsec": 6.8,
+   "offset_sigma": 3.9,
+   "snr_peak": 2.0,
+   "crowded_reference": true,
+   "nearest_gaia_G": 18.71,
+   "nearest_gaia_sep": 25.5
+  },
+  {
+   "kind": "repeat",
+   "sector": 91,
+   "offset_arcsec": 14.4,
+   "offset_err_arcsec": 3.6,
+   "offset_sigma": 3.9,
+   "snr_peak": 4.2,
+   "crowded_reference": true,
+   "nearest_gaia_G": 18.75,
+   "nearest_gaia_sep": 10.7
+  },
+  {
+   "kind": "repeat",
+   "sector": 91,
+   "offset_arcsec": 19.4,
+   "offset_err_arcsec": 4.1,
+   "offset_sigma": 4.8,
+   "snr_peak": 4.6,
+   "crowded_reference": true,
+   "nearest_gaia_G": 15.67,
+   "nearest_gaia_sep": 16.0
+  }
+ ],
+ "event_T": 1658.7113119998203,
+ "diff_images_version": "wcs-reference (2026-10-11 fix)"
+}

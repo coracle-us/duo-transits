@@ -139,7 +139,7 @@ def fit_joint(data, T0, P, D, delta, b0):
 
     x0 = [T0, P, rp0, min(b0, 0.9), aR0]
     lo = [T0 - 0.1, P * 0.999, 0.005, 0.0, 1.5]
-    hi = [T0 + 0.1, P * 1.001, 0.5, 1.3, 300]
+    hi = [T0 + 0.1, P * 1.001, 0.5, 1.3, max(300.0, 3 * aR0)]  # long trial periods need large a/R*
     r = least_squares(resid, x0, bounds=(lo, hi), x_scale=[0.003, 1e-4, 0.005, 0.1, 2])
     J = r.jac
     try:

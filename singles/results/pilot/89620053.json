@@ -1,0 +1,212 @@
+{
+ "TIC": 89620053,
+ "CTOI": 89620053.01,
+ "Tmag": 8.4976,
+ "depth_ppm": 389.8,
+ "dur_h": 19.73,
+ "epoch_btjd": 2263.861099999864,
+ "n_sectors": 12,
+ "event_verdict": "supported",
+ "event_depth_ppm": 370.2,
+ "event_snr": 16.2,
+ "repeats": [
+  {
+   "T": 1560.2873,
+   "sector": 9,
+   "product": "TESS-SPOC",
+   "depth_ppm": 230,
+   "snr": 8.3
+  },
+  {
+   "T": 3020.7183,
+   "sector": 63,
+   "product": "SPOC_120",
+   "depth_ppm": 582,
+   "snr": 26.7
+  },
+  {
+   "T": 3021.7459,
+   "sector": 63,
+   "product": "SPOC_120",
+   "depth_ppm": 282,
+   "snr": 11.8
+  },
+  {
+   "T": 3703.6641,
+   "sector": 88,
+   "product": "QLP",
+   "depth_ppm": 754,
+   "snr": 21.3
+  },
+  {
+   "T": 3705.7193,
+   "sector": 88,
+   "product": "QLP",
+   "depth_ppm": 279,
+   "snr": 10.5
+  },
+  {
+   "T": 3725.2438,
+   "sector": 89,
+   "product": "QLP",
+   "depth_ppm": 380,
+   "snr": 15.3
+  },
+  {
+   "T": 3732.0259,
+   "sector": 89,
+   "product": "QLP",
+   "depth_ppm": 358,
+   "snr": 10.9
+  },
+  {
+   "T": 3753.4001,
+   "sector": 90,
+   "product": "QLP",
+   "depth_ppm": 420,
+   "snr": 15.4
+  },
+  {
+   "T": 3767.7866,
+   "sector": 90,
+   "product": "QLP",
+   "depth_ppm": 353,
+   "snr": 11.3
+  },
+  {
+   "T": 3769.2252,
+   "sector": 90,
+   "product": "QLP",
+   "depth_ppm": 517,
+   "snr": 12.7
+  },
+  {
+   "T": 3773.3356,
+   "sector": 90,
+   "product": "QLP",
+   "depth_ppm": 490,
+   "snr": 12.1
+  }
+ ],
+ "n_repeats": 11,
+ "frac_logP_excluded": 0.6988333333333333,
+ "min_allowed_P": 48.92949718171726,
+ "n_allowed_ranges": 185,
+ "allowed_ranges": [
+  [
+   48.93,
+   48.93
+  ],
+  [
+   50.87,
+   50.87
+  ],
+  [
+   62.59,
+   62.59
+  ],
+  [
+   80.07,
+   80.07
+  ],
+  [
+   81.92,
+   81.92
+  ],
+  [
+   83.09,
+   83.09
+  ],
+  [
+   84.29,
+   84.29
+  ],
+  [
+   84.85,
+   84.85
+  ],
+  [
+   86.4,
+   86.4
+  ],
+  [
+   86.73,
+   86.81
+  ],
+  [
+   92.17,
+   92.17
+  ],
+  [
+   93.49,
+   93.49
+  ],
+  [
+   94.65,
+   94.74
+  ],
+  [
+   96.38,
+   96.38
+  ],
+  [
+   97.39,
+   97.49
+  ],
+  [
+   "...",
+   185
+  ]
+ ],
+ "frac_conclusive_windows": 0.716206652512385,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 35,
+   "offset_arcsec": 51.1,
+   "offset_err_arcsec": 0.5,
+   "offset_sigma": 113.5,
+   "snr_peak": 156.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 11.57,
+   "nearest_gaia_sep": 54.1
+  },
+  {
+   "kind": "repeat",
+   "sector": 9,
+   "offset_arcsec": 7.1,
+   "offset_err_arcsec": 40.0,
+   "offset_sigma": 0.2,
+   "snr_peak": 14.4,
+   "crowded_reference": false,
+   "nearest_gaia_G": 8.6,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 63,
+   "offset_arcsec": 52.6,
+   "offset_err_arcsec": 0.5,
+   "offset_sigma": 102.4,
+   "snr_peak": 162.0,
+   "crowded_reference": false,
+   "nearest_gaia_G": 11.57,
+   "nearest_gaia_sep": 54.1
+  },
+  {
+   "kind": "repeat",
+   "sector": 63,
+   "offset_arcsec": 19.8,
+   "offset_err_arcsec": 6.1,
+   "offset_sigma": 3.3,
+   "snr_peak": 5.8,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.72,
+   "nearest_gaia_sep": 33.1
+  }
+ ],
+ "event_T": 2263.861099999864,
+ "diff_images_version": "wcs-reference (2026-10-11 fix)"
+}

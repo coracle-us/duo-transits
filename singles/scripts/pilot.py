@@ -13,7 +13,7 @@ For each target (row of singles/data/pilot_targets.csv or a validation list):
   5. difference image at the event (and at any repeat) with scripts/diff_image.py, source offset
      measured from the target's out-of-transit centroid (validated ~1-3 arcsec floor)
 
-Usage:  python singles/scripts/pilot.py [targets.csv] [out_subdir] [--no-diff]
+Usage:  python singles/scripts/pilot.py [targets.csv] [out_subdir] [--no-diff | --redo-diffs]
         (defaults: singles/data/pilot_targets.csv, singles/results/pilot)
 Output: <out>/<TIC>.json, <out>/<TIC>_windows.png, <out>/<TIC>_diffimg_s*.png, <out>/summary.csv
 """
@@ -131,31 +131,62 @@ def run_target(row, out, do_diff=True):
     cands = periods_from_repeats(g, ev_T, rep["repeats"], D)
     rep["candidate_periods"] = cands
     rep["n_candidate_periods"] = len(cands)
-    # difference images: event sector + each repeat sector
-    if not do_diff:
-        plot_windows(tic, lc, ev_T, reps, D, delta, out)
-        return rep
-    try:
-        gaia = di.gaia_field(row.RA, row.Dec)
-        tgt = gaia.iloc[0]
-        diffs = []
-        ev_secs = sorted(set(lc.sector[np.abs(lc.time - ev_T) < 1]))
-        targets = [(ev_T, s, "event") for s in ev_secs] + [(x["T"], x["sector"], "repeat") for x in reps[:3]]
-        for T, s, lab in targets:
-            r = di.analyse(tic, 1e6, T, D, int(s), tgt.ra, tgt.dec, gaia, out_dir=out)
-            if r and r.get("n_transits"):
-                diffs.append(dict(kind=lab, sector=int(s), offset_arcsec=round(r["offset_from_target_arcsec"], 1),
-                                  offset_err_arcsec=round(r["offset_err_px"] * 21, 1),
-                                  offset_sigma=round(r["offset_sigma"], 1), snr_peak=round(r["snr_peak"], 1),
-                                  nearest_gaia_G=round(r["nearest_gaia_to_source"]["G"], 2),
-                                  nearest_gaia_sep=round(r["nearest_gaia_to_source"]["sep_from_target_arcsec"], 1)))
-            else:
-                diffs.append(dict(kind=lab, sector=int(s), note="no usable difference image"))
-        rep["diff_images"] = diffs
-    except Exception as e:  # noqa: BLE001
-        rep["diff_images"] = [dict(error=str(e)[:200])]
+    rep["event_T"] = float(ev_T)
+    if do_diff:
+        rep["diff_images"] = compute_diffs(tic, row, lc, ev_T, reps, D, out)
     plot_windows(tic, lc, ev_T, reps, D, delta, out)
     return rep
+
+
+def compute_diffs(tic, row, lc, ev_T, reps, D, out):
+    """Difference images at the event and up to 3 repeats; one failure does not stop the rest."""
+    try:
+        gaia = di.gaia_field(row.RA, row.Dec)
+    except Exception as e:  # noqa: BLE001
+        return [dict(error=f"Gaia query: {str(e)[:150]}")]
+    tgt = gaia.iloc[0]
+    ev_secs = sorted(set(lc.sector[np.abs(lc.time - ev_T) < 1]))
+    jobs = [(ev_T, s, "event") for s in ev_secs] + [(x["T"], x["sector"], "repeat") for x in reps[:3]]
+    diffs = []
+    for T, s, lab in jobs:
+        try:
+            r = di.analyse(tic, 1e6, T, D, int(s), tgt.ra, tgt.dec, gaia, out_dir=out)
+        except Exception as e:  # noqa: BLE001
+            diffs.append(dict(kind=lab, sector=int(s), error=str(e)[:150]))
+            continue
+        if r and r.get("n_transits"):
+            diffs.append(dict(kind=lab, sector=int(s), offset_arcsec=round(r["offset_from_target_arcsec"], 1),
+                              offset_err_arcsec=round(r["offset_err_px"] * 21, 1),
+                              offset_sigma=round(r["offset_sigma"], 1), snr_peak=round(r["snr_peak"], 1),
+                              crowded_reference=bool(r.get("crowded_reference")),
+                              nearest_gaia_G=round(r["nearest_gaia_to_source"]["G"], 2),
+                              nearest_gaia_sep=round(r["nearest_gaia_to_source"]["sep_from_target_arcsec"], 1)))
+        else:
+            diffs.append(dict(kind=lab, sector=int(s), note="no usable difference image"))
+    return diffs
+
+
+def redo_diffs(targets, out):
+    """Recompute only the difference images for finished targets (e.g. after a diff_image fix)."""
+    for _, row in pd.read_csv(targets).iterrows():
+        f = out / f"{int(row.TIC)}.json"
+        if not f.exists():
+            continue
+        rep = json.loads(f.read_text())
+        if rep.get("status") == "error" or "event_verdict" not in rep:
+            continue
+        lc = ap.load_lightcurves(int(row.TIC))
+        D = row.dur_h / 24
+        ev_T = rep.get("event_T")
+        if ev_T is None:
+            ev = ap.test_window(lc.time.to_numpy(), lc.flux.to_numpy(), float(row.epoch_btjd), EPOCH_ERR,
+                                D, row.depth_ppm * 1e-6, lc.segment.to_numpy())
+            ev_T = float(row.epoch_btjd) + (ev.get("offset", 0.0) or 0.0)
+            rep["event_T"] = ev_T
+        rep["diff_images"] = compute_diffs(int(row.TIC), row, lc, ev_T, rep.get("repeats", []), D, out)
+        rep["diff_images_version"] = "wcs-reference (2026-10-11 fix)"
+        f.write_text(json.dumps(rep, indent=1, default=float))
+        print(f"TIC {int(row.TIC)}: {rep['diff_images']}", flush=True)
 
 
 def plot_windows(tic, lc, ev_T, reps, D, delta, out):
@@ -185,6 +216,9 @@ def main():
     out = ROOT / "singles" / "results" / (args[1] if len(args) > 1 else "pilot")
     out.mkdir(parents=True, exist_ok=True)
     do_diff = "--no-diff" not in sys.argv
+    if "--redo-diffs" in sys.argv:
+        redo_diffs(targets, out)
+        return
     rows = []
     for _, row in pd.read_csv(targets).iterrows():
         try:

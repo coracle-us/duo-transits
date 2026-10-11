@@ -1,0 +1,70 @@
+C:\git\duo-transits\.venv\Lib\site-packages\lightkurve\prf\__init__.py:7: UserWarning: Warning: the tpfmodel submodule is not available without oktopus installed, which requires a current version of autograd. See #1452 for details.
+  warnings.warn(
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  1: TIC 147855066 Tmag 7.42 depth 293 ppm dur 8.5 h event S[6] new [87, 88]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  2: TIC 53847727 Tmag 7.43 depth 7564 ppm dur 2.4 h event S[57] new [84]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  3: TIC 145601161 Tmag 7.48 depth 731 ppm dur 3.2 h event S[9] new [62, 63, 89, 90]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  4: TIC 152283270 Tmag 7.50 depth 9992 ppm dur 8.6 h event S[1] new [28, 68, 95, 106]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  5: TIC 51079186 Tmag 7.50 depth 681 ppm dur 2.8 h event S[13] new [91, 92]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  6: TIC 98794593 Tmag 7.69 depth 364 ppm dur 10.0 h event S[31] new [105, 108]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  7: TIC 121724183 Tmag 7.72 depth 603 ppm dur 1.7 h event S[11] new [38, 65]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  8: TIC 152359413 Tmag 7.85 depth 297 ppm dur 6.8 h event S[3] new [97, 104, 105, 106, 107]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick  9: TIC 235060821 Tmag 8.22 depth 400 ppm dur 14.0 h event S[7] new [98]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 10: TIC 140298355 Tmag 8.32 depth 494 ppm dur 11.0 h event S[35] new [61, 62, 63, 88, 89]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 11: TIC 149990098 Tmag 8.36 depth 321 ppm dur 8.1 h event S[34] new [37, 38, 39, 61, 62, 63, 64, 65, 66, 68, 69, 87, 88, 89, 90, 93, 95, 96, 97, 98]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 12: TIC 437935628 Tmag 8.37 depth 625 ppm dur 3.3 h event S[33] new [43, 44, 45, 71, 72, 87]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 13: TIC 130370378 Tmag 8.42 depth 1600 ppm dur 6.6 h event S[34] new [61, 87, 88]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 14: TIC 105850602 Tmag 8.47 depth 1700 ppm dur 0.9 h event S[25] new [51, 52, 78]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 15: TIC 147035057 Tmag 8.49 depth 2923 ppm dur 4.5 h event S[33] new [87, 108]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 16: TIC 89620053 Tmag 8.50 depth 390 ppm dur 19.7 h event S[35] new [61, 62, 63, 88, 89, 90]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 17: TIC 72669209 Tmag 8.55 depth 4065 ppm dur 6.9 h event S[3] new [97, 107, 108]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 18: TIC 228463329 Tmag 8.55 depth 765 ppm dur 7.5 h event S[2] new [69, 96, 107]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 19: TIC 14611330 Tmag 8.58 depth 1274 ppm dur 4.6 h event S[33] new [44, 45, 46, 71, 72, 87]
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  TIC 253040591: empty/invalid JSON, retry 1
+C:\git\duo-transits\singles\scripts\select_pilot.py:78: DeprecationWarning: numpy.fix is deprecated. Use numpy.trunc instead, which is faster and follows the Array API standard.
+  lastmod_btjd = (pd.Timestamp(r["CTOI lastmod"]).to_julian_date() - 2457000)
+  pick 20: TIC 164365027 Tmag 8.68 depth 540 ppm dur 1.8 h event S[25] new [40, 51, 52, 53, 74, 78, 79, 80]
+picked 20; skipped 2
+skip
+community period on ExoFOP    2

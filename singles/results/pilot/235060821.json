@@ -1,0 +1,177 @@
+{
+ "TIC": 235060821,
+ "CTOI": 235060821.01,
+ "Tmag": 8.224,
+ "depth_ppm": 400.0,
+ "dur_h": 14.0,
+ "epoch_btjd": 1507.5,
+ "n_sectors": 13,
+ "event_verdict": "supported",
+ "event_depth_ppm": 206.1,
+ "event_snr": 7.2,
+ "repeats": [
+  {
+   "T": 2054.9036,
+   "sector": 27,
+   "product": "SPOC_120",
+   "depth_ppm": 202,
+   "snr": 8.0
+  },
+  {
+   "T": 2055.9245,
+   "sector": 27,
+   "product": "SPOC_120",
+   "depth_ppm": 203,
+   "snr": 8.1
+  },
+  {
+   "T": 2310.2578,
+   "sector": 37,
+   "product": "SPOC_120",
+   "depth_ppm": 432,
+   "snr": 16.5
+  },
+  {
+   "T": 3048.9036,
+   "sector": 64,
+   "product": "SPOC_120",
+   "depth_ppm": 318,
+   "snr": 10.5
+  },
+  {
+   "T": 3066.5495,
+   "sector": 64,
+   "product": "SPOC_120",
+   "depth_ppm": 604,
+   "snr": 11.7
+  },
+  {
+   "T": 3862.7995,
+   "sector": 94,
+   "product": "QLP",
+   "depth_ppm": 492,
+   "snr": 13.8
+  }
+ ],
+ "n_repeats": 6,
+ "frac_logP_excluded": 0.7,
+ "min_allowed_P": 59.177310770951514,
+ "n_allowed_ranges": 194,
+ "allowed_ranges": [
+  [
+   59.18,
+   59.18
+  ],
+  [
+   62.18,
+   62.18
+  ],
+  [
+   66.27,
+   66.33
+  ],
+  [
+   69.16,
+   69.16
+  ],
+  [
+   72.88,
+   72.88
+  ],
+  [
+   75.41,
+   75.49
+  ],
+  [
+   80.3,
+   80.3
+  ],
+  [
+   84.85,
+   84.93
+  ],
+  [
+   88.39,
+   88.39
+  ],
+  [
+   88.9,
+   88.9
+  ],
+  [
+   96.75,
+   96.75
+  ],
+  [
+   97.86,
+   97.95
+  ],
+  [
+   98.89,
+   98.89
+  ],
+  [
+   99.64,
+   99.83
+  ],
+  [
+   103.9,
+   105.69
+  ],
+  [
+   "...",
+   194
+  ]
+ ],
+ "frac_conclusive_windows": 0.7330166270783848,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 7,
+   "offset_arcsec": 4.3,
+   "offset_err_arcsec": 19.3,
+   "offset_sigma": 0.2,
+   "snr_peak": 19.7,
+   "crowded_reference": false,
+   "nearest_gaia_G": 8.57,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 27,
+   "offset_arcsec": 185.9,
+   "offset_err_arcsec": 91.8,
+   "offset_sigma": 2.0,
+   "snr_peak": -5.5,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.72,
+   "nearest_gaia_sep": 162.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 27,
+   "offset_arcsec": 159.3,
+   "offset_err_arcsec": 34.6,
+   "offset_sigma": 4.6,
+   "snr_peak": -13.8,
+   "crowded_reference": false,
+   "nearest_gaia_G": 13.85,
+   "nearest_gaia_sep": 133.9
+  },
+  {
+   "kind": "repeat",
+   "sector": 37,
+   "offset_arcsec": 29.0,
+   "offset_err_arcsec": 131.3,
+   "offset_sigma": 0.2,
+   "snr_peak": 12.7,
+   "crowded_reference": false,
+   "nearest_gaia_G": 13.64,
+   "nearest_gaia_sep": 15.2
+  }
+ ],
+ "event_T": 1507.5,
+ "diff_images_version": "wcs-reference (2026-10-11 fix)"
+}
