@@ -188,3 +188,17 @@ Every repeating signal found so far is a binary star or a blend:
 
 No planet-like periodic signal has survived. The useful product is a classification of these
 stale "single-transit planet candidates" (EB, blend, or still single with excluded period ranges).
+
+## Recheck list: tentative detections in unprocessed sectors (own photometry)
+
+| TIC | What | Why tentative | Recheck when |
+|---|---|---|---|
+| 268534931 (also Hawthorn+24, open, N_alias 31) | Possible third transit, S107, BTJD 4268.870, depth ~6–7 ppt, from our own TESScut photometry. If real, the aliases narrow from 31 to 4: 92.60 / 46.30 / 30.87 / 23.15 d. Host: Gaia-clean K dwarf (Teff 5179 K, R* 0.78 R☉); candidate ~6 R⊕ | See below | SPOC/TESS-SPOC/QLP products for S107 appear on MAST; rerun `pilot.py` (it prefers pipeline products over OWN) |
+
+Why 268534931 is tentative:
+- Only an ingress plus the bottom are covered; the egress falls in a 5-h gap at a momentum dump (+7.2 h).
+- The flux level jumps by ~5 ppt across the gap.
+- S107 has strong scattered-light trends (±7 ppt).
+- The difference image is 9.5″ off at 4.5σ.
+
+Plot: `results/vetting/268534931_s107.png`.
