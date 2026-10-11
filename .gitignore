@@ -1,0 +1,8 @@
+# Downloaded data is large and re-fetchable; keep it out of git
+data/raw/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+*.fits
