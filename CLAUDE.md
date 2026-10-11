@@ -136,7 +136,8 @@ Lessons that change the plan:
 Later the same day (steps 3–6 done, project wound down):
 - Alias pipeline built and validated: `results/validation_notes.md`.
 - Vetting of the 9 single-period leads: `results/vetting/vetting_log.csv`.
-  - 4 are off-target, likely nearby eclipsing binaries.
+  - 3 are off-target, likely nearby eclipsing binaries (a 4th, TIC 265466589, was a
+    reference-point artefact in diff_image.py, corrected; see results/vetting/vetting_log.csv).
   - 1 is source-ambiguous (TOI-6559).
   - 3 are on-target periods confirmed by an independent BLS: 207783865, 38138512, 153838604.
 - **Verdict: dead end as a research direction.** The catalogue is picked over and the yield

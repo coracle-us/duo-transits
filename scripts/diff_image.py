@@ -117,15 +117,20 @@ def analyse(tic, P, T0, D, sector, ra, dec, gaia, out_dir=None):
                        bounds=([0, bx0 - 2, by0 - 2, 0.4, -np.inf], [np.inf, bx0 + 2, by0 + 2, 2.0, np.inf]))
     cx, cy = rm.x[1], rm.x[2]
     wcs_off = float(np.hypot(cx - tx, cy - ty))
-    off = np.hypot(fx - cx, fy - cy)
+    # Offsets are measured from the target's WCS (Gaia) position. Revision 2026-10-11: the
+    # earlier version measured from the out-of-transit image centroid, which LOCKS ONTO A
+    # BRIGHTER NEIGHBOUR when one sits within ~2-3 px (TIC 265466589: false 'off-target').
+    # The WCS agrees with the image centroid to <= 0.17 px for isolated targets (validated on
+    # TOI-5542, TOI-2589, TIC 1504460, 14445414), so it is the safer reference. The centroid
+    # offset is kept as a diagnostic; > 0.5 px flags a crowded field.
+    off = np.hypot(fx - tx, fy - ty)
     off_err = np.hypot(ex, ey)
-    # neighbour positions shifted by the same WCS correction
-    gx, gy = gx + (cx - tx), gy + (cy - ty)
-    tx, ty = cx, cy
+    off_vs_centroid = float(np.hypot(fx - cx, fy - cy))
     # nearest Gaia star to the fitted source position
     dist = np.hypot(gx - fx, gy - fy)
     j = np.argmin(dist)
     res = dict(sector=sector, n_transits=len(used), transits=used, wcs_vs_image_centroid_px=wcs_off,
+               crowded_reference=wcs_off > 0.5, offset_from_image_centroid_px=off_vs_centroid,
                snr_peak=float(diff.max() / derr.ravel()[np.argmax(diff)]),
                offset_from_target_px=float(off), offset_err_px=float(off_err),
                offset_from_target_arcsec=float(off * 21), offset_sigma=float(off / off_err) if off_err else None,

@@ -11,7 +11,7 @@ end. The catalogue is heavily picked over:
 |---|---|---|
 | Already solved by others when we started | 26 of 85 | Papers, an NGTS PhD thesis, and ExoFOP community users already mining TESS Sectors 87–103 |
 | Leads where the new data gave a single period | 9 | — |
-| Signal comes from a neighbouring star | 4 of 9 | Shown with difference imaging |
+| Signal comes from a neighbouring star | 3 of 9 | Shown with difference imaging (a 4th was a measurement artefact, corrected) |
 | Source ambiguous | 1 of 9 | — |
 | On-target periods that passed every check | 3 | 207783865 (24.839 d), 38138512 (30.836 d), 153838604 (56.079 d) |
 
@@ -76,7 +76,7 @@ where noted.
    centroid test, only on threshold crossings with two or more transits (per arXiv:2103.12538
    and arXiv:1909.09094 as summarised by the agent). Single events get no pixel-level vetting
    from the pipeline. TESS-Localize (Higgins & Bell, arXiv:2204.06020) is applied case by case.
-   On Hawthorn, 4 of our 9 leads were off-target, which suggests the off-target fraction is large.
+   On Hawthorn, 3 of our 9 leads were off-target, which suggests the off-target fraction is large.
 3. **Open TOIs are picked over:**
    - ExoFOP users (mason, slee, lhill, vincent) post solutions from new sectors continually.
    - Bass & Fabrycky checked TOIs with P > 27 d through S62.
