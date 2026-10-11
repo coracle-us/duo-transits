@@ -1,0 +1,5 @@
+cand_id,bkg_maxz,cen1_maxz,cen2_maxz,sap_amp,pdc_amp,hours_to_nearest_dump,n_compare_stars,compare_hits,compare_max_sigma
+C000,3.01,1.02,0.97,0.03214,0.034,68.8,3,,2.93
+C001,1.61,3.11,0.53,0.00451,0.00555,59.2,3,,1.5
+C002,2.73,4.09,2.28,0.0069,0.0069,28.23,0,,
+C003,1.25,2.59,2.22,0.00416,0.00817,29.23,1,,0.89
