@@ -7,3 +7,4 @@ matplotlib
 requests
 batman-package
 tess-point
+setuptools  # batman imports distutils (removed in Python 3.12)
