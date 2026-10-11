@@ -122,6 +122,22 @@ def parse_a3():
     return pd.DataFrame(out)
 
 
+def parse_monotools_draft():
+    """latex_tab.tex: a draft MonoTools-fit table that is NOT included in the published paper
+    (commented out of appendix.tex) but carries Tc uncertainties, which Table A2 lacks.
+    Returns TIC, t0, t0_err, t1, t1_err, tD_d (duration, days). Errors are the mean of +/-."""
+    out = []
+    for c in table_rows(SRC / "latex_tab.tex"):
+        if len(c) != 13 or not c[0].strip().isdigit():
+            continue
+        t0, t0p, t0m = val_err(c[3])
+        t1, t1p, t1m = val_err(c[4])
+        td, _, _ = val_err(c[6])
+        out.append(dict(TIC=int(c[0]), mt_t0=t0, mt_t0_err=(t0p + t0m) / 2,
+                        mt_t1=t1, mt_t1_err=(t1p + t1m) / 2, mt_tD_d=td))
+    return pd.DataFrame(out)
+
+
 def diff_transcribed(cat):
     """Compare against the web transcription. Returns a DataFrame of disagreements."""
     diffs = []
@@ -184,6 +200,17 @@ def main():
     cat["dT"] = cat["Tc2"] - cat["Tc1"]
     # Sanity: P_max should equal Tc2 - Tc1 (n = 1) and P_min = dT / n for integer n
     cat["n_max_from_Pmin"] = (cat["dT"] / cat["Pmin"]).round(3)
+
+    # Tc uncertainties from the unpublished MonoTools draft table, used only where its
+    # epochs agree with the published Table A2 (within 0.01 d); otherwise left NaN.
+    mt = parse_monotools_draft()
+    cat = cat.merge(mt, on="TIC", how="left")
+    ok = ((cat.mt_t0 - cat.Tc1).abs() < 0.01) & ((cat.mt_t1 - cat.Tc2).abs() < 0.01)
+    cat["Tc1_err"] = cat.mt_t0_err.where(ok)
+    cat["Tc2_err"] = cat.mt_t1_err.where(ok)
+    cat["Dur_h_monotools"] = (cat.mt_tD_d * 24).where(ok).round(3)
+    print(f"Tc errors from MonoTools draft table: {ok.sum()} of {len(cat)} candidates matched")
+    cat = cat.drop(columns=[c for c in cat.columns if c.startswith("mt_")])
     CAT.mkdir(parents=True, exist_ok=True)
     cat.to_csv(CAT / "candidates.csv", index=False)
     print(f"wrote {CAT / 'candidates.csv'}  ({len(cat)} rows, {len(cat.columns)} cols)")

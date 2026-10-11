@@ -6,3 +6,6 @@ __pycache__/
 venv/
 .ipynb_checkpoints/
 *.fits
+
+# Regenerable per-epoch alias tables (python scripts/validate_pipeline.py)
+results/aliases/

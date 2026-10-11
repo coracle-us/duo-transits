@@ -1,0 +1,27 @@
+TIC,tier,period,n_true,verdict_true,result,n_survivors,unique,survivors,true_supported_at,true_excluded_by,true_inconsistent_with,known_transits,flags
+39167176,thesis,21.7883,34,supported,PASS,1,True,34,3671.24(s87) 3998.07(s98) 4041.65(s98),,,supported supported,<Flags(allows_duplicate_labels=True)>
+77437543,peer-reviewed,60.33,12,allowed,PASS,10,False,1 2 3 4 5 6 8 12 13 16,,,,supported supported,<Flags(allows_duplicate_labels=True)>
+81089255,exofop-community,46.8905,16,supported,PASS,1,True,16,3713.84(s88),,,supported supported,<Flags(allows_duplicate_labels=True)>
+118339710,peer-reviewed,80.4,9,allowed,PASS,26,False,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 33 34 35,,,,supported supported,<Flags(allows_duplicate_labels=True)>
+124029677,peer-reviewed,20.33003,36,supported,PASS,1,True,36,4027.38(s98) 4271.34(s107),,,supported supported,<Flags(allows_duplicate_labels=True)>
+142278054,thesis,26.4937,27,supported,PASS,1,True,27,3767.50(s90) 4111.92(s101),,,supported supported,<Flags(allows_duplicate_labels=True)>
+157698565,peer-reviewed,61.6277,12,allowed,PASS,17,False,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 17 21,,,,supported supported,<Flags(allows_duplicate_labels=True)>
+188620407,exofop-community,43.448716,25,supported,PASS,1,True,25,3200.34(s69),,,supported supported,<Flags(allows_duplicate_labels=True)>
+193318850,toi-catalog,15.717856,47,supported,PASS,1,True,47,3015.53(s63) 3754.27(s90),,,supported supported,<Flags(allows_duplicate_labels=True)>
+224279805,thesis,22.984,32,supported,PASS,1,True,32,3185.46(s69) 4173.77(s103),,,supported supported,<Flags(allows_duplicate_labels=True)>
+242241304,exofop-community,26.7517,27,allowed,PASS,29,False,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29,,,,supported supported,<Flags(allows_duplicate_labels=True)>
+265465927,exofop-community,31.1287617,23,supported,PASS,1,True,23,3148.12(s67) 3864.08(s94) 4144.24(s102) 4175.37(s103),,,supported supported,<Flags(allows_duplicate_labels=True)>
+269333648,peer-reviewed,64.5949,11,supported,PASS,1,True,11,3024.18(s63) 3734.71(s89),,,supported supported,<Flags(allows_duplicate_labels=True)>
+289840544,exofop-community,25.9308,29,supported,PASS,1,True,29,3172.39(s68) 3820.66(s92) 3898.46(s95),,,supported supported,<Flags(allows_duplicate_labels=True)>
+303317324,peer-reviewed,29.566602,25,supported,PASS,13,False,1 2 3 4 5 6 7 8 10 12 14 24 25,3198.31(s69),,,supported supported,<Flags(allows_duplicate_labels=True)>
+304339227,exofop-community,51.0497543,14,supported,PASS,1,True,14,4123.67(s101) 4174.72(s103),,,supported supported,<Flags(allows_duplicate_labels=True)>
+306249066,toi-catalog,26.162212,28,supported,PASS,1,True,28,3032.89(s63) 3765.43(s90) 4053.21(s99) 4079.37(s100),,,supported supported,<Flags(allows_duplicate_labels=True)>
+323295479,exofop-community,185.62807,4,allowed,PASS,12,False,1 2 3 4 5 6 7 8 9 10 11 12,,,,supported supported,<Flags(allows_duplicate_labels=True)>
+333736132,peer-reviewed,25.241192,29,supported,PASS,1,True,29,3772.78(s100) 4075.67(s100),,,supported supported,<Flags(allows_duplicate_labels=True)>
+339399841,thesis,27.2487,14,supported,PASS,1,True,14,3133.55(s67) 4114.51(s101) 4141.76(s102) 4169.01(s103) 4196.26(s104),,,supported supported,<Flags(allows_duplicate_labels=True)>
+349091983,catalog-paper,549.065,1,allowed,PASS,1,True,1,,,,supported supported,<Flags(allows_duplicate_labels=True)>
+404518509,peer-reviewed,25.1292,28,supported,PASS,1,True,28,1406.14(s3) 2160.01(s31) 3944.18(s97) 3969.31(s97),,,supported supported,<Flags(allows_duplicate_labels=True)>
+412386707,toi-catalog,39.295951,19,supported,PASS,1,True,19,3694.51(s88),,,supported supported,<Flags(allows_duplicate_labels=True)>
+439491923,thesis,27.3608,26,supported,PASS,10,False,1 2 3 4 6 9 11 13 19 26,3949.96(s97),,,supported supported,<Flags(allows_duplicate_labels=True)>
+457649900,exofop-community,26.74387,28,supported,PASS,1,True,28,3077.88(s65) 4120.88(s101),,,supported supported,<Flags(allows_duplicate_labels=True)>
+466206508,peer-reviewed,75.12375,5,supported,PASS,1,True,5,3857.97(s94) 4158.47(s103),,,supported supported,<Flags(allows_duplicate_labels=True)>
