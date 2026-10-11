@@ -14,6 +14,10 @@ Options:  --by-snr      order by expected event SNR, depth_ppm * 10^(-0.2 (Tmag 
                         brightness (the brightest-first pilot picked mostly shallow events)
           --exclude F   skip TICs listed in CSV file F (e.g. an earlier batch)
           --out NAME    output name stem (default: pilot_targets)
+          --depth-min X / --depth-max Y   keep depth_ppm within [X, Y] (default 200-50000)
+          --gaia-clean  keep only stars with Gaia DR3 flags computed (data/gaia_binarity_flags.csv)
+                        and none raised: no NSS orbit, non_single_star == 0, not RV-variable,
+                        RUWE <= 1.4. Batch 2 showed deep events on such stars are mostly EBs.
 
 Usage:  python singles/scripts/select_pilot.py
 """
@@ -73,17 +77,28 @@ def main():
     if "--exclude" in args:
         exclude = set(pd.read_csv(args[args.index("--exclude") + 1]).TIC.astype(int))
     stem = args[args.index("--out") + 1] if "--out" in args else "pilot_targets"
+    dmin = float(args[args.index("--depth-min") + 1]) if "--depth-min" in args else 200.0
+    dmax = float(args[args.index("--depth-max") + 1]) if "--depth-max" in args else 50000.0
     st = sector_times()
     cand = pd.read_csv(DATA / "ctoi_singles.csv")
     cand = cand[(cand.Tmag >= TMAG_MIN) & ~cand.TIC.isin(exclude)].drop_duplicates("TIC")
     if by_snr:
         # depths > 5% are implausible for a planet (several CTOIs list 95-99%, a units/entry
         # error) and < 200 ppm are hopeless for difference imaging in FFIs
-        bad = (cand.depth_ppm > 50000) | (cand.depth_ppm < 200)
+        bad = (cand.depth_ppm > dmax) | (cand.depth_ppm < dmin)
         cand[bad][["TIC", "CTOI", "User", "Tmag", "depth_ppm"]].to_csv(
             DATA / f"{stem}_excluded_depth.csv", index=False)
-        print(f"excluded {bad.sum()} targets with depth outside 200-50000 ppm")
+        print(f"excluded {bad.sum()} targets with depth outside {dmin:.0f}-{dmax:.0f} ppm")
         cand = cand[~bad].copy()
+        if "--gaia-clean" in args:
+            g = pd.read_csv(DATA / "gaia_binarity_flags.csv")
+            g = g[g.source_id.notna()]
+            nss = g["nss_nss_solution_type"].notna() if "nss_nss_solution_type" in g else False
+            clean = g[~nss & (g.non_single_star.fillna(1) == 0) & ~g.rv_variable.fillna(False).astype(bool)
+                      & (g.ruwe.fillna(99) <= 1.4)]
+            n0 = len(cand)
+            cand = cand[cand.TIC.isin(set(clean.tic.astype(int)))].copy()
+            print(f"Gaia-clean filter: {len(cand)} of {n0} remain (flags computed for {len(g)} stars)")
         cand["snr_score"] = cand.depth_ppm * 10 ** (-0.2 * (cand.Tmag - 10))
         cand = cand.sort_values("snr_score", ascending=False)
     else:

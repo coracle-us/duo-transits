@@ -102,13 +102,46 @@ def period_constraints(g, epoch, D):
                 frac_conclusive_windows=float(conclusive.mean()))
 
 
+# Own TESScut photometry fills recent sectors that have no SPOC/TESS-SPOC/QLP light curve yet
+# (validated: recovers TIC 147035057's S33 eclipse at 3.21 vs 3.28 ppt). Lowest priority, so it
+# is used only where no pipeline product exists for a sector.
+PRODUCTS = ap.PRODUCT_RANK + ["OWN"]
+OWN_MIN_SECTOR = 100
+
+
+def add_own_photometry(tic, ra, dec):
+    import re
+
+    import lightkurve as lk
+    import tesscut_photometry as tp
+    have = set()
+    for f in (fd.LC_DIR / str(tic)).glob("s*.csv.gz"):
+        m = re.fullmatch(r"s(\d+)_(.+)_(\d+)s\.csv\.gz", f.name)
+        if m and m.group(2) in ("SPOC", "TESS-SPOC", "QLP", "OWN"):
+            have.add(int(m.group(1)))
+    try:
+        secs = sorted({int(x.split()[-1]) for x in lk.search_tesscut(f"TIC {tic}").table["mission"]})
+    except Exception:  # noqa: BLE001
+        return []
+    added = []
+    for sec in secs:
+        if sec >= OWN_MIN_SECTOR and sec not in have:
+            try:
+                tp.photometry(tic, sec, ra, dec)
+                added.append(sec)
+            except Exception as e:  # noqa: BLE001
+                print(f"  own photometry S{sec} failed: {e}")
+    return added
+
+
 def run_target(row, out, do_diff=True):
     tic = int(row.TIC)
     D, delta, epoch = row.dur_h / 24, row.depth_ppm * 1e-6, float(row.epoch_btjd)
     if not (fd.LC_DIR / str(tic) / "search_results.csv").exists():
         fd._fetch_one(0, tic)
-    lc = ap.load_lightcurves(tic)
-    rep = dict(TIC=tic, CTOI=row.CTOI, Tmag=row.Tmag, depth_ppm=row.depth_ppm, dur_h=row.dur_h,
+    own_secs = add_own_photometry(tic, row.RA, row.Dec)
+    lc = ap.load_lightcurves(tic, products=PRODUCTS)
+    rep = dict(own_photometry_sectors=own_secs, TIC=tic, CTOI=row.CTOI, Tmag=row.Tmag, depth_ppm=row.depth_ppm, dur_h=row.dur_h,
                epoch_btjd=epoch, n_sectors=int(lc.sector.nunique()) if len(lc) else 0)
     if len(lc) == 0:
         rep["status"] = "no light curves"
@@ -175,7 +208,7 @@ def redo_diffs(targets, out):
         rep = json.loads(f.read_text())
         if rep.get("status") == "error" or "event_verdict" not in rep:
             continue
-        lc = ap.load_lightcurves(int(row.TIC))
+        lc = ap.load_lightcurves(int(row.TIC), products=PRODUCTS)
         D = row.dur_h / 24
         ev_T = rep.get("event_T")
         if ev_T is None:
