@@ -1,0 +1,86 @@
+TIC,status,evidence,source,tier,period_claim_d,n_alias,flags,N_alias_paper,Pmin_paper,Pmax_paper
+1504460,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,24,19.8033,732.7225
+2669681,unclear,"K2 notes: 'possible eccentric binary', primary depth ~4.66%, P=45.975 d = dT/8 (TESS duo depth ~0.8%)","https://exofop.ipac.caltech.edu/tess/edit_obsnotes.php?id=2669681 (ExoFOP-K2 notes for EPIC 213689594, 2016-2017)",,45.975,8.0,possible EB,18,21.6307,367.7229
+9844069,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,33,22.4299,717.7563
+13072758,unclear,"CONFLICT: thesis gives 23.7940 d (n=31; one NGTS ingress + WINE full transit) but ExoFOP upload gives 49.1746 d (n=15; QLP transits S5,32,98, 'no transit later in S98 rules out P/2'). Not mutually consistent.","Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.1; https://exofop.ipac.caltech.edu/tess/target.php?id=13072758 (upload: mason, 2026-05-28)",,,,good pipeline test case,38,19.9357,737.6189
+13713700,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,37,19.6902,708.8468
+14445414,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,38,19.2816,713.4203
+20904104,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,41,17.881,715.2499
+25194908,unclear,CTOI .02 upload claims the shorter of the 2 allowed aliases; no supporting evidence stated,"https://exofop.ipac.caltech.edu/tess/target.php?id=25194908 (upload: sedgley, 2025-12-15)",,337.45806,2.0,CVZ,2,337.4949,674.9898
+32179255,unclear,"Gaia DR3 SB1 orbit P=72.13+/-0.11 d, K~27 km/s, close to dT/10=72.26 d; Hawthorn+24 lists Gaia NSS=2, RV amp 49 km/s",Gaia DR3 nss_two_body_orbit (our inference),,,,possible binary,36,20.645,722.575
+38138512,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,41,18.5019,740.0748
+39167176,resolved,"one NGTS ingress; TRICERATOPS FPP 0.96, NGTS depth shallower than TESS (chromatic?)","Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.2",thesis,21.7883,34.0,likely FP (thesis),37,20.5779,740.8032
+42428568,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,32,24.1495,748.6335
+52195587,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,18,34.4243,757.3327
+66439839,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,17,37.5344,750.688
+67599025,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,31,24.4935,734.8046
+70561926,false-positive,"KELT FP catalog: SB1, RV amp 6.6 km/s, P=21.4926 d = dT/35, depth 14.5 mmag (duo depth 16 ppt); Gaia DR3 SB1 21.5 d","Collins et al. 2018, AJ 156, 234 (VizieR J/AJ/156/234, KS22C028401)",,21.49257,35.0,,38,20.3323,752.2969
+71028120,unclear,CTOI .02 upload at an alias period; note only says 'Impact parameter and R2 high in this fit',"https://exofop.ipac.caltech.edu/tess/target.php?id=71028120 (upload: sedgley, 2025-12-15)",,19.58205,38.0,,41,18.6034,744.1429
+77437543,resolved,"TOI-2490 b, eccentric brown dwarf (not in pscomppars)","Henderson et al. 2024, MNRAS 533, 2823 (2024MNRAS.533.2823H)",peer-reviewed,60.33,12.0,"brown dwarf, not a planet",22,22.6246,723.9899
+81089255,resolved,"TOI-6480: transits in S7,35,61,62","https://exofop.ipac.caltech.edu/tess/target.php?id=81089255 (upload: mason, 2023-06-01)",exofop-community,46.8905,16.0,,23,34.1028,750.2619
+100776118,unclear,Gaia DR3 AstroSpectroSB1 P=251.3+/-0.8 d vs dT/3=249.0 d (~3 sigma); RUWE 2.37; Hawthorn+24 Gaia NSS=3,Gaia DR3 nss_two_body_orbit (our inference),,,,possible binary,16,49.7907,746.8604
+101824521,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,30,24.5232,711.174
+107113345,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,38,20.0262,740.9684
+118339710,resolved,"TOI-6695 b; both duotransit events are planet b (c is RV-only). Archive 80.389 d vs static dT/9=80.433 d (TTVs, near-resonant pair)","Eberhardt et al. 2025, AJ 169, 298 (2025AJ....169..298E)",peer-reviewed,80.4,9.0,TTVs,26,21.2912,723.8997
+123763494,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,38,19.5362,722.8387
+124029677,resolved,"TOI-5153 b, confirmed (RVs)","Ulmer-Moll et al. 2022, A&A 666, A46 (2022A&A...666A..46U)",peer-reviewed,20.33003,36.0,,40,18.7662,731.8832
+140215502,open,TFOP SG1 ground campaign Dec 2024 on the 146.777 d (n=5) alias; mixed/unsettled detections,https://exofop.ipac.caltech.edu/tess/target.php?id=140215502 (TFOP files),,,,,22,34.9473,733.8927
+140750416,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,45,16.8316,740.5926
+142278054,resolved,NGTS ingress confirmed period; 'likely planet' (FPP 0.42); extra transit in S63,"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.3",thesis,26.4937,27.0,,30,24.6665,715.3287
+145006304,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,45,16.7895,738.74
+145913596,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,14,54.0907,703.1798
+153838604,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,20,38.3703,729.0363
+156716001,open,"TOI-7602.01 (QLP, 10.30 d, 0.8 ppt, 3.8 h) is NOT an alias of dT (dT/P=71.8) and differs in depth/duration: a different signal; duotransit itself unresolved",ExoFOP TOI table,,,,,23,33.596,739.112
+157119927,false-positive,Gaia DR3 SB1 P=21.865+/-0.003 d (K~30 km/s; near but ~3 sigma from dT/32=21.856 d); ExoFOP note: 'The TESS detection shows this system is an eclipsing binary',"https://exofop.ipac.caltech.edu/tess/edit_obsnotes.php?id=157119927 (tarrants, 2024-03-10); Gaia DR3 NSS",,,,,34,21.1935,699.3844
+157698565,resolved,"TOI-2589 b, confirmed","Brahm et al. 2023, AJ 165, 227 (2023AJ....165..227B)",peer-reviewed,61.6277,12.0,,22,35.2159,739.5339
+159490807,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,34,22.7185,749.7124
+161169240,false-positive,TOI-6667.01 retired by TFOPWG as APC; spectroscopic disposition SB1 (PFS: 8 km/s shift over 25 d),"https://exofop.ipac.caltech.edu/tess/edit_obsnotes.php?id=161169240 (mlund, 2024-08-16)",,,,,30,26.0364,755.0581
+176518126,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,35,21.4848,730.4821
+188620407,resolved,"TOI-7869: transits in S2,42,69 and absence elsewhere; TOI table adopts this period","https://exofop.ipac.caltech.edu/tess/target.php?id=188620407 (upload: mason, 2023-11-17); ExoFOP TOI comment",exofop-community,43.448716,25.0,,35,24.1382,1086.2187
+193318850,resolved,TOI-7762.01 found in QLP faint-star search at an alias period,ExoFOP TOI table (data/raw/exofop_toi.csv),toi-catalog,15.717856,47.0,unverified,50,15.0763,738.7398
+207783865,open,"Gaia DR3 SB1 7.545 d (K~4.8 km/s), not an alias of dT",Gaia DR3 NSS,,,,,36,21.2908,745.1769
+211409161,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,40,18.8529,735.2653
+215402824,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,16,41.9675,755.4155
+218977148,open,"TRAPPIST-South 2025-10-25 tested P=31.94 d (n=23): possible early egress; later LCO runs, no results posted",https://exofop.ipac.caltech.edu/tess/target.php?id=218977148 (TFOP files),,,,,28,27.2084,734.627
+220622886,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,18,42.6505,725.0596
+221915858,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,42,17.7852,729.1932
+224279805,resolved,two NGTS ingresses confirmed period; TRICERATOPS 'likely planet' (FPP 0.049); ExoFOP upload (mason 2023) agrees: 22.984184 d,"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.4; https://exofop.ipac.caltech.edu/tess/target.php?id=224279805",thesis,22.984,32.0,,43,17.5116,735.4863
+235058563,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,10,88.8702,799.8319
+237605045,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,34,21.8562,721.254
+242241304,resolved,"transits in S11,38,65,102","https://exofop.ipac.caltech.edu/tess/target.php?id=242241304 (upload: slee, 2026-06-09)",exofop-community,26.7517,27.0,,32,23.3001,722.3031
+251057075,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,45,16.5387,727.7049
+256912435,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,30,24.6645,715.272
+265465927,resolved,"transits in S1,27,67,94,101,102 (last two consecutive); LCO ground detections 2025","https://exofop.ipac.caltech.edu/tess/target.php?id=265465927 (upload: mason, 2026-05-29; TFOP notes files)",exofop-community,31.1287617,23.0,,31,23.8654,715.9616
+265466589,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,25,28.5559,685.3412
+268534931,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,31,24.6934,740.8047
+269333648,resolved,"TOI-2529 b, confirmed","Jones et al. 2024, A&A 683, A192 (2024A&A...683A.192J)",peer-reviewed,64.5949,11.0,,12,64.5938,710.53
+275878706,open,Hawthorn+24 lists Gaia NSS=1,"Hawthorn et al. 2024, MNRAS 528, 1841 (arXiv:2310.17268)",,,,,33,22.522,720.7025
+279727635,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,13,65.117,781.4025
+287204963,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,42,17.7902,729.398
+289840544,resolved,"transits in S1,28,68,92,95","https://exofop.ipac.caltech.edu/tess/target.php?id=289840544 (upload: slee, 2026-04-20)",exofop-community,25.9308,29.0,,34,22.7878,751.9981
+290165539,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,35,21.624,735.2148
+292719109,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,34,21.8975,722.6178
+294097549,unclear,CTOI .02 upload claims the shortest of the 3 allowed aliases; no supporting evidence stated,"https://exofop.ipac.caltech.edu/tess/target.php?id=294097549 (upload: sedgley, 2025-12-15)",,199.53498,3.0,,3,199.5352,598.606
+296737508,open,"TOI-6267: 3 transits ~734 d apart (S8,35,62); does not narrow",ExoFOP TOI comment,,,,,36,20.9715,733.9917
+300394149,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,39,19.6984,748.5395
+303317324,resolved,"TOI-4310 b, statistically validated; period from extra transits (S69, QLP S96)","Collier et al. 2026, arXiv:2608.21560; ExoFOP TOI comment",peer-reviewed,29.566602,25.0,,45,16.7993,739.1671
+304339227,resolved,"TOI-4629: transits in S13,39,66,101,103","https://exofop.ipac.caltech.edu/tess/target.php?id=304339227 (upload: mason, 2026-06-14)",exofop-community,51.0497543,14.0,TOI table still lists 714.7 d,27,27.4878,714.6837
+306249066,resolved,"TOI-6596.01 found in QLP faint-star search; agent-reported on-time ground transits (ASTEP 2024-03-29, 2025-02-06)",ExoFOP TOI table; https://exofop.ipac.caltech.edu/tess/target.php?id=306249066 (TFOP files; not opened by us),toi-catalog,26.162212,28.0,unverified,32,23.6303,732.5379
+313671132,open,"TOI-6559: 3 transits in S11,38,65 at 733 d spacing; does not narrow. exoplanet.eu lists it as confirmed at 733 d citing arXiv:2512.00967, which only reuses the TOI value",ExoFOP TOI comment,,,,,32,23.6572,733.3724
+317923092,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,39,19.1998,729.594
+323295479,resolved,TOI-1861: EXOFASTv2 alias analysis; ground detection 2459736 + non-detections exclude all n except 4,"https://exofop.ipac.caltech.edu/tess/edit_obsnotes.php?id=323295479 (lhill, 2026-07-14); Lofvenholm 2026 MSc thesis, Chalmers https://odr.chalmers.se/items/50878040-03ee-4d18-a2f4-64202738fd83",exofop-community,185.62807,4.0,TOI table still lists 742.5 d,12,67.5013,742.5155
+332697924,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,33,22.8895,732.4722
+333736132,resolved,"NGTS-35 b = TOI-6669 b, confirmed","Kendall et al. 2026, MNRAS 547 (2026MNRAS.547f2189K, arXiv:2512.07716)",peer-reviewed,25.241192,29.0,,32,23.6127,731.9939
+339399841,resolved,"four NGTS partial transits; TRICERATOPS FPP 0.70, most likely NEB on TIC 339399847","Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.6",thesis,27.2487,14.0,likely FP (thesis),18,22.4402,381.485
+349091983,resolved,only one alias allowed by Cycle 1+3 coverage (CVZ),"Hawthorn et al. 2024, MNRAS 528, 1841 (arXiv:2310.17268) Sec. 4.2 / Table A3 (N_alias=1)",catalog-paper,549.065,1.0,,1,549.0649,549.065
+381553868,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,33,20.9168,690.2527
+393229954,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,11,75.7752,757.7521
+394340183,open,"third transit at Tc1+2dT (BTJD 3113.67) reported; consistent with every alias, does not narrow","https://exofop.ipac.caltech.edu/tess/target.php?id=394340183 (upload: essack, 2025-05-28)",,,,,10,60.3561,724.2729
+396720998,open,TOI-709.02 (duotransit) still PC. Separate 32 d signal TOI-709.01 retired as APC/BEB (chromatic). Hot subdwarf host with K companion,https://exofop.ipac.caltech.edu/tess/edit_obsnotes.php?id=396720998,,,,,12,70.6411,777.0518
+404518509,resolved,"HD 21520 b = TOI-4320, confirmed","Nies et al. 2024, MNRAS 534, 3744 (2024MNRAS.534.3744N)",peer-reviewed,25.1292,28.0,,18,23.4539,703.6168
+412386707,resolved,TOI-7619.01 found in QLP faint-star search,ExoFOP TOI table (data/raw/exofop_toi.csv),toi-catalog,39.295951,19.0,unverified,33,23.3318,746.617
+437293313,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,38,20.2606,749.6418
+439491923,resolved,three NGTS partial transits; 'likely planet' (FPP 0.24),"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.7",thesis,27.3608,26.0,,28,26.3475,711.3792
+442893494,open,no period resolution or disposition found,"pscomppars, ExoFOP TOI/CTOI + target page, SIMBAD, ADS/arXiv searches (2026-10-11)",,,,,22,21.8705,721.7257
+457649900,resolved,"TOI-4958: transits in S11,38,65,101","https://exofop.ipac.caltech.edu/tess/target.php?id=457649900 (upload: vincent, 2026-08-15)",exofop-community,26.74387,28.0,TOI table still lists 748.8 d,33,23.4008,748.8254
+466206508,resolved,"TOI-5542 b, confirmed","Grieves et al. 2022, A&A 668, A29 (2022A&A...668A..29G)",peer-reviewed,75.12375,5.0,,16,25.0419,375.6256

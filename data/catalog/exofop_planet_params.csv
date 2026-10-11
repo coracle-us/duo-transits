@@ -1,0 +1,230 @@
+TIC,provenance,name,toi,disp,period,period_err,epoch_btjd,depth_ppm,dur_h,n_alias,is_alias,user,date,notes,n_files,n_time_series,obsnotes_len
+1504460,Planet Parameters (User uploaded),TIC 1504460.01,,PC,,,1528.3969999998808,3.391,3.78,,False,hawthorn,2023-11-24 03:31:43,new CTOI,,,
+1504460,(summary),,,,,,,,,,,,,,0.0,0.0,785.0
+2669681,Planet Parameters (User uploaded),TIC 2669681.01,,PC,,,1676.7330000000075,7.458,9.69,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+2669681,Planet Parameters (User uploaded),TIC 2669681.01,,PC,,,2044.4604000002146,5374,9.5,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+2669681,(summary),,,,,,,,,,,,,,2.0,0.0,1327.0
+9844069,Planet Parameters (User uploaded),TIC 9844069.01,,PC,,,1431.1650000000373,12.838,7.2,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+9844069,(summary),,,,,,,,,,,,,,0.0,0.0,785.0
+13072758,Planet Parameters (User uploaded),TIC 13072758.01,,PC,,,1455.5945299998857,7600,,,False,brahm,2020-12-21 12:07:37,WINE single transit,,,
+13072758,Planet Parameters (User uploaded),TIC 13072758.01,,PC,49.1745691,0.00023,1455.595000000205,4789,9,15.0,True,mason,2026-05-28 09:38:52,"Period constrained by 3 transits in sectors 5,32,98 (QLP). No transit apparent later in S98 rules out P/2",,,
+13072758,Planet Parameters (User uploaded),TIC 13072758.01,,PC,,,2193.2269999999553,5870,9.072,,False,steuer,2021-02-04 07:19:05,Possible redection in sector 32; Would imply 737.632 days max period,,,
+13072758,(summary),,,,,,,,,,,,,,6.0,2.0,788.0
+13713700,Planet Parameters (User uploaded),TIC 13713700.01,,PC,,,1536.9819999998435,5.967,3.26,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+13713700,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+14445414,Planet Parameters (User uploaded),TIC 14445414.01,,PC,,,1497.555999999866,2.248,2.86,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+14445414,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+20904104,Planet Parameters (User uploaded),TIC 20904104.01,,PC,,,1390.1120000001974,0.9015,4.61,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+20904104,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+25194908,Planet Parameters (User uploaded),TIC 25194908.01,,PC,,,1402.2949999999255,6.428,9.16,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+25194908,Planet Parameters (User uploaded),TIC 25194908.02,,,337.45806,0.00041,2077.241020000074,50300,10.25,2.0002,True,sedgley,2025-12-15 03:04:03,,,,
+25194908,Planet Parameters (User uploaded),TIC 25194908.02,,PC,,,,5030,,,False,sedgley,2025-12-15 03:09:52,,,,
+25194908,(summary),,,,,,,,,,,,,,0.0,1.0,788.0
+32179255,Planet Parameters (User uploaded),TIC 32179255.01,,PC,,,1345.87900000019,4.1505,3.71,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+32179255,Planet Parameters (User uploaded),TIC 32179255.01,,PC,,,2068.4547999999486,7295,4.2,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+32179255,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+38138512,Planet Parameters (User uploaded),TIC 38138512.01,,PC,,,1559.9509999998845,18.0275,6.73,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+38138512,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+39167176,Planet Parameters (User uploaded),TIC 39167176.01,,PC,,,1470.6230000001378,7.697,6.25,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+39167176,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+42428568,Planet Parameters (User uploaded),TIC 42428568.01,,PC,,,1475.691000000108,5.1595,10.2,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+42428568,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+52195587,Planet Parameters (User uploaded),TIC 52195587.01,,PC,,,1350.277999999933,5.9565,9.07,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+52195587,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+66439839,Planet Parameters (User uploaded),TIC 66439839.01,,PC,,,1386.344000000041,5.8235,2.16,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+66439839,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+67599025,Planet Parameters (User uploaded),TIC 67599025.01,,PC,,,1404.0200000000186,5700,,,False,brahm,2021-01-09 05:35:32,"WINE single transit, another transit in S30",,,
+67599025,Planet Parameters (User uploaded),TIC 67599025.01,,PC,,,2138.818500000052,7784,5.1,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+67599025,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+70561926,Planet Parameters (User uploaded),TIC 70561926.01,,PC,,,1523.0639999997802,16.1715,5.91,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+70561926,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+71028120,Planet Parameters (User uploaded),TIC 71028120.01,,PC,,,1445.8110000002198,1.1315,6.11,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+71028120,Planet Parameters (User uploaded),TIC 71028120.02,,PC,19.58205,0.00011,1445.825319999829,900,7.11,38.0013,True,sedgley,2025-12-15 03:29:28,Impact parameter and R2 high in this fit,,,
+71028120,(summary),,,,,,,,,,,,,,0.0,0.0,788.0
+77437543,TOIs (TESS Project),TIC 77437543.01,TOI 2490.01,,,,2180.6914670001715,4407.57353051663,7.47473703967924,,False,TESS project,2024-03-26 12:03:01,,,,
+77437543,Planet Parameters (User uploaded),TIC 77437543.01,TOI 2490.01,PC,,,1456.69859000016,11000,,,False,brahm,2020-12-21 11:59:57,WINE single transit,,,
+77437543,(summary),,,,,,,,,,,,,,8.0,1.0,991.0
+81089255,TOIs (TESS Project),TIC 81089255.01,TOI 6480.01,,750.2395535,.000001,3010.4459520000964,6713,3.922,1.0,True,TESS project,2024-08-22 10:08:01,,,,
+81089255,Planet Parameters (User uploaded),TIC 81089255.01,TOI 6480.01,PC,,,2260.2069999999367,4700,4.3,,False,eisner,2021-05-20 00:47:19,PHT single transit event. Note that the field is very crowded.,,,
+81089255,Planet Parameters (User uploaded),TIC 81089255.01,TOI 6480.01,PC,46.8905,0.0005,,,,16.0003,True,mason,2023-06-01 02:39:40,"Period determined by transits in secs. 7,35,61,62",,,
+81089255,(summary),,,,,,,,,,,,,,0.0,0.0,848.0
+100776118,Planet Parameters (User uploaded),TIC 100776118.01,,PC,,,2219.652999999933,12500,21.6,,False,gsun,2021-02-20 18:42:29,Single transit event,,,
+100776118,Planet Parameters (User uploaded),TIC 100776118.01,,PC,,,2219.6656999997795,13566,22.9,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+100776118,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+101824521,Planet Parameters (User uploaded),TIC 101824521.01,,PC,,,1620.3539999998175,9.2495,8.52,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+101824521,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+107113345,Planet Parameters (User uploaded),TIC 107113345.01,,PC,,,1576.3280000002123,1.903,1.77,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+107113345,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+118339710,Confirmed Planets (Exoplanet Archive),TOI-6695 b,,,80.389,0.003,,,,9.005,False,Exoplanet Archive,2025-05-27,,,,
+118339710,Confirmed Planets (Exoplanet Archive),TOI-6695 c,,,242.4,0.4,,,,2.9864,False,Exoplanet Archive,2025-05-27,,,,
+118339710,TOIs (TESS Project),TIC 118339710.01,TOI 6695.01,,,,2249.5471390001476,2315.44243579747,8.66688493150103,,False,TESS project,2023-10-06 12:02:52,,,,
+118339710,Planet Parameters (User uploaded),TIC 118339710.01,TOI 6695.01,PC,,,1525.648109999951,4200,,,False,brahm,2020-12-21 12:41:36,WINE single transit,,,
+118339710,(summary),,,,,,,,,,,,,,14.0,0.0,1187.0
+123763494,Planet Parameters (User uploaded),TIC 123763494.01,,PC,,,1486.9290000000037,11.1865,2.47,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+123763494,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+124029677,Confirmed Planets (Exoplanet Archive),TOI-5153 b,,,20.33003,0.00007,1486.123900000006,,4.87,36.0001,True,Exoplanet Archive,2022-07-12,,,,
+124029677,TOIs (TESS Project),TIC 124029677.01,TOI 5153.01,,20.9108406,.0000669,2197.0929330000654,5936,4.478,35.0002,True,TESS project,2022-07-11 12:03:01,,,,
+124029677,Planet Parameters (User uploaded),TIC 124029677.01,TOI 5153.01,PC,,,2218.0118999998085,5108.03,4.4,,False,steuer,2021-02-15 04:50:07,Found with our in-house single transit finder,,,
+124029677,(summary),,,,,,,,,,,,,,23.0,0.0,3000.0
+140215502,Planet Parameters (User uploaded),TIC 140215502.01,,PC,,,2194.4500000001863,3850,6.936,,False,steuer,2021-02-04 07:05:33,Found with our in-house single transit finder; Sector 32,,,
+140215502,Planet Parameters (User uploaded),TIC 140215502.01,,PC,,,2194.438599999994,4239,8.7,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+140215502,(summary),,,,,,,,,,,,,,166.0,15.0,791.0
+140750416,Planet Parameters (User uploaded),TIC 140750416.01,,PC,,,1504.8020000001416,9.0545,3.85,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+140750416,Planet Parameters (User uploaded),TIC 140750416.01,,PC,,,2245.395399999805,6372,4.4,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+140750416,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+142278054,Planet Parameters (User uploaded),TIC 142278054.01,,PC,,,1595.0249999999069,2.0995,4.82,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+142278054,Planet Parameters (User uploaded),TIC 142278054.01,,PC,,,3025.684400000144,1520,4.8,,False,essack,2025-05-28 11:37:39,single transit event from the TSTPC working group,,,
+142278054,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+145006304,Planet Parameters (User uploaded),TIC 145006304.01,,PC,,,1579.50400000019,2.41,5.19,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+145006304,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+145913596,Planet Parameters (User uploaded),TIC 145913596.01,,PC,,,1539.5169999999925,1.9455,8.5,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+145913596,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+153838604,Planet Parameters (User uploaded),TIC 153838604.01,,PC,,,1447.1019999999553,15.723,2.61,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+153838604,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+156716001,TOIs (TESS Project),TIC 156716001.01,TOI 7602.01,,10.29778812572357,.000041262563754813664,3700.427709000185,793.7938858724336,3.795566455441514,71.7739,False,TESS project,2025-11-21 12:03:40,,,,
+156716001,Planet Parameters (User uploaded),TIC 156716001.01,TOI 7602.01,PC,,,1485.405999999959,2.8445,9.11,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+156716001,Planet Parameters (User uploaded),TIC 156716001.01,TOI 7602.01,PC,,,2224.4577999999747,350843,351.2,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+156716001,(summary),,,,,,,,,,,,,,0.0,0.0,851.0
+157119927,Planet Parameters (User uploaded),TIC 157119927.01,,PC,,,1591.621999999974,6.171,2.57,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+157119927,(summary),,,,,,,,,,,,,,0.0,0.0,996.0
+157698565,Confirmed Planets (Exoplanet Archive),TOI-2589 b,,,61.6277,0.0002,1494.5789999999106,,,12.0,True,Exoplanet Archive,2024-06-25,,,,
+157698565,TOIs (TESS Project),TIC 157698565.01,TOI 2589.01,,61.6277,.0001314,2973.6400120002218,8878,6.401,12.0,True,TESS project,2023-07-12 10:10:02,,,,
+157698565,Planet Parameters (User uploaded),TIC 157698565.01,TOI 2589.01,PC,,,1494.5809599999338,8900,,,False,brahm,2020-12-21 12:26:54,WINE single transit,,,
+157698565,(summary),,,,,,,,,,,,,,73.0,4.0,1398.0
+159490807,Planet Parameters (User uploaded),TIC 159490807.01,,PC,,,1606.2259999997914,5.1695,5.38,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+159490807,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+161169240,TOIs (TESS Project),TIC 161169240.01,TOI 6667.01,,,,2083.3106510001235,5126.83371176487,6.66214526122124,,False,TESS project,2024-03-28 10:08:02,,,,
+161169240,Planet Parameters (User uploaded),TIC 161169240.01,TOI 6667.01,PC,,,2083.3250000001863,8000,5.736,,False,steuer,2020-10-06 07:05:02,Found with our in-house single transit finder; transit finder output attached under &#039;Files&#039;,,,
+161169240,(summary),,,,,,,,,,,,,,1.0,0.0,1168.0
+176518126,Planet Parameters (User uploaded),TIC 176518126.01,,PC,,,1489.0550000001676,3.4045,5.61,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+176518126,Planet Parameters (User uploaded),TIC 176518126.01,,PC,,,2219.5414999998175,2973,6.7,,False,essack,2024-10-04 15:04:17,single transit event from the TSTPC working group,,,
+176518126,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+188620407,TOIs (TESS Project),TIC 188620407.01,TOI 7869.01,,43.44881820192871,.00009495386908641179,3200.335930999834,5134.327712793753,6.2736346891372445,25.0,True,TESS project,2026-07-25 12:04:08,,,,
+188620407,Planet Parameters (User uploaded),TIC 188620407.01,TOI 7869.01,PC,,,1375.5,4600,,,False,brahm,2020-12-21 13:32:04,WINE single transit,,,
+188620407,Planet Parameters (User uploaded),TIC 188620407.01,TOI 7869.01,PC,43.4487161,0.0358028,1375.4870000001974,4651,6.39,25.0001,True,mason,2023-11-17 04:15:02,"Period constrained by transits in secs. 2,42,69 and absence in other sectors",,,
+188620407,(summary),,,,,,,,,,,,,,4.0,1.0,1828.0
+193318850,TOIs (TESS Project),TIC 193318850.01,TOI 7762.01,,15.717856274800084,.00005697377047675089,3754.277052000165,7182.417612101556,3.2398651759446118,47.0,True,TESS project,2026-06-08 12:03:46,,,,
+193318850,Planet Parameters (User uploaded),TIC 193318850.01,TOI 7762.01,PC,,,1553.7700000000186,7.0295,3.89,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+193318850,(summary),,,,,,,,,,,,,,0.0,0.0,851.0
+207783865,Planet Parameters (User uploaded),TIC 207783865.01,,PC,,,1608.936999999918,17.47,1.99,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+207783865,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+211409161,Planet Parameters (User uploaded),TIC 211409161.01,,PC,,,1335.1009999997914,12.9305,2.14,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+211409161,(summary),,,,,,,,,,,,,,7.0,0.0,791.0
+215402824,Planet Parameters (User uploaded),TIC 215402824.01,,PC,,,1413.6269999998622,7.772,1.87,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+215402824,(summary),,,,,,,,,,,,,,0.0,0.0,617.0
+218977148,Planet Parameters (User uploaded),TIC 218977148.01,,PC,,,1355.4709999999031,5.2705,8.13,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+218977148,(summary),,,,,,,,,,,,,,6.0,5.0,791.0
+220622886,Planet Parameters (User uploaded),TIC 220622886.01,,PC,,,1479.5249999999069,3.9125,4.43,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+220622886,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+221915858,Planet Parameters (User uploaded),TIC 221915858.01,,PC,,,1643.3580000000075,5.6315,3.05,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+221915858,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+224279805,Planet Parameters (User uploaded),TIC 224279805.01,,PC,,,2105.228000000119,7210,5.808,,False,steuer,2020-11-13 03:44:18,Found with our in-house single transit finder; transit finder output attached under &#039;Files&#039;,,,
+224279805,Planet Parameters (User uploaded),TIC 224279805.01,,PC,22.9841835,0.04,1369.7250000000931,6144,5.78,31.9997,True,mason,2023-11-17 05:44:26,"Period constrained by transits in secs. 2,42,69",,,
+224279805,(summary),,,,,,,,,,,,,,4.0,1.0,791.0
+235058563,Planet Parameters (User uploaded),TIC 235058563.01,,PC,,,1416.6110000000335,5.897,10.17,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+235058563,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+237605045,Planet Parameters (User uploaded),TIC 237605045.01,,PC,,,1489.0430000000633,6.613,4.42,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+237605045,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+242241304,Planet Parameters (User uploaded),TIC 242241304.01,,PC,,,2345.373999999836,4800,4.15,,False,eisner,2021-07-26 04:58:29,PHT candidate. Additional transit in FFI sector 11 (BTJD ~ 1623.08).,,,
+242241304,Planet Parameters (User uploaded),TIC 242241304.01,,PC,26.7517,,1623.0800000000745,,,27.0003,True,slee,2026-06-09 16:22:01,"Period constrained by 4 transits in sectors 11, 38, 65, 102. S65 transit not available in SPOC PDCSAP_FLUX.",,,
+242241304,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+251057075,Planet Parameters (User uploaded),TIC 251057075.01,,PC,,,1426.3179999999702,2.167,4.42,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+251057075,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+256912435,Planet Parameters (User uploaded),TIC 256912435.01,,PC,,,1623.438000000082,20.979,2.72,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+256912435,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+265465927,Planet Parameters (User uploaded),TIC 265465927.01,,PC,,,1342.6499999999069,12000,,,False,brahm,2020-12-21 13:22:22,WINE single transit,,,
+265465927,Planet Parameters (User uploaded),TIC 265465927.01,,PC,31.1287617,0.0000324,1342.6460000001825,7795,6.4,23.0,True,mason,2026-05-29 12:40:23,"Period constrained by 6 transits in sectors 1,27,67,94,101,102. The latter 2 are consecutive.",,,
+265465927,(summary),,,,,,,,,,,,,,95.0,8.0,791.0
+265466589,Planet Parameters (User uploaded),TIC 265466589.01,,PC,,,1352.5240000002086,6.741,4.14,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+265466589,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+268534931,Planet Parameters (User uploaded),TIC 268534931.01,,PC,,,2139.1009999997914,4723,7.1,,False,eisner,2020-11-28 00:26:16,PHT candidate. Single transit event.,,,
+268534931,(summary),,,,,,,,,,,,,,11.0,1.0,791.0
+269333648,Confirmed Planets (Exoplanet Archive),TOI-2529 b,,,64.5949,0.0003,1538.5150999999605,,,10.9998,True,Exoplanet Archive,2024-08-29,,,,
+269333648,TOIs (TESS Project),TIC 269333648.01,TOI 2529.01,,64.5947,,3734.7356529999524,4240,8.943,10.9998,True,TESS project,2026-01-15 16:00:02,,,,
+269333648,Planet Parameters (User uploaded),TIC 269333648.01,TOI 2529.01,PC,,,1538.5,3500,,,False,brahm,2020-12-21 12:33:12,WINE single transit,,,
+269333648,(summary),,,,,,,,,,,,,,28.0,9.0,1327.0
+275878706,Planet Parameters (User uploaded),TIC 275878706.01,,PC,,,1621.0800000000745,5.932,4.38,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+275878706,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+279727635,Planet Parameters (User uploaded),TIC 279727635.01,,PC,,,1343.2269999999553,6.985,5.71,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+279727635,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+287204963,Planet Parameters (User uploaded),TIC 287204963.01,,PC,,,1402.9360000002198,10.84,4.73,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+287204963,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+289840544,Planet Parameters (User uploaded),TIC 289840544.01,,PC,,,1331.2900000000373,2.3495,2.99,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+289840544,Planet Parameters (User uploaded),TIC 289840544.01,,PC,25.9308,,1331.2900000000373,,,29.0002,True,slee,2026-04-20 12:53:45,"Period constrained by 5 transits in 5 sectors (1, 28, 68, 92, 95)",,,
+289840544,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+290165539,Planet Parameters (User uploaded),TIC 290165539.01,,PC,,,1332.7560000000522,14.3415,11.5,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+290165539,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+292719109,Planet Parameters (User uploaded),TIC 292719109.01,,PC,,,1499.7020000000484,2.768,9.08,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+292719109,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+294097549,Planet Parameters (User uploaded),TIC 294097549.01,,PC,,,1657.7409999999218,1.7015,7.96,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+294097549,Planet Parameters (User uploaded),TIC 294097549.02,,PC,199.53498,0.0005,1657.7472700001672,1390,10.01,3.0,True,sedgley,2025-12-15 03:17:13,,,,
+294097549,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+296737508,TOIs (TESS Project),TIC 296737508.01,TOI 6267.01,,733.99109376,.0000563,3005.986483000219,1675,4.719,1.0,True,TESS project,2024-09-06 10:08:02,,,,
+296737508,Planet Parameters (User uploaded),TIC 296737508.01,TOI 6267.01,PC,,,1538.0,1800,13,,False,aigrain,2019-05-16 02:39:37,Planethunters-TESS candidate (single event),,,
+296737508,(summary),,,,,,,,,,,,,,17.0,0.0,1256.0
+300394149,Planet Parameters (User uploaded),TIC 300394149.01,,PC,,,1576.8859999999404,2.123,13.4,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+300394149,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+303317324,Confirmed Planets (Exoplanet Archive),TOI-4310 b,,,29.566602,0.000065,1365.1822999999858,,,25.0001,True,Exoplanet Archive,2026-10-08,,,,
+303317324,TOIs (TESS Project),TIC 303317324.01,TOI 4310.01,,29.566735526960965,.00006857898,1365.1787999998778,1403.3389700344885,5.80864540992038,25.0,True,TESS project,2026-08-25 12:05:28,,,,
+303317324,Planet Parameters (User uploaded),TIC 303317324.01,TOI 4310.01,PC,,,1365.1899999999441,1500,,,False,eisner,2020-11-10 10:07:08,PHT candidate. Two transits separated by 739 d.,,,
+303317324,Planet Parameters (User uploaded),TIC 303317324.01,TOI 4310.01,PC,29.5665478,0.0000465,,,,25.0001,True,mason,2023-10-12 08:31:44,"Period constrained by transits in sectors 2, 29 and 69",,,
+303317324,(summary),,,,,,,,,,,,,,109.0,5.0,2775.0
+304339227,TOIs (TESS Project),TIC 304339227.01,TOI 4629.01,,714.697095595839,.0033423523,1673.3337960001081,457.08645053571,5.69194361087756,1.0,True,TESS project,2024-12-05 16:02:02,,,,
+304339227,Planet Parameters (User uploaded),TIC 304339227.01,TOI 4629.01,PC,0.0,0,1673.3300000000745,500,5.6,,False,eisner,2020-05-22 06:20:28,PHT candidate. Single transit event.,,,
+304339227,Planet Parameters (User uploaded),TIC 304339227.01,TOI 4629.01,PC,51.0497543,0.0001459,1673.3360000001267,438,5.47,13.9997,True,mason,2026-06-14 03:13:07,"Period constrained by 5 transits in sectors 13,39,66,101,103",,,
+304339227,(summary),,,,,,,,,,,,,,79.0,0.0,851.0
+306249066,TOIs (TESS Project),TIC 306249066.01,TOI 6596.01,,26.1622122,.0000408,3059.0585850002244,6329,3.631,27.9998,True,TESS project,2025-02-07 12:03:28,,,,
+306249066,(summary),,,,,,,,,,,,,,40.0,4.0,851.0
+313671132,TOIs (TESS Project),TIC 313671132.01,TOI 6559.01,,733.3796728,.000132,3071.1078710001893,2996,4.101,1.0,True,TESS project,2023-07-21 12:03:15,,,,
+313671132,(summary),,,,,,,,,,,,,,7.0,1.0,851.0
+317923092,Planet Parameters (User uploaded),TIC 317923092.01,,PC,,,1479.8179999999702,5.5365,12.96,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+317923092,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+323295479,TOIs (TESS Project),TIC 323295479.01,TOI 1861.01,,742.512660117,.00003529346300710221,3782.9623409998603,8950.639754671709,6.503665197311136,1.0,True,TESS project,2026-08-13 16:00:02,,,,
+323295479,Planet Parameters (User uploaded),TIC 323295479.01,TOI 1861.01,PC,,,1622.9300000001676,8000,6.3,,False,eisner,2020-05-16 03:29:11,PHT candidate. Single transit event.,,,
+323295479,Planet Parameters (User uploaded),TIC 323295479.01,TOI 1861.01,PC,185.62807,0.0001,2736.694639999885,8520,6.2496,4.0,True,lhill,2026-07-13 11:12:47,Resolve period alias uncertainty,,,
+323295479,Planet Parameters (User uploaded),TIC 323295479.01,TOI 1861.01,PC,,,2365.4500000001863,8702,6.5,,False,schwengeler,2021-08-07 03:24:34,VSG VisualSurveyGroup S039 obervation,,,
+323295479,(summary),,,,,,,,,,,,,,129.0,13.0,3273.0
+332697924,Planet Parameters (User uploaded),TIC 332697924.01,,PC,,,1445.75,1.2325,6.63,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+332697924,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+333736132,Confirmed Planets (Exoplanet Archive),NGTS-35 b,,,25.241192,0.000022,2334.0296299997717,,2.958,29.0,True,Exoplanet Archive,2026-01-15,,,,
+333736132,TOIs (TESS Project),TIC 333736132.01,TOI 6669.01,,731.996653902604,.000057675457,2283.5474740001373,16102.9689948534,2.89254296731904,1.0,True,TESS project,2025-12-09 12:03:42,,,,
+333736132,Planet Parameters (User uploaded),TIC 333736132.01,TOI 6669.01,PC,,,2283.5449999999255,16000,3,,False,gsun,2021-05-10 03:18:03,"newCTOI, Single transit",,,
+333736132,Planet Parameters (User uploaded),TIC 333736132.01,TOI 6669.01,PC,731.99,0.01,1551.5550000001676,,,1.0,True,gsun,2023-10-17 03:04:45,"The period or its multiple is 731.99&plusmn;0.01, and the period estimate is derived from the analysis of QLP and SPOC data.",,,
+333736132,(summary),,,,,,,,,,,,,,68.0,8.0,2364.0
+339399841,Planet Parameters (User uploaded),TIC 339399841.01,,PC,,,1662.1099999998696,5.622,6.66,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+339399841,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+349091983,Planet Parameters (User uploaded),TIC 349091983.01,,PC,,,1603.1030000001192,8.217,9.52,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+349091983,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+381553868,Planet Parameters (User uploaded),TIC 381553868.01,,PC,,,1677.3259999998845,5.8415,6.49,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+381553868,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+393229954,Planet Parameters (User uploaded),TIC 393229954.01,,PC,,,1446.7999999998137,7.412,2.67,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+393229954,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+394340183,Planet Parameters (User uploaded),TIC 394340183.01,,PC,,,1664.842999999877,11.0375,8.65,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+394340183,Planet Parameters (User uploaded),TIC 394340183.01,,PC,,,3113.6732000000775,9573,8.4,,False,essack,2025-05-28 11:37:39,single transit event from the TSTPC working group,,,
+394340183,(summary),,,,,,,,,,,,,,7.0,0.0,791.0
+396720998,TOIs (TESS Project),TIC 396720998.01,TOI 709.01,,32.3766006435432,.00007131529,1392.822000999935,52579.8740908455,3.88275209972067,24.0004,True,TESS project,2022-10-23 12:02:37,,,,
+396720998,TOIs (TESS Project),TIC 396720998.02,TOI 709.02,,777.051674199127,.009044809,1399.2211350002326,7211.92648864213,4.3877266333807,1.0,True,TESS project,2021-10-29 12:59:15,,,,
+396720998,Planet Parameters (User uploaded),TIC 396720998.01,TOI 709.01,PC,32.3793,0.0012,1425.1979999998584,58900,4.2552,23.9984,True,eastman,2019-05-31 19:52:21,EXOFASTv2 bulk fit results,,,
+396720998,(summary),,,,,,,,,,,,,,125.0,11.0,2658.0
+404518509,Confirmed Planets (Exoplanet Archive),HD 21520 b,,,25.1292,0.000089,2160.0156999998726,,4.885,28.0,True,Exoplanet Archive,2024-09-13,,,,
+404518509,TOIs (TESS Project),TIC 404518509.01,TOI 4320.01,,25.1290153,.0004454,2160.014156000223,465,4.271,28.0002,True,TESS project,2025-04-21 12:03:49,,,,
+404518509,TOIs (TESS Project),TIC 404518509.02,TOI 4320.02,,46.4093732462209,.0003647566,1417.4663320002146,435.734750459407,4.82233701122434,15.1611,False,TESS project,2024-09-18 10:08:02,,,,
+404518509,Planet Parameters (User uploaded),TIC 404518509.01,TOI 4320.01,PC,0.0,0,1431.2900000000373,800,5,,False,eisner,2020-05-15 07:17:32,PHT candidate. Single transit event.,,,
+404518509,Planet Parameters (User uploaded),TIC 404518509.01,TOI 4320.01,PC,25.12471,,1336.0750000001863,500,,28.005,False,feigelson,2023-03-01 19:01:51,DTARPS 423 in Melton+ arXiv:2302.06724,,,
+404518509,(summary),,,,,,,,,,,,,,166.0,6.0,2524.0
+412386707,TOIs (TESS Project),TIC 412386707.01,TOI 7619.01,,39.29595089873448,.00008787413583862228,3694.523694000207,3426.7799457799424,5.277259347950185,18.9998,True,TESS project,2025-11-21 12:03:40,,,,
+412386707,Planet Parameters (User uploaded),TIC 412386707.01,TOI 7619.01,PC,,,1493.9539999999106,3.5145,5.23,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+412386707,(summary),,,,,,,,,,,,,,0.0,1.0,851.0
+437293313,Planet Parameters (User uploaded),TIC 437293313.01,,PC,,,1578.4470000001602,9.1765,6.58,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+437293313,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+439491923,Planet Parameters (User uploaded),TIC 439491923.01,,PC,,,1405.4109999998473,11.687,6.7,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+439491923,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+442893494,Planet Parameters (User uploaded),TIC 442893494.01,,PC,,,1472.658999999985,6.117,7.7,,False,hawthorn,2023-11-24 03:31:43,"new CTOI, https://arxiv.org/abs/2310.17268",,,
+442893494,(summary),,,,,,,,,,,,,,0.0,0.0,791.0
+457649900,TOIs (TESS Project),TIC 457649900.01,TOI 4958.01,,748.8277169,.0057585,1606.9706979999319,2167,5.812,1.0,True,TESS project,2024-08-22 10:08:01,,,,
+457649900,Planet Parameters (User uploaded),TIC 457649900.01,TOI 4958.01,PC,26.74387,0.000104,4120.899999999907,2688,6.94,27.9999,True,vincent,2026-08-15 06:07:11,"Period constrained by 4 transits in Sector 11, 38, 65 and 101",,,
+457649900,(summary),,,,,,,,,,,,,,3.0,0.0,851.0
+466206508,Confirmed Planets (Exoplanet Archive),TOI-5542 b,,,75.12375,0.00019,1679.3475999999791,,,5.0001,True,Exoplanet Archive,2022-10-10,,,,
+466206508,TOIs (TESS Project),TIC 466206508.01,TOI 5542.01,,75.1247037,.0007741,1979.8459729999304,11171,8.599,5.0,True,TESS project,2024-09-18 10:08:02,,,,
+466206508,Planet Parameters (User uploaded),TIC 466206508.01,TOI 5542.01,PC,,,2054.9789999998175,9140,7.056,,False,steuer,2020-10-01 01:08:10,Found with our in-house single transit finder; transit finder output attached under &#039;Files&#039;,,,
+466206508,(summary),,,,,,,,,,,,,,13.0,2.0,1338.0
