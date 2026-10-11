@@ -1,0 +1,25 @@
+table,ID,TIC,column,latex,transcribed
+A1,33,157119927,Dist_pc,299.69,299.69 +8.62
+A1,33,157119927,Dist_errp,8.62,299.69 +8.62
+A1,33,157119927,Dist_errm,2.98,299.69 +8.62
+A1,36,161169240,Dist_pc,445.3,445.30 +6.33
+A1,36,161169240,Dist_errp,6.33,445.30 +6.33
+A1,36,161169240,Dist_errm,36.66,445.30 +6.33
+A1,38,188620407,Dist_pc,404.71,404.71 +3.12
+A1,38,188620407,Dist_errp,3.12,404.71 +3.12
+A1,38,188620407,Dist_errm,2.81,404.71 +3.12
+A1,41,211409161,Dist_pc,,garbled
+A1,41,211409161,Dist_errp,,garbled
+A1,41,211409161,Dist_errm,,garbled
+A1,53,265466589,Dist_pc,,30.20
+A1,53,265466589,Dist_errp,,30.20
+A1,53,265466589,Dist_errm,,30.20
+A2,77,394340183,(row),present,missing
+A2,78,396720998,(row),present,missing
+A2,79,404518509,(row),present,missing
+A2,80,412386707,(row),present,missing
+A2,81,437293313,(row),present,missing
+A2,82,439491923,(row),present,missing
+A2,83,442893494,(row),present,missing
+A2,84,457649900,(row),present,missing
+A2,85,466206508,(row),present,missing
