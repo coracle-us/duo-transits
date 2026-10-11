@@ -10,6 +10,11 @@ saturated FFIs):
     community planet-parameter upload carrying a period, or a period note
 Stop when N_PILOT targets qualify. Output: singles/data/pilot_targets.csv (+ a log of skips).
 
+Options:  --by-snr      order by expected event SNR, depth_ppm * 10^(-0.2 (Tmag - 10)), instead of
+                        brightness (the brightest-first pilot picked mostly shallow events)
+          --exclude F   skip TICs listed in CSV file F (e.g. an earlier batch)
+          --out NAME    output name stem (default: pilot_targets)
+
 Usage:  python singles/scripts/select_pilot.py
 """
 import json
@@ -62,9 +67,27 @@ def community_period(tic):
 
 def main():
     import lightkurve as lk
+    args = sys.argv[1:]
+    by_snr = "--by-snr" in args
+    exclude = set()
+    if "--exclude" in args:
+        exclude = set(pd.read_csv(args[args.index("--exclude") + 1]).TIC.astype(int))
+    stem = args[args.index("--out") + 1] if "--out" in args else "pilot_targets"
     st = sector_times()
     cand = pd.read_csv(DATA / "ctoi_singles.csv")
-    cand = cand[cand.Tmag >= TMAG_MIN].drop_duplicates("TIC").sort_values("Tmag")
+    cand = cand[(cand.Tmag >= TMAG_MIN) & ~cand.TIC.isin(exclude)].drop_duplicates("TIC")
+    if by_snr:
+        # depths > 5% are implausible for a planet (several CTOIs list 95-99%, a units/entry
+        # error) and < 200 ppm are hopeless for difference imaging in FFIs
+        bad = (cand.depth_ppm > 50000) | (cand.depth_ppm < 200)
+        cand[bad][["TIC", "CTOI", "User", "Tmag", "depth_ppm"]].to_csv(
+            DATA / f"{stem}_excluded_depth.csv", index=False)
+        print(f"excluded {bad.sum()} targets with depth outside 200-50000 ppm")
+        cand = cand[~bad].copy()
+        cand["snr_score"] = cand.depth_ppm * 10 ** (-0.2 * (cand.Tmag - 10))
+        cand = cand.sort_values("snr_score", ascending=False)
+    else:
+        cand = cand.sort_values("Tmag")
     fx.OUT.mkdir(parents=True, exist_ok=True)
     picked, log = [], []
     for _, r in cand.iterrows():
@@ -100,8 +123,8 @@ def main():
               f"dur {r.dur_h:.1f} h event S{ev_sec} new {new}")
         if len(picked) >= N_PILOT:
             break
-    pd.DataFrame(picked).to_csv(DATA / "pilot_targets.csv", index=False)
-    pd.DataFrame(log).to_csv(DATA / "pilot_selection_log.csv", index=False)
+    pd.DataFrame(picked).to_csv(DATA / f"{stem}.csv", index=False)
+    pd.DataFrame(log).to_csv(DATA / f"{stem}_selection_log.csv", index=False)
     print(f"picked {len(picked)}; skipped {len(log)}")
     if log:
         print(pd.DataFrame(log).skip.str.split(":").str[0].value_counts().to_string())

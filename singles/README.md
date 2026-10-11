@@ -101,3 +101,15 @@ than by brightness alone should do much better. That is a hypothesis to test, no
     Cycle-1 control TOI-2589 showed 3″ offsets, so a 6″ systematic in S7 is plausible but not proven.
 - **Not in Hawthorn+24**, although it matches their S1–13 + S27–39 two-transit pattern.
 - **Files:** `results/vetting/147035057_n1.*`, `results/pilot/147035057*`.
+
+#### Update, same day: period solved; host is RV-variable
+
+- **S108 eclipse (BTJD 4313.689) at the predicted time for P = 37.315 d.** S108 was released weeks ago and has no SPOC/QLP light curve, so we used our own TESScut photometry (`scripts/tesscut_photometry.py`).
+  - The same code recovers the known S33 eclipse at 3.21 ± 0.07 ppt.
+  - The S108 depth is constant across 3/9/21-pixel apertures (2.77/2.78/2.69 ppt) and the background is flat.
+  - The difference image puts the source 2.2″ ± 0.8″ from the target.
+  - Of the four aliases that predicted an S108 eclipse, only n = 19 shows one; n = 14 falls on flat data.
+- **Ephemeris:** P = 37.31497 ± 0.00003 d, T0 = BTJD 1515.0661 ± 0.0011. The three events have O−C ≤ 1.3 min (χ² 0.97, 1 dof). Files: `results/vetting/147035057_ephemeris.json` and `147035057_next_eclipses.csv`; next eclipse well placed from Paranal is 2027-01-20 03:11 UTC ± 3.4 min.
+- **No secondary eclipse at phase 0.5:** −0.05 ± 0.07 ppt.
+- **Gaia DR3: strongly RV-variable** (rv_chisq_pvalue 0, rv_renormalised_gof 99.8, rv_amplitude_robust 49.8 km/s, 27 epochs; RUWE 1.12; no NSS orbit). This points to a massive, probably stellar companion. An eccentric grazing EB is favoured; a planet or BD in a binary is not excluded. RV monitoring is needed.
+- **Write-up and draft email for observers:** `writeups/tic147035057/`.
