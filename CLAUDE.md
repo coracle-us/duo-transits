@@ -133,5 +133,18 @@ Lessons that change the plan:
 - Sectors 97 and 98 are ~55 d long (genuine). MAST has a mislabelled "Sector 1751" product.
 - Open conflict: TIC 13072758 thesis 23.794 d (n=31) vs ExoFOP 49.17 d (n=15).
 
-Next: step 3 (alias pipeline) + step 4 (validation), then CVZ targets 25194908/294097549,
-TIC 13072758, then open candidates with most expected new transits.
+Later the same day (steps 3–6 done, project wound down):
+- Alias pipeline built and validated: `results/validation_notes.md`.
+- Vetting of the 9 single-period leads: `results/vetting/vetting_log.csv`.
+  - 4 are off-target, likely nearby eclipsing binaries.
+  - 1 is source-ambiguous (TOI-6559).
+  - 3 are on-target periods confirmed by an independent BLS: 207783865, 38138512, 153838604.
+- **Verdict: dead end as a research direction.** The catalogue is picked over and the yield
+  is too small. Results were emailed to the catalogue authors instead of an RNAAS:
+  `results/outreach/`.
+- Jon cannot get an ExoFOP account (institutional affiliation required). Outputs go via RNAAS
+  or to the groups that own the candidates.
+- Side quest: flares on the 2-min hosts, `sidequests/flares/` (1 flare; a sentence at most).
+
+**Next problem set:** see `docs/problem_set_survey.md`. Current recommendation: stale
+single-transit CTOIs plus difference-image localisation. A pilot is planned but not started.
