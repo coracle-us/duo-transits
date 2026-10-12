@@ -51,3 +51,19 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
 - [x] **Submitted** by Jon on 2026-10-12 via Overleaf's 'Submit to AAS' (not waiting for Gaia
       DR4). Next: AAS emails instructions to finish the metadata on its site (choose RNAAS;
       paste the AI disclosure). Gaia DR4 (2 Dec) can go in a follow-up note.
+
+## After submission
+
+- **Received** by AAS on 12 Oct 2026 as manuscript **AAS82207** (Research Notes of the AAS,
+  corridor "The Solar System, Exoplanets, and Astrobiology").
+- **Submission site fields.** The abstract was entered as plain text and is the same as the
+  manuscript. The UAT concepts are those in the note. Funding: none.
+- **MAST dataset DOIs entered:** 10.17909/t9-nmc8-f686 (SPOC LCs), 10.17909/t9-wpz1-8s54
+  (TESS-SPOC), 10.17909/t9-r086-e880 (QLP) and 10.17909/0cp4-2j79 (FFIs). All four were verified
+  on DataCite on 2026-10-12.
+- **IPAC: yes.** We cite ExoFOP 10.26134/ExoFOP5 and NASA Exoplanet Archive PSCompPars
+  10.26133/NEA13.
+- **Revision-ready.** The `\dataset` tags for all six DOIs are in the acknowledgments of
+  `rnaas.tex`, as AAS asks for revised manuscripts. They are not in the submitted version. Use
+  this file if the editor asks for changes.
+
