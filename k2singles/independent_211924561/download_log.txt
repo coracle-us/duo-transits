@@ -1,0 +1,72 @@
+C:\git\duo-transits\.venv\Lib\site-packages\lightkurve\prf\__init__.py:7: UserWarning: Warning: the tpfmodel submodule is not available without oktopus installed, which requires a current version of autograd. See #1452 for details.
+  warnings.warn(
+--- EPIC 211924561 {'mission': 'K2'}: 11 products
+   mission      author exptime  target_name  distance
+                          s                   arcsec 
+-------------- ------- ------- ------------- --------
+K2 Campaign 05      K2    1800 ktwo211924561      0.0
+K2 Campaign 16      K2    1800 ktwo211924561      0.0
+K2 Campaign 18      K2      60 ktwo211924561      0.0
+K2 Campaign 18      K2    1800 ktwo211924561      0.0
+K2 Campaign 05 EVEREST    1800 ktwo211924561      0.0
+K2 Campaign 16 EVEREST    1800 ktwo211924561      0.0
+K2 Campaign 18 EVEREST    1800 ktwo211924561      0.0
+K2 Campaign 05    K2SC    1800 ktwo211924561      0.0
+K2 Campaign 05   K2SFF    1800 ktwo211924561      0.0
+K2 Campaign 16   K2SFF    1800 ktwo211924561      0.0
+K2 Campaign 18   K2SFF    1800 ktwo211924561      0.0
+--- TIC 238606535 {'mission': 'TESS'}: 17 products
+    mission        author  exptime target_name distance
+                              s                 arcsec 
+---------------- --------- ------- ----------- --------
+  TESS Sector 44      SPOC     120   238606535      0.0
+  TESS Sector 45      SPOC     120   238606535      0.0
+  TESS Sector 46      SPOC     120   238606535      0.0
+  TESS Sector 72      SPOC     120   238606535      0.0
+  TESS Sector 44 TESS-SPOC     600   238606535      0.0
+  TESS Sector 45 TESS-SPOC     600   238606535      0.0
+  TESS Sector 46 TESS-SPOC     600   238606535      0.0
+  TESS Sector 72 TESS-SPOC     200   238606535      0.0
+TESS Sector 1751 TESS-SPOC     200   238606535      0.0
+  TESS Sector 44       QLP     600   238606535      0.0
+  TESS Sector 45       QLP     600   238606535      0.0
+  TESS Sector 46       QLP     600   238606535      0.0
+  TESS Sector 72       QLP     200   238606535      0.0
+  TESS Sector 44      TARS     600   238606535      0.0
+  TESS Sector 45      TARS     600   238606535      0.0
+  TESS Sector 46      TARS     600   238606535      0.0
+  TESS Sector 72      TARS     200   238606535      0.0
+--- 131.0849 20.3497 {'radius': 20, 'mission': 'TESS'}: 0 products
+
+ok k2 K2 Campaign 05 K2 1800.0
+ok k2 K2 Campaign 16 K2 1800.0
+ok k2 K2 Campaign 18 K2 60.0
+ok k2 K2 Campaign 18 K2 1800.0
+ok k2 K2 Campaign 05 EVEREST 1800.0
+ok k2 K2 Campaign 16 EVEREST 1800.0
+ok k2 K2 Campaign 18 EVEREST 1800.0
+FAIL k2 7 K2 Campaign 05 K2SC Data product fC:\git\duo-transits\k2singles\independent_211924561\data\mastDownload\HLSP\hlsp_k2sc_k2_llc_211924561-c05_kepler_v2_lc\hlsp_k2sc_k2_llc_211924561-c05_kepler_v2_lc.fits of type K2SC is not supported in this version of Lightkurve.
+ok k2 K2 Campaign 05 K2SFF 1800.0
+ok k2 K2 Campaign 16 K2SFF 1800.0
+ok k2 K2 Campaign 18 K2SFF 1800.0
+ok tess TESS Sector 44 SPOC 120.0
+ok tess TESS Sector 45 SPOC 120.0
+ok tess TESS Sector 46 SPOC 120.0
+ok tess TESS Sector 72 SPOC 120.0
+ok tess TESS Sector 44 TESS-SPOC 600.0
+ok tess TESS Sector 45 TESS-SPOC 600.0
+ok tess TESS Sector 46 TESS-SPOC 600.0
+ok tess TESS Sector 72 TESS-SPOC 200.0
+ok tess TESS Sector 1751 TESS-SPOC 200.0
+ok tess TESS Sector 44 QLP 600.0
+ok tess TESS Sector 45 QLP 600.0
+ok tess TESS Sector 46 QLP 600.0
+ok tess TESS Sector 72 QLP 200.0
+FAIL tess 13 TESS Sector 44 TARS Error in reading Data product C:\git\duo-transits\k2singles\independent_211924561\data\mastDownload\HLSP\hlsp_tars_tess_ffi_s0044-0000000238606535_tess\hlsp_tars_tess_ffi_s0044-0000000238606535_tess_v01_lc.fits of type generic .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+FAIL tess 14 TESS Sector 45 TARS Error in reading Data product C:\git\duo-transits\k2singles\independent_211924561\data\mastDownload\HLSP\hlsp_tars_tess_ffi_s0045-0000000238606535_tess\hlsp_tars_tess_ffi_s0045-0000000238606535_tess_v01_lc.fits of type generic .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+FAIL tess 15 TESS Sector 46 TARS Error in reading Data product C:\git\duo-transits\k2singles\independent_211924561\data\mastDownload\HLSP\hlsp_tars_tess_ffi_s0046-0000000238606535_tess\hlsp_tars_tess_ffi_s0046-0000000238606535_tess_v01_lc.fits of type generic .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+FAIL tess 16 TESS Sector 72 TARS Error in reading Data product C:\git\duo-transits\k2singles\independent_211924561\data\mastDownload\HLSP\hlsp_tars_tess_ffi_s0072-0000000238606535_tess\hlsp_tars_tess_ffi_s0072-0000000238606535_tess_v01_lc.fits of type generic .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.

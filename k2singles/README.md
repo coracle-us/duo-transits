@@ -57,3 +57,35 @@ Re-check before any outreach or paper.
       diff image is weak (SNR 3.3).
     - To do: shape fit (V vs U), independent re-analysis, ExoFOP and literature check, predicted
       transits.
+
+### EPIC 211924561: blind re-analysis (`independent_211924561/`, 2026-10-12)
+
+A separate agent was given only the K2 C5 event and wrote all its own code. (Its brief carried wrong
+coordinates; the agent corrected them from the data headers. Our pipeline used the right position:
+same Gaia source, 0.27″.)
+
+**Four transits:**
+
+| Event | Tc (BTJD) | Note |
+|---|---|---|
+| K2 C5 | 179.8978 ± 0.0008 | |
+| K2 C16 | 1163.3554 ± 0.0013 | hidden in standard products: EVEREST flags it as outliers, K2SFF has a gap; clear in raw SAP |
+| TESS S46 | 2568.2983 ± 0.0030 | |
+| TESS S72 | 3270.7646 ± 0.0032 | |
+
+- The C5, S46 and S72 ephemeris predicted C16 at 1163.3555; it was observed at 1163.3554.
+- All m ≥ 3 are excluded by at least two flat epochs, each in 2–3 reductions.
+  **P = 140.49401 ± 0.00011 d or 70.24701 ± 0.00006 d**, with T0 = BTJD 179.89774 ± 0.00073.
+- **On target:** TESS centroid offsets are about 0.1 ± 0.1 px, ruling out the G = 16.0 and 16.6
+  neighbours; all others are too faint. The K2 pixel test is clean.
+- **No secondary eclipse** at phase 0.5 for P = 70.25 d: −0.04 ± 0.05 ppt.
+- **V-shaped and grazing:** b ≥ 0.95, and flat-bottomed fits are worse by Δχ² ≈ 20.
+  - T14 = 3.0 h, against a central-transit 15.2 h (140.5 d) or 12.1 h (70.2 d) for the Gaia star.
+  - A circular orbit with the Gaia density is strongly disfavoured (Δχ² 265 and 69).
+  - Explanations: e ≥ 0.5 (140.5 d) or ≥ 0.31 (70.2 d), a grazing large or stellar companion, or
+    a different host.
+  - R2/R* is about 0.055–0.16 or more, i.e. ≈0.9–2.7 R_J or more.
+- **Status:** the period is narrowed to two values with high confidence. The companion's nature is
+  uncertain and possibly stellar; RVs or high-resolution imaging would settle it.
+- **Next distinguishing epoch:** BTJD 4324.47 (70.2 d only), which was 2026-10-11, just missed. The
+  next shared epoch is BTJD 4394.7 (about 2026-12-20).

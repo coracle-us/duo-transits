@@ -1,0 +1,108 @@
+{
+ "K2_C5": {
+  "core r<=1": {
+   "depth_ppt": 0.373,
+   "err_ppt": 0.656,
+   "npix": 5,
+   "flux_frac": 0.867
+  },
+  "ring 1<r<=2.3": {
+   "depth_ppt": 9.976,
+   "err_ppt": 3.805,
+   "npix": 16,
+   "flux_frac": 0.125
+  },
+  "outer r>2.3": {
+   "depth_ppt": 4.553,
+   "err_ppt": 2.455,
+   "npix": 48,
+   "flux_frac": 0.007
+  },
+  "left half": {
+   "depth_ppt": 2.998,
+   "err_ppt": 1.04,
+   "npix": 8,
+   "flux_frac": 0.234
+  },
+  "right half": {
+   "depth_ppt": -7.102,
+   "err_ppt": 5.741,
+   "npix": 8,
+   "flux_frac": 0.076
+  },
+  "lower half": {
+   "depth_ppt": 24.463,
+   "err_ppt": 12.367,
+   "npix": 8,
+   "flux_frac": 0.269
+  },
+  "upper half": {
+   "depth_ppt": -3.735,
+   "err_ppt": 3.772,
+   "npix": 8,
+   "flux_frac": 0.258
+  },
+  "all r<=2.3": {
+   "depth_ppt": 1.979,
+   "err_ppt": 0.103,
+   "npix": 21,
+   "flux_frac": 0.993
+  }
+ },
+ "TESS_S46": {
+  "SPOC aperture": {
+   "depth_ppt": 1.981,
+   "err_ppt": 0.175,
+   "npix": 14
+  },
+  "core r<=1": {
+   "depth_ppt": 1.841,
+   "err_ppt": 0.212,
+   "npix": 5
+  },
+  "ring 1<r<=2.3": {
+   "depth_ppt": 2.563,
+   "err_ppt": 0.406,
+   "npix": 16
+  },
+  "outer 2.3<r<=4": {
+   "depth_ppt": 3.938,
+   "err_ppt": 1.9,
+   "npix": 28
+  },
+  "centroid_offset_pix": {
+   "dx": -0.001,
+   "dy": -0.1,
+   "sx": 0.098,
+   "sy": 0.104
+  }
+ },
+ "TESS_S72": {
+  "SPOC aperture": {
+   "depth_ppt": 1.727,
+   "err_ppt": 0.186,
+   "npix": 17
+  },
+  "core r<=1": {
+   "depth_ppt": 1.46,
+   "err_ppt": 0.243,
+   "npix": 5
+  },
+  "ring 1<r<=2.3": {
+   "depth_ppt": 1.812,
+   "err_ppt": 0.353,
+   "npix": 16
+  },
+  "outer 2.3<r<=4": {
+   "depth_ppt": 2.068,
+   "err_ppt": 1.215,
+   "npix": 28
+  },
+  "centroid_offset_pix": {
+   "dx": -0.146,
+   "dy": -0.063,
+   "sx": 0.099,
+   "sy": 0.103
+  }
+ }
+}
