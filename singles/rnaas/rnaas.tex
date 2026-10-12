@@ -1,0 +1,150 @@
+%% RNAAS submission draft, AASTeX v7. Compile on Overleaf (the AAS template ships aastex7.cls).
+%% Every number traces to a file in this repository; see singles/rnaas/numbers.md.
+\documentclass{aastex7}
+
+\begin{document}
+
+\title{Revisiting Stale TESS Single-transit Community Candidates: Mostly Eclipsing Binaries, Two New Duotransits}
+
+\author[orcid=]{Jon McBee}
+\affiliation{Independent researcher, USA}
+\email{jon.mcbee@gmail.com}
+
+\begin{abstract}
+Community TESS Objects of Interest (CTOIs) flagged as single transits are rarely revisited.
+We re-examined 306 such stars against all TESS data through Sector 108. We used a validated
+repeat search, our own photometry for sectors not yet processed by the TESS pipelines,
+difference-image localization and Gaia DR3 binarity diagnostics. Of 272 stars whose catalogued
+event we recover, 79 show repeat events. Of these, 21 are Gaia-flagged binaries (three Gaia
+orbits reproduce our periods), 18 are blends, 23 fit no single period, and 17 needed vetting by
+hand. CTOI 147035057.01 has a fixed 37.315\,d period, but a grazing eclipse on an RV-variable
+host, so its companion is probably stellar. Two on-target duotransits survive. In TIC 159614322,
+a partial third transit leaves $P=89.965$ or $179.930$\,d; TIC 229055790 is the other. For 193
+candidates that remain single, a median 52\% of log-period space (5--1500\,d) is now excluded.
+\end{abstract}
+
+\keywords{\uat{Exoplanet detection methods}{489} --- \uat{Transit photometry}{1709} --- \uat{Eclipsing binary stars}{444}}
+
+\section{Sample}
+
+ExoFOP lists hundreds of CTOIs uploaded as single transits, with no period, mostly in
+2020--2022. We took the 450 open CTOIs flagged as single or duo transits, excluding those of
+groups still working their candidates. We then removed 46 with missing parameters, 8 on stars
+hosting confirmed planets, 4 on stars with a TOI, and 24 on catalogued TESS eclipsing binaries
+\citep{Prsa2022}. This left 368 CTOIs on 359 stars. Of these, 32 already carry a community
+period and were not re-analyzed. Some entries are simply stale: CTOI 1042868.01, for example,
+is the RV-detected planet HD~88986\,b, whose possible TESS transits were analyzed by
+\citet{Heidari2024}.
+
+\section{Methods}
+
+We used SPOC 2-min, TESS-SPOC \citep{Caldwell2020} and QLP \citep{Huang2020} light curves from
+MAST. For Sectors $\geq100$ without pipeline products, we performed our own aperture photometry
+on TESScut cutouts \citep{Brasseur2019}; it recovers a known eclipse depth to 2\%.
+
+The repeat search slides a box of the catalogued depth $\delta$ and duration $D$ on a $D/4$
+grid, with segment-aware local baselines. A detection needs SNR $\geq8$, a depth of
+0.5--2$\,\delta$, at least 80\% coverage, and baseline on both sides. Candidate periods come
+from linear-ephemeris fits to all events. Any period with a predicted epoch on flat data is
+rejected. We validated the method blind, starting from the first transit only, on 26 TESS
+duotransit hosts with known periods \citep[including][]{Hawthorn2024}. It kept the true period
+in 26/26 and returned it as the unique solution in 19, with no wrong unique answers.
+
+We localized sources with TESScut difference images, measuring offsets from the target's Gaia
+DR3 position \citep{Gaia2023}. A source is off-target if it is offset by $\geq6''$ at
+$\geq3\sigma$; ``firm'' requires two agreeing images. On known planets the offsets are
+1--3$''$. Binarity indicators are Gaia DR3 \texttt{non\_single\_star}, two-body orbits, and RV
+variability \citep[$p\leq0.01$, renormalised GOF $>4$;][]{Katz2023}.
+
+\section{Results}
+
+Of the 306 stars, 34 do not show the catalogued event in our reductions, and 193 show no repeat.
+The 79 stars with repeats break down as follows:
+\begin{itemize}
+\item 21 are on Gaia-flagged binaries. Three Gaia SB1 orbits reproduce our TESS periods
+  (Table~\ref{tab:systems}), so these are eccentric eclipsing binaries.
+\item 18 are firmly off-target, i.e.\ blends with neighbors.
+\item 23 show repeats that no single period explains.
+\item 17 were vetted by hand: 2 survive (below), 3 remain tentative, 5 are possibly off-target,
+  and 7 were rejected (inconsistent depths, absent in an independent reduction, or a host too
+  large).
+\end{itemize}
+The 3 tentative cases have a repeat seen so far only in our own Sector~107 photometry.
+
+\textit{CTOI 147035057.01.} Three eclipses (Sectors 7, 33, and 108, the last from our own
+photometry) fix $P=37.31497\pm0.00003$\,d; the S108 eclipse rules out every shorter alias. The
+eclipse is on target, with no secondary at phase 0.5. A fit with impact parameter and radius
+ratio free favours a V-shaped grazing eclipse over a full transit ($\Delta$BIC\,$\approx10$).
+The radius ratio is $k=0.34$ (95\%: 0.09--0.75), so $R_2>1.7\,R_{\rm J}$ for the
+2.0\,$R_\odot$ host. Gaia DR3 measures an RV amplitude of 50\,km\,s$^{-1}$, which implies
+$M_2\gtrsim0.6\,M_\odot$. The companion is probably stellar. A low RUWE (1.12), however, leaves
+a near-equal SB2 pair possible, and Gaia DR4 epoch RVs should decide.
+
+\textit{TIC 159614322.} Transits in Sectors 14 and 41 have consistent depths ($\approx3.2$\,ppt,
+$\approx9.7$\,h) across products, and they are on target. Flat data leave $P=719.72/n$ with
+$n\in\{1,2,4,5,8\}$. Sector 21 then contains an ingress and $\approx9$\,h of transit floor,
+with the egress lost in the orbit-1 downlink gap. It appears in TESS-SPOC, QLP, and our own
+photometry, with a flat background and no pointing step. A blind re-analysis with independent
+code also found it. It selects $n=8$ or $n=4$, giving $P=89.9651\pm0.0006$ or
+$179.9302\pm0.0012$\,d with $T_0={\rm BJD_{TDB}}\,2458703.8277\pm0.0041$. These values are fitted
+from the two full transits; the partial transit arrives 13--26\,min late, which may reflect a
+timing bias from the missing egress. The companion is $\approx0.9\,R_{\rm J}$, and the host is
+RV-stable in Gaia DR3. Both periods predict a transit at 2026-12-28 06:42\,UTC ($\pm45$\,min,
+errors inflated $\times2.1$). A dedicated sweep of all 272 stars for transits truncated by data
+gaps found no other convincing case: gap-edge dips do not outnumber gap-edge brightenings.
+
+\textit{TIC 229055790.} This candidate, uploaded by the Planet Hunters TESS project
+\citep[see][]{Eisner2021}, shows transits in
+Sectors 1 and 68 with consistent depths, on target, re-detected independently. With 38 allowed
+periods $\geq26.7$\,d and $R_p\approx3.8\,R_\oplus$, it is worth monitoring.
+
+\begin{deluxetable*}{llll}
+\tablecaption{Selected systems.\label{tab:systems}}
+\tablehead{\colhead{TIC} & \colhead{Events (Sectors)} & \colhead{Period} & \colhead{Notes}}
+\startdata
+147035057 & 7, 33, 108$^a$ & $37.31497\pm0.00003$\,d & grazing; Gaia RV-variable; likely EB \\
+159614322 & 14, 41; 21 (partial) & $89.9651\pm0.0006$ or $179.9302\pm0.0012$\,d & $\approx0.9\,R_{\rm J}$; on target; Gaia RV-stable \\
+229055790 & 1, 68 & $1838.945/n\geq26.7$\,d (38 aliases) & $\approx3.8\,R_\oplus$; on target \\
+231969683 & 6, 32, 34, 87, 98 & 21.978\,d & Gaia SB1: $21.969\pm0.005$\,d \\
+230130556 & 32 sectors, 15--86 & 22.259\,d & Gaia SB1: $22.245\pm0.024$\,d \\
+458419988 & 48, 75 & $734.56/40=18.36$\,d & Gaia SB1: 18.355\,d \\
+268534931 & 3, 30; 107$^{a,b}$ & 92.60, 46.30, 30.87 or 23.15\,d$^b$ & candidate of \citet{Hawthorn2024} \\
+139726266 & 32; 107$^{a,b}$ & $2109.0/n$\,d$^b$ & $\approx2.8\,R_\oplus$ \\
+\enddata
+\tablecomments{$^a$Our own TESScut photometry. $^b$Tentative; to be rechecked when pipeline products for Sector 107 appear. The per-CTOI classification of all 306 stars is available in the repository cited below.}
+\end{deluxetable*}
+
+\section{Conclusion}
+
+Stale single-transit CTOIs with repeat signals are mostly stellar, and inexpensive Gaia binarity
+checks and difference imaging dispose of most of them. The residue is small but useful: two
+on-target duotransits with alias lists short enough to target, and a few tentative repeats that
+pipeline products will confirm or reject. Code, light-curve products and classifications are at
+\url{https://github.com/coracle-us/duo-transits}.
+
+\begin{acknowledgments}
+This work uses TESS data (SPOC, TESS-SPOC, QLP, and TESScut, via MAST), ESA Gaia DR3, ExoFOP, and
+the NASA Exoplanet Archive. The author used an AI assistant (Anthropic's Claude) to write the
+analysis code and to draft and edit this note. The author has checked the text, the numbers, and
+the references.
+\end{acknowledgments}
+
+\facilities{TESS, Gaia}
+\software{lightkurve \citep{Lightkurve2018}, astroquery \citep{Ginsburg2019}, batman \citep{Kreidberg2015}, astrocut \citep{Brasseur2019}}
+
+\begin{thebibliography}{}
+\bibitem[Brasseur et al.(2019)]{Brasseur2019} Brasseur, C.~E., Phillip, C., Fleming, S.~W., Mullally, S.~E., \& White, R.~L. 2019, Astrocut: Tools for creating cutouts of TESS images, Astrophysics Source Code Library, ascl:1905.007
+\bibitem[Caldwell et al.(2020)]{Caldwell2020} Caldwell, D.~A., Tenenbaum, P., Twicken, J.~D., et al. 2020, RNAAS, 4, 201
+\bibitem[Eisner et al.(2021)]{Eisner2021} Eisner, N.~L., Barrag\'an, O., Lintott, C., et al. 2021, MNRAS, 501, 4669
+\bibitem[Gaia Collaboration et al.(2023)]{Gaia2023} Gaia Collaboration, Vallenari, A., Brown, A.~G.~A., et al. 2023, A\&A, 674, A1
+\bibitem[Ginsburg et al.(2019)]{Ginsburg2019} Ginsburg, A., Sip{\H o}cz, B.~M., Brasseur, C.~E., et al. 2019, AJ, 157, 98
+\bibitem[Hawthorn et al.(2024)]{Hawthorn2024} Hawthorn, F., Gill, S., Bayliss, D., et al. 2024, MNRAS, 528, 1841
+\bibitem[Heidari et al.(2024)]{Heidari2024} Heidari, N., Boisse, I., Hara, N.~C., et al. 2024, A\&A, 681, A55
+\bibitem[Huang et al.(2020)]{Huang2020} Huang, C.~X., Vanderburg, A., P\'al, A., et al. 2020, RNAAS, 4, 204
+\bibitem[Katz et al.(2023)]{Katz2023} Katz, D., Sartoretti, P., Guerrier, A., et al. 2023, A\&A, 674, A5
+\bibitem[Kreidberg(2015)]{Kreidberg2015} Kreidberg, L. 2015, PASP, 127, 1161
+\bibitem[Lightkurve Collaboration et al.(2018)]{Lightkurve2018} Lightkurve Collaboration, Cardoso, J.~V.~d.~M., Hedges, C., et al. 2018, Lightkurve: Kepler and TESS time series analysis in Python, Astrophysics Source Code Library, ascl:1812.013
+\bibitem[Pr{\v s}a et al.(2022)]{Prsa2022} Pr{\v s}a, A., Kochoska, A., Conroy, K.~E., et al. 2022, ApJS, 258, 16
+\end{thebibliography}
+
+\end{document}

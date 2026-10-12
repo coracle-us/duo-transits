@@ -1,4 +1,6 @@
-# RNAAS draft (working). Numbers filled from singles/results/final_classification.csv (2026-10-11).
+# RNAAS draft (working notes)
+
+**Superseded by `rnaas.tex` (AASTeX v7, 2026-10-11).** That file is the version to edit and submit. `numbers.md` maps every number to its source and holds the pre-submission checklist. Note that RNAAS abstracts are limited to 150 words.
 
 **Target:** Research Notes of the AAS, at most ~1,000–1,500 words, one table or one figure.
 AASTeX version to follow once numbers are final.
@@ -45,8 +47,8 @@ candidates remain single, with a median 52% of log-period space (5–1500 d) now
   with a TOI, and 24 on catalogued TESS eclipsing binaries (Prša et al. 2022). This leaves
   368 CTOIs on 359 stars.
 - **Not re-analysed:** 32 stars whose ExoFOP entries already carry a community period.
-- **Stale entries:** for example, CTOI 1042868.01 is the confirmed planet HD 88986 b
-  (Heidari et al. 2024).
+- **Stale entries:** for example, CTOI 1042868.01 is the RV-detected planet HD 88986 b, whose possible
+  TESS transits Heidari et al. (2024) analysed. It is only *possibly* transiting.
 
 ## 2. Methods
 
