@@ -67,3 +67,13 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
   `rnaas.tex`, as AAS asks for revised manuscripts. They are not in the submitted version. Use
   this file if the editor asks for changes.
 
+
+- **Sample arithmetic** (Jon's reviewer, 2026-10-12). The 359 stars break down as:
+  - 32 skipped because a community period already exists;
+  - 22 outside the cuts in `run_remaining.py` (Tmag ≥ 7 and depth 200–50,000 ppm): 7 brighter than
+    T = 7 and 15 with depths outside that range, mostly placeholder values near 100%;
+  - 305 analysed.
+
+  The 306 classified also include TIC 53847727, a pilot target later removed from the sample as a
+  Prša+2022 EB. The fix is a sentence in `rnaas.tex` (revision-ready); the submitted version
+  lacks it.
