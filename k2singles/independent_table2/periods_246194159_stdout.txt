@@ -1,0 +1,90 @@
+  event    type           t0       err     depth      T14_h     T12_h                                           sources
+0  C12a  narrow   747.384981  0.000212  0.375337   7.386930  3.277767  K2-c12-PDCSAP-LC;K2-c12-K2SFF;K2-c12-EVERESTallq
+1  C12b    wide   810.906110  0.000405  0.302834  13.813800  5.916075  K2-c12-PDCSAP-LC;K2-c12-K2SFF;K2-c12-EVERESTallq
+2   S70    wide  3227.996810  0.000264  0.297783  13.866477  5.918963       TESS-S70-TESSSPOC;TESS-S70-QLP;TESS-S70-CUT
+3  S92a    wide  3813.957855  0.000283  0.297724  13.876886  5.923197                         TESS-S92-QLP;TESS-S92-CUT
+4  S92b  narrow  3823.682361  0.000142  0.374882   7.425413  3.298140                         TESS-S92-QLP;TESS-S92-CUT
+73 candidate periods consistent with all event times
+   N=42 73.24517374198571 5.4040252896071464e-06 chi2 1.085708910291752 res(min) [-0.08  0.04  0.23  0.18 -0.32]
+   N=84 36.622586870992855 2.7020126448035732e-06 chi2 1.085708910291752 res(min) [-0.08  0.04  0.23  0.18 -0.32]
+   N=126 24.415057913995213 1.8013417632023818e-06 chi2 1.0857089110532212 res(min) [-0.08  0.04  0.23  0.18 -0.32]
+   N=168 18.311293435496427 1.3510063224017866e-06 chi2 1.085708910291752 res(min) [-0.08  0.04  0.23  0.18 -0.32]
+   N=210 14.64903474839712 1.0808050579214288e-06 chi2 1.085708909856181 res(min) [-0.08  0.04  0.23  0.18 -0.32]
+   K2-c12-PDCSAP-LC         sigma[narrow]=22ppm sigma[wide]=24ppm
+   K2-c19-SAP-LC            sigma[narrow]=811ppm sigma[wide]=654ppm
+   K2-c12-K2SFF             sigma[narrow]=20ppm sigma[wide]=23ppm
+   K2-c19-K2SFF             sigma[narrow]=23ppm sigma[wide]=14ppm
+   TESS-S42-SPOC120         sigma[narrow]=61ppm sigma[wide]=62ppm
+   TESS-S70-TESSSPOC        sigma[narrow]=59ppm sigma[wide]=61ppm
+   TESS-S42-QLP             sigma[narrow]=50ppm sigma[wide]=36ppm
+   TESS-S70-QLP             sigma[narrow]=45ppm sigma[wide]=31ppm
+   TESS-S92-QLP             sigma[narrow]=73ppm sigma[wide]=64ppm
+   TESS-S42-CUT             sigma[narrow]=121ppm sigma[wide]=144ppm
+   TESS-S70-CUT             sigma[narrow]=129ppm sigma[wide]=122ppm
+   TESS-S92-CUT             sigma[narrow]=93ppm sigma[wide]=94ppm
+  N=42                         P=    73.24517 +- 0.00001  ALLOWED  n_excl=  0 
+  N=84                         P=    36.62259 +- 0.00000  EXCLUDED n_excl=  4 narrow#1@784.01[c12-PDCSAP-LC,c12-K2SFF];narrow#17@1369.97[c19-SAP-LC,c19-K2SFF];narrow#47@2468.65[S42-SPOC120,S42-QLP,S42-CUT]
+  N=126                        P=    24.41506 +- 0.00000  EXCLUDED n_excl=  6 narrow#1@771.80[c12-PDCSAP-LC,c12-K2SFF];narrow#2@796.22[c12-PDCSAP-LC,c12-K2SFF];narrow#101@3213.31[S70-TESSSPOC,S70-QLP,S70-CUT]
+  N=168                        P=    18.31129 +- 0.00000  EXCLUDED n_excl= 12 narrow#1@765.70[c12-PDCSAP-LC,c12-K2SFF];narrow#2@784.01[c12-PDCSAP-LC,c12-K2SFF];narrow#3@802.32[c12-PDCSAP-LC,c12-K2SFF]
+  N=210                        P=    14.64903 +- 0.00000  EXCLUDED n_excl= 16 narrow#1@762.03[c12-PDCSAP-LC,c12-K2SFF];narrow#2@776.68[c12-PDCSAP-LC,c12-K2SFF];narrow#3@791.33[c12-PDCSAP-LC,c12-K2SFF]
+  N=252                        P=    12.20753 +- 0.00000  EXCLUDED n_excl= 18 narrow#1@759.59[c12-PDCSAP-LC,c12-K2SFF];narrow#2@771.80[c12-PDCSAP-LC,c12-K2SFF];narrow#3@784.01[c12-PDCSAP-LC,c12-K2SFF]
+  N=294                        P=    10.46360 +- 0.00000  EXCLUDED n_excl= 22 narrow#1@757.85[c12-PDCSAP-LC,c12-K2SFF];narrow#2@768.31[c12-PDCSAP-LC,c12-K2SFF];narrow#3@778.78[c12-PDCSAP-LC,c12-K2SFF]
+  N=336                        P=     9.15565 +- 0.00000  EXCLUDED n_excl= 29 narrow#1@756.54[c12-PDCSAP-LC,c12-K2SFF];narrow#2@765.70[c12-PDCSAP-LC,c12-K2SFF];narrow#3@774.85[c12-PDCSAP-LC,c12-K2SFF]
+  N=378                        P=     8.13835 +- 0.00000  EXCLUDED n_excl= 30 narrow#-1@739.25[c12-PDCSAP-LC,c12-K2SFF];narrow#1@755.52[c12-PDCSAP-LC,c12-K2SFF];narrow#2@763.66[c12-PDCSAP-LC,c12-K2SFF]
+  N=420                        P=     7.32452 +- 0.00000  EXCLUDED n_excl= 34 narrow#-1@740.06[c12-PDCSAP-LC,c12-K2SFF];narrow#1@754.71[c12-PDCSAP-LC,c12-K2SFF];narrow#2@762.03[c12-PDCSAP-LC,c12-K2SFF]
+  N=462                        P=     6.65865 +- 0.00000  EXCLUDED n_excl= 39 narrow#-1@740.73[c12-PDCSAP-LC,c12-K2SFF];narrow#1@754.04[c12-PDCSAP-LC,c12-K2SFF];narrow#2@760.70[c12-PDCSAP-LC,c12-K2SFF]
+  N=504                        P=     6.10376 +- 0.00000  EXCLUDED n_excl= 43 narrow#-1@741.28[c12-PDCSAP-LC,c12-K2SFF];narrow#1@753.49[c12-PDCSAP-LC,c12-K2SFF];narrow#2@759.59[c12-PDCSAP-LC,c12-K2SFF]
+  N=546                        P=     5.63424 +- 0.00000  EXCLUDED n_excl= 49 narrow#-1@741.75[c12-PDCSAP-LC,c12-K2SFF];narrow#1@753.02[c12-PDCSAP-LC,c12-K2SFF];narrow#2@758.65[c12-PDCSAP-LC,c12-K2SFF]
+  N=588                        P=     5.23180 +- 0.00000  EXCLUDED n_excl= 55 narrow#-1@742.15[c12-PDCSAP-LC,c12-K2SFF];narrow#1@752.62[c12-PDCSAP-LC,c12-K2SFF];narrow#2@757.85[c12-PDCSAP-LC,c12-K2SFF]
+  N=630                        P=     4.88301 +- 0.00000  EXCLUDED n_excl= 52 narrow#-1@742.50[c12-PDCSAP-LC,c12-K2SFF];narrow#1@752.27[c12-PDCSAP-LC,c12-K2SFF];narrow#2@757.15[c12-PDCSAP-LC,c12-K2SFF]
+  N=672                        P=     4.57782 +- 0.00000  EXCLUDED n_excl= 62 narrow#-1@742.81[c12-PDCSAP-LC,c12-K2SFF];narrow#1@751.96[c12-PDCSAP-LC,c12-K2SFF];narrow#2@756.54[c12-PDCSAP-LC,c12-K2SFF]
+  N=714                        P=     4.30854 +- 0.00000  EXCLUDED n_excl= 69 narrow#-2@738.77[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@743.08[c12-PDCSAP-LC,c12-K2SFF];narrow#1@751.69[c12-PDCSAP-LC,c12-K2SFF]
+  N=756                        P=     4.06918 +- 0.00000  EXCLUDED n_excl= 69 narrow#-2@739.25[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@743.32[c12-PDCSAP-LC,c12-K2SFF];narrow#1@751.45[c12-PDCSAP-LC,c12-K2SFF]
+  N=798                        P=     3.85501 +- 0.00000  EXCLUDED n_excl= 71 narrow#-2@739.68[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@743.53[c12-PDCSAP-LC,c12-K2SFF];narrow#1@751.24[c12-PDCSAP-LC,c12-K2SFF]
+  N=840                        P=     3.66226 +- 0.00000  EXCLUDED n_excl= 76 narrow#-2@740.06[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@743.72[c12-PDCSAP-LC,c12-K2SFF];narrow#1@751.05[c12-PDCSAP-LC,c12-K2SFF]
+  N=882                        P=     3.48787 +- 0.00000  EXCLUDED n_excl= 78 narrow#-2@740.41[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@743.90[c12-PDCSAP-LC,c12-K2SFF];narrow#1@750.87[c12-PDCSAP-LC,c12-K2SFF]
+  N=924                        P=     3.32933 +- 0.00000  EXCLUDED n_excl= 81 narrow#-2@740.73[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.06[c12-PDCSAP-LC,c12-K2SFF];narrow#1@750.71[c12-PDCSAP-LC,c12-K2SFF]
+  N=966                        P=     3.18457 +- 0.00000  EXCLUDED n_excl= 85 narrow#-2@741.02[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.20[c12-PDCSAP-LC,c12-K2SFF];narrow#1@750.57[c12-PDCSAP-LC,c12-K2SFF]
+  N=1008                       P=     3.05188 +- 0.00000  EXCLUDED n_excl= 89 narrow#-2@741.28[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.33[c12-PDCSAP-LC,c12-K2SFF];narrow#1@750.44[c12-PDCSAP-LC,c12-K2SFF]
+  N=1050                       P=     2.92981 +- 0.00000  EXCLUDED n_excl= 95 narrow#-3@738.60[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@741.53[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.46[c12-PDCSAP-LC,c12-K2SFF]
+  N=1092                       P=     2.81712 +- 0.00000  EXCLUDED n_excl=102 narrow#-3@738.93[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@741.75[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.57[c12-PDCSAP-LC,c12-K2SFF]
+  N=1134                       P=     2.71278 +- 0.00000  EXCLUDED n_excl=106 narrow#-3@739.25[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@741.96[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.67[c12-PDCSAP-LC,c12-K2SFF]
+  N=1176                       P=     2.61590 +- 0.00000  EXCLUDED n_excl=109 narrow#-3@739.54[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@742.15[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.77[c12-PDCSAP-LC,c12-K2SFF]
+  N=1218                       P=     2.52570 +- 0.00000  EXCLUDED n_excl=111 narrow#-3@739.81[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@742.33[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.86[c12-PDCSAP-LC,c12-K2SFF]
+  N=1260                       P=     2.44151 +- 0.00000  EXCLUDED n_excl=112 narrow#-3@740.06[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@742.50[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@744.94[c12-PDCSAP-LC,c12-K2SFF]
+  N=1302                       P=     2.36275 +- 0.00000  EXCLUDED n_excl=119 narrow#-3@740.30[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@742.66[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@745.02[c12-PDCSAP-LC,c12-K2SFF]
+  N=1344                       P=     2.28891 +- 0.00000  EXCLUDED n_excl=127 narrow#-3@740.52[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@742.81[c12-PDCSAP-LC,c12-K2SFF];narrow#-1@745.10[c12-PDCSAP-LC,c12-K2SFF]
+  N=1386                       P=     2.21955 +- 0.00000  EXCLUDED n_excl=128 narrow#-4@738.51[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@740.73[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@742.95[c12-PDCSAP-LC,c12-K2SFF]
+  N=1428                       P=     2.15427 +- 0.00000  EXCLUDED n_excl=135 narrow#-4@738.77[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@740.92[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@743.08[c12-PDCSAP-LC,c12-K2SFF]
+  N=1470                       P=     2.09272 +- 0.00000  EXCLUDED n_excl=139 narrow#-4@739.01[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@741.11[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@743.20[c12-PDCSAP-LC,c12-K2SFF]
+  N=1512                       P=     2.03459 +- 0.00000  EXCLUDED n_excl=142 narrow#-4@739.25[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@741.28[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@743.32[c12-PDCSAP-LC,c12-K2SFF]
+  N=1554                       P=     1.97960 +- 0.00000  EXCLUDED n_excl=137 narrow#-4@739.47[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@741.45[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@743.43[c12-PDCSAP-LC,c12-K2SFF]
+  N=1596                       P=     1.92750 +- 0.00000  EXCLUDED n_excl=142 narrow#-4@739.68[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@741.60[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@743.53[c12-PDCSAP-LC,c12-K2SFF]
+  N=1638                       P=     1.87808 +- 0.00000  EXCLUDED n_excl=154 narrow#-4@739.87[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@741.75[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@743.63[c12-PDCSAP-LC,c12-K2SFF]
+  N=1680                       P=     1.83113 +- 0.00000  EXCLUDED n_excl=158 narrow#-4@740.06[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@741.89[c12-PDCSAP-LC,c12-K2SFF];narrow#-2@743.72[c12-PDCSAP-LC,c12-K2SFF]
+  N=1722                       P=     1.78647 +- 0.00000  EXCLUDED n_excl=164 narrow#-5@738.45[c12-PDCSAP-LC];narrow#-4@740.24[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.03[c12-PDCSAP-LC,c12-K2SFF]
+  N=1764                       P=     1.74393 +- 0.00000  EXCLUDED n_excl=163 narrow#-5@738.67[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@740.41[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.15[c12-PDCSAP-LC,c12-K2SFF]
+  N=1806                       P=     1.70338 +- 0.00000  EXCLUDED n_excl=170 narrow#-5@738.87[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@740.57[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.27[c12-PDCSAP-LC,c12-K2SFF]
+  N=1848                       P=     1.66466 +- 0.00000  EXCLUDED n_excl=171 narrow#-5@739.06[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@740.73[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.39[c12-PDCSAP-LC,c12-K2SFF]
+  N=1890                       P=     1.62767 +- 0.00000  EXCLUDED n_excl=175 narrow#-5@739.25[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@740.87[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.50[c12-PDCSAP-LC,c12-K2SFF]
+  N=1932                       P=     1.59229 +- 0.00000  EXCLUDED n_excl=182 narrow#-5@739.42[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.02[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.61[c12-PDCSAP-LC,c12-K2SFF]
+  N=1974                       P=     1.55841 +- 0.00000  EXCLUDED n_excl=185 narrow#-5@739.59[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.15[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.71[c12-PDCSAP-LC,c12-K2SFF]
+  N=2016                       P=     1.52594 +- 0.00000  EXCLUDED n_excl=187 narrow#-5@739.76[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.28[c12-PDCSAP-LC,c12-K2SFF];narrow#-3@742.81[c12-PDCSAP-LC,c12-K2SFF]
+  N=2058                       P=     1.49480 +- 0.00000  EXCLUDED n_excl=194 narrow#-6@738.42[c12-PDCSAP-LC];narrow#-5@739.91[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.41[c12-PDCSAP-LC,c12-K2SFF]
+  N=2100                       P=     1.46490 +- 0.00000  EXCLUDED n_excl=199 narrow#-6@738.60[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.06[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.53[c12-PDCSAP-LC,c12-K2SFF]
+  N=2142                       P=     1.43618 +- 0.00000  EXCLUDED n_excl=203 narrow#-6@738.77[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.20[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.64[c12-PDCSAP-LC,c12-K2SFF]
+  N=2184                       P=     1.40856 +- 0.00000  EXCLUDED n_excl=199 narrow#-6@738.93[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.34[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.75[c12-PDCSAP-LC,c12-K2SFF]
+  N=2226                       P=     1.38198 +- 0.00000  EXCLUDED n_excl=203 narrow#-6@739.09[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.48[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.86[c12-PDCSAP-LC,c12-K2SFF]
+  N=2268                       P=     1.35639 +- 0.00000  EXCLUDED n_excl=214 narrow#-6@739.25[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.60[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@741.96[c12-PDCSAP-LC,c12-K2SFF]
+  N=2310                       P=     1.33173 +- 0.00000  EXCLUDED n_excl=219 narrow#-6@739.39[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.73[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@742.06[c12-PDCSAP-LC,c12-K2SFF]
+  N=2352                       P=     1.30795 +- 0.00000  EXCLUDED n_excl=222 narrow#-6@739.54[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.85[c12-PDCSAP-LC,c12-K2SFF];narrow#-4@742.15[c12-PDCSAP-LC,c12-K2SFF]
+  N=2394                       P=     1.28500 +- 0.00000  EXCLUDED n_excl=225 narrow#-7@738.39[c12-PDCSAP-LC];narrow#-6@739.68[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@740.96[c12-PDCSAP-LC,c12-K2SFF]
+  N=2436                       P=     1.26285 +- 0.00000  EXCLUDED n_excl=231 narrow#-7@738.55[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@739.81[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@741.07[c12-PDCSAP-LC,c12-K2SFF]
+  N=2478                       P=     1.24144 +- 0.00000  EXCLUDED n_excl=231 narrow#-7@738.69[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@739.94[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@741.18[c12-PDCSAP-LC,c12-K2SFF]
+  N=2520                       P=     1.22075 +- 0.00000  EXCLUDED n_excl=236 narrow#-7@738.84[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@740.06[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@741.28[c12-PDCSAP-LC,c12-K2SFF]
+  N=2562                       P=     1.20074 +- 0.00000  EXCLUDED n_excl=237 narrow#-7@738.98[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@740.18[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@741.38[c12-PDCSAP-LC,c12-K2SFF]
+  N=2604                       P=     1.18137 +- 0.00000  EXCLUDED n_excl=245 narrow#-7@739.12[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@740.30[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@741.48[c12-PDCSAP-LC,c12-K2SFF]
+  N=2646                       P=     1.16262 +- 0.00000  EXCLUDED n_excl=249 narrow#-7@739.25[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@740.41[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@741.57[c12-PDCSAP-LC,c12-K2SFF]
+  N=2688                       P=     1.14446 +- 0.00000  EXCLUDED n_excl=259 narrow#-7@739.37[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@740.52[c12-PDCSAP-LC,c12-K2SFF];narrow#-5@741.66[c12-PDCSAP-LC,c12-K2SFF]
+  N=2730                       P=     1.12685 +- 0.00000  EXCLUDED n_excl=263 narrow#-8@738.37[c12-PDCSAP-LC];narrow#-7@739.50[c12-PDCSAP-LC,c12-K2SFF];narrow#-6@740.62[c12-PDCSAP-LC,c12-K2SFF]
+  N=2772                       P=     1.10978 +- 0.00000  EXCLUDED n_excl=258 narrow#-8@738.51[c12-PDCSAP-LC,c12-K2SFF];narrow#-7@739.62[c12-PDCSAP-LC,c12

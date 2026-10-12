@@ -1,0 +1,145 @@
+BLIND INDEPENDENT ANALYSIS - K2 single-event stars, table 2 (3 stars)
+=====================================================================
+Date: 2026-10-12. All code written from scratch in this folder (lib2.py, fitlib.py, s01-s13).
+No other analysis, catalogue period or literature period was consulted.
+Time system: BTJD = BJD_TDB - 2457000 (K2: BKJD - 2167).
+
+DATA GATHERED (s01_search.py, s02_download.py; files in data/)
+-------------------------------------------------------------
+EPIC 246194159 / TIC 301328232 (Tmag 8.99, TIC: Teff 6283 K, R 1.84 Rsun)
+  K2: C12 (PDCSAP, EVEREST, K2SFF), C19 (PDCSAP, K2SFF; short, 1369.5-1384.6).
+  TESS: S42 (SPOC 2-min, TESS-SPOC, QLP, own TESScut), S70 (TESS-SPOC, QLP, cut), S92 (QLP, cut).
+  TARS HLSPs were also read (noisier; not used for decisions).
+EPIC 212012030 / TIC 14394716 (Tmag 12.52, TIC: K dwarf, Teff 4913 K, R 0.89 Rsun)
+  K2: C5 (PDCSAP, EVEREST, K2SFF, K2SC), C18 (PDCSAP, EVEREST, K2SFF).
+  TESS: S71, S72 (SPOC 2-min, TESS-SPOC, QLP, cut), S1751 (TESS-SPOC, cut; 4055.8-4063.0).
+  TESScut also returns S44 and S46, but the star is NOT on science pixels there (cutout centre in
+  collateral columns 2122 and 23; tess-point agrees it is not observed) -> no data in S44/S46.
+EPIC 212694013 / TIC 178941241 (Tmag 12.76, TIC: GIANT, Teff 4896 K, R 4.35 Rsun, d 1.5 kpc)
+  K2: C6 (PDCSAP, EVEREST, K2SFF, K2SC), C17 (PDCSAP LC + SC, EVEREST, K2SFF).
+  TESS: S46, S91 (QLP only) + own TESScut photometry for both. No neighbours brighter than T=18.9 within 1'.
+
+Quality handling: K2 and TESS quality==0 for decisions; scattered-light cadences removed from the
+cut photometry by a background threshold. EVEREST's default quality mask removes the in-eclipse points
+of deep eclipses (flags them as outliers), so an un-masked EVEREST copy was used for timing only.
+Flagged-only "dips" (e.g. 212012030 C18 at 1264.72-1264.97, quality 32772, linear ramp + instant
+recovery; and the 752.1 step in 246194159 C12) were checked and are pointing/systematic artefacts.
+
+METHOD
+------
+* Blind box search of every light curve (s04_find_events.py) -> events.
+* Each event fitted with a trapezoid (free t0, depth, T14, ingress, local quadratic baseline, exposure
+  -time integration) in each independent reduction (s06_fit_events.py). t0 error = max(scaled
+  covariance, prayer-bead); per-event error = max(median per-source error, scatter between sources).
+* Candidate periods = (longest same-type baseline)/N, kept if all other event times match within
+  5 sigma + 0.005 d; then linear ephemeris fit (s09_run_periods.py).
+* "Covered and flat" test (s08_periods.py): at each predicted epoch, in each data set, fit a linear
+  baseline to points 0.6-0.6+Bw T14 away, measure the mean in-eclipse deficit, compare with the
+  trapezoid model evaluated at the ACTUAL in-eclipse time stamps (so partial ingress/egress coverage
+  is handled), using an empirical sigma from 300 random epochs in the same data set (includes red
+  noise). FLAT = expected - measured > 5 sigma and measured < 0.5 x expected with >= 3 in-eclipse
+  points; the predicted time is scanned over +-3 sigma_pred. A period is excluded if some epoch is
+  FLAT in a data set and no data set shows an EVENT there. TESS-based exclusions for 212694013 were
+  then checked by eye (plots/tess_alias_epochs_212694013.png) and down-graded where marginal.
+* Secondary search at all phases, durations 0.5-2 x T14 (s11_secondary.py).
+
+RESULTS
+=======
+
+EPIC 246194159 (TIC 301328232) -- RESOLVED: eccentric eclipsing binary
+------------------------------------------------------------------
+Five eclipses, two distinct types (the catalogue event is the deeper, narrower one):
+  event   BTJD t0            depth   T14 (h)  type        source
+  C12a    747.38498 +-0.00021 0.375   7.39    primary     K2 C12 (PDCSAP, K2SFF, EVEREST agree)
+  C12b    810.90611 +-0.00041 0.303  13.81    secondary   K2 C12 (all 3 reductions; not in catalogue)
+  S70    3227.99681 +-0.00026 0.298  13.87    secondary   TESS S70 (TESS-SPOC, QLP, cut)
+  S92a   3813.95786 +-0.00028 0.298  13.88    secondary   TESS S92 (QLP, cut)
+  S92b   3823.68236 +-0.00014 0.375   7.43    primary     TESS S92 (QLP, cut)
+Both eclipse types are V-shaped (grazing). Depths agree between K2 and TESS to <1%.
+Ephemeris (joint fit, common P, chi2 = 1.09 for 2 dof):
+  P = 73.245174 +- 0.000005 d (formal; +-0.00001 d is a safe quote)
+  T0(primary)   = 747.38504 +- 0.00020 BTJD
+  T0(secondary) = 810.90595 +- 0.00024 BTJD
+  Secondary phase = 0.867240 +- 0.000004
+  The only candidate set consistent with the timings is P = 73.2452/j; every j >= 2 is excluded by
+  data that are covered and flat (e.g. j=2 predicts a primary at 784.01 in K2 C12, flat in PDCSAP and
+  K2SFF; also flat epochs in C19 and TESS S42). P = 73.245 d is the ONLY allowed period.
+  No eclipse predicted inside TESS S42 or K2 C19 for P = 73.245 d (consistent: none seen).
+Rough orbit (i=90, non-grazing approximation; indicative only): e sin w ~ 0.30 (from the duration
+  ratio 13.85/7.41 h), e cos w ~ 0.59 (from the secondary phase), e ~ 0.66.
+Twin/2x: no - the two eclipse types are different and both seen.
+No third-body/tertiary dips: the best other dip in the fold (phase 0.064, ~0.1%) is a K2 step at 752.1.
+Next eclipses: secondary 4326.674 (2026-10-13 04:09 UTC), primary 4336.399 (2026-10-22 21:32 UTC),
+  secondary 4399.920 (2026-12-25 10:02 UTC), primary 4409.644 (2027-01-04 03:25 UTC); +-~1 min.
+Confidence: HIGH (period unique; 5 eclipses in 3+ independent reductions each).
+Nature: not a planet - eccentric (e >~ 0.6) EB, 37.5% and 30% deep grazing eclipses on an F star.
+
+EPIC 212012030 (TIC 14394716) -- three events, period narrowed to 5 aliases
+--------------------------------------------------------------------------
+  event   BTJD t0             depth   T14 (h)  T12 (h)  source
+  C05     174.47131 +-0.00014 0.203   3.89     1.47     K2 C5 (PDCSAP, K2SFF, EVEREST)  [catalogue event]
+  C18    1276.08006 +-0.00014 0.202   3.88     1.46     K2 C18 (PDCSAP, K2SFF, EVEREST) [new]
+  S71    3258.97664 +-0.00060 0.187   3.90     1.43     TESS S71 (SPOC 2-min, TESS-SPOC, QLP) [new]
+All three identical in shape (K2 depths agree to 0.2%; TESS depth ~7% shallower, likely band/
+  dilution difference). Separations 1101.6088 and 1982.8965 d; ratio = 9/5 exactly, so
+  P = 220.3218/k (k integer). K2 C5 (139.6-214.4) excludes k >= 6; nothing excludes k = 1..5.
+Allowed periods (linear fit, timing chi2 = 1.17 for 1 dof):
+  220.32178 +- 0.00003 d
+  110.16089 +- 0.00002 d
+   73.44059 +- 0.00001 d
+   55.08044 +- 0.00001 d
+   44.06436 +- 0.00001 d
+  T0 = 174.47126 +- 0.00013 BTJD.
+None of these predicts an eclipse in TESS S72 or S1751 (all predicted epochs fall in gaps), so
+  TESS does not split them. TESS S44/S46 contain no data on this star (off silicon).
+Secondary: none found. For P = 44.06, 55.08, 73.44 d the phase coverage is 100% and no dip
+  deeper than ~0.1% (best 5.9-7.6 sigma features are K2 systematics); 67% coverage for 110.16 d,
+  36% for 220.32 d.
+Twin/2x: POSSIBLE. The events are indistinguishable, so the true period could be 2P with equal
+  primary and secondary at phase 0.5: 88.129, 110.161, 146.881, 220.322 or 440.644 d.
+  (For P = 220.32 the C18 event falls at an odd cycle, so it would be the "secondary" of 440.64 d.)
+  If not a twin, the absence of any secondary at full phase coverage (P <= 73.4 d) means a cool/dark
+  companion.
+Confidence: HIGH that the three events are the same body and P is one of the 5 aliases (or 2x);
+  period NOT resolved. The 3.9-h duration is short for any of these periods on a K dwarf -> high
+  impact parameter / grazing, so a 20%-deep event here is more likely stellar than planetary.
+
+EPIC 212694013 (TIC 178941241) -- two events, period not resolved
+---------------------------------------------------------------
+  event   BTJD t0            depth    T14 (h)  T12 (h)  source
+  C06     242.158 +- 0.010   0.0057   40.4     7.6      K2 C6 (PDCSAP, K2SFF, EVEREST) [catalogue event; catalogue t0 242.175]
+  C17    1215.947 +- 0.009   0.0055   40.6     7.0      K2 C17 (PDCSAP LC+SC, K2SFF, EVEREST) [new]
+Flat-bottomed, identical depth and duration -> same body. Separation 973.789 +- 0.014 d,
+  P = 973.789/N. K2 C6 coverage excludes N >= 18 (P < 54.1 d).
+TESS checks of the K2-allowed set (QLP, QLP SAP, own cut photometry; S46 and S91 scattered-light
+  affected; S91 has large gaps):
+  N=13  (74.907 d)  EXCLUDED: 2564.27 covered (first ~1 d of the event) and flat in all 3 reductions.
+  N=8   (121.724 d), N=16 (60.862 d): LIKELY EXCLUDED: 2554.91 at the start of S46 orbit 1 is flat in
+        QLP (24 sigma) and QLP-SAP (5.7 sigma, on a ramp), own photometry 3.4 sigma below expectation.
+  N=17  (57.282 d)  disfavoured: 3793.62 (S91) ~2.5-3.4 sigma below expected in each reduction.
+  N=14  (69.556 d)  ambiguous: 3789.53 (S91) coincides with a scattered-light feature; QLP 4 sigma
+        below expectation, QLP-SAP shows a spurious "dip"; not used either way.
+  N=5,10,15: only the first ~0.2 d of ingress at the end of S46 (2579.25) - unconstrained.
+  N=11: falls in the S91 gap. Others: no TESS coverage.
+Allowed periods (d): 973.789, 486.894, 324.596, 243.447, 194.758, 162.298, 139.113, 108.199,
+  97.379, 88.526, 81.149, 69.556 (disfavoured), 64.919, 57.282 (disfavoured); sigma_P = 0.0138/N d.
+Secondary: none found at any phase for any allowed P (no feature above ~5-6 sigma; best ones are
+  S91 scattered light).
+Twin/2x: implausible - a 0.55% flat-bottomed 40-h event on a 4.4 Rsun giant is a transit of a small
+  (~0.07 R*, ~0.3 Rsun) body; an equal-depth occultation is not physically possible.
+Plausibility (soft, not an exclusion): the trapezoid shape gives b ~ 0.8 and, for a circular orbit,
+  rho* ~ 3.3e-5 x P[d] rho_sun. With R = 4.35 Rsun and M = 1.0-1.5 Msun this needs P ~ 370-560 d,
+  i.e. favours N = 2 (486.9 d) or N = 3 (324.6 d); P <~ 200 d needs M < 0.6 Msun unless eccentric.
+  Companion radius ~0.3 Rsun -> low-mass star, not a planet (if the TIC radius is right).
+Confidence: HIGH that the two events are real and from the same body; period unresolved.
+  Future TESS: tess-point lists S133 for this star (and S134 for TIC 301328232).
+
+FILES
+-----
+results.csv                       one row per star (summary)
+events_all.csv                    combined event table; event_fits_<EPIC>.csv per-reduction fits
+period_candidates_<EPIC>.csv      every tested period with status and the excluding epochs
+epoch_tests_<EPIC>.csv            every predicted epoch x data set with verdict, measured/expected deficit
+secondary_search_<EPIC>.csv       secondary search summary
+plots/                            overview, zooms, fits, cut inspections, TESS alias epochs, secondary search
+find_events_stdout.txt, periods_*_stdout.txt, results_stdout.txt, tic_params_stdout.txt  logs

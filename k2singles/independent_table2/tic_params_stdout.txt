@@ -1,0 +1,21 @@
+TIC 301328232: RA 352.04545 Dec -5.14235 Tmag 8.99 Teff 6283.0 logg 3.99693 R 1.84148 M 1.228 rho 0.196651 lumclass DWARF contratio 0.000711937842 dist 178.902 GAIA 2633217515438236544
+    nb TIC 301328232 sep 0.0" Tmag 8.99
+    nb TIC 301328236 sep 62.9" Tmag 14.50
+    nb TIC 301328229 sep 68.1" Tmag 18.06
+TIC 14394716: RA 124.43339 Dec 20.45350 Tmag 12.52 Teff 4913.0 logg 4.44203 R 0.89313 M 0.805 rho 1.12993 lumclass DWARF contratio 0.0102824075 dist 287.284 GAIA 675707349048338432
+    nb TIC 14394716 sep 0.0" Tmag 12.52
+    nb TIC 14394715 sep 20.0" Tmag 18.06
+    nb TIC 801046262 sep 30.7" Tmag 18.65
+    nb TIC 801046263 sep 32.3" Tmag 19.01
+    nb TIC 14394713 sep 35.3" Tmag 17.75
+    nb TIC 801046267 sep 46.1" Tmag 19.84
+    nb TIC 801046256 sep 49.7" Tmag 19.61
+    nb TIC 14394709 sep 56.6" Tmag 15.36
+TIC 178941241: RA 199.81436 Dec -8.40784 Tmag 12.76 Teff 4896.0 logg nan R 4.35459 M nan rho nan lumclass GIANT contratio nan dist 1527.48 GAIA 3625068465020377472
+    nb TIC 178941241 sep 0.0" Tmag 12.76
+    nb TIC 952860561 sep 28.3" Tmag 18.90
+    nb TIC 952860562 sep 42.0" Tmag 19.02
+    nb TIC 952860559 sep 53.0" Tmag 20.03
+    nb TIC 952860558 sep 55.0" Tmag 19.11
+    nb TIC 952860551 sep 57.9" Tmag 20.07
+    nb TIC 952860563 sep 58.0" Tmag 18.99
