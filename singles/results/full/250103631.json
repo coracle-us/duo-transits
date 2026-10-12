@@ -1,0 +1,125 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 250103631,
+ "CTOI": 250103631.01,
+ "Tmag": 11.1893,
+ "depth_ppm": 4241.0,
+ "dur_h": 4.9,
+ "epoch_btjd": 2448.830761999823,
+ "n_sectors": 2,
+ "event_verdict": "ambiguous",
+ "event_depth_ppm": 1179.2,
+ "event_snr": 5.1,
+ "repeats": [
+  {
+   "T": 2463.1109,
+   "sector": 42,
+   "product": "SPOC_120",
+   "depth_ppm": 7972,
+   "snr": 19.1
+  }
+ ],
+ "n_repeats": 1,
+ "frac_logP_excluded": 0.36716666666666664,
+ "min_allowed_P": 7.34858228130656,
+ "n_allowed_ranges": 247,
+ "allowed_ranges": [
+  [
+   7.35,
+   7.35
+  ],
+  [
+   7.99,
+   7.99
+  ],
+  [
+   10.96,
+   10.96
+  ],
+  [
+   11.04,
+   11.04
+  ],
+  [
+   11.13,
+   11.13
+  ],
+  [
+   11.22,
+   11.22
+  ],
+  [
+   11.32,
+   11.32
+  ],
+  [
+   11.4,
+   11.41
+  ],
+  [
+   11.6,
+   11.6
+  ],
+  [
+   11.63,
+   11.63
+  ],
+  [
+   11.8,
+   11.8
+  ],
+  [
+   11.83,
+   11.83
+  ],
+  [
+   11.93,
+   11.93
+  ],
+  [
+   12.01,
+   12.01
+  ],
+  [
+   12.12,
+   12.12
+  ],
+  [
+   "...",
+   247
+  ]
+ ],
+ "frac_conclusive_windows": 0.7520891364902507,
+ "candidate_periods": [
+  [
+   1,
+   14.28972
+  ]
+ ],
+ "n_candidate_periods": 1,
+ "event_T": 2448.8211786664897,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 42,
+   "offset_arcsec": 187.3,
+   "offset_err_arcsec": 4.9,
+   "offset_sigma": 37.9,
+   "snr_peak": 4.6,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.6,
+   "nearest_gaia_sep": 194.4
+  },
+  {
+   "kind": "repeat",
+   "sector": 42,
+   "offset_arcsec": 104.5,
+   "offset_err_arcsec": 24.2,
+   "offset_sigma": 4.3,
+   "snr_peak": 1.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.31,
+   "nearest_gaia_sep": 98.9
+  }
+ ]
+}

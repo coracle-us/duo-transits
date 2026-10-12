@@ -1,0 +1,205 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 233267414,
+ "CTOI": 233267414.01,
+ "Tmag": 11.1743,
+ "depth_ppm": 4890.0,
+ "dur_h": 14.6,
+ "epoch_btjd": 2425.344000000041,
+ "n_sectors": 10,
+ "event_verdict": "supported",
+ "event_depth_ppm": 5710.8,
+ "event_snr": 10.0,
+ "repeats": [
+  {
+   "T": 2804.3059,
+   "sector": 55,
+   "product": "TESS-SPOC",
+   "depth_ppm": 5547,
+   "snr": 11.9
+  },
+  {
+   "T": 2805.5225,
+   "sector": 55,
+   "product": "TESS-SPOC",
+   "depth_ppm": 2986,
+   "snr": 22.0
+  },
+  {
+   "T": 2817.9934,
+   "sector": 55,
+   "product": "TESS-SPOC",
+   "depth_ppm": 5378,
+   "snr": 9.7
+  },
+  {
+   "T": 3315.4579,
+   "sector": 74,
+   "product": "QLP",
+   "depth_ppm": 9561,
+   "snr": 21.7
+  },
+  {
+   "T": 3316.5225,
+   "sector": 74,
+   "product": "QLP",
+   "depth_ppm": 8214,
+   "snr": 25.4
+  },
+  {
+   "T": 3317.5871,
+   "sector": 74,
+   "product": "QLP",
+   "depth_ppm": 4209,
+   "snr": 14.0
+  },
+  {
+   "T": 3318.4996,
+   "sector": 74,
+   "product": "QLP",
+   "depth_ppm": 3272,
+   "snr": 12.3
+  },
+  {
+   "T": 3343.4413,
+   "sector": 75,
+   "product": "QLP",
+   "depth_ppm": 2765,
+   "snr": 10.6
+  },
+  {
+   "T": 3347.5475,
+   "sector": 75,
+   "product": "QLP",
+   "depth_ppm": 4259,
+   "snr": 10.6
+  },
+  {
+   "T": 3357.585,
+   "sector": 75,
+   "product": "QLP",
+   "depth_ppm": 3305,
+   "snr": 12.4
+  }
+ ],
+ "n_repeats": 10,
+ "frac_logP_excluded": 0.7313333333333333,
+ "min_allowed_P": 49.022628945679074,
+ "n_allowed_ranges": 166,
+ "allowed_ranges": [
+  [
+   49.02,
+   49.02
+  ],
+  [
+   54.02,
+   54.02
+  ],
+  [
+   62.24,
+   62.24
+  ],
+  [
+   63.07,
+   63.13
+  ],
+  [
+   65.83,
+   65.89
+  ],
+  [
+   67.41,
+   67.41
+  ],
+  [
+   71.57,
+   71.57
+  ],
+  [
+   71.71,
+   71.71
+  ],
+  [
+   75.2,
+   75.2
+  ],
+  [
+   75.63,
+   75.63
+  ],
+  [
+   76.35,
+   76.5
+  ],
+  [
+   77.67,
+   77.67
+  ],
+  [
+   81.92,
+   81.92
+  ],
+  [
+   88.14,
+   88.22
+  ],
+  [
+   89.32,
+   89.41
+  ],
+  [
+   "...",
+   166
+  ]
+ ],
+ "frac_conclusive_windows": 0.7453379953379954,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 2425.344000000041,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 41,
+   "offset_arcsec": 1.7,
+   "offset_err_arcsec": 4.2,
+   "offset_sigma": 0.4,
+   "snr_peak": 15.8,
+   "crowded_reference": false,
+   "nearest_gaia_G": 11.58,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 74,
+   "offset_arcsec": 125.2,
+   "offset_err_arcsec": 8.5,
+   "offset_sigma": 14.7,
+   "snr_peak": 31.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 17.13,
+   "nearest_gaia_sep": 114.9
+  },
+  {
+   "kind": "repeat",
+   "sector": 55,
+   "offset_arcsec": 34.9,
+   "offset_err_arcsec": 191.9,
+   "offset_sigma": 0.2,
+   "snr_peak": 4.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 17.33,
+   "nearest_gaia_sep": 37.7
+  },
+  {
+   "kind": "repeat",
+   "sector": 74,
+   "offset_arcsec": 151.7,
+   "offset_err_arcsec": 37.7,
+   "offset_sigma": 4.0,
+   "snr_peak": 2.0,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.04,
+   "nearest_gaia_sep": 121.6
+  }
+ ]
+}

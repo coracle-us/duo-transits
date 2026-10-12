@@ -1,4 +1,4 @@
-# RNAAS draft (working). Numbers marked {{...}} are filled in from the full run.
+# RNAAS draft (working). Numbers filled from singles/results/final_classification.csv (2026-10-11).
 
 **Target:** Research Notes of the AAS, at most ~1,000–1,500 words, one table or one figure.
 AASTeX version to follow once numbers are final.
@@ -14,7 +14,7 @@ AASTeX version to follow once numbers are final.
 
 ## Title
 
-Most repeating signals among stale TESS single-transit community candidates are eclipsing binaries
+Revisiting stale TESS single-transit community candidates: mostly eclipsing binaries, and two new duotransits
 
 ## Author
 
@@ -23,19 +23,17 @@ Jon McBee (Independent researcher)
 ## Abstract
 
 Community TESS Objects of Interest (CTOIs) flagged as single transits are rarely revisited
-once uploaded. We re-examined {{N_ANALYSED}} such candidates on {{N_STARS}} stars, most uploaded
-in 2020–2022, against all TESS data through Sector 108. Our methods were:
-- a validated search for repeat events;
-- our own photometry for sectors not yet processed by the TESS pipelines;
-- difference-image source localisation;
-- Gaia DR3 binarity diagnostics.
-
-{{N_REPEAT}} candidates show repeat events. Every repeating signal we could classify is either an
-eclipsing binary on the target (Gaia DR3 spectroscopic orbits independently reproduce three of
-our periods) or a blend with a nearby star. For CTOI 147035057.01 (TYC 5963-01913-1), a third
-eclipse in Sector 108 fixes the period at 37.31497 ± 0.00003 d, and Gaia flags the host as
-RV-variable. {{N_SINGLE}} candidates remain single, with {{FRAC}} of log-period space (5–1500 d)
-now excluded. We list updated classifications to help retire stale entries.
+once uploaded. We re-examined 309 such candidates on 306 stars, most uploaded in 2020–2022,
+against all TESS data through Sector 108, using a validated repeat-event search, our own
+photometry for sectors not yet processed by the TESS pipelines, difference-image source
+localisation and Gaia DR3 binarity diagnostics. The catalogued event is recovered for 272
+stars, and 79 of these show repeat events. Of the 79, 21 are on stars that Gaia DR3 flags as
+binaries (three Gaia spectroscopic orbits independently reproduce our periods), 18 are blends
+with nearby stars, and 23 have repeats no single period explains. For CTOI 147035057.01 a third
+eclipse fixes the period at 37.31497 ± 0.00003 d; the host is RV-variable. Two candidates
+survive vetting as on-target duotransits on Gaia-clean stars: TIC 159614322 (≈1 R_J, five
+allowed periods, 90–720 d) and TIC 229055790 (≈3.8 R⊕, 38 allowed periods ≥ 27 d). 193
+candidates remain single, with a median 52% of log-period space (5–1500 d) now excluded.
 
 ## 1. Sample
 
@@ -44,7 +42,7 @@ now excluded. We list updated classifications to help retire stale entries.
 - **Removed:** 46 with missing parameters, 8 on stars that host confirmed planets, 4 on stars
   with a TOI, and 24 on catalogued TESS eclipsing binaries (Prša et al. 2022). This leaves
   368 CTOIs on 359 stars.
-- **Not re-analysed:** {{N_SKIP}} that already carry a period on ExoFOP.
+- **Not re-analysed:** 32 stars whose ExoFOP entries already carry a community period.
 - **Stale entries:** for example, CTOI 1042868.01 is the confirmed planet HD 88986 b
   (Heidari et al. 2024).
 
@@ -69,7 +67,29 @@ now excluded. We list updated classifications to help retire stale entries.
 
 ## 3. Results
 
-{{RESULTS PARAGRAPH: counts by class from the full run}}
+**Counts (306 stars).**
+
+| Class | Stars |
+|---|---|
+| Event not recovered | 34 |
+| Single (no repeat) | 193 |
+| Repeats, Gaia binarity flag (EB on target) | 21 |
+| Repeats, firmly off-target (≥ 2 agreeing difference images) | 18 |
+| Repeats, no single period explains them | 23 |
+| Periodic or duotransit, hand-vetted | 17 |
+
+**The 17 hand-vetted stars:**
+- 2 leads (below);
+- 3 tentative, where the repeat is so far seen only in our own S≥100 photometry;
+- 5 possibly off-target (one difference image);
+- 7 rejected (depth inconsistency, absent in independent reduction, or host too large).
+
+**New duotransits.** Both have consistent depths across epochs and data products, are on
+target in difference images, and are re-detected by an independent reduction.
+- **TIC 159614322:** S14 + S41; P = 719.657/n with n ∈ {1, 2, 4, 5, 8}; Rp ≈ 0.96 R_J;
+  Gaia RUWE 1.51.
+- **TIC 229055790:** S1 + S68; a Planet Hunters TESS candidate with CHIRON spectra on ExoFOP;
+  38 aliases, P = 1838.945/n ≥ 26.7 d; Rp ≈ 3.8 R⊕.
 
 **Independent check from Gaia DR3 SB1 orbits.** Our periods match Gaia's for three targets:
 
@@ -89,17 +109,17 @@ These systems are eccentric eclipsing binaries.
 - **Host:** RV-variable in Gaia DR3 (amplitude ≈ 50 km/s), so likely an eccentric EB.
 - **Next eclipse:** 2027-01-20 03:11 UTC.
 
-**Off-target cases.** Blends with nearby EBs dominate the remaining repeating signals.
+**Off-target cases.** 18 firm and 36 possible off-target sources across the sample; for each, we give the eclipse depth the neighbour would need.
 
 **Table 1.** Per-CTOI classification: EB on target / blend / period / still single with
 P_min allowed.
 
 ## 4. Conclusion
 
-Stale single-transit CTOIs with repeat signals are overwhelmingly stellar. Cheap Gaia
-binarity checks and difference imaging dispose of most of them. The surviving singles, on
-Gaia-clean stars with on-target events, are the residual long-period planet candidates;
-{{N_RESIDUAL}} remain.
+Stale single-transit CTOIs with repeat signals are mostly stellar: cheap Gaia binarity checks
+and difference imaging dispose of most of them. A small residue survives: two new on-target
+duotransits whose alias lists are now short enough to target, and three tentative repeats
+that pipeline products for Sectors ≥ 100 will confirm or reject.
 
 ## Acknowledgments and AI disclosure
 
@@ -115,5 +135,6 @@ references.
 - Katz et al. 2023, A&A 674, A5 (Gaia DR3 RVs)
 - Gaia Collaboration 2023 (DR3)
 - Hawthorn et al. 2024, MNRAS 528, 1841
+- Eisner et al. (Planet Hunters TESS catalogue paper; identify exact reference for TIC 229055790)
 - TESScut: Brasseur et al. 2019
 - lightkurve, astroquery, batman (Kreidberg 2015)

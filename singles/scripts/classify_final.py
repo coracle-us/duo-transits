@@ -47,6 +47,20 @@ MANUAL = {
     230130556: "EB: TESS 22.259 d = Gaia SB1 22.245 d",
     458419988: "EB: Gaia SB1 18.355 d = dT/40",
     58946313: "on-target duotransit but depths differ at 8 sigma in the same SPOC product -> EB-like",
+    67884964: "14.42 d rejected on vetting: no dips at predicted S20/S60 epochs, depth chi2 46/4, QLP 0.34x; "
+              "submitter (PHT) notes the S47 dip at TJD~2589 is background -> S47 'repeats' likely systematics",
+    # hand vetting of the full-run leads, 2026-10-11 (singles/results/vetting/leads_full_run.md)
+    159614322: "LEAD: 2nd transit S14 (TESS-SPOC) of S41 event; depths 0.99/1.00, all products agree, on target, "
+               "independent re-check agrees; Rp~0.96 RJ; 5 aliases 719.66/n, n=1,2,4,5,8; RUWE 1.51",
+    229055790: "LEAD: 2nd transit S68 of PHT S1 event; depths 1.04/0.97, on target, independent re-check agrees; "
+               "Rp~3.8 Re; 38 aliases 1838.95/n >= 26.7 d; CHIRON spectra on ExoFOP (2022)",
+    139726266: "tentative: 2nd transit only in own S107 photometry (depth 1.07); Rp~2.8 Re on K dwarf; "
+               "diff images inconclusive; G=16.1 star at 6.7\" -> recheck list",
+    168702709: "tentative: S107 repeat in own photometry is partial (ingress at a gap); 2-min centroid shift 3.9 sigma -> recheck list",
+    69745398: "not confirmed: S96 repeat absent in independent re-check; S28 dip shorter than the 17 h catalogued duration",
+    337665591: "rejected: depths differ (chi2 12.5/1), crowded field, S66 diff image 8.4\" off at SNR 11",
+    365250897: "rejected: depths differ (chi2 40/1), QLP shows no dip",
+    51079186: "rejected: depths inconsistent across epochs and products (chi2 22/4)",
 }
 
 

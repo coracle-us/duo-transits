@@ -1,0 +1,91 @@
+{
+ "own_photometry_sectors": [
+  103
+ ],
+ "TIC": 1461133,
+ "CTOI": 1461133.01,
+ "Tmag": 15.4872,
+ "depth_ppm": 1274.03,
+ "dur_h": 4.6,
+ "epoch_btjd": 2220.1427000002004,
+ "n_sectors": 4,
+ "event_verdict": "no-data",
+ "event_depth_ppm": null,
+ "event_snr": null,
+ "repeats": [],
+ "n_repeats": 0,
+ "frac_logP_excluded": 0.016833333333333332,
+ "min_allowed_P": 4.999999999999999,
+ "n_allowed_ranges": 98,
+ "allowed_ranges": [
+  [
+   5.0,
+   5.11
+  ],
+  [
+   5.12,
+   5.16
+  ],
+  [
+   5.17,
+   5.3
+  ],
+  [
+   5.31,
+   5.33
+  ],
+  [
+   5.34,
+   5.37
+  ],
+  [
+   5.38,
+   5.44
+  ],
+  [
+   5.45,
+   5.7
+  ],
+  [
+   5.71,
+   5.78
+  ],
+  [
+   5.79,
+   5.9
+  ],
+  [
+   5.92,
+   5.96
+  ],
+  [
+   5.97,
+   5.99
+  ],
+  [
+   6.0,
+   6.06
+  ],
+  [
+   6.08,
+   6.12
+  ],
+  [
+   6.13,
+   6.14
+  ],
+  [
+   6.15,
+   6.18
+  ],
+  [
+   "...",
+   98
+  ]
+ ],
+ "frac_conclusive_windows": 0.00872093023255814,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 2220.1427000002004,
+ "diff_images": []
+}

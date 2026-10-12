@@ -1,0 +1,95 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 159159904,
+ "CTOI": 159159904.01,
+ "Tmag": 8.71483,
+ "depth_ppm": 500.0,
+ "dur_h": 14.6,
+ "epoch_btjd": 1918.6099999998696,
+ "n_sectors": 6,
+ "event_verdict": "supported",
+ "event_depth_ppm": 635.1,
+ "event_snr": 21.2,
+ "repeats": [],
+ "n_repeats": 0,
+ "frac_logP_excluded": 0.5975,
+ "min_allowed_P": 27.657781103683398,
+ "n_allowed_ranges": 142,
+ "allowed_ranges": [
+  [
+   27.66,
+   27.66
+  ],
+  [
+   28.81,
+   28.81
+  ],
+  [
+   29.93,
+   30.01
+  ],
+  [
+   30.59,
+   30.59
+  ],
+  [
+   32.63,
+   32.66
+  ],
+  [
+   32.73,
+   32.73
+  ],
+  [
+   35.92,
+   35.96
+  ],
+  [
+   36.03,
+   36.06
+  ],
+  [
+   41.47,
+   41.55
+  ],
+  [
+   42.26,
+   42.43
+  ],
+  [
+   43.12,
+   43.2
+  ],
+  [
+   43.95,
+   44.11
+  ],
+  [
+   44.87,
+   45.09
+  ],
+  [
+   45.78,
+   45.87
+  ],
+  [
+   48.88,
+   48.98
+  ],
+  [
+   "...",
+   142
+  ]
+ ],
+ "frac_conclusive_windows": 0.8123515439429929,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 1918.6099999998696,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 22,
+   "error": "Timeout limit of 600 exceeded."
+  }
+ ]
+}

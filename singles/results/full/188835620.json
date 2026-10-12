@@ -1,0 +1,171 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 188835620,
+ "CTOI": 188835620.01,
+ "Tmag": 9.6555,
+ "depth_ppm": 1085.0,
+ "dur_h": 8.2,
+ "epoch_btjd": 2712.3950000000186,
+ "n_sectors": 21,
+ "event_verdict": "supported",
+ "event_depth_ppm": 11861.4,
+ "event_snr": 57.0,
+ "repeats": [
+  {
+   "T": 2793.8891,
+   "sector": 54,
+   "product": "SPOC_120",
+   "depth_ppm": 1075,
+   "snr": 10.5
+  },
+  {
+   "T": 2906.7245,
+   "sector": 58,
+   "product": "SPOC_120",
+   "depth_ppm": 1381,
+   "snr": 8.0
+  },
+  {
+   "T": 2908.262,
+   "sector": 58,
+   "product": "SPOC_120",
+   "depth_ppm": 834,
+   "snr": 13.2
+  },
+  {
+   "T": 3435.3682,
+   "sector": 78,
+   "product": "SPOC_120",
+   "depth_ppm": 667,
+   "snr": 8.8
+  },
+  {
+   "T": 3452.7078,
+   "sector": 79,
+   "product": "SPOC_120",
+   "depth_ppm": 819,
+   "snr": 12.5
+  },
+  {
+   "T": 3506.7766,
+   "sector": 81,
+   "product": "SPOC_120",
+   "depth_ppm": 555,
+   "snr": 9.8
+  }
+ ],
+ "n_repeats": 6,
+ "frac_logP_excluded": 0.686,
+ "min_allowed_P": 22.22517512142464,
+ "n_allowed_ranges": 309,
+ "allowed_ranges": [
+  [
+   22.23,
+   22.23
+  ],
+  [
+   44.41,
+   44.45
+  ],
+  [
+   51.36,
+   51.36
+  ],
+  [
+   58.56,
+   58.56
+  ],
+  [
+   59.46,
+   59.46
+  ],
+  [
+   63.37,
+   63.43
+  ],
+  [
+   66.08,
+   66.08
+  ],
+  [
+   66.58,
+   66.71
+  ],
+  [
+   66.84,
+   66.9
+  ],
+  [
+   67.03,
+   67.03
+  ],
+  [
+   68.12,
+   68.18
+  ],
+  [
+   68.64,
+   68.64
+  ],
+  [
+   68.77,
+   68.77
+  ],
+  [
+   68.9,
+   68.9
+  ],
+  [
+   69.96,
+   70.02
+  ],
+  [
+   "...",
+   309
+  ]
+ ],
+ "frac_conclusive_windows": 0.43201471941122355,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 2712.3991666666852,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 51,
+   "offset_arcsec": 0.8,
+   "offset_err_arcsec": 0.4,
+   "offset_sigma": 1.9,
+   "snr_peak": 62.7,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.15,
+   "nearest_gaia_sep": 0.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 58,
+   "offset_arcsec": 18.2,
+   "offset_err_arcsec": 4.4,
+   "offset_sigma": 4.1,
+   "snr_peak": 4.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 18.47,
+   "nearest_gaia_sep": 4.4
+  },
+  {
+   "kind": "repeat",
+   "sector": 79,
+   "note": "no usable difference image"
+  },
+  {
+   "kind": "repeat",
+   "sector": 54,
+   "offset_arcsec": 18.6,
+   "offset_err_arcsec": 32.5,
+   "offset_sigma": 0.6,
+   "snr_peak": -15.8,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.15,
+   "nearest_gaia_sep": 0.0
+  }
+ ]
+}

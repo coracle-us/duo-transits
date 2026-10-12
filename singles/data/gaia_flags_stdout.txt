@@ -1,0 +1,23 @@
+In preparation for Gaia DR4, the Gaia archive is in evolution. Unfortunately, it may be unstable at times and particular types of queries may time out. Please consider registering for a user account (https://www.cosmos.esa.int/web/gaia-users/register). For questions or advice, please contact the Gaia helpdesk (https://www.cosmos.esa.int/web/gaia/gaia-helpdesk).
+20/359
+40/359
+60/359
+80/359
+100/359
+120/359
+140/359
+160/359
+180/359
+200/359
+220/359
+240/359
+260/359
+280/359
+300/359
+320/359
+340/359
+C:\git\duo-transits\singles\scripts\gaia_flags.py:73: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  flag = (df.non_single_star.fillna(0) > 0) | df.rv_variable.fillna(False) | (df.ruwe.fillna(0) > 1.4)
+C:\git\duo-transits\singles\scripts\gaia_flags.py:76: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  f"RV-variable: {int(df.rv_variable.fillna(False).sum())}")
+done: 359 stars; any binarity flag: 92; NSS orbits: 10; RV-variable: 8

@@ -194,6 +194,8 @@ stale "single-transit planet candidates" (EB, blend, or still single with exclud
 | TIC | What | Why tentative | Recheck when |
 |---|---|---|---|
 | 268534931 (also Hawthorn+24, open, N_alias 31) | Possible third transit, S107, BTJD 4268.870, depth ~6–7 ppt, from our own TESScut photometry. If real, the aliases narrow from 31 to 4: 92.60 / 46.30 / 30.87 / 23.15 d. Host: Gaia-clean K dwarf (Teff 5179 K, R* 0.78 R☉); candidate ~6 R⊕ | See below | SPOC/TESS-SPOC/QLP products for S107 appear on MAST; rerun `pilot.py` (it prefers pipeline products over OWN) |
+| 139726266 | Second transit, S107 (own photometry), BTJD 4289.85, depth scale 1.07 ± 0.07 vs S32. K dwarf (R* 0.75), so Rp ≈ 2.8 R⊕; 27 aliases 2109.0/n | Repeat seen only in our photometry; diff images SNR < 5; a G = 16.1 star at 6.7″ would need a 23% eclipse | Same: pipeline products for S107 |
+| 168702709 | Second transit, S107 (own photometry), BTJD 4268.9 | Partial: a gap through mid-transit; 2-min centroid shift 3.9σ in S31 | Same |
 
 Why 268534931 is tentative:
 - Only an ingress plus the bottom are covered; the egress falls in a 5-h gap at a momentum dump (+7.2 h).
@@ -202,3 +204,34 @@ Why 268534931 is tentative:
 - The difference image is 9.5″ off at 4.5σ.
 
 Plot: `results/vetting/268534931_s107.png`.
+
+
+## Full run (all remaining targets; 2026-10-11)
+
+`run_remaining.py`, 3 workers:
+- 278 targets: 246 analysed, 32 skipped because ExoFOP already carries a community period (`results/full/skipped.csv`);
+- `classify_final.py` over all runs gives **306 stars**.
+
+**Classification:**
+
+| Class | Stars |
+|---|---|
+| Single | 193 (median 52% of log P excluded) |
+| Event not recovered | 34 |
+| Repeats inconsistent | 23 |
+| EB on target (Gaia) | 21 |
+| Off-target EB (firm) | 18 |
+| Duotransit / periodic, hand-vetted | 17 |
+
+The hand vetting is in `results/vetting/leads_full_run.md`.
+
+**Two leads survive:**
+- **TIC 159614322:** S14 + S41; ≈ 0.96 R_J; P = 719.657/n, n ∈ {1, 2, 4, 5, 8}.
+- **TIC 229055790:** a PHT candidate with CHIRON spectra already on ExoFOP; S1 + S68; ≈ 3.8 R⊕; 38 aliases ≥ 26.7 d.
+
+Both are:
+- on target;
+- consistent in depth across epochs and products;
+- re-detected with independent code.
+
+Two more (139726266, 168702709) join the recheck list.

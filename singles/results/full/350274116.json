@@ -1,0 +1,152 @@
+{
+ "own_photometry_sectors": [
+  102
+ ],
+ "TIC": 350274116,
+ "CTOI": 350274116.01,
+ "Tmag": 8.9027,
+ "depth_ppm": 1522.86,
+ "dur_h": 5.07,
+ "epoch_btjd": 1343.8004000000656,
+ "n_sectors": 7,
+ "event_verdict": "supported",
+ "event_depth_ppm": 2041.4,
+ "event_snr": 37.9,
+ "repeats": [
+  {
+   "T": 2064.8852,
+   "sector": 28,
+   "product": "SPOC_120",
+   "depth_ppm": 779,
+   "snr": 12.8
+  },
+  {
+   "T": 3173.6836,
+   "sector": 68,
+   "product": "SPOC_120",
+   "depth_ppm": 1574,
+   "snr": 21.5
+  },
+  {
+   "T": 3177.6446,
+   "sector": 68,
+   "product": "SPOC_120",
+   "depth_ppm": 876,
+   "snr": 14.7
+  }
+ ],
+ "n_repeats": 3,
+ "frac_logP_excluded": 0.6291666666666667,
+ "min_allowed_P": 27.008115115686024,
+ "n_allowed_ranges": 435,
+ "allowed_ranges": [
+  [
+   27.01,
+   27.01
+  ],
+  [
+   29.82,
+   29.82
+  ],
+  [
+   32.88,
+   32.88
+  ],
+  [
+   33.74,
+   33.74
+  ],
+  [
+   34.75,
+   34.75
+  ],
+  [
+   35.45,
+   35.45
+  ],
+  [
+   37.53,
+   37.53
+  ],
+  [
+   38.4,
+   38.4
+  ],
+  [
+   39.02,
+   39.02
+  ],
+  [
+   39.54,
+   39.54
+  ],
+  [
+   40.49,
+   40.49
+  ],
+  [
+   41.47,
+   41.47
+  ],
+  [
+   41.9,
+   41.9
+  ],
+  [
+   42.1,
+   42.1
+  ],
+  [
+   42.18,
+   42.18
+  ],
+  [
+   "...",
+   435
+  ]
+ ],
+ "frac_conclusive_windows": 0.7415011780545271,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 1343.8004000000656,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 1,
+   "offset_arcsec": 79.2,
+   "offset_err_arcsec": 0.5,
+   "offset_sigma": 146.1,
+   "snr_peak": 82.2,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.17,
+   "nearest_gaia_sep": 77.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 68,
+   "offset_arcsec": 87.4,
+   "offset_err_arcsec": 0.7,
+   "offset_sigma": 118.3,
+   "snr_peak": 141.9,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.17,
+   "nearest_gaia_sep": 77.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 68,
+   "offset_arcsec": 83.5,
+   "offset_err_arcsec": 0.6,
+   "offset_sigma": 130.6,
+   "snr_peak": 160.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.17,
+   "nearest_gaia_sep": 77.0
+  },
+  {
+   "kind": "repeat",
+   "sector": 28,
+   "error": "Unable to download FFI cutout. Desired target coordinates may be too near the edge of the FFI.Error: 502 Server Error: Bad Gateway for url: https://ma"
+  }
+ ]
+}

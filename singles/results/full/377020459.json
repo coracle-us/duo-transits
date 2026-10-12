@@ -1,0 +1,181 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 377020459,
+ "CTOI": 377020459.01,
+ "Tmag": 11.3194,
+ "depth_ppm": 2300.0,
+ "dur_h": 4.467,
+ "epoch_btjd": 2496.6770000001416,
+ "n_sectors": 4,
+ "event_verdict": "supported",
+ "event_depth_ppm": 2773.8,
+ "event_snr": 9.7,
+ "repeats": [
+  {
+   "T": 3251.1488,
+   "sector": 71,
+   "product": "TESS-SPOC",
+   "depth_ppm": 2661,
+   "snr": 9.9
+  }
+ ],
+ "n_repeats": 1,
+ "frac_logP_excluded": 0.498,
+ "min_allowed_P": 12.49148985975204,
+ "n_allowed_ranges": 213,
+ "allowed_ranges": [
+  [
+   12.49,
+   12.49
+  ],
+  [
+   12.72,
+   12.72
+  ],
+  [
+   12.93,
+   12.94
+  ],
+  [
+   13.15,
+   13.19
+  ],
+  [
+   19.11,
+   19.11
+  ],
+  [
+   24.19,
+   24.19
+  ],
+  [
+   24.56,
+   24.56
+  ],
+  [
+   24.72,
+   24.72
+  ],
+  [
+   24.84,
+   24.84
+  ],
+  [
+   24.98,
+   25.05
+  ],
+  [
+   25.44,
+   25.44
+  ],
+  [
+   25.85,
+   25.88
+  ],
+  [
+   26.02,
+   26.02
+  ],
+  [
+   26.3,
+   26.37
+  ],
+  [
+   26.78,
+   26.83
+  ],
+  [
+   "...",
+   213
+  ]
+ ],
+ "frac_conclusive_windows": 0.7916666666666666,
+ "candidate_periods": [
+  [
+   1,
+   754.46457
+  ],
+  [
+   2,
+   377.23229
+  ],
+  [
+   3,
+   251.48819
+  ],
+  [
+   4,
+   188.61614
+  ],
+  [
+   5,
+   150.89291
+  ],
+  [
+   6,
+   125.7441
+  ],
+  [
+   7,
+   107.78065
+  ],
+  [
+   8,
+   94.30807
+  ],
+  [
+   9,
+   83.8294
+  ],
+  [
+   10,
+   75.44646
+  ],
+  [
+   11,
+   68.58769
+  ],
+  [
+   12,
+   62.87205
+  ],
+  [
+   13,
+   58.03574
+  ],
+  [
+   14,
+   53.89033
+  ],
+  [
+   15,
+   50.29764
+  ]
+ ],
+ "n_candidate_periods": 15,
+ "event_T": 2496.6842250001414,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 43,
+   "offset_arcsec": 104.9,
+   "offset_err_arcsec": 23.2,
+   "offset_sigma": 4.5,
+   "snr_peak": 1.2,
+   "crowded_reference": false,
+   "nearest_gaia_G": 9.4,
+   "nearest_gaia_sep": 101.7
+  },
+  {
+   "kind": "repeat",
+   "sector": 71,
+   "offset_arcsec": 141.3,
+   "offset_err_arcsec": 7.6,
+   "offset_sigma": 18.7,
+   "snr_peak": 5.5,
+   "crowded_reference": false,
+   "nearest_gaia_G": 15.66,
+   "nearest_gaia_sep": 145.4
+  }
+ ]
+}

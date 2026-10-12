@@ -1,0 +1,33 @@
+TIC,reason
+101641905,skip: community period on ExoFOP: 4.3081 d by eisner (2022-11-22): PHT multi transit events. Low SNR.
+51238317,skip: community period on ExoFOP: 14.2610 d by steuer (2021-01-27): Found with our in-house single transit finder; Sector 20 | observing notes mention period/alias/additional transit
+516459496,skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+27549827,skip: community period on ExoFOP: 27.6950 d by vogl (2022-01-11): Found with our in-house single transit finder; Sector 45
+141428309,skip: community period on ExoFOP: 54.5283 d by steuer (2020-11-13): redetection from Sec 27 in Sec 29. Period could be integer divider. Max period 54.53 days
+369456296,skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+253040591,skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+73248090,"skip: community period on ExoFOP: 24.1724 d by kzhu (2025-04-04): Planetary Candidate, single transit, Kevin Zhu | 24.1064 d by kzhu (2025-06-12): 2nd eclipse detected"
+138351298,skip: community period on ExoFOP: 29.4000 d by dragomir (2023-12-20): additional transits in sectors 40 and 41 give a unique period determination
+25227021,"skip: community period on ExoFOP: 249.2600 d by slee (2026-04-11): Possible periods range from 22.66 to 249.26 d; based on 3 transits: BTJD 1332.74, 2080.54, 3825.39 in S1, 28, 92."
+219898294,skip: community period on ExoFOP: 36.7442 d by vogl (2022-03-28): Period constraint from similar single transit events in sector 47 and sector 48.
+219018744,"skip: community period on ExoFOP: 77.7508 d by breysse (2026-08-14): Three additional TESS events (S16,S21,S50) support P=77.7508 d; nearby TIC 219018743 remains unresolved."
+457351794,"skip: community period on ExoFOP: 1002.4800 d by slee (2026-06-08): 2nd transit in sector 100, maximum period of 1002.48 d. Likely to be much shorter."
+6242388,skip: community period on ExoFOP: 22.5600 d by vogl (2022-03-28): Period constraint from similar single transit events in sector 44 and sector 45.
+355881602,"skip: community period on ExoFOP: 68.7468 d by mason (2023-06-01): Period constrained by transits in secs. 9,36,62 and absence in other sectors"
+250595513,skip: community period on ExoFOP: 20.0483 d by tarrants (2021-06-09): CoRoT-37b https://arxiv.org/abs/2009.14132
+224279805,"skip: community period on ExoFOP: 22.9842 d by mason (2023-11-17): Period constrained by transits in secs. 2,42,69"
+257395093,"skip: community period on ExoFOP: 14.4000 d by gsun (2021-10-22): newCTOI, The period might be half"
+267608606,skip: community period on ExoFOP: 51.7534 d by mason (2026-09-15): Eccentric Eclipsing Binary. Original CTOI is secondary eclipse
+369779127,skip: community period on ExoFOP: 72.5747 d by mason (2026-09-17): Eccentric Eclipsing Binary. Original CTOI is secondary eclipse
+212323118,skip: community period on ExoFOP: 169.0000 d by damboiu (2019-04-05): Identified from a single transit event
+242241304,"skip: community period on ExoFOP: 26.7517 d by slee (2026-06-09): Period constrained by 4 transits in sectors 11, 38, 65, 102. S65 transit not available in SPOC PDCSAP_FLUX."
+293649602,skip: community period on ExoFOP: 51.9783 d by mason (2026-09-16): Eccentric Eclipsing Binary. Original CTOI is secondary eclipse. Period may be multiple of that given
+270560025,skip: community period on ExoFOP: 15.0000 d by kzhu (2025-07-19): Single transit but possible period of possible second; no centroid movement
+243417115,"skip: community period on ExoFOP: 34.9514 d by slee (2026-06-09): Eccentric EB, secondary eclipse epoch ~ BJD 2460047.50"
+278990954,skip: community period on ExoFOP: 175.3950 d by slee (2025-05-12): Deep - shallow dips with ~175 d period. Centroid at TIC 278990957 (17&quot; away). See s0001s0039TCE2.
+70469445,skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+9906005,skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+99570132,"skip: community period on ExoFOP: 24.9021 d by mason (2024-02-27): Period constrained by 5 transits in secs. 20,47,73,74"
+438225366,"skip: community period on ExoFOP: 41.7219 d by gsun (2022-04-30): Correct the Depth,Parameters such as update period(Sectors 06,33,43,44,45)"
+290644615,"skip: community period on ExoFOP: 13.0000 d by kzhu (2025-07-19): Single transit but possible period of 13, cannot confirm due to noise"
+424730711,skip: community period on ExoFOP: observing notes mention period/alias/additional transit

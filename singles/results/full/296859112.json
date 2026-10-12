@@ -1,0 +1,101 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 296859112,
+ "CTOI": 296859112.01,
+ "Tmag": 13.0168,
+ "depth_ppm": 10685.42,
+ "dur_h": 8.93,
+ "epoch_btjd": 1548.505100000184,
+ "n_sectors": 5,
+ "event_verdict": "supported",
+ "event_depth_ppm": 7558.3,
+ "event_snr": 17.1,
+ "repeats": [],
+ "n_repeats": 0,
+ "frac_logP_excluded": 0.584,
+ "min_allowed_P": 30.014330353522144,
+ "n_allowed_ranges": 211,
+ "allowed_ranges": [
+  [
+   30.01,
+   30.01
+  ],
+  [
+   30.56,
+   30.56
+  ],
+  [
+   31.9,
+   31.9
+  ],
+  [
+   32.7,
+   32.73
+  ],
+  [
+   33.39,
+   33.39
+  ],
+  [
+   34.95,
+   34.98
+  ],
+  [
+   36.03,
+   36.03
+  ],
+  [
+   36.79,
+   36.79
+  ],
+  [
+   37.89,
+   37.89
+  ],
+  [
+   38.07,
+   38.07
+  ],
+  [
+   38.58,
+   38.58
+  ],
+  [
+   38.65,
+   38.73
+  ],
+  [
+   39.28,
+   39.28
+  ],
+  [
+   39.88,
+   39.88
+  ],
+  [
+   39.96,
+   40.04
+  ],
+  [
+   "...",
+   211
+  ]
+ ],
+ "frac_conclusive_windows": 0.9168853893263342,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 1548.475100000184,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 9,
+   "offset_arcsec": 92.0,
+   "offset_err_arcsec": 24.9,
+   "offset_sigma": 3.7,
+   "snr_peak": 2.8,
+   "crowded_reference": false,
+   "nearest_gaia_G": 16.93,
+   "nearest_gaia_sep": 76.5
+  }
+ ]
+}

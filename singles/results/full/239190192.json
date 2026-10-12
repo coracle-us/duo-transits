@@ -1,0 +1,120 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 239190192,
+ "CTOI": 239190192.02,
+ "Tmag": 10.1475,
+ "depth_ppm": 1360.0,
+ "dur_h": 3.744,
+ "epoch_btjd": 1847.7829999998207,
+ "n_sectors": 8,
+ "event_verdict": "supported",
+ "event_depth_ppm": 1247.9,
+ "event_snr": 9.9,
+ "repeats": [
+  {
+   "T": 1863.4132,
+   "sector": 20,
+   "product": "SPOC_120",
+   "depth_ppm": 2234,
+   "snr": 16.4
+  }
+ ],
+ "n_repeats": 1,
+ "frac_logP_excluded": 0.6996666666666667,
+ "min_allowed_P": 43.035438633860075,
+ "n_allowed_ranges": 123,
+ "allowed_ranges": [
+  [
+   43.04,
+   43.04
+  ],
+  [
+   53.3,
+   53.3
+  ],
+  [
+   57.57,
+   57.57
+  ],
+  [
+   67.92,
+   67.92
+  ],
+  [
+   69.03,
+   69.29
+  ],
+  [
+   70.29,
+   70.29
+  ],
+  [
+   71.91,
+   71.91
+  ],
+  [
+   76.72,
+   76.93
+  ],
+  [
+   79.92,
+   79.92
+  ],
+  [
+   81.22,
+   81.45
+  ],
+  [
+   83.09,
+   83.17
+  ],
+  [
+   84.77,
+   84.85
+  ],
+  [
+   86.07,
+   86.07
+  ],
+  [
+   86.31,
+   86.56
+  ],
+  [
+   87.06,
+   87.06
+  ],
+  [
+   "...",
+   123
+  ]
+ ],
+ "frac_conclusive_windows": 0.9046875,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 1847.7685999998207,
+ "diff_images": [
+  {
+   "kind": "event",
+   "sector": 20,
+   "offset_arcsec": 32.5,
+   "offset_err_arcsec": 120.6,
+   "offset_sigma": 0.3,
+   "snr_peak": 6.5,
+   "crowded_reference": false,
+   "nearest_gaia_G": 17.44,
+   "nearest_gaia_sep": 15.9
+  },
+  {
+   "kind": "repeat",
+   "sector": 20,
+   "offset_arcsec": 90.8,
+   "offset_err_arcsec": 34.9,
+   "offset_sigma": 2.6,
+   "snr_peak": 0.9,
+   "crowded_reference": false,
+   "nearest_gaia_G": 16.53,
+   "nearest_gaia_sep": 87.2
+  }
+ ]
+}

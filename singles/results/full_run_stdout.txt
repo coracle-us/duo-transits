@@ -1,0 +1,904 @@
+remaining: 278 targets; to do now: 278; workers: 3
+[1/278] TIC 101641905: skip: community period on ExoFOP: 4.3081 d by eisner (2022-11-22): PHT multi transit events. Low SNR.
+[2/278] TIC 51238317: skip: community period on ExoFOP: 14.2610 d by steuer (2021-01-27): Found with our in-house single transit finder; Sector 20 | observing notes mention period/alias/additional transit
+[3/278] TIC 516459496: skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+[4/278] TIC 27549827: skip: community period on ExoFOP: 27.6950 d by vogl (2022-01-11): Found with our in-house single transit finder; Sector 45
+[5/278] TIC 141428309: skip: community period on ExoFOP: 54.5283 d by steuer (2020-11-13): redetection from Sec 27 in Sec 29. Period could be integer divider. Max period 54.53 days
+[6/278] TIC 369456296: skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+[7/278] TIC 253040591: skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+[8/278] TIC 73248090: skip: community period on ExoFOP: 24.1724 d by kzhu (2025-04-04): Planetary Candidate, single transit, Kevin Zhu | 24.1064 d by kzhu (2025-06-12): 2nd eclipse detected
+C:\git\duo-transits\.venv\Lib\site-packages\lightkurve\prf\__init__.py:7: UserWarning: Warning: the tpfmodel submodule is not available without oktopus installed, which requires a current version of autograd. See #1452 for details.
+  warnings.warn(
+[18:16:06] [0/85] TIC 103629155
+C:\git\duo-transits\.venv\Lib\site-packages\lightkurve\prf\__init__.py:7: UserWarning: Warning: the tpfmodel submodule is not available without oktopus installed, which requires a current version of autograd. See #1452 for details.
+  warnings.warn(
+[18:16:06] [0/85] TIC 393565707
+[9/278] TIC 138351298: skip: community period on ExoFOP: 29.4000 d by dragomir (2023-12-20): additional transits in sectors 40 and 41 give a unique period determination
+C:\git\duo-transits\.venv\Lib\site-packages\lightkurve\prf\__init__.py:7: UserWarning: Warning: the tpfmodel submodule is not available without oktopus installed, which requires a current version of autograd. See #1452 for details.
+  warnings.warn(
+[18:16:17] [0/85] TIC 88212067
+[18:16:24]   TIC 103629155: saved 8 light curves (0 failed)
+[18:16:29]   TIC 393565707: saved 8 light curves (0 failed)
+[18:16:30]   TIC 88212067: saved 5 light curves (0 failed)
+[10/278] TIC 393565707: repeats 0 periods [] diff [('event', 3.8, 33.5)]
+In preparation for Gaia DR4, the Gaia archive is in evolution. Unfortunately, it may be unstable at times and particular types of queries may time out. Please consider registering for a user account (https://www.cosmos.esa.int/web/gaia-users/register). For questions or advice, please contact the Gaia helpdesk (https://www.cosmos.esa.int/web/gaia/gaia-helpdesk).
+[18:17:12] [0/85] TIC 261155038
+[11/278] TIC 103629155: repeats 0 periods [] diff [('event', 2.5, 18.8)]
+[12/278] TIC 88212067: repeats 9 periods [] diff [('event', 11.9, 2.8), ('repeat', 13.1, 9.1), ('repeat', 13.9, 11.1)]
+In preparation for Gaia DR4, the Gaia archive is in evolution. Unfortunately, it may be unstable at times and particular types of queries may time out. Please consider registering for a user account (https://www.cosmos.esa.int/web/gaia-users/register). For questions or advice, please contact the Gaia helpdesk (https://www.cosmos.esa.int/web/gaia/gaia-helpdesk).
+[18:17:20] [0/85] TIC 62632191
+[13/278] TIC 25227021: skip: community period on ExoFOP: 249.2600 d by slee (2026-04-11): Possible periods range from 22.66 to 249.26 d; based on 3 transits: BTJD 1332.74, 2080.54, 3825.39 in S1, 28, 92.
+In preparation for Gaia DR4, the Gaia archive is in evolution. Unfortunately, it may be unstable at times and particular types of queries may time out. Please consider registering for a user account (https://www.cosmos.esa.int/web/gaia-users/register). For questions or advice, please contact the Gaia helpdesk (https://www.cosmos.esa.int/web/gaia/gaia-helpdesk).
+[18:17:30] [0/85] TIC 265453074
+[18:17:36]   TIC 62632191: saved 4 light curves (0 failed)
+[18:17:49]   TIC 265453074: saved 7 light curves (0 failed)
+[14/278] TIC 62632191: repeats 0 periods [] diff [('event', 90.9, 1.3)]
+[18:18:18] [0/85] TIC 81331641
+[15/278] TIC 265453074: repeats 1 periods [(1, 731.1162), (2, 365.5581), (3, 243.7054), (4, 182.77905)] diff [('event', 52.2, 158.4), ('repeat', 52.6, 186.1)]
+[16/278] TIC 219898294: skip: community period on ExoFOP: 36.7442 d by vogl (2022-03-28): Period constraint from similar single transit events in sector 47 and sector 48.
+[18:18:34]   TIC 261155038: saved 91 light curves (0 failed)
+[18:18:35] [0/85] TIC 354032500
+[18:18:39]   TIC 81331641: saved 8 light curves (0 failed)
+[18:18:48]   TIC 354032500: saved 3 light curves (0 failed)
+[17/278] TIC 81331641: repeats 0 periods [] diff [('event', 121.0, 1.4)]
+[18/278] TIC 354032500: repeats 2 periods [] diff [('event', 48.8, 7.6), ('repeat', 48.9, 74.0), ('repeat', 49.9, 41.1)]
+[18:19:24] [0/85] TIC 67747088
+[18:19:24] [0/85] TIC 86202456
+[18:19:45]   TIC 67747088: saved 7 light curves (0 failed)
+[18:19:56]   TIC 86202456: saved 20 light curves (0 failed)
+[19/278] TIC 67747088: repeats 1 periods [(1, 750.6822), (2, 375.3411), (3, 250.2274), (4, 187.67055)] diff [('event', 28.1, 33.8), ('repeat', 24.9, 34.5)]
+[20/278] TIC 261155038: repeats 0 periods [] diff [('event', 3.0, 32.3)]
+[18:20:35] [0/85] TIC 99673151
+[18:20:38] [0/85] TIC 86433395
+[18:20:51]   TIC 86433395: saved 3 light curves (0 failed)
+[18:21:00]   TIC 99673151: saved 10 light curves (0 failed)
+[21/278] TIC 99673151: repeats 0 periods [] diff [('event', 81.2, 0.3)]
+[18:21:30] [0/85] TIC 384882500
+[18:22:06]   TIC 384882500: saved 16 light curves (0 failed)
+[22/278] TIC 86202456: repeats 11 periods [(1, 14.20798)] diff [('event', None, None), ('event', 50.8, 3.3), ('repeat', 0.7, 11.9)]
+[18:22:19] [0/85] TIC 188619138
+[18:22:59]   TIC 188619138: saved 17 light curves (0 failed)
+[23/278] TIC 384882500: repeats 5 periods [(24, 17.32328)] diff [('event', 2.6, 25.9), ('repeat', 2.1, 17.3), ('repeat', 2.1, 25.4)]
+[18:23:32] [0/85] TIC 16326602
+[24/278] TIC 188619138: repeats 0 periods [] diff [('event', 137.5, 0.5)]
+[18:23:50] [0/85] TIC 299739645
+[18:24:00]   TIC 16326602: saved 19 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[18:24:09]   TIC 299739645: saved 10 light curves (0 failed)
+[25/278] TIC 16326602: repeats 0 periods [] diff [('event', 76.2, 1.7)]
+[18:24:31] [0/85] TIC 36887038
+[26/278] TIC 299739645: repeats 0 periods [] diff [('event', 70.8, 1.6)]
+TIC 299739645 S108: 10933 cadences (200 s), aperture 7 px -> s108_OWN_200s.csv.gz
+[18:24:50] [0/85] TIC 66101137
+[18:24:56]   TIC 36887038: saved 3 light curves (0 failed)
+[18:25:12]   TIC 66101137: saved 10 light curves (0 failed)
+Warning: 31% (1057/3399) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[27/278] TIC 36887038: repeats 0 periods [] diff [('event', 191.0, 5.0)]
+[28/278] TIC 219018744: skip: community period on ExoFOP: 77.7508 d by breysse (2026-08-14): Three additional TESS events (S16,S21,S50) support P=77.7508 d; nearby TIC 219018743 remains unresolved.
+[18:25:20] [0/85] TIC 76804724
+[29/278] TIC 66101137: repeats 1 periods [] diff [('event', 145.2, 1.9), ('repeat', 113.5, 1.1)]
+[18:25:43] [0/85] TIC 355095316
+[18:25:46]   TIC 76804724: saved 13 light curves (0 failed)
+[18:26:08]   TIC 355095316: saved 10 light curves (0 failed)
+[30/278] TIC 355095316: repeats 0 periods [] diff [('event', None, None)]
+[18:26:53] [0/85] TIC 5636329
+[31/278] TIC 76804724: repeats 13 periods [] diff [('event', 98.6, 3.8), ('repeat', 135.0, 0.7), ('repeat', 11.4, 0.9)]
+[32/278] TIC 457351794: skip: community period on ExoFOP: 1002.4800 d by slee (2026-06-08): 2nd transit in sector 100, maximum period of 1002.48 d. Likely to be much shorter.
+[18:27:08] [0/85] TIC 376537276
+[18:27:12]   TIC 5636329: saved 6 light curves (0 failed)
+[18:27:35]   TIC 376537276: saved 3 light curves (0 failed)
+[33/278] TIC 376537276: repeats 0 periods [] diff [('event', None, None)]
+[34/278] TIC 5636329: repeats 0 periods [] diff [('event', 3.5, 11.9)]
+[18:28:01] [0/85] TIC 258617228
+[18:28:04] [0/85] TIC 13073396
+[18:28:11]   TIC 258617228: saved 6 light curves (0 failed)
+[18:28:20]   TIC 13073396: saved 12 light curves (0 failed)
+[35/278] TIC 258617228: repeats 0 periods [] diff [('event', 4.2, 19.0)]
+[36/278] TIC 6242388: skip: community period on ExoFOP: 22.5600 d by vogl (2022-03-28): Period constraint from similar single transit events in sector 44 and sector 45.
+[18:28:55] [0/85] TIC 313327244
+[18:29:08]   TIC 313327244: saved 10 light curves (0 failed)
+Warning: 22% (780/3623) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[37/278] TIC 86433395: repeats 0 periods [] diff [('event', 8.0, 23.2)]
+[18:29:35] [0/85] TIC 434095530
+[18:29:46]   TIC 434095530: saved 3 light curves (0 failed)
+[38/278] TIC 434095530: repeats 0 periods [] diff [('event', 94.9, 1.3)]
+[39/278] TIC 355881602: skip: community period on ExoFOP: 68.7468 d by mason (2023-06-01): Period constrained by transits in secs. 9,36,62 and absence in other sectors
+[40/278] TIC 313327244: repeats 3 periods [] diff [('event', 2.2, 26.8), ('repeat', 145.1, 10.4), ('repeat', 96.8, 8.7)]
+[18:30:10] [0/85] TIC 83580723
+[18:30:12] [0/85] TIC 248687282
+[18:30:21]   TIC 248687282: saved 4 light curves (0 failed)
+[18:30:24]   TIC 83580723: saved 6 light curves (0 failed)
+[41/278] TIC 248687282: repeats 0 periods [] diff [('event', 101.0, 0.9)]
+[18:31:07] [0/85] TIC 53309262
+[42/278] TIC 83580723: repeats 8 periods [(1, 5.118)] diff [('event', 19.8, 15.2), ('repeat', 17.0, 9.1), ('repeat', 113.7, 3.5)]
+[18:31:22] [0/85] TIC 458451774
+[18:31:23]   TIC 53309262: saved 11 light curves (0 failed)
+[43/278] TIC 13073396: repeats 0 periods [] diff [('event', 81.1, 0.5)]
+[44/278] TIC 250595513: skip: community period on ExoFOP: 20.0483 d by tarrants (2021-06-09): CoRoT-37b https://arxiv.org/abs/2009.14132
+[18:31:39]   TIC 458451774: saved 8 light curves (0 failed)
+TIC 13073396 S106: 9174 cadences (200 s), aperture 8 px -> s106_OWN_200s.csv.gz
+[18:31:44] [0/85] TIC 88467632
+[45/278] TIC 53309262: repeats 0 periods [] diff [('event', 3.1, 9.3)]
+[18:31:55]   TIC 88467632: saved 4 light curves (0 failed)
+[18:32:00] [0/85] TIC 409473377
+[18:32:12]   TIC 409473377: saved 9 light curves (0 failed)
+[46/278] TIC 88467632: repeats 2 periods [] diff [('event', None, None), ('repeat', 29.7, 28.7), ('repeat', 32.3, 18.6)]
+[18:32:43] [0/85] TIC 271369421
+[18:33:02]   TIC 271369421: saved 7 light curves (0 failed)
+[47/278] TIC 409473377: repeats 7 periods [] diff [('event', 53.2, 366.4), ('repeat', 55.6, 16.2), ('repeat', 173.7, 21.3)]
+TIC 409473377 S108: 10933 cadences (200 s), aperture 4 px -> s108_OWN_200s.csv.gz
+[18:33:14] [0/85] TIC 233267414
+[48/278] TIC 271369421: repeats 0 periods [] diff [('event', 107.2, 2.3)]
+[18:33:35] [0/85] TIC 336892053
+[18:33:37]   TIC 233267414: saved 16 light curves (0 failed)
+[18:33:46]   TIC 336892053: saved 8 light curves (0 failed)
+[49/278] TIC 336892053: repeats 0 periods [] diff [('event', 104.0, 1.2)]
+[18:34:19] [0/85] TIC 9176290
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[18:34:33]   TIC 9176290: saved 7 light curves (0 failed)
+[50/278] TIC 9176290: repeats 0 periods [] diff [('event', 107.5, 0.5)]
+[18:35:04] [0/85] TIC 89288586
+[18:35:33]   TIC 89288586: saved 25 light curves (0 failed)
+[51/278] TIC 233267414: repeats 10 periods [] diff [('event', 1.7, 15.8), ('repeat', 125.2, 31.1), ('repeat', 34.9, 4.1)]
+[18:35:42] [0/85] TIC 302926645
+[18:35:55]   TIC 302926645: saved 8 light curves (0 failed)
+[52/278] TIC 89288586: repeats 0 periods [] diff [('event', 93.9, 3.1)]
+[53/278] TIC 302926645: repeats 0 periods [] diff [('event', None, None)]
+[18:36:28] [0/85] TIC 27550937
+[18:36:30] [0/85] TIC 89258104
+[54/278] TIC 458451774: repeats 0 periods [] diff [('event', 133.3, 2.7)]
+[18:38:16] [0/85] TIC 95857505
+[18:38:22]   TIC 95857505: saved 3 light curves (0 failed)
+[55/278] TIC 95857505: repeats 0 periods [] diff [('event', 71.6, 0.7)]
+[18:38:56] [0/85] TIC 152406952
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[18:39:06]   TIC 152406952: saved 13 light curves (0 failed)
+[56/278] TIC 152406952: repeats 0 periods [] diff [('event', 30.5, 35.7)]
+TIC 152406952 S108: 10933 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[18:40:19] [0/85] TIC 290596728
+[18:40:27]   TIC 290596728: saved 8 light curves (0 failed)
+[57/278] TIC 290596728: repeats 0 periods [] diff [('event', 168.0, 3.7)]
+[58/278] TIC 224279805: skip: community period on ExoFOP: 22.9842 d by mason (2023-11-17): Period constrained by transits in secs. 2,42,69
+[18:41:21] [0/85] TIC 434217306
+[18:41:31]   TIC 434217306: saved 11 light curves (0 failed)
+[59/278] TIC 434217306: repeats 0 periods [] diff [('event', 125.6, 0.6)]
+[18:42:30] [0/85] TIC 343870806
+[18:42:49]   TIC 343870806: saved 12 light curves (0 failed)
+[60/278] TIC 343870806: repeats 0 periods [] diff [('event', 8.7, 11.1)]
+[18:44:04] [0/85] TIC 296859112
+[18:44:17]   TIC 296859112: saved 13 light curves (0 failed)
+[61/278] TIC 296859112: repeats 0 periods [] diff [('event', 92.0, 2.8)]
+[18:44:57] [0/85] TIC 252908198
+[18:46:28]   TIC 27550937 search retry 1: Timeout limit of 600 exceeded.
+[18:46:30]   TIC 89258104 search retry 1: Timeout limit of 600 exceeded.
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[18:46:59]   TIC 89258104: saved 9 light curves (0 failed)
+[18:47:17]   TIC 27550937: saved 15 light curves (0 failed)
+[62/278] TIC 89258104: repeats 0 periods [] diff [('event', 70.9, -4.7)]
+TIC 89258104 S105: 9290 cadences (200 s), aperture 8 px -> s105_OWN_200s.csv.gz
+[18:48:02] [0/85] TIC 237597612
+[18:48:19]   TIC 237597612: saved 8 light curves (0 failed)
+[63/278] TIC 27550937: repeats 0 periods [] diff [('event', 58.2, 11.1)]
+[18:48:59] [0/85] TIC 258799245
+[64/278] TIC 237597612: repeats 0 periods [] diff [('event', 87.4, 2.4)]
+[18:49:09] [0/85] TIC 82204651
+[18:49:26]   TIC 82204651: saved 11 light curves (0 failed)
+[65/278] TIC 82204651: repeats 0 periods [] diff [('event', 1.6, 18.6)]
+[18:49:54] [0/85] TIC 87949211
+[18:50:16]   TIC 87949211: saved 13 light curves (0 failed)
+[18:50:33]   TIC 258799245: saved 107 light curves (0 failed)
+[18:50:40]   TIC 252908198: saved 12 light curves (0 failed)
+[66/278] TIC 87949211: repeats 1 periods [] diff [('event', 106.4, 2.1), ('repeat', 79.9, 3.8)]
+[67/278] TIC 252908198: repeats 0 periods [] diff [('event', 85.5, 0.8)]
+[18:51:10] [0/85] TIC 468963200
+[18:51:16] [0/85] TIC 264333501
+[18:51:41]   TIC 468963200: saved 22 light curves (0 failed)
+[18:51:58]   TIC 264333501: saved 36 light curves (0 failed)
+[68/278] TIC 468963200: repeats 0 periods [] diff [('event', 134.5, 1.0)]
+[18:52:30] [0/85] TIC 350274116
+[18:52:49]   TIC 350274116: saved 14 light curves (0 failed)
+[69/278] TIC 350274116: repeats 3 periods [] diff [('event', 79.2, 82.2), ('repeat', 87.4, 141.9), ('repeat', 83.5, 160.1)]
+TIC 350274116 S102: 9805 cadences (200 s), aperture 6 px -> s102_OWN_200s.csv.gz
+[18:54:26] [0/85] TIC 434307868
+[18:54:48]   TIC 434307868: saved 20 light curves (0 failed)
+[70/278] TIC 434307868: repeats 0 periods [] diff [('event', 104.4, 1.4)]
+[18:55:22] [0/85] TIC 329064084
+[18:55:46]   TIC 329064084: saved 15 light curves (0 failed)
+[71/278] TIC 264333501: repeats 8 periods [(11, 31.55148)] diff [('event', 1.2, 10.1), ('repeat', 3.6, 4.2), ('repeat', 165.8, 0.5)]
+[18:55:51] [0/85] TIC 436663419
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[18:56:15]   TIC 436663419: saved 22 light curves (0 failed)
+[72/278] TIC 258799245: repeats 27 periods [(1, 30.13291)] diff [('event', 3.2, 14.5), ('repeat', 2.0, 13.6), ('repeat', 3.7, 7.8)]
+[18:57:02] [0/85] TIC 262725099
+[73/278] TIC 436663419: repeats 0 periods [] diff [('event', 151.5, 7.8)]
+[18:57:12] [0/85] TIC 265135454
+[74/278] TIC 329064084: repeats 25 periods [] diff [('event', 155.4, -9.6), ('repeat', 39.5, 38.5), ('repeat', 36.0, 89.5)]
+[18:57:17]   TIC 262725099: saved 7 light curves (0 failed)
+[18:57:17] [0/85] TIC 403139386
+[18:57:25]   TIC 265135454: saved 11 light curves (0 failed)
+[18:57:29]   TIC 403139386: saved 5 light curves (0 failed)
+[75/278] TIC 262725099: repeats 0 periods [] diff [('event', 100.3, 0.9)]
+[18:57:49] [0/85] TIC 97255991
+[76/278] TIC 265135454: repeats 0 periods [] diff [('event', 156.2, 0.8)]
+[18:58:00] [0/85] TIC 250103631
+[18:58:08]   TIC 250103631: saved 4 light curves (0 failed)
+[18:58:09]   TIC 97255991: saved 17 light curves (0 failed)
+[77/278] TIC 403139386: repeats 1 periods [(1, 386.0371), (2, 193.01855), (3, 128.67903), (4, 96.50928)] diff [('event', 5.4, 11.4), ('repeat', 1.4, 8.4)]
+[78/278] TIC 250103631: repeats 1 periods [(1, 14.28972)] diff [('event', 187.3, 4.6), ('repeat', 104.5, 1.1)]
+[79/278] TIC 257395093: skip: community period on ExoFOP: 14.4000 d by gsun (2021-10-22): newCTOI, The period might be half
+[80/278] TIC 267608606: skip: community period on ExoFOP: 51.7534 d by mason (2026-09-15): Eccentric Eclipsing Binary. Original CTOI is secondary eclipse
+[81/278] TIC 97255991: repeats 0 periods [] diff [('event', 81.2, 1.2)]
+[18:58:41] [0/85] TIC 441199415
+[18:58:41] [0/85] TIC 283222856
+[18:58:42] [0/85] TIC 27541714
+[18:58:50]   TIC 283222856: saved 4 light curves (0 failed)
+[18:58:56]   TIC 441199415: saved 12 light curves (0 failed)
+[18:59:02]   TIC 27541714: saved 14 light curves (0 failed)
+[82/278] TIC 283222856: repeats 1 periods [] diff [('event', 1.2, 12.8), ('repeat', 152.0, -21.6)]
+[18:59:33] [0/85] TIC 443994883
+[83/278] TIC 27541714: repeats 0 periods [] diff [('event', 105.7, 1.8)]
+[18:59:39] [0/85] TIC 348063710
+[18:59:56]   TIC 443994883: saved 20 light curves (0 failed)
+[19:00:01]   TIC 348063710: saved 11 light curves (0 failed)
+[84/278] TIC 443994883: repeats 0 periods [] diff [('event', 105.2, 2.6)]
+[85/278] TIC 348063710: repeats 1 periods [(1, 726.9752), (3, 242.32507), (5, 145.39504), (7, 103.8536)] diff [('event', None, None), ('repeat', 160.8, -2.1)]
+[19:00:42] [0/85] TIC 47142025
+[19:00:42] [0/85] TIC 342004815
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:01:03]   TIC 47142025: saved 9 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:01:22]   TIC 342004815: saved 34 light curves (0 failed)
+[86/278] TIC 47142025: repeats 0 periods [] diff [('event', 100.5, 0.5)]
+[19:01:41] [0/85] TIC 274150793
+[19:01:54]   TIC 274150793: saved 3 light curves (0 failed)
+[87/278] TIC 274150793: repeats 0 periods [] diff [('event', 102.8, 5.2)]
+[88/278] TIC 441199415: repeats 0 periods [] diff [('event', 100.0, 0.7)]
+[19:02:17] [0/85] TIC 110642204
+TIC 441199415 S106: 9174 cadences (200 s), aperture 7 px -> s106_OWN_200s.csv.gz
+[19:02:22] [0/85] TIC 344713453
+[19:02:22]   TIC 110642204: saved 3 light curves (0 failed)
+[19:02:33]   TIC 344713453: saved 8 light curves (0 failed)
+[89/278] TIC 110642204: repeats 0 periods [] diff [('event', 118.6, 2.1)]
+[19:02:46] [0/85] TIC 168702709
+[90/278] TIC 342004815: repeats 9 periods [] diff [('event', 22.7, 37.9), ('repeat', 26.0, 37.2), ('repeat', 25.2, 34.9)]
+[19:03:00]   TIC 168702709: saved 11 light curves (0 failed)
+[91/278] TIC 344713453: repeats 0 periods [] diff [('event', 76.3, 0.8)]
+[19:03:05] [0/85] TIC 160041500
+[19:03:06] [0/85] TIC 266813717
+[19:03:22]   TIC 266813717: saved 9 light curves (0 failed)
+[19:03:28]   TIC 160041500: saved 15 light curves (0 failed)
+[92/278] TIC 266813717: repeats 0 periods [] diff [('event', 101.2, 1.0)]
+[19:03:51] [0/85] TIC 238605434
+[19:04:12]   TIC 238605434: saved 12 light curves (0 failed)
+[93/278] TIC 238605434: repeats 0 periods [] diff [('event', 105.2, 1.0)]
+[19:04:37] [0/85] TIC 328162246
+[94/278] TIC 160041500: repeats 6 periods [] diff [('event', 26.6, 6.9), ('repeat', 23.1, 15.5), ('repeat', 22.4, 15.4)]
+[19:04:52] [0/85] TIC 64254425
+[19:04:57]   TIC 328162246: saved 8 light curves (0 failed)
+[19:05:13]   TIC 64254425: saved 6 light curves (0 failed)
+[95/278] TIC 328162246: repeats 0 periods [] diff [('event', 84.1, 3.3)]
+[19:05:23] [0/85] TIC 92709947
+[96/278] TIC 64254425: repeats 0 periods [] diff [('event', 135.4, 1.6)]
+[19:05:40] [0/85] TIC 4299199
+[19:05:53]   TIC 92709947: saved 10 light curves (0 failed)
+[19:06:07]   TIC 4299199: saved 25 light curves (0 failed)
+[97/278] TIC 92709947: repeats 1 periods [] diff [('event', 117.3, -0.3), ('repeat', 113.5, -1.7)]
+[19:06:32] [0/85] TIC 197596346
+[98/278] TIC 4299199: repeats 0 periods [] diff [('event', 120.0, 2.8)]
+[99/278] TIC 369779127: skip: community period on ExoFOP: 72.5747 d by mason (2026-09-17): Eccentric Eclipsing Binary. Original CTOI is secondary eclipse
+[19:06:49] [0/85] TIC 239142212
+[19:06:50]   TIC 197596346: saved 13 light curves (0 failed)
+[19:07:08]   TIC 239142212: saved 15 light curves (0 failed)
+[100/278] TIC 239142212: repeats 0 periods [] diff [('event', 99.1, 0.3)]
+[101/278] TIC 168702709: repeats 1 periods [(1, 2116.5577), (2, 1058.27885), (4, 529.13943), (5, 423.31154)] diff [('event', 100.8, 1.2), ('repeat', 10.1, 27.6)]
+TIC 168702709 S105: 9497 cadences (200 s), aperture 9 px -> s105_OWN_200s.csv.gz
+TIC 168702709 S106: 10834 cadences (200 s), aperture 9 px -> s106_OWN_200s.csv.gz
+TIC 168702709 S107: 11944 cadences (200 s), aperture 9 px -> s107_OWN_200s.csv.gz
+TIC 168702709 S108: 9803 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[19:07:53] [0/85] TIC 318188400
+[19:08:06]   TIC 318188400: saved 8 light curves (0 failed)
+[102/278] TIC 318188400: repeats 0 periods [] diff [('event', 127.7, 1.3)]
+[19:08:33] [0/85] TIC 441705792
+[19:08:51]   TIC 441705792: saved 14 light curves (0 failed)
+[103/278] TIC 197596346: repeats 0 periods [] diff [('event', 33.3, 2.4)]
+[104/278] TIC 212323118: skip: community period on ExoFOP: 169.0000 d by damboiu (2019-04-05): Identified from a single transit event
+TIC 197596346 S106: 9174 cadences (200 s), aperture 7 px -> s106_OWN_200s.csv.gz
+[19:10:34] [0/85] TIC 82550215
+[19:10:52]   TIC 82550215: saved 15 light curves (0 failed)
+[105/278] TIC 82550215: repeats 1 periods [(1, 722.8668), (2, 361.4334), (3, 240.9556), (4, 180.7167)] diff [('event', 1.2, 73.1), ('repeat', 3.3, -11.2)]
+[19:11:35] [0/85] TIC 446044800
+[106/278] TIC 140215502: repeats 3 periods [] diff [('event', 2.1, 12.6), ('repeat', 3.2, 13.0), ('repeat', 1.5, 15.4)]
+[107/278] TIC 242241304: skip: community period on ExoFOP: 26.7517 d by slee (2026-06-09): Period constrained by 4 transits in sectors 11, 38, 65, 102. S65 transit not available in SPOC PDCSAP_FLUX.
+TIC 140215502 S107: 11943 cadences (200 s), aperture 8 px -> s107_OWN_200s.csv.gz
+TIC 140215502 S108: 10933 cadences (200 s), aperture 9 px -> s108_OWN_200s.csv.gz
+[19:11:54] [0/85] TIC 246976997
+[19:11:57]   TIC 446044800: saved 15 light curves (0 failed)
+[19:12:08]   TIC 246976997: saved 10 light curves (0 failed)
+[108/278] TIC 446044800: repeats 0 periods [] diff [('event', 3.9, 9.5)]
+[109/278] TIC 246976997: repeats 0 periods [] diff [('event', 73.7, 2.0)]
+[19:12:33] [0/85] TIC 358658763
+[19:12:36] [0/85] TIC 365463946
+[19:12:47]   TIC 358658763: saved 9 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:13:04]   TIC 365463946: saved 18 light curves (0 failed)
+[110/278] TIC 358658763: repeats 0 periods [] diff [('event', 73.4, 0.8)]
+[19:13:19] [0/85] TIC 48882295
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:13:34]   TIC 48882295: saved 10 light curves (0 failed)
+[111/278] TIC 365463946: repeats 0 periods [] diff [('event', 113.9, 1.6)]
+[19:13:56] [0/85] TIC 188902169
+[19:14:02]   TIC 188902169: saved 2 light curves (0 failed)
+[112/278] TIC 48882295: repeats 2 periods [(23, 63.30529), (46, 31.65265)] diff [('event', 29.6, 81.6), ('repeat', 29.7, 36.2), ('repeat', 30.2, 19.1)]
+TIC 48882295 S108: 10933 cadences (200 s), aperture 10 px -> s108_OWN_200s.csv.gz
+[19:14:26] [0/85] TIC 229184365
+[19:14:37]   TIC 229184365: saved 4 light curves (0 failed)
+[113/278] TIC 188902169: repeats 1 periods [(1, 742.5503), (2, 371.27515), (3, 247.51677), (4, 185.63758)] diff [('event', 128.4, 7.0), ('repeat', 113.1, 2.5)]
+[19:14:53] [0/85] TIC 121636363
+[114/278] TIC 229184365: repeats 0 periods [] diff [('event', 1.6, 4.9)]
+[19:15:07]   TIC 121636363: saved 9 light curves (0 failed)
+[19:15:10] [0/85] TIC 248957032
+[19:15:30]   TIC 248957032: saved 17 light curves (0 failed)
+[115/278] TIC 248957032: repeats 0 periods [] diff [('event', 87.0, 0.7)]
+[19:16:15] [0/85] TIC 64549889
+[19:16:31]   TIC 64549889: saved 12 light curves (0 failed)
+[116/278] TIC 441705792: repeats 0 periods [] diff [('event', 1.5, 15.0)]
+[19:17:15] [0/85] TIC 294501647
+[19:17:41]   TIC 294501647: saved 24 light curves (0 failed)
+[117/278] TIC 64549889: repeats 3 periods [(1, 35.75311)] diff [('event', 2.8, 6.0), ('repeat', 1.6, 11.0), ('repeat', 4.7, 8.1)]
+TIC 64549889 S108: 10933 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[19:17:55] [0/85] TIC 354032501
+[19:18:05]   TIC 354032501: saved 3 light curves (0 failed)
+[118/278] TIC 294501647: repeats 0 periods [] diff [('event', 83.3, 0.9)]
+[119/278] TIC 354032501: repeats 2 periods [] diff [('event', 106.0, 7.2), ('repeat', 50.7, 73.2), ('repeat', 52.1, 43.3)]
+[19:18:29] [0/85] TIC 37652870
+[19:18:32] [0/85] TIC 326053539
+[19:18:42]   TIC 37652870: saved 5 light curves (0 failed)
+[19:18:43]   TIC 326053539: saved 3 light curves (0 failed)
+[120/278] TIC 37652870: repeats 0 periods [] diff [('event', 93.0, 1.3)]
+[121/278] TIC 326053539: repeats 0 periods [] diff [('event', 4.6, 13.6)]
+[19:19:07] [0/85] TIC 219641816
+[19:19:09] [0/85] TIC 178472673
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:19:23]   TIC 219641816: saved 9 light curves (0 failed)
+[19:19:27]   TIC 178472673: saved 10 light curves (0 failed)
+[122/278] TIC 219641816: repeats 0 periods [] diff [('event', 1.7, 7.7)]
+[19:19:52] [0/85] TIC 283786459
+[123/278] TIC 178472673: repeats 0 periods [] diff [('event', 140.2, 0.7)]
+[19:20:03] [0/85] TIC 286097964
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:20:18]   TIC 283786459: saved 22 light curves (0 failed)
+[19:20:37]   TIC 286097964: saved 20 light curves (0 failed)
+[124/278] TIC 283786459: repeats 0 periods [] diff [('event', 102.8, 1.5)]
+[19:21:07] [0/85] TIC 86119201
+[125/278] TIC 286097964: repeats 0 periods [] diff [('event', 124.4, 1.2)]
+[19:21:22] [0/85] TIC 458645327
+[19:21:30]   TIC 86119201: saved 16 light curves (0 failed)
+[19:21:46]   TIC 458645327: saved 23 light curves (0 failed)
+[126/278] TIC 121636363: repeats 3 periods [] diff [('event', 7.6, 3.4), ('repeat', 18.6, 23.0), ('repeat', 132.5, -6.9)]
+TIC 121636363 S106: 10220 cadences (200 s), aperture 2 px -> s106_OWN_200s.csv.gz
+TIC 121636363 S107: 11944 cadences (200 s), aperture 9 px -> s107_OWN_200s.csv.gz
+TIC 121636363 S108: 10933 cadences (200 s), aperture 9 px -> s108_OWN_200s.csv.gz
+[19:21:54] [0/85] TIC 66013259
+[127/278] TIC 86119201: repeats 0 periods [] diff [('event', 107.0, 0.9)]
+[128/278] TIC 293649602: skip: community period on ExoFOP: 51.9783 d by mason (2026-09-16): Eccentric Eclipsing Binary. Original CTOI is secondary eclipse. Period may be multiple of that given
+[19:22:08]   TIC 66013259: saved 6 light curves (0 failed)
+[19:22:08] [0/85] TIC 58843267
+[129/278] TIC 458645327: repeats 0 periods [] diff [('event', 107.5, 2.7)]
+[19:22:26]   TIC 58843267: saved 11 light curves (0 failed)
+[19:22:29] [0/85] TIC 65290698
+[130/278] TIC 66013259: repeats 0 periods [] diff [('event', 212.5, -3.4)]
+[19:22:52]   TIC 65290698: saved 18 light curves (0 failed)
+[19:22:56] [0/85] TIC 397487633
+[131/278] TIC 58843267: repeats 0 periods [] diff [('event', 96.8, 1.1)]
+[19:23:02] [0/85] TIC 159614322
+[19:23:07]   TIC 397487633: saved 6 light curves (0 failed)
+[132/278] TIC 397487633: repeats 0 periods [] diff [('event', 91.9, 1.2)]
+[19:23:28] [0/85] TIC 268751095
+[19:23:35]   TIC 159614322: saved 25 light curves (0 failed)
+[133/278] TIC 65290698: repeats 0 periods [] diff [('event', 24.1, 6.9)]
+TIC 65290698 S108: 8919 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[19:23:47] [0/85] TIC 453029782
+[19:23:50]   TIC 268751095: saved 8 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:24:13]   TIC 453029782: saved 16 light curves (0 failed)
+[134/278] TIC 159614322: repeats 1 periods [(1, 719.6572), (2, 359.8286), (4, 179.9143), (5, 143.93144)] diff [('event', 1.2, 15.3), ('repeat', 132.4, -0.6)]
+[19:24:25] [0/85] TIC 113918063
+[135/278] TIC 268751095: repeats 0 periods [] diff [('event', 94.7, 1.2)]
+[19:24:50]   TIC 113918063: saved 13 light curves (0 failed)
+[136/278] TIC 453029782: repeats 1 periods [(1, 1030.9596), (2, 515.4798), (3, 343.6532), (4, 257.7399)] diff [('event', 11.2, 5.9), ('repeat', 10.4, 4.3)]
+TIC 268751095 S107: 10481 cadences (200 s), aperture 8 px -> s107_OWN_200s.csv.gz
+TIC 268751095 S108: 8919 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[19:24:56] [0/85] TIC 77560191
+[19:24:56] [0/85] TIC 188377183
+[19:25:12]   TIC 188377183: saved 3 light curves (0 failed)
+[137/278] TIC 113918063: repeats 0 periods [] diff [('event', 74.6, 0.7)]
+[19:25:20]   TIC 77560191: saved 12 light curves (0 failed)
+[19:25:25] [0/85] TIC 294216479
+[138/278] TIC 188377183: repeats 0 periods [] diff [('event', 102.6, 1.2)]
+[19:25:34] [0/85] TIC 444041825
+[139/278] TIC 77560191: repeats 0 periods [] diff [('event', 105.1, 1.2)]
+[19:25:52] [0/85] TIC 206561817
+[19:25:57]   TIC 294216479: saved 19 light curves (0 failed)
+[19:26:03]   TIC 444041825: saved 19 light curves (0 failed)
+[19:26:17]   TIC 206561817: saved 11 light curves (0 failed)
+[140/278] TIC 444041825: repeats 0 periods [] diff [('event', 97.7, 0.9)]
+[19:26:29] [0/85] TIC 53952541
+[141/278] TIC 294216479: repeats 3 periods [] diff [('event', 87.4, 1.1), ('repeat', 53.3, 22.4), ('repeat', 54.7, 24.7)]
+[142/278] TIC 206561817: repeats 0 periods [] diff [('event', 97.5, 1.9)]
+[19:26:49] [0/85] TIC 160363
+[19:26:54] [0/85] TIC 418036300
+[19:26:55]   TIC 53952541: saved 13 light curves (0 failed)
+[19:27:16]   TIC 418036300: saved 3 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:27:17]   TIC 160363: saved 10 light curves (0 failed)
+Warning: 31% (1064/3399) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[143/278] TIC 418036300: repeats 0 periods [] diff [('event', 9.1, 6.5)]
+[19:27:40] [0/85] TIC 83384234
+[144/278] TIC 160363: repeats 0 periods [] diff [('event', 68.6, 0.6)]
+[19:28:05]   TIC 83384234: saved 11 light curves (0 failed)
+[145/278] TIC 268534931: repeats 2 periods [(8, 92.59832), (16, 46.29916), (24, 30.86611), (32, 23.14958)] diff [('event', 3.8, 12.4), ('repeat', 9.5, 28.3), ('repeat', 1.7, 10.5)]
+TIC 268534931 S107: 9857 cadences (200 s), aperture 8 px -> s107_OWN_200s.csv.gz
+[19:28:34] [0/85] TIC 56099207
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:28:51]   TIC 56099207: saved 10 light curves (0 failed)
+[146/278] TIC 83384234: repeats 20 periods [] diff [('event', 19.6, 20.6), ('repeat', 18.5, 33.1), ('repeat', 106.9, 9.2)]
+[19:29:04] [0/85] TIC 229076808
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:29:19]   TIC 229076808: saved 9 light curves (0 failed)
+[147/278] TIC 56099207: repeats 0 periods [] diff [('event', 100.9, 0.9)]
+[19:29:37] [0/85] TIC 470981906
+[19:29:53]   TIC 470981906: saved 8 light curves (0 failed)
+[148/278] TIC 470981906: repeats 0 periods [] diff [('event', 95.8, 0.8)]
+[19:30:20] [0/85] TIC 425585592
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:30:36]   TIC 425585592: saved 11 light curves (0 failed)
+[149/278] TIC 425585592: repeats 0 periods [] diff [('event', 105.4, 0.8)]
+[19:31:00] [0/85] TIC 316340057
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:31:13]   TIC 316340057: saved 7 light curves (0 failed)
+[150/278] TIC 53952541: repeats 0 periods [] diff [('event', 145.1, 1.5)]
+TIC 53952541 S106: 9174 cadences (200 s), aperture 9 px -> s106_OWN_200s.csv.gz
+[19:31:35] [0/85] TIC 441017467
+[151/278] TIC 316340057: repeats 0 periods [] diff [('event', 148.6, 2.3)]
+[19:31:48] [0/85] TIC 209218292
+[19:31:51]   TIC 441017467: saved 9 light curves (0 failed)
+[19:31:59]   TIC 209218292: saved 5 light curves (0 failed)
+[152/278] TIC 441017467: repeats 0 periods [] diff [('event', 112.4, 0.6)]
+[19:32:25] [0/85] TIC 9376051
+[153/278] TIC 209218292: repeats 0 periods [] diff [('event', 11.6, 5.0)]
+[19:32:33] [0/85] TIC 387513450
+[19:32:39]   TIC 9376051: saved 6 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:32:59]   TIC 387513450: saved 22 light curves (0 failed)
+[154/278] TIC 387513450: repeats 0 periods [] diff [('event', 114.4, 1.9)]
+[19:33:51] [0/85] TIC 67651371
+[155/278] TIC 229076808: repeats 0 periods [] diff [('event', 121.4, 1.8)]
+[156/278] TIC 270560025: skip: community period on ExoFOP: 15.0000 d by kzhu (2025-07-19): Single transit but possible period of possible second; no centroid movement
+[19:34:01]   TIC 67651371: saved 6 light curves (0 failed)
+TIC 229076808 S106: 10834 cadences (200 s), aperture 8 px -> s106_OWN_200s.csv.gz
+TIC 229076808 S107: 11944 cadences (200 s), aperture 8 px -> s107_OWN_200s.csv.gz
+TIC 229076808 S108: 9803 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[19:34:06] [0/85] TIC 229055790
+[19:34:25]   TIC 229055790: saved 13 light curves (0 failed)
+[157/278] TIC 229055790: repeats 1 periods [(1, 1838.9452), (2, 919.4726), (3, 612.98173), (4, 459.7363)] diff [('event', 20.3, 2.7), ('repeat', 3.6, 5.5)]
+[19:35:20] [0/85] TIC 337665591
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:35:37]   TIC 337665591: saved 9 light curves (0 failed)
+[158/278] TIC 337665591: repeats 1 periods [(1, 1096.2737), (2, 548.13685), (3, 365.42457), (4, 274.06842)] diff [('event', 8.4, 11.0), ('repeat', 1.4, 5.3)]
+[19:36:34] [0/85] TIC 27986571
+[19:36:46]   TIC 27986571: saved 6 light curves (0 failed)
+[159/278] TIC 27986571: repeats 0 periods [] diff [('event', 98.2, 0.6)]
+[19:37:05] [0/85] TIC 468910725
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:37:29]   TIC 468910725: saved 21 light curves (0 failed)
+[160/278] TIC 468910725: repeats 0 periods [] diff [('event', 113.2, 5.2)]
+[19:38:17] [0/85] TIC 396935226
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:38:33]   TIC 396935226: saved 7 light curves (0 failed)
+[161/278] TIC 396935226: repeats 0 periods [] diff [('event', 103.2, 0.9)]
+[19:39:13] [0/85] TIC 169251938
+[19:39:42]   TIC 169251938: saved 18 light curves (0 failed)
+[162/278] TIC 169251938: repeats 2 periods [] diff [('event', 124.1, 0.6), ('repeat', 98.8, 1.8), ('repeat', 13.1, 7.1)]
+[19:40:42] [0/85] TIC 467785319
+[19:40:59]   TIC 467785319: saved 7 light curves (0 failed)
+[163/278] TIC 467785319: repeats 0 periods [] diff [('event', 187.3, 0.9)]
+[19:41:29] [0/85] TIC 389041242
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:41:53]   TIC 389041242: saved 22 light curves (0 failed)
+[164/278] TIC 389041242: repeats 0 periods [] diff [('event', 3.8, 5.2)]
+[19:42:28] [0/85] TIC 373026096
+[165/278] TIC 9376051: repeats 0 periods [] diff [('event', None, None)]
+[19:42:48]   TIC 373026096: saved 16 light curves (0 failed)
+[19:42:52] [0/85] TIC 369476686
+[19:43:08]   TIC 369476686: saved 8 light curves (0 failed)
+[166/278] TIC 369476686: repeats 0 periods [] diff [('event', 166.3, 3.3)]
+[167/278] TIC 373026096: repeats 0 periods [] diff [('event', 105.7, 0.9)]
+[19:43:32] [0/85] TIC 257430997
+[19:43:35] [0/85] TIC 162031311
+[19:43:46]   TIC 162031311: saved 6 light curves (0 failed)
+[19:43:51]   TIC 257430997: saved 8 light curves (0 failed)
+[168/278] TIC 67651371: repeats 0 periods [] diff [('event', None, None)]
+[169/278] TIC 257430997: repeats 0 periods [] diff [('event', 96.6, 1.1)]
+[19:44:13] [0/85] TIC 468888472
+[19:44:16] [0/85] TIC 399784500
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:44:30]   TIC 399784500: saved 8 light curves (0 failed)
+[170/278] TIC 162031311: repeats 2 periods [] diff [('event', 1.9, 6.6), ('repeat', 3.7, 10.8), ('repeat', None, None)]
+[19:44:32]   TIC 468888472: saved 18 light curves (0 failed)
+[19:44:36] [0/85] TIC 284677262
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:44:57]   TIC 284677262: saved 13 light curves (0 failed)
+[171/278] TIC 399784500: repeats 0 periods [] diff [('event', 81.7, 0.8)]
+[172/278] TIC 468888472: repeats 1 periods [(1, 1803.207), (2, 901.6035), (3, 601.069), (4, 450.80175)] diff [('event', 102.7, 2.1), ('repeat', 85.1, 6.2)]
+[19:45:23] [0/85] TIC 24795168
+[19:45:24] [0/85] TIC 91987487
+[19:45:39]   TIC 24795168: saved 12 light curves (0 failed)
+[19:45:47]   TIC 91987487: saved 16 light curves (0 failed)
+[173/278] TIC 284677262: repeats 0 periods [] diff [('event', 87.6, 1.0)]
+[19:45:55] [0/85] TIC 387541380
+[174/278] TIC 24795168: repeats 0 periods [] diff [('event', 124.1, 2.8)]
+[19:46:04] [0/85] TIC 248960573
+[19:46:15]   TIC 248960573: saved 6 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[19:46:19]   TIC 387541380: saved 22 light curves (0 failed)
+[175/278] TIC 387541380: repeats 0 periods [] diff [('event', 114.2, 3.2)]
+[19:46:58] [0/85] TIC 293845053
+[176/278] TIC 248960573: repeats 2 periods [] diff [('event', 76.2, 2.3), ('repeat', 17.7, 21.7), ('repeat', 18.4, 22.1)]
+TIC 248960573 S108: 8919 cadences (200 s), aperture 7 px -> s108_OWN_200s.csv.gz
+[19:47:12] [0/85] TIC 136798415
+[19:47:15]   TIC 293845053: saved 8 light curves (0 failed)
+[19:47:21]   TIC 136798415: saved 5 light curves (0 failed)
+[177/278] TIC 136798415: repeats 0 periods [] diff [('event', 91.6, 0.9)]
+[19:47:47] [0/85] TIC 333792947
+[178/278] TIC 293845053: repeats 1 periods [] diff [('event', 107.7, 0.9), ('repeat', 42.7, 17.2)]
+[19:48:00] [0/85] TIC 255989063
+[19:48:01]   TIC 333792947: saved 9 light curves (0 failed)
+[179/278] TIC 333792947: repeats 0 periods [] diff [('event', 84.1, 3.0)]
+[19:48:23]   TIC 255989063: saved 19 light curves (0 failed)
+[19:48:27] [0/85] TIC 441131943
+[19:48:39]   TIC 441131943: saved 7 light curves (0 failed)
+[180/278] TIC 255989063: repeats 0 periods [] diff [('event', 133.1, 1.5)]
+[19:48:46] [0/85] TIC 422082582
+[19:49:00]   TIC 422082582: saved 10 light curves (0 failed)
+[181/278] TIC 441131943: repeats 0 periods [] diff [('event', 111.3, 3.8)]
+TIC 441131943 S108: 8919 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[19:49:10] [0/85] TIC 206588321
+[19:49:29]   TIC 206588321: saved 11 light curves (0 failed)
+[182/278] TIC 422082582: repeats 0 periods [] diff [('event', 9.4, 6.1)]
+[19:49:43] [0/85] TIC 359683436
+[19:49:59]   TIC 359683436: saved 12 light curves (0 failed)
+[183/278] TIC 206588321: repeats 0 periods [] diff [('event', 141.5, 4.6)]
+[184/278] TIC 243417115: skip: community period on ExoFOP: 34.9514 d by slee (2026-06-09): Eccentric EB, secondary eclipse epoch ~ BJD 2460047.50
+[185/278] TIC 278990954: skip: community period on ExoFOP: 175.3950 d by slee (2025-05-12): Deep - shallow dips with ~175 d period. Centroid at TIC 278990957 (17&quot; away). See s0001s0039TCE2.
+[19:50:17] [0/85] TIC 212378056
+[19:50:34]   TIC 212378056: saved 9 light curves (0 failed)
+[186/278] TIC 359683436: repeats 2 periods [(1, 719.25922), (2, 359.62961), (3, 239.75307), (4, 179.8148)] diff [('event', 31.2, 7.6), ('repeat', 27.4, 8.5), ('repeat', 27.0, 23.5)]
+[19:50:44] [0/85] TIC 139726266
+[19:51:00]   TIC 139726266: saved 8 light curves (0 failed)
+[187/278] TIC 212378056: repeats 0 periods [] diff [('event', 178.6, 1.3)]
+TIC 212378056 S108: 8919 cadences (200 s), aperture 9 px -> s108_OWN_200s.csv.gz
+[19:51:13] [0/85] TIC 422484720
+[19:51:27]   TIC 422484720: saved 8 light curves (0 failed)
+[188/278] TIC 422484720: repeats 0 periods [] diff [('event', 3.7, 4.8)]
+[19:52:03] [0/85] TIC 435904852
+[19:52:27]   TIC 435904852: saved 18 light curves (0 failed)
+[189/278] TIC 435904852: repeats 0 periods [] diff [('event', 139.7, 1.4)]
+[19:53:19] [0/85] TIC 257803459
+[19:53:32]   TIC 257803459: saved 8 light curves (0 failed)
+[190/278] TIC 257803459: repeats 0 periods [] diff [('event', 127.2, 0.6)]
+[19:53:58] [0/85] TIC 253917513
+[19:54:08]   TIC 253917513: saved 5 light curves (0 failed)
+[191/278] TIC 253917513: repeats 0 periods [] diff [('event', 14.7, 6.2)]
+[19:54:32] [0/85] TIC 61126715
+[19:54:45]   TIC 61126715: saved 9 light curves (0 failed)
+[192/278] TIC 61126715: repeats 0 periods [] diff [('event', 101.3, 1.4)]
+[193/278] TIC 91987487: repeats 0 periods [] diff [('event', 112.9, 2.9)]
+[19:55:11] [0/85] TIC 242347787
+[19:55:15] [0/85] TIC 115171750
+[19:55:17]   TIC 242347787: saved 2 light curves (0 failed)
+[19:55:32]   TIC 115171750: saved 13 light curves (0 failed)
+[194/278] TIC 242347787: repeats 0 periods [] diff [('event', 0.7, 16.9)]
+[19:55:52] [0/85] TIC 397483270
+[19:56:11]   TIC 397483270: saved 9 light curves (0 failed)
+[195/278] TIC 115171750: repeats 5 periods [] diff [('event', 5.4, 15.7), ('repeat', 183.9, -4.8), ('repeat', 19.8, 4.1)]
+[19:56:18] [0/85] TIC 22642772
+[196/278] TIC 139726266: repeats 1 periods [(1, 2108.9993), (2, 1054.49965), (3, 702.99977), (4, 527.24982)] diff [('event', 4.5, 3.4), ('repeat', 10.5, 3.6)]
+TIC 139726266 S106: 10834 cadences (200 s), aperture 7 px -> s106_OWN_200s.csv.gz
+TIC 139726266 S107: 11944 cadences (200 s), aperture 8 px -> s107_OWN_200s.csv.gz
+TIC 139726266 S108: 9803 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[19:56:31] [0/85] TIC 126984335
+[197/278] TIC 397483270: repeats 0 periods [] diff [('event', 104.0, 3.2)]
+[19:56:37] [0/85] TIC 188835620
+[19:56:41]   TIC 22642772: saved 17 light curves (0 failed)
+[19:56:52]   TIC 126984335: saved 12 light curves (0 failed)
+[198/278] TIC 126984335: repeats 0 periods [] diff [('event', 163.9, 1.9)]
+[19:57:20] [0/85] TIC 239190192
+[19:57:37]   TIC 188835620: saved 56 light curves (0 failed)
+[19:57:48]   TIC 239190192: saved 25 light curves (0 failed)
+[199/278] TIC 22642772: repeats 2 periods [(1, 22.21039)] diff [('event', 65.7, 125.9), ('repeat', 63.4, 144.6), ('repeat', 62.6, 147.5)]
+[19:58:03] [0/85] TIC 250187388
+[19:58:15]   TIC 250187388: saved 8 light curves (0 failed)
+[200/278] TIC 239190192: repeats 1 periods [] diff [('event', 32.5, 6.5), ('repeat', 90.8, 0.9)]
+[19:58:24] [0/85] TIC 202712304
+[19:58:33]   TIC 202712304: saved 6 light curves (0 failed)
+[201/278] TIC 250187388: repeats 0 periods [] diff [('event', 97.9, 1.9)]
+[202/278] TIC 202712304: repeats 0 periods [] diff [('event', 77.2, 65.2)]
+[19:58:56] [0/85] TIC 388803989
+[19:58:59] [0/85] TIC 377020459
+[19:59:08]   TIC 388803989: saved 8 light curves (0 failed)
+[19:59:13]   TIC 377020459: saved 10 light curves (0 failed)
+[203/278] TIC 388803989: repeats 0 periods [] diff [('event', 91.9, 1.3)]
+[19:59:34] [0/85] TIC 89330719
+[19:59:52]   TIC 89330719: saved 8 light curves (0 failed)
+[204/278] TIC 377020459: repeats 1 periods [(1, 754.46457), (2, 377.23229), (3, 251.48819), (4, 188.61614)] diff [('event', 104.9, 1.2), ('repeat', 141.3, 5.5)]
+[19:59:59] [0/85] TIC 458382304
+[20:00:15]   TIC 458382304: saved 14 light curves (0 failed)
+[205/278] TIC 89330719: repeats 0 periods [] diff [('event', 143.8, 6.6)]
+[20:00:30] [0/85] TIC 19026420
+[206/278] TIC 458382304: repeats 0 periods [] diff [('event', 111.8, 1.3)]
+[20:00:48] [0/85] TIC 100665013
+[207/278] TIC 188835620: repeats 6 periods [] diff [('event', 0.8, 62.7), ('repeat', 18.2, 4.1), ('repeat', None, None)]
+[20:00:56]   TIC 19026420: saved 23 light curves (0 failed)
+[20:00:58] [0/85] TIC 176402194
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:01:05]   TIC 100665013: saved 16 light curves (0 failed)
+[20:01:09]   TIC 176402194: saved 5 light curves (0 failed)
+[208/278] TIC 19026420: repeats 0 periods [] diff [('event', 165.9, 0.8)]
+[20:01:44] [0/85] TIC 176366125
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:01:58]   TIC 176366125: saved 8 light curves (0 failed)
+[209/278] TIC 176402194: repeats 2 periods [(16, 46.97422), (32, 23.48711)] diff [('event', 2.5, 11.0), ('repeat', 2.2, 9.7), ('repeat', 2.4, 10.3)]
+[20:02:39] [0/85] TIC 420031102
+[210/278] TIC 176366125: repeats 0 periods [] diff [('event', 120.6, 3.2)]
+[20:02:56]   TIC 420031102: saved 17 light curves (0 failed)
+[20:02:57] [0/85] TIC 270651953
+[211/278] TIC 100665013: repeats 0 periods [] diff [('event', 115.4, 2.0)]
+TIC 100665013 S107: 11943 cadences (200 s), aperture 7 px -> s107_OWN_200s.csv.gz
+TIC 100665013 S108: 10933 cadences (200 s), aperture 9 px -> s108_OWN_200s.csv.gz
+[20:03:06] [0/85] TIC 3892209
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:03:15]   TIC 270651953: saved 12 light curves (0 failed)
+[20:03:20]   TIC 3892209: saved 10 light curves (0 failed)
+[212/278] TIC 420031102: repeats 0 periods [] diff [('event', 13.8, 1.3)]
+[20:03:33] [0/85] TIC 69745398
+[213/278] TIC 270651953: repeats 0 periods [] diff [('event', 97.5, 2.9)]
+[214/278] TIC 3892209: repeats 0 periods [] diff [('event', 152.4, 1.6)]
+[20:03:50] [0/85] TIC 82223761
+[20:03:52] [0/85] TIC 7984988
+[20:03:59]   TIC 69745398: saved 13 light curves (0 failed)
+[20:04:00]   TIC 82223761: saved 5 light curves (0 failed)
+[20:04:08]   TIC 7984988: saved 11 light curves (0 failed)
+[215/278] TIC 7984988: repeats 0 periods [] diff [('event', 73.3, 1.0)]
+[216/278] TIC 69745398: repeats 1 periods [(1, 1842.2343), (2, 921.11715), (3, 614.0781), (4, 460.55857)] diff [('event', 43.5, 9.5), ('repeat', 28.2, 2.4)]
+[20:04:48] [0/85] TIC 346477717
+[20:04:54] [0/85] TIC 301558096
+[20:05:02]   TIC 301558096: saved 8 light curves (0 failed)
+[20:05:06]   TIC 346477717: saved 5 light curves (0 failed)
+[217/278] TIC 301558096: repeats 0 periods [] diff [('event', 23.2, 4.8)]
+[20:05:21] [0/85] TIC 293893405
+[218/278] TIC 346477717: repeats 0 periods [] diff [('event', 4.5, 10.1)]
+[20:05:34] [0/85] TIC 246058802
+[20:05:38]   TIC 293893405: saved 13 light curves (0 failed)
+[20:05:47]   TIC 246058802: saved 6 light curves (0 failed)
+[219/278] TIC 246058802: repeats 0 periods [] diff [('event', 15.5, 10.1)]
+[220/278] TIC 293893405: repeats 0 periods [] diff [('event', 105.6, 1.0)]
+[221/278] TIC 70469445: skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+[20:06:28] [0/85] TIC 60369879
+[222/278] TIC 9906005: skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+[20:06:35] [0/85] TIC 95768667
+[20:06:42]   TIC 60369879: saved 8 light curves (0 failed)
+[20:06:50]   TIC 95768667: saved 7 light curves (0 failed)
+[223/278] TIC 95768667: repeats 0 periods [] diff []
+[20:07:06] [0/85] TIC 248959076
+[20:07:28]   TIC 248959076: saved 18 light curves (0 failed)
+[224/278] TIC 248959076: repeats 0 periods [] diff [('event', 102.0, 0.8)]
+[20:08:04] [0/85] TIC 38005437
+[20:08:17]   TIC 38005437: saved 7 light curves (0 failed)
+[225/278] TIC 38005437: repeats 4 periods [] diff [('event', 171.8, 8.6), ('repeat', 167.0, 1.8), ('repeat', 189.2, 1.3)]
+[20:09:45] [0/85] TIC 244247384
+[20:10:00]   TIC 244247384: saved 8 light curves (0 failed)
+[226/278] TIC 60369879: repeats 0 periods [] diff [('event', 195.0, 0.5)]
+TIC 60369879 S106: 9174 cadences (200 s), aperture 7 px -> s106_OWN_200s.csv.gz
+[20:10:49] [0/85] TIC 349793830
+[20:11:10]   TIC 349793830: saved 16 light curves (0 failed)
+[227/278] TIC 244247384: repeats 0 periods [] diff [('event', 146.9, 1.7)]
+[20:11:16] [0/85] TIC 12631674
+[20:11:30]   TIC 12631674: saved 7 light curves (0 failed)
+[228/278] TIC 12631674: repeats 0 periods [] diff [('event', 110.5, 0.8)]
+[20:11:47] [0/85] TIC 229556468
+[20:12:08]   TIC 229556468: saved 11 light curves (0 failed)
+[229/278] TIC 229556468: repeats 0 periods [] diff [('event', None, None)]
+[20:12:31] [0/85] TIC 454142943
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:12:42]   TIC 454142943: saved 7 light curves (0 failed)
+[230/278] TIC 454142943: repeats 0 periods [] diff [('event', 175.4, 3.6)]
+[20:13:41] [0/85] TIC 408254149
+[20:13:59]   TIC 408254149: saved 12 light curves (0 failed)
+[231/278] TIC 82223761: repeats 0 periods [] diff [('event', None, None)]
+[20:14:16] [0/85] TIC 250492521
+[232/278] TIC 408254149: repeats 0 periods [] diff [('event', 115.3, 2.2)]
+[20:14:28] [0/85] TIC 318753114
+[20:14:31]   TIC 250492521: saved 9 light curves (0 failed)
+[20:14:43]   TIC 318753114: saved 9 light curves (0 failed)
+[233/278] TIC 250492521: repeats 0 periods [] diff [('event', 56.9, 84.0)]
+[20:15:06] [0/85] TIC 437234869
+[234/278] TIC 318753114: repeats 0 periods [] diff [('event', 104.4, 0.8)]
+[235/278] TIC 99570132: skip: community period on ExoFOP: 24.9021 d by mason (2024-02-27): Period constrained by 5 transits in secs. 20,47,73,74
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:15:24]   TIC 437234869: saved 11 light curves (0 failed)
+[20:15:28] [0/85] TIC 365250897
+[20:15:48]   TIC 365250897: saved 20 light curves (0 failed)
+[236/278] TIC 437234869: repeats 0 periods [] diff [('event', 34.9, 3.3)]
+[20:16:00] [0/85] TIC 9252368
+[20:16:21]   TIC 9252368: saved 7 light curves (0 failed)
+[237/278] TIC 365250897: repeats 1 periods [(1, 351.2809), (2, 175.64045), (3, 117.09363), (4, 87.82022)] diff [('event', 88.1, 2.3), ('repeat', 121.3, 2.9)]
+[20:16:54] [0/85] TIC 269527403
+[238/278] TIC 9252368: repeats 0 periods [] diff [('event', None, None)]
+[20:17:03] [0/85] TIC 466930780
+[20:17:11]   TIC 269527403: saved 4 light curves (0 failed)
+[20:17:21]   TIC 466930780: saved 6 light curves (0 failed)
+[239/278] TIC 466930780: repeats 2 periods [(1, 13.52815)] diff [('event', 123.8, 5.6), ('repeat', 129.1, 4.5), ('repeat', 122.2, 7.0)]
+[240/278] TIC 269527403: repeats 0 periods [] diff [('event', 4.8, 5.9)]
+[20:18:08] [0/85] TIC 75577433
+TIC 269527403 S105: 9290 cadences (200 s), aperture 9 px -> s105_OWN_200s.csv.gz
+[20:18:09] [0/85] TIC 167456277
+[20:18:30]   TIC 167456277: saved 8 light curves (0 failed)
+[20:18:37]   TIC 75577433: saved 20 light curves (0 failed)
+[241/278] TIC 167456277: repeats 0 periods [] diff [('event', 91.3, 1.2)]
+TIC 167456277 S108: 8919 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[20:19:15] [0/85] TIC 427459423
+[20:19:39]   TIC 427459423: saved 8 light curves (0 failed)
+[242/278] TIC 75577433: repeats 13 periods [] diff [('event', 17.2, -1.2), ('repeat', 13.8, 4.8), ('repeat', 20.5, 4.0)]
+[20:20:38] [0/85] TIC 159159904
+[20:21:16]   TIC 159159904: saved 18 light curves (0 failed)
+[243/278] TIC 349793830: repeats 0 periods [] diff [('event', None, None)]
+[20:21:29] [0/85] TIC 285248964
+[244/278] TIC 427459423: repeats 1 periods [(1, 1809.7819), (2, 904.89095), (3, 603.26063), (4, 452.44547)] diff [('event', 118.1, 0.9), ('repeat', 19.5, 56.8)]
+[20:21:49] [0/85] TIC 253553257
+[20:22:05]   TIC 285248964: saved 5 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:22:07]   TIC 253553257: saved 6 light curves (0 failed)
+[245/278] TIC 285248964: repeats 0 periods [] diff [('event', 1.4, 14.1)]
+[20:23:20] [0/85] TIC 458647366
+[246/278] TIC 253553257: repeats 1 periods [(1, 2505.9825), (2, 1252.99125), (3, 835.3275), (4, 626.49562)] diff [('event', 157.3, 12.2), ('repeat', 168.2, 18.4)]
+[20:23:36] [0/85] TIC 326397318
+[20:23:50]   TIC 458647366: saved 13 light curves (0 failed)
+[20:24:03]   TIC 326397318: saved 12 light curves (0 failed)
+[247/278] TIC 159159904: repeats 0 periods [] diff [('event', None, None)]
+[20:31:36] [0/85] TIC 289718679
+[20:32:01]   TIC 289718679: saved 6 light curves (0 failed)
+[248/278] TIC 326397318: repeats 0 periods [] diff [('event', None, None)]
+[20:35:52] [0/85] TIC 456302722
+[249/278] TIC 458647366: repeats 0 periods [] diff [('event', 108.6, 0.9)]
+[20:36:00] [0/85] TIC 126278294
+[20:36:21]   TIC 126278294: saved 14 light curves (0 failed)
+[20:36:26]   TIC 456302722: saved 15 light curves (0 failed)
+[250/278] TIC 126278294: repeats 0 periods [] diff [('event', 102.1, 1.5)]
+[20:36:58] [0/85] TIC 67884964
+[251/278] TIC 456302722: repeats 0 periods [] diff [('event', 13.1, 2.0)]
+[20:37:12] [0/85] TIC 138707225
+[20:37:15]   TIC 67884964: saved 9 light curves (0 failed)
+[252/278] TIC 67884964: repeats 2 periods [(50, 14.42031)] diff [('event', 18.4, 2.9), ('repeat', 5.6, 5.4), ('repeat', 72.1, 2.1)]
+[20:37:57]   TIC 138707225: saved 12 light curves (0 failed)
+[20:38:01] [0/85] TIC 333136751
+[253/278] TIC 138707225: repeats 0 periods [] diff [('event', 110.8, 5.0)]
+[20:38:22] [0/85] TIC 439406850
+[20:38:36]   TIC 439406850: saved 4 light curves (0 failed)
+[20:38:52]   TIC 333136751: saved 19 light curves (0 failed)
+[254/278] TIC 333136751: repeats 0 periods [] diff [('event', 28.3, 3.4)]
+[20:39:26] [0/85] TIC 407663579
+[255/278] TIC 439406850: repeats 7 periods [] diff [('event', 113.7, 3.9), ('repeat', 18.8, 50.5), ('repeat', 16.6, 45.9)]
+TIC 439406850 S108: 8919 cadences (200 s), aperture 9 px -> s108_OWN_200s.csv.gz
+[20:40:04] [0/85] TIC 76140400
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:40:33]   TIC 407663579: saved 79 light curves (0 failed)
+[20:40:36]   TIC 76140400: saved 18 light curves (0 failed)
+[256/278] TIC 76140400: repeats 2 periods [] diff [('event', None, None), ('repeat', None, None), ('repeat', None, None)]
+[20:42:24] [0/85] TIC 441056242
+[20:42:54]   TIC 441056242: saved 13 light curves (0 failed)
+[257/278] TIC 289718679: repeats 0 periods [] diff [('event', 9.0, 3.8)]
+[20:43:18] [0/85] TIC 83524788
+[20:43:55]   TIC 83524788: saved 13 light curves (0 failed)
+[258/278] TIC 441056242: repeats 2 periods [] diff [('event', 130.8, 2.7), ('repeat', 146.2, 37.0), ('repeat', 111.3, 2.4)]
+TIC 441056242 S107: 9857 cadences (200 s), aperture 8 px -> s107_OWN_200s.csv.gz
+[20:44:07] [0/85] TIC 167653919
+[259/278] TIC 83524788: repeats 0 periods [] diff [('event', 34.1, 7.0)]
+[20:45:19] [0/85] TIC 359819459
+[20:45:53]   TIC 359819459: saved 19 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:46:15]   TIC 167653919: saved 129 light curves (0 failed)
+[260/278] TIC 359819459: repeats 4 periods [] diff [('event', 113.4, 3.6), ('repeat', 8.8, 3.2), ('repeat', 19.0, 3.1)]
+[20:47:53] [0/85] TIC 55454149
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:49:48]   TIC 55454149: saved 132 light curves (0 failed)
+[261/278] TIC 407663579: repeats 2 periods [] diff [('event', 140.8, 34.7), ('repeat', 120.5, 26.3), ('repeat', 156.5, 29.4)]
+[20:56:11] [0/85] TIC 412200591
+[20:56:46]   TIC 412200591: saved 17 light curves (0 failed)
+[262/278] TIC 412200591: repeats 0 periods [] diff [('event', 109.3, 2.7)]
+[20:58:50] [0/85] TIC 64365035
+[263/278] TIC 167653919: repeats 0 periods [] diff [('event', 10.4, 17.8)]
+[20:59:15] [0/85] TIC 8051892
+[20:59:15]   TIC 64365035: saved 14 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[20:59:41]   TIC 8051892: saved 14 light curves (0 failed)
+[264/278] TIC 8051892: repeats 0 periods [] diff [('event', 25.8, 3.8)]
+[265/278] TIC 64365035: repeats 0 periods [] diff [('event', 16.4, 5.7)]
+[21:00:54] [0/85] TIC 158209498
+TIC 64365035 S108: 10933 cadences (200 s), aperture 8 px -> s108_OWN_200s.csv.gz
+[21:00:57] [0/85] TIC 236770234
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[21:01:23]   TIC 158209498: saved 12 light curves (0 failed)
+[21:02:42]   TIC 236770234: saved 107 light curves (0 failed)
+[266/278] TIC 158209498: repeats 3 periods [] diff [('event', None, None), ('repeat', 24.3, 3.0), ('repeat', 23.2, 4.2)]
+TIC 158209498 S105: 9290 cadences (200 s), aperture 8 px -> s105_OWN_200s.csv.gz
+[21:03:10] [0/85] TIC 63700569
+[21:04:07]   TIC 63700569: saved 20 light curves (0 failed)
+[267/278] TIC 63700569: repeats 0 periods [] diff [('event', 16.1, 1.6)]
+[268/278] TIC 438225366: skip: community period on ExoFOP: 41.7219 d by gsun (2022-04-30): Correct the Depth,Parameters such as update period(Sectors 06,33,43,44,45)
+[269/278] TIC 290644615: skip: community period on ExoFOP: 13.0000 d by kzhu (2025-07-19): Single transit but possible period of 13, cannot confirm due to noise
+[21:05:53] [0/85] TIC 388134787
+[21:06:30]   TIC 388134787: saved 36 light curves (0 failed)
+[270/278] TIC 55454149: repeats 8 periods [] diff [('event', 7.2, 20.7), ('repeat', 14.6, 51.3), ('repeat', 18.2, 27.9)]
+[271/278] TIC 424730711: skip: community period on ExoFOP: observing notes mention period/alias/additional transit
+[21:07:36] [0/85] TIC 356240333
+[272/278] TIC 388134787: repeats 0 periods [] diff [('event', 8.5, 3.7)]
+[21:07:42] [0/85] TIC 9099764
+[21:08:15]   TIC 9099764: saved 5 light curves (0 failed)
+[21:08:28]   TIC 356240333: saved 45 light curves (0 failed)
+[273/278] TIC 9099764: repeats 0 periods [] diff [('event', 194.1, 0.8)]
+[21:08:41] [0/85] TIC 4689632
+[21:08:49]   TIC 4689632: saved 1 light curves (0 failed)
+[274/278] TIC 4689632: repeats 0 periods [] diff []
+[21:09:07] [0/85] TIC 3181884
+[21:09:23]   TIC 3181884: saved 3 light curves (0 failed)
+C:\git\duo-transits\.venv\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1213: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+[275/278] TIC 3181884: repeats 0 periods [] diff []
+  own photometry S103 failed: cannot convert float NaN to integer
+[21:10:00] [0/85] TIC 1461133
+C:\git\duo-transits\.venv\Lib\site-packages\astropy\units\quantity.py:676: RuntimeWarning: invalid value encountered in divide
+  result = super().__array_ufunc__(function, method, *arrays, **kwargs)
+[21:10:20]   TIC 1461133: saved 5 light curves (0 failed)
+[276/278] TIC 356240333: repeats 2 periods [] diff [('event', 25.4, 7.6), ('repeat', 4.3, 14.4), ('repeat', 25.1, 6.6)]
+[277/278] TIC 1461133: repeats 0 periods [] diff []
+[278/278] TIC 236770234: repeats 4 periods [] diff [('event', 12.6, 8.6), ('repeat', None, None), ('repeat', 161.9, 4.0)]
+TIC 1461133 S103: 9596 cadences (200 s), aperture 4 px -> s103_OWN_200s.csv.gz
+ALL DONE
