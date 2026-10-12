@@ -1,0 +1,264 @@
+{
+ "EPIC": 211598816,
+ "event_idx": 0,
+ "TIC": 257217497,
+ "Tmag": 9.5664,
+ "Kp": 10.75,
+ "match_flag": true,
+ "depth_ppm": 9718.0,
+ "dur_h": 3.924,
+ "epoch_btjd": 196.37089999997988,
+ "k2_campaign": "5",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  5,
+  16,
+  18
+ ],
+ "tess_sectors_loaded": [
+  44,
+  45,
+  46,
+  72
+ ],
+ "repeats": [
+  {
+   "T": 143.2696,
+   "sector": 1005,
+   "product": "K2PDC",
+   "depth_ppm": 5900,
+   "snr": 10.0,
+   "n_in": 5,
+   "beta": 1.85
+  },
+  {
+   "T": 146.0491,
+   "sector": 1005,
+   "product": "K2PDC",
+   "depth_ppm": 5567,
+   "snr": 9.8,
+   "n_in": 5,
+   "beta": 1.85
+  },
+  {
+   "T": 154.1423,
+   "sector": 1005,
+   "product": "K2PDC",
+   "depth_ppm": 7261,
+   "snr": 25.4,
+   "n_in": 5,
+   "beta": 1.57
+  },
+  {
+   "T": 155.6138,
+   "sector": 1005,
+   "product": "K2PDC",
+   "depth_ppm": 7398,
+   "snr": 23.6,
+   "n_in": 5,
+   "beta": 1.65
+  },
+  {
+   "T": 159.7831,
+   "sector": 1005,
+   "product": "K2PDC",
+   "depth_ppm": 7442,
+   "snr": 37.0,
+   "n_in": 6,
+   "beta": 1.55
+  },
+  {
+   "T": 163.0122,
+   "sector": 1005,
+   "product": "K2PDC",
+   "depth_ppm": 6375,
+   "snr": 26.9,
+   "n_in": 5,
+   "beta": 1.12
+  },
+  {
+   "T": 170.5332,
+   "sector": 1005,
+   "product": "K2PDC",
+   "depth_ppm": 6541,
+   "snr": 23.7,
+   "n_in": 5,
+   "beta": 1.15
+  },
+  {
+   "T": 1280.7391,
+   "sector": 1018,
+   "product": "K2PDC",
+   "depth_ppm": 5462,
+   "snr": 9.3,
+   "n_in": 6,
+   "beta": 1.63
+  },
+  {
+   "T": 2557.4288,
+   "sector": 46,
+   "product": "SPOC_120",
+   "depth_ppm": 5841,
+   "snr": 41.1,
+   "n_in": 83,
+   "beta": 1.52
+  }
+ ],
+ "n_repeats": 9,
+ "periods": [
+  {
+   "P": 87.4465888888896,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 112.43132857142956,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 124.26620526315894,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 147.56611875000124,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 168.64699285714443,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 196.75482500000163,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 216.87364000000397,
+   "n_support": 1,
+   "support_T": [
+    1280.7391
+   ]
+  },
+  {
+   "P": 262.339766666669,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 271.0920500000051,
+   "n_support": 1,
+   "support_T": [
+    1280.7391
+   ]
+  },
+  {
+   "P": 295.13223750000253,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 337.2939857142885,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 361.4560666666734,
+   "n_support": 1,
+   "support_T": [
+    1280.7391
+   ]
+  },
+  {
+   "P": 393.50965000000326,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 542.1841000000102,
+   "n_support": 1,
+   "support_T": [
+    1280.7391
+   ]
+  },
+  {
+   "P": 590.2644750000051,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 787.0193000000068,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 1084.3682000000206,
+   "n_support": 1,
+   "support_T": [
+    1280.7391
+   ]
+  },
+  {
+   "P": 1180.5289500000104,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  },
+  {
+   "P": 2361.0579000000207,
+   "n_support": 1,
+   "support_T": [
+    2557.4288
+   ]
+  }
+ ],
+ "n_periods": 19,
+ "max_support": 1,
+ "frac_logP_excluded": 0.7346666666666667,
+ "n_windows": 7156,
+ "n_excluded_windows": 5554,
+ "diff_images": [
+  {
+   "kind": "repeat",
+   "sector": 46,
+   "offset_arcsec": 2.3,
+   "offset_err_arcsec": 1.0,
+   "offset_sigma": 2.4,
+   "snr_peak": 15.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 9.76,
+   "nearest_gaia_sep": 0.1
+  }
+ ],
+ "status": "ok"
+}

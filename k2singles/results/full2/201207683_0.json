@@ -1,0 +1,34 @@
+{
+ "EPIC": 201207683,
+ "event_idx": 0,
+ "TIC": 49419483,
+ "Tmag": 10.1114,
+ "Kp": 10.64,
+ "match_flag": false,
+ "depth_ppm": 236704.0,
+ "dur_h": 7.3554,
+ "epoch_btjd": -164.67750000022352,
+ "k2_campaign": "1",
+ "catalog_comment": "Deep; Noted in Schmitt, et al. (2016)",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  1
+ ],
+ "tess_sectors_loaded": [
+  9,
+  36,
+  46,
+  72
+ ],
+ "repeats": [],
+ "n_repeats": 0,
+ "periods": [],
+ "n_periods": 0,
+ "max_support": 0,
+ "frac_logP_excluded": 0.5433333333333333,
+ "n_windows": 2180,
+ "n_excluded_windows": 1461,
+ "diff_images": [],
+ "status": "ok"
+}

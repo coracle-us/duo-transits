@@ -1,0 +1,190 @@
+{
+ "EPIC": 212477236,
+ "event_idx": 0,
+ "TIC": 392492898,
+ "Tmag": 13.4195,
+ "Kp": 13.96,
+ "match_flag": false,
+ "depth_ppm": 4389.0,
+ "dur_h": 15.2016,
+ "epoch_btjd": 282.5901000001468,
+ "k2_campaign": "6",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  6,
+  17
+ ],
+ "tess_sectors_loaded": [
+  91
+ ],
+ "repeats": [
+  {
+   "T": 1216.3557,
+   "sector": 1017,
+   "product": "K2PDC",
+   "depth_ppm": 2383,
+   "snr": 25.4,
+   "n_in": 19,
+   "beta": 1.0
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 38.9068999999939,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 40.598504347819706,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 42.44389090908424,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 44.46502857142159,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 46.68827999999265,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 51.87586666665851,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 58.36034999999082,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 66.69754285713242,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 71.8281230769118,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 77.81379999998775,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 84.88778181816843,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 93.3765599999853,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 103.75173333331703,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 116.72069999998166,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 133.39508571426472,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 155.62759999997553,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 186.7531199999706,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 233.44139999996332,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 311.255199999951,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 466.88279999992665,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  },
+  {
+   "P": 933.7655999998534,
+   "n_support": 1,
+   "support_T": [
+    1216.3557
+   ]
+  }
+ ],
+ "n_periods": 21,
+ "max_support": 1,
+ "frac_logP_excluded": 0.567,
+ "n_windows": 1037,
+ "n_excluded_windows": 641,
+ "diff_images": [],
+ "status": "ok"
+}
