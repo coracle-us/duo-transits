@@ -1,0 +1,43 @@
+number,name,P_lcdb_h,amax,group,sectors,sector,V_mid,alpha_mid,chosen
+1600,Vyssotsky,3.2011,0.28,P2-4h,"[31, 76]",76.0,14.888,21.5605,True
+5182,Bray,2.884,0.31,P2-4h,ERR The server was unable to process the request due to invalid input. Please ch,,,,False
+3068,Khanina,3.56,0.63,P2-4h,ERR The server was unable to process the request due to invalid input. Please ch,,,,False
+5165,Videnom,3.1535,0.24,P2-4h,ERR The server was unable to process the request due to invalid input. Please ch,,,,False
+9873,Freundlich,2.9257,0.39,P2-4h,ERR The server was unable to process the request due to invalid input. Please ch,,,,False
+1218,Aster,3.1581,0.35,P2-4h,"[72, 92]",72.0,17.338,29.1727,False
+79,Eurynome,5.978,0.25,P4-8h,"[32, 46]",,,,False
+698,Ernestina,5.0363,0.67,P4-8h,"[46, 50, 67]",67.0,15.587,5.4835,True
+3670,Northcott,6.992,0.39,P4-8h,"[72, 91, 92]",72.0,17.779,20.775,False
+13018,Geoffjames,4.334,0.67,P4-8h,"[35, 54, 70, 71, 88]",70.0,17.707,17.0435,False
+2527,Gregory,6.1025,0.34,P4-8h,"[45, 46]",,,,False
+12198,1980 PJ1,5.494,0.59,P4-8h,"[42, 43, 44, 84]",84.0,15.975,9.6548,True
+561,Ingwelde,12.012,0.38,P8-16h,"[42, 43, 44, 92]",92.0,17.32,14.3096,False
+261,Prymno,8.002,0.37,P8-16h,[42],,,,False
+817,Annika,10.56,0.27,P8-16h,[],,,,False
+5264,Telephus,9.525,0.58,P8-16h,[29],,,,False
+12,Victoria,8.6599,0.42,P8-16h,[72],72.0,12.732,18.5347,True
+733,Mocia,11.374,0.53,P8-16h,"[18, 46, 66]",66.0,14.541,8.1505,True
+314,Rosalia,20.465,0.4,P16-30h,"[31, 44, 45, 92]",92.0,15.477,21.2136,True
+5,Astraea,16.806,0.27,P16-30h,"[71, 72, 91]",71.0,10.991,23.0995,True
+3151,Talbot,19.454,0.67,P16-30h,[7],,,,False
+3395,Jitka,18.293,0.5,P16-30h,"[39, 71, 72, 91]",71.0,16.702,20.7379,False
+5254,Ulysses,28.72,0.33,P16-30h,"[29, 71, 72]",71.0,16.422,11.6625,False
+1545,Thernoe,17.2,0.76,P16-30h,[],,,,False
+181,Eucharis,52.23,0.15,P30-100h,"[30, 45, 46, 80, 92, 96]",80.0,13.598,5.0574,True
+17681,Tweedledum,75.2,0.9,P30-100h,"[2, 44, 45, 47, 69, 91]",69.0,16.875,25.1198,True
+503,Evelyn,38.871,0.5,P30-100h,ERR The server was unable to process the request due to invalid input. Please ch,,,,False
+120,Lachesis,46.551,0.22,P30-100h,"[38, 70]",70.0,12.591,5.0735,False
+2235,Vittore,32.1,0.21,P30-100h,[81],81.0,16.545,7.1562,False
+140,Siwa,34.445,0.15,P30-100h,"[46, 70]",70.0,11.74,6.1024,False
+16421,Roadrunner,174.0,1.25,P100-400h,"[19, 62, 84, 101, 102]",62.0,16.214,11.6628,True
+18582,1997 XK9,114.0,0.94,P100-400h,"[7, 71]",71.0,17.334,29.3605,False
+1807,Slovakia,308.6,1.1,P100-400h,"[42, 43, 44]",,,,False
+1513,Matra,117.6,0.67,P100-400h,"[71, 72, 92]",71.0,17.034,25.4846,False
+460,Scania,164.1,0.37,P100-400h,"[42, 43, 92]",92.0,15.704,23.0805,True
+3685,Derdenye,159.866,0.75,P100-400h,"[5, 56, 91]",56.0,16.28,6.6792,False
+4791,Iphidamas,9.696,0.49,Jupiter Trojan,"[10, 83]",83.0,17.128,6.0187,False
+624,Hektor,6.924,1.2,Jupiter Trojan,"[1, 59]",59.0,14.476,4.1648,True
+4348,Poulydamas,9.908,0.34,Jupiter Trojan,[83],83.0,16.137,1.697,False
+1345,Potomac,11.42,0.26,Hilda,"[54, 98, 1751]",98.0,14.809,4.7888,True
+8550,Hesiodos,6.719,0.09,Hilda,"[45, 46, 92]",92.0,18.154,15.7989,False
+361,Bononia,13.835,0.25,Hilda,"[70, 86]",70.0,13.76,3.423,False

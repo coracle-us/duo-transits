@@ -1,0 +1,6 @@
+population,N_U_ge_2,median_P_h,frac_P_gt_24h,frac_P_gt_100h
+Hilda,184,14.42,0.321,0.092
+Jupiter Trojan,376,11.99,0.237,0.061
+inner MB,8864,6.93,0.217,0.068
+middle MB,9199,8.56,0.237,0.085
+outer MB (a 2.82-3.70),7539,8.87,0.218,0.078
