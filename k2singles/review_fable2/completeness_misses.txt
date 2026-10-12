@@ -1,0 +1,23 @@
+  r = f / model - 1.0
+
+=== EPIC 240410914 TIC 201980990: products {91: 'OWN', 92: 'OWN', 1111: 'K2PDC', 1112: 'K2PDC'}
+   pipeline repeats: []  periods: []
+   T=670.169: grid rows: 669.949 ambiguous d=-202ppt snr=-5 cover=0.91 nL=35.0 nR=34.0 cad=29min | 670.061 supported d=422ppt snr=30 cover=0.91 nL=34.0 nR=36.0 cad=29min | 670.174 supported d=481ppt snr=42 cover=0.91 nL=35.0 nR=35.0 cad=29min | 670.286 supported d=493ppt snr=48 cover=0.91 nL=33.0 nR=36.0 cad=29min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 18
+   T=3788.976: grid rows: 3788.786 ambiguous d=-329ppt snr=-775 cover=1.00 nL=0.0 nR=249.0 cad=3min | 3788.899 ambiguous d=156ppt snr=36 cover=1.00 nL=49.0 nR=248.0 cad=3min | 3789.011 ambiguous d=166ppt snr=74 cover=1.00 nL=97.0 nR=249.0 cad=3min | 3789.124 ambiguous d=117ppt snr=7 cover=0.93 nL=146.0 nR=296.0 cad=3min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 162
+   T=3802.911: grid rows: 3802.736 supported d=362ppt snr=287 cover=0.58 nL=5.0 nR=324.0 cad=3min | 3802.849 ambiguous d=216ppt snr=26 cover=0.32 nL=54.0 nR=324.0 cad=3min | 3802.961 ambiguous d=340ppt snr=4 cover=0.45 nL=102.0 nR=324.0 cad=3min | 3803.074 supported d=378ppt snr=7 cover=0.81 nL=122.0 nR=323.0 cad=3min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 162
+
+=== EPIC 246194159 TIC 301328232: products {42: 'SPOC_120', 70: 'TESS-SPOC', 92: 'QLP', 1012: 'K2PDC', 1019: 'K2PDC'}
+   pipeline repeats: [(3227.9727, 70, 242027, 29.6), (3823.6796, 92, 241523, 3947.6)]  periods: [(31.714, 1), (32.639, 1), (32.727, 1), (35.951, 1), (37.585, 1), (38.454, 1)]
+   T=747.388: grid rows: 747.289 ambiguous d=164ppt snr=164 cover=1.00 nL=36 nR=32 cad=29min | 747.381 supported d=250ppt snr=19525 cover=0.96 nL=35 nR=34 cad=29min | 747.473 supported d=196ppt snr=157 cover=0.96 nL=36 nR=34 cad=29min | 747.564 unconstrained d=26ppt snr=1 cover=0.80 nL=36 nR=35 cad=29min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 18
+   T=810.911: grid rows: 810.814 supported d=195ppt snr=15 cover=0.88 nL=34 nR=34 cad=29min | 810.906 supported d=248ppt snr=34 cover=0.88 nL=33 nR=35 cad=29min | 810.998 ambiguous d=179ppt snr=10 cover=0.80 nL=34 nR=33 cad=29min | 811.089 excluded d=53ppt snr=2 cover=1.00 nL=33 nR=34 cad=29min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 18
+   T=3813.934: grid rows: 3813.814 ambiguous d=123ppt snr=5 cover=1.00 nL=324 nR=174 cad=3min | 3813.906 supported d=232ppt snr=63 cover=1.00 nL=324 nR=134 cad=3min | 3813.998 supported d=236ppt snr=20 cover=1.00 nL=324 nR=94 cad=3min | 3814.089 ambiguous d=124ppt snr=3 cover=1.00 nL=324 nR=55 cad=3min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 162
+   T=3228.003: grid rows: 3227.881 ambiguous d=146ppt snr=5 cover=1.00 nL=230 nR=324 cad=3min | 3227.973 supported d=243ppt snr=30 cover=1.00 nL=230 nR=324 cad=3min | 3228.064 supported d=215ppt snr=28 cover=1.00 nL=230 nR=324 cad=3min | 3228.156 ambiguous d=88ppt snr=3 cover=1.00 nL=230 nR=324 cad=3min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 162
+   T=3823.680: grid rows: 3823.531 ambiguous d=60ppt snr=7 cover=1.00 nL=217 nR=324 cad=3min | 3823.623 supported d=213ppt snr=2465 cover=1.00 nL=219 nR=324 cad=3min | 3823.714 supported d=236ppt snr=3593 cover=0.99 nL=219 nR=324 cad=3min | 3823.806 ambiguous d=121ppt snr=26 cover=1.00 nL=220 nR=324 cad=3min
+       robust() needs: snr>=8, depth in [0,1] ppt, cover>=0.8, n_oot each side >= 162

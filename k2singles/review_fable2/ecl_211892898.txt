@@ -1,0 +1,76 @@
+EPIC 211892898: K2 campaigns [np.int64(5), np.int64(16), np.int64(18)]
+  C5: BTJD 139.631-214.411, 3431 cadences
+  C16: BTJD 1095.488-1175.002, 3638 cadences
+  C18: BTJD 1251.567-1302.381, 2370 cadences
+seed 189.352: t0 = 189.3319 +- 0.0164  depth = 6.92 +- 0.19 ppt  T14 = 55.3 +- 1.4 h  Tin = 14.1 h  rms 0.54 ppt  n=459
+seed 1132.149: t0 = 1131.9402 +- 0.0168  depth = 5.90 +- 0.24 ppt  T14 = 52.2 +- 1.6 h  Tin = 10.8 h  rms 0.53 ppt  n=498
+seed 1276.810: t0 = 1276.9610 +- 0.0101  depth = 6.20 +- 0.10 ppt  T14 = 50.9 +- 0.7 h  Tin = 8.3 h  rms 0.43 ppt  n=498
+
+Eclipse mid-times (BTJD): [ 189.3319 1131.9402 1276.961 ] +- [0.0164 0.0168 0.0101]
+
+Linear-ephemeris fits P = dT/n (anchored on the first two times), chi2 of the third:
+  n         P    P_err         T0     chi2  max_oc_d
+ 13 72.508568 0.001270 189.331573 0.035384  0.002785
+ 26 36.254284 0.000635 189.331573 0.035384  0.002785
+ 39 24.169523 0.000423 189.331573 0.035384  0.002785
+ 52 18.127142 0.000317 189.331573 0.035384  0.002785
+ 65 14.501714 0.000254 189.331573 0.035384  0.002785
+ 78 12.084761 0.000212 189.331573 0.035384  0.002785
+ 91 10.358367 0.000181 189.331573 0.035384  0.002785
+104  9.063571 0.000159 189.331573 0.035384  0.002785
+117  8.056508 0.000141 189.331573 0.035384  0.002785
+130  7.250857 0.000127 189.331573 0.035384  0.002785
+143  6.591688 0.000115 189.331573 0.035384  0.002785
+156  6.042381 0.000106 189.331573 0.035384  0.002785
+169  5.577582 0.000098 189.331573 0.035384  0.002785
+182  5.179183 0.000091 189.331573 0.035384  0.002785
+
+TESS sectors loaded for TIC 184895645: [np.int64(72)]
+
+Alias check (observed depth 6.20 ppt, T14 52.2 h) against K2 C5/C16/C18 + TESS:
+  n= 13 P=  72.5086: 3 dips, 0 FLAT windows, 0 ambiguous -> allowed
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (13, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (15, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n= 26 P=  36.2543: 3 dips, 3 FLAT windows, 0 ambiguous -> EXCLUDED
+        flat at: [(-1, np.float64(153.08), 1005, 'flat', np.float64(0.1)), (27, np.float64(1168.2), 1016, 'flat', np.float64(0.28)), (85, np.float64(3270.95), 72, 'flat', np.float64(-0.12))]
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (26, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (30, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n= 39 P=  24.1695: 3 dips, 4 FLAT windows, 0 ambiguous -> EXCLUDED
+        flat at: [(-1, np.float64(165.16), 1005, 'flat', np.float64(-0.01)), (38, np.float64(1107.77), 1016, 'flat', np.float64(-0.14)), (40, np.float64(1156.11), 1016, 'flat', np.float64(0.08)), (128, np.float64(3283.03), 72, 'flat', np.float64(-0.09))]
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (39, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (45, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n= 52 P=  18.1271: 3 dips, 9 FLAT windows, 0 ambiguous -> EXCLUDED
+        flat at: [(-2, np.float64(153.08), 1005, 'flat', np.float64(0.1)), (-1, np.float64(171.2), 1005, 'flat', np.float64(-0.03)), (1, np.float64(207.46), 1005, 'flat', np.float64(1.02)), (51, np.float64(1113.82), 1016, 'flat', np.float64(0.01)), (53, np.float64(1150.07), 1016, 'flat', np.float64(0.54)), (54, np.float64(1168.2), 1016, 'flat', np.float64(0.28)), (59, np.float64(1258.83), 1018, 'flat', np.float64(0.4)), (61, np.float64(1295.09), 1018, 'flat', np.float64(0.96)), (170, np.float64(3270.95), 72, 'flat', np.float64(-0.12))]
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (52, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (60, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n= 65 P=  14.5017: 3 dips, 12 FLAT windows, 0 ambiguous -> EXCLUDED
+        flat at: [(-3, np.float64(145.83), 1005, 'flat', np.float64(-0.2)), (-2, np.float64(160.33), 1005, 'flat', np.float64(0.14)), (-1, np.float64(174.83), 1005, 'flat', np.float64(0.25)), (1, np.float64(203.83), 1005, 'flat', np.float64(0.29)), (63, np.float64(1102.94), 1016, 'flat', np.float64(-0.54)), (64, np.float64(1117.44), 1016, 'flat', np.float64(0.15)), (66, np.float64(1146.44), 1016, 'flat', np.float64(0.36)), (67, np.float64(1160.95), 1016, 'flat', np.float64(0.17)), (74, np.float64(1262.46), 1018, 'flat', np.float64(0.16)), (76, np.float64(1291.46), 1018, 'flat', np.float64(0.23)), (212, np.float64(3263.69), 72, 'flat', np.float64(-0.39)), (213, np.float64(3278.2), 72, 'flat', np.float64(-0.17))]
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (65, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (75, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n= 78 P=  12.0848: 3 dips, 13 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (78, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (90, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n= 91 P=  10.3584: 3 dips, 18 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (91, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (105, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n=104 P=   9.0636: 3 dips, 20 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (104, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (120, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n=117 P=   8.0565: 3 dips, 23 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (117, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (135, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n=130 P=   7.2509: 3 dips, 27 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (130, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (150, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n=143 P=   6.5917: 3 dips, 29 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (143, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (165, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n=156 P=   6.0424: 3 dips, 31 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (156, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (180, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n=169 P=   5.5776: 3 dips, 35 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (169, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (195, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+  n=182 P=   5.1792: 3 dips, 38 FLAT windows, 0 ambiguous -> EXCLUDED
+        dips at: [(0, np.float64(189.33), 1005, 'DIP', np.float64(6.72)), (182, np.float64(1131.94), 1016, 'DIP', np.float64(5.7)), (210, np.float64(1276.96), 1018, 'DIP', np.float64(6.15))]
+
+Gaia DR3 NSS SB1: P=72.5336+-0.0288 d, Tp=29.905+-0.254 (BTJD 418.905), e=0.480+-0.019, omega=201.53+-1.77 deg, K=22.75 km/s
+
+  Conjunction type: primary eclipsed (nu+w=90)
+    K2 eclipse at 189.332+-0.016: predicted 190.239 +- 0.658 (cycle -4), O-C = -0.907 d = -1.4 sigma
+    K2 eclipse at 1131.940+-0.017: predicted 1133.184 +- 0.710 (cycle 9), O-C = -1.244 d = -1.8 sigma
+    K2 eclipse at 1276.961+-0.010: predicted 1278.251 +- 0.735 (cycle 11), O-C = -1.290 d = -1.8 sigma
+
+  Conjunction type: secondary eclipsed (nu+w=270)
+    K2 eclipse at 189.332+-0.016: predicted 206.315 +- 0.427 (cycle -3), O-C = -16.983 d = -39.7 sigma
+    K2 eclipse at 1131.940+-0.017: predicted 1149.251 +- 0.507 (cycle 10), O-C = -17.311 d = -34.1 sigma
+    K2 eclipse at 1276.961+-0.010: predicted 1294.320 +- 0.542 (cycle 12), O-C = -17.359 d = -32.0 sigma
+
+  Expected duration ratio secondary/primary ~ (1+e sin w)/(1-e sin w) = 0.70 (convention: primary eclipse at nu+w=90)

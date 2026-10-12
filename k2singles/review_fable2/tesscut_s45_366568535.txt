@@ -1,0 +1,29 @@
+S44: 3261 good cadences, BTJD 2500.19-2524.43; target at pixel (7.87,7.21)
+   aperture r<=1.0 px: dip window not covered in S44 (in=0, oot=0)
+   aperture r<=1.6 px: dip window not covered in S44 (in=0, oot=0)
+   aperture r<=2.5 px: dip window not covered in S44 (in=0, oot=0)
+S45: 3121 good cadences, BTJD 2525.80-2550.63; target at pixel (7.30,7.87)
+   aperture r<=1.0 px (3 px): depth at 2547.85 = 6.45 ppt, oot rms 2.78 ppt/cad, SNR(white) = 29.9
+   aperture r<=1.6 px (8 px): depth at 2547.85 = 6.56 ppt, oot rms 2.49 ppt/cad, SNR(white) = 34.0
+   aperture r<=2.5 px (20 px): depth at 2547.85 = 6.61 ppt, oot rms 2.73 ppt/cad, SNR(white) = 31.2
+   S45 difference image: peak SNR 14.5 at pixel (7,8); flux-weighted centroid (7.15,7.77); offset from target = 0.18 px = 4 arcsec
+   per-pixel depth (ppt of that pixel's own flux) in 5x5 around the target:
+          5.0     6.1     5.9     5.6     5.0
+         -4.1     5.1     4.1     3.0     3.2
+        -21.0     7.8     6.0     4.3     5.2
+         21.8     8.5    11.1     8.9    10.1
+         13.2    13.5    10.5    22.6    11.9
+S46: 3320 good cadences, BTJD 2552.08-2578.70; target at pixel (7.46,7.37)
+   aperture r<=1.0 px: dip window not covered in S46 (in=0, oot=0)
+   aperture r<=1.6 px: dip window not covered in S46 (in=0, oot=0)
+   aperture r<=2.5 px: dip window not covered in S46 (in=0, oot=0)
+S72: 9577 good cadences, BTJD 3260.19-3285.59; target at pixel (7.68,7.45)
+   aperture r<=1.0 px: dip window not covered in S72 (in=0, oot=0)
+   aperture r<=1.6 px: dip window not covered in S72 (in=0, oot=0)
+   aperture r<=2.5 px: dip window not covered in S72 (in=0, oot=0)
+   S72 (ends 3285.59): predicted eclipse centre 3285.03, ingress from 3284.21. r<=1.0px: baseline rms 3.92 ppt; mean residual in [T1, end] = -5.01 ppt (n=594), in [T72-0.4, end] = -5.56 ppt (n=414); last 0.5 d before T1: +0.04 ppt
+   S72 (ends 3285.59): predicted eclipse centre 3285.03, ingress from 3284.21. r<=1.6px: baseline rms 4.17 ppt; mean residual in [T1, end] = -6.21 ppt (n=594), in [T72-0.4, end] = -7.08 ppt (n=414); last 0.5 d before T1: -0.18 ppt
+   S72 (ends 3285.59): predicted eclipse centre 3285.03, ingress from 3284.21. r<=2.5px: baseline rms 5.52 ppt; mean residual in [T1, end] = -5.43 ppt (n=594), in [T72-0.4, end] = -6.11 ppt (n=414); last 0.5 d before T1: -0.16 ppt
+
+QLP S45 columns: ['time', 'flux', 'flux_err', 'quality', 'sap_flux', 'kspsap_flux', 'sap_bkg', 'sap_x', 'sap_y', 'orbitid']
+QLP S45 points within +-3 d of dip: 750; min flux in window 0.9873

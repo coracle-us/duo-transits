@@ -1,0 +1,127 @@
+
+================ EPIC 202072917 = TIC 308255000: K2 C0 event -213.3739, depth 248 ppt, D 7.4 h
+TESS sectors/products: {6: 'SPOC_120', 43: 'SPOC_120', 44: 'SPOC_120', 45: 'SPOC_120', 71: 'QLP', 72: 'QLP'}
+Dips found in TESS (3):
+ sector        t0  t0_err  depth  depth_err  box_depth  box_snr  T14_h  Tin_h
+      6 1489.1650  0.0001 0.2367     0.0005     0.1781 710.6260 6.4862 2.3537
+     43 2496.7871  0.0001 0.2365     0.0005     0.1797 739.3677 6.4495 2.3567
+     45 2531.5321  0.0001 0.2373     0.0006     0.1785 537.2022 6.3617 2.2882
+
+VSX period 3.842372 d: predicted eclipses (from the K2 epoch) that fall in covered TESS data:
+   32 predicted eclipses covered; 32 show NO eclipse (depth < 25% of the K2 depth). Note: the K2 epoch is 438 cycles away, so phase drift is possible; the decisive test is the number of eclipses per sector: expected ~7 per sector at P=3.842372, found 3 in 6 sectors.
+
+Pipeline period 34.746 d, linear ephemeris from the K2 epoch:
+   refit: P = 34.74565 d, T0 = -213.3733; dips on ephemeris: 3/3
+     t0 1489.1650 (S6.0) cycle 49 O-C +0.04 h depth 236.7 ppt T14 6.5 h ON
+     t0 2496.7871 (S43.0) cycle 78 O-C -0.00 h depth 236.5 ppt T14 6.4 h ON
+     t0 2531.5321 (S45.0) cycle 79 O-C -0.02 h depth 237.3 ppt T14 6.4 h ON
+   odd/even: even depths [236.5], odd depths [236.7 237.3] ppt; even T14 [6.4] h, odd T14 [6.5 6.4] h
+   covered predicted eclipses WITHOUT a dip: none
+   secondary-eclipse scan at P=34.7456: deepest phase 0.044 (dt=1.53 d after primary): depth 6.09 +- 2.65 ppt (n=365); phase-0.5 depth: [np.float64(0.47)] ppt
+
+================ EPIC 202071902 = TIC 57051340: K2 C0 event -208.4293, depth 91 ppt, D 5.4 h
+TESS sectors/products: {44: 'TESS-SPOC', 45: 'TESS-SPOC', 71: 'TESS-SPOC', 72: 'TESS-SPOC'}
+Dips found in TESS (2):
+ sector        t0  t0_err  depth  depth_err  box_depth  box_snr  T14_h  Tin_h
+     44 2517.1644  0.0001 0.0911     0.0003     0.0669 611.1411 4.6480 1.8292
+     71 3250.0969  0.0001 0.0910     0.0003     0.0652 550.4536 4.6391 1.8333
+
+VSX period 8.69725 d: predicted eclipses (from the K2 epoch) that fall in covered TESS data:
+   9 predicted eclipses covered; 9 show NO eclipse (depth < 25% of the K2 depth). Note: the K2 epoch is 311 cycles away, so phase drift is possible; the decisive test is the number of eclipses per sector: expected ~3 per sector at P=8.69725, found 2 in 4 sectors.
+
+Pipeline period 22.904 d, linear ephemeris from the K2 epoch:
+   refit: P = 22.90415 d, T0 = -208.4293; dips on ephemeris: 2/2
+     t0 2517.1644 (S44.0) cycle 119 O-C +0.00 h depth 91.1 ppt T14 4.6 h ON
+     t0 3250.0969 (S71.0) cycle 151 O-C -0.00 h depth 91.0 ppt T14 4.6 h ON
+   odd/even: even depths [], odd depths [91.1 91. ] ppt; even T14 [] h, odd T14 [4.6 4.6] h
+   covered predicted eclipses WITHOUT a dip: none
+   secondary-eclipse scan at P=22.9041: deepest phase 0.990 (dt=22.68 d after primary): depth 1.62 +- 1.00 ppt (n=155); phase-0.5 depth: [np.float64(-0.08)] ppt
+
+================ EPIC 202126877 = TIC 86491361: K2 C0 event -211.5659, depth 62 ppt, D 5.9 h
+TESS sectors/products: {43: 'TESS-SPOC', 44: 'TESS-SPOC', 45: 'TESS-SPOC', 71: 'QLP', 72: 'QLP'}
+Dips found in TESS (11):
+ sector        t0  t0_err  depth  depth_err  box_depth   box_snr   T14_h  Tin_h
+     43 2480.0606  0.0321 0.0450     0.0184     0.0221   11.2372 12.4427 0.9171
+     43 2488.5833  0.0002 0.2053     0.0006     0.1692 1085.1060  6.9403 2.8245
+     43 2495.8267  0.0004 0.0433     0.0003     0.0378  247.7939  7.9240 3.1517
+     44 2510.3676  0.0002 0.2066     0.0007     0.1701  793.2617  6.9999 2.8914
+     44 2517.5921  0.0004 0.0443     0.0002     0.0389  264.2662  7.9131 3.1322
+     45 2532.1469  0.0002 0.2056     0.0007     0.1668 1280.1158  6.9516 2.8594
+     71 3236.0915  0.0002 0.1279     0.0004     0.1166  372.9953 10.1066 4.0102
+     71 3250.6945  0.0001 0.2848     0.0006     0.2358 1219.6113  7.3589 3.1029
+     71 3257.8455  0.0002 0.1273     0.0003     0.1171  595.8146 10.1594 4.0957
+     72 3272.4836  0.0001 0.2862     0.0006     0.2392 1186.6747  7.3327 3.0652
+     72 3279.6031  0.0005 0.1279     0.0003     0.1245  469.2419  9.9372 4.0624
+
+VSX period 3.877092 d: predicted eclipses (from the K2 epoch) that fall in covered TESS data:
+   26 predicted eclipses covered; 24 show NO eclipse (depth < 25% of the K2 depth). Note: the K2 epoch is 693 cycles away, so phase drift is possible; the decisive test is the number of eclipses per sector: expected ~7 per sector at P=3.877092, found 11 in 5 sectors.
+
+Pipeline period 21.775 d, linear ephemeris from the K2 epoch:
+   refit: P = 21.77531 d, T0 = -211.5586; dips on ephemeris: 5/11
+     t0 2480.0606 (S43.0) cycle 124 O-C -204.45 h depth 45.0 ppt T14 12.4 h OFF
+     t0 2488.5833 (S43.0) cycle 124 O-C +0.10 h depth 205.3 ppt T14 6.9 h ON
+     t0 2495.8267 (S43.0) cycle 124 O-C +173.94 h depth 43.3 ppt T14 7.9 h OFF
+     t0 2510.3676 (S44.0) cycle 125 O-C +0.31 h depth 206.6 ppt T14 7.0 h ON
+     t0 2517.5921 (S44.0) cycle 125 O-C +173.70 h depth 44.3 ppt T14 7.9 h OFF
+     t0 2532.1469 (S45.0) cycle 126 O-C +0.41 h depth 205.6 ppt T14 7.0 h ON
+     t0 3236.0915 (S71.0) cycle 158 O-C +171.65 h depth 127.9 ppt T14 10.1 h OFF
+     t0 3250.6945 (S71.0) cycle 159 O-C -0.49 h depth 284.8 ppt T14 7.4 h ON
+     t0 3257.8455 (S71.0) cycle 159 O-C +171.14 h depth 127.3 ppt T14 10.2 h OFF
+     t0 3272.4836 (S72.0) cycle 160 O-C -0.16 h depth 286.2 ppt T14 7.3 h ON
+     t0 3279.6031 (S72.0) cycle 160 O-C +170.71 h depth 127.9 ppt T14 9.9 h OFF
+   odd/even: even depths [205.3 205.6 286.2], odd depths [206.6 284.8] ppt; even T14 [6.9 7.  7.3] h, odd T14 [7.  7.4] h
+   covered predicted eclipses WITHOUT a dip: none
+   secondary-eclipse scan at P=21.7753: deepest phase 0.328 (dt=7.14 d after primary): depth 99.22 +- 0.71 ppt (n=271); phase-0.5 depth: [np.float64(0.14)] ppt
+
+Pipeline period 21.952 d, linear ephemeris from the K2 epoch:
+   refit: P = 21.95243 d, T0 = -211.5659; dips on ephemeris: 1/11
+     t0 2480.0606 (S43.0) cycle 123 O-C -204.54 h depth 45.0 ppt T14 12.4 h OFF
+     t0 2488.5833 (S43.0) cycle 123 O-C +0.00 h depth 205.3 ppt T14 6.9 h ON
+     t0 2495.8267 (S43.0) cycle 123 O-C +173.84 h depth 43.3 ppt T14 7.9 h OFF
+     t0 2510.3676 (S44.0) cycle 124 O-C -4.04 h depth 206.6 ppt T14 7.0 h OFF
+     t0 2517.5921 (S44.0) cycle 124 O-C +169.35 h depth 44.3 ppt T14 7.9 h OFF
+     t0 2532.1469 (S45.0) cycle 125 O-C -8.19 h depth 205.6 ppt T14 7.0 h OFF
+     t0 3236.0915 (S71.0) cycle 157 O-C +27.01 h depth 127.9 ppt T14 10.1 h OFF
+     t0 3250.6945 (S71.0) cycle 158 O-C -149.37 h depth 284.8 ppt T14 7.4 h OFF
+     t0 3257.8455 (S71.0) cycle 158 O-C +22.25 h depth 127.3 ppt T14 10.2 h OFF
+     t0 3272.4836 (S72.0) cycle 159 O-C -153.30 h depth 286.2 ppt T14 7.3 h OFF
+     t0 3279.6031 (S72.0) cycle 159 O-C +17.57 h depth 127.9 ppt T14 9.9 h OFF
+   covered predicted eclipses WITHOUT a dip: [(124, np.float64(2510.54), np.float64(11.0)), (125, np.float64(2532.49), np.float64(-25.0)), (158, np.float64(3256.92), np.float64(-10.5)), (159, np.float64(3278.87), np.float64(-22.0))]
+   secondary-eclipse scan at P=21.9524: deepest phase 0.712 (dt=15.63 d after primary): depth 97.31 +- 2.20 ppt (n=234); phase-0.5 depth: [np.float64(0.13)] ppt
+
+Pipeline period 43.55 d, linear ephemeris from the K2 epoch:
+   refit: P = 43.55073 d, T0 = -211.5627; dips on ephemeris: 3/11
+     t0 2480.0606 (S43.0) cycle 62 O-C -204.52 h depth 45.0 ppt T14 12.4 h OFF
+     t0 2488.5833 (S43.0) cycle 62 O-C +0.03 h depth 205.3 ppt T14 6.9 h ON
+     t0 2495.8267 (S43.0) cycle 62 O-C +173.86 h depth 43.3 ppt T14 7.9 h OFF
+     t0 2510.3676 (S44.0) cycle 63 O-C -522.37 h depth 206.6 ppt T14 7.0 h OFF
+     t0 2517.5921 (S44.0) cycle 63 O-C -348.98 h depth 44.3 ppt T14 7.9 h OFF
+     t0 2532.1469 (S45.0) cycle 63 O-C +0.33 h depth 205.6 ppt T14 7.0 h ON
+     t0 3236.0915 (S71.0) cycle 79 O-C +171.53 h depth 127.9 ppt T14 10.1 h OFF
+     t0 3250.6945 (S71.0) cycle 79 O-C +522.00 h depth 284.8 ppt T14 7.4 h OFF
+     t0 3257.8455 (S71.0) cycle 80 O-C -351.60 h depth 127.3 ppt T14 10.2 h OFF
+     t0 3272.4836 (S72.0) cycle 80 O-C -0.28 h depth 286.2 ppt T14 7.3 h ON
+     t0 3279.6031 (S72.0) cycle 80 O-C +170.59 h depth 127.9 ppt T14 9.9 h OFF
+   odd/even: even depths [205.3 286.2], odd depths [205.6] ppt; even T14 [6.9 7.3] h, odd T14 [7.] h
+   covered predicted eclipses WITHOUT a dip: none
+   secondary-eclipse scan at P=43.5507: deepest phase 0.500 (dt=21.78 d after primary): depth 212.63 +- 2.13 ppt (n=99); phase-0.5 depth: [np.float64(212.63)] ppt
+
+Pair structure test (202126877): all dip-time differences < 30 d:
+   2480.061 -> 2488.583: 8.523 d
+   2480.061 -> 2495.827: 15.766 d
+   2488.583 -> 2495.827: 7.243 d
+   2488.583 -> 2510.368: 21.784 d
+   2488.583 -> 2517.592: 29.009 d
+   2495.827 -> 2510.368: 14.541 d
+   2495.827 -> 2517.592: 21.765 d
+   2510.368 -> 2517.592: 7.225 d
+   2510.368 -> 2532.147: 21.779 d
+   2517.592 -> 2532.147: 14.555 d
+   3236.091 -> 3250.695: 14.603 d
+   3236.091 -> 3257.846: 21.754 d
+   3250.695 -> 3257.846: 7.151 d
+   3250.695 -> 3272.484: 21.789 d
+   3250.695 -> 3279.603: 28.909 d
+   3257.846 -> 3272.484: 14.638 d
+   3257.846 -> 3279.603: 21.758 d
+   3272.484 -> 3279.603: 7.120 d

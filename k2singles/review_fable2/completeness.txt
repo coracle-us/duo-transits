@@ -1,0 +1,69 @@
+Sample: 10 events (of 125 with max_support <= 1)
+
+=== EPIC 240410914_0 TIC 201980990: depth 589.9 ppt, D 10.8 h, K2 C11 epoch 670.169, TESS SNR/transit 108, max_support 0, pipeline repeats 0, comment: Deep
+    sectors: K2 [111, 112]  TESS [91, 92]; excluded windows 684/1029, frac_logP_excl 0.49
+    independent search: 3 dips (depth 0.4-2.5x, SNR>=7):
+      T=  670.271 sector  1111 depth  486.68 ppt SNR  51.0  catalogue event
+      T= 3788.976 sector    91 depth  269.24 ppt SNR  26.5  ** NOT in pipeline **
+      T= 3802.911 sector    92 depth  395.35 ppt SNR   9.6  ** NOT in pipeline **
+    catalogue event at 670.169: measured box depth 479.87 ppt (catalogue 589.9) in K2 data
+
+=== EPIC 203011840_0 TIC 68164464: depth 475.2 ppt, D 19.1 h, K2 C2 epoch -86.703, TESS SNR/transit 3023, max_support 0, pipeline repeats 0, comment: Deep
+    sectors: K2 [2]  TESS [12, 91]; excluded windows 168/592, frac_logP_excl 0.33
+    independent search: 1 dips (depth 0.4-2.5x, SNR>=7):
+      T=  -86.814 sector  1002 depth  266.86 ppt SNR 3833.8  catalogue event
+    catalogue event at -86.703: measured box depth 285.93 ppt (catalogue 475.2) in K2 data
+
+=== EPIC 201792207_0 TIC 281778781: depth 465.8 ppt, D 3.9 h, K2 C14 epoch 938.890, TESS SNR/transit 344, max_support 0, pipeline repeats 0, comment: Deep; secondary eclipse
+    sectors: K2 [14]  TESS []; excluded windows 1232/1950, frac_logP_excl 0.35
+    independent search: 1 dips (depth 0.4-2.5x, SNR>=7):
+      T=  938.876 sector  1014 depth  240.86 ppt SNR 914.6  catalogue event
+    catalogue event at 938.890: measured box depth 286.29 ppt (catalogue 465.8) in K2 data
+
+=== EPIC 215067200_0 TIC 155157963: depth 151.2 ppt, D 41.7 h, K2 C7 epoch 326.811, TESS SNR/transit 20657, max_support 0, pipeline repeats 0, comment: Flat-bottom
+    sectors: K2 [7]  TESS [92]; excluded windows 24/246, frac_logP_excl 0.18
+    independent search: 1 dips (depth 0.4-2.5x, SNR>=7):
+      T=  326.689 sector  1007 depth  121.51 ppt SNR 4970.3  catalogue event
+    catalogue event at 326.811: measured box depth 125.02 ppt (catalogue 151.2) in K2 data
+
+=== EPIC 246194159_0 TIC 301328232: depth 378.9 ppt, D 8.8 h, K2 C12 epoch 747.388, TESS SNR/transit 5373, max_support 1, pipeline repeats 2, comment: Deep; secondary eclipse
+    sectors: K2 [12, 19]  TESS [42, 70, 92]; excluded windows 1142/1574, frac_logP_excl 0.55
+    independent search: 5 dips (depth 0.4-2.5x, SNR>=7):
+      T=  747.408 sector  1012 depth  232.09 ppt SNR 16893.7  catalogue event
+      T=  810.911 sector  1012 depth  256.98 ppt SNR  41.3  ** NOT in pipeline **
+      T= 3228.003 sector    70 depth  261.63 ppt SNR  53.0  = pipeline repeat
+      T= 3813.934 sector    92 depth  254.86 ppt SNR  95.4  ** NOT in pipeline **
+      T= 3823.680 sector    92 depth  241.43 ppt SNR 3217.1  = pipeline repeat
+    catalogue event at 747.388: measured box depth 236.46 ppt (catalogue 378.9) in K2 data
+
+=== EPIC 224937601_0 TIC 231218638: depth 202.1 ppt, D 44.1 h, K2 C11 epoch 702.879, TESS SNR/transit 4381, max_support 0, pipeline repeats 0, comment: Deep
+    sectors: K2 [111, 112]  TESS [91, 92]; excluded windows 71/254, frac_logP_excl 0.37
+    independent search: 1 dips (depth 0.4-2.5x, SNR>=7):
+      T=  702.919 sector  1112 depth  153.25 ppt SNR 1792.0  catalogue event
+    catalogue event at 702.879: measured box depth 153.55 ppt (catalogue 202.1) in K2 data
+
+=== EPIC 246359551_0 TIC 279009745: depth 204.1 ppt, D 21.1 h, K2 C12 epoch 747.357, TESS SNR/transit 2277, max_support 1, pipeline repeats 1, comment: Deep; secondary eclipse
+    sectors: K2 [12]  TESS [42, 70, 92]; excluded windows 184/602, frac_logP_excl 0.39
+    independent search: 2 dips (depth 0.4-2.5x, SNR>=7):
+      T=  747.330 sector  1012 depth  149.76 ppt SNR 505.9  catalogue event
+      T= 3825.417 sector    92 depth  134.36 ppt SNR 773.1  = pipeline repeat
+    catalogue event at 747.357: measured box depth 150.15 ppt (catalogue 204.1) in K2 data
+
+=== EPIC 205966706_0 TIC 240663587: depth 119.2 ppt, D 7.8 h, K2 C3 epoch 17.783, TESS SNR/transit 1264, max_support 1, pipeline repeats 1, comment: Deep
+    sectors: K2 [3]  TESS [2, 29, 42, 92]; excluded windows 1258/1892, frac_logP_excl 0.54
+    independent search: 2 dips (depth 0.4-2.5x, SNR>=7):
+      T=   17.823 sector  1003 depth   83.35 ppt SNR 301.5  catalogue event
+      T= 2093.992 sector    29 depth   75.46 ppt SNR 318.6  = pipeline repeat
+    catalogue event at 17.783: measured box depth 91.20 ppt (catalogue 119.2) in K2 data
+
+=== EPIC 201663371_0 TIC 281884907: depth 48.8 ppt, D 6.4 h, K2 C1 epoch -187.275, TESS SNR/transit 53, max_support 0, pipeline repeats 0, comment: nan
+    sectors: K2 [1]  TESS []; excluded windows 1039/1165, frac_logP_excl 0.47
+    independent search: 1 dips (depth 0.4-2.5x, SNR>=7):
+      T= -187.289 sector  1001 depth   37.44 ppt SNR 256.1  catalogue event
+    catalogue event at -187.275: measured box depth 35.21 ppt (catalogue 48.8) in K2 data
+
+=== EPIC 201631267_0 TIC 380544493: depth 6.2 ppt, D 7.4 h, K2 C1 epoch -170.317, TESS SNR/transit 19, max_support 0, pipeline repeats 0, comment: Noted in Osborn, et al. (2016)
+    sectors: K2 [1]  TESS [45, 46]; excluded windows 1289/1627, frac_logP_excl 0.52
+    independent search: 1 dips (depth 0.4-2.5x, SNR>=7):
+      T= -170.225 sector  1001 depth    3.00 ppt SNR  37.6  catalogue event
+    catalogue event at -170.317: measured box depth 3.64 ppt (catalogue 6.2) in K2 data

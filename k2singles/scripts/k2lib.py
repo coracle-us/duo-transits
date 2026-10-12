@@ -16,6 +16,20 @@ Fixes relative to run_full.py:
       (bit 524288) are masked in addition to lightkurve's default mask. The HARD mask is deliberately
       NOT used: EPIC 211924561's C5 transit sits in 'rolling band' cadences.
   min_allowed_P / allowed_ranges are not reported (M3: grid artefacts). frac_logP_excluded is kept.
+
+v3 (2026-10-12, after the second Fable review, k2singles/review_fable2/REPORT.md):
+  P1  the red-noise factor was silently set to 1 whenever the 0.75-d baseline held fewer than three
+      in-transit-length bins, i.e. always for D >~ 0.5 d at K2 cadence. Granulation on giants then
+      made most windows 'ambiguous' and alias lists far too long. test_window_k2 uses a baseline of
+      max(0.75 d, 2 D) on each side; when beta still cannot be measured, the window cannot exclude.
+      A dip below a quarter of the expected depth no longer blocks exclusion, and very strong
+      exclusions (d + 3 sigma < delta/4) are allowed up to beta 5.
+  P3  K2 repeats: n_in >= 4 and (beta <= 2 or SNR >= 15); the SNR already includes beta. Baseline
+      sides: >= 0.25 x 0.75 d of cadences each and >= 0.75 d in total (was 0.5 x 0.75 d each side,
+      which threw away a 63-sigma S92 eclipse with a short one-sided baseline).
+  P2  partial events at sector/campaign edges are still not tested (known limitation).
+  P4  repeat times are grid-quantised (step D/4); periods for the note come from dedicated fits.
+  The singles project's alias_pipeline.py / pilot.py are NOT changed.
 """
 import sys
 from pathlib import Path
@@ -111,7 +125,105 @@ def load_combined(tic, epic):
     return lc, k2
 
 
-def grid(lc, D, delta, epoch):
+BETA_MAX_EXCL_STRONG = 5.0
+SIDE_FRAC_EACH, SIDE_TOTAL = 0.25, 1.0   # x 0.75 d of cadences
+K2_MIN_SNR_HIGH_BETA = 15.0
+
+
+def red_noise_beta_k2(r, n_bin):
+    """As ap.red_noise_beta, but NaN (not 1.0) when there are fewer than three bins."""
+    if n_bin <= 1:
+        return 1.0
+    nb = len(r) // n_bin
+    if nb < 3:
+        return np.nan
+    rb = r[: nb * n_bin].reshape(nb, n_bin).mean(axis=1)
+    sw = np.std(r, ddof=1)
+    if sw == 0:
+        return np.nan
+    return float(max(1.0, np.std(rb, ddof=1) / (sw / np.sqrt(n_bin)) * np.sqrt(nb / (nb - 1))))
+
+
+def test_window_k2(lc_t, lc_f, T, D, delta, lc_seg):
+    """ap.test_window (sigma_T = 0) with the v3 changes described in the module docstring."""
+    base_w = max(ap.BASE_W, 2 * D)
+    half = D / 2
+    mask_half = half + 0.02
+    i0, i1 = np.searchsorted(lc_t, [T - mask_half - base_w, T + mask_half + base_w])
+    t, f, sg = lc_t[i0:i1], lc_f[i0:i1], lc_seg[i0:i1]
+    oot = np.abs(t - T) > mask_half
+    anchored = np.isin(sg, np.unique(sg[oot])) if oot.any() else np.zeros(len(t), bool)
+    t, f, sg, oot = t[anchored], f[anchored], sg[anchored], oot[anchored]
+    res = dict(T_pred=T, sigma_T=0.0, n_window=len(t), base_w=base_w)
+    if len(t) == 0:
+        return {**res, "verdict": "no-data"}
+    n_left, n_right = np.sum(oot & (t < T)), np.sum(oot & (t > T))
+    res.update(n_oot_left=int(n_left), n_oot_right=int(n_right))
+    if n_left + n_right < 10:
+        flat_any = np.sum(np.abs(t - T) < ap.FLAT * half)
+        return {**res, "verdict": "unconstrained" if flat_any else "no-data"}
+    deg = 2 if (n_left >= 10 and n_right >= 10) else (1 if min(n_left, n_right) >= 5 else 0)
+    segs = np.unique(sg)
+    X = np.column_stack([(t - T) ** p for p in range(1, deg + 1)] + [(sg == u).astype(float) for u in segs])
+    coef, *_ = np.linalg.lstsq(X[oot], f[oot], rcond=None)
+    r = f / (X @ coef) - 1.0
+    r_oot = r[oot]
+    sig_w = 1.4826 * np.median(np.abs(r_oot - np.median(r_oot)))
+    cad = np.median(np.diff(t)) if len(t) > 1 else 0.0
+    n_flat_full = max(1, int(round(ap.FLAT * D / cad))) if cad > 0 else 1
+    beta = red_noise_beta_k2(r_oot, n_flat_full)
+    b_det = 1.0 if np.isnan(beta) else beta
+    inn = np.abs(t - T) < ap.FLAT * half
+    n_in = int(inn.sum())
+    cover = n_in * cad / (ap.FLAT * D) if cad > 0 else 0.0
+    res.update(beta=b_det, beta_measured=not np.isnan(beta), sigma_white=sig_w, baseline_deg=deg, cadence=cad)
+    if n_in < ap.MIN_IN or cover < ap.MIN_COVER:
+        return {**res, "verdict": "unconstrained"}
+    d = -np.mean(r[inn])
+    s = b_det * sig_w / np.sqrt(n_in)
+    res.update(offset=0.0, depth=d, depth_err=s, snr=d / s, n_in=n_in, cover=min(cover, 1.0))
+    if d > ap.DEPTH_FRAC * delta and d / s > ap.SNR_MIN:
+        return {**res, "verdict": "supported"}
+    strong = d + ap.K_SIG * s < 0.25 * delta
+    excl = (not np.isnan(beta) and d + ap.K_SIG * s < ap.DEPTH_FRAC * delta
+            and abs(d) < max(ap.K_SIG * s, 0.25 * delta)
+            and (beta <= ap.BETA_MAX_EXCL or (strong and beta <= BETA_MAX_EXCL_STRONG)))
+    return {**res, "verdict": "excluded" if excl else "ambiguous"}
+
+
+def grid_windows_k2(lc, D, delta, epoch):
+    """pilot.grid_windows with test_window_k2."""
+    t, f, sg = lc.time.to_numpy(), lc.flux.to_numpy(), lc.segment.to_numpy()
+    T_all = np.arange(t.min(), t.max(), D / 4)
+    j = np.searchsorted(t, T_all)
+    j0, j1 = np.clip(j - 1, 0, len(t) - 1), np.clip(j, 0, len(t) - 1)
+    near = np.minimum(np.abs(t[j0] - T_all), np.abs(t[j1] - T_all)) < D / 2
+    rows = []
+    for T in T_all[near]:
+        r = test_window_k2(t, f, T, D, delta, sg)
+        k = min(np.searchsorted(t, T), len(t) - 1)
+        r["sector"] = int(lc.sector.iloc[k])
+        r["product"] = lc["product"].iloc[k]
+        rows.append(r)
+    g = pd.DataFrame(rows)
+    g["near_event"] = (g.T_pred - epoch).abs() < D
+    return g
+
+
+def robust_k2(r, delta):
+    """pilot.robust with the v3 baseline-side rule."""
+    if r.get("verdict") != "supported":
+        return False
+    per_bw = ap.BASE_W / r["cadence"]
+    return (r["snr"] >= pilot.DETECT_SNR and pilot.DMIN * delta <= r["depth"] <= pilot.DMAX * delta
+            and r["cover"] >= ap.DETECT_COVER
+            and min(r["n_oot_left"], r["n_oot_right"]) >= SIDE_FRAC_EACH * per_bw
+            and r["n_oot_left"] + r["n_oot_right"] >= SIDE_TOTAL * per_bw)
+
+
+def grid(lc, D, delta, epoch, v3=True):
+    if v3:
+        return grid_windows_k2(lc, D, delta, epoch)
     g = pilot.grid_windows(lc, D, delta, epoch)
     if "cover" in g:
         weak = (g.verdict == "excluded") & (g.cover.fillna(0) < EXCL_MIN_COVER)
@@ -119,14 +231,15 @@ def grid(lc, D, delta, epoch):
     return g
 
 
-def find_repeats(g, delta, D):
+def find_repeats(g, delta, D, v3=True):
     reps = []
     if "snr" not in g:
         return reps
     for _, r in g[~g.near_event].sort_values("snr", ascending=False).iterrows():
-        if not pilot.robust(r, delta):
+        if not (robust_k2(r, delta) if v3 else pilot.robust(r, delta)):
             continue
-        if r.sector >= 1000 and (r.n_in < K2_MIN_NIN or r.beta > K2_MAX_BETA):
+        if r.sector >= 1000 and (r.n_in < K2_MIN_NIN or (r.beta > K2_MAX_BETA
+                                                         and not (v3 and r.snr >= K2_MIN_SNR_HIGH_BETA))):
             continue
         if all(abs(r.T_pred - x["T"]) > D for x in reps):
             reps.append(dict(T=round(r.T_pred, 4), sector=int(r.sector), product=r["product"],

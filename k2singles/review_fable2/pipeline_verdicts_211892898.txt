@@ -1,0 +1,14 @@
+grid verdict counts: {'ambiguous': 283, 'excluded': 62, 'unconstrained': 16, 'supported': 3}
+K2 windows verdicts: {'ambiguous': 264, 'excluded': 50, 'unconstrained': 8, 'supported': 3}  beta median 1.0  max 1.0
+  Tc=153.08: T=152.61 excluded d=-0.06ppt s=0.03 beta=1.00 cover=0.94 n_in=84.0; T=153.25 ambiguous d=+0.45ppt s=0.04 beta=1.00 cover=0.96 n_in=85.0
+  Tc=1168.2: T=1167.83 ambiguous d=-0.58ppt s=0.04 beta=1.00 cover=0.96 n_in=85.0; T=1168.48 ambiguous d=+0.42ppt s=0.04 beta=1.00 cover=0.96 n_in=85.0
+  Tc=165.16: T=164.93 ambiguous d=+0.28ppt s=0.04 beta=1.00 cover=0.96 n_in=85.0; T=165.58 ambiguous d=+0.43ppt s=0.05 beta=1.00 cover=0.96 n_in=85.0
+  Tc=1107.77: T=1107.50 ambiguous d=-0.31ppt s=0.03 beta=1.00 cover=0.92 n_in=82.0; T=1108.15 ambiguous d=+0.55ppt s=0.03 beta=1.00 cover=0.95 n_in=84.0
+  Tc=1156.11: T=1155.50 ambiguous d=-0.35ppt s=0.03 beta=1.00 cover=0.95 n_in=84.0; T=1156.15 ambiguous d=+0.28ppt s=0.05 beta=1.00 cover=0.92 n_in=82.0
+  Tc=171.2: T=170.77 excluded d=-0.06ppt s=0.03 beta=1.00 cover=0.94 n_in=84.0; T=171.42 ambiguous d=+0.14ppt s=0.04 beta=1.00 cover=0.94 n_in=84.0
+  Tc=207.46: T=207.10 ambiguous d=+1.27ppt s=0.05 beta=1.00 cover=0.93 n_in=83.0; T=207.75 ambiguous d=-0.53ppt s=0.05 beta=1.00 cover=0.93 n_in=83.0
+  Tc=1113.82: T=1113.34 ambiguous d=-0.65ppt s=0.03 beta=1.00 cover=0.93 n_in=83.0; T=1113.98 ambiguous d=+0.97ppt s=0.04 beta=1.00 cover=0.88 n_in=78.0
+  Tc=1150.07: T=1149.66 excluded d=+0.12ppt s=0.05 beta=1.00 cover=0.90 n_in=80.0; T=1150.31 ambiguous d=+0.29ppt s=0.06 beta=1.00 cover=0.96 n_in=85.0
+  Tc=1258.83: T=1258.65 ambiguous d=+1.04ppt s=0.02 beta=1.00 cover=0.98 n_in=87.0; T=1259.29 excluded d=+0.07ppt s=0.04 beta=1.00 cover=0.99 n_in=88.0
+  Tc=1295.09: T=1294.97 ambiguous d=+1.92ppt s=0.04 beta=1.00 cover=0.96 n_in=85.0; T=1295.62 ambiguous d=-1.22ppt s=0.04 beta=1.00 cover=0.97 n_in=86.0
+  Tc=3270.95: T=3270.93 ambiguous d=-0.79ppt s=0.06 beta=1.00 cover=1.00 n_in=785.0; T=3271.57 ambiguous d=+1.09ppt s=0.07 beta=1.00 cover=1.00 n_in=785.0

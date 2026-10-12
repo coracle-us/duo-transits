@@ -1,0 +1,1963 @@
+Draft version November 18, 2020
+Typeset using LATEX twocolumn style in AASTeX63
+The K2 M67 Study: Precise Mass for a Turnoff Star in the Old Open Cluster M67
+Eric L. Sandquist,
+1 David W. Latham,
+2 Robert D. Mathieu,
+3 Emily Leiner,
+4, 3, 5 Andrew Vanderburg,
+6
+Dennis Stello,
+7, 8, 9 Jerome A. Orosz,1 Luigi R. Bedin,10 Mattia Libralato,
+11, 10, 12 Luca Malavolta,10, 12 and
+Domenico Nardiello13, 10
+1San Diego State University, Department of Astronomy, San Diego, CA, 92182 USA
+2Center for Astrophysics — Harvard & Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA
+3University of Wisconsin-Madison, Department of Astronomy, Madison, WI 53706, USA
+4Center for Interdisciplinary Exploration and Research in Astrophysics, Northwestern University, Evanston, IL 60208, USA
+5NSF Astronomy and Astrophysics Postdoctoral Fellow
+6Harvard-Smithsonian Center for Astrophysics, Cambridge, MA 02138, USA
+7School of Physics, The University of New South Wales, Syndey NSW 2052, Australia
+8Sydney Institute for Astronomy (SIfA), School of Physics, University of Sydney, NSW, 2006, Australia
+9Stellar Astrophysics Centre, Department of Physics and Astronomy, Aarhus University, Ny Munkegade 120, DK-8000 Aarhus C,
+Denmark
+10Istituto Nazionale Astrofisica di Padova - Osservatorio Astronomico di Padova, Vicolo dell’Osservatorio 5, I-35122 Padova, Italy
+11Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218, USA
+12Dipartimento di Fisica e Astronomia ‘Galileo Galilei’, Universit`a di Padova, Vicolo dell’Osservatorio 3, Padova I-35122, Italy
+13Aix Marseille Univ, CNRS, CNES, LAM, Marseille, France
+ABSTRACT
+We present a study of the bright detached eclipsing main sequence binary WOCS 11028 (Sanders
+617) in the open cluster M67. Although the binary has only one eclipse per orbital cycle, we show
+that the masses of the stars can be derived very precisely thanks to a strong constraint on the orbital
+inclination: MA = 1.222±0.006M and MB = 0.909±0.004M. We use a spectral energy distribution
+fitting method to derive characteristics of the component stars in lieu of the precise radii that would
+normally be derived from a doubly-eclipsing binary. The deconvolution of the SEDs reveals that the
+brighter component of the binary is at the faint turnoff point for the cluster — a distinct evolutionary
+point that occurs after the convective core has been established and while the star is in the middle of
+its movement toward lower surface temperature, before the so-called hook at the end of main sequence.
+The measurements are in distinct disagreement with evolution models at solar metallicity: higher metal
+abundances are needed to reproduce the characteristics of WOCS 11028 A. We discuss the changes to
+model physics that are likely to be needed to address the discrepancies. The clearest conclusions are
+that diffusion is probably necessary to reconcile spectroscopic abundances of M67 stars with the need
+for higher metallicity models, and that reduced strength convective overshooting is occuring for stars
+at the turnoff. At super-solar bulk metallicity, various indicators agree on a cluster age between about
+3.5 and 4.0 Gyr.
+1. INTRODUCTION
+As part of the K2 M67 Study (Mathieu et al. 2016),
+we are analyzing eclipsing binary stars to provide a pre￾cise mass scale for the cluster stars as an aid to com￾parisons with theoretical models. The K2 mission has
+uncovered eclipsing binaries that would have been diffi￾cult to identify from the ground, and has made it pos￾sible to precisely study even those systems with shallow
+Corresponding author: Eric L. Sandquist
+esandquist@sdsu.edu
+eclipses. Our goal here is to measure masses and radii to
+precisions of better than 1% in order to be comparable
+to results from the best-measured binaries in the field
+(Andersen 1991; Torres et al. 2010; Southworth 2015).
+We have previously analyzed the binary WOCS 12009
+(Sandquist et al. 2018), although we found that at least
+the primary star showed signs of having been part of a
+stellar merger. The brighter binary HV Cnc has recently
+been reanalyzed by G¨okay et al. (2020), but a proper
+analysis is complicated by an extremely faint secondary
+star and a possibly associated third star.
+arXiv:2011.08365v1 [astro-ph.SR] 17 Nov 2020
+2
+WOCS 11028 (also known as Sanders 617,
+EPIC 211411112; α2000 = 08h50m26.
+s99, δ2000 =
++11◦48031.
+003) in M67 was first reported as a double￾lined spectroscopic binary star by Geller et al. (2015),
+although the system had been monitored previously for
+about 7 years by D. Latham and collaborators, includ￾ing determination of orbital parameters. The K2 M67
+Study collaboration detected an eclipse in Kepler K2
+observations for campaign 5. The spectroscopic param￾eters (P = 62.593 d, e = 0.625, ω = 236◦
+) showed that
+this meant that the system has only one eclipse per
+orbit, which is not uncommon for eccentric binaries.
+However, because the orbital separation is relatively
+large and the eccentricity is not too extreme, the orbital
+inclination can still be fairly tightly constrained between
+two limits: inclinations that give two eclipses per orbit
+(one a grazing eclipse), and ones that give no eclipses.
+For this binary, the singly-eclipsing range only covers
+inclinations from 86.
+◦2 to 88.
+◦8, and light-curve modeling
+makes it possible to constrain this range even further.
+We will show below that we can therefore derive precise
+masses for the two stars in this binary. In the cluster’s
+color-magnitude diagram (CMD), the binary sits near
+the cluster turnoff, which is an indication that the stars
+are relatively far along in their core hydrogen burning.
+Thus, there is hope that these stars can significantly
+constrain the age of the cluster they reside in.
+In section 2, we describe the photometric and spec￾troscopic data that we collected and analyzed for the
+binary. In section 3, we describe the modeling of the
+binary system. In section 4, we discuss the results and
+the interpretation of the system.
+2. OBSERVATIONS AND DATA REDUCTION
+2.1. K2 Photometry
+M67 was observed during Campaigns 5, 16, and 18
+of the K2 mission. WOCS 11028 was observed during
+all of the campaigns in a custom aperture with long ca￾dence (30 min) exposures. Single eclipses were observed
+during campaigns 5 and 16, having about a 2.7% de￾crease in flux. (No eclipse was observed in campaign 18
+data, and the ephemeris indicates that one was not ex￾pected.) The eclipse times were measured to be at BJD
+2457178.9531±0.00088, and 2458117.8789±0.00075 us￾ing the bisector method of Kwee & van Woerden (1956).
+The radial velocity curve shows that these are secondary
+eclipses (of the cooler, less massive star). In the K2 light
+curves, there is no sign of primary eclipses at the four
+epochs predicted by the orbital ephemeris (see Figure
+1).
+Because the K2 camera has relatively large pixels
+(3.
+0098 on a side), we briefly discuss the possibility of con￾Figure 1. K2 photometry from the EVEREST pipeline for
+the three campaigns that observed WOCS 11028. The two
+observed eclipses are the largest flux drops in C5 and C16,
+and the predicted times of the non-eclipsing conjunction are
+shown with arrows.
+taminating light from unrelated stars. Although WOCS
+11028 is a member of M67, it is in the outskirts of the
+cluster. As shown in Figure 2, the nearest bright star
+is WOCS 6030 / Sanders 619 at a distance of 5400, and
+about 0.3 mag fainter in Gaia G band. There is a Gaia
+source (indicated in Figure 2) 800 away, but nearly 8 G
+magnitudes fainter. There are three other Gaia sources
+between 27 and 3400 away, but all are at least 5.3 mag
+fainter in G. In the light curves described below, the
+photometric apertures did not extend more than 5 pixels
+away from the photocenter, and so avoided the brighter
+stars. As a result, we assume contamination of the K2
+apertures used for WOCS 11028 is negligible.
+Because of the incomplete gyroscopic stabilization
+during the K2 mission, systematic effects on the light
+curve are known to be substantial. We used two differ￾ent light curves for WOCS 11028 as part of our investi￾gation of systematic error sources. The first light curve
+we experimented with utilized the K2SFF pipeline (Van￾derburg & Johnson 2014; Vanderburg et al. 2016) that
+involved stationary aperture photometry along with cor￾rection for correlations between the telescope pointing
+and the measured flux. The light curve that resulted
+still retained small trends over the long term, so these
+were removed by fitting the out-of-eclipse points with
+a low-order polynomial and dividing the fit. The sec￾ond light curve came from version 2.0 of the EVEREST
+pipeline (Luger et al. 2018), which uses pixel-level decor￾relation to remove instrumental effects. We used the
+detrended and co-trending basis vector-corrected light
+3
+Figure 2. Pan-STARRS1 y image centered on WOCS
+11028. The image is 9000 tall, and the sky orientation is
+shown.
+curve. However, the eclipse depth is about 4% deeper
+in the EVEREST light curve than in the K2SFF ver￾sion, so we need to gauge the effects on measurements of
+the binary characteristics. Because the K2 light curves
+have high signal-to-noise, they have a substantial influ￾ence on best-fit binary star parameter values (see section
+3.4). The scatter among the best-fit parameter values
+when comparing runs with different K2 light curve re￾ductions is sometimes larger than the statistical uncer￾tainties. Because there is no clearly superior method for
+processing the K2 light curves, we will take the scatter in
+the binary model parameter values as a partial indicator
+of systematic error resulting from the processing.
+2.2. The Spectral Energy Distribution
+Because the eclipses of the WOCS 11028 binary pro￾vide minimal information on the sizes of the individ￾ual stars, we need other well-measured characteristics
+of the binary’s stars in order to extract age information
+for the cluster. Fortunately, M67 has been heavily ob￾served over a wide wavelength range, making it possible
+to construct well-sampled spectral energy distributions
+for the binary and similarly bright stars in the cluster.
+In this section, we describe the spectroscopy and pho￾tometry we have assembled, and the efforts to put the
+observations on a consistent flux scale.
+Ultraviolet: We obtained photometry and a spectrum
+from the Galaxy Evolution Explorer (GALEX; Martin et
+al. 2005) archive for the NUV passband (1771−2831 ˚A).
+WOCS 11028 was imaged twice, for 1691.05 s (GI1 pro￾posal 94, P.I. W. Landsman) and 5555.2 s (GI1 proposal
+55. P.I. K. Honeycutt). As the archived magnitudes are
+based on count rates with minimal background contribu￾tions, we computed a final magnitude and flux based on
+the average count rate for both observations. Morrissey
+et al. (2007) describes the characteristics of the GALEX
+photometry and its calibration to flux. GALEX mag￾nitudes are on an AB system (Oke & Gunn 1983), and
+we used the zero point magnitude (mNUV = 20.08) and
+reference flux (2.06×10−16 erg s−1
+cm2 ˚A−1
+) to convert
+to flux.
+A NUV grism spectrum was taken as part of GI1 pro￾posal 94 (PI: W. Landsman) on 2005 Feb. 18 with a
+total exposure time of 27653 s. The NUV spectrum
+covers a wider wavelength range than the NUV photom￾etry filter, but there was effectively no signal detected
+for WOCS 11028 at wavelengths less than about 2000 ˚A.
+The spectrum was obtained from MAST, and the flux
+calibration from the pipeline reduction was used.
+Observations were taken of a smaller portion of M67
+(including WOCS 11028) using the UVOT telescope
+on the Swift satellite. We collected UV fluxes in the
+uvw1, uvm2, and uvw2 bands from the Swift UVOT
+Serendipitous Source Catalogue (version 1.1; Page et al.
+2014). The three bands mostly cover the same wave￾length range as the GALEX NUV filter, but with some￾what finer resolution. Flux correction factors from Poole
+et al. (2008) were applied to go from the gamma-ray
+burst spectrum calibration given in the archive to one
+utilizing Pickles (1998) library stars.
+Near-ultraviolet, Optical and Near-infrared: M67 has
+been frequently observed from the ground for the pur￾poses of photometric calibration. For the purposes of
+an SED, narrow-band filters are particularly useful, and
+we discuss these first. Balaguer-N´u˜nez et al. (2007)
+presented Str¨omgren uvby photometry for the cluster.
+Because M67 stars are commonly used as standards in
+Str¨omgren photometry (Nissen et al. 1987), we can be
+fairly assured that the observations are tied to the stan￾dard system. We employed reference fluxes from Gray
+(1998) to convert the magnitudes to fluxes.
+Fan et al. (1996) conducted wide-field observations of
+M67 in a series of narrow-band filters (“BATC”) cover￾ing from 3890 to 9745 ˚A using bandpasses avoiding most
+important sky lines. The wavelength coverage of the fil￾ters is better in the near-infrared, making them a good
+complement to Str¨omgren photometry. The BATC sur￾vey goal was spectrophotometry at the 1% level, and the
+study largely achieved that, judging from the low scat￾ter in their color-magnitude diagrams. Their reported
+magnitudes are on the Oke & Gunn AB system. We
+found that fluxes from these magnitudes were systemat￾ically higher than similar observations in other systems.
+We collected magnitudes in a larger set of filters from
+4
+BATC Data Release 11
+, and found that these were more
+consistent, probably due to improved calibration (Zhou
+et al. 2003).
+Narrow-band photometry is also available in the Vil￾nius filter system for many stars in M67 (although not
+WOCS 11028) in the study of Laugalys et al. (2004). We
+converted the reported magnitudes to fluxes using the
+zeropoints from Mann & von Braun (2015). The filters
+in the Vilnius system are somewhat denser in the blue
+portions of the optical, and these again complement the
+spectrophotometry in the BATC system.
+We have Johnson-Cousins photometry in BV IC from
+Sandquist (2004) and Yadav et al. (2008), in UBV RC IC
+from Montgomery et al. (1993), in BV RI from Nardiello
+et al. (2016b), and in BV from Data Release 9 of the
+AAVSO Photometric All-Sky Survey (APASS; Henden
+et al. 2015). These measurements are on a Vega mag￾nitude system, and so have been converted to fluxes us￾ing reference magnitudes from Table A2 of Bessell et
+al. (1998), and accounting for the known reversal of the
+zero point correction rows for fλ and fν. The absolute
+calibrations of each of these studies are unavoidably dif￾ferent for the same filter bands, and this will contribute
+to the noise in the SEDs. However, this does not af￾fect their use in determining the relative contributions
+of the two stars in the WOCS 11028 binary (see §2.2.1).
+(The R and I filter observations given in Nardiello et
+al. (2016b) were actually taken in SDSS r and i filters,
+and have been recalibrated to the Sloan DR12 system
+(D. Nardiello, private communication). These data were
+not used in fits to SEDs.)
+There are several additional surveys that provide cal￾ibrated broad-band photometric observations. We used
+PSF magnitudes from Data Release 14 of the Sloan Dig￾ital Sky Survey (SDSS; York et al. 2000), calibrated
+according to Finkbeiner et al. (2016). The SDSS is
+nearly on the AB system, with small offsets in uSDSS
+and zSDSS that we have also corrected for here. The
+Pan-STARRS1 survey (Kaiser et al. 2010) contains pho￾tometry in 5 filters, and we use their mean PSF mag￾nitudes here. Zero points for its AB magnitude system
+are given in Schlafly et al. (2012). The APASS survey
+also observed the cluster in Sloan g
+0
+r
+0
+i
+0 filters, and their
+photometry was flux calibrated from the AB system.
+Finally, Gaia has already produced high-precision
+photometry extending far down the main sequence of
+M67 as part of Data Release 2. We obtained the fluxes
+in the G, GBP , and GRP bands from the Gaia Archive.
+1 http://vizier.u-strasbg.fr/viz-bin/VizieR-3?-source=II/262/batc
+Infrared: We obtained Two-Micron All-Sky Survey
+(2MASS; Skrutskie et al. 2006) photometry in JHKs
+from the All-Sky Point Source Catalog, and have con￾verted these to fluxes using reference fluxes for zero mag￾nitude from Cohen et al. (2003). Many stars also have
+photometry in three bands from the Wide Field Infrared
+Explorer (WISE; Wright et al. 2010), which were also
+converted to fluxes using tabulated reference fluxes at
+zero magnitude.
+2.2.1. Photometric Deconvolution
+A benefit of the binary’s membership in the M67
+cluster is that it should be possible to describe the bi￾nary’s light as the sum of the light of two single cluster
+stars. To that end, we compiled a database of photo￾metric measurements from likely single main sequence
+stars in M67, and sought a combination of stars whose
+summed fluxes most closely match the fluxes of WOCS
+11028. For our sample of probable single stars, we se￾lected likely members based on Gaia proper motions,
+parallaxes, and photometry, as well as radial velocity
+membership and binarity information from Geller et al.
+(2015). Likely binaries were rejected by restricting the
+sample to those classified as radial velocity SM (single
+members) with Gaia photometry placing them within
+about 0.03 mag of the blue edge of the main sequence
+band in the GBP − GRP color. Selected stars are shown
+in Figure 3.
+The benefit of this procedure for constraining the
+SEDs of the binary’s stars is that it is a relative com￾parison using other cluster stars with the same distance,
+age, and chemical composition. As such, it is indepen￾dent of distance and reddening (as long as these are the
+same for the binary and comparison stars), the details
+of the filter transmission curves (as long as the same fil￾ter is used for observations of the different M67 stars),
+and flux calibration of any of the filters (as long as the
+calibration is applied consistently). We can also avoid
+systematic errors associated with theoretical models or
+with the consistency of the different parts of empirical
+SEDs compiled from spectra.
+We tested two ways of doing the decomposition: using
+actual M67 stars as proxies and checking all combina￾tions of likely main sequence stars; and fitting all main
+sequence stars with photometry in a given filter as a
+function of Gaia G magnitude in order to derive SEDs
+that could be combined. When using actual M67 stars,
+we are somewhat at the mercy of the photometry that is
+available for each star (and the binary) and of the stellar
+sampling of the main sequence. The use of fits allows
+for finer examination of the main sequence, although
+there is some risk of diverging from the photometry of
+5
+Figure 3. Color-magnitude diagrams of likely single stars near the turnoff of M67 in photometric datasets with the highest
+signal-to-noise. (BV and V Ic: Sandquist 2004; vy: Balaguer-N´u˜nez et al. 2007; P V : Laugalys et al. 2004; m3890m5795: Fan et
+al. 1996). The red points are combined photometry of the WOCS 11028 binary, green points are the proxy photometry values
+for the components of the binary, yellow points are solar twins, and blue points are stars identified as being at critical points in
+the evolutionary sequence.
+real stars. Even for a relatively rich cluster like M67,
+parts of the main sequence are not well populated, and
+we believe that the main-sequence fitting method gives
+better results in that case. We present the results of
+both analyses below, however.
+To judge the agreement between the summed fluxes of
+a pair of stars and the binary photometry, we looked for
+a minimum of a χ
+2
+-like parameter involving fractional
+flux differences in the different filter bands:
+X
+i
+
+Fi,bin − (Fi,1 + Fi,2)
+σi,bin · Fi,bin 2
+where σi,bin = 10−(σi,m+0.01)/2.5−1 and σi,m is the mag￾nitude uncertainty in the ith filter band for the binary.
+The addition of 0.01 mag somewhat deweights photom￾etry with very low uncertainties (Gaia and GALEX
+NUV) that results partly from their very wide filter
+bandpasses.
+When using M67 stars as proxies, the results can be
+affected by the selection of filters that could be used. We
+examined solutions excluding the Swift/UVOT and/or
+Str¨omgren photometry because they covered the small￾est portion of the cluster field, and excluding them al￾lowed us to use larger sets of stars. The sample sizes
+were 52 stars having photometry in all of the filter
+6
+Figure 4. Top: SED for the binary WOCS 11028 (photom￾etry: red points, GALEX spectrum: cyan lines) and for the
+main sequence stars WOCS 6018 (blue points) and WOCS
+16013 (green points). Horizontal error bars represent the
+effective width of the filter. Bottom: Fractional difference
+between the binary star photometry fluxes and the result of
+the main sequence fitting procedure.
+bands, 109 with UVOT excluded, and 125 with UVOT
+and Str¨omgren photometry excluded. In all cases, the
+best fits involved WOCS 6018 (Sanders 763) as the
+brighter star, while the preferred fainter star was ei￾ther WOCS 10027/S1597 (with UVOT photometry ex￾cluded) or WOCS 16013/S795 (for all photometry, or
+with UVOT and Str¨omgren excluded). Solutions in￾volving WOCS 6018 with different faint stars (WOCS
+17021/S820, WOCS 21046/S1731, WOCS 16018/S814)
+were the next-best fits, and all of these stars reside in
+similar positions on the main sequence. Figure 4 shows
+a comparison of the SED of WOCS 16013 with WOCS
+6018, giving an indication of the significant optical and
+infrared excess for the binary. The bottom panel shows
+the residuals between the binary flux and the summed
+fluxes of WOCS 6018 and WOCS 10027. A potential
+limiting factor is the stellar sampling available near the
+brighter star, but we have stars within 0.007 G mag on
+the bright side and within 0.016 mag on the faint side.
+The main-sequence fitting procedure can be employed
+in any filter with a sufficient sample of stars covering
+the range of brightnesses for the binary’s stars. In our
+case, this eliminated the RC , Swift uvm2, and WISE W3
+and W4 filters from consideration. Our fit statistic had
+a minimum value of 50.0 for the selection of 46 filters.
+We estimated the 2σ uncertainty in the fit based on
+where the goodness-of-fit statistic reached a value of 4
+above the minimum value. For example, this returns
+Figure 5. Goodness-of-fit contours in goodness-of-fit statis￾tic χ
+2
+versus Gaia G magnitudes for the two components of
+WOCS 11028 out to approximately 2σ away from the best
+fit.
+2σ(GA) = 0.035 and 2σ(GB) = 0.15. As expected, there
+is an anti-correlation between values for the primary and
+secondary stars because of the need to match the binary
+fluxes (see Fig. 5).
+For an additional check on the brighter star, we com￾pared the GALEX ultraviolet spectrum of WOCS 11028
+with that of WOCS 6018, as shown in Fig. 6. Al￾though our minimization procedure encourages agree￾ment in near-UV filters, it doesn’t require agreement of
+the spectra. In spite of this, the overall shape and flux
+level of the two stars agree well, with the binary becom￾ing consistently higher on the long wavelength end. The
+slope of the GALEX spectrum is one of the more sen￾sitive indicators of temperature for stars on the upper
+main sequence of M67, and this combination of stars
+does a better job of reproducing that than two equal￾mass stars, for example. The enhancement in flux at the
+long-wavelength end of the spectrum can be attributed
+to a small contribution from the faint star in the binary.
+The four photometric observations in the near ultravi￾olet (from GALEX and Swift/UVOT) indicate that the
+binary is slightly brighter than WOCS 6018 in all of the
+filter bands.
+The above fits to the binary’s photometry provide lu￾minosity ratios in different bands independent of mod￾els, and we use some of these as constraints in modeling
+the radial velocity and eclipse light curve data in §3.4.
+These ratios are provided in Table 4.
+2.2.2. Effective Temperatures and Bolometric Fluxes
+7
+Figure 6. Top: Comparisons of GALEX NUV spectra for
+the binary WOCS 11028 (red) and likely main sequence star
+WOCS 6018 (cyan). Photometry from GALEX (NUV filter)
+and Swift/UVOT is shown as points, with the approximate
+widths of the filters shown as horizontal bars. Bottom: Frac￾tional difference between GALEX spectra of WOCS 11028
+and WOCS 6018.
+With SEDs in hand for stars that we believe are good
+proxies for the binary’s components, we can derive ad￾ditional properties via fits with theoretical models. The
+models can introduce systematic errors in the quanti￾ties we try to measure, although we will try to mitigate
+them. We tested models from ATLAS9 (Castelli & Ku￾rucz 2004)
+2 and Coelho (2014), but the results were very
+similar, and we primarily discuss ATLAS9 model fits be￾low. Models were adjusted to account for the interstel￾lar reddening of M67 [E(B −V ) = 0.041±0.004; Taylor
+2007] using the Cardelli et al. (1989) extinction curve.
+Model photometry was calculated using the IRAF3
+rou￾tine sbands. Bolometric flux was derived from the me￾dian multiplicative factor needed to bring the best-fit
+model photometry into agreement with each observa￾tion, and we quote an uncertainty on the median that
+is based on the range covered by observations that are
+within √
+N /2 entries of the middle in the ordered list.
+We find that the SEDs of WOCS 6018 and the bright
+component from our main sequence fit method are in
+good agreement with models of 6200 K (see Fig. 7),
+2 The models were calculated using the ATLAS9 fortran code that
+employed updated 2015 linelists, and at temperatures between
+the published gridpoints.
+3
+IRAF is distributed by the National Optical Astronomy Obser￾vatory, which is operated by the Association of Universities for
+Research in Astronomy (AURA) under a cooperative agreement
+with the National Science Foundation.
+Figure 7. Top: SED for the proxy for the bright star in the
+WOCS 11028 binary (red points for photometry) and a fitted
+ATLAS9 model for Teff = 6185 K and log g = 4.25 (solid
+line, and green points for integrations over filter response
+curves). Horizontal error bars represent the effective width
+of the filter. A GALEX spectrum of WOCS 6018 is shown
+in cyan. Bottom: Fractional difference between the stellar
+fluxes and the best-fit model fluxes for ATLAS9 (green)
+Figure 8. Top: SED for the proxy for the faint star in
+the WOCS 11028 binary (red points) and a fitted ATLAS9
+model for Teff = 5500 K (solid line, and green points for in￾tegrations over filter response curves). Horizontal error bars
+represent the effective width of the filter. Bottom: Fractional
+difference between the stellar fluxes and the best-fit model
+fluxes for ATLAS9 (green) models.
+while all of the candidate fainter components indicate a
+temperature of about 5500 K (see Fig. 8).
+8
+To try to achieve greater precision, we also calculated
+temperatures using the infrared flux method (Blackwell
+& Shallis 1977, IRFM;). Briefly, this method exploits
+the difference in temperature sensitivity between the
+bolometric flux and monochromatic fluxes in the in￾frared on the Rayleigh-Jeans portion of the spectrum.
+With the available photometry databases, we have mea￾surements of fluxes covering the majority of the stellar
+energy emission. The ratio of the bolometric and in￾frared fluxes (we use fluxes in 2MASS bands) can be
+compared to theoretical values (where we again use AT￾LAS9 models):
+Fbol(Earth)
+FλIR (Earth) =
+σT4
+eff
+FλIR (model)
+We used the 2MASS flux calibration of Casagrande et al.
+(2010) in this case, in part because it produced greater
+consistency between the temperatures derived in the
+three bands — full ranges between 15 and 40 K. Starting
+from a solar-metallicity ATLAS9 model that produced
+a good fit by eye, we adjusted the temperature of the
+synthetic spectrum until it matched the average IRFM
+temperature from the three 2MASS bands. We find tem￾peratures of 6185 K and 5500 K for the two stars. The
+model surface gravity was chosen from the eclipsing bi￾nary results or from MESA models, although changes
+had little effect. Uncertainty in the reddening (which
+modifies the shape of the theoretical model we fit to the
+data) and metal content of the models affects the mea￾sured temperature at about the 15 K level. Overall, we
+estimate that there is an uncertainty of about 50 K and
+75 K in the temperatures.
+For comparison, there are spectroscopic temperatures
+available for stars near the position of the brighter star
+in the CMD from recent surveys looking at abundance
+differences as a function of evolutionary phase. Liu et
+al. (2019) found temperatures by forcing excitation and
+ionization balance in their modeling of Fe I and II lines,
+and for three stars slightly brighter in G, they derived
+temperatures between about 6100 and 6150 K. Souto
+et al. (2019) found temperatures from ASPCAP fits to
+infrared APOGEE spectra and the three closest stars
+in G covered a range from 6050 to 6110 K (in their
+“calibrated” ASPCAP values). Gao et al. (2018) de￾rived temperatures from fits to first and second ioniza￾tion states of Sc, Ti, and Fe lines, and two H Balmer
+lines, and for the stars nearest in G magnitude, they
+found a range from about 6090 to 6140 K. (Our best
+fit M67 star, WOCS 6018, had a temperature of 6127
+K.) Bertelli Motta et al. (2018) used temperatures from
+the Gaia-ESO Survey, and observed four stars slightly
+fainter than WOCS 6018 that returned a range between
+6000 and 6060 K. Onehag et al. ¨ (2014) derived tem￾peratures from photometry, but also examined ioniza￾tion and excitation temperatures. For five stars slightly
+fainter than our fit, they found temperatures between
+about 6130 and 6200 K, with the closest matches in
+brightness being at the high end of that range. The
+agreement of our IRFM temperature with these spec￾troscopic measurements is quite good, and if anything,
+our temperature is higher than spectroscopic values by
+∼ 50 − 100 K.
+We can also derive bolometric fluxes at Earth from
+the model fits to the SEDs. The SEDs for both stars
+are very well sampled with photometry, and a GALEX
+spectrum for the best bright star proxy can be employed
+as well. The results are summarized in Table 4. The
+SED model fits can be combined to provide a constraint
+on the radius ratio for the two stars that is independent
+of the distance and reddening of the cluster via
+R2
+R1
+=
+s
+Fbol,2
+Fbol,1
+·
+
+T1
+T2
+4
+Because the single grazing eclipse per orbit gives us a
+constraint on the sum of the stellar radii, this radius
+ratio will allow us to compute the individual stellar radii.
+2.3. Spectroscopy
+We have measured radial velocities for the WOCS
+11028 binary using three spectroscopic datasets. The
+first and largest set we employ here comes from the CfA
+Digital Speedometers (Latham 1985, 1992) on the 1.5 m
+Tilinghast reflector at Fred Lawrence Whipple Observa￾tory and the MMT. These observations were recordings
+of a single echelle order covering 516.7 to 521 nm around
+the Mg I b triplet using an intensified photon-counting
+Reticon detector. The spectra were taken as part of a
+larger monitoring campaign of M67 stars.
+We made two observations of the binary using the
+HARPS-N spectrograph (Cosentino et al. 2012) on the
+3.6 m Telescopio Nazionale Galileo (TNG). HARPS-N
+is a fiber-fed echelle that has a spectral resolving power
+R = 115000, covering wavelengths from 383 to 693 nm.
+The spectra were processed, extracted, and calibrated
+using the Data Reduction Software (version 3.7) pro￾vided with the instrument.
+We also obtained five archival spectra from the
+APOGEE database (Holtzman et al. 2015) that were
+taken between January and April 2014. These are H￾band infrared (1.51 − 1.70µm) spectra with a spectral
+resolution R ∼ 22500 taken on the 2.5 m Sloan Foun￾dation Telescope. We used APOGEE flags to mask out
+portions of the spectrum that were strongly affected by
+9
+sky features, and continuum normalized the spectra us￾ing a median filter.
+The radial velocities were measured using the spectral
+separation algorithm described in Gonz´alez & Levato
+(2006). In the first iteration step, a master spectrum
+for each component is isolated by aligning the observed
+spectra using trial radial velocities for that component
+and then averaging. This immediately de-emphasizes
+the lines of the non-aligned stellar component, and af￾ter the first determination of the average spectrum for
+each star, the contribution of the non-aligned star is sub￾tracted before the averaging in order to better clean each
+spectrum. The radial velocities can also be remeasured
+from spectra with one component subtracted. This pro￾cedure is repeated for both components and continued
+until a convergence criterion is met. We measure the
+broadening functions (Rucinski 2002) to determine the
+radial velocities using narrow-lined synthetic spectra as
+templates. Radial velocity measurements from broaden￾ing functions improve accuracy in cases when the lines
+from the two stars are moderately blended (Rucinski
+2002).
+The CfA spectra covered a wide range of orbital
+phases that made it possible to use a large number of
+spectra in calculating average spectra for the two stars.
+In most cases, spectra were left out due to low signal￾to-noise ratio. We used 17 out of 28 spectra in deter￾mining the average spectrum for the primary, but only
+used the 13 spectra with the most clearly detected sec￾ondary component to determine its average spectrum.
+With good average spectra, it was possible to subtract
+each component out of observed spectra even when they
+were taken close to crossing points (phases φ ≈ 0.05 and
+0.6). After some experimentation, we found that syn￾thetic templates (from the grid of Coelho et al. (2005))
+of 5250 K optimized the detection of broadening func￾tion peaks for the secondary star. A template with 6250
+K was used for the primary star. For the CfA velocities
+only, we used run-by-run corrections derived from obser￾vations of velocity standards. Run-by-run offsets mea￾sured for the CfA spectra ranged from −1.52 to +2.21
+km s−1
+. We initially assigned velocity uncertainties de￾rived from the spectral separation analysis, but scaled
+these to ensure that the scatter around a best-fit model
+for this dataset was consistent with the measurement
+errors. (In other words, we forced the reduced χ
+2 value
+to 1.) The average uncertainty for the primary star ve￾locities was 1.25 km s−1
+, and for the secondary star it
+was 4.41 km s−1
+.
+The APOGEE spectra were analyzed separately, and
+detection of the secondary star features were consid￾erably more secure. The synthetic spectral templates
+were taken from ATLAS9/ASST models (Zamora et
+al. 2015) calculated for the APOGEE project. The un￾certainty estimate for each APOGEE velocity was gen￾erated from the rms of the velocities derived from the
+three wavelength bands in the APOGEE spectra. This
+was typically around 0.15 km s−1
+for the primary star
+and 0.65 km s−1
+for the secondary star. The veloc￾ity was corrected to the barycentric system using values
+calculated by the APOGEE pipeline. For all five spec￾tra, the broadening function peaks for the two stars were
+resolvable thanks to the high resolution of the spectra
+and fortuitous phases of observation.
+Because we only had two observations using the
+HARPS-N spectrograph and one of them was taken at a
+phase very near a crossing point, we determined veloci￾ties using broadening functions alone. To get an internal
+measure of the velocity uncertainties, we measured the
+velocities in four 30 nm subsections of the spectra and
+computed the error in the mean.
+Because the synthetic spectra used in our broadening
+function measurements do not account for gravitational
+redshifts of the stars, our velocities should have an off￾set relative to velocities derived using an observed solar
+template. For the CfA spectra, the run-by-run correc￾tions were computed using dawn and dusk sky expo￾sures, and this defines the native CfA velocity system
+used in Geller et al. (2015), incorporating the gravi￾tational redshift of the Sun. For consistency, we sub￾tracted the combined gravitational redshift of the Sun
+and gravitational blueshift due to the Earth (0.62 km
+s
+−1
+) from the APOGEE and HARPS-N velocities we
+tabulate. Based on the derived masses and radii for
+the stars in the binary, they should have slightly larger
+gravitational redshifts than the Sun (0.66 and 0.69 km
+s
+−1
+, versus 0.64 km s−1
+for the Sun) but we did not
+correct for these smaller differences. In our later model
+fits, we did, however, allow the system velocities for the
+two stars to differ to account for effects like this and con￾vective blueshifting that could produce small systematic
+shifts. These could affect the measured radial velocity
+amplitudes K1 and K2 (and the stellar masses) if not
+modeled.
+The measured radial velocities are presented in Table
+1, and the phased radial velocity measurements are plot￾ted in Fig. 9. The model fits are described in Section
+3.4, but the parameters that were used to fit the veloc￾ity data were the velocity semi-amplitude of the primary
+star K1, mass ratio q = M2/M1 = K1/K2, eccentricity
+(e), argument of periastron (ω), and systematic radial
+velocities γ1 and γ2. In the end, we do not see noticeable
+differences between the systematic velocities.
+10
+Table 1. Radial Velocity Measurements
+mJDa vA σA vB σB mJDa vA σA vB σB
+(km s−1
+) (km s−1
+) (km s−1
+) (km s−1
+)
+CfA Observations 49678.02714 54.71 0.59 6.53 3.23
+48347.73537 −13.31 3.84 98.95 6.47 49700.00054 38.07 0.89 29.41 2.87
+48618.00088 53.87 0.59 0.83 3.95 49705.98524 31.68 1.77
+48635.87968 38.55 1.48 24.19 3.95 50535.69747 −1.66 1.18 76.62 1.44
+48676.79118 56.54 0.59 −4.62 5.03 50536.76047 −3.37 1.77 84.15 2.87
+48701.71198 32.68 0.89 36.16 4.67 50885.78158 41.13 0.89 27.03 4.67
+48704.66488 32.50 0.59 34.70 1.80 50913.75637 −10.46 0.89 88.80 3.59
+48726.74348 −13.03 3.25 84.47 7.90 50916.72187 −18.69 0.89 97.47 2.16
+48754.67588 44.44 1.77 14.28 11.86 50918.72237 4.69 1.48 68.75 3.59
+48942.01949 44.13 0.30 25.07 5.39 50920.71047 37.55 0.59 25.23 6.11
+48966.93949 14.32 1.48 58.96 9.70 APOGEE Observations
+48988.95240 57.20 0.89 −0.02 1.08 56672.86368 −11.57 0.06 91.22 0.09
+49019.89560 29.34 1.18 37.60 3.95 56677.88083 13.45 0.15 57.87 0.64
+49049.81820 56.23 1.48 3.07 5.03 56700.76762 46.59 0.15 12.91 0.17
+49057.71970 52.50 0.89 6.60 2.16 56734.66627 −7.61 0.13 85.78 1.07
+49077.68900 34.51 0.59 29.15 1.44 56762.63514 46.73 0.35 13.13 0.64
+49111.72870 59.12 2.36 −2.48 4.67 HARPS-N Observations
+49328.01792 34.75 0.30 22.47 3.23 57752.76085 55.83 0.08 1.04 0.30
+49347.86222 −5.88 0.89 88.10 8.62 57780.74729 31.82 0.03
+a mJD = BJD - 2400000.
+It is always prudent to check for systematic differences
+in velocity when utilizing datasets from more than one
+observational set-up. Among the measured primary star
+velocities, mean residuals (observed minus computed)
+were −0.14 km s−1
+for APOGEE, +0.02 km s−1
+for CfA,
+and 0.02 km s−1
+for HARPS-N. For the secondary star,
+we found mean residuals of +0.78 km s−1
+for CfA, +0.10
+km s−1
+for APOGEE, and +0.09 km s−1
+for HARPS-N
+(one measurement). Of these, only the average resid￾ual for the CfA secondary velocities was more than one
+standard devation (0.20 km s−1
+) away from zero. Be￾cause the APOGEE and HARPS-N spectra have higher
+signal-to-noise than the CfA spectra, they are the main
+contributors to measurement of the radial velocity am￾plitude of the secondary star, which critically affects the
+calculated mass of the primary star.
+3. ANALYSIS
+3.1. Cluster Membership
+WOCS 11028 is a fairly large distance (about 13.
+07)
+from the center of M67, but Carrera et al. (2019) find
+that half of the cluster turnoff stars fall within 12.
+05 of
+the cluster center. As a result, its position is not strong
+evidence of being a field star.
+All ground-based proper motion studies (Sanders
+1977; Girard et al. 1989; Zhao et al. 1993; Yadav et al.
+2008; Nardiello et al. 2016a) indicate a high probability
+(≥ 90%) of cluster membership for WOCS 11028, with
+the exception of Krone-Martins et al. (2010), who give
+Figure 9. Phased radial velocities (minus system velocity)
+for WOCS 11028, along with the best-fit model. Measure￾ments for the primary and secondary stars are shown with
+stars and circles, respectively. The lower panels show the
+observed minus computed values with error bars scaled to
+give a reduced χ
+2 = 1 (see §3.4).
+10%). Gaia observations from Data Release 2 (Gaia
+Collaboration et al. 2018a) have produced much more
+precise proper motions recently, and the binary still has
+a proper motion vector (µα = −11.08 ± 0.04 mas yr−1
+,
+µδ = −3.14±0.04 mas yr−1
+) safely residing among other
+likely members (centered at µα = −10.97 mas yr−1
+,
+11
+µδ = −2.94 mas yr−1
+; Gaia Collaboration et al. 2018b).
+Similarly, the Gaia parallax (ω = 1.111 ± 0.024 mas) is
+within 1σ of the cluster mean (¯ω = 1.132 mas).
+Geller et al. (2015) published membership probabili￾ties based on their radial velocity survey by comparing
+the velocity distributions of cluster members and field
+stars. They classified WOCS 11028 as a binary mem￾ber (98% probability) based on their system velocity
+(32.91 ± 0.17 km s−1
+) measured from the CfA obser￾vations and carefully placed on the zeropoint of other
+stars in the field. The best-fit system velocity from our
+measurements (γ = 32.37 km s−1
+) is slightly off from the
+mean cluster velocity of Geller et al. (33.64 km s−1 with
+a radial velocity dispersion of 0.59+0.07
+−0.06 km s−1
+). How￾ever, even with our lower γ velocity, the radial velocity
+membership probability is still 95%.
+Based on the three-dimensional kinematic evidence,
+the binary is a high probability cluster member.
+3.2. Distance Modulus
+With the release of Gaia DR2 parallaxes, the M67 dis￾tance modulus should be revisited, as it will play a large
+role in comparisons with models later in the article. The
+mean parallax derived for cluster members from Gaia
+DR2 measurements (¯ω = 1.1325 ± 0.0011 mas; Gaia
+Collaboration et al. 2018b) is very precise, but possi￾bly affected by a zeropoint uncertainty. Lindegren et al.
+(2018) finds an offset of about −30 µas (with tabulated
+parallaxes being smaller than reality), while systematic
+variations with position, magnitude, and color were be￾low 10 µas. At the other extreme, Stassun & Torres
+(2018) found an offset of −82±33 µas using a sample of
+eclipsing binaries. Zinn et al. (2019) find offsets of −52.8
+and −50.2 µas using comparisons with asteroseismic gi￾ants and red clump stars in the Kepler field. Sch¨onrich
+et al. (2019) derived an offset of −54 ± 6 µas from an
+analysis of all stars (more than 7 million) in the radial
+velocity sample of Gaia DR2.
+These indications are consistent with the situation for
+M67. Without correction, the Gaia cluster mean dis￾tance modulus would be (m − M)0 = 9.730 ± 0.002,
+but this is comparable to what has been derived pre￾viously for the distance modulus with extinction. For
+example, Pasquini et al. (2008) derive (m − M)V =
+9.76 ± 0.06 ± 0.05 (statistical and systematic uncertain￾ties) from ten solar analogs, Sandquist (2004) derived
+9.72 ± 0.05 using metal-rich field dwarfs with Hipparcos
+parallaxes, and Stello et al. (2016) found 9.70±0.04 from
+K2 asteroseismology of more than 30 cluster red giants.
+With a V -band extinction AV ≈ 0.12 expected, this is
+a significant discrepancy. For subsequent calculations
+in this article, we will assume a −54 µas offset in the
+Gaia parallaxes and include a systematic uncertainty of
+30 µas to conservatively account for disagreement in the
+parallax offsets in the literature. The resulting distance
+modulus is (m − M)0 = 9.63 ± 0.06.
+3.3. Li Abundance and Stellar Rotation
+Even though the WOCS 11028 binary has a relatively
+large orbital separation, our analysis of another wide
+binary in M67 (WOCS 12009; Sandquist et al. 2018)
+indicated that the brighter star was likely the product of
+an earlier merger. A key piece of evidence for that binary
+was the lack of detectable Li. Single main sequence stars
+of similar brightness in the cluster inhabit the Li plateau,
+a broad maximum in the Li abundance. The lack of
+detectable Li was an indication of nuclear processing,
+consistent with surface material having originally been
+in a lower-mass main sequence star with a deeper surface
+convection zone.
+To have greater assurance that the stars of WOCS
+11028 have evolved as isolated single stars and can be
+used to constrain the cluster age, we can also use the
+Li abundance here. If the brighter star in WOCS 11028
+was unmodified since the cluster’s formation, its mass
+(∼ 1.2M) would place it toward the bright end of the
+cluster’s Li plateau with abundances A(Li) ≈ 2.5 (Pace
+et al. 2012). On the other hand, the secondary star
+(mass near 0.9M) should not have detectable Li. Stars
+in the plateau have outer convective zones that do not
+transport Li nuclei down to temperatures where nuclear
+reactions can burn them, and additional mixing pro￾cesses must have little, if any effect. Even with the di￾luting effects of the secondary star’s light on the Li lines,
+Li should be detectable if it is present with the plateau
+abundance.
+We are able to detect Li in our HARPS-N spectra as
+shown in Fig. 10. If the star had a history of interac￾tion (mass transfer, or a merger involving lower mass
+stars), it is unlikely that the Li would be detectable.
+If the brighter star formed in a merger, the more mas￾sive merging star could not have been more than about
+0.2M less massive than the current star or else a surface
+convection zone would have had a chance to consume its
+Li during its main sequence evolution. In addition, the
+less massive merging star would take up residence in the
+core of the merger remnant because of its lower entropy,
+rebooting its nuclear evolution with gas having higher
+hydrogen abundance. After some adjustment on a ther￾mal timescale, it would have been bluer than other clus￾ter stars of the same mass. A precise determination of
+the Li abundance is complicated by the secondary star’s
+light, and is beyond the scope of this work. However, the
+strong Li detection coupled with strong indications that
+12
+Figure 10. A HARPS-N spectrum for WOCS 11028 in the
+vicinity of the Li I resonance doublet, shifted to account for
+the primary star velocity.
+WOCS 11028 A has a color consistent with its fellow
+cluster members effectively rules out anything except a
+very early merger and/or a merger with a very low mass
+object. Effectively, this would make today’s star the
+same as an unmodified star of the same mass.
+We do not see evidence of rotational spot modulation
+in the K2 light curves due to spots, but our HARPS-N
+spectra allow us to constrain the rotational speeds of
+the stars in the binary via the widths of the broaden￾ing function peaks. We are unable to detect rotation
+with an upper limit vrot sin i < 5 km s−1
+. If the primary
+was pseudo-synchronized, its rotation velocity would be
+around this limit (rotation period near 14 d). However,
+the timescale calculated for this (Hut 1981) is far longer
+than the cluster age, thanks to the substantial separa￾tion even at periastron. Considered as a single star, the
+primary has probably spun down somewhat, although
+not to the same degree as lower mass stars with deeper
+surface convection zones. Angus et al. (2015) calibrated
+their gyrochronological models against the rotation of
+asteroseismic targets in the Kepler field, and their sam￾ple probably gives the best indication of typical rotation
+rates for old stars more massive than the Sun. Their
+isochrones predict a rotation period near 16 day, and
+this would imply a rotation velocity below our ability
+to detect it spectroscopically. As an old cluster, M67 is
+expected to have slowly rotating stars, but this does put
+a limit on how long ago mass transfer or a merger could
+have happened if either star was somehow modified. A
+rapidly rotating star with the mass of our primary star
+would require approximately 3 Gyr to reach our detec￾tion limit according to the rotational isochrones of An￾gus et al. (2015), and this is the majority of the cluster’s
+age.
+3.4. Binary Star Modeling
+We used the ELC code (Orosz & Hauschildt 2000)
+to simultaneously model the ground-based radial veloc￾ities and Kepler K2 photometry for the WOCS 11028
+binary. The code is able to use a variety of optimizers
+to search the complex multi-dimensional space of param￾eters used in the binary star model. In our particular
+case, we used a set of 15 parameters. Two of the pa￾rameters were the orbital period P, and the reference
+time of periastron tP . Six additional parameters mostly
+characterize the orbit: the velocity semi-amplitude of
+the primary star K1, mass ratio q = M2/M1 = K1/K2,
+systematic radial velocities4 γ1 and γ2, eccentricity (e),
+and argument of periastron (ω). For a typical double￾lined spectroscopic and eclipsing binary, both the radial
+velocities and eclipse light curves constrain e and ω, with
+the phase spacing of the eclipse playing a large role. But
+because this binary only has one eclipse per cycle, these
+parameters are constrained by the radial velocities al￾most exclusively.
+The light curve has a large role in constraining the
+inclination parameter i, but there are potentially corre￾lations between inclination and choices for radius and
+temperature parameters. For radii, we used the sum of
+the stellar radii R1 + R2 and their ratio R1/R2 as pa￾rameters. For this binary, the sum of radii is constrained
+by the measurements of the single grazing eclipse in
+each cycle along with the well-determined spectroscopic
+parameters of the orbit. The radius ratio can be con￾strained by luminosity ratios we have derived from our
+SED analysis (§2.2) in concert with temperature infor￾mation. For a typical eclipsing binary, the temperature
+ratio would be constrained by the relative depths of the
+eclipses, but that is not measurable here. We have sep￾arate constraints on the temperatures of the stars from
+SED fits to the proxy stars, and so we use these as fit
+parameters: temperatures of the primary T1 and sec￾ondary T2.
+Finally, there is some dependence of the fits on the
+limb darkening, although relatively little because only
+the near-limb of the secondary star is probed by the
+grazing eclipses we see. So we fit for two quadratic limb
+darkening law coefficients (q1B, q2B) for the secondary
+star (the only star that is eclipsed) in the Kepler band￾pass. Our runs of the ELC code employed the Kipping
+4 We allow for the possibility of differences for the two stars that
+could result from differences in convective blueshifts or gravita￾tional redshifts.
+13
+(2013) algorithm, which involves a search over a triangu￾lar area of parameter space of physically realistic values.
+This forces the model star to a) darken toward the limb,
+and b) have a concave-down darkening curve. In the
+final analysis, we find that the limb darkening coeffi￾cients are virtually unconstrained, but by allowing the
+code to systematically explore potential values, the un￾certainties will be incorporated in our uncertainties of
+the other stellar parameters. Owing to the substantial
+orbital separation, we assumed that the stars are spher￾ical. Given this, we used the algorithm given in Short
+et al. (2018) as implemented in ELC to rapidly compute
+the eclipses. Finally, because there is little or no out-of￾eclipse light modulation, we did not see a need to model
+spots.
+For the K2 light curve modeling, we only included ob￾servations that were within about ±0.01 in phase of the
+eclipse, and a similar section around where the other
+eclipse would have been if the binary was closer to edge￾on. In this way, our models “see” that there is only
+one eclipse per orbital cycle. In doing this, we leave
+out the majority of observations, which may be affected
+by systematics due to spacecraft pointing corrections
+and other instrumental signals. Because the K2 light
+curves use long cadence data with 30 minute exposures,
+they also effectively measure the average flux during that
+time. To account for this, the ELC code integrates the
+computed light curves in each observed exposure win￾dow.
+The quality of the model fit was quantified by an over￾all χ
+2 derived from comparing the radial velocity and
+light curve data to the models, as well as from how well
+a priori constraints were matched. For this binary, we
+used stellar temperatures derived from SED fits and lu￾minosity ratios in BV IC JHKs derived from the mod￾eling of the binary SED with single cluster stars. To
+illustrate the effect of these constraints, we conducted a
+run without the luminosity ratios, as shown in Table 2.
+To try to ensure that different datasets were given ap￾propriate weights in the models, we empirically scaled
+uncertainties on different datasets to produce a reduced
+χ
+2 of 1 relative to a best-fit model for that particular
+dataset. For spectroscopic velocity measurements, this
+meant scaling differently according to the source spec￾trograph and the star (primary and secondary). The K2
+photometric light curve uncertainties were scaled inde￾pendently.
+We used a differential evolution Markov Chain opti￾mizer (Ter Braak 2006) for seeking the overall best-fit
+model and exploring parameter space around that model
+to generate a posterior probability sampling. Approxi￾mate 1σ parameter uncertainties were derived from the
+Table 2. Best-Fit Model Parameters for WOCS 11028
+Parameter No SED Constraint SED Luminosity Constraints
+Pipeline K2SFF K2SFF EVEREST
+Constraints:
+T1 (K) 6200 ± 100 6200 ± 100 6200 ± 100
+T2 (K) 5450 ± 100 5450 ± 100 5450 ± 100
+L2/L1(B) 0.186 ± 0.030 0.186 ± 0.030
+L2/L1(V ) 0.227 ± 0.030 0.227 ± 0.030
+L2/L1(IC ) 0.267 ± 0.030 0.267 ± 0.030
+L2/L1(J) 0.306 ± 0.030 0.306 ± 0.030
+L2/L1(H) 0.343 ± 0.030 0.343 ± 0.030
+L2/L1(K) 0.349 ± 0.030 0.349 ± 0.030
+γ (km s−1
+) 32.38 ± 0.02 32.37 ± 0.02 32.37 ± 0.02
+P (d) 62.59484 62.59484 62.59482
+σP (d) 0.00003 0.00003 0.00002
+tP 49416.060 49416.058 49416.061
+σtP
+0.013 0.012 0.012
+i (
+◦
+) 86.70 ± 0.15 86.84 ± 0.07 86.86 ± 0.07
+q 0.743 ± 0.003 0.743 ± 0.002 0.743 ± 0.003
+e 0.6227 ± 0.0019 0.6225 ± 0.0017 0.6222 ± 0.0017
+ω (
+◦
+) 235.82 ± 0.18 235.70 ± 0.18 235.78 ± 0.18
+K1 (km s−1
+) 37.54 ± 0.14 37.54 ± 0.13 37.55 ± 0.13
+K2 (km s−1
+) 50.49 ± 0.18 50.51 ± 0.18 50.48 ± 0.17
+R1/R2 1.58 ± 0.05 1.57 ± 0.05
+(R1 + R2)/R 2.37 ± 0.07 2.34 ± 0.03 2.34 ± 0.03
+M1/M 1.225 ± 0.006 1.222 ± 0.006 1.222 ± 0.006
+M2/M 0.911 ± 0.004 0.909 ± 0.004 0.909 ± 0.004
+R1/R 1.44+0.08
+−0.10 1.43 ± 0.03 1.43 ± 0.03
+R2/R 0.86+0.15
+−0.11 0.904 ± 0.015 0.908 ± 0.015
+log g1 (cgs) 4.21+0.07
+−0.05 4.209 ± 0.019 4.217 ± 0.019
+log g2 (cgs) 4.51+0.10
+−0.12 4.485 ± 0.014 4.481 ± 0.014
+parts of the posterior distributions containing 68.2% of
+the remaining models from the Markov chains. Gaus￾sians were good approximations to the posterior distri￾butions for all parameters except limb darkening coeffi￾cients in the run where luminosity constraints were ap￾plied. The results of the parameter fits are provided in
+Table 2, and the posterior distributions are shown in
+Figure 11. A comparison of the K2 light curve with the
+best-fit model is shown in Figure 12, and a compari￾son of the radial velocity measurements with models are
+shown in Figure 9.
+As can be expected, when we do not enforce luminos￾ity ratio constraints from SED fitting, there is no infor￾mation on the ratio of radii in the data, and as a result,
+the radii of the stars are very poorly constrained. The
+mass determinations are essentially unaffected, however,
+because that information is contained in the radial ve￾locity curves and the orbital inclination (derived from
+the light curve).
+4. DISCUSSION
+14
+Figure 11. Posterior distributions (normalized to the peak
+bin) for the fitted and calculated parameters for the EVER￾EST K2 data with SED luminosity constraints.
+Figure 12. K2 eclipse photometry (K2SFF pipeline in ma￾genta, and EVEREST pipeline in blue) compared with the
+best-fit binary models (for the EVEREST pipeline). Orbital
+phases near the non-eclipsing conjunction are shown in the
+right panel.
+M67 has long been studied because of similarities in
+chemical composition and age with the Sun, but stars
+at the cluster turnoff are approximately 20-30% more
+massive than the Sun, with substantial differences in
+internal physics. Stars with masses of 1.1 − 1.3M may
+generate convective cores late in their main sequence
+evolution, and this plays a critical role in their evolution.
+In the discussion below, we will leverage new informa￾tion from two sources — precise measurements of the
+stars in the WOCS 11028 binary, and additional charac￾terization of stars around the turnoff of the cluster — to
+identify conflicts with models, and to try to understand
+the physics that might be causing those conflicts.
+For clarity in the discussion, we define the upper
+turnoff to be at the global minimum in color at the blue
+end of the subgiant branch (G ≈ 12.74); the turnoff gap
+slightly fainter than this (12.75 . G . 12.95); and the
+lower turnoff to be at the fainter local color minimum
+(G ≈ 13.45). Because WOCS 11028 A is nearly exactly
+at the lower turnoff based on our SED decomposition
+(see Figure 13), it provides an excellent mass calibra￾tion point for the cluster.
+4.1. The Cluster Composition
+As is usually the case, the chemical composition is an
+important component of interpreting the measurements
+and understanding the implications for the cluster age
+and for the stellar physics in the models we use. We dis￾cussed high-precision cluster [Fe/H] measurements rel￾ative to the Sun in Sandquist et al. (2018) in order to
+minimize systematic errors due to composition. Since
+that paper though, it has become clearer that diffusion
+is playing a role in the measured surface compositions of
+M67 stars. Significant trends in abundance are seen as a
+function of the evolutionary state of the stars, with sub￾giants having higher measured abundances than turnoff
+stars (Onehag et al. ¨ 2014; Bertelli Motta et al. 2018;
+Liu et al. 2019; Souto et al. 2019). Because subgiants
+should have deep enough convection zones to homoge￾nize surface layers that were affected by heavy element
+settling, the subgiant abundances should be more repre￾sentative of the initial bulk heavy element composition
+of the stars. The spectroscopic studies generally come
+to the conclusion that initial composition of the cluster
+members was [Fe/H]= +0.05 to +0.10. In the model
+comparisons below, we will consider initial metal com￾positions between solar and [Fe/H]= +0.10.
+4.2. The Characteristics and Evolution Status of
+WOCS 11028 A and B
+The verticality of the cluster CMD at the position
+of WOCS 11028 A constrains the present direction of
+15
+Figure 13. Gaia color-magnitude diagram for the turnoff and main sequence of M67. Small points are probable single-star
+members and yellow circles are solar analogs identified by Pasquini et al. (2008). The system photometry for WOCS 11028 is
+shown with a red circle, and deconvolved photometry of the component stars are green circles. Theoretical isochrones have been
+shifted according to a corrected Gaia parallax [(m − M)0 = 9.63], and reddening E(B − V ) = 0.041 (Taylor 2007). PARSEC
+and MIST isochrones have ages 1.0 (dashed line), 3.2, 3.6, and 4.0 Gyr (solid blue, green, and red lines). BaSTI-IAC plots show
+an isochrone with no overshooting or diffusion (black dashed line), and with overshooting (solid red line) for 4.2 Gyr (top, right)
+and 4.0 Gyr age (bottom, right). The theoretical predictions for stars with masses equal to the primary star of WOCS 11028,
+the Sun, and the secondary star of WOCS 11028 are shown with horizontal lines.
+16
+its evolution track, and we illustrate the discussion with
+MESA model tracks (version r11701; Paxton et al. 2011,
+2013, 2015, 2018, 2019) in the largest panel of Figure
+14. The models predict that for the first 2 Gyr of the
+star’s life, it was evolving mostly upward in luminos￾ity, with slowly increasing temperature before hitting
+a maximum and starting to decrease. The star must
+have started evolving more rapidly toward cooler tem￾perature in order to change the local slope of the main
+sequence isochrone from increasing temperature to con￾stant temperature with increasing mass. Comparing the
+markers showing common age for three stars of slightly
+different mass, the triplet becomes vertical near the mid￾points of the tracks during this coolward movement. For
+greater age, the triplets have decreasing temperature
+with higher mass, and in M67 this corresponds to stars
+between the lower turnoff and the faint end of the gap.
+The precise point where the vertical slope is produced
+will depend on details of the fuel consumption in this
+phase, but we can be assured that the star must still be
+evolving faster toward lower temperature than slightly
+lower mass stars (in other words, accelerating) or else
+it would not be able to match the temperature of those
+stars that should be evolving at a very similar speed.
+This in turn assures us that convection must be present
+in the core of the star — low-mass stars that do not es￾tablish convective cores on the main sequence only accel￾erate toward lower temperature when they are past cen￾tral hydrogen exhaustion while on the subgant branch.
+So the mass measurement for WOCS 11028 A gives us
+an observational lower limit for stars that establish con￾vective cores on the main sequence.
+In the evolution tracks, the turn toward lower tem￾perature occurs when the extent of the convective core
+increases in the latter half of core hydrogen burning.
+The CNO cycle overtakes the pp chain as the dominant
+energy generating reaction network while central tem￾perature increases and hydrogen abundance declines. So
+not only do we have good measurements of the WOCS
+11028 A star (described below), but we have an indica￾tion of physical conditions occuring within the star. A
+complete model of the star would match all of the mea￾surements and evolutionary constraints with a unique
+set of parameters, while mismatches would indicate sys￾tematic errors.
+4.2.1. Mass and Radius
+Although the radii we derive from our analysis of the
+binary are not as precise as they could have been if the
+system had been doubly eclipsing, they can still provide
+some indication of the age independent of other stars in
+the cluster if the stars have not undergone mass transfer
+or mergers in their history5
+. In addition, these compar￾isons are independent of uncertainties in quantities like
+distance and reddening.
+The comparison with several sets of solar-metallicity
+isochrone models is shown in Figure 15. Taken at face
+value, WOCS 11028 A is smaller than predicted for typ￾ically quoted M67 ages (3.5 − 4 Gyr) by 2σ or more,
+and WOCS 11028 B is larger than reasonable models
+by a similar amount. Note that if we are systematically
+underestimating the luminosity ratio used in our binary
+star modeling (as one might wonder from the discussion
+of the SED fits in §2.2), this would exacerbate the con￾flict with models by decreasing the primary star radius
+and increasing the secondary star radius.
+When compared with stars from well-measured bina￾ries (Southworth 2015; see Figure 16), the secondary
+stars of the two measured M67 binaries (WOCS 11028
+B and WOCS 12009 B) do not look out of the ordinary.
+PARSEC models generally underpredict radii for stars
+with 0.6 ≤ M/M ≤ 0.95 like WOCS 11028 B, and
+this is not sensitive to the assumed age or metal content
+Z. The disagreement with models leads to some justifi￾able concerns whether a model age can be trusted if the
+characteristics of the relatively unevolved stars cannot
+be predicted accurately.
+Among the stars in the Southworth (2015) sample
+are several from the younger but similarly metal-rich
+cluster NGC 6819 (∼ 2.2 Gyr; Brewer et al. 2016).
+One of the stars is WOCS 40007 A, which has a mass
+(1.218 ± 0.008M) that is nearly identical to that of
+WOCS 11028 A. As another indicator of M67’s rela￾tive age, WOCS 11028 A is at M67’s turnoff, while
+WOCS 40007 A is approximately 0.85 mag fainter than
+NGC 6819’s turnoff in V . WOCS 40007 A has a radius
+(1.367 ± 0.003R) that is smaller than WOCS 11028
+A, although WOCS 11028 A’s radius is measured with
+about 10 times lower precision. So while WOCS 11028
+A appears to be somewhat small relative to the model
+expectations for M67’s age, it does appear to be larger
+and older (by about 0.4 Gyr) than the corresponding
+stars of NGC 6819.
+An absolute determination of the age requires com￾parisons to models though, and the characteristics of
+WOCS 11028 A return a value of 3.0 ± 0.3 Gyr for
+isochrones having Z ≈ 0.015. Radius is fairly insen￾5 The more massive star in the binary WOCS 12009, analyzed
+in Sandquist et al. (2018) and mentioned in section 3.3, had a
+much smaller radius than expected for reasonable cluster ages,
+providing support for the idea of a stellar merger in that case.
+The radius of the less massive star may not have been involved
+in the merger, but its radius is also unlikely to be significantly
+different even if it was.
+17
+Figure 14. Evolutionary tracks for WOCS 11028 A in the HR diagram using the MESA code. The red point shows the properties
+of WOCS 11028 A. In most plots, the dotted line track is the baseline model shown in the upper left panel (M = 1.222M,
+Z = 0.0162, Asplund et al. 2009 composition mix), and the colored tracks illustrate changes to the model physics. Blue and red
+tracks in the upper right panel illustrate 1σ differences in mass from the best fit value. Black points show ages from 2.5 to 4
+Gyr in intervals of 0.25 Gyr.
+sitive to one of the more important model uncertainties
+— bulk metal content Z — and so should be given ex￾tra attention in considering the age. From experiments
+with MESA models, we find that R ∝ Z
+−1/4
+for stars
+near WOCS 11028 A’s mass, whereas L ∝ Z
+−1
+. By
+the same token, helium abundance Y generally affects
+radius in the opposite direction, and if one assumes, as
+most isochrone sets do, that galactic chemical evolution
+increases Y and Z together (in other words, ∆Y /∆Z is
+a constant), radius appears even less sensitive to com￾position changes. We will return to this point in Section
+4.2.3.
+We should also consider the evolutionary status of the
+brighter star WOCS 11028 A though. If models agree
+with our mass-radius measurements at a particular age
+but have the star at the wrong evolutionary state, it
+would be an indication of a systematic error in model
+physics. In Figure 15, we have connected isochrone
+points corresponding to the lower turnoff at each age.
+We find that, for all of the model sets we could check, the
+mass-radius combination for WOCS 11028 A is consis￾tent with model predictions for that evolutionary stage.
+4.2.2. The Color-Magnitude Diagram (CMD)
+To date, the primary method for measuring the age
+of M67 has been isochrone fits to the CMD. Examples
+of results include 3.5 Gyr to 4.0 Gyr (Sarajedini et al.
+2009) and 3.6 to 4.6 Gyr (VandenBerg & Stetson 2004).
+A large portion of these age ranges result from model
+physics and chemical composition uncertainties that im￾pact this cluster, and new information may help reduce
+the age uncertainty by reducing these modeling uncer￾tainties. For example, Stello et al. (2016) used an as￾teroseismic analysis of the masses of pulsating giants in
+M67 to derive an age of about 3.5 Gyr, although that
+age still has uncertainties due to model physics.
+The modeling of the eclipsing binary star gives us very
+precise masses for the component stars, and our SED
+analysis places restrictions on the CMD positions of the
+stars. These are the most precise data that can be ex￾tracted from the binary at present. When utilized with
+18
+Figure 15. Mass-radius plot for measured members of M67
+(WOCS 11028 A and B, and WOCS 12009 B; red), with
+2σ uncertainties indicated by the error ellipses. The proba￾ble straggler WOCS 12009 A is marked with a red dashed
+ellipse, and measured eclipsing stars in the younger cluster
+NGC 6819 are blue ellipses. Models use Z = 0.0152, 0.0188,
+0.0142, and 0.0162, respectively for PARSEC (Bressan et
+al. 2012), Victoria-Regina (VandenBerg et al. 2006), MIST
+(Dotter 2016; Choi et al. 2016), and YaPSI (Spada et al.
+2017) isochrones. The solid black lines connect the lower
+turnoff points on the different isochrones.
+Figure 16. Mass-radius plot for measured members of M67
+(WOCS 11028, red; WOCS 12009 black) with 2σ uncertain￾ties indicated by the error ellipses. Precisely measured eclips￾ing binary stars (DEBCat, retrieved 2019; Southworth 2015)
+are shown with 2σ error bars (primary stars blue, secondary
+stars red). PARSEC (Bressan et al. 2012) isochrones are
+shown for Z = 0.0152.
+precise photometry for other cluster members, isochrone
+fitting can provide us with an estimate of the age. It is
+important to remember that masses are generally un￾available for traditional CMD isochrone fitting, and by
+employing them here, we can start to address systematic
+uncertainties on the derived age.
+The Gaia photometric dataset is one of the most pre￾cise available, so in Figure 13 we compare the M67
+photometry with theoretical isochrones. The isochrones
+were shifted based on the mean Gaia parallax for the
+cluster corrected for the Sch¨onrich et al. (2019) zeropoint
+offset [for a distance modulus (m − M)0 = 9.63), along
+with the Taylor (2007) reddening for the cluster [giving
+extinction AG = 0.111 and E(GBP − GRP ) = 0.060].
+The comparison indicates that the position of the faint
+component of WOCS 11028 is consistent with the the￾oretical predictions for its mass, especially considering
+an 1σ uncertainty in GB of about ±0.075 mag (see sec￾tion 2.2). There is significant disagreement between the
+position of WOCS 11028 A and the model predictions
+for its mass, however. The theoretical predictions are at
+least about 0.17 mag too bright for the youngest models
+under consideration, and closer to the brightness level
+of the binary. It should be remembered as a practical
+matter that the magnitude of the brighter star is much
+more certain than the fainter star because of the need
+to match the brightness constraint of the binary, as￾suming that both stars are radiating like normal single
+star cluster members. Our earlier analysis puts the 1σ
+fit uncertainty at around ±0.018 mag in G, so that an
+explanation beyond statistical uncertainty seems neces￾sary.
+The fact that model predictions fall near or brighter
+than the combined brightness of the binary reduces the
+range of possible explanations: either our assumption
+that the binary’s individual stars are emitting like un￾modified single main sequence stars is wrong (and the
+binary’s light should not be modeled using stars on the
+main sequence), or there is a significant systematic error
+with model predictions. We have not seen any evidence
+to support the idea that the primary star is different
+from similar main sequence stars: there is detectable Li
+and the rotational velocity is low and consistent with a
+normally-evolving single star (section 3.3), and the ul￾traviolet emission from the binary can be reproduced
+very well by the emission of other cluster main sequence
+stars (section 2.2.1 and Figure 6). If the primary star
+had been modified earlier in its history, it should appear
+fainter and bluer than single main sequence stars that
+evolved uneventfully with the cluster.
+We can also compare with stars from field eclipsing
+binaries having well-measured luminosity ratios in com-
+19
+Figure 17. Absolute magnitudes for main sequence stars
+with masses near that of WOCS 11028 A (green points).
+Blue points are primary stars of detached eclipsing binaries,
+and red points are secondary stars.
+mon filter bands. For this purpose, we examined stars
+from the DEBCat database (Southworth 2015) with stel￾lar masses within about 0.05M of that of WOCS 11028
+A, and kept those stars with precise Gaia parallaxes.
+The stars in our comparison are given in Table 5, and a
+comparison of the absolute magnitudes is shown in Fig￾ure 17. WOCS 11028 A is generally at the bright end of
+the range covered by stars with the most similar masses,
+which is to be expected given the age of the cluster it
+resides in. Even so, its magnitudes are quite comparable
+to several other stars: UX Men A and WZ Oph A and B
+agree extremely well with WOCS 11028 A in Str¨omgren
+filters, and WOCS 40007 A from the cluster NGC 6819
+agrees quite well in BV IC magnitudes if we make use
+of a distance modulus derived from the eclipsing bina￾ries in the cluster (as it is too distant for a good Gaia
+parallax). We conclude that WOCS 11028 A is not un￾usually faint for its mass, and this cannot explain the
+disagreement with model isochrones.
+4.2.3. Temperature and Luminosity
+With the variety of photometric measurements made
+for M67 stars, the SEDs provide us with excellent lever￾age on the temperatures of the binary star components
+as well as other cluster stars for comparisons. We find
+that both components of the binary agree well with stars
+from the DEBCat database, and the temperature of the
+primary star matches well with spectroscopic tempera￾tures (see §2.2.1). While WOCS 11028 B matches the
+model temperature for its mass (see Figure 18), WOCS
+Figure 18. Mass-temperature plot for measured members
+of M67 (red), with 2σ uncertainties indicated by the error
+ellipses. Models use Z = 0.0152, 0.0188, 0.0142, and 0.0162,
+respectively for PARSEC (Bressan et al. 2012), Victoria￾Regina (VandenBerg et al. 2006), MIST (Dotter 2016; Choi
+et al. 2016), and YaPSI (Spada et al. 2017) isochrones. The
+solid black lines connect the lower turnoff points on the dif￾ferent isochrones.
+11028 A is generally around 100 K cooler than the model
+that has its lower turnoff at the appropriate mass.
+We can compute the luminosities for the stars in two
+different ways. The first uses the bolometric flux de￾rived from SED fitting along with the Gaia-based dis￾tance and the inverse square law. The bolometric flux
+is computed assuming that any flux that is not covered
+by photometric measurements can be accounted for us￾ing an appropriate synthetic spectrum. The luminosities
+are found to be 2.43 ± 0.08 and 0.61 ± 0.02L for the
+proxies of the two stars in the binary. The quoted uncer￾tainties include contributions from the parallax and the
+bolometric flux fit. Alternately, we can compute lumi￾nosities from the radii derived in the binary star analysis
+and the temperatures derived from the SED fits. Here
+the results are 2.72 ± 0.22 and 0.68 ± 0.056L, respec￾tively. These estimates are marginally consistent with
+the values computed from the bolometric fluxes, but are
+less precise.
+As seen in Figure 19, WOCS 11028 B is in general
+agreement with model luminosity predictions at solar
+metallicity, but WOCS 11028 A is about 25% lower than
+model values. This is a stronger statement than it might
+seem at first because we have the additional constraint
+on the evolutionary state of WOCS 11028 A. While it
+is possible to find a match with the models in luminos￾ity and mass, this occurs at young ages when a star of
+20
+WOCS 11028 A’s mass is not precisely at the lower tem￾perature maximum at the cluster turnoff in the cluster
+CMD (see §4.2). The discrepancy is potentially a serious
+issue for age determination because it implies a signif￾icant systematic error. Below we discuss factors that
+impact the luminosity disagreement, and the difficulty
+of finding a clear explanation.
+For comparison, we show exploratory MESA evolution
+models in Figure 14. For these experiments, the baseline
+inputs were a solar-calibrated Asplund et al. 2009 com￾position (Y = 0.2703, Z = 0.0162) and mixing length
+parameter (α = 1.80), nuclear reaction rates from the
+JINA compilation, diffusion, and disabled core convec￾tive overshooting. Before proceeding, we note that con￾vection or diffusion parameters produce minimal effects
+on the luminosity of the star as it moves away from the
+main sequence toward its temporary temperature min￾imum shortly before core hydrogen exhaustion. These
+factors play more of a role when discussing the rest of
+the turnoff in §4.3.
+• Measured mass: A stellar mass approximately
+0.05M lower than measured would allow the red￾ward evolution of the model star to pass through
+the middle of the HR diagram error bars. This
+would be a 10σ error according to our calculations,
+however, and seems unlikely. We note that a star
+of 1.17M still produces a significant convective
+core at the end of its main sequence evolution in
+the MESA models.
+• Measured luminosity: If there is a systematic er￾ror in our decomposition of the binary’s light or
+in the distance of the system, it could account for
+some of the luminosity discrepancy. If the dis￾tance is underestimated (due to an overestimate
+in the parallax), the luminosity would be larger.
+The Gaia parallax correction would be a suspect
+because it is acting in this direction. The correc￾tions being discussed (§3.2) would produce a max￾imum effect of 0.04 dex in log10(L/L), which is
+not enough to explain the full discrepancy, and
+even so, smaller distances become more inconsis￾tent with CMD-based distance measures. As for
+the bolometric flux, we note that the star-based
+decomposition of the SED (instead of the main
+sequence fit) leads to a lower Fbol, and so would
+exacerbate the discrepancy if true.
+• Nuclear reaction rates: CNO cycle rates in a stel￾lar evolution code affect the strength of the energy
+generation. Larger rates lead to an earlier initia￾tion of the convective core and lower luminosity for
+the star during its redward evolution. The CNO
+cycle bottleneck reaction 14N(p,γ)
+15O is the most
+important to consider. The reaction rate was re￾vised downward by nearly 50% at stellar energies
+as a consequence of a reduced contribution of cap￾ture to the ground state of 15O, making capture to
+the 6.792 MeV excited state the dominant chan￾nel. Summaries of relevant experimental measure￾ments can be found in Adelberger et al. (2011)
+and Wagner et al. (2018). The NACRE reaction
+rate tabulation (Angulo et al. 1999) uses the older,
+higher astrophysical S factor, while recent tabula￾tions (Xu et al. 2013; Cyburt et al. 2010) use val￾ues consistent with the recent experimental results
+(Formicola et al. 2004; Imbriani et al. 2005). While
+there appears to be convergence on experimental
+details of the 14N(p,γ)
+15O reaction, the extrapo￾lation of the S factor to stellar energies now con￾tributes the most to the uncertainty at the level of
+about 8% (Wagner et al. 2018). Although signif￾icant for other purposes (such as using solar neu￾trinos to address solar composition uncertainties),
+this level of uncertainty is too small to account
+for the luminosity discrepancy unless there is an
+unknown and more substantial systematic error in
+the model reaction rate.
+The bottleneck reaction in CNO cycle II is
+17O(p, α)
+14N, and this rate has recently been re￾vised upward by a factor of 2 at stellar energies by
+Bruno et al. (2016). This affects the flow of 16O
+into the main CNO cycle, and so has a small ef￾fect on the luminosity. But again, within the likely
+uncertainties, reaction rates also fall far short of
+explaining the size of the luminosity discrepancy.
+• CNO and heavy element abundances: CNO ele￾ment abundances affect the CNO cycle energy gen￾eration through their role as catalysts, and larger
+abundances allow the convective core to be estab￾lished earlier in the main sequence evolution and
+at lower luminosity. As an illustration in the mid￾dle right panel of Figure 14, the use of a GS98
+solar abundance mix moves the redward evolution
+to lower luminosity because that mix has a larger
+proportion of CNO elements and because solar cal￾ibration with this composition leads to a larger
+metallicity. However, even a nearly 25% change in
+the CNO elements is not enough to explain the lu￾minosity discrepancy for WOCS 11028 A. As seen
+in the upper right panel of Figure 14, increased
+metal content also results in a reduced luminos￾ity during the redward evolution. As discussed
+in section 4.1, evidence from recent spectroscopic
+21
+studies suggests that subgiants (which should have
+deep enough outer convective zones to erase diffu￾sion effects that occurred on the main sequence)
+have higher surface metal abundances than turnoff
+stars.
+Reasonable changes to the bulk heavy element
+abundance can bring the models into agreement
+with the measured luminosity and temperature of
+WOCS 11028 A at its measured mass. However, if
+we assume that composition changes are responsi￾ble, then this affects the agreement of other well￾measured stars with the models. In particular,
+the models become too low in luminosity to match
+WOCS 11028 B.
+Our conclusion is that a larger bulk heavy element
+abundance for M67 stars (previously masked by diffu￾sion effects) is the most significant effect on the agree￾ment between models and the characteristics of WOCS
+11028 A that we can identify. Figure 19 compares the
+characteristics of WOCS 11028 A with MESA models
+for Z = 0.0152 and 0.0195. In the Teff plot, the faint
+cluster turnoff occurs at the age where the three tracks
+cross, indicating a constant temperature in the mass
+range shown. With the larger bulk metal content, the
+radius, effective temperature, and luminosity of the star
+are approximately in agreement with models for ages
+roughly between 3.5 and 4.0 Gyr. Further adjustment
+of Z would throw either the model Teff or L out of agree￾ment with the observations, although the radius is less
+sensitive to metal content.
+If the same large metal abundance is applied to mod￾els of WOCS 11028 B, they are pushed farther from
+agreement with the observations, however. The radius
+in particular should not be sensitive to the metal con￾tent, but the models are significantly lower than the ob￾servations for reasonable ages. As seen in Figure 16, the
+measurements of WOCS 11028 B agree with those for
+other well-measured eclipsing binary star components.
+As a result, we think that there are still unidentified
+systematic errors that are playing a role.
+4.3. The Turnoff of M67 and Convective Cores
+With the new data on the massive star in the WOCS
+11028 binary, there is an opportunity to re-examine the
+cluster turnoff and the constraints it places on the age
+and stellar physics. We can make a more precise esti￾mate of star masses at the turnoff than has been possible
+before by employing models that are capable of repro￾ducing the characteristics of WOCS 11028 A, reducing
+the importance of systematic errors by making a rela￾tive comparison. The observed properties of the CMD
+gap and the upper turnoff are strongly influenced by the
+Figure 19. Stellar characteristics versus age for MESA
+models. Gray boxes show 1σ uncertainties on the measured
+radius, temperature, and luminosity of WOCS 11028 A (left)
+and B (right). MESA evolution tracks for Z = 0.0195 (solid
+lines) and Z = 0.0152 (dashed lines) are shown, with masses
+M = 1.222M (black) in the left column and 0.910M in
+the right column. Tracks for masses 1σ higher (blue) and
+lower (red) are also shown. Black points in the left middle
+panel show lower turnoff points (where stars of similar mass
+hit the same temperature).
+extent of the convective core, which in turn affects the
+amount of accessible fuel and the main sequence life￾times.
+A major uncertainty about convective core extent is
+overshooting of the convective boundary. The stars at
+M67’s turnoff are uniquely interesting because they are
+close to the minimum mass for having convective cores,
+and the amount of overshooting could play an outsized
+role in stars with small cores. Some studies of eclipsing
+binaries in the 1.2 − 2.0M mass range (Claret & Tor￾res 2017, 2018) indicate that convective overshooting is
+consistent with zero at the mass of WOCS 11028 A, but
+rapidly increasing to a plateau for masses greater than
+about 2M. On the other hand, the models of Higl &
+Weiss (2017) also show little or no need for overshoot￾ing in binaries with main sequence stars having masses
+near 1.2M, but some weak evidence for overshooting
+in BG Ind, having a somewhat more massive (1.42M)
+and more evolved primary star. Constantino & Baraffe
+(2018) found little evidence for a mass-dependent over￾shooting for masses between 1.2 and 2.0M. A major
+problem with the binary star samples in most of these
+studies is that overshooting reveals itself most clearly
+very close to core hydrogen exhaustion, and unless stars
+are in a very specific evolutionary phase, their conven￾tional stellar properties (like R, L, and Teff) will not be
+22
+sensitive to the overshooting. This disagreement in the
+literature reinforces the value of using the information
+contained in M67, with its larger sample of stars and
+mass inferences from the WOCS 11028 binary.
+More recently, a number of asteroseismic studies have
+also attempted to constrain convective core overshoot￾ing with low-degree p modes. Studies like Viani & Basu
+(2020) find positive trends in overshooting amount with
+mass, while others like Angelou et al. (2020) find over￾shooting amounts that are consistent with what is found
+from binary and cluster calibrations but without evi￾dence of a clear mass dependence. These issues high￾light that there are systematics and degeneracies in the
+fitting of parameters in asteroseismic studies, and that
+they have not fully clarified the overshoot issue. Aster￾oseismic masses have significantly lower precisions than
+binary system masses as well. All of these factors call
+out for additional precise constraints on the overshoot￾ing in this mass range.
+Overshooting did not play a significant role in our in￾terpretation of the WOCS 11028 binary because the pri￾mary star is well before core hydrogen exhaustion, but
+it does more strongly affect the CMD positions of stars
+around the turnoff gap and beginning of the subgiant
+branch. Models indicate that a star like WOCS 11028
+A reaches a maximum in surface temperature when the
+convective core starts expanding as the core temperature
+increases and the CNO cycle becomes more dominant.
+After the star passes its surface temperature maximum,
+models show that the convective core is maintained and
+the star evolves mostly in Teff until shortly before core
+hydrogen exhaustion. At that time the convective core
+rapidly shrinks and disappears, and the star executes a
+quick movement to higher temperatures and luminosi￾ties in the HR Diagram. There is still a residue of hydro￾gen in the core and a steep gradient in hydrogen abun￾dance outside that, so the evolution of the star slows
+down again in the early subgiant branch. Overall, this
+evolution track is a hybrid, with the early core hydrogen
+burning evolution similar to low-mass stars, and the late
+evolution similar to more massive stars.
+The extent and lifetime of the convective core in stars
+slightly more massive than WOCS 11028 A is imprinted
+on the shape of the turnoff in the CMD and in the
+number of stars present. The noticeable gap seen at
+12.7 . G . 13 in M67 is a demonstration of the rapid
+evolution that results from the disappearance of the con￾vective core shortly before central hydrogen exhaustion.
+Similarly, the fairly large density of stars present just
+brighter than the gap shows that gas with large hydro￾gen abundance is residing just outside the exhausted
+center of the star, and the burning of this hydrogen al￾lows the evolution to slow down again.
+To define the shape of the turnoff, we derived bolo￾metric fluxes and surface temperatures from SED fits
+for probable single stars at critical points in the CMD.
+We identified WOCS 7006 / Sanders 1003 as a likely sin￾gle cluster member at the bright end of the gap based
+on CMD position and lack of radial velocity variation
+(Geller et al. 2015), and WOCS 8011 / Sanders 1219 as
+a likely single member at the faint end. We also exam￾ined WOCS 3003 / Sanders 1034 as a representative of
+the end of the most heavily populated part of the early
+subgiant branch. The stars are shown in CMDs in Fig￾ure 3, and their derived properties are given in Table
+3.
+As was shown in Figure 14, several model physics pa￾rameters play a role in setting the shape of the turnoff
+and subgiant branch, and most affect core convection.
+As a result, there is some degeneracy in the parameters
+that can be used to model the turnoff. For our pur￾poses here, we will focus on convective core overshoot￾ing. Overshooting has the most substantial effects on
+evolution tracks shortly before the time of core hydro￾gen exhaustion. Core hydrogen exhaustion is delayed
+by overshooting, which allows the redward evolution to
+extend to lower temperature, giving isochrones a deeper
+redward kink (see bottom middle panel of Figure 14). In
+addition, the morphology of the upper turnoff changes
+in response to overshooting, with increasing amounts
+resulting in a more horizontal early subgiant branch.
+(See Figure 13, and compare the BaSTI-IAC isochrones
+with and without overshooting, or younger PARSEC
+isochrones to older ones that have less overshoot.) Both
+the morphology of the upper turnoff and the luminosity
+and temperature positions of the stars measured near
+the gap in M67 are indicative of weaker convective over￾shooting than is used in the MIST isochrones. This is
+a means of calibrating overshoot for stars with masses
+around the gap (approximately 1.32M, based on mod￾els that match WOCS 11028 A). The exact amount de￾pends somewhat on other physics, like diffusion rates,
+CNO cycle reaction rates, and CNO element abun￾dances.
+It has long been known that the turnoff of M67 is not
+well matched by isochrones (VandenBerg et al. 2007;
+Magic et al. 2010). Currently published theoretical
+isochrones should not be used to calibrate the overshoot￾ing or read an age because they do not reproduce the
+characteristics of WOCS 11028 A (see Section 4.2.3),
+and would therefore have clear systematic errors. There
+are unfortunately several composition and physics fac￾tors that can affect the size (and even the presence) of a
+23
+Table 3. SED Fit Results for Turnoff Stars
+WOCS 3003 WOCS 7006 WOCS 8011 WOCS 11028A WOCS 11028B
+Fbol (10−11 erg cm−2
+s
+−1
+) 25.65+0.04
+−0.23 21.51 ± 0.07 16.23 ± 0.08 10.89 ± 0.03 2.73 ± 0.02
+L (L) 5.70 ± 0.20 4.78 ± 0.16 3.62 ± 0.12 2.42 ± 0.08 0.68 ± 0.06
+V 12.656 ± 0.002 12.824 ± 0.002 13.129 ± 0.003 13.568 15.167
+b − y 0.381 ± 0.001 0.359 ± 0.001 0.376 ± 0.001 0.372 0.486
+c1 0.408 ± 0.003 0.440 ± 0.004 0.341 ± 0.004 0.394 0.321
+Hβ 2.599 ± 0.009 2.611 ± 0.008 2.637 ± 0.016
+Teff (b − y) (K) 6225 6150 6225
+Teff (IRFM) (K) 6010 6170 6080 6185 5500
+convective core in models, and relatively small changes
+in the extent of this core can strongly affect the amount
+of hydrogen fuel the core gets, and therefore, the length
+of the star’s life. But by using models that are at least
+able to match WOCS 11028 A, we should be able to
+reduce the size of the errors.
+Figure 20 shows isochrones from MESA models hav￾ing Z = 0.0195 and Y = 0.2703, with convective core
+overshooting set to half the default value, or f = 0.008.
+Larger amounts of overshooting move the gap to lower
+temperatures, and appear to be ruled out. With this
+set of input parameters, we are able to approximately
+reproduce the HR diagram positions of the three stars
+(described above) that reside at identifiable points in
+the cluster CMD using an age around 3.75-4 Gyr. In
+addition, Stello et al. (2016) found an average giant star
+mass of 1.36 ± 0.01M in their asteroseismic analysis of
+M67 giant stars using K2 data. This measurement is
+also consistent with an age near 4 Gyr for the MESA
+models used in Figure 20. The agreement with all of
+these observations implies that the models are approx￾imately reproducing the hydrogen abundance profile in
+the stars at core exhaustion.
+5. CONCLUSIONS
+We present high-precision measurements of the
+masses, radii, and photometry for stars in the bright
+detached eclipsing binary system WOCS 11028 in the
+cluster M67. This cluster is commonly used as a testbed
+for stellar evolution models of solar metallicity, and the
+addition of new observables for stars in the cluster will
+further test the fidelity of the physics we use to model
+them.
+Despite orbits that only produce one eclipse per cycle,
+we have shown that high-precision masses for the stars
+in WOCS 11028 are possible. We have used a decompo￾sition of the SED of the binary to constrain the temper￾atures, radii, and luminosities of the stars as well. The
+brighter star in the binary sits precisely at the fainter
+turnoff point for the cluster, where stars with convective
+cores are accelerating toward the red in the later stages
+Figure 20. Isochrones for ages between 2.5 and 4.0 Gyr
+(0.25 Gyr spacing) from MESA models for Z = 0.0195
+and half strength convective core overshooting. The dashed
+green line connects models for the measured mass of WOCS
+11028 A, with ±1σ uncertainties. Measured characteristics
+of WOCS 11028 A (red) and stars at color-magnitude dia￾gram turning points (blue) are shown with points.
+of core hydrogen burning. The known mass of a star
+at an identifiable evolutionary point constrains the age
+of the cluster, although uncertainties in model physics
+reduce the precision that is attainable.
+Systematic errors in the model physics remain a dif￾ficult problem for stars at the turnoff of M67. Recent
+spectroscopic studies seem to make a strong case for the
+24
+inclusion of diffusion in models, and a larger bulk metal￾licity for cluster stars can explain the characteristics of
+WOCS 11028 A. However, the cost of this is a disgree￾ment between fainter stars (solar analogs and less mas￾sive stars) and models. We are forced to the conclusion
+that there appears to be an unidentified systematic error
+that affects the luminosities of stars between (and possi￾bly including) 1 and 1.2M. Our examination of physics
+uncertainties like nuclear reaction rates, convection, and
+chemical composition has not revealed an obvious cul￾prit. With the assumption of a larger bulk metallicity,
+age indicators are somewhat consistent in returning ages
+between about 3.5 and 4 Gyr. Future adjustments to
+model physics will hopefully provide greater agreement
+between the measures.
+With a star of known mass at the lower cluster turnoff,
+we can more reliably calibrate models of stars at core hy￾drogen exhaustion, which are sensitive to the size of the
+convective core. The morphology of M67’s turnoff im￾plies that convective overshooting in turnoff mass stars
+is present, but to an extent that is smaller than used in
+standard isochrones. After identifying composition and
+physics parameters that allow us to match the charac￾teristics of WOCS 11028 A, we can estimate the mass
+of stars at the turnoff of M67. We find that stars
+near the gap and upper turnoff should have masses of
+1.32 ± 0.02M. With these same model parameters, we
+can approximately match the average asteroseismic gi￾ant mass of 1.36 ± 0.01M measured by Stello et al.
+(2016) at an age near 4 Gyr. More precise comparisons
+between observed masses and theory will require a bet￾ter understanding of the core convection physics because
+this critically affects the timing of a star’s divergence
+from the main sequence. Precise and direct measure￾ments of masses in the eclipsing system HV Cnc could
+improve the comparison as well because the brightest
+star resides at the upper turnoff. The difficulties in
+completing such a study are the faintness of the com￾panion and the contaminating effects of an unresolved
+third star (Sandquist & Shetrone 2003). However, this
+is one of the few ways of further identifying and elim￾inating the systematic errors in our modeling of these
+stars and our determination of their ages.
+ACKNOWLEDGMENTS
+E.L.S. gratefully acknowledges support from the Na￾tional Science Foundation under grant AAG 1817217,
+and thanks K. Brogaard for providing the original ver￾sion of the spectral separation code used in this work.
+R.D.M. acknowledges funding support from NSF AST
+1714506 and the Wisconsin Alumni Research Founda￾tion. D.S. is the recipient of an Australian Research
+Council Future Fellowship (project number FT1400147).
+This paper includes data collected by the K2 mission,
+and we gratefully acknowledge support from NASA un￾der grant NNX15AW69G to R.D.M. Funding for the K2
+mission is provided by the NASA Science Mission Direc￾torate.
+This research made use of the SIMBAD database,
+operated at CDS, Strasbourg, France; the VizieR cat￾alogue access tool, CDS, Strasbourg, France (DOI:
+10.26093/cds/vizier; Ochsenbein et al. 2000) data pro￾vided by the High Energy Astrophysics Science Archive
+Research Center (HEASARC), which is a service of the
+Astrophysics Science Division at NASA/GSFC and the
+High Energy Astrophysics Division of the Smithsonian
+Astrophysical Observatory; the WEBDA database, op￾erated at the Institute for Astronomy of the University
+of Vienna; and the Mikulski Archive for Space Tele￾scopes (MAST). STScI is operated by the Association
+of Universities for Research in Astronomy, Inc., under
+NASA contract NAS5-26555. Support for MAST was
+provided by the NASA Office of Space Science via grant
+NNX09AF08G and by other grants and contracts.
+Funding for SDSS-III has been provided by the Alfred
+P. Sloan Foundation, the Participating Institutions, the
+National Science Foundation, and the U.S. Department
+of Energy Office of Science. The SDSS-III web site is
+http://www.sdss3.org/.
+SDSS-III is managed by the Astrophysical Research
+Consortium for the Participating Institutions of the
+SDSS-III Collaboration including the University of Ari￾zona, the Brazilian Participation Group, Brookhaven
+National Laboratory, Carnegie Mellon University, Uni￾versity of Florida, the French Participation Group,
+the German Participation Group, Harvard University,
+the Instituto de Astrofisica de Canarias, the Michigan
+State/Notre Dame/JINA Participation Group, Johns
+Hopkins University, Lawrence Berkeley National Lab￾oratory, Max Planck Institute for Astrophysics, Max
+Planck Institute for Extraterrestrial Physics, New Mex￾ico State University, New York University, Ohio State
+University, Pennsylvania State University, University of
+Portsmouth, Princeton University, the Spanish Partici￾pation Group, University of Tokyo, University of Utah,
+25
+Vanderbilt University, University of Virginia, University
+of Washington, and Yale University.
+Facilities: MMT, FLWO: 1.5m, TNG (HARPS-N),
+Sloan (APOGEE)
+Software: IRAF (Tody 1986, 1993), HARPS Data
+Reduction Software (v3.7), ELC (Orosz & Hauschildt
+2000)
+REFERENCES
+Adelberger, E. G., Garc´ıa, A., Robertson, R. G. H., et al.
+2011, Reviews of Modern Physics, 83, 195
+Andersen, J., Clausen, J. V., & Magain, P. 1989, A&A,
+211, 346
+Andersen, J. 1991, A&A Rv, 3, 91
+Angelou, G. C., Bellinger, E. P., Hekker, S., et al. 2020,
+MNRAS, 493, 4987.
+Angulo, C., Arnould, M., Rayet, M., et al. 1999, Nuclear
+Physics A, 656, 3
+Angus, R., Aigrain, S., Foreman-Mackey, D., et al. 2015,
+MNRAS, 450, 1787
+Asplund, M., Grevesse, N., Sauval, A. J., & Scott, P. 2009,
+ARA&A, 47, 481
+Balaguer-N´u˜nez, L., Galad´ı-Enr´ıquez, D., & Jordi, C. 2007,
+A&A, 470, 585
+Bertelli Motta, C., Pasquali, A., Richer, J., et al. 2018,
+MNRAS, 478, 425
+Bessell, M. S., Castelli, F., & Plez, B. 1998, A&A, 333, 231
+Blackwell, D. E., & Shallis, M. J. 1977, MNRAS, 180, 177
+Bressan, A., Marigo, P., Girardi, L., et al. 2012, MNRAS,
+427, 127
+Brewer, L. N., Sandquist, E. L., Mathieu, R. D., et al. 2016,
+AJ, 151, 66
+Bruno, C. G., Scott, D. A., Aliotta, M., et al. 2016, PhRvL,
+117, 142502
+Cardelli, J. A., Clayton, G. C., & Mathis, J. S. 1989, ApJ,
+345, 245
+Carrera, R., Pasquato, M., Vallenari, A., et al. 2019, A&A,
+627, A119
+Casagrande, L., Ram´ırez, I., Mel´endez, J., et al. 2010,
+A&A, 512, A54
+Casagrande, L., & VandenBerg, D. A. 2014, MNRAS, 444,
+392
+Castelli, F., & Kurucz, R. L. 2004, arXiv:astro-ph/0405087
+Choi, J., Dotter, A., Conroy, C., et al. 2016, ApJ, 823, 102
+Claret, A., & Torres, G. 2017, ApJ, 849, 18
+Claret, A., & Torres, G. 2018, ApJ, 859, 100
+Clausen, J. V., Torres, G., Bruntt, H., et al. 2008, A&A,
+487, 1095
+Clausen, J. V., Frandsen, S., Bruntt, H., et al. 2010, A&A,
+516, A42
+Coelho, P., Barbuy, B., Mel´endez, J., Schiavon, R. P., &
+Castilho, B. V. 2005, A&A, 443, 735
+Coelho, P. R. T. 2014, MNRAS, 440, 1027
+Cohen, M., Wheaton, W. A., & Megeath, S. T. 2003, AJ,
+126, 1090
+Constantino, T. & Baraffe, I. 2018, A&A, 618, A177.
+Cosentino, R., Lovis, C., Pepe, F., et al. 2012, Proc. SPIE,
+8446, 84461V
+Cyburt, R. H., Amthor, A. M., Ferguson, R., et al. 2010,
+ApJS, 189, 240
+Dotter, A. 2016, ApJS, 222, 8
+Evans, D. W., Riello, M., De Angeli, F., et al. 2018, A&A,
+616, A4
+Fan, X., Burstein, D., Chen, J.-S., et al. 1996, AJ, 112, 628
+Finkbeiner, D. P., Schlafly, E. F., Schlegel, D. J., et al.
+2016, ApJ, 822, 66
+Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman,
+J. 2013, PASP, 125, 306
+Formicola, A., Imbriani, G., Costantini, H., et al. 2004,
+Physics Letters B, 591, 61
+Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al.
+2018, A&A, 616, A1
+Gaia Collaboration, Babusiaux, C., van Leeuwen, F., et al.
+2018, A&A, 616, A10
+Gao, X., Lind, K., Amarsi, A. M., et al. 2018, MNRAS,
+481, 2666
+Geller, A. M., Latham, D. W., & Mathieu, R. D. 2015, AJ,
+150, 97
+Girard, T. M., Grundy, W. M., Lopez, C. E., & van Altena,
+W. F. 1989, AJ, 98, 227
+G¨okay, G., Ozdemir, S., & G¨urol, B. 2020, NewA, 75, ¨
+101302
+Gonz´alez, J. F., & Levato, H. 2006, A&A, 448, 283
+Graczyk, D., Smolec, R., Pavlovski, K., et al. 2016, A&A,
+594, A92
+Gray, R. O. 1998, AJ, 116, 482
+Grevesse, N., & Sauval, A. J. 1998, SSRv, 85, 161
+He lminiak, K. G., Konacki, M., Ratajczak, M., et al. 2009,
+MNRAS, 400, 969
+He lminiak, K. G., Konacki, M., Maehara, H., et al. 2019,
+MNRAS, 484, 451
+Henden, A. A., Levine, S., Terrell, D., et al. 2015, American
+Astronomical Society Meeting Abstracts #225 225,
+336.16
+26
+Hidalgo, S. L., Pietrinferni, A., Cassisi, S., et al. 2018, ApJ,
+856, 125
+Higl, J., & Weiss, A. 2017, A&A, 608, A62
+Holtzman, J. A., Shetrone, M., Johnson, J. A., et al. 2015,
+AJ, 150, 148
+Hut, P. 1981, A&A, 99, 126
+Imbriani, G., Costantini, H., Formicola, A., et al. 2005,
+European Physical Journal A, 25, 455
+Kaiser, N., Burgett, W., Chambers, K., et al. 2010,
+Proc. SPIE, 7733, 77330E
+Kipping, D. M. 2013, MNRAS, 435, 2152
+Krone-Martins, A., Soubiran, C., Ducourant, C., Teixeira,
+R., & Le Campion, J. F. 2010, A&A, 516, A3
+Kwee, K. K., & van Woerden, H. 1956, BAN, 12, 327
+Lacy, C. H. S., & Fekel, F. C. 2014, AJ, 148, 71
+Lacy, C. H. S., Torres, G., Fekel, F. C., et al. 2014, AJ, 147,
+148
+Latham, D. W. 1985, Stellar Radial Velocities, 88, 21
+Latham, D. W. 1992, IAU Colloq. 135: Complementary
+Approaches to Double and Multiple Star Research, 32,
+110
+Laugalys, V., Kazlauskas, A., Boyle, R. P., et al. 2004,
+Baltic Astronomy, 13, 1
+Lindegren, L., Hern´andez, J., Bombrun, A., et al. 2018,
+A&A, 616, A2
+Liu, F., Asplund, M., Yong, D., et al. 2019, A&A, 627, A117
+Luger, R., Kruse, E., Foreman-Mackey, D., et al. 2018, AJ,
+156, 99
+Magic, Z., Serenelli, A., Weiss, A., & Chaboyer, B. 2010,
+ApJ, 718, 1378
+Mann, A. W., & von Braun, K. 2015, PASP, 127, 102
+Marigo, P., Girardi, L., Bressan, A., et al. 2017, ApJ, 835,
+77
+Marta, M., Formicola, A., Gy¨urky, G., et al. 2008, PhRvC,
+78, 022802
+Martin, D. C., Fanson, J., Schiminovich, D., et al. 2005,
+ApJL, 619, L1
+Mathieu, R. D., Vanderburg, A., & K2 M67 Team 2016,
+American Astronomical Society Meeting Abstracts, 228,
+117.04
+Montgomery, K. A., Marschall, L. A., & Janes, K. A. 1993,
+AJ, 106, 181
+Morrissey, P., Conrow, T., Barlow, T. A., et al. 2007, ApJS,
+173, 682
+Nardiello, D., Libralato, M., Bedin, L. R., et al. 2016,
+MNRAS, 455, 2337
+Nardiello, D., Libralato, M., Bedin, L. R., et al. 2016,
+MNRAS, 463, 1831
+Nissen, P. E., Twarog, B. A., & Crawford, D. L. 1987, AJ,
+93, 634
+Onehag, A., Gustafsson, B., & Korn, A. 2014, A&A, 562, ¨
+A102
+Oke, J. B., & Gunn, J. E. 1983, ApJ, 266, 713
+Orosz, J. A., & Hauschildt, P. H. 2000, A&A, 364, 265
+Ochsenbein, F., Bauer, P., & Marcout, J. 2000, A&AS, 143,
+23
+Pace, G., Castro, M., Mel´endez, J., Th´eado, S., & do
+Nascimento, J.-D., Jr. 2012, A&A, 541, A150
+Page, M. J., Yershov, V., Breeveld, A., et al. 2014,
+Proceedings of Swift: 10 Years of Discovery (SWIFT 10),
+held 2-5 December 2014 at La Sapienza University,
+Rome, Italy. Online at
+http://pos.sissa.it/cgi-bin/reader/conf.cgi?confid=233,
+id.37, 37
+Pasquini, L., Biazzo, K., Bonifacio, P., Randich, S., &
+Bedin, L. R. 2008, A&A, 489, 677
+Paxton, B., Bildsten, L., Dotter, A., et al. 2011, ApJS, 192,
+3
+Paxton, B., Cantiello, M., Arras, P., et al. 2013, ApJS, 208,
+4
+Paxton, B., Marchant, P., Schwab, J., et al. 2015, ApJS,
+220, 15
+Paxton, B., Schwab, J., Bauer, E. B., et al. 2018, ApJS,
+234, 34
+Paxton, B., Smolec, R., Schwab, J., et al. 2019, ApJS, 243,
+10
+Pickles, A. J. 1998, PASP, 110, 863
+Poole, T. S., Breeveld, A. A., Page, M. J., et al. 2008,
+MNRAS, 383, 627
+Popper, D. M., Lacy, C. H., Frueh, M. L., et al. 1986, AJ,
+91, 383
+Rucinski, S. M., 2002, AJ, 124, 1746
+Sanders, W. L. 1977, A&AS, 27, 89
+Sandquist, E. L., & Shetrone, M. D. 2003, AJ, 126, 2954
+Sandquist, E. L., Mathieu, R. D., Quinn, S. N., et al. 2018,
+AJ, 155, 152
+Sandquist, E. L. 2004, MNRAS, 347, 101
+Sarajedini, A., Dotter, A., & Kirkpatrick, A. 2009, ApJ,
+698, 1872
+Sch¨onrich, R., McMillan, P., & Eyer, L. 2019, MNRAS,
+487, 3568
+Schlafly, E. F., Finkbeiner, D. P., Juri´c, M., et al. 2012,
+ApJ, 756, 158
+Short, D. R., Orosz, J. A., Windmiller, G., et al. 2018, AJ,
+156, 297
+Skrutskie, M. F. et al. 2006, AJ, 131, 1163
+Southworth, J. 2015, Living Together: Planets, Host Stars
+and Binaries, 496, 164
+Souto, D., Allende Prieto, C., Cunha, K., et al. 2019, ApJ,
+874, 97
+27
+Spada, F., Demarque, P., Kim, Y.-C., Boyajian, T. S., &
+Brewer, J. M. 2017, ApJ, 838, 161
+Stassun, K. G. & Torres, G. 2018, ApJ, 862, 61
+Stello, D., Vanderburg, A., Casagrande, L., et al. 2016,
+ApJ, 832, 133
+Taylor, B. J. 2007, AJ, 133, 370
+Ter Braak, C. J. F. 2006, Stat. Comput., 16, 239
+Tody, D. 1986, Proc. SPIE, 627, 733
+Tody, D. 1993, Astronomical Data Analysis Software and
+Systems II, 52, 173
+Torres, G., Andersen, J., & Gim´enez, A. 2010, A&A Rv,
+18, 67
+VandenBerg, D. A., Bergbusch, P. A., & Dowler, P. D.
+2006, ApJS, 162, 375
+VandenBerg, D. A., Gustafsson, B., Edvardsson, B.,
+Eriksson, K., & Ferguson, J. 2007, ApJL, 666, L105
+VandenBerg, D. A., & Stetson, P. B. 2004, PASP, 116, 997
+Vanderburg, A., & Johnson, J. A. 2014, PASP, 126, 948
+Vanderburg, A., Latham, D. W., Buchhave, L. A., et al.
+2016, ApJS, 222, 14
+Viani, L. S. & Basu, S. 2020, arXiv:2009.09344
+Vos, J., Clausen, J. V., Jørgensen, U. G., et al. 2012, A&A,
+540, A64
+Wagner, L., Akhmadaliev, S., Anders, M., et al. 2018,
+PhRvC, 97, 015801
+Wright, E. L., Eisenhardt, P. R. M., Mainzer, A. K., et al.
+2010, AJ, 140, 1868
+Xu, Y., Takahashi, K., Goriely, S., et al. 2013, NuPhA, 918,
+61
+Yadav, R. K. S., Bedin, L. R., Piotto, G., et al. 2008, A&A,
+484, 609
+York, D. G., Adelman, J., Anderson, J. E., Jr., et al. 2000,
+AJ, 120, 1579
+Zamora, O., Garc´ıa-Hern´andez, D. A., Allende Prieto, C.,
+et al. 2015, AJ, 149, 181
+Zhao, J. L., Tian, K. P., Pan, R. S., He, Y. P., & Shi, H. M.
+1993, A&AS, 100, 243
+Zhou, X., Jiang, Z., Ma, J., et al. 2003, A&A, 397, 361
+Zinn, J. C., Pinsonneault, M. H., Huber, D., et al. 2019,
+ApJ, 878, 136
+28
+Table 4. Photometry of the Binary WOCS 11028 and Proxy Stars
+Bright Component A Faint Component B Ratios
+WOCS 11028 WOCS 6018 MS Fit WOCS 10027 MS Fit Stars MS Fit
+Filter λeff (˚A) mλ σm mλ σm mλ mλ σm mλ FB/FA FB/FA Ref.
+uvw2 2030 16.715 0.058 16.898 0.040 16.886 19.389 0.100
+uvm2 2231 16.655 0.072 16.757 0.050
+NUV 2315.7 18.164 0.006 18.230 0.008 18.221 21.047 0.049 21.277 0.075 0.060
+uvw1 2634 15.228 0.030 15.390 0.021 15.382 17.753 0.113
+UV 3450 15.953 0.018 18.030 0.145 1
+u 3520 15.283 0.004 15.476 0.004 15.386 17.183 0.016 17.470 0.208 0.147 2
+uSDSS 3551 14.851 0.009 15.025 0.014 14.993 16.825 0.029 17.096 0.191 0.144
+U 3663 14.144 14.202 15.962 16.308 0.187 0.144 3
+PV 3740 15.475 0.013 15.449 17.590 0.139 1
+BATC2 (b) 3890 14.39 0.01 14.59 0.02 14.539 16.45 0.05 16.695 0.180 0.137 4
+XV 4054 14.882 0.011 14.854 16.825 0.163 1
+v 4100 14.308 0.003 14.522 0.002 14.466 16.155 0.014 16.401 0.222 0.168 2
+B 4361 14.125 15.739 0.006 15.930 0.190 5
+B 4361 14.149 14.149 15.758 0.015 15.960 0.227 0.189 3
+B 4361 13.971 0.068 14.164 0.031 14.118 15.786 0.096 15.955 0.224 0.184 6
+B 4361 13.952 14.183 14.151 15.627 15.960 0.264 0.189 7
+B 4361 13.881 0.013 14.123 15.675 0.004 15.912 0.193 8
+BATC4 (d) 4532 13.67 0.01 13.92 0.01 13.879 15.41 0.01 15.620 0.254 0.201 4
+YV 4665 14.148 0.008 14.117 15.827 0.207 1
+g
+0 4640 13.759 0.386 13.979 0.307 13.807 15.360 0.176 15.481 0.280 0.214 6
+gSDSS 4686 13.592 0.001 13.825 0.008 13.816 15.292 0.010 15.491 0.259 0.214
+b 4688 13.720 0.002 13.979 0.002 13.940 15.454 0.011 15.653 0.257 0.207 2
+gP 1 4810 13.560 0.001 13.784 0.001 13.743 15.224 0.003 15.425 0.266 0.212
+BATC5 (e) 4916 13.53 0.01 13.78 0.01 13.710 15.17 0.01 15.375 0.278 0.216 4
+GBP 5051.5 13.5113 0.0013 13.7714 0.0011 13.7289 15.1898 0.0016 15.3801 0.271 0.219
+ZV 5162 13.815 0.008 13.777 15.451 0.214 1
+BATC6 (f) 5258 13.38 0.01 13.65 0.01 13.585 15.03 0.02 15.225 0.281 0.221 4
+VV 5442 13.622 0.006 13.582 15.182 0.229 1
+V 5448 13.337 0.001 13.597 0.001 13.564 14.953 0.002 15.152 0.287 0.232 5
+V 5448 13.598 13.597 15.010 0.010 15.183 0.275 0.227 3
+V 5448 13.366 0.042 13.619 0.011 13.566 14.977 0.047 15.158 0.286 0.231 6
+V 5448 13.391 13.675 13.597 15.174 0.234 7
+V 5448 13.246 0.004 13.539 14.924 0.007 15.123 0.232 8
+y 5480 13.349 0.003 13.616 0.003 13.568 14.974 0.008 15.167 0.286 0.229 2
+BATC7 (g) 5785 13.24 0.02 13.55 0.02 13.473 14.84 0.03 15.013 0.305 0.242 4
+BATC8 (h) 6069 13.16 0.02 13.44 0.02 13.380 14.70 0.03 14.901 0.313 0.246 4
+Table 4 continued
+29
+Table 4 (continued)
+Bright Component A Faint Component B Ratios
+WOCS 11028 WOCS 6018 MS Fit WOCS 10027 MS Fit Stars MS Fit
+Filter λeff (˚A) mλ σm mλ σm mλ mλ σm mλ FB/FA FB/FA Ref.
+r
+0 6122 13.194 0.019 13.491 0.019 13.440 14.737 0.041 14.952 0.317 0.248 6
+rSDSS 6166 13.166 0.001 13.487 0.017 13.410 14.769 0.010 14.911 0.307 0.251
+rP 1 6170 13.482 0.013 13.426 14.756 0.001 14.926 0.309 0.251
+G 6230.6 13.1974 0.0002 13.4816 0.0002 13.4363 14.8044 0.0003 14.9717 0.296 0.243
+SV 6534 13.112 0.008 13.062 14.546 0.255 1
+BATC9 (i) 6646 13.13 0.02 13.44 0.01 13.394 14.66 0.03 14.859 0.325 0.259 4
+BATC10a (j) 7055 13.08 0.01 13.39 0.01 13.327 14.66 0.03 14.786 0.334 0.261 4
+i0 7440 13.264 0.369 13.528 0.305 13.374 14.545 0.072 14.790 0.392 0.271 6
+iSDSS 7480 13.357 0.001 13.308 14.602 0.021 14.742 0.318 0.267
+iP 1 7520 13.225 13.465 13.337 14.618 0.003 14.748 0.346 0.273
+BATC10b (k) 7545 13.06 0.01 13.37 0.01 13.308 14.53 0.04 14.740 0.344 0.267 4
+GRP 7726.2 12.7237 0.0007 13.0354 0.0006 12.9865 14.2558 0.0014 14.4074 0.325 0.270
+IC 7980 12.655 0.001 12.957 0.002 12.919 14.132 0.002 14.325 0.339 0.274 5
+IC 7980 12.920 12.888 14.176 14.325 0.314 0.266 3
+IC 7900 12.981 0.008 12.934 14.355 0.270 1
+IC 7900 12.584 0.005 12.874 14.107 0.002 14.311 0.266 8
+BATC11 (m) 8020 13.04 0.01 13.35 0.01 13.283 14.48 0.02 14.697 0.353 0.272 4
+BATC12 (n) 8483 13.01 0.01 13.34 0.01 13.289 14.49 0.01 14.679 0.347 0.278 4
+zP 1 8660 13.058 0.004 13.387 0.003 13.339 14.579 0.002 14.715 0.334 0.282
+zSDSS 8932 13.010 0.016 13.350 0.011 13.291 14.602 0.021 14.661 0.344 0.283
+BATC13 (o) 9180 12.97 0.01 13.30 0.01 13.246 14.41 0.01 14.610 0.360 0.285
+yP 1 9620 13.037 0.005 13.366 0.007 13.318 14.527 0.010 14.667 0.343 0.289
+BATC14 (p) 9736 12.99 0.01 13.31 0.01 13.281 14.43 0.01 14.630 0.360 0.289
+J 12350 12.177 0.018 12.546 0.022 12.492 13.609 0.036 13.767 0.376 0.309
+H 16620 11.903 0.020 12.260 0.020 12.237 13.276 0.042 13.391 0.392 0.346
+Ks 21590 11.829 0.020 12.239 0.023 12.177 13.205 0.024 13.311 0.411 0.352
+W1 33526 11.799 0.023 12.211 0.024 12.131 13.015 0.030 13.264 0.477 0.352
+W2 46028 11.839 0.021 12.250 0.415 12.165 13.095 13.311 0.459 0.348
+T (K) 6200 100 6200 5600 100 5500 0.88 0.89
+Fbol (10−11 erg / cm2 s) 10.47 10.89 3.21 2.73 0.310 0.248
+R (R) 0.719 0.643
+References—1: Laugalys et al. (2004). 2: Balaguer-N´u˜nez et al. (2007). 3: Montgomery et al. (1993). 4: Zhou et al. (2003). 5: Sandquist (2004).
+6: Henden et al. (2015). 7: Nardiello et al. (2016b). 8: Yadav et al. (2008).
+30
+31
+Table 5. Detached Eclipsing Binary Stars with Masses Similar to WOCS 11028 A
+Name M/M E(B − V ) ω (mas) Filter Magnitude Refs.a
+AD Boo B 1.209 ± 0.006 0.034 5.118 ± 0.073 y 10.721 ± 0.013 1
+b 11.092 ± 0.007
+v 11.661 ± 0.011
+u 12.570 ± 0.016
+BK Peg B 1.257 ± 0.005 0.061 3.139 ± 0.053 y 11.080 ± 0.014 2
+b 11.440 ± 0.008
+v 11.579 ± 0.016
+u 12.514 ± 0.017
+AP And A 1.277 ± 0.004 0.058 2.866 ± 0.041 V 11.845 3
+AP And B 1.251 ± 0.004 0.058 2.866 ± 0.041 V 11.963 3
+VZ Hya A 1.271 ± 0.009 0.028 6.765 ± 0.049 y 9.442 ± 0.008 1
+b 9.723 ± 0.005
+v 10.169 ± 0.008
+u 11.035 ± 0.009
+V501 Her A 1.2690 ± 0.0035 0.048 2.309 ± 0.022 V 11.623 ± 0.048 4
+V501 Her B 1.2113 ± 0.0032 0.048 2.309 ± 0.022 V 12.188 ± 0.048 4
+EF Aqr A 1.244 ± 0.008 0. 5.765 ± 0.060 y 10.015 ± 0.022 5
+b 10.353 ± 0.010
+v 10.874 ± 0.010
+u 11.778 ± 0.015
+WZ Oph A 1.227 ± 0.007 0.045 6.372 ± 0.033 y 9.856 ± 0.017 1
+b 10.218 ± 0.005
+v 10.729 ± 0.008
+u 11.609 ± 0.011
+WZ Oph B 1.220 ± 0.006 0.045 6.372 ± 0.033 y 9.841 ± 0.017 1
+b 10.211 ± 0.005
+v 10.722 ± 0.008
+u 11.615 ± 0.012
+UX Men A 1.2229 ± 0.0015 0.028 9.644 ± 0.025 y 8.89 ± 0.01 6
+b 9.249 ± 0.005
+v 9.769 ± 0.005
+u 10.660 ± 0.005
+UX Men B 1.1878 ± 0.0015 0.028 9.644 ± 0.025 y 9.07 ± 0.01 6
+b 9.438 ± 0.005
+v 9.990 ± 0.005
+u 10.899 ± 0.005
+FL Lyr A 1.2102 ± 0.0076 0.007 7.406 ± 0.025 V 9.58 7
+LL Aqr A 1.1959 ± 0.0007 0.018 7.269 ± 0.051 V 9.71 ± 0.012 8
+B 10.224 ± 0.032
+U 10.160 ± 0.062
+WOCS 40007 A 1.218 ± 0.008 0.16 0.420b V 16.053 ± 0.02 9
+B 16.669 ± 0.006
+IC 15.307 ± 0.025
+a References: 1: Clausen et al. (2008). 2: Clausen et al. (2010). 3: Lacy et al. (2014). 4: Lacy & Fekel
+(2014). 5: Vos et al. (2012). 6: He lminiak et al. (2009); Andersen et al. (1989). 7: He lminiak et al.
+(2019); Popper et al. (1986). 8: Graczyk et al. (2016). 9: Brewer et al. (2016).
+b Distance modulus from Brewer et al. (2016) translated back into an equivalent parallax.
