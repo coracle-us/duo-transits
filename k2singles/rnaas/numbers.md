@@ -96,3 +96,16 @@ own TESScut r = 1.5 px, P 19.71% (n = 3) vs 25.85% (n = 2), S 4.14% (n = 2) vs 1
 secondary eclipse fell in the 2025 segment (one primary, 32.44%). The old wording ("over the same
 time") implied 2021–2025, and a reader computed 11/32 = 0.34. The paragraph now states the epochs.
 Source: `rnaas/epic202126877_depths.csv`.
+
+**Timing and depth-window clarifications (2026-10-12, review comments).** From
+`results/ephemerides/202126877.json` (TESS-only: P = 21.77465 ± 0.00022, T0 = 2488.59020 ± 0.00543; σ
+already scaled by √(χ²/dof)): cycle −124 is predicted at BTJD −211.4659 ± 0.0280 d (40 min). The K2
+eclipse (blind fit −211.55691) is 0.091 d = 2.18 h early, which is 3.2σ. The cycle count is
+unambiguous (P / (124 σ_P) ≈ 800).
+
+Depth window: from `results/full3/202126877_0.json` (catalogue depth 61,834 ppm; window
+30,917–123,668), the search kept:
+- the 2021 primaries at 1.46–1.95×;
+- the secondaries at 0.58–1.80× (3236.11, 3257.87 and 3279.70 are secondaries).
+
+The 2023 primaries (> 2×) were rejected by the search.
