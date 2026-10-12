@@ -47,3 +47,29 @@ Events with any repeat: 64. Events with a K2 repeat: 26.
 - one probably-new red-giant EB period confirmed by Gaia SB1 (211892898);
 - one giant-host alias set (211390677);
 - about 8 deep-EB periods or alias sets, two of which correct VSX periods.
+
+## Catalogue checks (2026-10-12, after the triage table)
+
+**VizieR all-catalogue cone search, 3″** (`scripts/vizier_census.py` → `data/vizier_census.csv`)
+for 247967714, 246696483, 248811085, 246089124, 211489484, 202137580, 211892898, 211390677.
+
+- **No catalogued period** for 247967714, 246696483, 248811085, 246089124 or 211892898.
+  - 211892898 appears only in APO-K2 red-giant tables and in the LAMOST DR4 RV-variable list
+    (Tian+2020, J/ApJS/249/22: 3 epochs, ΔRV 19 km/s, log g 2.8, Teff 4810). No period.
+- **211390677:** Green+2023 ellipsoidal list (J/MNRAS/522/29) gives Porb 5.998 d, but with candidate
+  Score 0.0, so it is not a detection. Irrelevant.
+- **211489484 = TIC 6951741.** SPOC multi-sector TCE (S1–S46), P = 106.936 d, ExoMiner label FP
+  (Valizadegan+2025, J/AJ/170/287).
+  - 106.936 = (S46 − S7)/10. It is excluded by the K2 C5 primary (12.31 cycles from S7).
+  - 82.258 d = ΔT/13 threads K2 C5 + S7 + S46.
+  - **Independent support:** the Villanova K2 EB catalogue (keplerebs.villanova.edu, overview
+    ?k=211489484) lists a C5 secondary eclipse: sdepth 0.050, separation 0.1598 × its placeholder
+    period of 100 d = 16.0 d after the primary.
+  - Our K2 C18 half-depth dip (59 ppt, BTJD 1277.996) sits 0.195 × 82.258 = 16.0 d after a
+    predicted primary. The same offset, so the system is eccentric.
+- **202137580** is heavily catalogued: VSX 9.90152 d, LAMOST EB 9.9015 d (J/ApJS/280/26),
+  LAMOST SB1 69.44 d (J/ApJS/282/55), ASAS-SN 63.36 d, Gaia cross-match 9.90/184.86 d.
+  It is messy and already studied. **Dropped from the table.**
+- **Villanova K2 EB catalogue:** 202072917, 202071902 and 202126877 are listed with placeholder
+  periods (50 d, i.e. unknown; InCat False). 211489484 has a 100 d placeholder. 247967714,
+  246696483, 248811085, 246089124, 211892898 and 211390677 are not in it.
