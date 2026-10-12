@@ -121,3 +121,30 @@ The 2023 primaries (> 2×) were rejected by the search.
 - **Received:** 2026-10-12 (AAS email 18:04 EDT), manuscript **AAS82225**. The title was recorded as
   "(Untitled)Orbital Periods for ...": an Overleaf-import artefact. Ask journals.manager@aas.org to
   correct it if the status page still shows it.
+
+## Post-submission corrections for AAS82225 (found 2026-10-12, `eb_depth_evolution/REPORT.txt`)
+
+The submitted text is git tag `aas82225-submitted` (commit fb3bd0c). Corrected in the repo, for the revision or proofs:
+
+1. **Year.** The last TESS segment (TESScut "Sector 1751", BTJD 4055.76–4063.00) is 2026-01-15 to 2026-01-22,
+   not 2025 (astropy: BTJD 4056.38 → 2026-01-15).
+2. **Depths.** The submitted 20/26/32% primary and 4/11% secondary came from trapezoid fits (blind analysis,
+   r = 1.5 px).
+   - These underestimate the depth of V-shaped eclipses by about 1% (absolute).
+   - In 2026 the underestimate was about 3%, because the egress is truncated by a data gap.
+   - The corrected values use one definition, the median flux within ±15 min of mid-eclipse
+     (`eb_depth_evolution/results_depth_events.csv`, script 20_depth_table.py).
+
+   | Eclipse | Corrected depths |
+   |---|---|
+   | Primary, 2021 | 20.4, 20.6, 20.7% |
+   | Primary, 2023 | 27.5, 27.3% |
+   | Primary, 2026 | 35.6% (35.2–35.6% across apertures and generalised-Gaussian fits) |
+   | Secondary, 2021 | 4.3, 4.5% |
+   | Secondary, 2023 | 12.6, 12.5, 12.2% |
+
+   S/P is 0.21 (2021) and 0.46 (2023).
+3. **Wording.** The K2 offset (2.2 h, 3σ) is relative to the 2021–2023 TESS ephemeris. The text now says so.
+   With the 2026 eclipse included, the offset is 1.7 h (3.4σ; `eb_depth_evolution`).
+
+Conclusions are unchanged. The deepening and the S/P doubling are stronger.
