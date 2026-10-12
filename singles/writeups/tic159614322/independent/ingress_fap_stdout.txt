@@ -1,0 +1,28 @@
+Ingress-side timing (data before 1883.90):
+  TESS-SPOC_flux   free depth           tc=1883.7403 [1883.7323,1883.7493]  Δ=-0.43 h depth=2.59 ppt
+  TESS-SPOC_flux   depth fixed 3.0 ppt  tc=1883.7403 [1883.7333,1883.7473]  Δ=-0.43 h
+  TESS-SPOC_sap    free depth           tc=1883.7683 [1883.7613,1883.7743]  Δ=+0.24 h depth=3.73 ppt
+  TESS-SPOC_sap    depth fixed 3.0 ppt  tc=1883.7693 [1883.7603,1883.7763]  Δ=+0.26 h
+  QLP_flux         free depth           tc=1883.7673 [1883.7603,1883.7733]  Δ=+0.22 h depth=3.81 ppt
+  QLP_flux         depth fixed 3.0 ppt  tc=1883.7683 [1883.7583,1883.7743]  Δ=+0.24 h
+  QLP_sap          free depth           tc=1883.7673 [1883.7603,1883.7733]  Δ=+0.22 h depth=3.81 ppt
+  QLP_sap          depth fixed 3.0 ppt  tc=1883.7683 [1883.7583,1883.7743]  Δ=+0.24 h
+  own_ap1.5        free depth           tc=1883.7633 [1883.7453,1883.7713]  Δ=+0.12 h depth=5.06 ppt
+  own_ap1.5        depth fixed 3.0 ppt  tc=1883.7643 [1883.7433,1883.7753]  Δ=+0.14 h
+  own_ap2.0        free depth           tc=1883.7673 [1883.7603,1883.7733]  Δ=+0.22 h depth=4.17 ppt
+  own_ap2.0        depth fixed 3.0 ppt  tc=1883.7683 [1883.7583,1883.7763]  Δ=+0.24 h
+  own_ap2.5        free depth           tc=1883.7633 [1883.7403,1883.7703]  Δ=+0.12 h depth=3.71 ppt
+  own_ap2.5        depth fixed 3.0 ppt  tc=1883.7643 [1883.7403,1883.7723]  Δ=+0.14 h
+
+Empirical search for transit-like dips over all FFI data (q=0):
+  data searched: 462 product-days; distinct dips with depth>1.5 ppt & SNR>6 away from known/S21: 9
+    ('QLP', 16, np.float64(1746.311), np.float64(1.61), np.float64(6.5))
+    ('QLP', 16, np.float64(1747.391), np.float64(2.82), np.float64(9.0))
+    ('QLP', 16, np.float64(1748.391), np.float64(4.27), np.float64(11.3))
+    ('QLP', 16, np.float64(1749.431), np.float64(5.3), np.float64(11.1))
+    ('QLP', 16, np.float64(1760.331), np.float64(2.82), np.float64(9.4))
+    ('QLP', 16, np.float64(1761.411), np.float64(4.01), np.float64(8.5))
+    ('QLP', 16, np.float64(1762.391), np.float64(4.24), np.float64(8.8))
+    ('QLP', 75, np.float64(3345.647), np.float64(2.64), np.float64(11.3))
+    ('TESS-SPOC', 75, np.float64(3359.457), np.float64(3.63), np.float64(11.1))
+  S21 event in the same search (tc, depth, snr): [(np.float64(1883.721), np.float64(1.77), np.float64(6.5)), (np.float64(1883.741), np.float64(1.95), np.float64(7.1)), (np.float64(1883.761), np.float64(2.1), np.float64(7.3)), (np.float64(1883.781), np.float64(2.24), np.float64(7.2)), (np.float64(1883.801), np.float64(2.04), np.float64(5.7)), (np.float64(1883.721), np.float64(3.35), np.float64(8.4)), (np.float64(1883.741), np.float64(3.5), np.float64(9.8)), (np.float64(1883.761), np.float64(3.53), np.float64(9.7)), (np.float64(1883.781), np.float64(3.38), np.float64(8.5)), (np.float64(1883.801), np.float64(2.92), np.float64(6.1))]

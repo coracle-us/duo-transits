@@ -1,0 +1,28 @@
+(a) n = 4m aliases beyond 12:
+   n=16 P= 44.982 d: 3 fully covered epochs, 3 flat -> excluded
+   n=20 P= 35.986 d: 3 fully covered epochs, 3 flat -> excluded
+   n=24 P= 29.988 d: 6 fully covered epochs, 6 flat -> excluded
+   n=28 P= 25.704 d: 6 fully covered epochs, 6 flat -> excluded
+   n=32 P= 22.491 d: 10 fully covered epochs, 10 flat -> excluded
+   n=36 P= 19.992 d: 10 fully covered epochs, 10 flat -> excluded
+   n=40 P= 17.993 d: 12 fully covered epochs, 12 flat -> excluded
+   n=44 P= 16.357 d: 9 fully covered epochs, 9 flat -> excluded
+   n=48 P= 14.994 d: 13 fully covered epochs, 13 flat -> excluded
+
+(b) rho* = 0.345 g/cc; free-shape chi2 = 2051.8
+   n= 1 P= 719.720  a/R*= 211.5  best b=0.961 rp=0.0799  Δχ²=  65.7
+   n= 2 P= 359.860  a/R*= 133.2  best b=0.899 rp=0.0645  Δχ²=  33.9
+   n= 3 P= 239.907  a/R*= 101.7  best b=0.861 rp=0.0622  Δχ²=  21.3
+   n= 4 P= 179.930  a/R*=  83.9  best b=0.826 rp=0.0608  Δχ²=  14.4
+   n= 5 P= 143.944  a/R*=  72.3  best b=0.795 rp=0.0599  Δχ²=  10.2
+   n= 6 P= 119.953  a/R*=  64.0  best b=0.764 rp=0.0592  Δχ²=   7.5
+   n= 7 P= 102.817  a/R*=  57.8  best b=0.734 rp=0.0585  Δχ²=   5.9
+   n= 8 P=  89.965  a/R*=  52.9  best b=0.705 rp=0.0580  Δχ²=   4.7
+   n= 9 P=  79.969  a/R*=  48.9  best b=0.675 rp=0.0576  Δχ²=   3.6
+   n=10 P=  71.972  a/R*=  45.6  best b=0.645 rp=0.0572  Δχ²=   2.9
+   n=11 P=  65.429  a/R*=  42.8  best b=0.615 rp=0.0568  Δχ²=   2.2
+   n=12 P=  59.977  a/R*=  40.3  best b=0.584 rp=0.0565  Δχ²=   1.7
+
+(c) S21 mid-time (median over products, ingress-side fits) = 1883.7673 ± 0.0067 (formal 0.0065, spread 0.0015); predicted 1883.7583; O-C = +0.22 h = 1.2 sigma
+   n=4: P = 179.92949 ± 0.00112 d, T0 = 1703.8303 ± 0.0036 BTJD, chi2=1.51
+   n=8: P = 89.96475 ± 0.00056 d, T0 = 1703.8303 ± 0.0036 BTJD, chi2=1.51

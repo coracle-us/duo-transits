@@ -1,0 +1,2835 @@
+{
+ "TC1": 1703.828364752292,
+ "TC2": 2423.5480344621674,
+ "DT": 719.7196697098755,
+ "T14_d": 0.40780319584832964,
+ "spans": {
+  "14": [
+   1683.3667388967626,
+   1710.1787098047737
+  ],
+  "15": [
+   1711.3870167428704,
+   1737.3862716097335
+  ],
+  "16": [
+   1738.6547495332998,
+   1763.300881154774
+  ],
+  "21": [
+   1870.4498078604463,
+   1897.7626943768205
+  ],
+  "22": [
+   1899.325200931788,
+   1926.4709724764496
+  ],
+  "23": [
+   1928.1167853779311,
+   1954.866308193338
+  ],
+  "41": [
+   2419.9881498539107,
+   2446.576661752653
+  ],
+  "48": [
+   2607.935736341676,
+   2635.987387151158
+  ],
+  "49": [
+   2637.4776833458845,
+   2664.3163754319085
+  ],
+  "75": [
+   3339.7826576339107,
+   3367.4819891287448
+  ],
+  "76": [
+   3367.69495175696,
+   3394.778105937341
+  ]
+ },
+ "epochs": [
+  {
+   "n": 1,
+   "P": 719.7196697098755,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 1,
+   "P": 719.7196697098755,
+   "k": 1,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 2,
+   "P": 359.85983485493773,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 2,
+   "P": 359.85983485493773,
+   "k": 2,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 3,
+   "P": 239.9065565699585,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 3,
+   "P": 239.9065565699585,
+   "k": 1,
+   "tc": 1943.7349213222503,
+   "sig_tc": 0.00277135776754432,
+   "sector": 23,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 16,
+    "n_post": 18,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 3,
+   "P": 239.9065565699585,
+   "k": 3,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 3,
+   "P": 239.9065565699585,
+   "k": 4,
+   "tc": 2663.454591032126,
+   "sig_tc": 0.0036361336045674895,
+   "sector": 49,
+   "known": false,
+   "SPOC": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "SPOC_allq": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "TESS-SPOC": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "QLP": {
+    "n_in": 57,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 54,
+    "n_post": 54,
+    "n_first_half": 29,
+    "n_second_half": 28
+   },
+   "QLP_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   }
+  },
+  {
+   "n": 3,
+   "P": 239.9065565699585,
+   "k": 7,
+   "tc": 3383.1742607420015,
+   "sig_tc": 0.007937965742889842,
+   "sector": 76,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "QLP": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   },
+   "QLP_allq": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   }
+  },
+  {
+   "n": 4,
+   "P": 179.92991742746887,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 4,
+   "P": 179.92991742746887,
+   "k": 1,
+   "tc": 1883.7582821797607,
+   "sig_tc": 0.003035788430595521,
+   "sector": 21,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 13,
+    "frac_in": 0.7,
+    "ingress": true,
+    "egress": false,
+    "n_pre": 20,
+    "n_post": 0,
+    "n_first_half": 9,
+    "n_second_half": 4
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 4,
+   "P": 179.92991742746887,
+   "k": 4,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 5,
+   "P": 143.9439339419751,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 5,
+   "P": 143.9439339419751,
+   "k": 5,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 6,
+   "P": 119.95327828497925,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 6,
+   "P": 119.95327828497925,
+   "k": 2,
+   "tc": 1943.7349213222503,
+   "sig_tc": 0.00277135776754432,
+   "sector": 23,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 16,
+    "n_post": 18,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 6,
+   "P": 119.95327828497925,
+   "k": 6,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 6,
+   "P": 119.95327828497925,
+   "k": 8,
+   "tc": 2663.454591032126,
+   "sig_tc": 0.0036361336045674895,
+   "sector": 49,
+   "known": false,
+   "SPOC": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "SPOC_allq": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "TESS-SPOC": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "QLP": {
+    "n_in": 57,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 54,
+    "n_post": 54,
+    "n_first_half": 29,
+    "n_second_half": 28
+   },
+   "QLP_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   }
+  },
+  {
+   "n": 6,
+   "P": 119.95327828497925,
+   "k": 14,
+   "tc": 3383.1742607420015,
+   "sig_tc": 0.007937965742889842,
+   "sector": 76,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "QLP": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   },
+   "QLP_allq": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   }
+  },
+  {
+   "n": 7,
+   "P": 102.81709567283936,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 7,
+   "P": 102.81709567283936,
+   "k": 2,
+   "tc": 1909.4625560979707,
+   "sig_tc": 0.0029189511707542835,
+   "sector": 22,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 18,
+    "frac_in": 0.9,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 9,
+    "n_second_half": 9
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 18,
+    "frac_in": 0.9,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 9,
+    "n_second_half": 9
+   },
+   "QLP": {
+    "n_in": 18,
+    "frac_in": 0.9,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 18,
+    "n_first_half": 9,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 18,
+    "frac_in": 0.9,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 9,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 7,
+   "P": 102.81709567283936,
+   "k": 7,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 7,
+   "P": 102.81709567283936,
+   "k": 9,
+   "tc": 2629.1822258078464,
+   "sig_tc": 0.003457489619562176,
+   "sector": 48,
+   "known": false,
+   "SPOC": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 280,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "SPOC_allq": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 280,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 54,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 54,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 56,
+    "frac_in": 0.9661016949152542,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 54,
+    "n_first_half": 28,
+    "n_second_half": 28
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 7,
+   "P": 102.81709567283936,
+   "k": 16,
+   "tc": 3348.9018955177216,
+   "sig_tc": 0.007722498419035355,
+   "sector": 75,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 173,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 173,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "QLP": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 173,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "QLP_allq": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 173,
+    "n_first_half": 88,
+    "n_second_half": 88
+   }
+  },
+  {
+   "n": 8,
+   "P": 89.96495871373443,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 8,
+   "P": 89.96495871373443,
+   "k": 2,
+   "tc": 1883.7582821797607,
+   "sig_tc": 0.003035788430595521,
+   "sector": 21,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 13,
+    "frac_in": 0.7,
+    "ingress": true,
+    "egress": false,
+    "n_pre": 20,
+    "n_post": 0,
+    "n_first_half": 9,
+    "n_second_half": 4
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 8,
+   "P": 89.96495871373443,
+   "k": 8,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 9,
+   "P": 79.96885218998617,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 9,
+   "P": 79.96885218998617,
+   "k": 3,
+   "tc": 1943.7349213222503,
+   "sig_tc": 0.00277135776754432,
+   "sector": 23,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 16,
+    "n_post": 18,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 9,
+   "P": 79.96885218998617,
+   "k": 9,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 9,
+   "P": 79.96885218998617,
+   "k": 12,
+   "tc": 2663.454591032126,
+   "sig_tc": 0.0036361336045674895,
+   "sector": 49,
+   "known": false,
+   "SPOC": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "SPOC_allq": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "TESS-SPOC": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "QLP": {
+    "n_in": 57,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 54,
+    "n_post": 54,
+    "n_first_half": 29,
+    "n_second_half": 28
+   },
+   "QLP_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   }
+  },
+  {
+   "n": 9,
+   "P": 79.96885218998617,
+   "k": 21,
+   "tc": 3383.1742607420015,
+   "sig_tc": 0.007937965742889842,
+   "sector": 76,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "QLP": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   },
+   "QLP_allq": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   }
+  },
+  {
+   "n": 10,
+   "P": 71.97196697098755,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 10,
+   "P": 71.97196697098755,
+   "k": 3,
+   "tc": 1919.7442656652545,
+   "sig_tc": 0.0028736361796302453,
+   "sector": 22,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 10,
+   "P": 71.97196697098755,
+   "k": 10,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 10,
+   "P": 71.97196697098755,
+   "k": 13,
+   "tc": 2639.46393537513,
+   "sig_tc": 0.0035105368506445863,
+   "sector": 49,
+   "known": false,
+   "SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 27,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 57,
+    "n_post": 57,
+    "n_first_half": 30,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 10,
+   "P": 71.97196697098755,
+   "k": 23,
+   "tc": 3359.1836050850056,
+   "sig_tc": 0.007787088152645909,
+   "sector": 75,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 146,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 147,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 137,
+    "n_post": 173,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "QLP_allq": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 173,
+    "n_first_half": 88,
+    "n_second_half": 88
+   }
+  },
+  {
+   "n": 11,
+   "P": 65.42906088271594,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 11,
+   "P": 65.42906088271594,
+   "k": 3,
+   "tc": 1900.1155474004397,
+   "sig_tc": 0.0029608681879826604,
+   "sector": 22,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 13,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 13,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 11,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 19,
+    "n_first_half": 9,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 11,
+   "P": 65.42906088271594,
+   "k": 11,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 11,
+   "P": 65.42906088271594,
+   "k": 14,
+   "tc": 2619.835217110315,
+   "sig_tc": 0.00340969784050419,
+   "sector": 48,
+   "known": false,
+   "SPOC": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "SPOC_allq": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 56,
+    "frac_in": 0.9661016949152542,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 57,
+    "n_post": 55,
+    "n_first_half": 28,
+    "n_second_half": 28
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 11,
+   "P": 65.42906088271594,
+   "k": 25,
+   "tc": 3339.5548868201904,
+   "sig_tc": 0.0076638193566237675,
+   "sector": 75,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": true,
+    "n_pre": 0,
+    "n_post": 161,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": true,
+    "n_pre": 0,
+    "n_post": 161,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 148,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": true,
+    "n_pre": 0,
+    "n_post": 163,
+    "n_first_half": 0,
+    "n_second_half": 0
+   }
+  },
+  {
+   "n": 12,
+   "P": 59.976639142489624,
+   "k": 0,
+   "tc": 1703.828364752292,
+   "sig_tc": 0.003958089626166839,
+   "sector": 14,
+   "known": true,
+   "TESS-SPOC": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 18,
+    "n_post": 16,
+    "n_first_half": 10,
+    "n_second_half": 9
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 20,
+    "n_first_half": 10,
+    "n_second_half": 9
+   }
+  },
+  {
+   "n": 12,
+   "P": 59.976639142489624,
+   "k": 1,
+   "tc": 1763.8050038947815,
+   "sig_tc": 0.003634423778518167,
+   "sector": 16,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 5,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   }
+  },
+  {
+   "n": 12,
+   "P": 59.976639142489624,
+   "k": 3,
+   "tc": 1883.7582821797607,
+   "sig_tc": 0.003035788430595521,
+   "sector": 21,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   },
+   "QLP": {
+    "n_in": 13,
+    "frac_in": 0.7,
+    "ingress": true,
+    "egress": false,
+    "n_pre": 20,
+    "n_post": 0,
+    "n_first_half": 9,
+    "n_second_half": 4
+   },
+   "QLP_allq": {
+    "n_in": 19,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 20,
+    "n_post": 1,
+    "n_first_half": 9,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 12,
+   "P": 59.976639142489624,
+   "k": 4,
+   "tc": 1943.7349213222503,
+   "sig_tc": 0.00277135776754432,
+   "sector": 23,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 0,
+    "frac_in": 0.0,
+    "ingress": false,
+    "egress": false,
+    "n_pre": 0,
+    "n_post": 0,
+    "n_first_half": 0,
+    "n_second_half": 0
+   },
+   "QLP": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 16,
+    "n_post": 18,
+    "n_first_half": 10,
+    "n_second_half": 10
+   },
+   "QLP_allq": {
+    "n_in": 20,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 19,
+    "n_post": 19,
+    "n_first_half": 10,
+    "n_second_half": 10
+   }
+  },
+  {
+   "n": 12,
+   "P": 59.976639142489624,
+   "k": 12,
+   "tc": 2423.5480344621674,
+   "sig_tc": 0.0025412439722458657,
+   "sector": 41,
+   "known": true,
+   "SPOC": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "SPOC_allq": {
+    "n_in": 293,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 146
+   },
+   "TESS-SPOC": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   },
+   "QLP_allq": {
+    "n_in": 58,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 58,
+    "n_first_half": 29,
+    "n_second_half": 29
+   }
+  },
+  {
+   "n": 12,
+   "P": 59.976639142489624,
+   "k": 16,
+   "tc": 2663.454591032126,
+   "sig_tc": 0.0036361336045674895,
+   "sector": 49,
+   "known": false,
+   "SPOC": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "SPOC_allq": {
+    "n_in": 294,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 288,
+    "n_post": 288,
+    "n_first_half": 147,
+    "n_second_half": 147
+   },
+   "TESS-SPOC": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   },
+   "QLP": {
+    "n_in": 57,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 54,
+    "n_post": 54,
+    "n_first_half": 29,
+    "n_second_half": 28
+   },
+   "QLP_allq": {
+    "n_in": 59,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 58,
+    "n_post": 57,
+    "n_first_half": 29,
+    "n_second_half": 30
+   }
+  },
+  {
+   "n": 12,
+   "P": 59.976639142489624,
+   "k": 28,
+   "tc": 3383.1742607420015,
+   "sig_tc": 0.007937965742889842,
+   "sector": 76,
+   "known": false,
+   "TESS-SPOC": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "TESS-SPOC_allq": {
+    "n_in": 176,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 173,
+    "n_post": 172,
+    "n_first_half": 88,
+    "n_second_half": 88
+   },
+   "QLP": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   },
+   "QLP_allq": {
+    "n_in": 177,
+    "frac_in": 1.0,
+    "ingress": true,
+    "egress": true,
+    "n_pre": 172,
+    "n_post": 172,
+    "n_first_half": 89,
+    "n_second_half": 88
+   }
+  }
+ ]
+}

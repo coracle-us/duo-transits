@@ -1,0 +1,40 @@
+tc=1900.116 S22 n=[11]  in-transit cadences all=19 q0=19 flags={'0': 19}
+     ap1.5          depth= -0.14±0.21 ppt  n_in=19  Δχ²(3ppt forced)=213.5
+     ap2.0          depth= -0.19±0.24 ppt  n_in=19  Δχ²(3ppt forced)=169.3
+     ap2.5          depth= -0.35±0.27 ppt  n_in=19  Δχ²(3ppt forced)=150.3
+     ap2.0_annbkg   depth=  0.24±0.38 ppt  n_in=19  Δχ²(3ppt forced)=52.8
+tc=1909.463 S22 n=[7]  in-transit cadences all=18 q0=18 flags={'0': 18}
+     ap1.5          depth=  0.01±0.19 ppt  n_in=18  Δχ²(3ppt forced)=259.9
+     ap2.0          depth=  0.07±0.19 ppt  n_in=18  Δχ²(3ppt forced)=244.3
+     ap2.5          depth=  0.11±0.20 ppt  n_in=18  Δχ²(3ppt forced)=218.3
+     ap2.0_annbkg   depth=  0.21±0.28 ppt  n_in=18  Δχ²(3ppt forced)=100.2
+tc=1919.744 S22 n=[10]  in-transit cadences all=19 q0=19 flags={'0': 19}
+     ap1.5          depth= -0.04±0.20 ppt  n_in=19  Δχ²(3ppt forced)=221.2
+     ap2.0          depth= -0.09±0.20 ppt  n_in=19  Δχ²(3ppt forced)=250.6
+     ap2.5          depth= -0.02±0.18 ppt  n_in=19  Δχ²(3ppt forced)=266.9
+     ap2.0_annbkg   depth= -0.12±0.32 ppt  n_in=19  Δχ²(3ppt forced)=92.3
+tc=1943.735 S23 n=[3, 6, 9, 12]  in-transit cadences all=20 q0=20 flags={'0': 20}
+     ap1.5          depth= -0.12±0.27 ppt  n_in=20  Δχ²(3ppt forced)=136.3
+     ap2.0          depth=  0.15±0.21 ppt  n_in=20  Δχ²(3ppt forced)=184.1
+     ap2.5          depth=  0.23±0.23 ppt  n_in=20  Δχ²(3ppt forced)=142.7
+     ap2.0_annbkg   depth= -0.07±0.28 ppt  n_in=20  Δχ²(3ppt forced)=123.2
+tc=2639.464 S49 n=[10]  in-transit cadences all=57 q0=57 flags={'0': 57}
+     ap1.5          depth= -0.11±0.22 ppt  n_in=57  Δχ²(3ppt forced)=197.5
+     ap2.0          depth=  0.04±0.26 ppt  n_in=57  Δχ²(3ppt forced)=133.9
+     ap2.5          depth=  0.07±0.28 ppt  n_in=57  Δχ²(3ppt forced)=112.6
+     ap2.0_annbkg   depth= -1.54±0.30 ppt  n_in=57  Δχ²(3ppt forced)=225.9
+tc=2663.455 S49 n=[3, 6, 9, 12]  in-transit cadences all=57 q0=57 flags={'0': 57}
+     ap1.5          depth= -0.23±0.17 ppt  n_in=57  Δχ²(3ppt forced)=364.9
+     ap2.0          depth= -0.14±0.15 ppt  n_in=57  Δχ²(3ppt forced)=427.4
+     ap2.5          depth= -0.14±0.15 ppt  n_in=57  Δχ²(3ppt forced)=410.3
+     ap2.0_annbkg   depth= -0.45±0.18 ppt  n_in=57  Δχ²(3ppt forced)=366.0
+tc=3339.555 S75 n=[11]  in-transit cadences all=0 q0=0 flags={}
+     ap1.5          no in-transit data
+     ap2.0          no in-transit data
+     ap2.5          no in-transit data
+     ap2.0_annbkg   no in-transit data
+tc=3359.184 S75 n=[10]  in-transit cadences all=171 q0=171 flags={'0': 171}
+     ap1.5          depth=  0.15±0.19 ppt  n_in=171  Δχ²(3ppt forced)=228.4
+     ap2.0          depth=  0.33±0.19 ppt  n_in=171  Δχ²(3ppt forced)=201.2
+     ap2.5          depth=  0.43±0.20 ppt  n_in=171  Δχ²(3ppt forced)=164.8
+     ap2.0_annbkg   depth=  0.54±0.22 ppt  n_in=171  Δχ²(3ppt forced)=120.4

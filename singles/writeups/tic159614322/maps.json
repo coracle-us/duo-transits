@@ -1,0 +1,20 @@
+{
+ "S14": {
+  "offset_arcsec": 2.201651111392358,
+  "offset_err_arcsec": 2.7003216540682926,
+  "peak_snr": 5.521593628574876,
+  "n_frames": 91
+ },
+ "S21": {
+  "offset_arcsec": 13.542121491293837,
+  "offset_err_arcsec": 3.63512167596091,
+  "peak_snr": 5.500084270880852,
+  "n_frames": 43
+ },
+ "S41": {
+  "offset_arcsec": 1.0727191745433577,
+  "offset_err_arcsec": 1.207033653139588,
+  "peak_snr": 13.182934314419162,
+  "n_frames": 274
+ }
+}

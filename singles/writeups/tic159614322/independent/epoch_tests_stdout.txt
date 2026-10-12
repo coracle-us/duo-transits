@@ -1,0 +1,128 @@
+tc=1763.805 S16 n=[12]
+   TESS-SPOC_sap_allq       no in-transit data
+   QLP_flux_allq            no in-transit data
+   QLP_sap_allq             no in-transit data
+tc=1883.758 S21 n=[4, 8, 12]
+   TESS-SPOC_flux_q0        A=  1.97± 0.31 ppt  n_in=  19  dchi2=   41.3 chi2(3ppt)-chi2(best)=   11.5
+   TESS-SPOC_flux_allq      A=  1.97± 0.31 ppt  n_in=  19  dchi2=   41.3 chi2(3ppt)-chi2(best)=   11.5
+   TESS-SPOC_sap_q0         A=  2.43± 0.32 ppt  n_in=  19  dchi2=   56.4 chi2(3ppt)-chi2(best)=    3.1
+   TESS-SPOC_sap_allq       A=  2.43± 0.32 ppt  n_in=  19  dchi2=   56.4 chi2(3ppt)-chi2(best)=    3.1
+   QLP_flux_q0              A=  3.09± 0.61 ppt  n_in=  13  dchi2=   26.1 chi2(3ppt)-chi2(best)=    0.0
+   QLP_flux_allq            A=  8.69±45.40 ppt  n_in=  19  dchi2=    0.0 chi2(3ppt)-chi2(best)=    0.0
+   QLP_sap_q0               A=  3.09± 0.61 ppt  n_in=  13  dchi2=   26.1 chi2(3ppt)-chi2(best)=    0.0
+   QLP_sap_allq             A=  8.69±45.40 ppt  n_in=  19  dchi2=    0.0 chi2(3ppt)-chi2(best)=    0.0
+tc=1900.116 S22 n=[11]
+   TESS-SPOC_flux_q0        no in-transit data
+   TESS-SPOC_flux_allq      no in-transit data
+   TESS-SPOC_sap_q0         no in-transit data
+   TESS-SPOC_sap_allq       A=  0.01± 0.26 ppt  n_in=  19  dchi2=    0.0 chi2(3ppt)-chi2(best)=  128.8
+   QLP_flux_q0              no in-transit data
+   QLP_flux_allq            A= -0.42± 0.26 ppt  n_in=  19  dchi2=    2.6 chi2(3ppt)-chi2(best)=  169.7
+   QLP_sap_q0               no in-transit data
+   QLP_sap_allq             A= -0.42± 0.26 ppt  n_in=  19  dchi2=    2.6 chi2(3ppt)-chi2(best)=  169.7
+tc=1909.463 S22 n=[7]
+   TESS-SPOC_flux_q0        A= -0.06± 0.19 ppt  n_in=  18  dchi2=    0.1 chi2(3ppt)-chi2(best)=  273.8
+   TESS-SPOC_flux_allq      A= -0.06± 0.19 ppt  n_in=  18  dchi2=    0.1 chi2(3ppt)-chi2(best)=  273.8
+   TESS-SPOC_sap_q0         A=  0.01± 0.18 ppt  n_in=  18  dchi2=    0.0 chi2(3ppt)-chi2(best)=  268.7
+   TESS-SPOC_sap_allq       A=  0.01± 0.18 ppt  n_in=  18  dchi2=    0.0 chi2(3ppt)-chi2(best)=  268.7
+   QLP_flux_q0              A= -0.07± 0.23 ppt  n_in=  18  dchi2=    0.1 chi2(3ppt)-chi2(best)=  185.1
+   QLP_flux_allq            A= -0.07± 0.22 ppt  n_in=  18  dchi2=    0.1 chi2(3ppt)-chi2(best)=  188.5
+   QLP_sap_q0               A= -0.07± 0.23 ppt  n_in=  18  dchi2=    0.1 chi2(3ppt)-chi2(best)=  185.1
+   QLP_sap_allq             A= -0.07± 0.22 ppt  n_in=  18  dchi2=    0.1 chi2(3ppt)-chi2(best)=  188.5
+tc=1919.744 S22 n=[10]
+   TESS-SPOC_flux_q0        A=  0.05± 0.17 ppt  n_in=  19  dchi2=    0.1 chi2(3ppt)-chi2(best)=  313.2
+   TESS-SPOC_flux_allq      A=  0.05± 0.17 ppt  n_in=  19  dchi2=    0.1 chi2(3ppt)-chi2(best)=  313.2
+   TESS-SPOC_sap_q0         A= -0.01± 0.18 ppt  n_in=  19  dchi2=    0.0 chi2(3ppt)-chi2(best)=  272.7
+   TESS-SPOC_sap_allq       A= -0.01± 0.18 ppt  n_in=  19  dchi2=    0.0 chi2(3ppt)-chi2(best)=  272.7
+   QLP_flux_q0              A= -0.06± 0.20 ppt  n_in=  19  dchi2=    0.1 chi2(3ppt)-chi2(best)=  231.5
+   QLP_flux_allq            A= -2.16± 4.49 ppt  n_in=  19  dchi2=    0.2 chi2(3ppt)-chi2(best)=    1.3
+   QLP_sap_q0               A= -0.06± 0.20 ppt  n_in=  19  dchi2=    0.1 chi2(3ppt)-chi2(best)=  231.5
+   QLP_sap_allq             A= -2.16± 4.49 ppt  n_in=  19  dchi2=    0.2 chi2(3ppt)-chi2(best)=    1.3
+tc=1943.735 S23 n=[3, 6, 9, 12]
+   TESS-SPOC_sap_allq       A=  0.02± 0.21 ppt  n_in=  20  dchi2=    0.0 chi2(3ppt)-chi2(best)=  196.6
+   QLP_flux_q0              A=  0.14± 0.31 ppt  n_in=  20  dchi2=    0.2 chi2(3ppt)-chi2(best)=   82.2
+   QLP_flux_allq            A=  0.14± 0.31 ppt  n_in=  20  dchi2=    0.2 chi2(3ppt)-chi2(best)=   86.6
+   QLP_sap_q0               A=  0.14± 0.31 ppt  n_in=  20  dchi2=    0.2 chi2(3ppt)-chi2(best)=   82.2
+   QLP_sap_allq             A=  0.14± 0.31 ppt  n_in=  20  dchi2=    0.2 chi2(3ppt)-chi2(best)=   86.6
+tc=2619.835 S48 n=[11]
+   SPOC_flux_q0             A=  0.29± 0.15 ppt  n_in= 286  dchi2=    3.7 chi2(3ppt)-chi2(best)=  316.9
+   SPOC_flux_allq           A=  0.29± 0.15 ppt  n_in= 286  dchi2=    3.7 chi2(3ppt)-chi2(best)=  316.9
+   SPOC_sap_q0              A=  0.19± 0.16 ppt  n_in= 286  dchi2=    1.5 chi2(3ppt)-chi2(best)=  325.4
+   SPOC_sap_allq            A=  0.19± 0.16 ppt  n_in= 286  dchi2=    1.5 chi2(3ppt)-chi2(best)=  325.4
+   TESS-SPOC_flux_q0        A=  0.23± 0.16 ppt  n_in=  58  dchi2=    1.9 chi2(3ppt)-chi2(best)=  284.3
+   TESS-SPOC_flux_allq      A=  0.23± 0.16 ppt  n_in=  58  dchi2=    1.9 chi2(3ppt)-chi2(best)=  284.3
+   TESS-SPOC_sap_q0         A=  0.11± 0.16 ppt  n_in=  58  dchi2=    0.5 chi2(3ppt)-chi2(best)=  312.9
+   TESS-SPOC_sap_allq       A=  0.11± 0.16 ppt  n_in=  58  dchi2=    0.5 chi2(3ppt)-chi2(best)=  312.9
+   QLP_flux_q0              A=  0.26± 0.20 ppt  n_in=  56  dchi2=    1.7 chi2(3ppt)-chi2(best)=  183.9
+   QLP_flux_allq            A=  0.20± 0.20 ppt  n_in=  58  dchi2=    1.1 chi2(3ppt)-chi2(best)=  198.1
+   QLP_sap_q0               A=  0.26± 0.20 ppt  n_in=  56  dchi2=    1.7 chi2(3ppt)-chi2(best)=  183.9
+   QLP_sap_allq             A=  0.20± 0.20 ppt  n_in=  58  dchi2=    1.1 chi2(3ppt)-chi2(best)=  198.1
+tc=2629.182 S48 n=[7]
+   SPOC_flux_q0             A=  0.01± 0.15 ppt  n_in= 286  dchi2=    0.0 chi2(3ppt)-chi2(best)=  383.1
+   SPOC_flux_allq           A=  0.01± 0.15 ppt  n_in= 286  dchi2=    0.0 chi2(3ppt)-chi2(best)=  383.1
+   SPOC_sap_q0              A=  0.22± 0.15 ppt  n_in= 286  dchi2=    2.1 chi2(3ppt)-chi2(best)=  330.9
+   SPOC_sap_allq            A=  0.22± 0.15 ppt  n_in= 286  dchi2=    2.0 chi2(3ppt)-chi2(best)=  332.3
+   TESS-SPOC_flux_q0        A=  0.01± 0.15 ppt  n_in=  58  dchi2=    0.0 chi2(3ppt)-chi2(best)=  395.3
+   TESS-SPOC_flux_allq      A=  0.01± 0.15 ppt  n_in=  58  dchi2=    0.0 chi2(3ppt)-chi2(best)=  395.3
+   TESS-SPOC_sap_q0         A=  0.25± 0.15 ppt  n_in=  58  dchi2=    2.8 chi2(3ppt)-chi2(best)=  348.6
+   TESS-SPOC_sap_allq       A=  0.25± 0.15 ppt  n_in=  58  dchi2=    2.8 chi2(3ppt)-chi2(best)=  348.6
+   QLP_flux_q0              A=  0.18± 0.19 ppt  n_in=  56  dchi2=    0.9 chi2(3ppt)-chi2(best)=  231.2
+   QLP_flux_allq            A= -5.62± 5.30 ppt  n_in=  58  dchi2=    1.1 chi2(3ppt)-chi2(best)=    2.6
+   QLP_sap_q0               A=  0.18± 0.19 ppt  n_in=  56  dchi2=    0.9 chi2(3ppt)-chi2(best)=  231.2
+   QLP_sap_allq             A= -5.62± 5.30 ppt  n_in=  58  dchi2=    1.1 chi2(3ppt)-chi2(best)=    2.6
+tc=2639.464 S49 n=[10]
+   SPOC_sap_allq            A= -0.09± 0.23 ppt  n_in= 286  dchi2=    0.2 chi2(3ppt)-chi2(best)=  177.6
+   TESS-SPOC_sap_allq       A=  0.14± 0.24 ppt  n_in=  57  dchi2=    0.3 chi2(3ppt)-chi2(best)=  143.1
+   QLP_flux_q0              no in-transit data
+   QLP_flux_allq            A=  0.66± 0.34 ppt  n_in=  57  dchi2=    3.7 chi2(3ppt)-chi2(best)=   46.1
+   QLP_sap_q0               no in-transit data
+   QLP_sap_allq             A=  0.66± 0.34 ppt  n_in=  57  dchi2=    3.7 chi2(3ppt)-chi2(best)=   46.1
+tc=2663.455 S49 n=[3, 6, 9, 12]
+   SPOC_flux_q0             A= -0.15± 0.17 ppt  n_in= 286  dchi2=    0.8 chi2(3ppt)-chi2(best)=  359.6
+   SPOC_flux_allq           A= -0.15± 0.17 ppt  n_in= 286  dchi2=    0.8 chi2(3ppt)-chi2(best)=  359.6
+   SPOC_sap_q0              A= -0.22± 0.16 ppt  n_in= 286  dchi2=    1.9 chi2(3ppt)-chi2(best)=  397.7
+   SPOC_sap_allq            A= -0.22± 0.16 ppt  n_in= 286  dchi2=    1.9 chi2(3ppt)-chi2(best)=  397.7
+   TESS-SPOC_flux_q0        A=  0.12± 0.16 ppt  n_in=  57  dchi2=    0.5 chi2(3ppt)-chi2(best)=  323.0
+   TESS-SPOC_flux_allq      A=  0.12± 0.16 ppt  n_in=  57  dchi2=    0.5 chi2(3ppt)-chi2(best)=  323.0
+   TESS-SPOC_sap_q0         A= -0.22± 0.15 ppt  n_in=  57  dchi2=    2.1 chi2(3ppt)-chi2(best)=  457.9
+   TESS-SPOC_sap_allq       A= -0.22± 0.15 ppt  n_in=  57  dchi2=    2.1 chi2(3ppt)-chi2(best)=  457.9
+   QLP_flux_q0              A= -0.25± 0.19 ppt  n_in=  55  dchi2=    1.7 chi2(3ppt)-chi2(best)=  296.7
+   QLP_flux_allq            A= -0.27± 0.18 ppt  n_in=  57  dchi2=    2.2 chi2(3ppt)-chi2(best)=  317.5
+   QLP_sap_q0               A= -0.25± 0.19 ppt  n_in=  55  dchi2=    1.7 chi2(3ppt)-chi2(best)=  296.7
+   QLP_sap_allq             A= -0.27± 0.18 ppt  n_in=  57  dchi2=    2.2 chi2(3ppt)-chi2(best)=  317.5
+tc=3339.555 S75 n=[11]
+   TESS-SPOC_flux_q0        no in-transit data
+   TESS-SPOC_flux_allq      no in-transit data
+   TESS-SPOC_sap_q0         no in-transit data
+   TESS-SPOC_sap_allq       no in-transit data
+   QLP_flux_q0              no in-transit data
+   QLP_flux_allq            no in-transit data
+   QLP_sap_q0               no in-transit data
+   QLP_sap_allq             no in-transit data
+tc=3348.902 S75 n=[7]
+   TESS-SPOC_flux_q0        A= -0.07± 0.16 ppt  n_in= 172  dchi2=    0.2 chi2(3ppt)-chi2(best)=  350.4
+   TESS-SPOC_flux_allq      A= -0.07± 0.16 ppt  n_in= 172  dchi2=    0.2 chi2(3ppt)-chi2(best)=  350.4
+   TESS-SPOC_sap_q0         A= -0.11± 0.16 ppt  n_in= 172  dchi2=    0.5 chi2(3ppt)-chi2(best)=  381.3
+   TESS-SPOC_sap_allq       A= -0.11± 0.16 ppt  n_in= 172  dchi2=    0.5 chi2(3ppt)-chi2(best)=  381.3
+   QLP_flux_q0              A= -0.54± 0.18 ppt  n_in= 172  dchi2=    8.5 chi2(3ppt)-chi2(best)=  369.3
+   QLP_flux_allq            A= -0.54± 0.18 ppt  n_in= 172  dchi2=    8.5 chi2(3ppt)-chi2(best)=  369.3
+   QLP_sap_q0               A= -0.54± 0.18 ppt  n_in= 172  dchi2=    8.5 chi2(3ppt)-chi2(best)=  369.3
+   QLP_sap_allq             A= -0.54± 0.18 ppt  n_in= 172  dchi2=    8.5 chi2(3ppt)-chi2(best)=  369.3
+tc=3359.184 S75 n=[10]
+   TESS-SPOC_flux_q0        no in-transit data
+   TESS-SPOC_flux_allq      no in-transit data
+   TESS-SPOC_sap_q0         no in-transit data
+   TESS-SPOC_sap_allq       A=  0.14± 0.19 ppt  n_in= 171  dchi2=    0.6 chi2(3ppt)-chi2(best)=  227.6
+   QLP_flux_q0              A=  0.45± 0.26 ppt  n_in= 171  dchi2=    3.0 chi2(3ppt)-chi2(best)=   99.5
+   QLP_flux_allq            A=  0.42± 0.25 ppt  n_in= 171  dchi2=    2.7 chi2(3ppt)-chi2(best)=  103.5
+   QLP_sap_q0               A=  0.45± 0.26 ppt  n_in= 171  dchi2=    3.0 chi2(3ppt)-chi2(best)=   99.5
+   QLP_sap_allq             A=  0.42± 0.25 ppt  n_in= 171  dchi2=    2.7 chi2(3ppt)-chi2(best)=  103.5
+tc=3383.174 S76 n=[3, 6, 9, 12]
+   TESS-SPOC_flux_q0        A= -0.03± 0.16 ppt  n_in= 171  dchi2=    0.0 chi2(3ppt)-chi2(best)=  346.5
+   TESS-SPOC_flux_allq      A= -0.03± 0.16 ppt  n_in= 171  dchi2=    0.0 chi2(3ppt)-chi2(best)=  346.5
+   TESS-SPOC_sap_q0         A=  0.11± 0.16 ppt  n_in= 171  dchi2=    0.5 chi2(3ppt)-chi2(best)=  324.3
+   TESS-SPOC_sap_allq       A=  0.11± 0.16 ppt  n_in= 171  dchi2=    0.5 chi2(3ppt)-chi2(best)=  324.3
+   QLP_flux_q0              A=  0.02± 0.22 ppt  n_in= 171  dchi2=    0.0 chi2(3ppt)-chi2(best)=  188.9
+   QLP_flux_allq            A=  0.02± 0.22 ppt  n_in= 171  dchi2=    0.0 chi2(3ppt)-chi2(best)=  188.9
+   QLP_sap_q0               A=  0.02± 0.22 ppt  n_in= 171  dchi2=    0.0 chi2(3ppt)-chi2(best)=  188.9
+   QLP_sap_allq             A=  0.02± 0.22 ppt  n_in= 171  dchi2=    0.0 chi2(3ppt)-chi2(best)=  188.9

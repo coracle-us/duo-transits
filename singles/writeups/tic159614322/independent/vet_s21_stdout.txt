@@ -1,0 +1,24 @@
+TESS-SPOC_flux         depth@pred= 2.26±0.27 ppt (SNR  8.2)  tc_best=1883.7763 [1883.7683,1883.7823]  Δtc=+0.43 h  Δχ²(flat-best)=70.8
+TESS-SPOC_sap          depth@pred= 3.27±0.33 ppt (SNR  9.9)  tc_best=1883.7803 [1883.7763,1883.7843]  Δtc=+0.53 h  Δχ²(flat-best)=111.1
+QLP_flux               depth@pred= 3.62±0.32 ppt (SNR 11.2)  tc_best=1883.7423 [1883.7363,1883.7703]  Δtc=-0.38 h  Δχ²(flat-best)=126.3
+QLP_sap                depth@pred= 3.62±0.32 ppt (SNR 11.2)  tc_best=1883.7423 [1883.7363,1883.7703]  Δtc=-0.38 h  Δχ²(flat-best)=126.3
+QLP_flux_allq          depth@pred= 3.15±0.38 ppt (SNR  8.4)  tc_best=1883.7843 [1883.7783,1883.7883]  Δtc=+0.62 h  Δχ²(flat-best)=84.6
+own_ap1.0              depth@pred= 5.60±0.65 ppt (SNR  8.6)  tc_best=1883.7803 [1883.7743,1883.7843]  Δtc=+0.53 h  Δχ²(flat-best)=81.9
+own_ap1.5              depth@pred= 4.37±0.47 ppt (SNR  9.3)  tc_best=1883.7743 [1883.7683,1883.7803]  Δtc=+0.38 h  Δχ²(flat-best)=92.2
+own_ap2.0              depth@pred= 3.60±0.37 ppt (SNR  9.9)  tc_best=1883.7803 [1883.7763,1883.7843]  Δtc=+0.53 h  Δχ²(flat-best)=110.6
+own_ap2.5              depth@pred= 3.19±0.33 ppt (SNR  9.6)  tc_best=1883.7803 [1883.7763,1883.7843]  Δtc=+0.53 h  Δχ²(flat-best)=103.7
+own_ap3.0              depth@pred= 2.74±0.34 ppt (SNR  8.2)  tc_best=1883.7803 [1883.7743,1883.7843]  Δtc=+0.53 h  Δχ²(flat-best)=75.5
+own_ap2.0_annbkg       depth@pred= 3.31±0.45 ppt (SNR  7.3)  tc_best=1883.7883 [1883.7823,1883.7963]  Δtc=+0.72 h  Δχ²(flat-best)=68.4
+known event depths in own photometry:
+   S14_ap1.0             2.63±0.35 ppt
+   S14_ap1.5             2.87±0.19 ppt
+   S14_ap2.0             2.84±0.19 ppt
+   S14_ap2.5             2.76±0.20 ppt
+   S14_ap3.0             2.56±0.22 ppt
+   S14_ap2.0_annbkg      3.17±0.24 ppt
+   S41_ap1.0             3.59±0.20 ppt
+   S41_ap1.5             3.60±0.15 ppt
+   S41_ap2.0             3.53±0.15 ppt
+   S41_ap2.5             3.42±0.16 ppt
+   S41_ap3.0             3.28±0.17 ppt
+   S41_ap2.0_annbkg      3.69±0.18 ppt

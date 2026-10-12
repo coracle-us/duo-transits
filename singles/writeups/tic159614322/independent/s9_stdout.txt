@@ -1,0 +1,3 @@
+S14: in-transit centroid shift col -0.08±0.18 mpix, row -0.14±0.19 mpix (n_in=17)
+S41: in-transit centroid shift col -0.16±0.14 mpix, row +0.13±0.15 mpix (n_in=50)
+S21: in-transit centroid shift col +1.84±0.13 mpix, row +0.91±0.12 mpix (n_in=15)
