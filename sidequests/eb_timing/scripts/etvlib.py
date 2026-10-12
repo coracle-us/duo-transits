@@ -37,8 +37,11 @@ PRODUCTS = ["SPOC_120", "TESS-SPOC", "QLP"]
 MIN_FRAC = 0.6
 
 
+MAX_SECTOR = None   # set by run_etv --max-sector (e.g. 86 to match Borkovits+2026)
+
+
 def load(tic):
-    lc = ap.load_lightcurves(tic, products=PRODUCTS)
+    lc = ap.load_lightcurves(tic, max_sector=MAX_SECTOR, products=PRODUCTS)
     if not len(lc):
         return lc
     # exposure per sector = median cadence (FFI exposure ~ cadence)

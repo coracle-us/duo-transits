@@ -9,7 +9,7 @@ sap_flux when present), reusing fetch_data._col for the column conversion, and w
 sidequests/eb_timing/cache/lc/<TIC>/ (gitignored). FITS files are deleted after conversion.
 
 Product preference per sector: SPOC 120 s > TESS-SPOC (FFI) > QLP (FFI).
-Usage:  python sidequests/eb_timing/scripts/fetch_lc.py TIC [TIC ...]
+Usage:  python sidequests/eb_timing/scripts/fetch_lc.py [--max-sector=N] TIC [TIC ...]
 """
 import shutil
 import sys
@@ -31,7 +31,7 @@ RANK = [("SPOC", 120), ("TESS-SPOC", None), ("QLP", None)]
 MAX_SECTOR = 107
 
 
-def fetch(tic):
+def fetch(tic, max_sector=MAX_SECTOR):
     import lightkurve as lk
     tdir = LCDIR / str(tic)
     tdir.mkdir(parents=True, exist_ok=True)
@@ -48,7 +48,7 @@ def fetch(tic):
     tab = sr.table.to_pandas()
     tab["sector"] = tab.mission.str.extract(r"(\d+)").astype(float)
     tab["exp"] = tab.exptime.astype(float).round().astype(int)
-    tab = tab[tab.sector.notna() & (tab.sector <= MAX_SECTOR)]
+    tab = tab[tab.sector.notna() & (tab.sector <= max_sector)]
     # TESS-SPOC/QLP can only appear in a sector without SPOC 120 s
     tab[["sector", "author", "exp"]].to_csv(tdir / "search_results.csv", index=False)
     n_ok = n_fail = 0
@@ -94,9 +94,13 @@ def fetch(tic):
 
 
 def main():
-    tics = [int(x) for x in sys.argv[1:]]
+    args = sys.argv[1:]
+    ms = MAX_SECTOR
+    if args and args[0].startswith("--max-sector="):
+        ms = int(args.pop(0).split("=")[1])
+    tics = [int(x) for x in args]
     with ProcessPoolExecutor(max_workers=4) as ex:
-        for tic, n_ok, n_fail in ex.map(fetch, tics):
+        for tic, n_ok, n_fail in ex.map(fetch, tics, [ms] * len(tics)):
             pass
 
 

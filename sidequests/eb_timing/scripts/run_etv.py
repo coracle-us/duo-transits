@@ -525,8 +525,22 @@ def plot(tic, lc, tmpl, P, T0, ph2, oc, good, d, models, p, tref, Pg, chi_g, occ
 
 
 def main():
+    """Options (before the TICs): --ephem=CSV (TIC, Per, BJD0 seed ephemeris instead of the
+    Prsa catalogue), --max-sector=N (ignore sectors > N), --tag=NAME (write outputs to
+    results/oc_NAME/ and figs/NAME/ instead of results/oc/ and figs/)."""
+    global OCDIR, FIG
+    args = sys.argv[1:]
     cat = pd.read_csv(CAT).drop_duplicates("TIC")
-    for tic in [int(x) for x in sys.argv[1:]]:
+    while args and args[0].startswith("--"):
+        k, v = args.pop(0)[2:].split("=", 1)
+        if k == "ephem":
+            cat = pd.read_csv(v, comment="#").drop_duplicates("TIC")
+        elif k == "max-sector":
+            el.MAX_SECTOR = int(v)
+        elif k == "tag":
+            OCDIR = HERE / "results" / f"oc_{v}"
+            FIG = HERE / "figs" / v
+    for tic in [int(x) for x in args]:
         try:
             run(tic, cat)
         except Exception as e:  # noqa: BLE001

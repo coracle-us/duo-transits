@@ -1,7 +1,8 @@
 """
 Northern CVZ test sets, fixed BEFORE any timing is run on them.
 
-Recall set: all 35 Borkovits+2026 group-L1 (certain pure-LTTE) systems, from
+Recall set: all 35 Borkovits+2026 group-L1 (certain pure-LTTE) systems, plus the 31 D1
+  (certain LTTE + dynamical) systems (added after the L1 fetch; reported separately), from
   data/b26_triples.csv (solution 1). Seed ephemeris: B26 P1 (only 5 of the 35 are in the
   Prsa+2022 catalogue); the epoch is arbitrary (run_etv moves phase 0 to the template minimum).
 False-alarm set: Prsa+2022 EBs in the NCVZ (ecliptic latitude > 78 deg, inside the B26 'in
@@ -10,6 +11,10 @@ False-alarm set: Prsa+2022 EBs in the NCVZ (ecliptic latitude > 78 deg, inside t
   data/known_multiples.csv (which contains every TIC named in Mitnyan+2024 and B26, i.e.
   their 135/168 candidates and long-term-variation systems, plus 25 other multiples papers).
   50 drawn with numpy default_rng(20261012).
+  Known defect, found after the list was committed: known_triples.py missed 15 B26 TICs
+  written with LaTeX superscripts, and one of them, TIC 377307592 (B26 group L3, P2 = 7427 d),
+  is in the 50. It is kept in the file (the list is fixed) but excluded from the
+  false-alarm statistics (49 systems), and reported separately.
 Baseline: S14-86 (B26), enforced by fetching/loading sectors <= 86.
 
 Output: data/ncvz_recall_list.csv, data/ncvz_fa_list.csv, data/ncvz_ephem.csv
@@ -26,7 +31,11 @@ SEED = 20261012
 def main():
     b = pd.read_csv(D / "b26_triples.csv")
     L1 = b[(b.group == "L1") & (b.solution == 1)].copy()
-    rec = L1[["tic", "P1", "P2", "P2_err", "A_ltte_s", "A_ltte_err_s", "e2", "e2_err"]].rename(columns={"tic": "TIC"})
+    # D1 (certain LTTE + dynamical) added after the first fetch showed 13 of the 35 L1 stars
+    # have <= 2 sectors of MAST light curves (faint; B26 used their own FFI photometry)
+    D1 = b[(b.group == "D1") & (b.solution == 1)].copy()
+    rec = pd.concat([L1, D1])[["tic", "group", "P1", "P2", "P2_err", "A_ltte_s", "A_ltte_err_s", "e2", "e2_err"]]
+    rec = rec.rename(columns={"tic": "TIC"}).drop_duplicates("TIC")
     rec.to_csv(D / "ncvz_recall_list.csv", index=False)
 
     a = pd.read_csv(D / "sample_all.csv")
