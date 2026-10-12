@@ -18,9 +18,9 @@ OUT = ROOT / "k2singles" / "rnaas"
 # EPIC, TIC, group, alias divisors n (P = P_fit / n), events, prior period (with source), note
 ROWS = [
     (211924561, 238606535, "planet", [1, 2], "C5, C16; S46, S72",
-     "SPOC TOI: $\\leq702.47$\\,d", "TOI-5560.01; V-shaped (see text)"),
+     "$\\leq702.47$\\,d (TOI)", "TOI-5560.01; V-shaped"),
     (211503363, 20444116, "planet", [1, 2], "C5; S45, S72",
-     "none (single; Kov\\'acs 2020)", "$R_2\\approx2.1$--$2.4\\,R_{\\rm J}$; evolved host"),
+     "none (single)$^g$", "$R_2\\approx2.2\\,R_{\\rm J}$: probably an M dwarf"),
     (211411112, 437034781, "validation", [1], "C5, C16; S46",
      "62.59484(3)\\,d$^a$", "Sanders 617 (M67)"),
     (246194159, 301328232, "eb", [1], "C12; S70, S92",
@@ -28,7 +28,7 @@ ROWS = [
     (211489484, 6951741, "eb", [1], "C5, C18; S7, S46",
      "TCE 106.94\\,d (excluded)", "secondary at phase 0.194"),
     (211892898, 184895645, "eb", [1], "C5, C16, C18",
-     "Gaia SB1 72.53(3)\\,d", "red giant; eclipse at Gaia primary conjunction"),
+     "Gaia SB1 72.53(3)\\,d", "red giant; matches Gaia conjunction"),
     (248811085, 349987241, "eb", [1], "C14; S46, S72", "none", ""),
     (246089124, 49603732, "eb", [1], "C12; S70, S92", "none", "K2 secondary at phase 0.494"),
     (246696483, 436612436, "eb", [1, 2], "C13; S43, S70", "none", "$P/2$ disfavoured by one S98 epoch"),
@@ -52,9 +52,17 @@ def fmt(p, s):
     return f"{p:.{nd}f}({round(s * 10 ** nd):d})"
 
 
+GROUPS = {"planet": "Transiting-planet candidates (as catalogued)", "validation": "Validation: published orbit",
+          "eb": "Eclipsing binaries: new or refined periods", "known": "Eclipsing binaries: periods already published"}
+
+
 def main():
     rows, tex = [], []
+    last = None
     for epic, tic, grp, ns, events, prior, note in ROWS:
+        if grp != last:
+            tex.append(f"\\cutinhead{{{GROUPS[grp]}}}")
+            last = grp
         j = json.loads((EPH / f"{epic}.json").read_text())
         P, sP = j["P"], j["sigma_P"]
         if epic == 202126877:                     # eclipse-timing variations: quote the mean only
