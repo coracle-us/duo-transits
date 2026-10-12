@@ -161,6 +161,8 @@ interpretation there.
 
 The TIC 147035057 write-up was revised the same day (the eclipse is grazing, so the companion is likely stellar). The version Warwick received said "≈1.1 R_Jup, larger if grazing". The email itself already called the companion "probably a low-mass star". A short follow-up with the revised PDF is optional.
 
+Replies from the groups contacted are logged privately in `private/` (gitignored).
+
 ## Batch 3 (20 Gaia-clean targets, depth 0.2–1.2%, by expected SNR; 2026-10-11)
 
 New since batch 2: pilot.py measures unprocessed recent sectors (≥ 100) with our own TESScut

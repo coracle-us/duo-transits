@@ -9,3 +9,9 @@ venv/
 
 # Regenerable per-epoch alias tables (python scripts/validate_pipeline.py)
 results/aliases/
+
+# Private: correspondence and family documents (kept locally, never pushed)
+private/
+results/outreach/
+docs/family_report/
+singles/writeups/*/email_draft.md

@@ -41,8 +41,9 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
       journal, volume and page against arXiv API metadata, ASCL, the NASA TESS BibTeX file
       (Huang 2020, Caldwell 2020) and the A&A/arXiv listing (Heidari 2024). All match `rnaas.tex`;
       no changes were needed.
-- [ ] **Placeholders.** Add an ORCID to `\author[orcid=...]` or remove the option. Confirm the
-      affiliation wording. CLAUDE.md suggests "Coracle".
+- [x] **ORCID** added: 0009-0000-7524-4470.
+- [ ] **Affiliation.** Confirm the wording ("Independent researcher, USA" now). CLAUDE.md
+      suggests "Coracle".
 - [ ] **Repository.** Push it to GitHub. The note cites `github.com/coracle-us/duo-transits`,
       which is public, but this session's commits have not been pushed. Consider a Zenodo DOI
       for the release.
