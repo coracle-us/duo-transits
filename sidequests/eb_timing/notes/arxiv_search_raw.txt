@@ -1,0 +1,116 @@
+# arXiv API search, run 2026-10-11 (export.arxiv.org/api/query, newest first)
+===  abs:"eclipse timing" AND abs:TESS 78
+2026-09-25 2609.30792v1 Min-Ji Jeong | BS Cassiopeiae: A Contact Binary with Starspot-Driven Variability and Evidence for Additional Components
+2026-09-21 2609.25332v1 S. A. Rappaport | TIC 366240660 - A Dynamically Active Triple With a Very Short Outer Period of 30.5 Days
+2026-09-09 2609.10786v1 Ganesh N. Pawar | UX Men: Detached Eclipsing Binary as a Benchmark Candidate
+2026-08-29 2608.29393v1 Atila Poro | BSN-VII: Photometric Light Curve Study of Three Cool, Large-Amplitude, Low Mass, W-Subtype Contact Binaries
+2026-08-24 2608.22935v1 P. Zasche | Six new doubly eclipsing quadruples in a 2+2 architecture
+2026-08-21 2608.20772v1 Razieh Aliakbari | BSN: Light Curve Modeling and Orbital Period Analysis of the Contact Binaries OV Leo and V339 Leo
+2026-08-13 2608.13034v1 Tamás Borkovits | TIC 433545934: The first 2+2 type doubly eclipsing binary with extra, mutual eclipses
+2026-08-12 2608.11896v1 Bakuh Danang Setyo Budi | First and Comprehensive Study of V0757 Pup : $γ-$Doradus Pulsator in Detached Eclipsing Binary
+2026-07-21 2607.18811v1 Fang-Bin Meng | KIC 6464285: A Solar-type Eclipsing Binary in a Hierarchical Triple System with Quasi-periodic Out-of-eclipse Modulations
+2026-05-19 2605.20080v1 Brian P. Powell | TIC 295741342: A Triply-Eclipsing Triple Star System with a Giant Tertiary
+2026-04-27 2604.25056v2 A. Moharana | V446 Cephei: a $β$ Cep pulsator in a multiple system
+2026-04-21 2604.19402v1 Alexios Liakos | IZ Tel and UW Vir: Southern oscillating eclipsing Algol systems with active mass transfer
+2026-04-05 2604.04004v1 T. Borkovits | A Few Years Later: Revisiting Period Variations of Eclipsing Binaries in the Northern Continuous Viewing Zone of TESS
+2026-03-21 2603.20872v1 A. C. Kutluay | Rediscussion of Eclipsing Binaries. Paper XXX. The Slightly Evolved F-type System BK Pegasi
+2026-02-10 2602.09925v1 Özgür Baştürk | A Detailed Study of the Physical and Orbital Characteristics, and Eclipse Timing Variations of the Post Common Envelope Binary DD CrB
+2026-01-28 2601.21125v2 Ataru Tanikawa | Discovery of a compact hierarchical triple main-sequence star system while searching for binary stars with compact objects
+2025-11-10 2511.07554v1 Steven R. Majewski | Characterizing TESS-Identified Quadruple and Higher Order Eclipsing Binaries: I. Speckle Imaging with DSSI and HRCam
+2025-10-31 2510.27470v1 Veselin B. Kostov | 52 Eclipsing Quadruple Star Candidates Discovered in TESS Full Frame Images
+2025-10-06 2510.04565v1 T. Borkovits | Ten new, ultracompact triply eclipsing triple star systems
+2025-07-22 2507.17035v1 B. Kalomeni | Comprehensive analysis of CM Draconis: eclipse timing variations driven by either a third body or stellar magnetic activity
+2025-06-17 2506.14395v1 Alexios Liakos | Asteroseismology of four eccentric double-lined spectroscopic eclipsing binaries
+2025-05-27 2505.20592v1 Peng-Fei Ye | Photometric and Spectroscopic Studies of Two Early-Type Eclipsing Binaries
+2025-04-16 2504.12239v1 Brian P. Powell | The Discovery of Two Quadruple Star Systems with the Second and Third Shortest Outer Periods
+2025-04-14 2504.10608v1 Douglas R. Gies | TESS Light Curve of the Interacting Binary W Serpentis
+2025-03-26 2503.20900v2 Ekrem Murat Esmer | Eclipse Timing Variations of Circumbinary Substellar Objects in TESS Data
+2025-02-13 2502.09480v1 T. Borkovits | Then and now: A new look at the eclipse timing variations of hierarchical triple star candidates in the primordial $Kepler$-field, revisited
+2024-11-19 2411.12132v2 Kai Li | Detection of the lowest mass ratio contact binary in the universe: TYC 3801-1529-1
+2024-10-02 2410.01711v1 Veselin B. Kostov | TIC 290061484: A Triply Eclipsing Triple System with the Shortest Known Outer Period of 24.5 Days
+2024-09-06 2409.04359v2 Alexios Liakos | Modelling of eclipsing binary systems with pulsating components and tertiary companions: BF Vel and RR Lep
+2024-08-27 2408.15358v2 Konstantinos Zervas | NSVS 14256825: period variation and orbital stability analysis of two possible substellar companions
+2024-07-19 2407.14421v3 Siddhant Solanki | Short-period Heartbeat Binaries from TESS Full-Frame Images
+2024-05-31 2406.00097v1 S. Evcil | Updated Absolute Parameters and Kinematics of IS CMa
+2024-05-30 2405.19615v2 Federico R. Noguer | Enhancing Exoplanet Ephemerides by Leveraging Professional and Citizen Science Data: A Test Case with WASP-77A b
+2024-03-25 2403.16657v1 P. Zasche | Six new eccentric eclipsing systems with a third body
+2024-03-18 2403.12041v1 S. A. Rappaport | Seven new triply eclipsing triple star systems
+2024-03-12 2403.07694v2 Frédéric Marcadon | Precision timing of eclipsing binaries from TESS full frame images. Method and performance
+2024-02-02 2402.01486v1 T. Mitnyan | Eclipse timing study of new hierarchical triple star candidates in the Northern Continuous Viewing Zone of TESS
+2023-11-13 2311.07232v1 Tamás Borkovits | Observational Detection of Higher Order Secular Perturbations in Tight Hierarchical Triple Stars
+2023-10-09 2310.05890v1 Ayush Moharana | Solaris photometric survey: Search for circumbinary companions using eclipse timing variations
+2023-09-25 2309.14200v1 Veselin B. Kostov | 101 Eclipsing Quadruple Star Candidates Discovered in TESS Full Frame Images
+2023-09-04 2309.01639v1 Donát R. Czavalinga | Four New Compact Triply Eclipsing Triples found with Gaia and TESS
+2023-08-17 2308.08908v1 Somayeh Soomandar | A New Look at the YY CrB Binary System
+2023-04-01 2304.00297v1 F. -X. Li | V606 Cen: A Newly Formed Massive Contact Binary in a Hierarchical Triple System
+2023-03-24 2303.14275v1 Veselin B. Kostov | TIC 219006972: A Compact, Coplanar Quadruple Star System Consisting of Two Eclipsing Binaries with an Outer Period of 168 days
+2023-03-16 2303.09109v1 Mehmet Tanriver | The First Multiband Photometric Light Curve Solutions of the V Gru Binary System from the Southern Hemisphere
+2023-01-31 2301.13810v1 S. A. Rappaport | A Study of Nine Triply Eclipsing Triples
+2023-01-31 2301.13521v1 P. Zasche | V994 Her: A Unique Triply Eclipsing Sextuple Star System
+2022-12-06 2212.02903v1 Donát R. Czavalinga | Newly identified compact hierarchical triple system candidates using Gaia DR3
+2022-10-11 2210.05312v1 P. Gaulme | KIC 7955301: a hierarchical triple system with eclipse timing variations and an oscillating red giant
+2022-09-19 2209.09041v1 Hye-Young Kim | A Photometric and Spectroscopic Study of the Short-Period Algol EW Boötis with a $δ$ Sct Pulsator
+2022-09-02 2209.01142v1 T. Hajdu | CoRoT-TESS eclipsing binaries with light-travel-time effect
+2022-08-30 2208.14520v1 Kyle A. Pearson | Utilizing a global network of telescopes to update the ephemeris for the highly eccentric planet HD 80606 b and to ensure the efficient sche
+2022-08-11 2208.05789v1 Brian P. Powell | TIC 114936199: A Quadruple Star System with a 12-day Outer Orbit Eclipse
+2022-08-05 2208.02986v1 R. Priyatikanto | Characterisation of the eclipsing post-common-envelope binary TIC 60040774
+2022-07-20 2207.09838v1 Olivera Latković | Eccentric orbits and apsidal motion in the eclipsing binaries EK Cep and HS Her
+2022-07-12 2207.05517v1 T. Borkovits | Von Zeipel - Lidov - Kozai cycles in action: $Kepler$ triples with eclipse depth variations: KICs 6964043, 5653126, 5731312 and 8023317
+2022-07-07 2207.03215v1 Christopher Lloyd | The eclipse timings of RR Lyncis
+2022-04-28 2204.13629v1 A. Liakos | Comprehensive analysis of southern eclipsing systems with pulsating components: The cases of HM Pup, V632 Sco and TT Vel
+2022-02-14 2202.06964v1 Nora L. Eisner | Planet Hunters TESS IV: A massive, compact hierarchical triple star system TIC 470710327
+2022-01-27 2201.11699v1 Yan Liang | DI Herculis Revisited: Starspots, Gravity Darkening, and 3-D Obliquities
+2022-01-07 2201.02516v1 John Southworth | Rediscussion of eclipsing binaries. Paper VIII. The doubly-eclipsing quadruple star system V498 Cygni
+2021-11-19 2111.10074v1 T. Borkovits | Triply eclipsing triple stars in the northern TESS fields: TICs 193993801, 388459317 and 52041148
+2021-09-20 2109.09397v2 R. Rattanamala | Eclipse timing variations in the WD+dM eclipsing binary RR Cae
+2021-05-26 2105.12586v1 Veselin B. Kostov | TIC 454140642: A Compact, Coplanar, Quadruple-lined Quadruple Star System Consisting of Two Eclipsing Binaries
+2021-05-03 2105.01074v1 A. S. Baran | Space observations of AA Doradus provide consistent mass determinations. New HW-Vir systems observed with TESS
+2021-03-04 2103.03140v2 D. Baroch | Analysis of apsidal motion in eclipsing binaries using TESS data: I. A test of gravitational theories
+2021-03-01 2103.00925v1 T. Borkovits | BG Ind: the nearest doubly eclipsing, compact hierarchical quadruple system
+2020-12-21 2012.11395v1 Jae Woo Lee | Tidally Excited Modes and $δ$ Scuti Pulsations in the Eclipsing Triple Star IM Persei
+2020-09-07 2009.03378v1 T. Mitnyan | TIC 278825952: a triply eclipsing hierarchical triple system with the most intrinsically circular outer orbit
+2020-08-18 2008.07731v1 A. K. Getley | Stability of planetary, single M dwarf, and binary star companions to Kepler detached eclipsing binaries and a possible five body system
+2020-06-18 2006.10449v1 T. Borkovits | The Compact Triply Eclipsing Triple Star TIC 209409435 Discovered with TESS
+2020-05-14 2005.07203v1 Carolina von Essen | TESS Data for Asteroseismology: Timing verification
+2020-02-24 2002.10588v1 Jae Woo Lee | TESS Photometry of the Eclipsing $δ$ Scuti Star AI Hydrae
+2020-02-17 2002.06902v1 T. Borkovits | TICs 167692429 and 220397947: The first compact hierarchical triple stars discovered with TESS
+2019-05-24 1905.10179v1 Zhanbo Zhang | Distinguishing Polar and Co-planar Circumbinary Exoplanets by Eclipsing Timing Variations
+2016-12-07 1612.02237v2 Hans J. Deeg | TEE, a simple estimator for the precision of eclipse and transit minimum times
+2016-08-02 1608.00784v1 R. Schwarz | Eclipse timing variations to detect possible Trojan planets in binary systems
+2016-08-02 1608.00764v1 R. Schwarz | New prospects for observing and cataloguing exoplanets in well detached binaries
+===  abs:"continuous viewing zone" AND abs:eclipsing 10
+2026-04-05 2604.04004v1 T. Borkovits | A Few Years Later: Revisiting Period Variations of Eclipsing Binaries in the Northern Continuous Viewing Zone of TESS
+2025-04-21 2504.15389v1 K. Oláh | Starspots on eclipsing giant stars I.: The sample and eclipse mapping examples
+2024-09-19 2409.13039v2 Yoshi Nike Emilia Eschen | Viewing the PLATO LOPS2 Field Through the Lenses of TESS
+2024-06-18 2406.12578v1 M. Skarka | Periodic variable A-F spectral type stars in the southern TESS continuous viewing zone
+2024-02-02 2402.01486v1 T. Mitnyan | Eclipse timing study of new hierarchical triple star candidates in the Northern Continuous Viewing Zone of TESS
+2022-07-19 2207.09169v1 John Southworth | Four bright eclipsing binaries with gamma Doradus pulsating components: CM Lac, MZ Lac, RX Dra and V2077 Cyg
+2020-09-07 2009.03378v1 T. Mitnyan | TIC 278825952: a triply eclipsing hierarchical triple system with the most intrinsically circular outer orbit
+2020-06-16 2006.08979v1 Pamela Rowden | TIC 278956474: Two close binaries in one young quadruple system, identified by \textit{TESS}
+2020-02-17 2002.06902v1 T. Borkovits | TICs 167692429 and 220397947: The first compact hierarchical triple stars discovered with TESS
+2019-06-24 1906.09866v1 Diana Kossakowski | TOI-150b and TOI-163b: two transiting hot Jupiters, one eccentric and one inflated, revealed by TESS near and at the edge of the JWST CVZ
+===  abs:"light travel time" AND abs:TESS AND abs:eclipsing 14
+2026-09-25 2609.30792v1 Min-Ji Jeong | BS Cassiopeiae: A Contact Binary with Starspot-Driven Variability and Evidence for Additional Components
+2026-07-21 2607.18811v1 Fang-Bin Meng | KIC 6464285: A Solar-type Eclipsing Binary in a Hierarchical Triple System with Quasi-periodic Out-of-eclipse Modulations
+2026-05-07 2605.05708v2 Linjia Li | IY Lyr: A Thick-Disk first-overtone RR Lyrae Star with a Possible Neutron Star Companion
+2025-05-27 2505.20592v1 Peng-Fei Ye | Photometric and Spectroscopic Studies of Two Early-Type Eclipsing Binaries
+2024-11-11 2411.06803v1 Qi-Huan Zeng | CZ Aqr: an oscillating eclipsing Algol-type system composed of a $δ$ Sct primary star and a subgiant star in a quadruple system
+2024-09-04 2409.02480v1 S. -B. Qian | A brown dwarf orbiting around the planetary-nebula central binary KV Vel
+2024-02-02 2402.01486v1 T. Mitnyan | Eclipse timing study of new hierarchical triple star candidates in the Northern Continuous Viewing Zone of TESS
+2023-08-17 2308.08908v1 Somayeh Soomandar | A New Look at the YY CrB Binary System
+2023-04-01 2304.00297v1 F. -X. Li | V606 Cen: A Newly Formed Massive Contact Binary in a Hierarchical Triple System
+2022-12-06 2212.02903v1 Donát R. Czavalinga | Newly identified compact hierarchical triple system candidates using Gaia DR3
+2022-09-02 2209.01142v1 T. Hajdu | CoRoT-TESS eclipsing binaries with light-travel-time effect
+2022-06-24 2206.12456v2 Ondřej Pejcha | The complex dynamical past and future of double eclipsing binary CzeV343: misaligned orbits and period resonance
+2021-09-20 2109.09397v2 R. Rattanamala | Eclipse timing variations in the WD+dM eclipsing binary RR Cae
+2020-09-07 2009.03378v1 T. Mitnyan | TIC 278825952: a triply eclipsing hierarchical triple system with the most intrinsically circular outer orbit
+===  abs:"triple" AND abs:"eclipse timing" AND abs:catalog 9
+2026-01-28 2601.21125v2 Ataru Tanikawa | Discovery of a compact hierarchical triple main-sequence star system while searching for binary stars with compact objects
+2024-03-12 2403.07694v2 Frédéric Marcadon | Precision timing of eclipsing binaries from TESS full frame images. Method and performance
+2023-11-13 2311.07232v1 Tamás Borkovits | Observational Detection of Higher Order Secular Perturbations in Tight Hierarchical Triple Stars
+2023-09-25 2309.14200v1 Veselin B. Kostov | 101 Eclipsing Quadruple Star Candidates Discovered in TESS Full Frame Images
+2022-12-06 2212.02903v1 Donát R. Czavalinga | Newly identified compact hierarchical triple system candidates using Gaia DR3
+2020-02-17 2002.06902v1 T. Borkovits | TICs 167692429 and 220397947: The first compact hierarchical triple stars discovered with TESS
+2017-02-10 1702.03311v1 K. G. Hełminiak | HIDES spectroscopy of bright detached eclipsing binaries from the $Kepler$ field - II. Double- and triple-lined objects
+2015-06-05 1506.01891v1 Kento Masuda | Absolute Dimensions of a Flat Hierarchical Triple System KIC 6543674 from the Kepler Photometry
+2013-03-05 1303.1197v1 Patrick Gaulme | Red Giants in Eclipsing Binary and Multiple-Star Systems: Modeling and Asteroseismic Analysis of 70 Candidates from Kepler Data

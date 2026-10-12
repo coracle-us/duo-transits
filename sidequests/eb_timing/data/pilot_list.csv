@@ -1,0 +1,25 @@
+# Pilot selection rule, fixed 2026-10-11 BEFORE any timing was run on these systems:
+# the first 20 rows of sample_top200.csv (ranked by expected primary-eclipse count N_ecl)
+# after removing validation systems and any TIC in known_multiples.csv.
+# None of ranks 1-20 is a validation system or known multiple, so the pilot is ranks 1-20.
+rank,TIC
+1,349911034
+2,140661916
+3,393491149
+4,33864821
+5,32000625
+6,25078924
+7,294327312
+8,167123437
+9,220474209
+10,349832824
+11,278861826
+12,279323859
+13,38586438
+14,308451526
+15,350622185
+16,350443417
+17,271596290
+18,374859582
+19,364302118
+20,349642881
