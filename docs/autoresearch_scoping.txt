@@ -1,0 +1,461 @@
+AUTORESEARCH SCOPING: which problem should an overnight agent loop attack?
+Written 2026-10-12 for Jon McBee (duo-transits repo). Research only; no code changes made.
+Hardware assumed: RTX A4500 (20 GB), 32 CPU cores, ~100 experiments x ~5 min per night.
+
+Confidence tags:
+  [V]  = checked this session against the source (arXiv abstract or HTML, GitHub, Zenodo, or a local probe)
+  [R]  = from memory or secondary summaries; verify before citing
+
+======================================================================
+0. WHAT MAKES A GOOD AUTORESEARCH TARGET (the bar used below)
+======================================================================
+karpathy/autoresearch [V] (https://github.com/karpathy/autoresearch):
+  - the agent edits only train.py; prepare.py (data and evaluation) is frozen;
+  - the metric is val_bpb, a single scalar;
+  - each run gets a fixed 5-minute wall-clock budget, about 100 runs overnight;
+  - keep a change if the metric improves, otherwise discard it.
+  The README does not discuss overfitting to the evaluation set.
+
+CrocSwap/integer-mult-bounds [V] (https://github.com/CrocSwap/integer-mult-bounds):
+  - the metric is exact (the exponent saving kappa, about 0.001635);
+  - every win is machine-checked (exact certificates, replayed arithmetic, reproducible make targets);
+  - about a dozen stacked checkpoints;
+  - failed attempts are archived;
+  - conditional claims are labelled as conditional.
+
+The lesson: the loop works when the metric is EXACT, CHEAP and UN-GAMEABLE, and when small
+wins add up. It fails when the metric is noisy (a 3rd-decimal AUC inside cross-validation
+noise) or when labels are noisy (the agent learns the label noise).
+
+Requirements used to rank candidates:
+  (a) frozen, trustworthy labels (synthetic labels are ideal);
+  (b) evaluation in seconds to minutes;
+  (c) real headroom, well above evaluation noise;
+  (d) a locked test set the loop never sees;
+  (e) the result means something to astronomers.
+
+======================================================================
+1. ML VETTING OF PERIODIC TESS/KEPLER TRANSIT SIGNALS (ExoMiner, Astronet)
+======================================================================
+State of the art and reported metrics:
+
+* Astronet: Shallue & Vanderburg 2018, AJ 155, 94, arXiv:1712.05044 [R].
+  - Kepler DR24 autovetter labels.
+  - Test AUC about 0.988.
+  - TFRecords from the google-research/exoplanet-ml repo (DR24, 2018) [R].
+
+* Astronet-Triage: Yu et al. 2019, AJ 158, 25, arXiv:1904.02726 [V abstract].
+  - TESS QLP; triage test AUC 0.992.
+
+* Astronet-Triage-v2: Tey et al. 2023, AJ 165, 95, arXiv:2301.01371 [V].
+  - 24,926 QLP FFI TCEs (S1-39), each labelled by 3-5 human vetters.
+  - Test set: recall 99.6% at precision 75.7%.
+  - AUPRC 0.965 on held-out EM1 data, +4% over v1.
+  - Recovers 3577 of 4140 TOIs.
+  - PUBLIC [V]: Zenodo https://zenodo.org/record/7411579 (CC-BY), with
+    tces_with_labels_v3.csv (3.1 MB) and LC.tar.gz (6.5 GB of QLP light curves).
+  - Code: https://github.com/mdanatg/Astronet-Triage (pinned commit 265366bc).
+
+* ExoMiner: Valizadegan et al. 2022, ApJ 926, 120, arXiv:2111.10009 [V abstract].
+  - Kepler DR25: recall 0.936 at precision 0.99, versus 0.763 for the best prior method.
+  - Validated 301 planets.
+
+* ExoMiner++: Valizadegan et al. 2025, AJ 170, 287, arXiv:2502.09790 [V HTML].
+  - TESS SPOC 2-min, S1-67.
+  - Labels: KP/CP/FP/BD from ExoFOP, EB from the Villanova catalogue, NTP from TESS-ExoClass.
+    TCE counts: 1835 KP, 1846 CP, 32 BD, 12738 EB, 1702 FP, 39009 NTP.
+  - 10-fold cross-validation split BY TARGET STAR, with a 10-model ensemble per fold.
+  - Best TESS result (TESS+Kepler training, aggregated):
+    precision 0.933, recall 0.951, PR-AUC 0.976, ROC-AUC 0.998, accuracy 0.992.
+    Kepler-only: PR-AUC 0.994, ROC-AUC 0.999.
+  - PUBLIC [V]: Zenodo https://doi.org/10.5281/zenodo.15466292 holds:
+      tfrecords_tess-spoc-2min_s1-s67 (19.0 GB .tar.xz; unnormalised features);
+      the labelled TCE catalogue CSV (8.9 MB);
+      the unlabelled-TCE scores CSV (36 MB).
+    Code: https://github.com/nasa/ExoMiner (NOSA licence; Podman image; preprocessing,
+    cross-validation and HPO code).
+
+* ExoMiner++ 2.0 (FFI): Martinho et al. 2026, arXiv:2601.14877 [V abstract]. No metrics in the abstract.
+
+* RAVEN: Hadjigeorghiou et al. 2025, arXiv:2509.17645 [V summary].
+  - XGBoost plus GP classifiers trained on 8 synthetic false-positive scenarios injected into TESS.
+  - AUC >0.97 on every scenario.
+  - On 1361 known TOIs: 97% precision at 66% recall.
+  - Limited to P = 0.5-16 d.
+
+* Other work:
+  - WATSON-Net reports P = 0.93, R = 0.76 [R].
+  - NotPlaNET (arXiv:2405.18278) [V] filters PHT false positives; it flags a median 18% of
+    contaminants and keeps essentially all planets. No public data link.
+
+How saturated is this? Very.
+- ROC-AUC is 0.995-0.999 and PR-AUC 0.97-0.99.
+- The remaining errors are concentrated in the categories where the labels themselves are
+  doubtful. The ExoMiner++ paper itself (Sec. VI.7) lists:
+    * Villanova EBs labelled by light-curve shape only (the model "misclassified" 15 EBs /
+      37 TCEs from that catalogue);
+    * ephemeris-matching failures (5 TCEs mislabelled EB, 3 labelled NTP that are really PCs);
+    * TCEs at half or double the true period;
+    * BDs (recall 0.56).
+- On TESS the residual error rate (about 5% of planets missed, about 7% contamination) is
+  plausibly comparable to the label-noise rate. A higher PR-AUC would then partly measure
+  agreement with label noise.
+
+Could a hobbyist reproduce a baseline in a day?
+- Astronet-Triage-v2: probably yes. The code is public, the data is 6.5 GB, the CNN is small,
+  and the A4500 is enough.
+- ExoMiner++: a reduced single-model baseline from the TFRecords is a 1-2 day job. That
+  assumes the TF/Keras environment cooperates on Windows; use WSL or Podman.
+  The paper's number is a 10-fold x 10-model ensemble trained jointly with Kepler, so a 5-minute
+  experiment cannot reproduce it; you would compare against your own weakened baseline.
+
+Is beating them plausible? BLUNT ANSWER: NO, not in any way that would be publishable.
+  1. The headline metrics are saturated, so gains would be in the 3rd decimal, inside the
+     fold-to-fold scatter.
+  2. Label noise is the binding constraint. An overnight hill-climb on PR-AUC would partly
+     learn to reproduce Villanova and ExoFOP labelling errors (Goodhart).
+  3. The labels come from ExoFOP dispositions that keep changing. "Beating" a 2025 number on
+     2026 labels is not apples to apples.
+  4. Nobody needs a fourth-decimal gain. The useful work (new inputs such as difference
+     images, attitude data, Kepler transfer) has already been done by a NASA team.
+The one partial exception is Astronet-Triage-v2 precision at 99% recall. 75.7% precision
+leaves real headroom, and the labels are human consensus. But QLP owns that pipeline, and
+a better triage CNN without adoption is a weak paper.
+
+======================================================================
+2. ML OR AUTOMATED VETTING AND DETECTION OF SINGLE-TRANSIT EVENTS
+======================================================================
+Prior work:
+
+- MonoTools (Osborn): https://github.com/hposborn/MonoTools. Alias and period probabilities
+  for mono- and duotransits; search plus a vetting heuristic, not ML [R].
+- Single-transit catalogues and searches [R]:
+    Foreman-Mackey et al. 2016, AJ 152, 206 (arXiv:1607.08237), Kepler long-period search;
+    Uehara et al. 2016 (arXiv:1602.07848), Kepler single transits;
+    Kawahara & Masuda 2019 (arXiv:1904.04980), Kepler single and double transits;
+    Osborn et al. 2016 and LaCourse & Jacobs 2018, K2 single transits;
+    Eisner et al. 2021 (arXiv:2011.13944), Planet Hunters TESS long-period candidates;
+    Montalto et al. 2020 (DIAmante);
+    Gill et al. 2020 (NGTS recovery of TESS singles);
+    Hawthorn et al. 2024 (arXiv:2310.17268), duotransits.
+- ML specifically for single events:
+    Malik et al. 2025, AJ, DOI 10.3847/1538-3881/add46d, arXiv:2211.06903 [V].
+      1D CNN trained on PHT volunteer scores; +20% PR-AUC over volunteers on TOI recovery.
+      Training on volunteer labels beat training on synthetic injections.
+    Hansen & Dittmann 2024, AJ 168, 291, arXiv:2403.03427 [V].
+      CNN ensemble with Kepler spacecraft diagnostics; >80% single-transit recovery at
+      P = 50-800 d. Follow-up: arXiv:2608.23425 (AJ 172, 164, Aug 2026), 4 new long-period
+      Kepler candidates [V].
+    Salinas et al. 2025, MNRAS 538, 2031, arXiv:2502.07542 [V].
+      Transformer on TESS FFI S1-26, no phase folding; 214 candidates, 88 of them single-transit.
+      (Salinas is also on our CTOI exclusion list; they are active here.)
+    ExoVeil, Priyanshu 2026, arXiv:2606.02778 [V abstract].
+      Transformer flux predictor plus matched filter plus XGBoost; AUC 0.938 on DR25;
+      32% recovery of 1000-ppm single transits. Single author; transfer claims are weakly
+      supported per a Pith review.
+    PLATO-field TESS monotransits: arXiv:2401.10072 [V]. 48 events, 10 removed in vetting.
+- NotPlaNET (arXiv:2405.18278) states that human vetting still clearly beats models on
+  long-period, single-transit and aperiodic events [V].
+
+How many REAL labelled single events exist? Few. Local probe on data/raw/exofop_toi.csv
+(2026-10-11; script in scratchpad, not committed):
+  - TOIs whose comments flag single, duo or mono, or that have no period: 236.
+  - Their TFOPWG dispositions:
+      PC 152, APC 13, CP 23, KP 13, FP 25, FA 10.
+  - That gives about 36 planets versus about 35 false positives or false alarms with
+    a real outcome.
+  - CTOIs: about 969 single-like rows, essentially all user disposition PC with no TFOPWG outcome.
+  - Our own singles/results/final_classification.csv (306 stars) labels the outcome of
+    only about 60 events (EB-on-target 21, off-target EB 18, inconsistent 23, a handful periodic).
+    Those labels come from our own pipeline, so they are circular as training labels.
+  - Kepler and K2 single-event catalogues add perhaps 100-300 events, most still unresolved [R].
+  Conclusion: real labels are enough for a SANITY CHECK set (about 70 events), not for
+  training or a frozen benchmark metric.
+
+Can injection provide training and test data? Yes. It is the standard route (Hansen &
+Dittmann; Foreman-Mackey 2016). Planet injections are easy: batman into real PDCSAP or
+QLP light curves at random times. The false-positive side is the hard part:
+  - eclipsing-binary single eclipses: transplant real eclipses from the Prša 2022 TESS EB
+    catalogue (data/raw/tess_eb_prsa2022.tsv is already local) or simulate them with ellc;
+  - blends: dilute EB eclipses;
+  - systematics: these come for free in the null light curves, e.g. momentum dumps,
+    scattered light, sector edges.
+Malik et al. found that synthetic training generalises worse than volunteer labels. That
+is a real warning about injection realism.
+
+What would a fair frozen test set be?
+  - Split by TIC, never by event.
+  - Use a fixed injection distribution: depth, duration, impact parameter and time, drawn
+    from TOI-like priors.
+  - Use a locked seed and a separate locked test star list.
+  - Add an external sanity set: the ~70 real ExoFOP single-event outcomes, reported but
+    never optimised on.
+  - Metric: see Section 3.
+
+Is it a genuine gap? PARTLY.
+- Single-event detection with ML is now an active area (Malik, Hansen & Dittmann, Salinas,
+  ExoVeil). It is not empty.
+- What does NOT exist: a public, frozen, injection-based TESS single-event benchmark with an
+  exact metric and published baselines. Every paper reports its own incomparable numbers.
+  A benchmark and a strong baseline are a legitimate, citable contribution.
+- Beating Malik or Salinas head-to-head is not possible: their test sets are not released
+  in comparable form [R; I found no data link for either].
+
+======================================================================
+3. INJECTION-RECOVERY TUNING OF A SEARCH OR VETTING PIPELINE
+======================================================================
+Precedents (this is a well-trodden idea, which makes it respectable):
+- Kepler DR25 Robovetter: Thompson et al. 2018, ApJS 235, 38, arXiv:1710.06758 [V summary].
+  Its pass/fail thresholds were hand-tuned to maximise completeness on injected TCEs and
+  effectiveness on inverted and scrambled light curves. This is literally a manual
+  autoresearch loop.
+  - For P < 100 d: completeness >85% and reliability >98%.
+  - In the hard box (P = 100-500 d, MES <= 10): completeness about 77% and reliability about
+    45% with no score cut [V, NASA Exoplanet Archive KOI companion page].
+  - Reliability is the known weak point for eta-Earth (Bryson et al. 2020, arXiv:2006.15719 [R]).
+  - Every input metric and output disposition for obs, inv, scr1-3, inj1 (on-target planets),
+    inj2 (off-target planets) and inj3 (EBs) is public in https://github.com/nasa/kepler-robovetter
+    [V; about 110 MB total, 10 tar.gz input files and matching outputs].
+- Wotan: Hippke et al. 2019, AJ 158, 143, arXiv:1906.00966 [V]. Compared detrending
+  methods by injection-recovery. The biweight wins, recovering 99% of the shallowest Kepler planets.
+- TLS versus BLS: Hippke & Heller 2019, A&A 623, A39, arXiv:1901.02015 [R].
+- Christiansen et al. 2016, ApJ 828, 99, Kepler pipeline completeness [R].
+- Agent-driven science entries already exist: the FAIR Universe weak-lensing challenge at
+  NeurIPS 2025 had a "fully agent-driven" entry using CMBAgent
+  (https://neurips.cc/virtual/2025/136457) [V].
+
+Metric design that resists gaming:
+  1. The primary scalar is recall at a FIXED false-alarm budget:
+       recall(injected signals) at FAR <= k per 1000 null star-sectors (or, for vetting,
+       completeness at fixed effectiveness).
+     The threshold is set on the negatives inside the evaluation, never by the agent.
+  2. Negatives must include real nulls (light curves with nothing injected), inverted and
+     scrambled data, and astrophysical false positives (injected EB eclipses or blends).
+     Otherwise the agent wins by "detect anything box-shaped".
+  3. Restrict the evaluation to a stated parameter box, e.g. depth 0.5-5 ppt and
+     SNR 7-15, so gains cannot come from easy signals.
+  4. Split by star, in three ways:
+     - dev set: about 60% of stars, which the loop sees;
+     - validation set: about 20% of stars, which scores the keep/discard decision; the
+       agent sees only the scalar;
+     - locked test set: about 20% of stars, evaluated once at the end, by a human.
+  5. Freeze the evaluation harness:
+     - prepare.py is read-only;
+     - its hash is checked at the start of every run;
+     - the agent cannot read labels or the injection table;
+     - injection parameters live outside the agent's file tree.
+  6. Score with a bootstrap. Accept a change only if the gain exceeds about 2 sigma of
+     the bootstrap over stars, which stops random-walk acceptance of noise.
+  7. Log every experiment, including failures, as the integer-mult repo does.
+  8. Make realism attacks hard. Inject into light curves BEFORE detrending, inside the
+     frozen harness. Use the real cadence, gaps and quality flags. Randomise the injection
+     shape (limb darkening, impact parameter) so the agent cannot key on a template.
+
+======================================================================
+4. OTHER ASTRONOMY PROBLEMS (benchmark, best score, data, fit)
+======================================================================
+a) PLAsTiCC (Kaggle 2018). Results paper: Hložek et al. 2020/2023, arXiv:2012.12392 [V].
+   - Winner Kyle Boone (avocado), weighted log-loss 0.68503 private (public 0.6706).
+     2nd 0.69933, 3rd 0.70016.
+   - The paper notes the competition "remains live", so late submissions are scored.
+   - Data: Kaggle, plus the unblinded set on Zenodo (record 2539456 [R]); test set about
+     3.5M objects, tens of GB [R].
+   - Fit: an exact metric with a public leaderboard, but it is saturated (8 years of
+     follow-up papers) and the metric is gameable through the "class 99 / other" weighting.
+     A full test evaluation does not fit in 5 minutes, so you would need a frozen subsample.
+     Low novelty. A good autoresearch demo, a poor paper.
+   - ELAsTiCC (the DESC successor) has no single frozen leaderboard [R]. Poor fit.
+
+b) Photometric redshifts (e.g. Pasquet et al. 2019 SDSS CNN, sigma_MAD about 0.009 [R];
+   LSST DESC PZ DC1, Schmidt et al. 2020, arXiv:2001.03621 [R]).
+   - Saturated and crowded.
+   - Metrics (sigma_MAD, outlier fraction, PIT/CRPS) are easy to trade against each other.
+   - No single frozen benchmark that people agree on. Poor fit.
+
+c) Gaia XP stellar parameters (Andrae, Rix & Chandra 2023, arXiv:2302.02611; Zhang, Green &
+   Rix 2023, arXiv:2303.02331) [R].
+   - Data is public and large (220M spectra; the APOGEE crossmatch is about 0.5M stars).
+   - The labels are APOGEE's own systematics, and the field is crowded.
+   - Fits 5-minute GBDT/MLP runs well, but gains in the 3rd decimal of [M/H] scatter are
+     not news. Moderate fit, low novelty.
+
+d) Ariel Data Challenge 2024/2025 (Kaggle/NeurIPS; e.g. arXiv:2505.08940) [V partial].
+   - Exoplanet-adjacent: extract transmission spectra plus uncertainties from simulated
+     Ariel focal-plane data.
+   - Exact metric (Gaussian log-likelihood score), but 1000+ teams.
+   - Data is very large [R: hundreds of GB].
+   - Late-submission status unknown; check on Kaggle.
+   - Good autoresearch exercise, almost no publication value.
+
+e) FAIR Universe weak-lensing uncertainty challenge (NeurIPS 2025, Codabench 8934) [V].
+   - Exact metric, under 10 GB of training data.
+   - Already has an agent-driven entry. Not exoplanets. Interesting, off-mission.
+
+f) Period finding for sparse cadence (LSST-like). Precedent: Graham et al. 2013 comparison
+   of period finders, arXiv:1307.2209 [R].
+   - The metric is exact: the fraction of injected periods recovered within 1%, or
+     alias-aware.
+   - Data is self-generated: real or simulated variables resampled on Rubin OpSim cadences.
+   - No accepted frozen benchmark, so you would build it, as in 2/3. Moderate novelty.
+   - Fits 5-minute GPU (cuvarbase) or CPU runs.
+
+g) Duo-transit alias resolution (our own domain).
+   - The metric is exact: the rank of the true alias, or log-score, on injected duos in
+     real TESS window functions.
+   - It is narrow, and MonoTools is the established tool.
+   - Most of the alias "algorithm" is deterministic geometry (we already do it), so there is
+     little for a hill-climber to improve beyond the likelihood weighting.
+   - Low headroom.
+
+h) Kepler DR25 simulated-TCE vetting: see Section 3 and SHORTLIST #1. This is the one
+   Section-4-style benchmark that is public, frozen, synthetically labelled and on-mission.
+
+======================================================================
+5. RANKED SHORTLIST (TOP 3)
+======================================================================
+#1  Kepler DR25 "long-period, low-MES" vetter on the Robovetter simulated sets
+  Task:
+    - Learn a vetter from the published Robovetter input metrics, optionally adding DV
+      quantities.
+    - Positives: inj1 on-target planet injections.
+    - Negatives: inv + scr1-3 (instrumental and noise false alarms) and inj2/inj3
+      (off-target and EB astrophysical false positives).
+  Metric:
+    - Completeness on inj1 at FIXED effectiveness, e.g. matching the Robovetter's own inv+scr
+      false-alarm rate, inside P = 100-500 d, MES <= 10 (or 7.1-12).
+    - Split by KIC.
+    - The locked test set is one KIC partition; scr3 can be held out entirely as a
+      second lock.
+    - Report the equivalent reliability on obs TCEs using the Thompson/Bryson formula as a
+      secondary number.
+  Baseline: the DR25 Robovetter itself.
+    - Its dispositions for every simulated TCE are in the *_output.txt files.
+    - Published box numbers: completeness about 77%, reliability about 45%.
+    - ExoMiner (arXiv:2111.10009) also scored inv/scr. Compare to it as a stretch goal.
+  Data: https://github.com/nasa/kepler-robovetter, about 110 MB total, tabular.
+  Compute:
+    - Each experiment is seconds to 2 minutes of CPU (XGBoost/LightGBM or a small MLP), so
+      hundreds per night.
+    - Harness build: 1-2 days.
+  Novelty and publishability:
+    - Moderate. A clean "+X% completeness at equal effectiveness in the eta-Earth-relevant
+      box, held-out-star test" is an RNAAS. The resulting reliability numbers are directly
+      usable by occurrence-rate people.
+    - Not glamorous: Kepler is closed, and Bryson et al. and ExoMiner have worked nearby.
+  Main risks:
+    - inv/scr are imperfect stand-ins for real false alarms. A gain could come from
+      simulation quirks, e.g. scrambling-specific artefacts.
+      Guard: hold out scr3 and inv separately and require gains on both.
+    - Robovetter metrics are hand-engineered and were tuned on these very sets, so the
+      headroom may be smaller than the 45% reliability suggests.
+    - The agent could exploit features that identify which set a TCE came from (e.g.
+      quarter patterns). Audit the feature list.
+  Why #1: it is the closest analogue to the integer-mult setting. The labels are exact
+  (synthetic), evaluation is seconds, the baseline is frozen and public, and it is on-mission.
+
+#2  TESS single-event detection and vetting benchmark (injection-based), built from our data
+  Task:
+    - Given a real TESS light curve (SPOC 2-min or our QLP/TESScut FFI), output a
+      single-event score.
+    - Positives: batman single transits injected inside the frozen harness.
+    - Negatives:
+        real nulls;
+        injected single EB eclipses (shapes drawn from Prša 2022);
+        blended EBs;
+        native systematics.
+  Metric:
+    - Recall of injected planets at FAR <= 1 per 1000 star-sectors.
+    - Box: depth 1-10 ppt, duration 2-15 h, SNR 7-20.
+    - Star-split dev/val/locked-test as in Section 3.
+    - External sanity set: the ~36 CP/KP versus ~35 FP/FA real ExoFOP single-event outcomes
+      (local probe). Report on it, never optimise on it.
+  Baseline:
+    - Ours: a wotan biweight plus box/matched-filter single-event search, which is roughly
+      what the singles pipeline does.
+    - Literature anchors, not directly comparable: Hansen & Dittmann 2024 (>80% for Kepler
+      P = 50-800 d), ExoVeil (32% at 1000 ppm), Malik 2025, Salinas 2025.
+  Data:
+    - Already local: 3.3 GB of light curves and 18 GB of TESScut in data/raw.
+    - A real benchmark needs about 5-10k stars x 1-3 sectors of SPOC 2-min, about 20-40 GB
+      from MAST, plus the Prša EB table (already local).
+  Compute:
+    - The evaluation must run in under 5 minutes, so precompute and cache the light curves,
+      and evaluate on about 2-3k star-sectors with about 10k injections. A GPU matched filter
+      or a small 1D CNN fits easily on the A4500.
+    - Harness build: about 1-2 weeks of careful human-plus-agent work.
+  Novelty and publishability:
+    - Highest of the three. There is no public frozen TESS single-event benchmark.
+    - A benchmark, an optimised open-source search and a locked-test result make an RNAAS
+      first, and could grow to AJ/PASP.
+    - It feeds straight back into the singles and K2 work.
+  Main risks:
+    - Injection realism. Malik et al. found that synthetic training generalises worse than
+      real labels.
+    - EB and blend simulation fidelity.
+    - The benchmark design is itself the contribution, so referees will poke at it.
+    - Building it is the hard part. Autoresearch only helps once it is frozen.
+
+#3  Astronet-Triage-v2 precision at fixed 99% recall (TESS QLP FFI triage)
+  Metric:
+    - Precision at recall >= 0.99 on transiting/eclipsing ("E") versus the rest.
+    - Use the paper's train/val/test split, or star-grouped folds.
+    - Hold out the EM1 subset as the lock (that is how the paper scored AUPRC 0.965).
+  Baseline: Tey et al. 2023, 75.7% precision at 99.6% recall; AUPRC 0.965 on EM1.
+  Data: Zenodo 7411579 (6.5 GB of light curves, 3.1 MB of labels, CC-BY); code at
+    github.com/mdanatg/Astronet-Triage.
+  Compute: small CNN, about 25k examples, so 2-5 minutes per run on the A4500.
+    Reproducing the baseline takes about 1 day.
+  Novelty and publishability:
+    - Low to moderate. Human-consensus labels and a real precision gap, but the field is
+      mature, QLP owns the pipeline, and gains need adoption to matter.
+    - At best an RNAAS or a pull request offered to the QLP team.
+  Main risks:
+    - Label noise among the 5 classes.
+    - The split must be by TIC.
+    - Precision at 99% recall is a tail metric, so it is high-variance. Bootstrap it.
+
+NOT RECOMMENDED: beating ExoMiner++ (Zenodo 15466292, PR-AUC 0.976 on TESS).
+  - The metrics are saturated.
+  - The residual errors are label noise (Villanova shape-only EBs, ephemeris mismatches).
+  - The reference number comes from a 10x10 ensemble with Kepler transfer.
+  - Overnight hill-climbing would fit noise.
+  Reproducing a reduced version is fine as a learning exercise, not as a claim.
+
+======================================================================
+6. RECOMMENDATION FOR THE FIRST AUTORESEARCH LOOP
+======================================================================
+Start with #1, the Kepler DR25 simulated-TCE vetter in the long-period, low-MES box.
+- It is the only candidate that meets all five requirements on day one: exact synthetic
+  labels, a public frozen baseline (the Robovetter outputs), about 110 MB of tabular data,
+  second-scale evaluations, and a scientifically meaningful scalar (completeness at fixed
+  effectiveness, which maps to the reliability that eta-Earth estimates need).
+- It also tests whether the loop, the guardrails and Jon's workflow behave before he spends
+  weeks building a bespoke benchmark.
+
+Concretely:
+  1. prepare.py (frozen):
+     - parse the 10 input/output files;
+     - KIC-grouped split: 60% dev, 20% val, 20% locked; scr3 held out entirely;
+     - compute the Robovetter baseline in the box;
+     - define the fixed-effectiveness threshold rule;
+     - bootstrap the confidence interval.
+  2. train.py (the agent edits only this): feature engineering, model choice, ensembling.
+     Each run is capped at 5 minutes.
+  3. Keep a change only if validation completeness at fixed effectiveness rises by more
+     than 2 bootstrap sigma. Log every run.
+  4. Once at the end: evaluate on the locked partition and on scr3 / inv separately.
+     If the gain holds on both, write the RNAAS.
+
+Then move to #2, the TESS single-event benchmark, as the real research product. It reuses
+the same harness pattern, and it is where the novelty is and where Jon's existing data and
+pipeline pay off.
+
+Blunt bottom line:
+- Do not aim the loop at ExoMiner or Astronet headline metrics. They are saturated and
+  limited by label noise; a "win" there would be fitting noise.
+- The defensible wins are where labels are synthetic and exact (DR25 inj/inv/scr, or our
+  own frozen injection harness), and where the evaluation box is the hard regime: long
+  period, low SNR, single events.
+
+Probe used: scratchpad/probe_singles.py on data/raw/exofop_toi.csv and exofop_ctoi.csv
+(read-only). No repo files were modified other than this one.
