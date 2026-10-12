@@ -88,6 +88,28 @@ def build_template(t, f, P, T0, nbins=None):
     return Template((t - T0) / P, f, nbins)
 
 
+def refine_period(t, f, P, T0, rel=3e-4, nbins=200):
+    """Phase-dispersion refinement of the catalogue period over ALL data (added during
+    validation/pilot: a catalogue P error of a few 1e-5 d smears eclipses by hours over the
+    7-yr baseline). Grid: P*(1 +- rel), step chosen so the phase drift across the span
+    changes by <= 0.1 bin. Statistic: sum of within-bin variances (binned on phase)."""
+    span = t.max() - t.min()
+    step = 0.1 / nbins * P ** 2 / span
+    grid = np.arange(P * (1 - rel), P * (1 + rel) + step, step)
+    if len(grid) > 20000:
+        grid = np.linspace(P * (1 - rel), P * (1 + rel), 20000)
+    sub = np.random.default_rng(1).choice(len(t), min(len(t), 150000), replace=False)
+    ts, fs = t[sub], f[sub]
+    stat = np.empty(len(grid))
+    for i, p in enumerate(grid):
+        idx = (((ts - T0) / p) % 1 * nbins).astype(int)
+        n = np.bincount(idx, minlength=nbins)
+        s1 = np.bincount(idx, fs, minlength=nbins)
+        s2 = np.bincount(idx, fs * fs, minlength=nbins)
+        stat[i] = np.sum(s2 - s1 ** 2 / np.maximum(n, 1))
+    return float(grid[np.argmin(stat)])
+
+
 def find_minima(tmpl):
     """Phase of primary (deepest) and secondary minimum (deepest >= 0.15 phase away)."""
     y, x = tmpl.y, tmpl.x

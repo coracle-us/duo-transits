@@ -214,27 +214,46 @@ def run(tic, cat):
         print(f"TIC {tic}: no data")
         return None
     t, f = lc.time.values, lc.flux.values
-
-    # 1. seed template near catalogue epoch
-    near = np.abs(t - T0) < 400
+    P_cat, T0_cat = P, T0
+    P_pdm = el.refine_period(t, f, P, T0)
     sc = (lc["product"] == "SPOC_120").values
-    m = near & sc if (near & sc).sum() > 5000 else (near if near.sum() > 3000 else np.ones(len(t), bool))
-    tm0 = el.build_template(t[m], f[m], P, T0)
-    ph1, ph2, d1, d2 = el.find_minima(tm0)
-    T0 = T0 + ph1 * P
-    tm0 = el.build_template(t[m], f[m], P, T0)
 
-    # 2. wide-search primaries, linear ephemeris
-    hw1 = el.eclipse_halfwidth(tm0, 0.0)
-    pri0 = el.time_eclipses(lc, tm0, P, T0, 0.0, hw1, search=min(0.05 * P, 0.1), kind="p")
-    if len(pri0) < 10:
-        print(f"TIC {tic}: too few primaries in pass 0 ({len(pri0)})")
+    def pass0(P, T0):
+        """Seed template near the catalogue epoch, wide-search primaries, linear ephemeris."""
+        near = np.abs(t - T0) < 400
+        m = near & sc if (near & sc).sum() > 5000 else (near if near.sum() > 3000 else np.ones(len(t), bool))
+        tm0 = el.build_template(t[m], f[m], P, T0)
+        ph1, *_ = el.find_minima(tm0)
+        T0 = T0 + ph1 * P
+        tm0 = el.build_template(t[m], f[m], P, T0)
+        hw1 = el.eclipse_halfwidth(tm0, 0.0)
+        pri0 = el.time_eclipses(lc, tm0, P, T0, 0.0, hw1, search=min(0.05 * P, 0.1), kind="p")
+        if len(pri0) < 10:
+            return None
+        oc0 = pri0["T"].values - (T0 + pri0.epoch.values * P)
+        coef, keep = fit_linear(pri0.epoch.values.astype(float), oc0, pri0.sig.values)
+        T0, P = T0 + coef[0], P + coef[1]
+        oc0 = pri0["T"].values - (T0 + pri0.epoch.values * P)
+        spread = robust_sigma(oc0[keep]) if keep.sum() > 5 else 0.01
+        return dict(P=P, T0=T0, pri0=pri0, oc0=oc0, keep=keep, spread=spread, n=int(keep.sum()))
+
+    # 1-2. seed ephemeris: try the catalogue period and the PDM-refined period (rule added
+    # during the pilot: PDM fixes catalogue periods that are off by ~1e-5 d, e.g. TIC 140661916,
+    # but for systems with hour-scale ETVs, e.g. TIC 167692429, the catalogue period can lock
+    # better). Keep the catalogue seed unless the PDM seed times >10% more primaries or has
+    # less than half the O-C scatter.
+    c_cat = pass0(P_cat, T0_cat)
+    c_pdm = pass0(P_pdm, T0_cat) if abs(P_pdm - P_cat) > 1e-7 * P_cat else None
+    cands = [c for c in (c_cat, c_pdm) if c is not None]
+    if not cands:
+        print(f"TIC {tic}: too few primaries in pass 0")
         return None
-    oc0 = pri0["T"].values - (T0 + pri0.epoch.values * P)
-    coef, keep = fit_linear(pri0.epoch.values.astype(float), oc0, pri0.sig.values)
-    T0, P = T0 + coef[0], P + coef[1]
-    oc0 = pri0["T"].values - (T0 + pri0.epoch.values * P)
-    spread = robust_sigma(oc0[keep]) if keep.sum() > 5 else 0.01
+    best0 = c_cat if c_cat is not None else c_pdm
+    if c_cat is not None and c_pdm is not None and (c_pdm["n"] > 1.1 * c_cat["n"] or c_pdm["spread"] < 0.5 * c_cat["spread"]):
+        best0 = c_pdm
+    P, T0, pri0, oc0, keep, spread = (best0[k] for k in ("P", "T0", "pri0", "oc0", "keep", "spread"))
+    print(f"TIC {tic}: catalogue P={P_cat:.7f}, PDM P={P_pdm:.7f}; pass-0 candidates "
+          f"{[(round(c['P'], 7), c['n'], round(c['spread'] * 86400, 1)) for c in cands]} -> P={P:.7f}", flush=True)
 
     # 3. iterate: template from points shifted by the running-median O-C of their own
     #    eclipse type (primary half / secondary half of the phase), then re-time with the
@@ -332,6 +351,15 @@ def run(tic, cat):
         fits[base] = (Pg_b, chi_b, p_b, perr_b, c2_b)
     # preferred LTTE variant by BIC
     ltbase = "lin" if models["ltte_lin"]["bic"] <= models["ltte_quad"]["bic"] else "quad"
+    # rule added during validation (TIC 219900027): a solution with P3 at the upper bound is
+    # a quadratic/LTTE degeneracy, not a measurement; prefer the other variant if it is not
+    at_bound = {b: fits[b][2][0] > 0.98 * MAX_P3_SPAN * span for b in fits}
+    other = "quad" if ltbase == "lin" else "lin"
+    if at_bound[ltbase] and not at_bound[other]:
+        ltbase = other
+    variants = {b: dict(P3=float(fits[b][2][0]), e3=float(fits[b][2][2]),
+                        A_s=float(el.amp_ltte(fits[b][2][4], fits[b][2][2], fits[b][2][3]) * 86400),
+                        bic=models["ltte_" + b]["bic"], at_bound=bool(at_bound[b])) for b in fits}
     Pg, chi_g, p, perr, c2 = fits[ltbase]
     kq = d.design(ltbase).shape[1]
     models["ltte"] = dict(models["ltte_" + ltbase])
@@ -344,7 +372,7 @@ def run(tic, cat):
     A_ltte = el.amp_ltte(asini, e3, w3)
     rho, amp_p, amp_s = corr_pri_sec(d, P3, ltbase)
     res.update(models={k: {kk: vv for kk, vv in v.items() if kk != "coef"} for k, v in models.items()},
-               ltte_base=ltbase, chi2r_best=c2r_best,
+               ltte_base=ltbase, ltte_variants=variants, P_catalogue=P_cat, P_pdm=P_pdm, chi2r_best=c2r_best,
                dBIC_ltte_vs_quad=models["quad"]["bic"] - models["ltte"]["bic"],
                dBICc_ltte_vs_quad=models["quad"]["bic_cons"] - models["ltte"]["bic_cons"],
                dBICc_quad_vs_lin=models["lin"]["bic_cons"] - models["quad"]["bic_cons"],
