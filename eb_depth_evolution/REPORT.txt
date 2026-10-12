@@ -214,3 +214,17 @@ scripts/01-25*.py (run in numeric order from eb_depth_evolution/ with ../.venv/S
 data/: TESScut cutouts (286 MB), K2 files, TESS pipeline LCs, WASP target+30 comparison CSVs, KELT N04 tbl files, DASCH
   target+30 comparison JSONs, own photometry (data/phot), fit outputs (physical_fit_*.json, fit_*.log), scans, tables.
   data/ is about 345 MB and NOT git-ignored. Add eb_depth_evolution/data/ to .gitignore before any commit.
+
+ADDENDUM 2026-10-12: ATLAS forced photometry
+--------------------------------------------
+Task 5175441 (difference images, MJD 57000 to now): 4031 points (1008 c, 3023 o) from MJD 57314 (2015-10).
+Saved as data/atlas/job5175441_diff.txt (gitignored).
+
+UNUSABLE for eclipse depths. The out-of-eclipse scatter is 1e5-3.6e5 uJy per season, against an expected eclipse
+signal of ~3e4 uJy. chi/N in the thousands shows the star (G = 10.95) is saturated in ATLAS. Phase-folding on the
+TESS ephemeris shows no coherent primary eclipse.
+
+Task 5175445 (reduced images) is still queued; it will probably be affected by saturation too. Task 5175443 is an
+accidental duplicate of 5175441.
+
+For 2014-2021 coverage, ASAS-SN (by hand, reCAPTCHA) remains the best option.
