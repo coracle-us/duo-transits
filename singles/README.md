@@ -289,3 +289,36 @@ So there is no sign of a field-wide systematic at that edge.
 
 **Outputs:** `results/partial_sweep/` (one JSON per star, `summary.csv`) and
 `results/partial_sweep_stdout.txt`.
+
+## New-sector re-runs (monthly, from 2026-10-11)
+
+`scripts/new_sector_rerun.py`:
+- finds stars observed in a released TESS sector (ended more than 7 d ago) that have no
+  pipeline light curve in our cache;
+- re-fetches from MAST and re-runs `pilot.run_target`;
+- writes `results/rerun_<date>/` (`report.md`, `changes.csv`, JSONs);
+- flags NEW/LOST repeats, period-list changes and event-verdict changes.
+
+A scheduled task (`monthly-new-sector-rerun`) runs it on the 5th of each month at 10:00. The
+task commits the results but does not vet them. `classify_final.py` includes `rerun_*`
+directories, and the newest result wins. Hand-vetting outcomes go into `REJECT_RERUN` in
+`classify_final.py`; unvetted re-run changes are provisional. The RNAAS note uses the frozen
+`results/final_classification_2026-10-11_rnaas.csv`.
+
+**Catch-up run 2026-10-11:** 45 stars had pending sectors (S100–108). Only 6 had new files on
+MAST so far, all of them own TESScut photometry; 39 had no new data yet. TIC 152359413 also
+comes from the 2-star dry run. All flags were vetted by hand, and **none is a real new event**:
+
+| TIC | Flag | Verdict |
+|---|---|---|
+| 152359413 | 3 S106 "repeats" | Rejected: 2–11 d apart, no single P ≥ 5 d, scattered-light systematics |
+| 228463329 | 3 S107 "repeats" | Rejected: 0.8–6.7 d apart, systematics |
+| 98794593 | 1 S108 "repeat" (Tmag 7.7) | Rejected: post-gap ramp; S108 own photometry has ±3 ppt trends; diff image 19″ off |
+| 100776118, 206666063 | more eclipses | Known Gaia binaries; the class is unchanged |
+
+The three rejected stars are listed in `REJECT_RERUN`. The classification is unchanged from the
+frozen copy.
+
+**Lesson:** own TESScut photometry in scattered-light-heavy sectors (S106–108) produces
+repeat-like dips at SNR 8–12. Treat OWN-only repeats as tentative until pipeline products confirm
+them, as for the S107 recheck list.

@@ -10,7 +10,7 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
 | Removed: missing params / confirmed hosts / TOI / TESS EB | 46 / 8 / 4 / 24 | `singles/data/ctoi_singles_dropped.csv` | same |
 | CTOIs / stars kept | 368 / 359 | `singles/data/ctoi_singles.csv` | same |
 | Stars skipped (community period on ExoFOP) | 32 | `singles/results/full/skipped.csv` | `singles/scripts/run_remaining.py` |
-| Stars classified | 306 | `singles/results/final_classification.csv` | `singles/scripts/classify_final.py` |
+| Stars classified | 306 | `singles/results/final_classification_2026-10-11_rnaas.csv` (frozen copy for the note) | `singles/scripts/classify_final.py` |
 | Event not recovered / single | 34 / 193 | same | same |
 | With repeats (event recovered) | 79 | same | same |
 | Repeats: Gaia binary / firmly off-target / inconsistent / hand-vetted | 21 / 18 / 23 / 17 | same | same |

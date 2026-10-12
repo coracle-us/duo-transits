@@ -35,7 +35,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 RES = ROOT / "singles" / "results"
-RUNS = ["pilot", "batch2", "batch3", "full"]
+RUNS = ["pilot", "batch2", "batch3", "full"] + sorted(p.name for p in RES.glob("rerun_*") if p.is_dir())
+# rerun_<date> directories (new_sector_rerun.py) come last, so the newest result per star wins
 SNR_MIN, SIG_MIN, ARCSEC_MIN = 5.0, 3.0, 6.0
 
 MANUAL = {
@@ -61,6 +62,18 @@ MANUAL = {
     337665591: "rejected: depths differ (chi2 12.5/1), crowded field, S66 diff image 8.4\" off at SNR 11",
     365250897: "rejected: depths differ (chi2 40/1), QLP shows no dip",
     51079186: "rejected: depths inconsistent across epochs and products (chi2 22/4)",
+}
+
+
+# Re-run results that hand vetting rejected (the earlier result is kept for these stars).
+# Re-run changes NOT listed here enter the classification unvetted; treat them as provisional.
+# The RNAAS note uses the frozen copy results/final_classification_2026-10-11_rnaas.csv.
+REJECT_RERUN = {
+    "rerun_2026-10-11": {
+        152359413: "3 'repeats' in S106 own photometry 2-11 d apart: no single P >= 5 d; scattered-light systematics",
+        228463329: "3 'repeats' in S107 own photometry 0.8-6.7 d apart: no single P >= 5 d; systematics",
+        98794593: "S108 own-photometry 'repeat' sits on a post-gap ramp (+-3 ppt sector trends); diff image 19\" off",
+    },
 }
 
 
@@ -97,6 +110,8 @@ def main():
         for f in sorted((RES / run).glob("*.json")):
             j = json.loads(f.read_text())
             tic = int(j["TIC"])
+            if run.startswith("rerun_") and tic in REJECT_RERUN.get(run, {}):
+                continue  # re-run result vetted and rejected: keep the earlier result
             imgs = [d for d in (j.get("diff_images") or []) if isinstance(d, dict)]
             sv, off = source_verdict(imgs)
             g = gaia.loc[tic] if tic in gaia.index else None
