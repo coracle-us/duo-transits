@@ -1,0 +1,31 @@
+number,name,auto_pass,eye_verdict,P_rot_h_adopted,U_eye,note
+588,Achilles,True,accept,7.307,3,clean double-peaked fold; LCDB 7.306 (U=3)
+1143,Odysseus,False,reject,,,day-scale systematics and jumps at contaminated stretches; no coherent fold (LCDB 10.114 U=3 not recovered)
+4063,Euforbo,True,accept,8.849,3,clean double-peaked fold; scattered-light ramp at sector start; LCDB 8.846 (U=3)
+4833,Meges,False,marginal,14.24,2-,narrow LS peak at 7.12 h above red-noise floor but fold noisy; 41% contaminated; would match LCDB 14.25 -> not counted
+1749,Telamon,False,reject,,,systematics-dominated (long trends; 2P fit diverges)
+15436,Dexius,False,reject,,,weak peak at 4.50 h (2P 9.00 vs LCDB 8.97) but boot FAP 0.09 and noisy fold; not counted
+659,Nestor,True,accept,15.98,2+,clear 8.0-h LS peak; 2P = 15.98 h by convention (odd harmonics not significant); LCDB 15.98 (U=3)
+2456,Palamedes,False,reject,,,low amplitude; no significant peak (LCDB 7.25 U=3 not recovered)
+4035,Thestor,False,reject,,,74% frames lost to contamination; systematics
+7119,Hiera,False,reject,,,systematics (dips at contaminated edges)
+2260,Neoptolemus,False,reject,,,flat; dips are residual star artefacts
+4835,Asaeus,False,reject,,,no LCDB period; slow variation looks like systematics (jumps after gaps); not credible
+5027,Androgeos,False,reject,,,noisy; 22.6 h is not a clean alias of LCDB 11.376
+5123,Cynus,False,accept-known,9.898,2,clear 4.95-h LS peak; rejected by the contamination rule (69%); matches LCDB 9.883 to 0.15%; not new
+22014,(22014),False,reject,,,no LCDB period; dominated by star residuals (66% contaminated)
+4057,Demophon,False,reject,,,systematics; 2P fit diverges
+4902,Thessandrus,False,reject,,,only 1562 frames on one CCD (5370 total); systematics
+5258,Rhoeo,False,reject,,,noise/systematics
+5284,Orsilocus,False,reject,,,low-amplitude noise; no credible period
+21900,Orus,False,reject,,,systematics
+4501,Eurypylos,False,reject,,,V 18.1; noise + star residuals (LCDB 6.94 U=3 not recovered)
+13366,(13366),False,reject,,,V 18.2; noise
+32498,(32498),False,reject,,,V 18.4; 90% contaminated; noise
+9817,Thersander,False,reject,,,V 18.6; 91% contaminated; noise
+22055,(22055),False,reject,,,V 18.7; noise
+38051,(38051),False,reject,,,V 18.8; noise
+24486,(24486),False,reject,,,V 18.8; noise
+24380,Dorippe,False,reject,,,V 18.9; noise; 2P fit diverges
+38619,(38619),False,reject,,,V 18.9; noise
+13379,(13379),False,reject,,,V 19.0; noise (LCDB 13.698 U=2 not recovered)
