@@ -43,9 +43,8 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
       no changes were needed.
 - [x] **ORCID** added: 0009-0000-7524-4470.
 - [x] **Affiliation:** "Independent researcher, USA" (confirmed by Jon 2026-10-12).
-- [x] **Repository** (pushed 2026-10-12, with correspondence and family documents kept private). Push it to GitHub. The note cites `github.com/coracle-us/duo-transits`,
-      which is public, but this session's commits have not been pushed. Consider a Zenodo DOI
-      for the release.
+- [x] **Repository** pushed to `github.com/coracle-us/duo-transits` (public) on 2026-10-12, with
+      correspondence and family documents kept private. Optional: a Zenodo DOI for the release.
 - [x] **AI policy** read by Jon (2026-10-12). A dedicated AI disclosure statement was added
       at the end of the note, following the AAS examples.
 - [x] **Compiled** on Overleaf, using the official AAS template (`aastex701.cls`), with no errors.
