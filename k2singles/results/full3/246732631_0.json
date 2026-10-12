@@ -1,0 +1,136 @@
+{
+ "EPIC": 246732631,
+ "event_idx": 0,
+ "TIC": 303761538,
+ "Tmag": 10.4254,
+ "Kp": 10.77,
+ "match_flag": false,
+ "depth_ppm": 137259.0,
+ "dur_h": 21.576,
+ "epoch_btjd": 836.3757000002079,
+ "k2_campaign": "13",
+ "catalog_comment": "Deep; secondary eclipse",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  13
+ ],
+ "tess_sectors_loaded": [
+  5,
+  32,
+  43,
+  44,
+  71,
+  98
+ ],
+ "repeats": [
+  {
+   "T": 2175.6198,
+   "sector": 32,
+   "product": "QLP",
+   "depth_ppm": 89731,
+   "snr": 1058.1,
+   "n_in": 85,
+   "beta": 1.2
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 70.48653157893642,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 74.40244999998846,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 95.66029285712807,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 133.9244099999792,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 148.80489999997698,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 191.32058571425597,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 223.20734999996534,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 267.84881999995844,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 446.4146999999307,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 669.6220499998963,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  },
+  {
+   "P": 1339.2440999997925,
+   "n_support": 1,
+   "support_T": [
+    2175.6198
+   ]
+  }
+ ],
+ "n_periods": 11,
+ "max_support": 1,
+ "frac_logP_excluded": 0.645,
+ "n_windows": 1036,
+ "n_excluded_windows": 787,
+ "diff_images": [
+  {
+   "kind": "repeat",
+   "sector": 32,
+   "offset_arcsec": 7.3,
+   "offset_err_arcsec": 0.7,
+   "offset_sigma": 10.8,
+   "snr_peak": 425.6,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.72,
+   "nearest_gaia_sep": 0.1
+  }
+ ],
+ "status": "ok"
+}

@@ -1,0 +1,225 @@
+{
+ "EPIC": 205966706,
+ "event_idx": 0,
+ "TIC": 240663587,
+ "Tmag": 9.4974,
+ "Kp": 9.86,
+ "match_flag": false,
+ "depth_ppm": 119208.0,
+ "dur_h": 7.8457,
+ "epoch_btjd": 17.782999999821186,
+ "k2_campaign": "3",
+ "catalog_comment": "Deep",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  3
+ ],
+ "tess_sectors_loaded": [
+  2,
+  29,
+  42,
+  92
+ ],
+ "repeats": [
+  {
+   "T": 2093.9098,
+   "sector": 29,
+   "product": "SPOC_120",
+   "depth_ppm": 94353,
+   "snr": 238.6,
+   "n_in": 165,
+   "beta": 5.58
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 44.17291063830166,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 47.184700000004064,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 54.634915789478406,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 62.912933333338785,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 76.89358518519178,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 83.04507200000715,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 94.36940000000811,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 98.86318095238947,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 103.80634000000892,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 109.26983157895677,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 129.75792500001117,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 138.40845333334522,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 148.29477142858428,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 159.70206153847528,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 188.7388000000162,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 207.61268000001786,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 230.68075555557542,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 259.51585000002234,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 296.58954285716834,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 415.22536000003566,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 519.0317000000447,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 692.0422666667262,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 1038.0634000000896,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  },
+  {
+   "P": 2076.126800000179,
+   "n_support": 1,
+   "support_T": [
+    2093.9098
+   ]
+  }
+ ],
+ "n_periods": 24,
+ "max_support": 1,
+ "frac_logP_excluded": 0.6051666666666666,
+ "n_windows": 1892,
+ "n_excluded_windows": 1789,
+ "diff_images": [
+  {
+   "kind": "repeat",
+   "sector": 29,
+   "offset_arcsec": 7.9,
+   "offset_err_arcsec": 0.7,
+   "offset_sigma": 11.2,
+   "snr_peak": 276.7,
+   "crowded_reference": false,
+   "nearest_gaia_G": 9.84,
+   "nearest_gaia_sep": 0.6
+  }
+ ],
+ "status": "ok"
+}

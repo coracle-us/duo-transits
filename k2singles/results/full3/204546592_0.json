@@ -1,0 +1,171 @@
+{
+ "EPIC": 204546592,
+ "event_idx": 0,
+ "TIC": 12629920,
+ "Tmag": 9.1919,
+ "Kp": 9.93,
+ "match_flag": false,
+ "depth_ppm": 10212.0,
+ "dur_h": 20.5968,
+ "epoch_btjd": -100.035000000149,
+ "k2_campaign": "2",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  2,
+  15
+ ],
+ "tess_sectors_loaded": [
+  91
+ ],
+ "repeats": [
+  {
+   "T": -101.8123,
+   "sector": 1002,
+   "product": "K2PDC",
+   "depth_ppm": 6018,
+   "snr": 13.7,
+   "n_in": 29,
+   "beta": 1.01
+  },
+  {
+   "T": 1004.4075,
+   "sector": 1015,
+   "product": "K2PDC",
+   "depth_ppm": 5150,
+   "snr": 11.6,
+   "n_in": 28,
+   "beta": 1.91
+  }
+ ],
+ "n_repeats": 2,
+ "periods": [
+  {
+   "P": 36.81475000000496,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 55.22212500000744,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 73.62950000000993,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 78.8887500000107,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 84.95711538462686,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 92.0368750000124,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 100.40386363637718,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 110.44425000001492,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 122.71583333334993,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 138.05531250001863,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 157.7775000000213,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 184.07375000002483,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 220.88850000002975,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 276.11062500003726,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 368.1475000000497,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 552.2212500000745,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  },
+  {
+   "P": 1104.4425000001495,
+   "n_support": 1,
+   "support_T": [
+    1004.4075
+   ]
+  }
+ ],
+ "n_periods": 17,
+ "max_support": 1,
+ "frac_logP_excluded": 0.6281666666666667,
+ "n_windows": 868,
+ "n_excluded_windows": 567,
+ "diff_images": [],
+ "status": "ok"
+}

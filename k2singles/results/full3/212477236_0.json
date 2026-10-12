@@ -1,0 +1,141 @@
+{
+ "EPIC": 212477236,
+ "event_idx": 0,
+ "TIC": 392492898,
+ "Tmag": 13.4195,
+ "Kp": 13.96,
+ "match_flag": false,
+ "depth_ppm": 4389.0,
+ "dur_h": 15.2016,
+ "epoch_btjd": 282.5901000001468,
+ "k2_campaign": "6",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  6,
+  17
+ ],
+ "tess_sectors_loaded": [
+  91
+ ],
+ "repeats": [
+  {
+   "T": 1216.1974,
+   "sector": 1017,
+   "product": "K2PDC",
+   "depth_ppm": 2573,
+   "snr": 22.9,
+   "n_in": 20,
+   "beta": 1.0
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 66.68623571427527,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 71.81594615383489,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 77.8006083333211,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 84.87339090907753,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 93.36072999998532,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 103.73414444442815,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 116.70091249998168,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 133.37247142855045,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 155.60121666664216,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 186.72145999997062,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 233.40182499996334,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 311.20243333328443,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 466.8036499999267,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  },
+  {
+   "P": 933.6072999998535,
+   "n_support": 1,
+   "support_T": [
+    1216.1974
+   ]
+  }
+ ],
+ "n_periods": 14,
+ "max_support": 1,
+ "frac_logP_excluded": 0.6198333333333333,
+ "n_windows": 1037,
+ "n_excluded_windows": 912,
+ "diff_images": [],
+ "status": "ok"
+}

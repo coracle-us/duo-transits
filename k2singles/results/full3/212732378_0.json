@@ -1,0 +1,148 @@
+{
+ "EPIC": 212732378,
+ "event_idx": 0,
+ "TIC": 178942052,
+ "Tmag": 14.1593,
+ "Kp": 14.66,
+ "match_flag": false,
+ "depth_ppm": 58214.0,
+ "dur_h": 6.3768,
+ "epoch_btjd": 229.77320000017065,
+ "k2_campaign": "6",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  6,
+  17
+ ],
+ "tess_sectors_loaded": [
+  91
+ ],
+ "repeats": [
+  {
+   "T": 1241.5576,
+   "sector": 1017,
+   "product": "K2PDC",
+   "depth_ppm": 36302,
+   "snr": 293.8,
+   "n_in": 9,
+   "beta": 1.06
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 67.45229333332195,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 72.27031428570216,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 77.82956923075612,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 84.31536666665242,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 91.98039999998448,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 101.17843999998296,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 112.42048888886997,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 126.4730499999787,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 144.5406285714042,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 168.63073333330493,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 202.35687999996588,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 252.94609999995737,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 337.26146666660986,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 505.89219999991485,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  },
+  {
+   "P": 1011.7843999998297,
+   "n_support": 1,
+   "support_T": [
+    1241.5576
+   ]
+  }
+ ],
+ "n_periods": 15,
+ "max_support": 1,
+ "frac_logP_excluded": 0.6246666666666667,
+ "n_windows": 2460,
+ "n_excluded_windows": 2192,
+ "diff_images": [],
+ "status": "ok"
+}

@@ -1,0 +1,31 @@
+{
+ "EPIC": 203311200,
+ "event_idx": 0,
+ "TIC": 67235717,
+ "Tmag": 11.205,
+ "Kp": 11.89,
+ "match_flag": false,
+ "depth_ppm": 3656.0,
+ "dur_h": 13.7304,
+ "epoch_btjd": -45.99299999978393,
+ "k2_campaign": "2",
+ "catalog_comment": "Noted in Osborn, et al. (2016)",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  2
+ ],
+ "tess_sectors_loaded": [
+  91
+ ],
+ "repeats": [],
+ "n_repeats": 0,
+ "periods": [],
+ "n_periods": 0,
+ "max_support": 0,
+ "frac_logP_excluded": 0.4766666666666667,
+ "n_windows": 670,
+ "n_excluded_windows": 457,
+ "diff_images": [],
+ "status": "ok"
+}

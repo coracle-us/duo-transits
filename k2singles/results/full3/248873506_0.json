@@ -1,0 +1,29 @@
+{
+ "EPIC": 248873506,
+ "event_idx": 0,
+ "TIC": 233167372,
+ "Tmag": 18.7718,
+ "Kp": 17.3,
+ "match_flag": true,
+ "depth_ppm": 114537.0,
+ "dur_h": 11.7696,
+ "epoch_btjd": 941.1573999999092,
+ "k2_campaign": "14",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  14
+ ],
+ "tess_sectors_loaded": [],
+ "repeats": [],
+ "n_repeats": 0,
+ "periods": [],
+ "n_periods": 0,
+ "max_support": 0,
+ "frac_logP_excluded": 0.38066666666666665,
+ "n_windows": 650,
+ "n_excluded_windows": 644,
+ "diff_images": [],
+ "status": "ok"
+}

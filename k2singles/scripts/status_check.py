@@ -13,7 +13,8 @@ Per event:
   - VSX (VizieR B/vsx/vsx) within 10": name, type, period
   - SIMBAD main type within 5"
 Output: k2singles/data/lead_status.csv, plus raw ExoFOP JSON in k2singles/cache/exofop/.
-Usage:  python k2singles/scripts/status_check.py [min_support]
+Usage:  python k2singles/scripts/status_check.py [min_support] [run_dir] [EPIC ...]
+        (run_dir defaults to full2; with EPICs, rows are appended to the existing CSV)
 """
 import json
 import sys
@@ -109,11 +110,15 @@ def vsx_simbad(ra, dec):
 
 def main():
     min_sup = int(sys.argv[1]) if len(sys.argv) > 1 else 2
-    s = pd.read_csv(ROOT / "k2singles" / "results" / "full2" / "summary.csv")
+    run = sys.argv[2] if len(sys.argv) > 2 else "full2"
+    only = [int(x) for x in sys.argv[3:]]
+    s = pd.read_csv(ROOT / "k2singles" / "results" / run / "summary.csv")
     cat = pd.read_csv(ROOT / "k2singles" / "data" / "k2_singles.csv")
     cat["event_idx"] = cat.groupby("EPIC").cumcount()
     s = s.merge(cat[["EPIC", "event_idx", "ra", "dec"]], on=["EPIC", "event_idx"])
     s = s[s.max_support >= min_sup]
+    if only:
+        s = s[s.EPIC.isin(only)]
     toi = pd.read_csv(ROOT / "data" / "raw" / "exofop_toi.csv", comment="#")
     ctoi = pd.read_csv(ROOT / "data" / "raw" / "exofop_ctoi.csv", comment="#")
     eb = pd.read_csv(ROOT / "data" / "raw" / "tess_eb_prsa2022.tsv", sep="\t", comment="#")
@@ -130,7 +135,11 @@ def main():
         d.update(vsx_simbad(r.ra, r.dec))
         rows.append(d)
         print(tic, {k: d.get(k) for k in ("bulk_toi", "bulk_ctoi", "exofop_tois", "gaia_eb_period", "vsx")}, flush=True)
-    pd.DataFrame(rows).to_csv(OUT, index=False)
+    new = pd.DataFrame(rows)
+    if only and OUT.exists():
+        old = pd.read_csv(OUT)
+        new = pd.concat([old[~old.EPIC.isin(only)], new], ignore_index=True)
+    new.to_csv(OUT, index=False)
 
 
 if __name__ == "__main__":

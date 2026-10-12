@@ -1,0 +1,149 @@
+{
+ "EPIC": 245964933,
+ "event_idx": 0,
+ "TIC": 49711069,
+ "Tmag": 11.6735,
+ "Kp": 12.18,
+ "match_flag": false,
+ "depth_ppm": 40201.0,
+ "dur_h": 10.7879,
+ "epoch_btjd": 758.2779000001028,
+ "k2_campaign": "12",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  12
+ ],
+ "tess_sectors_loaded": [
+  2,
+  29,
+  42,
+  70,
+  92
+ ],
+ "repeats": [
+  {
+   "T": 2106.6629,
+   "sector": 29,
+   "product": "TESS-SPOC",
+   "depth_ppm": 28626,
+   "snr": 53.4,
+   "n_in": 45,
+   "beta": 2.68
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 31.35779069767201,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 64.20880952380466,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 79.31676470587628,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 84.27406249999359,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 96.31321428570702,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 134.83849999998972,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 168.5481249999872,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 192.62642857141384,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 269.6769999999794,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 337.09624999997436,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 449.46166666663237,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 674.1924999999487,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  },
+  {
+   "P": 1348.3849999998977,
+   "n_support": 1,
+   "support_T": [
+    2106.6629
+   ]
+  }
+ ],
+ "n_periods": 13,
+ "max_support": 1,
+ "frac_logP_excluded": 0.6206666666666667,
+ "n_windows": 1585,
+ "n_excluded_windows": 1420,
+ "diff_images": [
+  {
+   "kind": "repeat",
+   "sector": 29,
+   "offset_arcsec": 0.4,
+   "offset_err_arcsec": 0.5,
+   "offset_sigma": 0.9,
+   "snr_peak": 59.8,
+   "crowded_reference": false,
+   "nearest_gaia_G": 12.18,
+   "nearest_gaia_sep": 0.6
+  }
+ ],
+ "status": "ok"
+}

@@ -1,0 +1,89 @@
+{
+ "EPIC": 211633458,
+ "event_idx": 0,
+ "TIC": 386621229,
+ "Tmag": 9.6242,
+ "Kp": 10.72,
+ "match_flag": true,
+ "depth_ppm": 1197.0,
+ "dur_h": 9.3168,
+ "epoch_btjd": 201.6513000000268,
+ "k2_campaign": "5",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  5,
+  18
+ ],
+ "tess_sectors_loaded": [
+  44,
+  45,
+  46,
+  71,
+  72
+ ],
+ "repeats": [
+  {
+   "T": 1295.011,
+   "sector": 1018,
+   "product": "K2PDC",
+   "depth_ppm": 907,
+   "snr": 11.0,
+   "n_in": 13,
+   "beta": 1.55
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 68.33498124999832,
+   "n_support": 1,
+   "support_T": [
+    1295.011
+   ]
+  },
+  {
+   "P": 136.66996249999664,
+   "n_support": 1,
+   "support_T": [
+    1295.011
+   ]
+  },
+  {
+   "P": 273.3399249999933,
+   "n_support": 1,
+   "support_T": [
+    1295.011
+   ]
+  },
+  {
+   "P": 364.45323333332436,
+   "n_support": 1,
+   "support_T": [
+    1295.011
+   ]
+  },
+  {
+   "P": 546.6798499999866,
+   "n_support": 1,
+   "support_T": [
+    1295.011
+   ]
+  },
+  {
+   "P": 1093.3596999999736,
+   "n_support": 1,
+   "support_T": [
+    1295.011
+   ]
+  }
+ ],
+ "n_periods": 6,
+ "max_support": 1,
+ "frac_logP_excluded": 0.7075,
+ "n_windows": 2449,
+ "n_excluded_windows": 2218,
+ "diff_images": [],
+ "status": "ok"
+}

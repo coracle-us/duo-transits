@@ -1,0 +1,55 @@
+{
+ "EPIC": 220186865,
+ "event_idx": 0,
+ "TIC": 248380832,
+ "Tmag": 11.4743,
+ "Kp": 12.0,
+ "match_flag": true,
+ "depth_ppm": 1973.0,
+ "dur_h": 5.8848,
+ "epoch_btjd": 404.6956000002101,
+ "k2_campaign": "8",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  8
+ ],
+ "tess_sectors_loaded": [
+  3,
+  30,
+  42,
+  43,
+  70,
+  97
+ ],
+ "repeats": [
+  {
+   "T": 413.1762,
+   "sector": 1008,
+   "product": "K2PDC",
+   "depth_ppm": 1056,
+   "snr": 10.8,
+   "n_in": 8,
+   "beta": 1.55
+  },
+  {
+   "T": 415.383,
+   "sector": 1008,
+   "product": "K2PDC",
+   "depth_ppm": 1270,
+   "snr": 9.4,
+   "n_in": 7,
+   "beta": 1.2
+  }
+ ],
+ "n_repeats": 2,
+ "periods": [],
+ "n_periods": 0,
+ "max_support": 0,
+ "frac_logP_excluded": 0.5871666666666666,
+ "n_windows": 3463,
+ "n_excluded_windows": 2163,
+ "diff_images": [],
+ "status": "ok"
+}

@@ -1,0 +1,179 @@
+{
+ "EPIC": 245929407,
+ "event_idx": 0,
+ "TIC": 49733422,
+ "Tmag": 11.3093,
+ "Kp": 11.64,
+ "match_flag": false,
+ "depth_ppm": 22554.0,
+ "dur_h": 6.374717,
+ "epoch_btjd": 760.1472999998368,
+ "k2_campaign": "12",
+ "catalog_comment": "nan",
+ "TOI": "",
+ "own_photometry_sectors": [],
+ "k2_campaigns_loaded": [
+  12
+ ],
+ "tess_sectors_loaded": [
+  2,
+  29,
+  42,
+  69,
+  70,
+  92,
+  96
+ ],
+ "repeats": [
+  {
+   "T": 3196.3157,
+   "sector": 69,
+   "product": "TESS-SPOC",
+   "depth_ppm": 22462,
+   "snr": 92.6,
+   "n_in": 80,
+   "beta": 1.24
+  }
+ ],
+ "n_repeats": 1,
+ "periods": [
+  {
+   "P": 65.8423891891936,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 93.69878461539086,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 97.44673600000651,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 105.92036521739844,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 116.00801904762686,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 128.2193894736928,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 135.34268888889795,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 162.41122666667752,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 174.01202857144037,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 187.3975692307818,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 270.6853777777961,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 348.02405714288045,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 406.0280666666938,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 487.2336800000326,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 812.0561333333877,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 1218.084200000082,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  },
+  {
+   "P": 2436.168400000164,
+   "n_support": 1,
+   "support_T": [
+    3196.3157
+   ]
+  }
+ ],
+ "n_periods": 17,
+ "max_support": 1,
+ "frac_logP_excluded": 0.6843333333333333,
+ "n_windows": 3320,
+ "n_excluded_windows": 3191,
+ "diff_images": [
+  {
+   "kind": "repeat",
+   "sector": 69,
+   "offset_arcsec": 3.2,
+   "offset_err_arcsec": 0.6,
+   "offset_sigma": 5.7,
+   "snr_peak": 54.5,
+   "crowded_reference": false,
+   "nearest_gaia_G": 14.17,
+   "nearest_gaia_sep": 4.8
+  }
+ ],
+ "status": "ok"
+}
