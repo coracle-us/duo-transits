@@ -1,0 +1,74 @@
+== 1. blind vs our fit, in sigma (quadrature)
+  211924561: ours 140.4939221+-0.0001407 blind 140.49401+-0.00011 -> -0.49 sigma; fit chi2/dof 1.69/2
+  211503363: ours 122.9052223+-0.0006438 blind 122.9049+-0.0007 -> +0.34 sigma; fit chi2/dof 0.30/1
+  211411112: ours 62.5946600+-0.0001850 blind 62.59479+-5e-05 -> -0.68 sigma; fit chi2/dof 18.67/1
+      NOTE chi2/dof = 18.7: if sigma_P is unscaled the true error is x4.3
+  246194159: ours 73.2451780+-0.0000070 blind 73.245174+-5e-06 -> +0.46 sigma; fit chi2/dof 0.00/0
+  211489484: ours 82.2584377+-0.0000521 blind 82.25843+-7e-05 -> +0.09 sigma; fit chi2/dof 0.02/1
+  211892898: ours 72.5088696+-0.0014468 blind 72.51+-0.0014 -> -0.56 sigma; fit chi2/dof 0.11/1
+  248811085: ours 49.2501311+-0.0000128 blind 49.25012+-2e-05 -> +0.47 sigma; fit chi2/dof 0.02/1
+  246089124: ours 73.9624135+-0.0000201 blind 73.96241+-2e-05 -> +0.12 sigma; fit chi2/dof 1.50/1
+  246696483: ours 182.2452609+-0.0001794 blind 182.2452+-0.0003 -> +0.17 sigma; fit chi2/dof 0.33/1
+  211390677: ours 184.3108695+-0.0011059 blind 184.3103+-0.001 -> +0.38 sigma; fit chi2/dof 0.76/1
+  247967714: ours 185.6266756+-0.0000208 blind 185.6267+-3e-05 -> -0.67 sigma; fit chi2/dof 0.10/1
+  212012030: ours 220.3217790+-0.0000567 blind 220.32178+-3e-05 -> -0.02 sigma; fit chi2/dof 6.42/1
+      NOTE chi2/dof = 6.4: if sigma_P is unscaled the true error is x2.5
+  202126877: ours 21.774646 (chi2/dof 6961.1/3), blind 21.77521 (no error; ETVs) diff -0.00056 d
+  202072917: ours 34.7455865+-0.0000070 blind 34.745606+-7e-06 -> -1.97 sigma; fit chi2/dof 0.90/2
+  202071902: ours 22.9041282+-0.0000030 blind 22.90413+-2e-06 -> -0.49 sigma; fit chi2/dof 3.85/1
+      NOTE chi2/dof = 3.8: if sigma_P is unscaled the true error is x2.0
+
+== 2. counts
+  catalogue rows 164, unique EPIC 163, campaigns: ['0', '1', '10', '11', '12', '13', '14', '2', '3', '4', '5', '6', '7', '8']
+  TESS-observed 158; SNR>=7 145; +depth<1e6 144
+  full3 rows 144; n_repeats>0 62; max_support>=2 16
+  246194159 in full3: n_repeats [4] max_support [1]
+
+== 3. TOI-5560.01
+  P 140.49392+-0.00014; P/2 70.246961+-0.000070; T0 BJD 2457179.8979+-0.0014; cycles [0, 7, 17, 22] gcd 1
+  trapezoid depths ppt [2.15 2.23 2.51 2.53]; T14 h [2.93 3.01 3.14 2.61] (mean 2.92)
+  shared, cycle 30 of 140.49: BTJD 4394.7156+-0.0044 (6.4 min); BJD_TDB as if UTC: 2026-12-20 05:09; geocentric UTC (minus +6.1 min light time): 2026-12-20 05:03
+  70-d only, cycle 61 of 70.247: BTJD 4464.9626+-0.0045 (6.5 min); BJD_TDB as if UTC: 2027-02-28 11:04; geocentric UTC (minus +7.1 min light time): 2027-02-28 10:57
+  P=140.494: K_a=3.85 -> M2sini<0.126; K_b=2.67 -> M2sini<0.086 Msun
+  P=70.247: K_a=3.85 -> M2sini<0.099; K_b=2.67 -> M2sini<0.068 Msun
+  per-epoch scatter 1.84 km/s; expected max-min of 22 Gaussian draws ~ 7.0 km/s (robust amp is 7.698715)
+
+== 4. EPIC 211503363
+  depth 3.37 ppt: R2 = 2.03 RJ (R*=3.60), 2.32 RJ (R*=4.098); Kovacs-style R2 0.260 Rsun
+  depth 3.70 ppt: R2 = 2.13 RJ (R*=3.60), 2.43 RJ (R*=4.098); Kovacs-style R2 0.260 Rsun
+  depth 3.78 ppt: R2 = 2.15 RJ (R*=3.60), 2.45 RJ (R*=4.098); Kovacs-style R2 0.260 Rsun
+  P 122.90522+-0.00064; depths [3.78, 3.37, 3.71] ppt; T14 [23.1, 22.8, 23.5] h
+
+== 5. HD 220967 e cos w
+  first-order: e cos w = (pi/2)*(phi-0.5) = 0.5768
+  duration ratio 1.869 -> |e sin w| ~ 0.303 (first-order, equal-chord approx)
+  exact, e sin w = +0.303: e cos w = 0.5900, e = 0.663
+  exact, e sin w = -0.303: e cos w = 0.5900, e = 0.663
+  exact with e sin w = 0: e cos w = e = 0.6190  (lower bound on e)
+  joint fit of the 5 JSON eclipse times: P = 73.2451778 +- 0.0000074; chi2 0.31 for 2 dof; secondary phase 0.86723
+  table.csv / build_table.py hard-code P = 73.245178 +- 0.000007 (claimed source: full2_triage.md, which actually says 73.242)
+  durations: primary [7.39, 7.42] h, secondary [13.8, 13.91, 13.86] h; depths [37.1, 37.6, 30.2, 29.8, 29.8] %
+    next primary: BTJD 4336.399 = 2026-10-22 21:33 (BJD_TDB, uncorrected)
+    next primary: BTJD 4409.644 = 2027-01-04 03:26 (BJD_TDB, uncorrected)
+    next secondary: BTJD 4326.674 = 2026-10-13 04:09 (BJD_TDB, uncorrected)
+    next secondary: BTJD 4399.919 = 2026-12-25 10:02 (BJD_TDB, uncorrected)
+
+== 6. EPIC 202126877: K2 event vs TESS ephemeris
+  cycle -124: predicted -211.4659, K2 event -211.5569: O-C = -2.18 h  (sigma_pred ~ 0.67 h formal)
+  cycle -123: predicted -189.6913, K2 event -211.5569: O-C = -524.77 h  (sigma_pred ~ 0.67 h formal)
+  cycle -125: predicted -233.2406, K2 event -211.5569: O-C = +520.41 h  (sigma_pred ~ 0.68 h formal)
+  JSON ephemeris is TESS-only (cycles [0, 1, 2, 35, 36]); chi2/dof 6961/3; O-C min [ -9.9   4.   10.6 -11.9   8.9]
+  blind ephemeris (P 21.77521, T0 2488.5793): cycle -124 -> -211.5467, O-C -0.24 h
+  primaries (sector, product, depth %, T14 h): [(43, 'TESS-SPOC', 20.5, 6.9), (44, 'TESS-SPOC', 20.7, 7.0), (45, 'TESS-SPOC', 20.6, 7.0), (71, 'QLP', 28.5, 7.4), (72, 'QLP', 28.6, 7.3)]
+  secondaries: [(43, 'TESS-SPOC', 4.3, 7.9), (44, 'TESS-SPOC', 4.4, 7.9), (71, 'QLP', 12.7, 10.2), (72, 'QLP', 12.8, 9.7)]
+  ratio S71-72/S43-45: primary 1.39, secondary 2.95  (pure dilution would give the same ratio)
+
+== 7. VSX periods: eclipses per 27-d sector: 3.842 d -> 7.0; 8.697 d -> 3.1
+
+== 8. 202071902: ours 22.9041282+-0.0000030 vs Kovalev 22.859+-0.015 -> 3.01 sigma; vs Guo 22.89 (no error given here)
+   211892898: ours 72.5089+-0.0014 vs Gaia 72.5336+-0.0288 -> 0.86 sigma
+   211411112: ours 62.59466+-0.00018 vs Sandquist 62.59484+-0.00003 -> 0.99 sigma
+
+== 9. word count
+  abstract 116 (limit 150); body excl. table/ack 827 (limit 1350); table text 243; AI statement 83
+  body + AI statement + table caption/notes would be 1153

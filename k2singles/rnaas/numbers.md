@@ -73,3 +73,20 @@ Draft: `k2singles/rnaas/rnaas.tex` (NOT submitted).
 - K2 dataset DOI 10.17909/t9ws3r: DataCite ("K2 Light Curves (all)").
 
 **Note:** arXiv:1608.00459 is Libralato et al., not "Nardiello et al." (the second review's label).
+
+## Changes after the fact-check (`review_fable3/REPORT.txt`, 2026-10-12)
+
+| Item | Change and source |
+|---|---|
+| 1 | HD 220967: P = 73.2451778 ± 0.0000074 from `eclipse_times.py --joint` (saved as `joint` in `results/ephemerides/246194159.json`); no longer hard-coded in `build_table.py` |
+| 2 | Predicted times are BJD_TDB, with geocentric UTC from `scripts/hosts_and_predictions.py` → `rnaas/predictions.csv` (light-travel time removed): TOI-5560.01 2461394.716 ± 0.004 = 2026-12-20 05:03 UTC; 70-d-only transit 2461464.963 = 2027-02-28 10:57 UTC |
+| 3, 4 | 202126877: cycle −124, 2 h early (TESS-only ephemeris). Depths from `scripts/epic202126877_depths.py` → `rnaas/epic202126877_depths.csv`: own TESScut r = 1.5 px gives primary 19.9/19.6/19.6% (2021), 26.0/25.7% (2023), 32.4% (2025); secondary 4.1–4.2% → 10.9–11.1%; S/P 0.21 → 0.43. K2: EVEREST 6.15%, K2SFF 6.17%; C0 aperture 14 px, CROWDSAP 0.9989, FLFRCSAP 0.979 |
+| 5 | 246696483 now listed as 182.24526(18) or 91.122630(90); P/2 only disfavoured |
+| 6 | C0 binaries rewritten per star. 202071902 is 3σ from Kovalev+2024, consistent with Guo+2025 (22.89 ± 0.395) |
+| 7 | "new or refined" periods |
+| 8 | Kovács sentence made explicit (√0.004019 × 4.098 R☉ = 0.260 R☉) |
+| 9 | e cos ω = 0.59 exact (`review_fable3/check_numbers_out.txt`, section 5); e ≥ 0.58; e ≈ 0.66 with the duration ratio |
+| 10 | Gaia host values saved: `data/gaia_hosts.csv` (`scripts/hosts_and_predictions.py`) |
+| 11 | Three blind analyses (`independent_211924561/`, `independent_table/`, `independent_table2/`); three adversarial reviews (`review_fable/`, `review_fable2/`, `review_fable3/`) |
+| 12 | M2 sin i ≲ 0.1 M☉ from the scatter-based limit (b) in `gaia_rv_limit.py` (0.086 M☉ at 140.5 d, 0.068 M☉ at 70.2 d) |
+| Optional | Villanova 100-d placeholder and the 31.27-d SPOC TCE (Valizadegan+2025 table13) for TOI-5560.01 noted as excluded; "red-clump" changed to "red giant"; Events column = events used in the fit |

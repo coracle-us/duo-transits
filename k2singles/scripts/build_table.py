@@ -31,16 +31,16 @@ ROWS = [
      "Gaia SB1 72.53(3)\\,d", "red giant; eclipse at Gaia primary conjunction"),
     (248811085, 349987241, "eb", [1], "C14; S46, S72", "none", ""),
     (246089124, 49603732, "eb", [1], "C12; S70, S92", "none", "K2 secondary at phase 0.494"),
-    (246696483, 436612436, "eb", [1], "C13; S43, S70", "none", "$P/2$ excluded by one S98 epoch"),
-    (211390677, 366568535, "eb", [1, 2], "C5, C18; S45", "none", "red-clump giant; $M_2$ stellar"),
+    (246696483, 436612436, "eb", [1, 2], "C13; S43, S70", "none", "$P/2$ disfavoured by one S98 epoch"),
+    (211390677, 366568535, "eb", [1, 2], "C5, C18; S45", "none", "red giant; $M_2$ stellar"),
     (247967714, 268396693, "eb", [1, 2, 3], "C13; S44, S71", "none", ""),
     (212012030, 14394716, "eb", [1, 2, 3, 4, 5], "C5, C18; S71", "none", "grazing; $2P$ possible"),
     (202126877, 86491361, "known", [1], "C0; S43--45, S71--72",
-     "21.78\\,d$^b$", "eclipses deepen: 6\\% (2014) to 32\\% (2025)"),
+     "21.78\\,d$^b$", "primary 6\\% (K2) to 20--32\\%$^f$; timing variations"),
     (202072917, 308255000, "known", [1], "C0; S6, S43, S45",
-     "34.744\\,d$^{b,c}$", "VSX 3.842\\,d is wrong"),
+     "34.744\\,d$^{b}$, 34.7457\\,d$^{c}$", "VSX 3.842\\,d is wrong"),
     (202071902, 57051340, "known", [1], "C0; S44, S71",
-     "22.859(15)\\,d$^d$", "VSX 8.697\\,d is wrong"),
+     "22.859(15)\\,d$^d$ (3$\\sigma$)", "VSX 8.697\\,d is wrong"),
 ]
 
 
@@ -57,8 +57,6 @@ def main():
     for epic, tic, grp, ns, events, prior, note in ROWS:
         j = json.loads((EPH / f"{epic}.json").read_text())
         P, sP = j["P"], j["sigma_P"]
-        if epic == 246194159:                     # joint primary + secondary fit (see triage notes)
-            P, sP = 73.245178, 0.000007
         if epic == 202126877:                     # eclipse-timing variations: quote the mean only
             ptxt = f"{P:.3f}"
         elif len(ns) > 2:

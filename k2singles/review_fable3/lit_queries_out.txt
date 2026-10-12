@@ -1,0 +1,95 @@
+In preparation for Gaia DR4, the Gaia archive is in evolution. Unfortunately, it may be unstable at times and particular types of queries may time out. Please consider registering for a user account (https://www.cosmos.esa.int/web/gaia-users/register). For questions or advice, please contact the Gaia helpdesk (https://www.cosmos.esa.int/web/gaia/gaia-helpdesk).
+
+===== EPIC 246194159 TIC 301328232 Gaia DR3 2633217515438236544 G=9.39 RUWE=1.24
+  SIMBAD: HD 220967 | sptype: F7/8V | otype: PM*
+  SIMBAD refs: 0
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+  VizieR J/ApJS/281/52/table1: 1 row(s) {'Period': '--', 'OType': 'Subgiant', 'SpType': 'G'}
+
+===== EPIC 248811085 TIC 349987241 Gaia DR3 3877382026835562752 G=11.21 RUWE=1.93
+  SIMBAD: TYC  840-390-1 | sptype:  | otype: *
+  SIMBAD refs: 0
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+
+===== EPIC 246089124 TIC 49603732 Gaia DR3 2630799414490876800 G=13.07 RUWE=1.08
+  SIMBAD: not found
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+
+===== EPIC 246696483 TIC 436612436 Gaia DR3 3308692038602744448 G=12.38 RUWE=1.06
+  SIMBAD: UCAC4 523-009464 | sptype:  | otype: *
+  SIMBAD refs: 0
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+  VizieR J/ApJS/256/14/table4: 3 row(s) {}
+  VizieR J/ApJS/258/26/table4: 5 row(s) {}
+  VizieR J/ApJS/266/40/catalog: 1 row(s) {}
+
+===== EPIC 211390677 TIC 366568535 Gaia DR3 602455410504038016 G=13.30 RUWE=1.15
+  SIMBAD: UCAC4 508-048152 | sptype: G5 | otype: RG*
+  SIMBAD refs: 0
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+  VizieR J/ApJS/281/52/table1: 1 row(s) {'Period': '--', 'OType': 'Red Giant', 'SpType': 'K'}
+
+===== EPIC 247967714 TIC 268396693 Gaia DR3 151031257949262592 G=13.75 RUWE=1.00
+  SIMBAD: not found
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+  VizieR J/MNRAS/495/1252/table2: 3 row(s) {'SpType': '-'}
+  VizieR J/ApJS/256/14/table4: 3 row(s) {}
+  VizieR J/ApJS/258/26/table4: 3 row(s) {}
+  VizieR J/ApJS/266/40/catalog: 1 row(s) {}
+
+===== EPIC 212012030 TIC 14394716 Gaia DR3 675707349048338432 G=13.11 RUWE=2.30
+  SIMBAD: UCAC4 553-043404 | sptype:  | otype: *
+  SIMBAD refs: 0
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+  VizieR J/ApJS/281/52/table1: 1 row(s) {'Period': '--', 'OType': 'Main Sequence', 'SpType': 'K'}
+
+===== EPIC 211503363 TIC 20444116 Gaia DR3 650964454772110976 G=13.21 RUWE=1.08
+  SIMBAD: UCAC4 516-048391 | sptype: G8 | otype: Er*
+  SIMBAD refs: 0
+  gaiadr3.vari_eclipsing_binary: none
+  gaiadr3.vari_classifier_result: none
+  gaiadr3.vari_summary: none
+  gaiadr3.nss_two_body_orbit: none
+  gaiadr3.nss_non_linear_spectro: none
+  gaiadr3.nss_acceleration_astro: none
+  VizieR J/MNRAS/495/1252/table2: 3 row(s) {'SpType': '-'}
+  VizieR J/MNRAS/495/1252/table3: 1 row(s) {'magType': 'gri', 'SpType': 'G8'}
+  VizieR J/MNRAS/495/1252/table5: 1 row(s) {'SpType': 'G8'}
+  VizieR J/ApJS/256/14/table4: 3 row(s) {}
+  VizieR J/ApJS/258/26/table4: 3 row(s) {}
+  VizieR J/ApJS/266/40/catalog: 1 row(s) {}

@@ -1,0 +1,1168 @@
+                                              Astronomy & Astrophysics manuscript no. tran_k2_aph                        c ESO 2021
+                                              November 6, 2021
+
+arXiv:2008.10075v1 [astro-ph.IM] 23 Aug 2020  More planetary candidates from K2 Campaign 5 by tran_k2
+
+                                                                                                       Geza Kovacs1
+
+                                              Konkoly Observatory, Budapest, 1121 Konkoly Thege ut. 15-17, Hungary
+                                              e-mail: kovacs@konkoly.hu
+
+                                              Received June 23, 2020; accepted ???? ??, 202?
+
+                                                                                                                          ABSTRACT
+
+                                              Context. The exquisite precision of the space-based photometric surveys and the unavoidable presence of instrumental systematics
+                                              and intrinsic stellar variability call for the development of sophisticated methods that separate these signal components from those
+                                              caused by planetary transits.
+                                              Aims. Here we introduce tran_k2 a stand-alone Fortran code to search for planetary transits under the colored noise of stellar
+                                              variability and instrumental effects. With this code we perform a survey for new candidates.
+                                              Methods. Stellar variability is represented by a Fourier series, and, if needed, by an autoregressive model to avoid excessive Gibbs
+                                              overshoots at the edges. For the treatment of systematics, cotrending and external parameter decorrelation are employed by using
+                                              cotrending stars with low stellar variability, the chip position and the background flux level at the target. The filtering is made within
+                                              the framework of the standard weighted least squares, where the weights are determined iteratively, to allow robust fit and separate the
+                                              transit signal from stellar variability and systematics. Once the periods of the transit components are determined from the filtered data
+                                              by the box-fitting least squares method, we reconstruct the full signal and determine the transit parameters with a higher accuracy.
+                                              This step greatly reduces the excessive attenuation of the transit depths and minimizes shape deformation.
+                                              Results. The code was tested on the field of Campaign 5 of the K2 mission. We detected 98% of the systems with all their candidate
+                                              planets reported earlier by other authors, surveyed the whole field and discovered 15 new systems. Additional 3 planets were found
+                                              in 3 multiplanetary systems and 2 more planets were found in a previously known single planet system.
+
+                                              Key words. Methods: data analysis ­ Planetary systems
+
+                                              1. Introduction                                                            pendence on pixel sensitivity by including polynomials of the
+                                                                                                                         stellar image parameters (e.g., centroid position, size of the Point
+                                              Tackling instrumental systematics (colored noise) has been a ma-           Spread Function - PSF, etc.) in the time series modeling (Knut-
+                                              jor issue from the very early years of the wide-field ground-              son et al. 2008; Bakos et al. 2010). Intrinsic/physical variation
+                                              based surveys (e.g., TrES, SuperWASP, HATNet, XO). These                   of the stellar flux has become a more fundamental question with
+                                              systematics were very severe due to the large field of views, the          the advance of space missions. The first attempt to deal with this
+                                              ground-based nature of the observations and other imperfections            issue within the environment of systematics was presented by
+                                              attributed to the optics or CCD cameras used (Alonso et al. 2004;          Alapini & Aigrain (2009), within the context of the CoRoT mis-
+                                              Bakos et al. 2004; McCullough et al. 2005; Pollacco et al. 2006).          sion. In their method, the stellar variation acts as a multiplicative
+                                              Novel methods that were able to cure the crippling effect of sys-          noise source and searched for by an iterative method while fitting
+                                              tematics started to gain ground only a few years after these major         the raw stellar flux.
+                                              projects started. These methods are based on the simple observa-
+                                              tion that systematics (by the very meaning of this word) should                The start of the Kepler mission in 2009 and later its very
+                                              be common among many stars in the field, and therefore, can                successful conversion to the two-wheel (K2) program (forced
+                                              be used for correcting the target star of our interest.1 The Trend         by the failure of the reaction wheels), together with the fol-
+                                              Filtering Algorithm (TFA, Kovacs et al. 2005), and Systematics             lowup programs on additional space facilities, boosted further
+                                              Removal (SysRem, Tamuz et al. 2005) use this idea. TFA is us-              efforts in making transit search more efficient. The official post-
+                                              ing it in a "brute force" way (with large number of correcting             processing pipeline (Presearch Data Conditioning ­ PDC) uses
+                                              stars), whereas SysRem employs a more sophisticated approach               PCA-selected basis vectors in a Bayesian framework to avoid
+                                              (akin to Principal Component Analysis - PCA). With the aid of              overcorrection (Smith et al. 2012; Stumpe et al. 2012). In the
+                                              PCA, only the dominating systematics are included in the cor-              early phase of the K2 mission, Vanderburg & Johnson (2014) in-
+                                              rection process for a given target.                                        troduced the idea of Self Flat Filtering, SFF, based on the recog-
+                                                                                                                         nition of the tight correlation between a nonlinear combination
+                                                  Additional effects hindering shallow signal discoveries have           of the image position and the observed stellar flux (akin to EPD).
+                                              also been considered. Unlike commonalities in the flux changes             Although the method proved to be very successful, because of
+                                              of the objects in the field, differences in the pixel properties are       the absence of stellar variability in the model, other methods
+                                              uncommon, and therefore, curable only on a target-by-target ba-            have also been developed to include both satellite roll correc-
+                                              sis. External Parameter Decorrelation (EPD) can mitigate the de-           tion and stellar variability. The method developed by Aigrain et
+                                                                                                                         al. (2016) successfully tackle the issue by using a Gaussian Pro-
+                                              1 By following the jargon of the developers of the Kepler post-            cess (GP) model for the stellar variation. Yet another method,
+                                              processing pipeline (see Smith et al. 2012; Stumpe et al. 2012), we often  based on the idea of Pixel-level Decorrelation of Deming et al.
+                                              use the word "cotrending" for this filtering process.
+
+                                                                                                                         Article number, page 1 of 18
+                              A&A proofs: manuscript no. tran_k2_aph
+
+(2015), was developed by Luger et al. (2016). It stands out from       ­ Employ a wealth of cotrending field stars and image parame-
+the other, `more traditional' models. Called as EVEREST, it uti-          ters following essentially the original ideas of TFA and EPD.
+lizes only the pixel fluxes belonging to the target (no cotrend-
+ing, no EPD). The assumption is that the incoming target flux is       ­ For the protection of the transit events, no data clipping
+the same, whereas the pixel sensitivities are different and there-        should be used. Instead, employ robust fits on the original
+fore, they can be transformed out from the total stellar flux. With       (raw) data with iterative weight adjustment.
+the combination of GP modeling for stellar variability, it seems
+that this approach is very efficient in searching for transits. By     ­ Once the transit periods are found, use a full model for signal
+applying EVEREST on the K2 Campaigns 0 - 8, Kruse et al.                  reconstruction to compensate for the transit depression be-
+(2019) discovered 374 new candidates, thereby nearly doubling             cause of the use of an incomplete model at the signal search
+the number of potential planets in these fields. Therefore, the           phase.
+method presented in this paper heavily relies on the sample on
+Campaign 5 (C05) of Kruse et al. (2019) to perform a sanity               According to these guidelines, by using broadly the notation
+check.                                                                of Kovacs (2018), the main steps of data processing are as fol-
+                                                                      lows.
+    Several other methods have been developed with similarities
+to the ones briefly described above. We refer the interested reader   1. We select NTFA time series
+to a more complete list of methods in Kovacs (2017).
+                                                                      {Uj(i); j = 1, 2, ..., NTFA; i = 1, 2, ..., Nj} ,            (1)
+    The purpose of this paper is to examine the possibility of fur-
+ther improvements in the K2 transit search methodologies.2 Our           from the field by employing the criteria to be discussed in
+approach is based on allowing large TFA template size, using             Sect. 3.3. These time series are assumed to represent the
+Fourier series to represent stellar variability and protecting the       commonality shared by most of the stars in the field. In the
+transit signal by using a robust least squares method to perform         particular case of the Kepler mission, the number of data
+the simultaneous TFA+Fourier filtering before the transit period         points per star, Nj is almost the same, likewise their time dis-
+search (Box-fitting Least Squares ­ BLS, Kovacs et al. 2002).            tributions. Therefore, the requested interpolation to the same
+                                                                         timebase as that of the target star (as needed for the TFA
+2. Datasets                                                              filtering) is very safe.
+
+The data analysis method presented in this paper is a post-           2. Generate self-correcting time series from the background
+processing step after the derivation of the time-dependent net           flux {B(i)} and the centroid pixel position {(X(i), Y(i))} of
+fluxes from the images taken by the telescope. We do not deal            the target with N datapoints
+with the various possibilities in getting these raw (Simple Aper-
+ture Photometry, SAP) fluxes. As a result, we rely on those           {Bj(i); j = 1, 2, 3; i = 1, 2, ..., N} ,                     (2)
+datasets that have already been created by teams dealing with
+this demanding task.                                                  {Zj(i); j = 1, 2, ..., 9; i = 1, 2, ..., N} ,                (3)
+
+    The raw fluxes used in this paper come from two sources:             where B1, B2, B3 = B, B2, B3, and Z1, Z2, ... =
+a) the official image reduction and post processing pipeline of          X, Y, X2, XY, Y2, X3, X2Y, XY2, Y3. These time series are
+the Kepler mission (Smith et al. 2012), and b) the k2phot3 code,         scaled to unity and then zero-averaged. For {B(i)} a robust
+performing the aperture photometry in supplying the input time           outlier-correction6 is employed to avoid unwanted fluxes
+series for the TERRA pipeline (Petigura & Marcy 2012; Petigura           from neighboring stars.
+et al. 2015; Aigrain et al. 2016). These data are accessible via the
+NASA Exoplanet Archive4 and the affiliated Exoplanet Follow-          3. Stellar variability in the target time series is represented by a
+up Observing Program (ExoFOP)5, and referred to in the fol-              set of sine and cosine functions
+lowing, respectively, as KEP and PET. We note that the latter set
+includes all available epochs in the campaigns (yielding an over-     {S k(i), Ck(i); k = 1, 2, ..., NFOUR; i = 1, 2, ..., N} ,    (4)
+all data point number of  3620 per target), whereas the KEP
+set, to avoid instrumental transients, discards certain data items.      where NFOUR is the number of Fourier components. The fre-
+This leaves  3430 data points for the analysis.                          quencies are given by k f0, where f0 is close to the reciprocal
+                                                                         of the total timebase. See Sects. 3.1 and 3.4 for the choice of
+3. tran_k2: Overall description                                          these parameters.
+
+In constructing a code with the ability of treating systematics and   4. Employ robust least squares minimization to determine the
+stellar variability without destroying the rare and shallow transit      best fitting linear combination of the three signal constituents
+events, we considered four vital goals to follow:                        above to the target time series {T (i)}
+
+ ­ Use a nearly complete time series model by including inter-               N
+    nal (i.e., non-instrumental) variability and systematics in the
+    filter acting on the input time series at the data preparation    D = w(i)[T (i) - F(i)]2 ,                                    (5)
+    phase (before signal search).
+                                                                             i=1
+2 The source code tran_k2.f developed in this work is available at
+http://www.konkoly.hu/staff/kovacs/tran_k2.html, or, can              with:
+be requested from the author.
+3 https://github.com/petigura/k2phot                                              NTFA               3               9
+4 https://exoplanetarchive.ipac.caltech.edu/
+5 https://exofop.ipac.caltech.edu/                                    F(i) = a0 + ajUj(i) + bjBj(i) + cjZj(i) +
+
+                                                                                  j=1   j=1                          j=1
+
+                                                                                                     NFOUR
+
+                                                                                                             dkS k(i) + ekCk(i) .  (6)
+
+                                                                                                        k=1
+
+                                                                      6 Implying robust polynomial fit with Cauchy weights and iterative 3
+                                                                      clipping.
+
+Article number, page 2 of 18
+                   Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+The weights {w(i)} are determined iteratively, starting with                   Transit shape - The assumption of box-like transit shape is
+uniform weighting. We choose the Cauchy weight function                    used only in the period search. Because of the high precision of
+                                                                           the Kepler data, we found it obligatory to use a better approxima-
+2                                                                          tion of the transit (otherwise, when searching for additional tran-
+w(i) = 2 + 2(i) ,  (7)                                                     sits, we may not be able to remove the already identified compo-
+                                                                           nent in its full extent). Therefore, the transit shapes are assumed
+   where  is the standard deviation of the fit and (i) is the              to be of trapezoidal, with a rounded bottom parts. To be more
+   difference between the observed and the predicted values,               specific, we show the shape of this simplified transit model for
+   i.e., (i) = T (i) - F(i). At each step of the iteration we can          a specific set of parameters in Fig. 1. In modeling a given tran-
+   solve the linear problem within the framework of standard               sit, we adjust four parameters: Tc, the center of the transit, T14,
+   weighted least squares, but then a correction is needed to the          the full transit duration, T12, the ingress duration and  the total
+   weights according to Eq. 7. Iteration is stopped when the rel-          transit depth. We do not adjust the relative depth of the rounded
+   ative change in  becomes less than 0.1%.                                bottom (this is left always at 10% of the depth where the ingress
+5. Minimize the effect of Gibbs overshooting7 at the edges. This           ends).
+   is done by fitting an autoregressive (AR) model8 to the inner
+   part of the noise-mixed Fourier signal and predicting the val-          Fig. 1. Simplified transit shape used in this paper. The flux drops lin-
+   ues at the edges. The AR model is not incorporated in the               early in the ingress and egress parts at a rate given by the T14/T12 ratio
+   more extended and full model fits described in step 7, but              and . The U-shaped bottom is supposed to model the overall limb dark-
+   only used to prepare the data for the BLS analysis. We refer            ening. It has an analytical form of u(x) =  - 0.1(1 - 1 - x2), where
+   to Sect. 3.2 for further details on the AR edge correction.             x = 2/(3 - 2), with totality start/end phases 2, 3 and phase ,
+6. With the converged regression coefficients, and considering             where the function is to be evaluated.
+   possible change at the edges found at step 5, compute the
+   residuals {R(i) = T (i)-F(i); i = 1, 2, ..., N} and perform stan-           Single outliers - We recall that no outlier selection is made
+   dard BLS transit search on {R(i)} with successive prewhiten-            in the data processing up to the pre-BLS phase. Since the BLS
+   ing by the dominant BLS component found at each step of                 search is sensitive to outliers, we focus on these, but carefully
+   the prewhitening process.                                               avoid cases when transit-like features are suspected. As a result,
+7. After finding all significant transit components, supply the            we consider only those instances when the flux decrease is lim-
+   model given by Eq. 6 with the transit model and compute the             ited to the middle point among three successive points. The out-
+   best transit depths and all other parameters entering in Eq. 6          lier status is determined on the basis of the deviation from the
+   with this full model. Subtract the non-transiting part of the           average of the two fluxes left and right of the point of interest.
+   fit from the input signal {T (i)} and derive new transit param-         If this deviation exceeds 30 (with 0 being the sigma-clipped
+   eters from the residuals, allowing to fit all transit parameters        standard deviation of the pre-BLS phase time series), then the
+   (not only the depth, as in the previous step). With the new             flux of this point is replaced by the flux average of the neighbor-
+   sets of transit parameters loop back to the full model and              ing points. A similar procedure can be employed in the recon-
+   compute the next approximation for the transit depth (and               struction phase, when the transit signal helps further identifying
+   for all other parameters, including the weights {w(i)} ­ with           the single outliers.
+   the concomitant sub-iterations). The process is repeated until
+   the same  condition is satisfied as mentioned at step 4. For                Flare correction - In a non-negligible number of stars, flares
+   the obvious time constraining nature, in the case of multi-             may also jeopardize the success of the search for periodic tran-
+   planetary signals all components are treated separately when            sits, since these events increase the colored-noise component of
+   estimating the transit parameters of the individual compo-              the BLS spectrum. Here we resorted the simplest and far from
+   nents. However, the transit depths are different from this re-          optimum way to remedy the effect of flares. By considering only
+   spect, since they can be estimated in a single grand linear fit         events of flux increase relative to the average or to a given transit
+   as described above. We refer to step 7 as signal reconstruc-            signal ­ depending on the stage of the analysis ­ we replace the
+   tion, since during this step all constituents of the signal are         "positive" outliers by the average or the corresponding values
+   considered and this leads to a (usually much) better approxi-           of the transit signal. We do not correct any "flare" that does not
+   mation of the transit signal.                                           exceed the 30 limit as given above.
+
+    In addition to the most crucial ingredients of the data analy-         3.1. Detuned Fourier fit
+sis detailed above, there are many other, perhaps less crucial, but
+still important particularities worth mentioning. Some of them             To handle stellar variability, we opted for traditional Fourier de-
+(e.g., matrix operation, iteration initialization) are related to the      composition, whereby ­ based on very fundamental and well-
+speed, others to the quality of the performance of the code. Be-           known properties of Fourier series defined on a finite interval ­
+cause these latter ones have an effect on the detection efficacy,
+we briefly describe them below.
+
+7 The Gibbs phenomenon is an asymptotic property of the Fourier de-
+composition, and follows from the `almost everywhere' type of conver-
+gence for square-integrable functions ­ e.g., for continuous functions
+defined on finite intervals. It is often exhibited as high-frequency os-
+cillations or overshootings if the order of the Fourier decomposition is
+high enough.
+8 AR modeling performs backward/forward prediction from the linear
+combination of certain number of future/past values of a time series (see
+Sect. 3.2 and Fahlman & Ulrych 1982; Caceres et al. 2019, for early, and
+recent applications.)
+
+                                                                             Article number, page 3 of 18
+                              A&A proofs: manuscript no. tran_k2_aph
+
+we can fit the smooth part of the observed flux variation. Even       Fig. 2. Illustration of the effect of frequency detuning with fixed fre-
+though any stellar variability has an inherently stochastic compo-    quency components { fi = (i + 1)/( × T )}, where T is the total time
+nent (primarily due to surface convection) the adjacent fluxes are    span and  = 1.0 for the classical Fourier decomposition (steelblue
+correlated at some degree, and the variation appears to be contin-    dots) and  = 1.05 for the detuned case (brown dots). The lower panel
+uous (albeit non-periodic). Consequently, we can apply Fourier
+decomposition for a very large class of variations. Even though       shows the input sinusoidal signal (black line) and the Fourier fit (yellow
+this is true, we have to be aware of the fact that the finite time-   line ­ there is no  dependence on this scale)
+base inevitably introduces discontinuities, and as such, induce
+what is commonly known Gibbs oscillations close to the edges                                                .
+of the dataset. It is obvious that one needs to remedy this prob-
+lem, since these high-frequency oscillations can easily dominate               m                                  m
+the time series after corrections for systematics and stellar vari-
+ability.                                                              x(k) = ai x(k + i) and x(k) = ai x(k - i) ,    (8)
+
+    To avoid any data loss by simply chopping off some fraction                i=1     i=1
+of both ends of the dataset, we searched for various methods
+in the literature devoted to Gibbs oscillation minimization (e.g.,    for the left and the right ends, respectively. For the middle
+by using the Lanczos sigma factor9). Because we did not find a        of the dataset (i.e., from k = m + 1 to k = n - m we use a
+suitable one, we tested the idea of period detuning (a method we      two-side model with simple arithmetic mean
+did not find in the literature scanned). Although the precise (or at
+least better than presented) discussion of the method is out of the   x(k)  =  1   m   ai[x(k + i) + x(k - i)] .     (9)
+scope of this paper, we illustrate the method at work on an ex-                2  i=1
+ample. The idea is simple. Increase the fundamental period (and
+its harmonics) by some amount and thereby push the oscillations          Least squares with equal weights are used to determine the
+outside the timebase of interest.                                        AR coefficients {ai}.
+                                                                      c. Predict the outermost L values of the Fourier points from
+    We show the effect of detuning in Fig. 2. We generated a             those interior to the edges. We found that these predictions
+sinusoidal signal on the observed timebase of one of the mem-            may still have some curvature or mild wavy behavior. To
+bers of Campaign 5. We chose the following parameters: P =               eliminate this feature, and protect any possible transit feature
+7.6508 d, A = 10 ppt (parts per thousand, i.e., A = 0.010), with         close to the end points, we robustly fit 5th-order polynomials
+an additive Gaussian (white) noise of  = 0.001 ppt. We set the           to the AR predictions.
+order of the Fourier fit equal to 50. We see that detuning works
+very efficiently, with only a negligible overshooting close to the    d. Compare the residuals between the systematics-free data and
+noise level. The degree by which detuning may eliminate Gibbs            approximations obtained by the AR and Fourier modeling.
+phenomenon depends on the type of signal and the order of the            Select the one that yields smaller Root Mean Square (RMS)
+Fourier series. Nevertheless, the method worked neatly in nearly         and pass the so-obtained systematics- and variability-free
+all cases encountered so far during the analysis of the 20000 stars      time series to the BLS routine.
+of Campaign 5.
+                                                                          To illustrate the method at work, we generated a synthetic
+3.2. Autoregressive edge correction                                   sinusoidal signal with P = 9.091 d, semi-amplitude A = 500 ppt
+                                                                      and superposed a transit signal with Ptr = 14.286 d,  = 0.2 ppt.
+Here we focus on those (not very numerous) cases when detun-          We also added two individual boxy transits near the end points
+ing does not work. Instead of trying to adjust the Fourier order,
+we opted to employ an AR model on the noise-perturbed Fourier         to test if the method will preserve these events. The order of the
+fit and predict the Gibbs-free signal at the edges. The AR mod-
+eling is always performed and compared with the Fourier fit and
+the one is chosen that yields a better fit to the data. The main
+steps of the AR modeling are as follows.
+
+a. Cut some fraction (L data points, some 5% the full set of
+    N points) of the Fourier signal at the edges of the dataset.
+    Add Gaussian noise to the signal to avoid complete fit to the
+    Fourier solution and thereby reproducing the Gibbs oscilla-
+    tions at the edges, where the AR model is used to predict
+    the oscillation-free continuation of the Fourier solution. The
+    size of the noise can be estimated from the fit based on the
+    Fourier model.
+
+b. Interpolate the above noisy Fourier signal {x(i); i =
+    1, 2, ..., n} to an equidistant timebase and fit it by a high-
+    order AR model. To maintain stability we use an AR order of
+    m = 900. To determine the autoregressive coefficients {a j},
+    we use one-side predictions for the outermost m data points,
+    i.e.,
+
+9 See Weisstein, Eric W. "Lanczos sigma Factor." From MathWorld­A
+Wolfram Web Resource.
+https://mathworld.wolfram.com/LanczosSigmaFactor.html
+
+Article number, page 4 of 18
+Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+Fourier series was 50. The result is shown in Fig. 3. It is im-                    In spite of the success of the above `brute force' method, ef-
+portant to note that the Fourier fit was made with detuned fun-                forts have been made to decrease the number of cotrending time
+damental period (see Sect. 3.1). As it was emphasized earlier,                 series as much as possible, to: a) avoid signal degradation due
+detuning is very efficient in the elimination of the Gibbs oscilla-            to overfitting, b) using only the essential (i.e., `most common')
+tions. If detuning is not efficient enough, AR modeling may go                 components and aid a better separation of the transit signal and
+to the rescue and allow the detection of faint signals.                        systematics. The most obvious approach in reaching these goals
+                                                                               is to employ PCA on the pre-selected set of candidate cotrending
+Fig. 3. Illustration of the elimination of the Gibbs oscillations at the       time series and use only those PCA components that are `essen-
+edges of the dataset by using AR modeling. Bottom: input dataset (black        tial', based on their eigenvalues, a product of the PCA analy-
+line: noisy sinusoidal with transits), Fourier fit (yellow). The transits are  sis. From the very first application in the SysRem algorithm by
+not visible at this scale. Middle panels: residual signal after subtracting    Tamuz et al. (2005), this selection method has been widely used,
+the best Fourier fit and the best AR model (black and red dots, respec-        often supplemented by other criteria, such as selecting dominant
+tively). The green dots indicate where the Fourier fit was accepted. Up-       components from the PCA set based on the statistical properties
+permost panel: residual time series obtained by Fourier (black) and AR         of the regression coefficients of the cotrending vectors (Petigura
+modeling (light blue). See text for the main signal parameters.                & Marcy 2012). Or, in another approach, application of maxi-
+                                                                               mum likelihood criterion by considering the effect of the non-
+3.3. TFA template selection                                                    Gaussian nature of the full model with systematics (i.e., PDC-
+The selection of the proper set of cotrending time series is one               MAP, the Kepler pipeline by Smith et al. 2012; Stumpe et al.
+of the fundamental questions in filtering out systematics from the             2012).
+observed signal. The most liberal choice one can try is to avoid
+clear variables showing excessive scatter, but otherwise paying                    Because the Kepler data are dominated by systematics, rather
+not too much attention to stellar variability in the cotrending set            than white noise (at least down to the Neptune/Super Earth
+(i.e., Kovacs et al. 2005). The somewhat vague (but ­ under cer-               regime), here we recognize the importance of avoiding variables
+tain circumstance ­ working) argument here is that in the pres-                in the TFA templates set. However, we still do not use any PCA-
+ence of noise and targeting transits, the variability of the cotrend-          like combination to select the `most dominant' correcting vec-
+ing time series will be scaled down due to the nearly constant                 tors. This is because templates, that are `less common' could
+nature of the target time series. The transits, due to their short             also be useful in the case a some targets. For example, outlier
+time scales will not be much effected, and the final result will               data points may lead to the rejection of a particular template
+be positive, since the cotrending time series will fit primarily the           in the PCA classification, whereas the same template may be-
+systematics, due to their coherence with these components in the               come rather instrumental in filtering out these outlying points if
+flux variation of the target. Interestingly, this approach has been            and when they occur in a target of interest. This is very impor-
+fairly successful over the numerous applications in searching for              tant, since the signal of interest (the transit) is also some sort of
+periodic transits.                                                             outlier. Preserving the transit but treating the outliers `naturally'
+                                                                               (i.e., without clipping them) is an important ingredient of a suc-
+                                                                               cessful transit (or transient) search.
+
+                                                                                   The main steps in selecting the TFA template set are as fol-
+                                                                               lows:
+
+                                                                               ­ Spatially uniform sampling: Because systematics are differ-
+                                                                                  ent across the field of view (FOV), we aim for spatially ho-
+                                                                                  mogeneous sampling. From each of the 19 tiles (built up
+                                                                                  from 2 × 2 closely spaced CCD units) we select the same
+                                                                                  number of templates. Because of the distortion introduced
+                                                                                  by the use of equatorial coordinates (, ), we shifted, ro-
+                                                                                  tated and stretched/squeezed the FOV so that all tiles became
+                                                                                  approximately of the shape of a rectangle. This step is nec-
+                                                                                  essary for the simple bookkeeping of the potential templates
+                                                                                  and their association with a given tile. The transformation
+                                                                                  formulae to the new coordinate system (X, Y) are as follows:
+
+                                                                                =  - 0 ,                   (10)
+
+                                                                                =  - 0 ,                   (11)
+
+                                                                               X = ( cos  +  sin ) cos  ,  (12)
+
+                                                                               Y =  cos  -  sin  .         (13)
+
+                                                                                  We determined the transformation parameters with a simple
+                                                                                  trial and error method. For C05 we obtained: 0 = 130.2,
+                                                                                  0 = 16.8,  = -1. In each tile the potential templates
+                                                                                  were chosen from a uniform random distribution on the
+
+                                                                                  brightness-ordered list of stars. We allowed up to 200 ran-
+
+                                                                                  dom tries from each tile and selected those stars that satisfied
+
+                                                                                  the criteria below.
+                                                                               ­ Focus on low photon noise: Templates are chosen from the
+
+                                                                                  bright side of the magnitude distribution of the campaign
+                                                                                  field (in the case of C05, this limit was set at K p = 13.4,
+                                                                                  corresponding the brightest 10000 stars in the field).
+
+                                                                                                    Article number, page 5 of 18
+                              A&A proofs: manuscript no. tran_k2_aph
+
+ ­ Avoid near singular cases: The distance between two tem-                 high-frequency components because of a too parsimony choice
+    plate stars should exceed some value, dmin, limited by the              of the Fourier order. Due to the complexity of the time series, and
+    PSF of the Kepler telescope.                                            the specific representation of it via a Fourier series with frequen-
+                                                                            cies independent of the actual contributing components, standard
+ ­ Small overall scatter: The RMS of the residuals around the               methods (e.g., Fisher test) for optimized parameter number are
+    fitted low-order polynomial {p} to the SAP time series {x}              not straightforward to employ. The method presented here is far
+    cannot be greater than t, i.e., (x/p) < t.                              from being exact. It is largely based on the general pattern of the
+                                                                            RMS of the Fourier fit as a function of the number of the Fourier
+ ­ Small Fourier power: The Fourier fit { f } to the residuals of           components (in brief the Fourier order). The scheme and the pa-
+    the polynomial fit above should not improve the goodness of             rameters used are derived form the large number of tests per-
+    fit by more than a factor of r, i.e.,                                   formed on the Campaign 5 data and serve one goal only: separate
+    (x/p)/(x/p - f ) < r.                                                   the smooth Fourier component from the discrete transit events.
+
+We used 2nd order polynomials and 50th order Fourier series in                  It is also important to investigate if testing the SAP LCs is
+all template sets. These parameters were chosen after various               suitable for a reliable estimation of the best Fourier order. We
+tests, including visual inspection of the candidate templates. The          found that systematics may lead to serious errors in the estimated
+other parameters resulted from the same procedure, and set at the           order. Therefore, we decided to perform a TFA filtering first, and
+following values: t = 0.03 (in relative flux units, normalized to           then employ the method described below on the filtered data to
+1.0 in respect of the average flux of the given star), r = 1.2. The         estimate the Fourier order.
+final set of templates is shown in Figure 4. It is intriguing that the
+tile in the center contains significantly less number of templates              The main goals of the optimization are as follows: i) find a
+than all the other tiles. A brief visual examination of the light           simple and easy to use criterion that handles most cases of stellar
+curves (LCs) for this tile revealed an overall lower level of satel-        variabilities encountered in the Kepler survey; ii) minimize mix-
+lite rotation adjustment. As the referee suggested, the different           ing instrumental systematics and stellar variability; iii) perform
+behavior of the objects on the central tile could be related to the         the determination of the optimum order quickly (before the com-
+closeness of this tile to the rotation axis of the satellite. How-          plex filtering of the input time series, involving systematics and
+ever, the general drift and the ramping at the start of the cam-            stellar variability); iv) aim for low Fourier order (CPU demand
+paign remained, leading to a poor polynomial fit at low order.              increases sharply by higher Fourier order).
+Consequently, the Fourier fit on the residuals became more sig-
+nificant and that led to the failure in satisfying the "small Fourier           All these point to seeking low-order fits, and we restrict the
+power" criterion by most of the LCs associated with this tile. Al-          search to NFOUR < 150. Concerning iii), we linearly interpolate
+though the template number distribution among the tiles can be              the TFA-filtered LC of the target to an equidistant basis and per-
+made uniform easily by using a higher order polynomial fit, this            form the test by using simple Fourier transforms (equivalent to a
+does not change the detection efficacy in any major way (i.e., all          least squares fit on an equidistant timebase, but much faster).
+detections discussed in this paper remain reliable/strong).
+                                                                                As expected, (NFOUR) ­ the RMS of the residuals of the
+                                                                            fit ­ has a very steep decreasing part for low NFOUR and then,
+                                                                            a long, nearly linearly decreasing tail toward higher NFOUR val-
+                                                                            ues. If there is a high-frequency stellar variation, then we have
+                                                                            other steep drops in RMS at large-enough NFOUR values. The
+                                                                            nearly flat parts in the (NFOUR) function make the simple Fisher
+                                                                            test difficult to use for parameter optimization. Therefore, the
+                                                                            method described below considers both the statistical properties
+                                                                            of the RMS of the Fourier fit and the possible late (i.e., high
+                                                                            NFOUR) convergence of the fit.
+
+Fig. 4. Distribution of the TFA template stars (red dots) for 387 tem-       ­ Fit the SAP LC with the TFA template set to be used by the
+plates. The X and Y coordinates (given in [deg] relative to the center          routine performing the full analysis for the target. Use the
+of the field) result from the transformation of the equatorial coordinates      residuals of this fit in the subsequent steps.
+to remedy strong distortions of the CCD subfields (see text). The best
+fitting rectangles to the hulls of the subfields are shown by black lines.   ­ Compute (NFOUR) for NFOUR = 1 - 150 by omitting 5% of
+The small blue dots show the stars with Kepler photometry.                      the data points at both edges (to avoid extra increase in RMS
+                                                                                due to the Gibbs phenomenon).
+3.4. Optimizing the Fourier order
+                                                                             ­ Perform robust linear fit to (NFOUR) between NFOUR = 100
+Determination of the Fourier order NFOUR is important, because                  and 150.
+in critical cases (e.g., in the presence of high-frequency or high-
+amplitude stellar flux variations), the shallow transit signal can           ­ Compute S 1, the RMS of the above linear fit.
+be easily washed out by a too high-order fit or by leaving in the
+                                                                             ­ Extrapolate this line all the way to the lowest Fourier order,
+                                                                                and compute the difference L between (NFOUR) and the
+                                                                                extrapolated line L(NFOUR).
+
+                                                                             ­ The first type of optimum Fourier order M1 is defined as the
+                                                                                largest order at which  - L is greater than S 1.
+
+                                                                             ­ Compute the ratio R2(NFOUR) = 2(NFOUR)/150, where
+                                                                                150 is the standard deviation of 2(NFOUR) at the highest
+                                                                                Fourier order tested, i.e., 150 = 2(150) 2/(0.9n), where n
+                                                                                is the original number of data points with a factor taking into
+                                                                                account the data cut at the edges (see above)10.
+
+                                                                            10 The formula cited for the standard deviation of the sam-
+                                                                            ple variance is valid under the assumption that the resid-
+
+Article number, page 6 of 18
+      Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+­ The second type of optimum Fourier order M2 is defined as                 process, from top to bottom, the finally used Fourier orders are
+                                                                            as follows: 20, 86, 53 and 110.
+   the largest order at which R2(NFOUR) - R2(150) > 6.
+­ Since we found too low order fits often insufficient, the
+
+   optimum Fourier order is defined as follows: Mopt =
+   MAX(20, MIN(M1, M2) + 10).
+
+Fig. 5. Examples on the optimized selection of the Fourier order. Left      Fig. 6. Example of the capability of joint robust Fourier and TFA fit
+                                                                            in disentangling stellar variability and measurement systematics. The
+column: normalized standard deviation of the Fourier fit as a function of   target name and the type of the final data product are indicated in the
+                                                                            header. The Fourier order is optimized at NFOUR = 83. From the bottom
+the Fourier order. Red line shows the robust linear regression to the data  to top: raw (SAP) LC from KEP; TFA and FOUR components; raw
+in NFOUR = 100 - 150. Right column: Fit variances over the standard         minus (TFA+FOUR) components ­ the periodic dips due to the transit
+deviation of the fit variance at NFOUR = 150. Vertical yellow stripes       signal emerge; folded LC with the best BLS period. Continuous black
+show the optimum Fourier orders derived from the statistics given in        line: best fitting transit signal.
+
+the header. See text for further details.                                       To illustrate the overall performance of the code and the va-
+                                                                            lidity of the optimized choice of the Fourier order, Fig. 6 shows
+    Figure 5 exhibits four typical types of the functions described         the case of EPIC 211897272. The quasi-periodic stellar variabil-
+above. Examples shown are from the list of planetary candidates             ity has been well disentangled from the systematics and resulted
+of Kruse et al. (2019). The uppermost panel shows the pattern               in the detection of the transit signal with a depth of 0.5 ppt (some
+for an apparently non-variable star. As expected, the optimum               40-times smaller than the amplitude of the SAP signal, heavily
+Fourier order is low. The R2 statistic shows a similar pattern.             scrambled by systematics in the first half of the campaign).
+Since R2 gives the change in 2(NFOUR) normalized to its theo-
+retical error at the highest Fourier order tested, the absolute value           In summary, to avoid excessive run times by using flat, over-
+of the change in R2 is important. This is different from the statis-        estimated Fourier order for all targets (and risk loosing some
+tic derived from the linear fit to the tail of (NFOUR), that yields         of the important candidates because of overfitting), optimization
+a measure only of the topological property of the RMS variation.            seems to be an important part of the data processing. We found
+                                                                            that well over 90% of the potential candidates can be found in
+    The next panel shows the case when the size of the stellar              this way and get signatures of hidden signals for the remaining
+variability is similar to the size of the systematics. The robust fit       few percents. These targets can be resolved by performing more
+and the interval chosen to perform the linear regression leads to a         detailed test, including detection sensitivity against changing the
+bad approximation of the low-NFOUR regime, reflecting the trend             Fourier order.
+expected from the high-NFOUR regime, where the harmonic con-
+tent of the signal is supposed to be exhausted. The point where             4. Significance of the signal reconstruction
+the prediction deviates by more than a given amount (see above)                (complete signal modeling)
+yields an estimate of the minimum Fourier order. Similarly, the
+R2 statistic measures the relative change, and when it exceeds              When unknown signal components are searched without the ex-
+a certain amount, we can consider that value of NFOUR as the                act knowledge of the perturbing components, it is unavoidable
+minimum value needed to represent the Fourier content of the                to introduce some deformation in the signal searched for. This is
+signal.
+
+    The other two examples are dominated by stellar variability.
+The target in the bottom panel is a good example for the stepsize
+variation of (NFOUR) and the need to map this function to rather
+high values. From the rule given in last step of the optimization
+
+uals follow a Gaussian distribution. For an easy reference,
+
+see:  https://stats.stackexchange.com/questions/29905/
+
+reference-for-mathrmvars2-sigma4-left-frac2n-1-frac-kappan
+
+                                                                            Article number, page 7 of 18
+                              A&A proofs: manuscript no. tran_k2_aph
+
+simply because of the (natural) incompleteness of the model we       utilized the quantity we call Spectral Peak Density (SPD). This
+use for signal search. This effect is present even by using some     parameter is aimed for the quantification of the sparsity of the
+"protective shield" for the unknown component, like the self-        spectrum, yielding small values for those with few large peaks
+adjusted weights on outliers as used in this paper. There have       and large values for those with many small ones. The former
+been attempts to avoid signal degradation due to the use of in-      spectra are more likely to contain significant signal, whereas the
+complete signal models (Foreman-Mackey et al. 2015; Angus            latter ones look more closely to what we expect from a noise.
+et al. 2016; Taaki et al. 2020), but subsequent work by Kovacs       For further reference, SPD is defined as follows:
+et al. (2016) showed that full modeling in signal search is con-
+siderably less efficient than thought, and, obviously, more CPU      S PD = N(sp/sp(peak) > spcut) ,                                      (14)
+demanding.                                                                                     N ( s p)
+
+    Although the overall accuracy is always a focus of attention     Where N(sp/sp(peak) > spcut) is the number of spectral val-
+in deriving parameters of interest in any physical system, certain   ues (normalized to the highest peak) exceeding a certain cut-
+parameters may bear higher importance. In the particular case        off from the available N(sp) spectral points. Trained on the C05
+of extrasolar planets, the radius (through the scaleheight) is a     data, we found that spcut = 0.3 yields a quite reliable estimate of
+crucial parameter in planetary atmosphere models, and, it is ob-     the "cleanliness" of the spectra and the derived S PD values are
+viously important in population synthesis studies. For example,      consonant with the visual inspections.
+the "radius gap" problem (the low number density of planets at
+Rp  2REarth ­ see, e.g. Van Eylen et al. 2018; Fulton & Petigura         Although S NRsp and S PD yield useful information on the
+2018) is quite sensitive to the radius error, that should be pushed  signal content of the time series, the quality of the derived folded
+below 5% to sharpen the feature needed for further theoretical       light curve may not always entirely in agreement with the scores
+considerations (Petigura 2020).                                      received from these parameters. This is because spectral param-
+                                                                     eters reflect the relative significance of the peak component to
+    Constituting the last step of the signal search, reconstruction  other possible components. For example, in the case of rare or
+requires the knowledge of the signal period and the approximate      single ­ otherwise high-SNR ­ events, S NRsp and S PD will, in
+parameters of the transit. By adding this approximation to com-      general, indicate low significance, whereas the folded LC will
+plete the signal model, we can iteratively improve the signal pa-    obviously suggest the presence of a strong signal. Therefore,
+rameters by solving this complete model (see Kovacs et al. 2005,     largely following Kovacs et al. (2005), we characterize the qual-
+for the first application of this approach). Here we use Eq. 6 sup-  ity of the folded LC by the Dip Significance Parameter (DSP):
+plied by the successive approximations of the transit signal to
+minimize Eq. 5 with the adjusted/optimized weights {w(i)}. We        DS P =                        ||                        ,            (15)
+note in passing that full modeling is a must in most cases for                       var
+precise transit parameter determination and used commonly in                                +  varoot        +  vardi  f  f
+planet atmosphere studies based on space observatory data such
+as HST and Spitzer (Knutson et al. 2008).                            where || is the absolute value of the transit depth, var is the
+
+    In the following we investigate the signal preserving proper-    variance of the average (i.e., square of the error of the mean)
+ties of tran_k2 from injected signal tests performed on a subset
+of field C05. Because of the substantial size of the parameter       of the intransit data points (i.e., all points from the first con-
+space, we simplify the test to all transit parameters fixed, except
+for the transit depth, our main focus of interest. In preparing the  tact to the last one). In the evaluation of the remaining vari-
+tests, first we define our detection parameters and criteria.
+                                                                     ances we divide the phase-folded LC into bins of the same
+4.1. Signal detection parameters
+                                                                     length as the full transit.11 By omitting the bin correspond-
+We consider the signal detected in a simulation if all criteria be-
+low are satisfied:                                                   ing to the transit, we compute the bin averages for the Nb out
+                                                                     of transit (oot) bins {aoot( j); j = 1, 2, ..., Nb}. The variance of
+1. |1 - Pobs/Pin j| < 0.002
+2.  < 0                                                              these values is varoot. This quantity may not decrease DSP to
+3. S NRsp > 6 with S NRsp = (sp(peak)- < sp >)/(sp)
+                                                                     the level needed in the case of ragged LCs with large varia-
+Here Pobs denotes the observed period at the peak power of the
+BLS spectrum of the time series with the injected test signal        tions between the oot bins. Therefore, we added the average of
+of period Pin j. The second condition filters out possible flares,
+whereas the third one is our standard condition to characterize      the squared differences between the adjacent bin averages, i.e.,
+the signal to noise ratio (SNR) of the BLS spectrum (sp(peak),
+< sp > and (sp), respectively, stand for the peak value, the av-     vardi f f  =     1     Nb -1  (aoot  (  j  +  1)  -  aoot  (  j))2.
+erage and for the standard deviation of the spectrum). The search                  (Nb -1)  j=1
+was performed in the frequency band [1/T, 2.5] c/d, where the
+lower limit comes from the constraint of avoiding large gaps in      4.2. Tests: transit depth and transit duration
+the trial phase-folded LCs at periods longer than the total time
+span T . To minimize low-frequency power surplus (Bakos et al.       As we have already mentioned earlier in this section, we limit
+2004), the spectrum was robustly fitted by a 6th-order polyno-       the tests on signals that differ only in transit depth, with all other
+mial and the residuals were used to compute S NRsp.                  parameters fixed during each simulation. Two types of transit
+                                                                     signal are used:
+    Although in the particular case of test signals we did not use
+any other parameters to characterize the significance of the sig-     ­ Signal A: Ptr = 11.111 d, T14 = 0.2 d, T12/T14 = 0.2, 0.1 <
+nal, in the transit survey performed on the field of C05, we also        || < 1.9 ppt, no sinusoidal component
+
+                                                                      ­ Signal B: Signal A with a sinusoidal component; period:
+                                                                         7.692 d, amplitude: 20 ppt.
+
+                                                                     We note that the center of transit and the phase of the sinusoidal
+                                                                     component are unimportant in the present context. The transit
+                                                                     depth  is chosen from a uniform distribution. The range of tran-
+                                                                     sit depth was chosen to roughly match most of the values of the
+                                                                     candidates in the list of Kruse et al. (2019).
+
+                                                                     11 Choosing the bin size the same as that of the full transit ensures sim-
+                                                                     ilar statistical treatment of all parts of the LC.
+
+Article number, page 8 of 18
+                                                   Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+    We used our "400" TFA template set of 387 stars with
+low/small stellar variability from the PET database, and injected
+the signals above. These signals were tested with and without
+employing the reconstruction option. We focus on the transit
+depth and duration in the comparison of the injected and derived
+parameters.
+
+    From the 387 injected signals of type A, we recovered 297.
+For type B injections the rate was slightly lower (294). Figure 7
+shows the ratio of the detected and injected values for  and T14.
+We see that with signal reconstruction the derived basic transit
+parameters are essentially unbiased, however, with a scatter in-
+creasing toward signals of lower significance. Also, except per-
+haps for the transit duration, there is no difference (in statistical
+sense) between the parameters derived from signals with or with-
+out a sinusoidal component.
+
+                                                                           Fig. 8. As in Fig. 7, but without employing signal reconstruction. The
+                                                                           estimated transit parameters show significant bias, especially for less
+                                                                           significant signals at lower DSP values.
+
+Fig. 7. Ratio of the observed and injected transit depths  and durations   (i.e., including signal reconstruction). This quantity, often called
+T14 as functions of the dip significance parameter DSP. Transit param-     as Combined Differential Photometric Precision (CDPP, Chris-
+eters have been derived by using signal reconstruction. Red and blue       tiansen et al. 2012), is devoted to sense the potential of transit
+points show the result with (signal B) and without (signal A) added si-    detection based solely on the overall error of the means on a
+nusoidal component to mimic stellar variability. Inset labels show the     given (transit) time scale. There are various approximations to
+mean differences and their errors for signal A. The estimated transit pa-  this quantity (e.g., Vanderburg & Johnson 2014; Aigrain et al.
+rameters show no overall bias.                                             2016), often including the application of a Savitsky-Golay-type
+                                                                           (i.e., least squares polynomial) filtering of the final data product
+                                                                           (e.g., Gilliland et al. 2011; Luger et al. 2018). Here we relied on
+                                                                           the full time series model and computed the 6.5 hour CDPP from
+                                                                           the unbiased estimate of the standard deviation (fit) of the resid-
+                                                                           uals between the model and the input time series. With the over-
+                                                                           all cadence of 0.5 hours, we get CDPP(6.5)= fit/ 13. For the
+                                                                            20000 stars analyzed, we obtained the result shown in Fig. 9.
+
+    On the other hand, without employing complete signal                   Fig. 9. Average of the standard deviations of the 6.5 hour means (in
+model, we get a substantial bias (Fig. 8). As expected, the ob-            parts per million) vs stellar brightness. The final time series (i.e., the
+served transit depths are lower than the injected values, with a           full, reconstructed models) were used to calculate the standard devia-
+strong increase in this difference toward less significant signals.        tions from the residuals between these, and the input (raw) time series.
+The transit duration follows the same same pattern, albeit the             Continuous line shows the robust fit of a 10-th order polynomial to the
+bias is somewhat lower.                                                    data.
+
+    The above tests give supporting evidence that tran_k2 is ca-               Luger et al. (2018) reports for the updated EVEREST
+pable of yielding unbiased estimates of the basic transit param-           pipeline basically a full agreement for the ridge CDPP values
+eters, assuming that a complete signal model is used. We expect
+that, in general, transit depth and duration are estimated better
+than  10% for strong (DSP> 12) signals. For weaker signals
+the errors increase, but unlikely to go above  30%, while main-
+taining the unbiased nature of the estimates.
+
+5. Comparison with other searches
+
+Before we compare the detection rates between our search by
+tran_k2 and other searches, upon the suggestion of the ref-
+eree, we present the averages of the standard deviations of the
+means, taken on a 6.5 hour timebase of our final data product
+
+                                                                                                             Article number, page 9 of 18
+                               A&A proofs: manuscript no. tran_k2_aph
+
+with those of the original Kepler mission. Vanderburg & Johnson       Fig. 10. Comparison of the transit depth  and transit duration T14 be-
+(2014), in their Table 1 compare the CDPP values of SFF with          tween this work (KO) and that of Kruse et al. (2019) (KR). The 103
+those of the original Kepler mission. From this table we have         targets detected from the analysis of the PET dataset are plotted. The
+18, 22, 30 and 81 ppm precision at Kp = 10.5, 11.5, 12.5 and          mean differences and their errors are shown in the upper right corners.
+14.5. From the ridge fit to the CDPP values in Fig. 9 we have
+20, 23, 32, and 89 ppm at these magnitude values. In spite of         49% of the candidates of Kruse et al. (2019). Considering that
+the impressive close approximation of the precision of the orig-      both studies are based on EVEREST data (however, appended
+inal Kepler mission, we caution that low CDPP values tell only        with different analysis tools and vetting criteria), this is quite
+that the residuals are small at the particular window used, but it    intriguing and shows the delicacy of planet search in the strongly
+does not grant automatically a powerful transit detection. This       contaminated environment of stellar variability and instrumental
+depends on the delicate balance between noise suppression and         systematics.
+transit signal preservation.
+                                                                          In checking the candidates of Zink et al. (2020), we found
+    One of the basic steps in testing the code performance is         three targets confirmed with high SNR. The 4th planet candi-
+to verify earlier detections and check the consistency of the         date in EPIC 211562654 is confirmed. For EPIC 211711685
+transit parameters. Although this is obviously an important hu-       we found a single event in addition to the component claimed
+man/machine training ground and crucial test in a comparison of       by Zink et al. (2020). EPIC 212119244 was also confirmed, al-
+the detection efficacy of different methods, there are two caveats    beit with low SNR at twice of the period given by Zink et al.
+to keep in mind before making too far reaching conclusions from       (2020). There remained two candidates (EPIC 211953244 and
+such a test: i) the result may depend on the input time series (SAP   212020330) that we could not confirm, in spite of extensive test-
+photometry), that are obtained differently by various groups; (ii)    ing.
+detection criteria and thoroughness of the analysis might vary
+between the different searches, discarding the trace of transit by    6. Search for new candidates
+one search and considering it by other.
+                                                                      Although the field of C05 has been scrutinized by many searches
+    Focusing only on Campaign 5, in the basic verification we         (Barros et al. 2016; Pope et al. 2016; Mayo et al. 2018; Petigura
+relied primarily on the 115 host stars with 138 planet candidates     et al. 2018; Kruse et al. 2019; Zink et al. 2020), we decided to
+of Kruse et al. (2019). In addition to this, quite recent work, we    do the same, based on the high success rate in identifying the al-
+also tested the 8 candidates in Zink et al. (2020). The basic anal-   ready known candidates. With the goal of presenting a secure list
+ysis was performed on the PET database, but in unresolved cases       of new candidates for potential followup studies, we surveyed
+we also used the KEP database.                                        the brightest 20000 stars from the nominally available  25000
+                                                                      targets. The analysis was run on the KEP and PET datasets sepa-
+    From the 115 targets of Kruse et al. (2019), 103 have been        rately. The signal search was performed in the frequency interval
+identified with high confidence, by using the survey setting of       of [0, 3] c/d. We used the "400" template sets for the respective
+the code (i.e., optimized Fourier order with detection criteria       datasets, and the optimization method for selecting the Fourier
+listed in Sect. 4.1). The remaining 12 targets were examined          order.
+in detail. By using the KEP data, 7 of these were reclassified
+as "good/strong" detections. EPIC 211613886 showed up as a                The most viable candidates were selected by using the fol-
+high SNR candidate in both datasets, but with half of the pe-         lowing detection criteria: S NRsp > 7, S PD < 0.5,  < 0,
+riod given by Kruse et al. (2019). Therefore, we accepted it as a     DS P > 5 , Nev > 1, T12/T14 < 0.3 and Nev/Nint < 0.5. The
+"detection". EPIC 211988320 shows multiple, apparently non-           first two conditions simply require that the BLS spectrum be of
+repetitive transit events, yielding high SNR detection, but the       high-SNR and sparse-enough, as expected from the spectrum of
+favored period is different from the one given by Kruse et al.        a transit signal embedded in moderate to tolerable noise. The
+(2019). Because of the non-repetitive nature of the events and the    next two conditions require that the folded signal should imply
+significance of events, we consider this candidate as "detected".     flux decrease, and also be of reasonably significant. The next
+The case of EPIC 211939692 is quite similar, but the Fourier
+order is overestimated, yielding a lower SNR. Detailed exami-
+nation showed that with lower Fourier order this target comes
+out as strong as EPIC 211988320. Finally, we are left with only
+two candidates (EPIC 211432922 and 211913395) that we could
+not detect, no matter how hard we tried (in agreement with the
+conclusion reached at the various earlier stages while developing
+tran_k2).
+
+    It is an obvious matter of interest to compare the basic transit
+parameters derived in this study and that of Kruse et al. (2019).
+Figure 10 shows the result of this comparison. In the light of the
+tests presented in Sect. 4.2, it is quite surprising the systematic
+difference and the large scatter we see between the two studies.
+To add to this discrepancy, the injected signal test performed by
+Zink et al. (2020) indicate that the EVEREST transit depths are
+lower by some 2.3% as they should be. Unfortunately, we have
+no answer at this moment on the source of the apparently signif-
+icant discrepancy between our results and those of Kruse et al.
+(2019).
+
+    Interestingly, while testing their planet vetting pipeline on
+C05, Zink et al. (2020) found 8 candidates that do not enter in the
+list of Kruse et al. (2019). At the same time, they could not verify
+
+Article number, page 10 of 18
+                                         Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+condition makes avoidance of single transits (nevertheless, we             WASP-4 (Wilson et al. 2008). All current stellar radius values
+found a nice one, likely at an earlier stage of search, when such          are in the close neighborhood of 0.90 R/R (Bonfanti & Gillon
+a criterion was not employed). To decrease the binary false pos-           2020), making it difficult to increase the calculated Qtran value.
+itive rate, we added the condition of minimum steepness of the             High resolution imaging (Bergfors et al. 2013) does not indicate
+ingress/egress phase. Finally, to avoid false detections due to re-        any nearby companion that might indirectly affect the transit du-
+peating outliers, we required the transit be reasonably well cov-          ration.
+ered by the individual events (i.e., the number of transit events
+should be considerably smaller than the number of intransit data           Fig. 11. Observed vs calculated relative transit durations for the 15 sys-
+points). Clearly, this might lead to missing some candidates with          tems presented in this paper, together with the 30 HATNet and 30 WASP
+transit durations less than an hour, or so.                                planetary systems detailed in Appendix B. Equation 16 was used to de-
+                                                                           rive Qtran(calc). The surplus of objects above the 45 line indicates the
+    For the simplest way of linearly decreasing the total running          expected effect of off-central transit. The slight excess of systems below
+time on our multiprocessor computer, the data were analyzed                the 45 line is due to errors in the stellar masses and radii.
+parallel in segments containing 5000 stars in each set. The se-
+lection criteria above yielded 233, 127, 83 and 39 items from                  In the evaluation of the candidates, we estimated the planet
+these sets containing objects of decreasing brightness (and, con-          radii with the assumption that blending was not an issue for any
+sequently, of higher noise). These pre-selected targets were then          of the targets. The stellar and planetary parameters are summa-
+more deeply inspected and then selected as viable candidates               rized in Table B.1 of Appendix B.
+if the inspections and tests (e.g., stability of the signal against
+changing the Fourier order, sensitivity to the selection of the TFA            We found that the majority of the companions have
+template set) ended up positive. Then, we deselected those can-            radii between 1 and 2 Earth radii. We have 5 candidates
+didates that were already suggested by the surveys listed above.           (EPIC 211537406, 211777794, 211825799, 211977277 and
+Thereafter, a brief check of the physical plausibility of the de-          211503363) with sub-Jupiter­Neptune radii. Except for EPIC
+tected companion was made on the basis of the published stel-              211537406, in this group of more massive planets, all compan-
+lar parameters from recent large-scale studies, aided by the Gaia          ions are around evolved (off of the main sequence) stars.
+satellite. The top candidates were then further examined for ad-
+ditional transit components.                                                   The brightest candidate, EPIC 211914045 is special in our
+                                                                           sample. The star is a K dwarf and the companion has a sub-
+    We found 15 candidates12 passing all these steps and end-              Earth radius of 0.63 RE. The candidate was detected only in the
+ing up as potential planetary systems. The derived photometric             KEP time series. This can be the result of the optimized aperture
+transit parameters for these systems are given in Table 1, the ac-         used by the KEP pipeline. The PET time series are generated by
+companying diagnostic plots are shown in Appendix A.                       k2phot with an aperture size of 3 × 3 pixels. The correspond-
+                                                                           ing square covers the target and avoids gathering photons from
+    By using the stellar parameters accessible through Gaia DR2            the considerably fainter stars about 10" to the North.14 The ex-
+(Gaia Collaboration et al. 2018), the TESS and the K2 stellar              act location and the extent of the optimized aperture of the KEP
+catalogs (Huber et al. 2016; Stassun et al. 2019; Hardegree-               pipeline is not known, but the net flux is higher by some 5%
+Ullman et al. 2020), we checked the physical properties of the             than the one supplied by k2phot. This may indicate some level of
+new candidate systems. As a sanity check, assuming central tran-           contamination by the neighbors. Our fully processed LC for the
+sit and circular orbit, we computed the relative transit duration          KEP data yields RMS= 0.053 ppt, while for the LC derived from
+Qtran =T14/Porb through the basic stellar parameters and orbital           the PET data we get 0.061 ppt. The higher precision is a likely
+period:                                                                    contributing factor to the detection in the KEP data. No time se-
+                                                                           ries are available for the faint visual double to the North, but
+Qtran  =  0.0756 Rs  Ms-  1  Po-r23b  ,  (16)                              the nearby, similarly bright star EPIC 211913753 to the South,
+                          3                                                show no signal in any of the databases. Because of the lack of
+                                                                           full frame images with sufficient cadence during the K2 cam-
+where the stellar parameters are in solar units, the period is in          14 https://exofop.ipac.caltech.edu/k2/files/211914045/
+                                                                           Photometry/\211914045P-ep20160806.pdf
+days. Please note that this check does not depend on the blending
+
+status of the target.
+
+    In testing the consistency of the calculated transit durations
+
+with the observed ones, first we selected systems with well-
+
+established planetary status (see Appendix B, Table B.2). Then,
+
+we plotted the corresponding Qtran values together with those of
+the new candidates. Figure 11 shows that the new candidates pre-
+
+sented in this paper fit well to the overall topology of this plot:
+
+most of the systems lack exact central transit, therefore, the cal-
+culated Qtran values are greater than the observed values.13 Sev-
+eral systems have Qtran(calc) < Qtran(obs). The most likely cause
+of this discrepancy is the insufficient accuracy of the stellar pa-
+rameters. Another, albeit less likely/efficient contributing factor
+is orbital eccentricity. The most prominent downward outlier if
+
+12 We could not find traces of these candidates in any other earlier pub-
+lications. However, the single transit of EPIC 211503363 is also nicely
+visible in the processed (PDC, TERRA) light curves at the NASA/IPAC
+exoplanet site.
+13 This is also true for the single transiter EPIC 211503363. For the
+minimum orbital period of  58 d the calculated transit duration is
+greater than observed (0.020 vs 0.013), allowing longer periods for the
+system.
+
+                                                                                                   Article number, page 11 of 18
+                               A&A proofs: manuscript no. tran_k2_aph
+
+paigns, we can rely only on future dedicated followup works to        Fig. 12. The 3-planet candidate EPIC 211314705. Left panels: succes-
+decide if the faint neighbors to the North have any contribution      sively prewhitened BLS spectra, normalized to unity at each panel. The
+to the signal detected in EPIC 211914045.                             spectra are divided into 2000 bins and only the maxima are shown in
+                                                                      each bin. Right panels: folded LCs for each component, zoomed on
+    We searched for additional planets both among the 115 sys-        the transit. Continuous line shows the fit to our transit model. Relative
+tems of Kruse et al. (2019) and the newly found 15 systems.           fluxes are in [ppt].
+As described in Sect. 3, we successively subtracted the already
+found transit component, and searched for the next one until the      Fig. 13. The 5-planet candidate EPIC 211562654. Notation is the same
+SNR of the spectrum reached the noise level. In the final solution    as in Fig. 12. The short period component pc03 may exhibit TTV, as
+all transit components were included together with the stellar        indicated by the high power remained at the same frequency in the BLS
+variation and instrumental systematics. The transit depths were       spectrum of panel pc05 and the proximity of the associated epoch to
+fitted simultaneously, with the other transit parameters fixed.       that of pc03.
+Naturally, the search for additional components is also sensitive
+to secondary eclipses and therefore, it helps in filtering out false
+positives. We did not find any sign for blended binaries among
+the candidate systems.
+
+    Altogether we found 5 systems that were classified either as
+single or of lower multiplicity. Somewhat more detailed descrip-
+tion of the systems follows below. The parameters of transit com-
+ponents are given in Table 2.
+
+    EPIC 211314705 - This is a 3-planet candidate. No entry in
+Kruse et al. (2019); single planet candidate in Pope et al. (2016).
+We found two additional signals with transit depths  1.5 and
+1.2 ppt. Somewhat intriguingly, the orbital periods have a con-
+stant ratio of 1.38. Figure 12 shows the BLS spectra and the
+folded LCs for the three components.
+
+    EPIC 211562654 - This is K2-183, a 5-planet candidate. En-
+ters as a 3-planet candidate in Kruse et al. (2019). The 4th com-
+ponent was discovered by Zink et al. (2020). Here we present
+the 5th component, in near 2:1 resonance with the 4th com-
+ponent. The transit center of the 5th candidate is located at
+Tc(4) + 0.375P4, indicating that it is not some sort of artifact
+of the method used during the prewhitening of pc04. The ratio
+of the relative transit durations is not entirely consonant with the
+expected value from Eq. 16, but is still within the error range
+indicated by our tests for a signal of DSP 9 (see Fig. 7). The 5
+components are displayed in Fig. 13.
+
+    EPIC 212012119 - This is a 3-planet system, listed by both
+Pope et al. (2016) and Kruse et al. (2019) as a 2-planet system.
+The 3rd component is in a near 3:1 resonance with the second
+component. The transit center of the 3rd component is near in the
+middle of the 3-period cycle of the 2nd component, i.e., Tc(2) +
+1.482P2. The observed decrease in the transit length is greater
+than expected from Eq. 16, but again, this is within the error
+limits. The three components are displayed in Fig. 14.
+
+    EPIC 212164470 - This is a 2-planet system, listed earlier
+as a single component system by Pope et al. (2016) and Kruse et
+al. (2019). The 2 components are displayed in Fig. 15.
+
+    EPIC 211988320 - This is a likely multiplanetary system,
+but the orbital periods are not well constrained, because of the
+rareness of the transit events. Kruse et al. (2019) list this target
+as a single planet system, but as is shown in Fig. 16, the system
+must host more than one planet.
+
+7. Conclusions                                                            The input signal is assumed to be built up from four com-
+                                                                      ponents: (i) instrumental systematics, (ii) stellar variability, (iii)
+In an effort to test some simple ideas in further improving our       white noise (iv) transit signal. In filtering out (i) we used cotrend-
+capability to detect shallow transits in the environment of domi-     ing (TFA), based on low-variability stars in the field and some
+nating colored noise, we developed tran_k2, a stand-alone For-        image property parameters. To eliminate the effect of (ii), Fourier
+tran code. Development and debugging were performed on the            modeling was used.
+Campaign 5 field data of the K2 mission, including the direct
+use of these data together with various test signals injected into        The prime goal was to protect the underlying transit signal
+the original data. The input data were the raw (simple aperture       from being crushed during the pre-BLS phase, and thereby to
+photometry) fluxes available in public archives.                      ensure maximum SNR of the resulting frequency spectrum. To
+                                                                      reach this goal, we employed the following ingredients in the
+                                                                      pre-BLS data preparation.
+
+Article number, page 12 of 18
+             Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+Table 1. New planetary candidates from K2 Campaign 5.
+
+No EPIC  Kp  Porb  Tc-T0                               F/F                 T14/Porb T12/T14 RMS Ndat Nev Nint
+
+         (mag) (day) (BJD)                             (ppt)               -  -  (ppt) -  --
+
+1 211914045 11.132 1.81207 40.35521 0.061 ± 0.006 0.0423 0.000 0.053 3453 41 147
+
+2 211777794 12.108 19.26493 58.84401 0.239 ± 0.016 0.0183 0.113 0.091 3440 4 62
+
+3 211328600 12.568 1.04383 40.11712 0.176 ± 0.020 0.0544 0.001 0.195 3445 71 189
+
+4 211528937 12.812 2.27631 40.34633 0.197 ± 0.016 0.0229 0.124 0.101 3451 33 78
+
+5 211825799 12.877 33.25434 61.12873 0.563 ± 0.033 0.0139 0.006 0.148 3450 2 41
+
+6 211977277 13.037 4.80015 41.04836 0.209 ± 0.019 0.0621 0.117 0.201 3620 16 232
+
+7 211503363 13.221 73.91076 97.51803 4.019 ± 0.047 0.0131 0.154 0.216 3440 1 43
+
+8 212017374 14.192 9.82573 39.91297 0.332 ± 0.045 0.0142 0.003 0.231 3455 8 53
+
+9 211754117 14.199 13.79727 40.44087 0.763 ± 0.055 0.0097 0.208 0.233 3445 6 36
+
+10 211537406 14.565 19.43824 55.35711 1.114 ± 0.102 0.0077 0.009 0.376 3429 4 27
+
+11 211852237 14.594 2.68947 40.43272 0.311 ± 0.043 0.0285 0.003 0.297 3445 28 97
+
+12 211633000 14.601 9.23213 42.66952 0.454 ± 0.054 0.0100 0.001 0.225 3449 8 35
+
+13 211330455 15.148 1.62210 40.22541 0.619 ± 0.084 0.0301 0.000 0.598 3427 45 101
+
+14 211755530 15.279 1.74985 40.48744 1.202 ± 0.158 0.0221 0.001 0.986 3455 43 78
+
+15 211327678 15.540 7.71791 42.87519 1.525 ± 0.175 0.0109 0.010 0.774 3445 10 39
+
+Notes. Kp, Porb and Tc, respectively, stand for the Kepler photometric magnitude, the orbital period and for the moment of the
+center of the transit. T0 = 2457100.0, F/F denotes the relative flux decrease, T14 and T12 are, respectively, the complete transit
+and ingress durations. RMS stands for the standard deviation of the residuals after subtracting the complete time series model, Ndat,
+Nev and Nint, respectively, are for the number of data points, number of transit events and the number of intransit points. The KEP
+dataset is used for all candidates, except for EPIC 211977277, where we used the PET dataset. The period for the single transiter
+
+EPIC 211503363is the formal BLS period, close to the total time span of the data. Errors for the transit depths are calculated from
+e(F/F) = RMS 2/Nint (see Kovács & Kovács 2019).
+
+                                                                           Fig. 15. The 2-planet candidate EPIC 212164470. Notation is the same
+                                                                           as in Fig. 12.
+
+Fig. 14. The 3-planet candidate EPIC 212012119. Notation is the same
+as in Fig. 12. The 3rd candidate is in a close 3:1 resonance with the 2nd
+
+candidate.
+
+­ We used general Fourier series representation of the stellar             Fig. 16. Time series of the multiplanet candidate EPIC 211988320. The
+   variability (i.e., without knowing the particular signal fre-           orbital periods are not well constrained, because of the rareness of the
+   quencies entering in the few-parameter model of the signal).            transit events (shown with yellow background shading for better visi-
+                                                                           bility. The time series starts at t0 = 2457139.6111.
+­ To minimize the overshoots due to the Gibbs phenomenon at
+   the edges of the dataset, we employed detuned fundamental                ­ After the above TFA+Fourier filtering, the data were cor-
+   frequency in the Fourier series and autoregressive modeling                 rected for single outliers and flares before passing them to
+   near the edges.                                                             the BLS search.
+
+­ To protect the sharp transit features, data adapted weighting            Except for single events, the BLS spectrum represents the basic
+   was used in the robust least squares fit of the combination             statistic that determine if the signal found is interesting or not.
+   of the Fourier and TFA parts of the model. No outliers were             Although the SNR of the peak remains the prime indicator of the
+   selected at this stage.
+
+                                                                                 Article number, page 13 of 18
+                           A&A proofs: manuscript no. tran_k2_aph
+
+Table 2. New planetary candidates in multiple systems from K2 C05.                Alapini, A. & Aigrain, S. 2009, MNRAS, 397, 1591
+                                                                                  Alonso, R., Brown, T. M., Torres, G., et al. 2004, ApJ, 613, L153
+           EPIC 211314705                                                         Angus, R., Foreman-Mackey, D., & Johnson, J. A. 2016, ApJ, 818, 109
+                                                                                  Bakos, G., Noyes, R. W., Kovács, G., et al. 2004, PASP, 116, 266
+No.  forb  F/F T14/Porb T12/T14 Tc-T0                                             Bakos, G. Á., Torres, G., Pál, A. 2010, ApJ, 710, 1724
+                                                                                  Barros, S. C. C., Demangeon, O., & Deleuil, M. 2016, A&A, 594, A100
+1 0.263623 1.464 0.0182 0.192 40.22765                                            Bergfors, C., Brandner, W., Daemgen, S., et al. 2013, MNRAS, 428, 182
+                                                                                  Bonfanti, A. & Gillon, M. 2020, A&A, 635, A6
+2 0.138210 1.524 0.0081 0.083 42.40394                                            Caceres, G. A., Feigelson, E. D., Jogesh Babu, G., et al. 2019, AJ, 158, 57
+                                                                                  Christiansen, J. L., Jenkins, J. M., Caldwell, D. A., et al. 2012, PASP, 124, 1279
+3 0.191368 1.231 0.0101 0.231 42.43310                                            Deming, D., Knutson, H., Kammer, J., et al. 2015, ApJ, 805, 132
+                                                                                  Fahlman, G. G. & Ulrych, T. J. 1982, MNRAS, 199, 53
+           EPIC 211562654                                                         Foreman-Mackey, D., Montet, B. T., Hogg, D. W., et al. 2015, ApJ, 806, 215
+                                                                                  Fulton, B. J., & Petigura, E. A. 2018, AJ, 156, 264
+1 0.092649 0.800 0.0135 0.056 47.77446                                            Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2018, A&A, 616, A1
+                                                                                  Gilliland, R. L., Chaplin, W. J., Dunham, E. W., et al. 2011, ApJS, 197, 6
+2 0.044202 0.804 0.0075 0.206 44.16401                                            Hardegree-Ullman, Kevin K., Zink, Jon K., Christiansen, Jessie L., et al. 2020,
+
+3 2.130636 0.139 0.0735 0.185 39.64525                                               ApJS, 247, 28
+                                                                                  Huber, D., Bryson, S. T., Haas, M. R., et al. 2016, ApJS, 224, 2
+4 0.464426 0.178 0.0298 0.029 40.46272                                            Knutson, H. A., Charbonneau, D., Allen, L. E., et al. 2008, ApJ, 673, 526
+                                                                                  Kovacs, G., Zucker, S. & Mazeh, T. 2002, A&A, 391, 369
+5 0.235254 0.176 0.0248 0.019 41.26941                                            Kovacs, G., Bakos, G., & Noyes, R. W. 2005, MNRAS, 356, 557
+                                                                                  Kovacs, G., Hartman, J. D., & Bakos, G. A. 2016, A&A, 585, 57
+           EPIC 212012119                                                         Kovacs, G. 2017, European Physical Journal Web of Conferences, 01005
+                                                                                  Kovacs, G. 2018, A&A, 614, L4
+1 0.304792 0.942 0.0291 0.245 42.13420                                            Kovács, G. & Kovács, T. 2019, A&A, 625, A80
+                                                                                  Kruse, E., Agol, E., Luger, R., et al. 2019, ApJS, 244, 11
+2 0.118495 1.054 0.0135 0.226 42.48517                                            Luger, R., Agol, E., Kruse, E., et al. 2016, AJ, 152, 100
+                                                                                  Luger, R., Kruse, E., Foreman-Mackey, D., et al. 2018, AJ, 156, 99
+3 0.039278 0.355 0.0049 0.010 54.99590                                            Mayo, A. W., Vanderburg, A., Latham, D. W., et al. 2018, AJ, 155, 136
+                                                                                  McCullough, P. R., Stys, J. E., Valenti, J. A., et al. 2005, PASP, 117, 783
+           EPIC 212164470                                                         Petigura, E. A. 2020, AJ, 160, 89
+                                                                                  Petigura, E. A., & Marcy, G. W. 2012, PASP, 124, 1073
+1 0.128066 0.556 0.0209 0.152 44.86411                                            Petigura, E. A., Schlieder, J. E., Crossfield, I. J. M., et al. 2015, ApJ, 811, 102
+                                                                                  Petigura, E. A., Crossfield, I. J. M.; Isaacson, H. et al. 2018, AJ, 155, 21
+2 0.573654 0.123 0.0681 0.160 40.46965                                            Poddany S., Brat L., Pejcha O. 2010, New Astron. 15, 297
+                                                                                  Pollacco, D. L., Skillen, I., Collier Cameron, A., et al. 2006, PASP, 118, 1407
+Notes. forb is the orbital frequency, F/F denotes the relative                    Pope, B. J. S., Parviainen, H., & Aigrain, S. 2016, MNRAS, 461, 3399
+flux decrease ­ in [ppt], T14 and T12 are, respectively, the                      Smith, J. C., Stumpe, M. C., Van Cleve, J. E. et al. 2012, PASP, 124, 1000
+complete transit and ingress durations, T0 = 2457100. New                         Southworth, J., Bohn, A. J., Kenworthy, M. A. et al. 2020, A&A, 635, A74
+planetary candidates found in this work are displayed in the                      Stassun, K. G., Oelkers, R. J., Paegert, M., et al. 2019, AJ, 158, 138
+                                                                                  Stumpe, M. C., Smith, J. C., Van Cleve, J. E. et al. 2012, PASP, 124, 985
+colored rows. See text for additional details on these systems.                   Taaki, J. S., Kamalabadi, F., & Kemball, A. J. 2020 AJ, 159, 283
+                                                                                  Tamuz, O., Mazeh, T., & Zucker, S. 2005, MNRAS, 356, 1466
+signal content, we found useful to introduce the spectral peak                    Vanderburg, A. & Johnson, J. A. 2014, PASP, 126
+density (SPD), that characterizes the sparseness of the spectrum.                 Van Eylen, V., Agentoft, C., Lundkvist, M. S., et al. 2018, MNRAS, 479, 4786
+                                                                                  Wilson, D. M., Gillon, M., Hellier, C., et al. 2008, ApJ, 675, L113
+    A final step in the signal analysis is to consider all signal                 Zink, J. K., Hardegree-Ullman, K. K., Christiansen, J. L., et al. 2020, AJ, 159,
+constituents, including the transit components found in the BLS
+search. In this grand robust fit we get a considerable improve-                      154
+ment in the precision of the transit depths, a vital parameter in
+planet characterization and prone to underestimation when the
+modeling is incomplete.
+
+    We found that tran_k2 is capable to detect nearly all previ-
+ously claimed systems and planet components, with a missing
+rate of 1 - 2%. We found that the strength of the detections de-
+pends at a non-negligible level on the input data used. In partic-
+ular, the database from the standard Kepler pipeline and the one
+produced by k2phot often result in spectra of different quality,
+and therefore, occasionally, missing candidates in one of these
+datasets.
+
+    In spite of the several earlier visits of Campaign 5 by various
+groups, we found 15 new candidate systems and 5 additional
+planets in already known planetary systems. A brief check made
+on the physical size of the new planet candidates indicate that
+most of them have radii less than 2 RE and there is one candidate
+with Rp = 0.6 RE.
+
+Acknowledgements. This project would not be possible without our new pow-
+erful servers. We are indebted to the IT management of the Observatory (in-
+cluding Noémi Harnos, Mihály Váradi and Evelin Bányai) for the careful in-
+stallation and the prompt (and positive) response to our requests. Waqas Bhatti
+from the Department of Astrophysical Sciences of the Princeton University is
+gratefully acknowledged for the essential pieces of advice in matters concerning
+these servers. This paper includes data collected by the Kepler mission. Funding
+for the Kepler mission is provided by the NASA Science Mission directorate.
+This research has made use of the VizieR catalogue access tool, CDS, Stras-
+bourg, France (DOI: 10.26093/cds/vizier). Supports from the National Research,
+Development and Innovation Office (grants K 129249 and NN 129075) are ac-
+knowledged.
+
+References
+
+Aigrain, S., Parviainen, H., & Pope, B. J. S. 2016, MNRAS, 459, 2408
+Article number, page 14 of 18
+                                                   Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+Appendix A: New candidates
+
+We show the diagnostic plots for the 15 new planetary candidate
+systems presented in Sect. 6. All candidates are in the Campaign
+5 field of the K2 mission. Please consult with Sect. 6 (Table 1)
+and Appendix B (Table B.1) for details of system parameters and
+physical properties.
+
+                                                                        Fig. A.2. Diagnostic plots for the new candidates. See Fig. A.1 for de-
+                                                                        tails. Candidates no. 4 to 6 from Table 1 are plotted.
+
+                                                                        Appendix B: Predicted and estimated transit
+                                                                            durations
+
+Fig. A.1. Diagnostic plots for the new candidates. Clock-wise for each  To support Fig. 11 here we present the actual values used to cre-
+                                                                        ate the plot. For completeness, we also include the coordinates
+star: BLS spectrum, time series, zoomed and full phase-folded light     and the planet radii for the new K2/C05 candidates.
+
+curves. For the zoomed light curve the residuals (data minus model)         Table B.1 shows the basic stellar parameters for the 15 new
+                                                                        candidates. The stellar parameters are the simple averages of the
+are shifted upward for better visibility. Transit model: black line. Y  values published by the Gaia Collaboration (Gaia Collaboration
+axis units: arbitrary (BLS), ppt (others). X axis units: d-1 (BLS),     et al. 2018), those given in the K2 and TESS Input Catalogs (Hu-
+BJD-2457139.610425 (time series), phase (others).                       ber et al. 2016; Stassun et al. 2019), and the items of a revised
+                                                                        K2 catalog by Hardegree-Ullman et al. (2020). Depending on
+                                                                        the availability, we could use 2­4 values to calculate the aver-
+                                                                        ages. For EPIC 211528937 Huber et al. (2016) yields a factor
+                                                                        of two larger radius, therefore, their item is omitted for this tar-
+
+                                                                                                             Article number, page 15 of 18
+                                                       A&A proofs: manuscript no. tran_k2_aph
+
+Fig. A.3. Diagnostic plots for the new candidates. See Fig. A.1 for de- Fig. A.4. Diagnostic plots for the new candidates. See Fig. A.1 for de-
+
+tails.Candidates no. 7 to 9 from Table 1 are plotted.               tails.Candidates no. 10 to 12 from Table 1 are plotted.
+
+get. For the single transiter EPIC 211503363 we used P=58 d         http://exoplanet.eu/ ­ the calculated Qtran values were less
+(the minimum period). Please note that this table is aimed pri-     frequently lower than the observed values.
+marily for the estimation of the transit duration from the stellar
+parameters and orbital period and may not pass the rigor usually        The observed transit durations were gathered from the Ex-
+followed in the analysis of newly discovered individual systems.    oplanet Transit Database (ETD, see Poddany, Brat & Pejcha
+Nevertheless, the consistency of the stellar parameters from vari-  2010). As before, Eq. 16 was used to derive Qcalc.
+ous catalogs gives enough trust in the estimated transit durations
+and planetary radii.                                                    The sequential numbers of the WASP systems are not con-
+                                                                    tinuous, because WASP-9 was proven to be a false positive,
+    Table B.2 contains the main stellar parameters and Qtran        WASP-11=HAT-P-10 and WASP-27=HAT-P-14. We also note
+values for the first 30 extrasolar planetary systems discovered     that WASP-30b is not a planetary system, but a stellar binary,
+by the two major wide-field ground-based surveys. The stellar       with a near main sequence F8 primary and a 61 MJ secondary,
+parameters are from the TESS Input Catalog (TIC, see Stas-          that can be classified as a brown dwarf. Because there is no mass
+sun et al. 2019). The transit durations based on TIC have been      entry in TIC for WASP-20, we relied on the analysis of South-
+proven to be more accurate than those calculated with the aid of    worth et al. (2020). WASP-20 is a binary, and the stellar param-
+                                                                    eters correspond to the brighter companion.
+
+Article number, page 16 of 18
+                         Kovacs, G.: More planetary candidates from K2 Campaign 5
+
+Table B.1. Some parameters of the new planetary candidates presented in this paper.
+
+ EPIC ID       RA        DE        Porb  F/F                           Qobs   Teff   <R>    <M>         Rp    Qcalc
+               ()         ()        (d)  (ppt)                           -    (K)    (Sun)  (Sun)      (Jup)    -
+211914045
+211777794  129.79767  18.93494   1.812   0.061                         0.042  5154   0.734  0.883      0.057  0.039
+211328600  124.96254  17.00097  19.265   0.239                         0.018  6044   1.779  1.116      0.275  0.018
+211528937  132.13554  10.41960           0.176                         0.054  5191   0.878  0.890      0.116  0.067
+211825799  127.98521  13.54793   1.044   0.197                         0.023  5016   0.769  0.898      0.109  0.035
+211977277  134.37171  17.68293   2.276   0.563                         0.014  4985   2.664  1.298      0.632  0.018
+211503363  133.91804  19.88943  33.254   0.209                         0.062  4827   3.645  1.487      0.527  0.085
+212017374  127.50679  13.18657   4.800   4.019                         0.013  5121   4.098  0.996      0.260  0.021
+211754117  129.50271  20.54328  58.000   0.332                         0.014  5722   0.956  0.909      0.174  0.016
+211537406  134.14808  16.66580   9.826   0.763                         0.010  5063   0.671  0.790      0.185  0.010
+211852237  135.60571  13.66539  13.797   1.114                         0.008  4380   0.657  0.694      0.219  0.008
+211633000  127.06017  18.04899  19.438   0.311                         0.029  4946   0.823  0.892      0.145  0.033
+211330455  129.29558  14.99941   2.690   0.454                         0.010  5176   0.828  0.889      0.176  0.015
+211755530  130.72883  10.45512   9.232   0.619                         0.030  4031   0.547  0.569      0.136  0.036
+211327678  127.25637  16.68488   1.622   1.202                         0.022  3397   0.307  0.300      0.106  0.024
+           130.42308  10.40233   1.750   1.525                         0.011  3818   0.460  0.455      0.180  0.012
+                                 7.718
+
+Notes. Equatorial coordinates (RA,DE) refer to J2000. The relative transit duration Qcalc was calculated by using Eq. 16. See text
+for additional details on the data items.
+
+Table B.2. Sample of confirmed planets for the transit duration test.
+
+ID         Porb Teff  R         M Qobs Qcalc                                  ID            Porb Teff  R      M Qobs Qcalc
+
+           (d) (K) (Sun) (Sun) -                -                                           (d) (K) (Sun) (Sun) -    -
+
+HAT-P-01 4.465 5980 1.178 1.126 0.0249 0.0316 | WASP-01 2.520 6200 1.564 1.153 0.0623 0.0609
+HAT-P-02 5.634 6414 1.704 1.290 0.0314 0.0374 | WASP-02 2.152 5150 0.855 0.869 0.0349 0.0406
+HAT-P-03 2.900 5224 0.822 0.890 0.0298 0.0318 | WASP-03 1.847 6400 1.361 1.261 0.0515 0.0633
+HAT-P-04 3.057 5890 1.599 1.100 0.0575 0.0556 | WASP-04 1.338 5500 0.895 0.970 0.0675 0.0563
+HAT-P-05 2.789 5960 1.130 1.051 0.0436 0.0424 | WASP-05 1.628 5700 1.094 1.020 0.0606 0.0594
+HAT-P-06 3.853 6570 1.573 1.499 0.0366 0.0423 | WASP-06 3.361 5450 0.818 0.930 0.0322 0.0282
+HAT-P-07 2.205 6259 1.994 1.347 0.0765 0.0806 | WASP-07 4.955 6400 1.469 1.360 0.0300 0.0345
+HAT-P-08 3.076 6200 1.431 1.285 0.0488 0.0470 | WASP-08 8.159 5600 0.997 0.990 0.0225 0.0187
+HAT-P-09 3.923 6350 1.300 1.190 0.0365 0.0373 | WASP-10 3.093 4675 0.750 0.754 0.0287 0.0293
+HAT-P-10 3.723 4980 0.821 0.809 0.0297 0.0277 | WASP-12 1.091 6360 1.749 1.170 0.1146 0.1184
+HAT-P-11 4.888 4780 0.760 0.770 0.0196 0.0218 | WASP-13 4.353 5826 1.585 1.076 0.0372 0.0439
+HAT-P-12 3.213 4650 0.704 0.740 0.0303 0.0270 | WASP-14 2.244 6475 1.326 1.312 0.0517 0.0534
+HAT-P-13 2.916 5638 1.827 1.020 0.0461 0.0672 | WASP-15 3.752 6300 1.503 1.176 0.0413 0.0446
+HAT-P-14 4.628 6600 1.545 1.433 0.0197 0.0373 | WASP-16 3.119 5550 1.071 1.020 0.0256 0.0377
+HAT-P-15 10.864 5568 0.895 1.006 0.0210 0.0138 | WASP-17 3.735 6650 1.573 1.354 0.0489 0.0447
+HAT-P-16 2.776 6158 1.242 1.164 0.0460 0.0452 | WASP-18 0.942 6400 1.347 1.200 0.0951 0.0997
+HAT-P-17 10.339 5246 0.839 0.920 0.0164 0.0137 | WASP-19 0.789 5500 1.028 0.970 0.0810 0.0919
+HAT-P-18 5.508 4870 0.740 0.773 0.0206 0.0195 | WASP-20 4.900 5950 1.242 1.113 0.0289 0.0314
+HAT-P-19 4.009 4990 0.796 0.831 0.0294 0.0254 | WASP-21 4.323 5800 1.348 1.080 0.0324 0.0374
+HAT-P-20 2.875 4595 0.678 0.730 0.0268 0.0282 | WASP-22 3.533 6000 1.191 1.170 0.0387 0.0368
+HAT-P-21 4.124 5588 1.256 1.000 0.0370 0.0369 | WASP-23 2.944 5150 0.887 0.840 0.0340 0.0346
+HAT-P-22 3.212 5302 1.042 0.930 0.0372 0.0371 | WASP-24 2.341 6075 1.353 1.140 0.0463 0.0555
+HAT-P-23 1.213 5924 1.152 1.078 0.0750 0.0747 | WASP-25 3.765 5750 0.877 1.025 0.0312 0.0272
+HAT-P-24 3.355 6373 1.419 1.250 0.0453 0.0444 | WASP-26 2.757 5950 1.284 1.120 0.0355 0.0475
+HAT-P-25 3.653 5500 0.908 0.993 0.0321 0.0290 | WASP-28 3.409 6150 1.114 1.160 0.0395 0.0354
+HAT-P-26 4.235 5079 0.860 0.846 0.0241 0.0263 | WASP-29 3.923 4800 0.636 0.880 0.0278 0.0202
+HAT-P-27 3.040 5300 0.865 0.916 0.0233 0.0321 | WASP-30 4.157 6100 1.388 1.270 0.0384 0.0375
+HAT-P-28 3.257 5680 1.046 1.010 0.0412 0.0359 | WASP-31 3.406 6200 1.269 1.200 0.0324 0.0399
+HAT-P-29 5.723 6087 1.231 1.141 0.0246 0.0278 | WASP-32 2.719 6100 1.028 1.300 0.0370 0.0366
+HAT-P-30 2.811 6250 1.340 1.254 0.0316 0.0472 | WASP-33 1.220 7400 1.602 1.653 0.0928 0.0897
+
+Notes. Stellar parameter are from TIC, Qobs from ETD, Qcalc from Eq. 16. See text for additional notes.
+
+                                                                                                              Article number, page 17 of 18
+                                                              A&A proofs: manuscript no. tran_k2_aph
+
+Fig. A.5. Diagnostic plots for the new candidates. See Fig. A.1 for de-
+tails.Candidates no. 13 to 15 from Table 1 are plotted.
+Article number, page 18 of 18
+

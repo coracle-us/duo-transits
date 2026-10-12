@@ -1,0 +1,69 @@
+Adversarial fact-check 3 of k2singles/rnaas/rnaas.tex (Fable 5.1, 2026-10-12)
+
+Files here: check_numbers.py / check_numbers_out.txt (recomputation of every cheap number),
+lit_queries.py / lit_queries_out.txt (SIMBAD + Gaia DR3 variability/NSS + VizieR for the eight "none" rows),
+crossref_check.py / crossref_out.txt (bibliography), kovacs2020.txt (pdftotext of arXiv:2008.10075).
+Nothing outside this folder was modified.
+
+== CHECKS OUT ==
+- Counts 164/163, 158->145->144, 62, 16, 14+1=15 rows: reproduced from data/k2_singles.csv and results/full3/summary.csv.
+- Blind vs fit: 14 rows within 2 sigma (worst 202072917, 1.97 sigma); 202126877 exempted. eclipse_times.py scales
+  sigma_P by sqrt(chi2/dof), so the big chi2 of 211411112 (18.7/1) and 212012030 (6.4/1) is already in the errors.
+- TOI-5560.01: P, P/2, T0, cycles (gcd 1), depths, T14, S46 alert, 702.47 d, M2 sin i 0.126/0.099 all reproduced.
+- 211503363: R2 2.13-2.43 RJ; Gaia radius_flame 3.602, logg 3.457 re-queried; Kovacs Table B.1 row confirmed.
+- HD 220967: SIMBAD F7/8V, G 9.39; depths, durations, phase 0.86723 from the JSON.
+- 211892898: 0.86 sigma from Gaia SB1; arXiv:1608.00459 = Libralato et al. 2016 MNRAS 463 1780 (correct citation).
+- Bibliography: all 15 entries verified (Crossref or VizieR ReadMe). Kovacs 2020 = A&A 643 A169, arXiv:2008.10075.
+- Word count: abstract 116, body 827; +table text 243 +AI statement 83 = 1153 < 1500. One table, no figure.
+- Fresh literature search for the eight "none" rows: SIMBAD 0 refs each; absent from Gaia DR3 vari_eclipsing_binary,
+  vari_classifier_result, vari_summary, all NSS tables, VSX, ASAS-SN, ATLAS, ZTF, IJspeert 2024, Prsa 2022; no TOI/CTOI
+  on any ExoFOP page (all 21 cached). No prior period exists for any of them.
+
+== REQUIRED FIXES (priority order) ==
+1. HD 220967 period 73.245178(7) is hard-coded in build_table.py; numbers.md points to full2_triage.md which says 73.242.
+   My joint fit of the 5 JSON eclipse times reproduces 73.2451778 +- 0.0000074, chi2 0.31/2, phase 0.86723. Number is
+   right, provenance is missing: save the joint fit to a results file and cite it.
+2. "2026 December 20 at 05:09 UTC (+-7 min)": BJD_TDB read as UTC. Roemer delay toward RA 132.65 Dec +19.09 is +6.1 min,
+   so geocentric UTC is 05:03 (2027-02-28 10:57 for the 70-d-only transit). Quote the BJD_TDB (2461394.716 +- 0.004, 1 sigma)
+   or the corrected time.
+3. "The K2 eclipse falls exactly on the TESS ephemeris (cycle -124)": with the tabulated TESS-only ephemeris
+   (results/ephemerides/202126877.json) cycle -124 predicts -211.466; the K2 eclipse is at -211.557, 2.2 h early.
+   "Exactly" holds only for the blind's ephemeris that included K2. Reword: "lies on cycle -124 ... 2 h early, consistent
+   with the timing variations".
+4. 202126877 depth sequence mixes reductions: 20.5% TESS-SPOC (S43-45), 28.5% QLP SAP (S71-72), 32.4% own TESScut (2025).
+   Use the single own-TESScut r=1.5 series (independent_table/data/final_details.json): primary 19.9/19.6/19.6% (2021),
+   26.0/25.7% (2023), 32.4% (2025); secondary 4.1-4.2% -> 10.9-11.1%. Secondary/primary ratio 0.21 -> 0.42: dilution
+   cannot do that. For K2: the C0 aperture is 14 compact pixels, CROWDSAP 0.9989, FLFRCSAP 0.979, Kp 11.0, no bleed;
+   SAP/PDCSAP/EVEREST/K2SFF give 6.1-7.1%; and a 3.3x diluted 4.3% secondary would still be 1.3%, above the <0.1% K2
+   limit. Say this instead of relying on Gaia neighbours alone. Table note: "6% (2014) to 32% (2025)" -> state the reduction.
+5. 246696483 "182.24526(18)" unique rests on one eye-checked S98 epoch in the blind run; your own pipeline loaded S98 and
+   still lists 91.1215 d with support 2 (results/full3/246696483_0.json). Save a reproducible test of epoch 4044.88 or
+   print "182.24526(18) or 91.12263(9)".
+6. "consistent with IJspeert (2024), a SPOC TCE, and LAMOST SB2 orbits": 202071902 is 3.0 sigma from Kovalev's
+   22.859 +- 0.015 (Guo 22.89 +- 0.395 is consistent); IJspeert does not list 202071902; for 202072917 IJspeert gives
+   QLP 34.7444 and SPOC 23.255 (wrong alias). Rewrite per star.
+7. Abstract "new periods ... for nine eclipsing binaries": 211892898's orbital period is published (Gaia SB1). "new or refined".
+8. Kovacs sentence: his Table B.1 header is "Rp (Jup)", row P 58.000 (minimum), 4.019 ppt, R 4.098, Rp 0.260;
+   sqrt(0.004019) x 4.098 = 0.260 Rsun = 2.5 RJ. Say explicitly that his value is in solar radii; his footnote 13 already
+   calls it a single transiter with P >= 58 d; his BLS 73.91 d is not one of our aliases.
+9. e >= 0.58: first-order e cos w = 0.577; exact solution for phi 0.86723 gives e cos w 0.59 (with |e sin w| 0.30 from the
+   duration ratio, e = 0.66) or e = 0.62 for e sin w = 0. Bound holds, but comes from the phase alone; the duration ratio
+   gives e sin w. Reword.
+10. Gaia numbers (R* 3.60, logg 3.457, M1 1.424) are "query in session" per numbers.md: save the rows (values re-queried
+    in this review: 650964454772110976 radius_flame 3.6023 mass_flame 1.6599 logg 3.4571 teff 5305; 660640844292494336
+    radius_flame 1.7388 mass_flame 1.4242 rv_nb_transits 22 rv_amplitude_robust 7.699 rv_error 0.6012 rv_chisq_pvalue 0.0816).
+11. "two blind re-analyses" (AI statement) / "both blind analyses" (Conclusion) vs three folders. Make consistent.
+12. "robust amplitude limits M2 sin i to < 0.13 Msun": amplitude/2 is not a rigorous upper bound on K (unsampled extremes;
+    7.7 km/s is what 22 noise draws of 1.84 km/s give). The scatter limit (b) is 0.086/0.068 Msun. Quote "<~ 0.1 Msun" or
+    state the sampling assumption.
+
+== OPTIONAL ==
+- TOI-5560 host is in the Villanova K2 EB catalogue (placeholder P=100, InCat True; also Zhang+2019 J/ApJS/244/43 Per=100.0)
+  and Valizadegan+2025 list a 31.269-d SPOC TCE for TIC 238606535 (table13). Both excluded by the ephemeris; one clause.
+- 211489484 events column lists only the 4 fitted events; blind found primaries in S34/S71 and secondaries in C5/C18/S71.
+- Uncited named products: EVEREST, K2SFF, SPOC, TESS, Zinn+2022/Khan+2023 (red clump).
+- "Sector 1751" is a MAST mislabel; describe as a 2025 FFI segment if the 32% stays.
+- UAT 489/1709/444 not verifiable online (hosts blocked); match my knowledge.
+- AAS LLM guidelines (posted 2026-09-09): name the tool and use, statement at the end, verify references yourself.
+  Statement complies; consider naming the model version.
+- README says catalogue covers C0-C17; data file has C0-C14 (not in the draft).

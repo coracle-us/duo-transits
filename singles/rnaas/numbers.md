@@ -77,3 +77,8 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
   The 306 classified also include TIC 53847727, a pilot target later removed from the sample as a
   Prša+2022 EB. The fix is a sentence in `rnaas.tex` (revision-ready); the submitted version
   lacks it.
+
+**Known minor issue (found 2026-10-12, K2 fact-check).** `singles/writeups/tic159614322/ephemeris.py`
+converts BJD_TDB to UTC without removing the barycentric light-travel time. For TIC 159614322 this
+is 1.2 min: the 2026-12-28 transit is 06:40 geocentric UTC, not 06:42. That is negligible against
+the ±45 min uncertainty. Fix it in any revision: quote BJD_TDB, or apply the correction.

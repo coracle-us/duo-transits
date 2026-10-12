@@ -96,6 +96,8 @@ def main():
     a.add_argument("events", nargs="+")
     a.add_argument("--dur_h", type=float)
     a.add_argument("--tic", type=int)
+    a.add_argument("--joint", action="store_true",
+                   help="fit primaries and secondaries together: T = T0 + n P + s * dT_sec (eccentric EBs)")
     o = a.parse_args()
     cat = pd.read_csv(HERE.parent / "data" / "k2_singles.csv")
     row = cat[cat.EPIC == o.epic].iloc[0]
@@ -143,6 +145,30 @@ def main():
         if x["kind"] == "secondary":
             x["phase"] = float(((x["T"] - T0) / P) % 1)
             print(f"  secondary {x['T']:.4f}: phase {x['phase']:.4f}")
+    joint = None
+    secs = [x for x in fits if x["kind"] == "secondary"]
+    if o.joint and secs:
+        allf = prim + secs
+        Ta = np.array([x["T"] for x in allf])
+        sa = np.array([x["sigma_T"] for x in allf])
+        isec = np.array([0.0] * len(prim) + [1.0] * len(secs))
+        ph0 = np.mean([x["phase"] for x in secs])
+        na = np.round((Ta - T0 - isec * ph0 * P) / P)
+        Aj = np.vstack([np.ones_like(Ta), na, isec]).T
+        Wj = np.diag(1 / sa ** 2)
+        cj = np.linalg.inv(Aj.T @ Wj @ Aj)
+        pj = cj @ Aj.T @ Wj @ Ta
+        rj = Ta - Aj @ pj
+        chi2j = float(np.sum((rj / sa) ** 2))
+        dofj = len(Ta) - 3
+        scj = np.sqrt(chi2j / dofj) if dofj > 0 and chi2j > dofj else 1.0
+        joint = dict(T0=float(pj[0]), sigma_T0=float(np.sqrt(cj[0, 0]) * scj), P=float(pj[1]),
+                     sigma_P=float(np.sqrt(cj[1, 1]) * scj), dT_sec=float(pj[2]),
+                     sigma_dT_sec=float(np.sqrt(cj[2, 2]) * scj), phase_sec=float(pj[2] / pj[1]),
+                     chi2=chi2j, dof=dofj, oc_min=(rj * 1440).tolist(), cycles=na.astype(int).tolist())
+        print(f"JOINT: P = {pj[1]:.7f} +/- {joint['sigma_P']:.7f} d, T0 = {pj[0]:.5f}, secondary phase "
+              f"{joint['phase_sec']:.5f}; chi2 {chi2j:.2f} / dof {dofj}; O-C (min) {np.round(rj * 1440, 1).tolist()}")
+        P, sP, T0, sT0 = joint["P"], joint["sigma_P"], joint["T0"], joint["sigma_T0"]
     k = len(fits)
     fig, axs = plt.subplots(1, k, figsize=(3.2 * k, 2.8), squeeze=False)
     for ax, x in zip(axs[0], fits):
@@ -156,7 +182,8 @@ def main():
     clean = [{k2: v for k2, v in x.items() if not k2.startswith("_")} for x in fits]
     (OUT / f"{o.epic}.json").write_text(json.dumps(dict(EPIC=o.epic, TIC=tic, P=float(P), sigma_P=sP, T0=float(T0),
                                                          sigma_T0=sT0, cycles=n.astype(int).tolist(), chi2=chi2,
-                                                         dof=dof, oc_min=(res * 1440).tolist(), events=clean),
+                                                         dof=dof, oc_min=(res * 1440).tolist(), joint=joint,
+                                                         events=clean),
                                                     indent=1))
 
 

@@ -1,0 +1,20 @@
+Armstrong2016    DOI ok | Monthly Notices of the Royal Astronomica vol 456 page 2260-2272 | 2016 | Armstrong D. J. (+11) | K2 variable catalogue – II. Machine learning classification of variable stars and eclipsin | expect MNRAS 456 2260
+Caldwell2020     DOI ok | Research Notes of the AAS                vol 4 page 201 | 2020 | Caldwell Douglas A. (+9) | TESS Science Processing Operations Center FFI Target List Products | expect RNAAS 4 201
+Arenou2023       DOI ok | Astronomy &amp; Astrophysics             vol 674 page A34 | 2023 |   (+450) | <i>Gaia</i>Data Release 3 | expect A&A 674 A34
+Gaia2023         DOI ok | Astronomy &amp; Astrophysics             vol 674 page A1 | 2023 |   (+455) | <i>Gaia</i>
+                    Data Release 3 | expect A&A 674 A1
+Ginsburg2019     DOI ok | The Astronomical Journal                 vol 157 page 98 | 2019 | Ginsburg Adam (+23) | <tt>astroquery</tt>
+                    : An Astronomical Web-querying Package in Python | expect AJ 157 98
+Guo2025          FAILED both: HTTP Error 404: Not Found / HTTP Error 429: Too Many Requests
+Howell2014       DOI ok | Publications of the Astronomical Society vol 126 page 398-408 | 2014 | Howell Steve B. (+18) | The K2 Mission: Characterization and Early Results | expect PASP 126 398
+Huang2020        DOI ok | Research Notes of the AAS                vol 4 page 204 | 2020 | Huang Chelsea X. (+10) | Photometry of 10 Million Stars from the First Two Years of TESS Full Frame Images: Part I | expect RNAAS 4 204
+IJspeert2024     DOI ok | Astronomy &amp; Astrophysics             vol 688 page A216 | 2024 | Hobson M. J. (+54) | Three super-Earths and a possible water world from TESS and ESPRESSO | expect A&A 691 A242
+Kovacs2020       DOI ok | Astronomy &amp; Astrophysics             vol 642 page A69 | 2020 | Rossi P. (+3) | The different flavors of extragalactic jets: The role of relativistic flow deceleration | expect A&A 643 A169
+Kovalev2024      DOI ok | Monthly Notices of the Royal Astronomica vol 527 page 3076-3086 | 2023 | Dodd Jonathan M (+4) | <i>Gaia</i> uncovers difference in B and Be star binarity at small scales: evidence for ma | expect MNRAS 527 521
+LaCourse2018     DOI ok | Research Notes of the AAS                vol 2 page 28 | 2018 | LaCourse Daryll M. (+1) | Single Transits and Eclipses Observed by K2 | expect RNAAS 2 28
+Libralato2016    DOI ok | Monthly Notices of the Royal Astronomica vol 463 page 1780-1796 | 2016 | Libralato M. (+9) | A PSF-based approach to
+                    <i>Kepler</i>
+                    /
+           | expect MNRAS 463 1780
+Sandquist2021    DOI ok | The Astronomical Journal                 vol 161 page 59 | 2021 | Sandquist Eric L. (+10) | The K2 M67 Study: Precise Mass for a Turnoff Star in the Old Open Cluster M67 | expect AJ 161 59
+Valizadegan2025  FAILED both: HTTP Error 404: Not Found / HTTP Error 429: Too Many Requests
