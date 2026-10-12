@@ -148,3 +148,7 @@ The submitted text is git tag `aas82225-submitted` (commit fb3bd0c). Corrected i
    With the 2026 eclipse included, the offset is 1.7 h (3.4σ; `eb_depth_evolution`).
 
 Conclusions are unchanged. The deepening and the S/P doubling are stronger.
+
+- 2026-10-12: Jon emailed journals.manager@aas.org with the two corrections (2026 not 2025; consistent depths
+  21/27/36%, S/P 0.21 → 0.46) and the "(Untitled)" title fix. He offered corrected LaTeX/PDF now or at
+  revision/proof. The corrected text is in the repo at 51bfd7f or later. Awaiting the reply.
