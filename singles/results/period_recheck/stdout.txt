@@ -1,0 +1,118 @@
+light curves: C:\git\duo-transits\data\raw\lightcurves
+TIC  140298355 pilot             reps  5 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  147035057 pilot             reps  1 | stored  15 robust-full  15 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  149990098 pilot             reps  2 | stored   0 robust-full   0 all-but-1   3 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  235060821 pilot             reps  6 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC   51079186 pilot             reps  2 | stored   4 robust-full   3 all-but-1 204 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC   53847727 pilot             reps 39 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC   89620053 pilot             reps 11 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  100776118 batch2            reps  1 | stored  12 robust-full  12 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  206666063 batch2            reps  2 | stored   5 robust-full   5 all-but-1  19 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  209217764 batch2            reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  230130556 batch2            reps 33 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  231969683 batch2            reps  4 | stored   1 robust-full   1 all-but-1   2 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  264766922 batch2            reps  3 | stored   0 robust-full   0 all-but-1   3 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  270450687 batch2            reps  1 | stored   7 robust-full   7 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC   30836645 batch2            reps  1 | stored  45 robust-full  45 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  431945694 batch2            reps  2 | stored   0 robust-full   0 all-but-1  69 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  458419988 batch2            reps  1 | stored  46 robust-full  46 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC    6121688 batch2            reps  7 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC    6610653 batch2            reps  4 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  130718055 batch3            reps  2 | stored   0 robust-full   0 all-but-1  17 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  190989264 batch3            reps  1 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  197736350 batch3            reps  2 | stored   1 robust-full   1 all-but-1  87 | repro reps True  periods True  | periodic (source off-target (possible)) -> periodic (source off-target (possible))
+TIC  290686569 batch3            reps  3 | stored   1 robust-full   1 all-but-1   1 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  356868485 batch3            reps 23 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  427344083 batch3            reps  2 | stored   1 robust-full   1 all-but-1   5 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC   58946313 batch3            reps  1 | stored  23 robust-full  23 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  814205011 batch3            reps  1 | stored  31 robust-full  31 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  115171750 full              reps  5 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  121636363 full              reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  139726266 full              reps  1 | stored  27 robust-full  27 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  140215502 full              reps  3 | stored   0 robust-full   0 all-but-1   5 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  158209498 full              reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  159614322 full              reps  1 | stored   5 robust-full   5 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  160041500 full              reps  6 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  162031311 full              reps  2 | stored   0 robust-full   0 all-but-1  40 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  168702709 full              reps  1 | stored  21 robust-full  21 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  169251938 full              reps  2 | stored   0 robust-full   0 all-but-1  40 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  176402194 full              reps  2 | stored   2 robust-full   2 all-but-1  64 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  188835620 full              reps  6 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  188902169 full              reps  1 | stored  32 robust-full  32 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC   22642772 full              reps  2 | stored   1 robust-full   0 all-but-1  10 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  229055790 full              reps  1 | stored  38 robust-full  38 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  233267414 full              reps 10 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  236770234 full              reps  4 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  239190192 full              reps  1 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  248960573 full              reps  2 | stored   0 robust-full   0 all-but-1 109 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  250103631 full              reps  1 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  253553257 full              reps  1 | stored 104 robust-full 104 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  258799245 full              reps 27 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  264333501 full              reps  8 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  265453074 full              reps  1 | stored  49 robust-full  49 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  268534931 full              reps  2 | stored   4 robust-full   4 all-but-1  75 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  283222856 full              reps  1 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  293845053 full              reps  1 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  294216479 full              reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  313327244 full              reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  329064084 full              reps 25 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  337665591 full              reps  1 | stored  18 robust-full  18 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  342004815 full              reps  9 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  348063710 full              reps  1 | stored   9 robust-full   9 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  350274116 full              reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  354032500 full              reps  2 | stored   0 robust-full   0 all-but-1   5 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  354032501 full              reps  2 | stored   0 robust-full   0 all-but-1   3 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  356240333 full              reps  2 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  359683436 full              reps  2 | stored  26 robust-full  26 all-but-1  14 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  359819459 full              reps  4 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  365250897 full              reps  1 | stored   6 robust-full   6 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  377020459 full              reps  1 | stored  15 robust-full  15 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC   38005437 full              reps  4 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  384882500 full              reps  5 | stored   1 robust-full   1 all-but-1   1 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  403139386 full              reps  1 | stored  13 robust-full  13 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  407663579 full              reps  2 | stored   0 robust-full   0 all-but-1  13 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  409473377 full              reps  7 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  427459423 full              reps  1 | stored  46 robust-full  46 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  439406850 full              reps  7 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  441056242 full              reps  2 | stored   0 robust-full   0 all-but-1  64 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  453029782 full              reps  1 | stored  20 robust-full  20 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC  466930780 full              reps  2 | stored   1 robust-full   1 all-but-1  41 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC  468888472 full              reps  1 | stored  24 robust-full  24 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC   48882295 full              reps  2 | stored   2 robust-full   0 all-but-1  61 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC   55454149 full              reps  8 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC   64549889 full              reps  3 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | periodic-on-target -> periodic-on-target
+TIC   66101137 full              reps  1 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC   67747088 full              reps  1 | stored  31 robust-full  31 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC   67884964 full              reps  2 | stored   1 robust-full   1 all-but-1  59 | repro reps True  periods True  | periodic-on-target -> periodic-on-target
+TIC   69745398 full              reps  1 | stored  19 robust-full  19 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+TIC   75577433 full              reps 13 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC   76140400 full              reps  2 | stored   0 robust-full   0 all-but-1   8 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC   76804724 full              reps 13 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC   82550215 full              reps  1 | stored  24 robust-full  24 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC   83384234 full              reps 20 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC   83580723 full              reps  8 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | off-target-EB -> off-target-EB
+TIC   86202456 full              reps 11 | stored   1 robust-full   1 all-but-1   0 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC   87949211 full              reps  1 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC   88212067 full              reps  9 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC   88467632 full              reps  2 | stored   0 robust-full   0 all-but-1  42 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC   92709947 full              reps  1 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | event-not-recovered -> event-not-recovered
+TIC  100776118 rerun_2026-10-11  reps  2 | stored   0 robust-full   0 all-but-1  30 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  152359413 rerun_2026-10-11  reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC  206666063 rerun_2026-10-11  reps  2 | stored   4 robust-full   4 all-but-1  13 | repro reps True  periods True  | EB-on-target (Gaia) -> EB-on-target (Gaia)
+TIC  228463329 rerun_2026-10-11  reps  3 | stored   0 robust-full   0 all-but-1   0 | repro reps True  periods True  | repeats-inconsistent -> repeats-inconsistent
+TIC   98794593 rerun_2026-10-11  reps  1 | stored  58 robust-full  58 all-but-1   0 | repro reps True  periods True  | duotransit / narrowed -> duotransit / narrowed
+
+JSONs rechecked: 102; used by the frozen RNAAS classification: 97
+frozen class reproduced by the ladder: 97/97
+old periods reproduced on the rebuilt grid: 102/102; repeats reproduced: 102/102
+period set changed: 3; class changed: 0; hidden period (all but one repeat): 17
+
+frozen-note class counts, stored -> robust:
+                                         stored  robust
+repeats-inconsistent                         23      23
+EB-on-target (Gaia)                          21      21
+event-not-recovered                          18      18
+off-target-EB                                18      18
+duotransit / narrowed                        14      14
+periodic-on-target                            2       2
+periodic (source off-target (possible))       1       1
