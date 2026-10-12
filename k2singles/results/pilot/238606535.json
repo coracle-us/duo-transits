@@ -1,0 +1,165 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 238606535,
+ "CTOI": NaN,
+ "Tmag": 10.4105,
+ "depth_ppm": 2144.0,
+ "dur_h": 3.432,
+ "epoch_btjd": 179.8922999999486,
+ "n_sectors": 4,
+ "event_verdict": "no-data",
+ "event_depth_ppm": null,
+ "event_snr": null,
+ "repeats": [
+  {
+   "T": 2568.3248,
+   "sector": 46,
+   "product": "SPOC_120",
+   "depth_ppm": 1445,
+   "snr": 10.0
+  },
+  {
+   "T": 3270.7766,
+   "sector": 72,
+   "product": "SPOC_120",
+   "depth_ppm": 1489,
+   "snr": 9.8
+  }
+ ],
+ "n_repeats": 2,
+ "frac_logP_excluded": 0.6308333333333334,
+ "min_allowed_P": 13.633366101881295,
+ "n_allowed_ranges": 230,
+ "allowed_ranges": [
+  [
+   13.63,
+   13.63
+  ],
+  [
+   27.27,
+   27.27
+  ],
+  [
+   38.47,
+   38.47
+  ],
+  [
+   38.87,
+   38.87
+  ],
+  [
+   40.19,
+   40.19
+  ],
+  [
+   40.46,
+   40.46
+  ],
+  [
+   41.15,
+   41.15
+  ],
+  [
+   42.18,
+   42.18
+  ],
+  [
+   44.24,
+   44.24
+  ],
+  [
+   47.19,
+   47.19
+  ],
+  [
+   48.14,
+   48.14
+  ],
+  [
+   50.2,
+   50.2
+  ],
+  [
+   51.56,
+   51.56
+  ],
+  [
+   51.85,
+   51.85
+  ],
+  [
+   52.7,
+   52.7
+  ],
+  [
+   "...",
+   230
+  ]
+ ],
+ "frac_conclusive_windows": 0.9465370595382746,
+ "candidate_periods": [
+  [
+   17,
+   140.49507
+  ],
+  [
+   34,
+   70.24754
+  ]
+ ],
+ "n_candidate_periods": 2,
+ "event_T": 179.8922999999486,
+ "diff_images": [
+  {
+   "kind": "repeat",
+   "sector": 46,
+   "offset_arcsec": 2.2,
+   "offset_err_arcsec": 3.5,
+   "offset_sigma": 0.6,
+   "snr_peak": 5.6,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.7,
+   "nearest_gaia_sep": 0.3
+  },
+  {
+   "kind": "repeat",
+   "sector": 72,
+   "offset_arcsec": 7.5,
+   "offset_err_arcsec": 4.1,
+   "offset_sigma": 1.8,
+   "snr_peak": 3.3,
+   "crowded_reference": false,
+   "nearest_gaia_G": 10.7,
+   "nearest_gaia_sep": 0.3
+  }
+ ],
+ "EPIC": 211924561,
+ "k2_campaign": "5.0",
+ "k2_tmin_btjd": 139.6,
+ "k2_tmax_btjd": 214.44,
+ "P_min_from_K2": 40.2922999999486,
+ "candidate_periods_all": [
+  [
+   17,
+   140.49507
+  ],
+  [
+   34,
+   70.24754
+  ]
+ ],
+ "k2_intervals_btjd": [
+  [
+   139.6,
+   214.44
+  ],
+  [
+   1095.46,
+   1175.03
+  ],
+  [
+   1251.53,
+   1302.41
+  ]
+ ]
+}

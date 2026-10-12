@@ -27,3 +27,33 @@ Re-check before any outreach or paper.
   lower limit from the K2 campaign's own coverage. Difference images are made for any repeat.
 - **Vetting.** As in the singles project: depth consistency, products, centroids, Gaia binarity and
   an independent re-check before any claim.
+
+## Pilot results (2026-10-12)
+
+- **Run.** 50 targets: 47 analysed, 3 with no TESS light curves (`results/pilot/`,
+  `results_pilot_stdout.txt`). The median fraction of log P (5–1500 d) excluded is 0.38.
+- **Bug fixed after the run.** The K2 period floor first used min/max over all K2 campaigns, giving
+  a spurious P_min of about 1000 d for re-observed fields. `scripts/fix_pmin.py` re-applied it
+  using only the campaign that contains the epoch.
+- **15 stars show TESS repeats.** Triage:
+  - **Systematics or variable stars:** 24395505 (5 repeats in S12), 178941241 (3 in S91 QLP,
+    diff images >100″ off) and 203254318 (4 shallow, inconsistent).
+  - **Off-target or weak:** 366568535 (diff 146″), 206241017 (diff 152″) and 56621708 (SNR 9.6,
+    diff inconclusive).
+  - **Stellar companions:** 51759568 (R* 6 R☉), 257217497 (≈2 R_J), 156599401, 369478173 (TESS
+    depth 1.8× K2), 20444116 (giant host; P 122.9/61.5 d) and 425280270 (≈1.8 R_J).
+    248354054 is also stellar: Gaia gives R* = 3.8 R☉, not the catalogue's 0.8, so the companion is
+    ≈3.5 R_J. These give new periods for K2 single eclipses.
+  - **Validation:** 35021200 = EPIC 201132684, a known K2 multi-planet host with a CTOI. The TESS
+    S46 repeat is on target.
+  - **Lead: EPIC 211924561 = TIC 238606535** (G 10.7 F star, Gaia R 1.74 R☉, M 1.42 M☉,
+    RV-stable, RUWE 1.19).
+    - Transits: K2 C5 (BTJD 179.89; K2SFF depth 1536 ± 36 ppm), TESS S46 (2568.32) and S72
+      (3270.78). Both TESS events are detected in SPOC 2-min, TESS-SPOC and QLP at 1.5–2.0 ppt.
+    - **P = 140.495 or 70.248 d**, with O−C of −4, +19 and −15 min. Rp ≈ 7.4 R⊕.
+    - The K2 C16 epoch falls in a data gap, the C18 epoch just after the campaign ends, and the
+      TESS S44 epoch (n = 34) in a gap. Nothing yet separates the two periods.
+    - Concerns: T14 ≈ 3.4 h is short for the FLAME star (b ≈ 0.96–0.97, possibly grazing). The S72
+      diff image is weak (SNR 3.3).
+    - To do: shape fit (V vs U), independent re-analysis, ExoFOP and literature check, predicted
+      transits.

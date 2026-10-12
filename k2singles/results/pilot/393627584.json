@@ -1,0 +1,25 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 393627584,
+ "CTOI": NaN,
+ "Tmag": 14.4325,
+ "depth_ppm": 19639.0,
+ "dur_h": 5.8844,
+ "epoch_btjd": 924.097200000193,
+ "n_sectors": 0,
+ "status": "no light curves",
+ "EPIC": 248607265,
+ "k2_campaign": "14.0",
+ "k2_tmin_btjd": 905.71,
+ "k2_tmax_btjd": 985.42,
+ "P_min_from_K2": 61.32279999980699,
+ "candidate_periods_all": [],
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "k2_intervals_btjd": [
+  [
+   905.71,
+   985.42
+  ]
+ ]
+}

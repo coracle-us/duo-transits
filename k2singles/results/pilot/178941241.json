@@ -1,0 +1,161 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 178941241,
+ "CTOI": NaN,
+ "Tmag": 12.763,
+ "depth_ppm": 7113.0,
+ "dur_h": 40.6992,
+ "epoch_btjd": 242.1754000000656,
+ "n_sectors": 2,
+ "event_verdict": "no-data",
+ "event_depth_ppm": null,
+ "event_snr": null,
+ "repeats": [
+  {
+   "T": 3788.3966,
+   "sector": 91,
+   "product": "QLP",
+   "depth_ppm": 10233,
+   "snr": 17.1
+  },
+  {
+   "T": 3796.0277,
+   "sector": 91,
+   "product": "QLP",
+   "depth_ppm": 7865,
+   "snr": 21.1
+  },
+  {
+   "T": 3798.1475,
+   "sector": 91,
+   "product": "QLP",
+   "depth_ppm": 6714,
+   "snr": 14.0
+  }
+ ],
+ "n_repeats": 3,
+ "frac_logP_excluded": 0.38166666666666665,
+ "min_allowed_P": 6.637749649620251,
+ "n_allowed_ranges": 473,
+ "allowed_ranges": [
+  [
+   6.64,
+   6.64
+  ],
+  [
+   7.17,
+   7.17
+  ],
+  [
+   7.33,
+   7.33
+  ],
+  [
+   7.52,
+   7.52
+  ],
+  [
+   8.8,
+   8.8
+  ],
+  [
+   9.01,
+   9.01
+  ],
+  [
+   9.05,
+   9.05
+  ],
+  [
+   9.29,
+   9.29
+  ],
+  [
+   9.44,
+   9.44
+  ],
+  [
+   9.83,
+   9.83
+  ],
+  [
+   10.5,
+   10.5
+  ],
+  [
+   10.66,
+   10.66
+  ],
+  [
+   10.77,
+   10.77
+  ],
+  [
+   11.39,
+   11.4
+  ],
+  [
+   11.63,
+   11.63
+  ],
+  [
+   "...",
+   473
+  ]
+ ],
+ "frac_conclusive_windows": 0.56,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 242.1754000000656,
+ "diff_images": [
+  {
+   "kind": "repeat",
+   "sector": 91,
+   "offset_arcsec": 151.3,
+   "offset_err_arcsec": 10.2,
+   "offset_sigma": 14.9,
+   "snr_peak": 55.2,
+   "crowded_reference": false,
+   "nearest_gaia_G": 12.75,
+   "nearest_gaia_sep": 140.6
+  },
+  {
+   "kind": "repeat",
+   "sector": 91,
+   "offset_arcsec": 136.0,
+   "offset_err_arcsec": 47.5,
+   "offset_sigma": 2.9,
+   "snr_peak": 37.1,
+   "crowded_reference": false,
+   "nearest_gaia_G": 12.75,
+   "nearest_gaia_sep": 140.6
+  },
+  {
+   "kind": "repeat",
+   "sector": 91,
+   "offset_arcsec": 117.0,
+   "offset_err_arcsec": 25.0,
+   "offset_sigma": 4.7,
+   "snr_peak": 59.5,
+   "crowded_reference": false,
+   "nearest_gaia_G": 16.33,
+   "nearest_gaia_sep": 102.8
+  }
+ ],
+ "EPIC": 212694013,
+ "k2_campaign": "6.0",
+ "k2_tmin_btjd": 217.45,
+ "k2_tmax_btjd": 296.38,
+ "P_min_from_K2": 54.2045999999344,
+ "candidate_periods_all": [],
+ "k2_intervals_btjd": [
+  [
+   217.45,
+   296.38
+  ],
+  [
+   1179.52,
+   1246.61
+  ]
+ ]
+}

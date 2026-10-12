@@ -1,0 +1,105 @@
+{
+ "own_photometry_sectors": [],
+ "TIC": 82508797,
+ "CTOI": NaN,
+ "Tmag": 12.1366,
+ "depth_ppm": 3890.0,
+ "dur_h": 7.356,
+ "epoch_btjd": 186.10259999986735,
+ "n_sectors": 5,
+ "event_verdict": "no-data",
+ "event_depth_ppm": null,
+ "event_snr": null,
+ "repeats": [],
+ "n_repeats": 0,
+ "frac_logP_excluded": 0.6205,
+ "min_allowed_P": 26.173863793548286,
+ "n_allowed_ranges": 353,
+ "allowed_ranges": [
+  [
+   26.17,
+   26.17
+  ],
+  [
+   26.27,
+   26.27
+  ],
+  [
+   26.73,
+   26.75
+  ],
+  [
+   27.19,
+   27.19
+  ],
+  [
+   28.19,
+   28.19
+  ],
+  [
+   29.03,
+   29.03
+  ],
+  [
+   32.85,
+   32.85
+  ],
+  [
+   33.42,
+   33.42
+  ],
+  [
+   33.8,
+   33.8
+  ],
+  [
+   36.61,
+   36.61
+  ],
+  [
+   37.49,
+   37.49
+  ],
+  [
+   39.43,
+   39.43
+  ],
+  [
+   39.66,
+   39.66
+  ],
+  [
+   40.11,
+   40.11
+  ],
+  [
+   40.8,
+   40.8
+  ],
+  [
+   "...",
+   353
+  ]
+ ],
+ "frac_conclusive_windows": 0.7994121969140338,
+ "candidate_periods": [],
+ "n_candidate_periods": 0,
+ "event_T": 186.10259999986735,
+ "diff_images": [],
+ "EPIC": 211840710,
+ "k2_campaign": "5.0",
+ "k2_tmin_btjd": 139.6,
+ "k2_tmax_btjd": 214.44,
+ "P_min_from_K2": 46.50259999986736,
+ "candidate_periods_all": [],
+ "k2_intervals_btjd": [
+  [
+   139.6,
+   214.44
+  ],
+  [
+   1251.53,
+   1302.41
+  ]
+ ]
+}
