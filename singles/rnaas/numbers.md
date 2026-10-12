@@ -46,9 +46,9 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
 - [x] **Repository** (pushed 2026-10-12, with correspondence and family documents kept private). Push it to GitHub. The note cites `github.com/coracle-us/duo-transits`,
       which is public, but this session's commits have not been pushed. Consider a Zenodo DOI
       for the release.
-- [ ] **AI policy.** Re-check the AAS AI policy (https://journals.aas.org/author-llm-guidelines)
-      and paste the disclosure into the submission form as well.
-- [ ] **Compile.** Build on Overleaf with the AAS v7 template (`aastex7.cls`); there is no local
-      LaTeX.
-- [ ] **Timing.** If Sector 107 pipeline products or Gaia DR4 arrive before submission, update
-      the tentative rows and the TIC 147035057 paragraph.
+- [x] **AI policy** read by Jon (2026-10-12). A dedicated AI disclosure statement was added
+      at the end of the note, following the AAS examples.
+- [x] **Compiled** on Overleaf, using the official AAS template (`aastex701.cls`), with no errors.
+- [x] **Submitted** by Jon on 2026-10-12 via Overleaf's 'Submit to AAS' (not waiting for Gaia
+      DR4). Next: AAS emails instructions to finish the metadata on its site (choose RNAAS;
+      paste the AI disclosure). Gaia DR4 (2 Dec) can go in a follow-up note.

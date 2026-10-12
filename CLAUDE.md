@@ -200,6 +200,7 @@ It is now the current scope (see the box at the top of this file).
 **Pending:**
 - `singles/TODO_gaia_dr4.md`: Gaia DR4 is due 2 Dec 2026.
 - The weekly S107 recheck (scheduled task) for 268534931, 139726266 and 168702709.
-- RNAAS draft numbers.
+- RNAAS note **submitted 2026-10-12** via Overleaf (`singles/rnaas/rnaas.tex`). Waiting for
+  the AAS email to finish the metadata on the AAS site.
 - ExoFOP-ready ephemerides are in `singles/writeups/exofop_ephemeris_updates.md`, for
   someone with an account to submit.
