@@ -2,7 +2,10 @@
 Technical write-up of TIC 147035057 / CTOI 147035057.01 for the observers who can verify it.
 Run:  python singles/writeups/tic147035057/make_figures.py && python singles/writeups/tic147035057/build_pdf.py
 Output: singles/writeups/tic147035057/TIC147035057_writeup.pdf
-Numbers trace to singles/results/vetting/147035057_* and singles/results/pilot/147035057*.
+Numbers trace to singles/results/vetting/147035057_*, singles/results/pilot/147035057*,
+shape_fit.json (eclipse shape, b/k posteriors) and gaia_tension.json (this folder).
+Revised 2026-10-11 after a second review: the eclipse is grazing, so the companion's size is
+only bounded from below; framing changed to "period fixed; eclipsing body most likely stellar".
 """
 import json
 from pathlib import Path
@@ -52,22 +55,26 @@ def table(rows, widths, header=True):
 
 def main():
     e = json.load(open(VET / "147035057_ephemeris.json"))
+    sf = json.load(open(HERE / "shape_fit.json"))
+    gt = json.load(open(HERE / "gaia_tension.json"))
+    fb = sf["mcmc_free_rho_ldprior"]
+    fa = sf["mcmc_flame_prior_ldprior"]
     nxt = pd.read_csv(VET / "147035057_next_eclipses.csv")
     T0b, P = e["T0_btjd"], e["P"]
     doc = SimpleDocTemplate(str(HERE / "TIC147035057_writeup.pdf"), pagesize=letter,
                             leftMargin=0.7 * inch, rightMargin=0.7 * inch, topMargin=0.6 * inch,
-                            bottomMargin=0.6 * inch, title="TIC 147035057: 37.315-d period from three TESS eclipses",
+                            bottomMargin=0.6 * inch, title="TIC 147035057: 37.315-d period from three TESS eclipses; grazing eclipse, likely stellar companion",
                             author="Jon McBee")
     s = [Paragraph("CTOI 147035057.01 (TYC 5963-01913-1): three TESS eclipses fix the period at "
-                   "37.315 d, but Gaia flags the host as RV-variable", title), Spacer(1, 3),
+                   "37.315 d; the eclipsing body is most likely a star", title), Spacer(1, 3),
          Paragraph("Jon McBee (independent researcher), jon.mcbee@gmail.com &middot; 2026-10-11 &middot; "
-                   "analysis of public TESS and Gaia data", sub)]
+                   "analysis of public TESS and Gaia data (revised the same day after a second review: eclipse shape)", sub)]
 
     s.append(Paragraph("Summary", h2))
     s.append(Paragraph(
         "CTOI 147035057.01 was submitted in February 2021 (ExoFOP user <i>steuer</i>, "
         "\"in-house single transit finder\") as a single transit in Sector 33. It has no follow-up "
-        "on ExoFOP. TESS shows two more eclipses of the same depth (~3.2 ppt) and duration (~4.5 h):", body))
+        "on ExoFOP. TESS shows two more eclipses of the same depth (~3.2 ppt) and shape (V-shaped, about 6.6 h from first to last contact):", body))
     s.append(Paragraph(
         "&bull; <b>Sector 7:</b> an earlier eclipse at BTJD 1515.065, in the TESS-SPOC and QLP "
         "light curves.", body))
@@ -80,18 +87,41 @@ def main():
         "predicted an S108 eclipse, only P = 37.315 d shows one. Difference images put the source on "
         "the target.", body))
     s.append(Paragraph(
-        "<b>Caveat on the companion:</b> Gaia DR3 reports large RV variability for this star "
-        "(rv_chisq_pvalue = 0, rv_renormalised_gof = 99.8, rv_amplitude_robust = 49.8 km/s over "
-        "27 epochs), and we see no secondary eclipse at phase 0.5. The companion may be a low-mass "
-        "star on an eccentric orbit, or a substellar/planetary body in a binary system. RV "
-        "monitoring will decide.", body))
+        "<b>The period is fixed. The eclipsing body is uncertain, but most likely stellar.</b>", body))
+    s.append(Paragraph(
+        f"&bull; <b>The eclipse is grazing.</b> We fitted the eclipse with b and k = R<sub>2</sub>/R<sub>1</sub> free and "
+        f"limb darkening held to physical values. The whole posterior is grazing: b = {fb['b']['median']:.2f} "
+        f"(+{fb['b']['plus']:.2f}/&minus;{fb['b']['minus']:.2f}), k = {fb['k']['median']:.2f} (95%: {fb['k']['p2_5']:.2f}&ndash;{fb['k']['p97_5']:.2f}). "
+        f"A V-shaped (grazing) model beats the best full-transit model by &Delta;BIC &asymp; {sf['delta_BIC_full_minus_grazing']:.0f}.", body))
+    s.append(Paragraph(
+        "&bull; <b>So the depth only gives a lower limit on size:</b> "
+        f"R<sub>2</sub> &gt; {fb['Rp_Rjup_FLAME']['p2_5']:.1f} R<sub>Jup</sub> (97.5%) for R<sub>1</sub> = 2.0 R<sub>sun</sub>. "
+        "That is larger than expected for a planet or brown dwarf on a 37-d orbit.", body))
+    s.append(Paragraph(
+        "&bull; <b>Gaia RVs.</b> The host is strongly RV-variable: "
+        "rv_chisq_pvalue = 0, rv_renormalised_gof = 99.8, rv_amplitude_robust = 49.8 km/s over 27 epochs. "
+        f"If K &asymp; 25 km/s, the mass function is {gt['mass_function_Msun']:.3f} M<sub>sun</sub>, so M<sub>2</sub> &ge; "
+        f"{gt['M2_min_Msun']:.2f} M<sub>sun</sub> (for e = 0). A K/M dwarf of about 0.6 R<sub>sun</sub> gives k &asymp; 0.3, "
+        "consistent with the grazing fit. No secondary eclipse is seen, so the orbit is probably eccentric.", body))
+    s.append(Paragraph(
+        f"&bull; <b>An open tension.</b> A companion like that should move Gaia's photocentre by about "
+        f"{gt['photocentre_mas_dark_companion']:.1f} mas. Yet RUWE is only 1.12. On the other hand, "
+        "astrometric_excess_noise is 0.12 mas (28&sigma;) and duplicated_source is set.", body))
+    s.append(Paragraph(
+        "&bull; <b>An alternative: two near-equal stars (SB2).</b> Such a pair would blur the RVs without moving the "
+        f"photocentre, and would dilute the eclipse. Gaia's spectroscopic log g (4.06) is closer to the single-star value "
+        f"({gt['single_logg_FLAME']:.2f}) than to twins ({gt['twin_each_logg']:.2f}). That weakly favours one star. "
+        "Either way, the eclipsing body is a star.", body))
+    s.append(Paragraph(
+        "&bull; <b>Gaia DR4 (2 Dec 2026)</b> should settle this: its epoch RVs, which include a double-lined product, "
+        "can be phased on 37.315 d.", body))
     s.append(table([
         ["Ephemeris (BJD_TDB)", "Value"],
         ["P", f"{P:.5f} &plusmn; {e['P_err']:.5f} d"],
         ["T0", f"{T0b + 2457000:.4f} &plusmn; {e['T0_err']:.4f}  (BTJD {T0b:.4f})"],
         ["Eclipse times (BTJD)", " ; ".join(f"{t:.4f} &plusmn; {er:.4f} (cycle {int(k)})"
                                            for t, er, k in zip(e["epochs"], e["epoch_err"], e["cycles"]))],
-        ["Depth / duration", "3.19, 3.28 ppt (S7, S33); 2.8 ppt (S108, own photometry); T14 &asymp; 4.5 h"],
+        ["Depth / duration", "3.19, 3.28 ppt (S7, S33); 2.8 ppt (S108, own photometry); first-to-last contact &asymp; " + f"{sf['T14_observed_h_grazing_model']:.1f}" + " h (grazing model; the catalogue box width is ~4.5 h)"],
         ["Next eclipse well placed from Paranal",
          f"{nxt[nxt.observable_Paranal].iloc[0].mid_UTC} UTC &plusmn; {nxt[nxt.observable_Paranal].iloc[0].sigma_min} min "
          f"(alt {nxt[nxt.observable_Paranal].iloc[0].alt_at_Paranal_deg}&deg;)"]],
@@ -115,7 +145,11 @@ def main():
         ["Astrometry", "RUWE 1.12, ipd_frac_multi_peak 0, no NSS orbit", "Gaia DR3"],
         ["Radial velocity", "&minus;42.2 &plusmn; 4.2 km/s; rv_chisq_pvalue 0; rv_renormalised_gof 99.8; "
                             "rv_amplitude_robust 49.8 km/s (27 epochs); vbroad 25.9 km/s", "Gaia DR3"],
-        ["Companion size if on primary", "&asymp; 12.5 R<sub>Earth</sub> (1.1 R<sub>Jup</sub>) for 3.2 ppt; larger if grazing", "this work"]],
+        ["Companion size", f"Grazing eclipse: k = {fb['k']['median']:.2f} (95%: {fb['k']['p2_5']:.2f}&ndash;{fb['k']['p97_5']:.2f}), "
+         f"so R<sub>2</sub> &gt; {fb['Rp_Rjup_FLAME']['p2_5']:.1f} R<sub>Jup</sub> (97.5%). "
+         f"A non-grazing solution exists only with a circular orbit around the FLAME star, taking that density as a prior: "
+         f"k = {fa['k']['median']:.3f}, b = {fa['b']['median']:.2f}, &asymp; {fa['Rp_Rjup_FLAME']['median']:.1f} R<sub>Jup</sub>. "
+         f"It is disfavoured by &Delta;(&minus;2 ln posterior) = {sf['map_flame_ld_vs_free_ld_delta_m2lnpost']:.0f}", "this work"]],
         [1.6 * inch, 3.9 * inch, W - 5.5 * inch]))
 
     s.append(Paragraph("Vetting", h2))
@@ -139,6 +173,13 @@ def main():
     s.append(Spacer(1, 4))
     s.append(fig("fig_diffimg.png", "Figure 3. Difference images (out-of-eclipse minus in-eclipse) at the S33 and S108 "
                  "eclipses. Blue circle: target; white squares: Gaia stars with G &lt; 15.", 0.62 * W))
+    s.append(fig("fig_shape.png", "Figure 4. Eclipse shape. "
+                 "<b>Top:</b> the three eclipses with the best full-transit model (green, pinned at the grazing limit "
+                 "b = 1 &minus; k) and the best grazing model (orange dashed). By eye they look alike, but the likelihood "
+                 "favours grazing (&Delta;BIC &asymp; 10). "
+                 "<b>Bottom</b> (limb darkening held to physical values): b vs k, where above the dashed line is grazing; "
+                 "companion radius for R<sub>1</sub> = 2.0 R<sub>sun</sub>; and circular-orbit stellar density from the "
+                 "free-density fit vs FLAME.", W))
 
     s.append(Paragraph("Method (brief)", h2))
     s.append(Paragraph(
@@ -162,6 +203,9 @@ def main():
     s.append(Paragraph(
         "(1) <b>RV monitoring.</b> A few epochs over ~40 days would show whether the Gaia RV "
         "variability follows the 37.3-d period, with a stellar-mass semi-amplitude of tens of km/s.", body))
+    s.append(Paragraph(
+        "(1b) <b>Gaia DR4 (2 Dec 2026).</b> Phase the epoch RVs on 37.315 d. Check whether the spectrum is single- or "
+        "double-lined, and look for a 37-d photocentre wobble in the epoch astrometry. This is free and decisive.", body))
     s.append(Paragraph(
         "(2) <b>Photometry of the 2027-01-20 eclipse.</b> It is well placed for southern facilities, "
         "and a depth comparison in two bands tests for colour dependence.", body))

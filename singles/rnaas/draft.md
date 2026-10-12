@@ -30,9 +30,11 @@ localisation and Gaia DR3 binarity diagnostics. The catalogued event is recovere
 stars, and 79 of these show repeat events. Of the 79, 21 are on stars that Gaia DR3 flags as
 binaries (three Gaia spectroscopic orbits independently reproduce our periods), 18 are blends
 with nearby stars, and 23 have repeats no single period explains. For CTOI 147035057.01 a third
-eclipse fixes the period at 37.31497 ± 0.00003 d; the host is RV-variable. Two candidates
-survive vetting as on-target duotransits on Gaia-clean stars: TIC 159614322 (≈1 R_J, five
-allowed periods, 90–720 d) and TIC 229055790 (≈3.8 R⊕, 38 allowed periods ≥ 27 d). 193
+eclipse fixes the period at 37.31497 ± 0.00003 d, but the eclipse is grazing and the host is
+RV-variable, so the companion is most likely a star. Two candidates survive vetting as
+on-target duotransits on Gaia RV-stable stars. For TIC 159614322 (≈0.9 R_J), a partial third
+transit in Sector 21 narrows the period to 89.965 or 179.930 d. TIC 229055790 (≈3.8 R⊕) has 38
+allowed periods ≥ 27 d. 193
 candidates remain single, with a median 52% of log-period space (5–1500 d) now excluded.
 
 ## 1. Sample
@@ -86,8 +88,16 @@ candidates remain single, with a median 52% of log-period space (5–1500 d) now
 
 **New duotransits.** Both have consistent depths across epochs and data products, are on
 target in difference images, and are re-detected by an independent reduction.
-- **TIC 159614322:** S14 + S41; P = 719.657/n with n ∈ {1, 2, 4, 5, 8}; Rp ≈ 0.96 R_J;
-  Gaia RUWE 1.51.
+- **TIC 159614322:**
+  - S14 and S41 are full transits; flat TESS data leave P = 719.72/n with n ∈ {1, 2, 4, 5, 8}.
+  - A partial transit in S21 (ingress plus ~9 h; egress lost in a downlink gap) is seen in
+    TESS-SPOC, QLP and our own photometry, and was found again in a blind re-analysis. It
+    selects n = 8 or n = 4.
+  - **P = 89.9651 ± 0.0006 d or 179.9302 ± 0.0012 d**, from the two full transits; S21 O−C is
+    +13 to +26 min.
+  - Rp ≈ 0.9 R_J; Gaia RUWE 1.51.
+  - Next transit, predicted by both periods: 2026-12-28 06:42 UTC ± 45 min.
+  - Source: `singles/writeups/tic159614322/`.
 - **TIC 229055790:** S1 + S68; a Planet Hunters TESS candidate with CHIRON spectra on ExoFOP;
   38 aliases, P = 1838.945/n ≥ 26.7 d; Rp ≈ 3.8 R⊕.
 
@@ -106,7 +116,12 @@ These systems are eccentric eclipsing binaries.
   predicted by the n = 19 alias.
 - **Ephemeris:** P = 37.31497 ± 0.00003 d, T0 = BJD_TDB 2458515.0661 ± 0.0011.
 - **Checks:** on target, depth consistent, no secondary eclipse at phase 0.5.
-- **Host:** RV-variable in Gaia DR3 (amplitude ≈ 50 km/s), so likely an eccentric EB.
+- **Shape:** grazing. With b and k free, ΔBIC ≈ 10 against the best full-transit model, and
+  R₂/R₁ = 0.34 (95%: 0.09–0.75), so R₂ > 1.7 R_J.
+  Source: `singles/writeups/tic147035057/shape_fit.json`.
+- **Host:** RV-variable in Gaia DR3 (amplitude ≈ 50 km/s). That implies M₂ ≳ 0.6 M☉, so this
+  is likely an eccentric EB. RUWE is a low 1.12, which leaves a near-equal SB2 pair possible.
+  Gaia DR4 epoch RVs will decide.
 - **Next eclipse:** 2027-01-20 03:11 UTC.
 
 **Off-target cases.** 18 firm and 36 possible off-target sources across the sample; for each, we give the eclipse depth the neighbour would need.

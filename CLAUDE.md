@@ -6,6 +6,36 @@ and publish the results as a **Research Note of the AAS (RNAAS)**.
 
 Read this file first. It is the source of truth for scope, method and rules.
 
+> **Current scope (since 2026-10-11): stale single-transit CTOIs, all-sky. See `singles/`.**
+>
+> The Hawthorn et al. duotransit catalogue (§2–§4 below) is concluded; §8 explains why. The
+> project now covers every open community TOI (CTOI) flagged as a single or duo transit, in
+> both hemispheres. The target list comes from `singles/scripts/build_ctoi_singles.py`, run on
+> the ExoFOP CTOI table downloaded 2026-10-11.
+>
+> **Keep a CTOI if:**
+> - it is not a TOI;
+> - its TFOPWG disposition is not FP, FA, CP or KP;
+> - it has no period, or is tagged single, duo or mono;
+> - it has an epoch, depth and duration;
+> - it is not owned by a group still working its singles (TSTPC users, hawthorn, salinas).
+>
+> **Drop the star if** it hosts a confirmed planet (pscomppars), has any TOI, or is a TESS
+> eclipsing binary in Prša et al. 2022.
+>
+> This gives **368 CTOIs on 359 stars**. Of those, 32 stars already carry a community period
+> on ExoFOP and are skipped, and 306 are analysed. The method (repeat search, own TESScut
+> photometry for unprocessed sectors, difference-image localisation, Gaia DR3 binarity) and
+> the run log are in `singles/README.md`.
+>
+> **Outputs:**
+> - `singles/results/final_classification.csv`;
+> - per-candidate write-ups in `singles/writeups/`;
+> - the RNAAS draft in `singles/rnaas/draft.md`.
+>
+> The §5 rules apply unchanged. In particular, every claimed period must be re-derived
+> independently before any outreach. Example: `singles/writeups/tic159614322/independent/`.
+
 ---
 
 ## 1. The science in one paragraph
@@ -140,12 +170,36 @@ Later the same day (steps 3–6 done, project wound down):
     reference-point artefact in diff_image.py, corrected; see results/vetting/vetting_log.csv).
   - 1 is source-ambiguous (TOI-6559).
   - 3 are on-target periods confirmed by an independent BLS: 207783865, 38138512, 153838604.
+    207783865 was later demoted because its host is a Gaia DR3 binary.
 - **Verdict: dead end as a research direction.** The catalogue is picked over and the yield
-  is too small. Results were emailed to the catalogue authors instead of an RNAAS:
-  `results/outreach/`.
+  is too small. A summary email to the catalogue authors is drafted in `results/outreach/`
+  but has **not** been sent.
 - Jon cannot get an ExoFOP account (institutional affiliation required). Outputs go via RNAAS
   or to the groups that own the candidates.
 - Side quest: flares on the 2-min hosts, `sidequests/flares/` (1 flare; a sentence at most).
 
-**Next problem set:** see `docs/problem_set_survey.md`. Current recommendation: stale
-single-transit CTOIs plus difference-image localisation. A pilot is planned but not started.
+**Next problem set:** chosen from `docs/problem_set_survey.md`: stale single-transit CTOIs.
+It is now the current scope (see the box at the top of this file).
+
+### Singles project status (2026-10-11)
+
+**Full run done:** 306 stars classified.
+
+**TIC 147035057:**
+- Three eclipses give P = 37.31497 d.
+- Shape fit: the eclipse is grazing, R₂ > 1.7 R_Jup.
+- Gaia RV amplitude 50 km/s, so the companion is most likely stellar.
+- The write-up has been emailed to Warwick.
+
+**TIC 159614322:**
+- A partial third transit in S21 narrows P to 89.965 or 179.930 d.
+- The blind re-analysis agrees.
+- Next transit: 2026-12-28 06:42 UTC ± 45 min.
+- An email to the Planet Hunters TESS team (Oxford) is drafted, not yet sent.
+
+**Pending:**
+- `singles/TODO_gaia_dr4.md`: Gaia DR4 is due 2 Dec 2026.
+- The weekly S107 recheck (scheduled task) for 268534931, 139726266 and 168702709.
+- RNAAS draft numbers.
+- ExoFOP-ready ephemerides are in `singles/writeups/exofop_ephemeris_updates.md`, for
+  someone with an account to submit.

@@ -1,0 +1,21 @@
+{
+ "K_kms_assumed": 24.88,
+ "mass_function_Msun": 0.0595315394828441,
+ "M2_min_Msun": 0.635283042185844,
+ "a_total_AU": 0.2787539481359495,
+ "a1_AU": 0.08533180900789271,
+ "photocentre_mas_dark_companion": 0.5139534856545378,
+ "companion_light_fraction_rough": 0.026216580912274946,
+ "photocentre_mas_luminous_companion": 0.4699375496039782,
+ "k_if_M2_dwarf_R0.6": 0.3,
+ "twin_each_R_Rsun": 1.414213562373095,
+ "twin_each_logg": 4.233880017344075,
+ "single_logg_FLAME": 3.9943025007672865,
+ "logg_gspspec": 4.06,
+ "logg_gspphot": 3.9,
+ "M_G_total": 2.729064315852902,
+ "M_G_each_twin": 3.4816393050128553,
+ "twin_K_each_kms": 43.23743060230579,
+ "twin_photocentre_mas": 0.0,
+ "twin_eclipse_true_depth_on_one_star_ppt": 6.4
+}
