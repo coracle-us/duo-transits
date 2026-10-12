@@ -1,0 +1,73 @@
+{
+ "CAL": 1.0206295554588583,
+ "recall_L1": {
+  "n": 35,
+  "timed": 33,
+  "counts": {
+   "recovered": 16,
+   "missed": 12,
+   "P3 ok, not flagged": 5,
+   "no timing (insufficient light curves)": 2
+  }
+ },
+ "recall_D1": {
+  "n": 31,
+  "counts": {
+   "recovered": 11,
+   "missed": 9,
+   "no timing (insufficient light curves)": 7,
+   "P3 ok, not flagged": 4
+  }
+ },
+ "pulls_L1_old": {
+  "n": 42,
+  "rms": 7.237524392068724,
+  "robust_sd": 2.8359654170953648,
+  "frac_lt1": 0.30952380952380953,
+  "frac_lt2": 0.5,
+  "median": 0.28992153904582885
+ },
+ "pulls_L1_new_raw": {
+  "n": 42,
+  "rms": 1.3238919893135574,
+  "robust_sd": 1.0180008380019108,
+  "frac_lt1": 0.6190476190476191,
+  "frac_lt2": 0.8809523809523809,
+  "median": 0.1646168813932086
+ },
+ "pulls_L1_new_cal": {
+  "n": 42,
+  "rms": 1.2996051580695387,
+  "robust_sd": 1.0,
+  "frac_lt1": 0.6428571428571429,
+  "frac_lt2": 0.8809523809523809,
+  "median": 0.16186426600509504
+ },
+ "pulls_D1_P_old": {
+  "n": 15,
+  "rms": 1.2695509568645693,
+  "robust_sd": 1.5751034382153841,
+  "frac_lt1": 0.4666666666666667,
+  "frac_lt2": 0.8666666666666667,
+  "median": 0.33098348596485033
+ },
+ "pulls_D1_P_new_cal": {
+  "n": 15,
+  "rms": 0.9801522366496686,
+  "robust_sd": 1.0474598539373823,
+  "frac_lt1": 0.7333333333333333,
+  "frac_lt2": 0.9333333333333333,
+  "median": 0.25764430921428205
+ },
+ "validation_heldout": {
+  "pulls": {
+   "n": 8,
+   "rms": 1.03549623575178,
+   "robust_sd": 0.7512979898100386,
+   "frac_lt1": 0.875,
+   "frac_lt2": 0.875,
+   "median": -0.21350625330341866
+  },
+  "note": "validation systems use the S1/S14-98 baseline, B26 used S14-86"
+ }
+}

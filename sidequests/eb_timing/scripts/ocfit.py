@@ -30,7 +30,10 @@ Classification (thresholds fixed on the southern pilot before the NCVZ false-ala
     A / sigma_A(raw bootstrap, before CAL) > SNR_MIN
     P3 not at the search bound
     if both eclipse types: rho(pri,sec) >= RHO_MIN and A_pri/A_sec in [1/AMP_RATIO, AMP_RATIO]
-  class 'LTTE' if P3/span <= 0.7 else 'LTTE-long'; otherwise 'no-flag'.
+  class 'LTTE' if P3/span <= 0.7 else 'LTTE-long'; otherwise 'no-flag'  (reported as cls_v1).
+  v2 (added after vetting the NCVZ false-alarm set; reported as cls): additionally
+    P3 >= 5 P1, A >= 3 tau, and a common non-linear O-C (quad or LTTE vs linear) with
+    dBIC > DBIC_MIN in every leave-one-season-out fit.
 """
 import numpy as np
 import pandas as pd
@@ -48,6 +51,8 @@ SNR_MIN = 4.0         # tuned on the southern pilot (was 5): TIC 278861826 has A
 RHO_MIN = 0.8         # tuned on the southern pilot (was 0.5): spotted 25078924 (0.71), 308451526 (0.69)
 AMP_RATIO = 1.5       # tuned on the southern pilot (was 2.0)
 LONG_SPAN = 0.7
+MIN_P3_P1 = 5.0       # v2 (after NCVZ false-alarm vetting)
+A_TAU_MIN = 3.0       # v2
 
 
 def robust_sigma(x):
@@ -227,8 +232,39 @@ def estimate_noise(d, model_fn):
     return d.tau, d.sw
 
 
-def analyse(df, spot=True, boot=B_BOOT, seed=0):
-    """Full analysis of one system's O-C table. Returns dict."""
+def season_jackknife(d, base, p, gap=100.0):
+    """Minimum over observing seasons (groups of eclipses separated by > gap days) of the
+    dBIC of a common non-linear O-C (best of quadratic and LTTE) against the linear ephemeris,
+    with that season removed (noise model fixed). Tests that the signal is not carried by one
+    season; it does not ask the LTTE to beat a parabola, which a partial orbit cannot do."""
+    t = d.df["T"].values
+    o = np.argsort(t)
+    season = np.zeros(len(t), int)
+    season[o] = np.concatenate([[0], np.cumsum(np.diff(t[o]) > gap)])
+    best = np.inf
+    for s_ in np.unique(season):
+        keep = season != s_
+        if keep.sum() < 20:
+            continue
+        sub = d.df[keep].copy()
+        dd = OC(sub, spot=d.spot_cols.shape[1] > 0)
+        dd.tau, dd.sw = d.tau, d.sw
+        n = len(dd.t)
+        b0 = bic(dd.solve(dd.base("lin"), dd.y)[1], dd.nfix(dd.base("lin")), n)
+        bq = bic(dd.solve(dd.base("quad"), dd.y)[1], dd.nfix(dd.base("quad")), n)
+        pp = list(p)
+        pp[1] = p[1] + d.tref - dd.tref           # T3 is relative to each table's tref
+        f = fit_ltte(dd, base, p0=pp, search=False)
+        if f is None:
+            return -np.inf
+        b1 = min(bic(f[1], dd.nfix(dd.base(base)) + 5, n), bq)
+        best = min(best, b0 - b1)
+    return float(best)
+
+
+def analyse(df, spot=True, boot=B_BOOT, seed=0, P1=None):
+    """Full analysis of one system's O-C table (P1 = eclipsing period, for the hierarchy
+    check). Returns dict."""
     d = OC(df, spot=spot)
     n = len(d.t)
     # 1. preliminary LTTE (white noise only) to set the noise model from the best model
@@ -314,7 +350,26 @@ def analyse(df, spot=True, boot=B_BOOT, seed=0):
     if d.has_sec and flag:
         ratio = ap_ / as_ if as_ > 0 else np.inf
         flag = flag and rho >= RHO_MIN and (1 / AMP_RATIO <= ratio <= AMP_RATIO)
-    cls = ("LTTE" if P3 / d.span <= LONG_SPAN else "LTTE-long") if flag else "no-flag"
+    lab = "LTTE" if P3 / d.span <= LONG_SPAN else "LTTE-long"
+    cls_v1 = lab if flag else "no-flag"           # thresholds fixed before the NCVZ test
+    # v2 rules, added after vetting the NCVZ false-alarm set (disclosed in the README):
+    #  (a) hierarchical: P3 >= MIN_P3_P1 * P1 (TIC 362104293: 'P3' = 29.5 d for P1 = 29.0 d)
+    #  (b) A >= A_TAU_MIN * tau: the orbit must exceed the sector-to-sector jitter (spotted
+    #      TIC 237116051 A/tau = 1.3, 199716496 A/tau = 2.3; all recovered B26 L1 >= 6.8)
+    #  (c) season jackknife: common non-linear O-C still > DBIC_MIN with each season left out
+    #      (TIC 377192658: signal carried by the first two sectors only)
+    reasons = []
+    if flag and P1 is not None and P3 < MIN_P3_P1 * P1:
+        reasons.append("P3<5P1")
+    if flag and A < A_TAU_MIN * tau * 86400:
+        reasons.append("A<3tau")
+    jk_min = np.nan
+    if flag and not reasons:
+        jk_min = season_jackknife(d, lb, p)
+        if not (jk_min > DBIC_MIN):
+            reasons.append("jackknife")
+    cls = lab if (flag and not reasons) else "no-flag"
+    out.update(cls_v1=cls_v1, v2_veto=";".join(reasons), jk_min_dBIC=float(jk_min))
     out.update(base=lb, dBIC=float(dbic), bics={k: float(v) for k, v in bics.items()},
                P3=float(P3), P3_sig=float(sP), e3=float(e3), e3_sig=float(se), A_s=float(A), A_sig=float(sA),
                asini_s=float(asini * 86400), f_m3=float(el.mass_function(asini, P3)),

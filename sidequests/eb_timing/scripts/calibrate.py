@@ -107,6 +107,30 @@ def main():
         pulls_D1_P_old=stats(df[df.group == "D1"].pullP_old.dropna()) if "pullP_old" in df else {},
         pulls_D1_P_new_cal=stats(df[df.group == "D1"].pullP_new_cal.dropna()),
     )
+    # held-out check: the 7 validation systems, timed on the FULL baseline (to S98) and fitted
+    # with the calibrated model in the southern run (results/noise_fit.csv), against B26 where
+    # B26 has them (P2 for all groups; A only for L groups). 229771234 = B26's 229771231.
+    vf = HERE / "results" / "noise_fit.csv"
+    if vf.exists():
+        nv = pd.read_csv(vf).set_index("tic")
+        alias = {229771234: 229771231}
+        vrows = []
+        for tic in [424461577, 219900027, 229771234, 259006185, 356896561]:
+            bt = alias.get(tic, tic)
+            if tic not in nv.index or bt not in b.index:
+                continue
+            q, pub = nv.loc[tic], b.loc[bt]
+            vr = dict(tic=tic, b26_group=pub.group, P3=q.P3, P3_sig=q.P3_sig, P2_pub=pub.P2, P2_pub_err=pub.P2_err,
+                      pullP=pulls(q.P3, q.P3_sig, pub.P2, pub.P2_err))
+            if str(pub.group).startswith("L"):
+                vr.update(A=q.A_s, A_sig=q.A_sig, A_pub=pub.A_ltte_s, A_pub_err=pub.A_ltte_err_s,
+                          pullA=pulls(q.A_s, q.A_sig, pub.A_ltte_s, pub.A_ltte_err_s))
+            vrows.append(vr)
+        vdf = pd.DataFrame(vrows)
+        vdf.to_csv(HERE / "results" / "calibration_validation.csv", index=False)
+        summ["validation_heldout"] = dict(pulls=stats(np.concatenate([vdf.pullP.dropna(), vdf.get("pullA", pd.Series(dtype=float)).dropna()])),
+                                          note="validation systems use the S1/S14-98 baseline, B26 used S14-86")
+        print(vdf.round(2).to_string())
     (HERE / "results" / "calibration_summary.json").write_text(json.dumps(summ, indent=1, default=float))
     print(json.dumps(summ, indent=1, default=float))
     with pd.option_context("display.width", 250):

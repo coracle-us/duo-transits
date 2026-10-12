@@ -1,0 +1,59 @@
+{
+ "L1": {
+  "n": 35,
+  "testable": 22,
+  "P3_recovered": 21,
+  "flagged_and_recovered_v1": 16,
+  "flagged_and_recovered_v2": 16,
+  "not_testable": [
+   159465833,
+   165550395,
+   229711743,
+   229787617,
+   229789945,
+   232606864,
+   233070708,
+   259038777,
+   288430645,
+   357596894,
+   394089883,
+   441788515,
+   441806190
+  ]
+ },
+ "D1": {
+  "n": 31,
+  "testable": 20,
+  "P3_recovered": 15,
+  "flagged_and_recovered_v1": 12,
+  "flagged_and_recovered_v2": 11,
+  "not_testable": [
+   219892913,
+   233073872,
+   233530543,
+   233729038,
+   235687051,
+   235934882,
+   236769201,
+   288611883,
+   389966039,
+   417701432,
+   423927178
+  ]
+ },
+ "FA": {
+  "n": 49,
+  "timed": 49,
+  "flagged_v1": 6,
+  "false_alarms_v1": 4,
+  "real_v1": 2,
+  "flagged_v2": 1,
+  "false_alarms_v2": 0,
+  "real_v2": 1,
+  "real_unflagged_any": [
+   233193944,
+   441804888
+  ],
+  "note": "v2 rules were derived from these same FA systems, so the v2 FA rate is in-sample"
+ }
+}

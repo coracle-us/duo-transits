@@ -1,0 +1,9 @@
+tic,verdict,note
+362104293,pipeline-false-alarm,"P1 = 28.96 d eccentric EB with only ~23 primaries; primary and secondary diverge by ~+-25 min (apsidal motion); the 29.5-d 'LTTE' is an alias of the eclipse sampling (P3 ~ P1), not a hierarchical orbit"
+377192658,pipeline-false-alarm,"O-C flat (+-0.1 min) except the first two sectors (S14-15) at -2 min; a data/systematics feature of one season, not an orbit; fold also shows mis-normalised points"
+237116051,pipeline-false-alarm,"Strongly spotted (O'Connell +-50 ppt); O-C wanders +-0.5 min without a coherent period; 17-s 'orbit' is below the sector-to-sector jitter"
+199716496,pipeline-false-alarm,"Spotted (O'Connell +-25 ppt); common-mode +-0.5 min wiggles; the 103-d periodogram peak is not coherent by eye across seasons; ambiguous at best"
+353854078,real-signal-not-in-B26,"Common primary/secondary O-C of ~+-5 min over the whole S14-86 baseline, smooth, survives the season jackknife; P3 ~1400 d (only ~1.4 cycles). Not named anywhere in Mitnyan+2024 or Borkovits+2026"
+441804888,real-signal-not-in-B26,"Smooth common O-C, gentle curvature then a +3 min upturn in S73-86; pri/sec identical; looks real but the upturn is carried by the last season (fails the v2 jackknife). Not named in Mitnyan+2024 or B26"
+233193944,real-signal-not-in-B26 (unflagged),"Not flagged (best LTTE at the P3 search bound), but the O-C is a clear common +-5 min curve over the baseline, residual chi2r 1.4; a long-period third body or period change. Not named in Mitnyan+2024 or B26"
+377307592,B26-L3-member,"In the FA list by a harvesting defect (B26 group L3, P2 = 7427 d); our fit: large common long-term O-C (dBIC 13,000) but A/sigma_A = 1.9 so unflagged; excluded from the FA statistics"
