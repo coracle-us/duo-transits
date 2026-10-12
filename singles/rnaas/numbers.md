@@ -42,9 +42,8 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
       (Huang 2020, Caldwell 2020) and the A&A/arXiv listing (Heidari 2024). All match `rnaas.tex`;
       no changes were needed.
 - [x] **ORCID** added: 0009-0000-7524-4470.
-- [ ] **Affiliation.** Confirm the wording ("Independent researcher, USA" now). CLAUDE.md
-      suggests "Coracle".
-- [ ] **Repository.** Push it to GitHub. The note cites `github.com/coracle-us/duo-transits`,
+- [x] **Affiliation:** "Independent researcher, USA" (confirmed by Jon 2026-10-12).
+- [x] **Repository** (pushed 2026-10-12, with correspondence and family documents kept private). Push it to GitHub. The note cites `github.com/coracle-us/duo-transits`,
       which is public, but this session's commits have not been pushed. Consider a Zenodo DOI
       for the release.
 - [ ] **AI policy.** Re-check the AAS AI policy (https://journals.aas.org/author-llm-guidelines)
