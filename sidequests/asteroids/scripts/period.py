@@ -41,6 +41,7 @@ STAR_FRAC = 3.0
 BIN_MIN = 30.0
 NHARM = 4
 FMIN, FMAX = 0.05, 24.0
+NBOOT = 200
 
 
 def load(sid, sector):
@@ -169,6 +170,21 @@ def analyse(sid, sector, P_known_h=None, label=None, plot=True, bin_min=BIN_MIN)
     out["LS_power"] = round(float(pw[i]), 4)
     out["LS_FAP"] = float(ls.false_alarm_probability(pw[i], minimum_frequency=FMIN,
                                                      maximum_frequency=freq.max()))
+    # empirical false-alarm level: shuffle 1-d blocks of the detrended binned light curve (keeps
+    # red noise on < 1 d scales, destroys phase coherence across blocks) and record the max LS power
+    rng = np.random.default_rng(0)
+    blk = np.floor((b.t.values - b.t.min()) / 1.0).astype(int)
+    ub = np.unique(blk)
+    fgrid = freq[::10]
+    mx = []
+    for _ in range(NBOOT):
+        order = rng.permutation(ub)
+        yy = np.concatenate([y.values[blk == k] for k in order])
+        ee = np.concatenate([b.emag.values[blk == k] for k in order])
+        mx.append(LombScargle(b.t.values, yy, ee).power(fgrid).max())
+    mx = np.array(mx)
+    out["boot_maxpow_99"] = round(float(np.percentile(mx, 99)), 4)
+    out["boot_fap"] = float((np.sum(mx >= pw[i]) + 1) / (NBOOT + 1))
     # Fourier fits at P_LS and 2 P_LS
     res = {}
     for tag, P0 in [("1x", P_ls), ("2x", 2 * P_ls)]:
@@ -192,6 +208,11 @@ def analyse(sid, sector, P_known_h=None, label=None, plot=True, bin_min=BIN_MIN)
                amp2=round(res["2x"]["amp"], 3), rchi2_2=round(res["2x"]["rchi2"], 2), beta=round(beta, 2),
                beta_alpha_mag_per_deg=round(float(res["2x"]["c"][1]), 4),
                F_odd=round(float(F), 2), p_odd=p_odd, p_odd_red=p_odd_red)
+    rms = float(np.std(res["2x"]["resid"]))
+    # amplitude S/N: each Fourier coefficient has sigma ~ rms*sqrt(2/N); x beta for red noise
+    out["resid_rms_mag"] = round(rms, 4)
+    out["amp_snr"] = round(float(res["2x"]["amp"] / (rms * beta * np.sqrt(2.0 / len(b)))), 1)
+    out["n_cycles_2P"] = round(float(out["span_d"] / P2), 1)
     out["auto_choice"] = "2P_LS (odd harmonics significant)" if p_odd_red < 1e-3 else "ambiguous (P_LS or 2P_LS)"
     if P_known_h:
         out["P_known_h"] = P_known_h

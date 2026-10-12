@@ -15,8 +15,9 @@ Steps (see README for the reasoning):
     its background-subtracted values over all good frames in which the asteroid was > R_EX px away
     is the static-sky model. Subtracting it removes the stars the asteroid passes.
  4. Aperture photometry on the difference stamp at (TGT_X, TGT_Y): pixel centres within R_AP;
-    a residual sky from the median of the annulus R_IN..R_OUT is removed.
- 5. Flags per frame: QUALITY != 0; fewer than NMIN static samples for an aperture pixel;
+    a residual sky from the median of the annulus R_IN..R_OUT is removed. (Options for a soft
+    aperture and re-centring exist but are off; see run() and README.)
+ 5. Flags per frame: QUALITY != 0; stamp not entirely on science pixels (flag 16); fewer than NMIN static samples for an aperture pixel;
     star contamination (static-scene flux in the aperture, 'star_ap', see period.py for the cut);
     noisy frames (annulus robust rms > 2.5 x the sector median: scattered light, glints).
  6. Ephemeris (JPL Horizons, observer = TESS, code 500@-95): r, Delta, alpha, V, interpolated to
@@ -66,8 +67,18 @@ def fetch_cutout(obj, sector, size=SIZE):
     from astroquery.mast import Tesscut
     tmp = d / f"tmp_{safe(obj)}_{sector}"
     tmp.mkdir(exist_ok=True)
-    m = Tesscut.download_cutouts(objectname=obj, moving_target=True, sector=sector, size=size,
-                                 path=str(tmp))
+    import time
+    for attempt in range(7):  # TESScut answers 429/502 under load: back off and retry
+        try:
+            m = Tesscut.download_cutouts(objectname=obj, moving_target=True, sector=sector, size=size,
+                                         path=str(tmp))
+            break
+        except Exception as e:  # noqa: BLE001
+            if attempt == 6 or not any(c in str(e) for c in ("429", "502", "503", "504", "imed out")):
+                raise
+            wait = min(60 * 2 ** attempt, 600)
+            print(f"  {obj} S{sector}: {str(e)[:40]} -> retry in {wait}s", flush=True)
+            time.sleep(wait)
     paths = [Path(p) for p in m["Local Path"]]
     if not paths:
         raise RuntimeError(f"no cutout for {obj} S{sector}")
@@ -120,11 +131,18 @@ def load_cutout(path):
     return tab
 
 
-def photometry(tab):
+def photometry(tab, dx=0.0, dy=0.0, soft=False):
+    """dx, dy: aperture offset from the Horizons position (px; from the stacked centroid).
+    soft=True: aperture weight clip(R_AP + 0.5 - d, 0, 1), a linear 1-px taper approximating
+    exact pixel overlap; soft=False: hard pixel-centre aperture (the first version)."""
     t, flux, q = tab["t"], tab["flux"], tab["q"]
     n, S, _ = flux.shape
     yy, xx = np.mgrid[0:S, 0:S]
     good = np.isfinite(t) & (q == 0) & np.all(np.isfinite(flux.reshape(n, -1)), axis=1)
+    # the whole stamp must lie on science pixels (cols 44-2091, rows 0-2047, 0-based); TESScut
+    # keeps following the target into the collateral columns (found on (12198) in validation)
+    onchip = (tab["cx"] >= 44) & (tab["cx"] + S - 1 <= 2091) & (tab["cy"] >= 0) & (tab["cy"] + S - 1 <= 2047)
+    good &= onchip
     # per-frame background (faintest-40% median), stamp-level
     fl = flux.reshape(n, -1)
     p40 = np.nanpercentile(fl, 40, axis=1)
@@ -149,7 +167,9 @@ def photometry(tab):
     static = np.where(found, med[k], np.nan).reshape(pid.shape)
     nsamp = np.where(found, counts[k], 0).reshape(pid.shape)
     diff = sub - static
-    ap = dist <= R_AP
+    dap = np.hypot(xx[None] - (tab["tx"] + dx)[:, None, None], yy[None] - (tab["ty"] + dy)[:, None, None])
+    wap = np.clip(R_AP + 0.5 - dap, 0, 1) if soft else (dap <= R_AP).astype(float)
+    ap = wap > 0
     ann = (dist > R_IN) & (dist <= R_OUT)
     F = np.full(n, np.nan)
     sky = np.full(n, np.nan)
@@ -157,6 +177,7 @@ def photometry(tab):
     star_ap = np.full(n, np.nan)
     nmin_ap = np.zeros(n, int)
     npix = np.zeros(n, int)
+    werr = np.ones(n)
     for i in range(n):
         a, b = ap[i], ann[i] & np.isfinite(diff[i])
         if b.sum() < 10:
@@ -164,13 +185,15 @@ def photometry(tab):
         av = diff[i][b]
         sky[i] = np.median(av)
         rms[i] = 1.4826 * np.median(np.abs(av - sky[i]))
-        F[i] = np.nansum(diff[i][a] - sky[i])
+        w = wap[i][a]
+        F[i] = np.nansum(w * (diff[i][a] - sky[i]))
         npix[i] = a.sum()
-        star_ap[i] = np.nansum(static[i][a])
+        werr[i] = np.sqrt(np.sum(w ** 2))
+        star_ap[i] = np.nansum(w * static[i][a])
         nmin_ap[i] = nsamp[i][a].min()
-    err = rms * np.sqrt(np.maximum(npix, 1))
+    err = rms * werr
     noisy = rms > 2.5 * np.nanmedian(rms[good])
-    flag = (~good).astype(int) * 1 + (nmin_ap < NMIN) * 2 + noisy * 4 + ~np.isfinite(F) * 8
+    flag = (~good).astype(int) * 1 + (nmin_ap < NMIN) * 2 + noisy * 4 + ~np.isfinite(F) * 8 + (~onchip) * 16
     return dict(F=F, err=err, sky=sky, rms=rms, bkg=bkg, star_ap=star_ap, nmin_ap=nmin_ap, flag=flag,
                 diff=diff, good=good)
 
@@ -204,8 +227,15 @@ def centroid_check(tab, ph, nbin=200):
 def run(obj, sector, size=SIZE):
     path = fetch_cutout(obj, sector, size)
     tab = load_cutout(path)
-    ph = photometry(tab)
-    cen = centroid_check(tab, ph)
+    # Adopted: hard pixel-centre aperture at the Horizons position (version 1). A soft-edged
+    # aperture and re-centring on the stacked source were tried during validation
+    # (compare_aperture.py -> data/aperture_comparison.csv): they helped some objects and broke the
+    # period of (698), so they are NOT used; the stacked offset is kept as a diagnostic only.
+    ph = photometry(tab, soft=False)
+    cen0 = centroid_check(tab, ph)
+    dx = dy = 0.0
+    cen = cen0
+    cen["ap_dx"], cen["ap_dy"] = dx, dy
     eph = fetch_ephem(obj, tab["t"][np.isfinite(tab["t"])])
     t = tab["t"]
     tt = np.where(np.isfinite(t), t, np.nanmedian(t))
@@ -220,7 +250,8 @@ def run(obj, sector, size=SIZE):
     df.to_csv(out, index=False, compression="gzip", float_format="%.6f")
     meta = dict(obj=obj, sector=sector, camera=tab["camera"], ccd=tab["ccd"], n_frames=len(t),
                 n_good=int((ph["flag"] == 0).sum()), corner_frac_max=round(tab["corner_frac_max"], 3),
-                cen_dx=round(cen["cen_dx"], 3), cen_dy=round(cen["cen_dy"], 3),
+                cen_dx=round(cen0["cen_dx"], 3), cen_dy=round(cen0["cen_dy"], 3),
+                ap_dx=round(dx, 3), ap_dy=round(dy, 3),
                 cen_sigma=round(cen.get("cen_sigma", np.nan), 3),
                 cen_amp=round(cen["cen_amp"], 2), median_flux=float(np.nanmedian(ph["F"][ph["flag"] == 0])),
                 V_med=round(float(np.nanmedian(eph["V"])), 2), track_px=round(float(np.hypot(
