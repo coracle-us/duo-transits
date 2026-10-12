@@ -109,3 +109,13 @@ Depth window: from `results/full3/202126877_0.json` (catalogue depth 61,834 ppm;
 - the secondaries at 0.58–1.80× (3236.11, 3257.87 and 3279.70 are secondaries).
 
 The 2023 primaries (> 2×) were rejected by the search.
+
+## Submission
+
+- **Sent to AAS:** 2026-10-12 17:42 EDT, via Overleaf "Submit to AAS" (project "RNAAS K2 single events x TESS").
+- **Files sent:**
+  - `sample701.tex`: the one-line wrapper `\input{k2_note}`;
+  - `k2_note.tex`: linked to https://raw.githubusercontent.com/coracle-us/duo-transits/fb3bd0c/k2singles/rnaas/rnaas.tex;
+  - `aastex701.cls`, `aasjournalv7.bst`, `orcid-ID.png`.
+- **Submitted text:** commit `fb3bd0c`.
+- **Still to do:** complete the submission on aas.msubmit.net from the AAS email. The manuscript number is still to be recorded.
