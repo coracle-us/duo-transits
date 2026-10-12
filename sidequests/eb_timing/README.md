@@ -27,7 +27,9 @@ Borkovits+2026 northern CVZ results. It is separate from the duotransit work and
   recovered for 21 (95%) and 16 (73%) are flagged automatically**. The 5 unflagged ones fail our
   primary/secondary-consistency rule. Among **49 random NCVZ EBs that B26 did not list**, the pre-registered
   thresholds flag 6. **4 are pipeline false alarms (8%)**, and 2 look like real long-period signals missing from
-  B26. A third, TIC 233193944, is real but unflagged. Three extra rules written after vetting those false alarms
+  B26. A third, TIC 233193944, is real but unflagged. *Literature check (`notes/ncvz_unreported_check.md`):* two of the
+  three are already known. 353854078 = SX Dra is a period-variable Algol with a known ~85-yr cyclic O−C, and 233193944 =
+  HD 160861 has a known 24.5-yr visual tertiary. Only 441804888, the weakest, is unreported. Three extra rules written after vetting those false alarms
   (P3 ≥ 5 P1, A ≥ 3 × sector jitter, season jackknife) remove all 4. That is in-sample, so the 0% is optimistic. The rules
   keep 16/22 L1, 11/20 D1, and all 4 southern candidates.
 - **Pilot (top 20 by eclipse count, pre-registered):** 1 convincing new LTTE orbit, 3 large
@@ -224,8 +226,12 @@ The 1,191 selected EBs are re-ranked by the expected LTTE amplitude error, σ_A 
 
   - One more real long-period signal, TIC 233193944 (a common ±5 min O−C), is not flagged because its best LTTE sits at the
     P3 bound.
-  - So about 3/49 (6%) of the NCVZ EBs that B26 did not list show convincing long-period common ETVs. B26's catalogue is not
-    complete for P3 ≳ span, and these three are worth mentioning to them.
+  - So about 3/49 (6%) of the NCVZ EBs that B26 did not list show convincing long-period common ETVs. **But two are already
+    explained in the literature** (`notes/ncvz_unreported_check.md`):
+    - SX Dra is a mass-transferring Algol with an ~85-yr cyclic O−C (Soydugan & Kaçar 2013).
+    - HD 160861 has a 24.5-yr visual tertiary in Tokovinin's MSC.
+    Only TIC 441804888 is unreported, and it is the weakest of the three. B26 re-timed only the 351 EBs that Mitnyan+2024
+    flagged in S14–60, so slow ETVs outside that unpublished list were never revisited; this is a scope limit, not an error.
 - **Changes made during this test (disclosed):**
   1. v2 rule: P3 ≥ 5 P1 (hierarchical stability). This removes 362104293.
   2. v2 rule: A ≥ 3τ (the orbit must exceed the sector-to-sector jitter). This removes 237116051 (A/τ = 1.3) and 199716496 (2.3).
@@ -303,8 +309,8 @@ for a semi-detached geometry, but this was not checked further.
   rate (~4%) suggests **~40–60 candidates, ~10–20 with well-covered orbits**.
 - **Before scaling:**
   1. Email the Borkovits/Mitnyan group to ask whether a southern CVZ paper is in preparation, and offer the candidate list or a
-     collaboration instead of racing them. Also mention the 3 NCVZ long-period signals that are not in B26 (353854078,
-     441804888, 233193944).
+     collaboration instead of racing them. (Sent 2026-10-12.) Of the 3 NCVZ long-period signals that are not in B26, only
+     441804888 is unreported (SX Dra and HD 160861 are known), so mention at most that one in any follow-up.
   2. Done: calibrated noise model, precision ranking, measured recall and false-alarm rate.
   3. Decide what to do about faint stars: a magnitude cut (T ≲ 13.5), or our own TESScut photometry.
 - **Expected performance, measured in the NCVZ:** about 73% recall for B26-quality LTTE triples, and an 8% false-alarm rate before
