@@ -1,0 +1,113 @@
+{
+ "TIC": 285248964,
+ "D_h": 10.97,
+ "depth_ppm": 1293.0,
+ "event_T": 2932.7218000002017,
+ "dips": [
+  {
+   "t_step": 2922.4036490332455,
+   "t_mid_est": 2922.6321906999124,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "single-product",
+   "max_snr": 8.971928557467976,
+   "depth_ppm": [
+    1882
+   ],
+   "direction": "end",
+   "sector": 59
+  },
+  {
+   "t_step": 3306.886462971688,
+   "t_mid_est": 3306.6579213050213,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.215630471329888,
+   "depth_ppm": [
+    689
+   ],
+   "direction": "start",
+   "sector": 73
+  },
+  {
+   "t_step": 3311.984130551995,
+   "t_mid_est": 3312.2126722186617,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "single-product",
+   "max_snr": 9.214029584219142,
+   "depth_ppm": [
+    814
+   ],
+   "direction": "end",
+   "sector": 73
+  },
+  {
+   "t_step": 3641.332272619001,
+   "t_mid_est": 3641.5608142856677,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.338689042729106,
+   "depth_ppm": [
+    2389
+   ],
+   "direction": "end",
+   "sector": 86
+  },
+  {
+   "t_step": 3643.917346371461,
+   "t_mid_est": 3643.688804704794,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.190452520829833,
+   "depth_ppm": [
+    685
+   ],
+   "direction": "start",
+   "sector": 86
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 3662.5569769837557,
+   "t_mid_est": 3662.7855186504225,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.717126742963599,
+   "depth_ppm": [
+    994
+   ],
+   "direction": "end",
+   "sector": 86
+  }
+ ],
+ "edges_tested": 24
+}

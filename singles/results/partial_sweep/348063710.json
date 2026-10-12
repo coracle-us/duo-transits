@@ -1,0 +1,142 @@
+{
+ "TIC": 348063710,
+ "D_h": 9.0,
+ "depth_ppm": 5300.0,
+ "event_T": 2760.718999999836,
+ "dips": [
+  {
+   "t_step": 2789.4762557456856,
+   "t_mid_est": 2789.6637557456856,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 10.410182236649604,
+   "depth_ppm": [
+    3322
+   ],
+   "direction": "end",
+   "sector": 54,
+   "matches_period": []
+  },
+  {
+   "t_step": 2795.788551849827,
+   "t_mid_est": 2795.976051849827,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.557024704515848,
+   "depth_ppm": [
+    4020
+   ],
+   "direction": "end",
+   "sector": 54,
+   "matches_period": []
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 2770.677960595194,
+   "t_mid_est": 2770.490460595194,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.995395600327689,
+   "depth_ppm": [
+    2963
+   ],
+   "direction": "start",
+   "sector": 54
+  },
+  {
+   "t_step": 2777.293143226394,
+   "t_mid_est": 2777.480643226394,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.8169171460577465,
+   "depth_ppm": [
+    2937
+   ],
+   "direction": "end",
+   "sector": 54
+  },
+  {
+   "t_step": 2795.989940953096,
+   "t_mid_est": 2796.177440953096,
+   "products": [
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.845686612304174,
+   "depth_ppm": [
+    4092
+   ],
+   "direction": "end",
+   "sector": 54
+  },
+  {
+   "t_step": 3480.515264475297,
+   "t_mid_est": 3480.327764475297,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.096719009885796,
+   "depth_ppm": [
+    2726
+   ],
+   "direction": "start",
+   "sector": 80
+  },
+  {
+   "t_step": 3506.184289359768,
+   "t_mid_est": 3506.371789359768,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.629486913646277,
+   "depth_ppm": [
+    8112
+   ],
+   "direction": "end",
+   "sector": 80
+  }
+ ],
+ "edges_tested": 72
+}

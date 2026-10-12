@@ -157,6 +157,10 @@ interpretation there.
 
 **Outreach log.** 2026-10-11: email with the TIC 147035057 write-up sent by Jon to S. Gill and D. Bayliss (Warwick), asking them to forward it to the CTOI submitter. Draft: `writeups/tic147035057/email_draft.md`. The earlier Hawthorn-catalogue email (`../results/outreach/`) has not been sent as of this date.
 
+2026-10-11 (later): Jon sent the TIC 159614322 write-up to the Planet Hunters TESS team at Oxford: S. Aigrain, cc O. Barragán. The addresses come from the Oxford Physics people pages. The email gave P = 89.9651 or 179.9302 d and the next transit, 2026-12-28 06:42 UTC ± 45 min. Draft: `writeups/tic159614322/email_draft.md`.
+
+The TIC 147035057 write-up was revised the same day (the eclipse is grazing, so the companion is likely stellar). The version Warwick received said "≈1.1 R_Jup, larger if grazing". The email itself already called the companion "probably a low-mass star". A short follow-up with the revised PDF is optional.
+
 ## Batch 3 (20 Gaia-clean targets, depth 0.2–1.2%, by expected SNR; 2026-10-11)
 
 New since batch 2: pilot.py measures unprocessed recent sectors (≥ 100) with our own TESScut
@@ -235,3 +239,53 @@ Both are:
 - re-detected with independent code.
 
 Two more (139726266, 168702709) join the recheck list.
+
+## Partial-transit sweep (all 272 stars with a recovered event; 2026-10-11)
+
+**Why.** TIC 159614322's third transit was a partial one: the ingress in S21, with the egress lost
+in a downlink gap. The repeat search never counts such events, because it needs baseline on both
+sides. `scripts/partial_sweep.py` therefore tests every data-segment edge in every product.
+
+**Rules.** They were fixed in advance and are listed in the script docstring:
+- a one-sided step model at the right depth;
+- red-noise SNR ≥ 5 and a flat transit floor;
+- detection in ≥ 2 products;
+- a brightening control (steps up) run with identical rules.
+
+Three implementation details were changed after the positive control (159614322 S21) failed and
+before any other star was examined. Details are in the docstring.
+
+**Result: no new convincing partial transits.**
+
+| Count | Two-product dips | Two-product brightenings (control) |
+|---|---|---|
+| All stars | 48 | 37 |
+| Without TIC 236770234 (a variable star, 21 dips) | 27 | 24 |
+
+As a population, gap-edge dips do not exceed the false-alarm rate. One reason is that SPOC 2-min
+and TESS-SPOC share pixels, so the 2-product test is weaker than intended. Individual hits fall
+into three groups:
+- **Shared timing.** Many hits coincide with hits on other stars at the same orbit edge
+  (S7, S45, S52 and S57 starts and ends), so they are systematics.
+- **Already-classified binaries.** Many are on stars already classed as EBs or off-target blends
+  (53847727, 258799245, 384882500, 82550215, 350274116 and 427344083). These are more eclipses of
+  known binaries.
+- **Noisy stars.** Some are on stars that also show brightenings at similar SNR.
+
+The two left over were inspected by hand. Both are start-of-sector ramps, and QLP trims exactly
+those cadences:
+- **126278294:** S44 start (2514.6); if real, it would leave P = 55.5 or 27.8 d.
+- **253553257:** S13 start.
+
+The positive control is the only clean, high-SNR, on-target, alias-selecting partial transit:
+**TIC 159614322 S21 (SNR 24)**.
+
+Two other stars show dips at the same S21 orbit end, but on a different detector (camera 4 /
+CCD 1, while 159614322 is on camera 3 / CCD 3):
+- 356868485 is a real eclipse of a known off-target EB;
+- 236770234 is the variable star.
+
+So there is no sign of a field-wide systematic at that edge.
+
+**Outputs:** `results/partial_sweep/` (one JSON per star, `summary.csv`) and
+`results/partial_sweep_stdout.txt`.

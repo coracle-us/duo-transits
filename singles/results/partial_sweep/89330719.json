@@ -1,0 +1,136 @@
+{
+ "TIC": 89330719,
+ "D_h": 5.4,
+ "depth_ppm": 870.0,
+ "event_T": 2070.3330000001006,
+ "dips": [
+  {
+   "t_step": 3165.330967583836,
+   "t_mid_est": 3165.443467583836,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.627379197804936,
+   "depth_ppm": [
+    506
+   ],
+   "direction": "end",
+   "sector": 68
+  },
+  {
+   "t_step": 3906.4101275696253,
+   "t_mid_est": 3906.5226275696255,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.812112963752475,
+   "depth_ppm": [
+    538
+   ],
+   "direction": "end",
+   "sector": 95
+  },
+  {
+   "t_step": 3907.048748154687,
+   "t_mid_est": 3907.161248154687,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "single-product",
+   "max_snr": 10.703611188828214,
+   "depth_ppm": [
+    1462
+   ],
+   "direction": "end",
+   "sector": 95
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 3168.7288548645397,
+   "t_mid_est": 3168.6163548645395,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 8.117531998109067,
+   "depth_ppm": [
+    472
+   ],
+   "direction": "start",
+   "sector": 68
+  },
+  {
+   "t_step": 3179.1216682503155,
+   "t_mid_est": 3179.2341682503156,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 9.83124605823327,
+   "depth_ppm": [
+    747
+   ],
+   "direction": "end",
+   "sector": 68
+  },
+  {
+   "t_step": 3883.482295844982,
+   "t_mid_est": 3883.369795844982,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "single-product",
+   "max_snr": 10.641506704366298,
+   "depth_ppm": [
+    909
+   ],
+   "direction": "start",
+   "sector": 95
+  },
+  {
+   "t_step": 3896.5864565886723,
+   "t_mid_est": 3896.473956588672,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.324049533821854,
+   "depth_ppm": [
+    483
+   ],
+   "direction": "start",
+   "sector": 95
+  }
+ ],
+ "edges_tested": 34
+}

@@ -1,0 +1,45 @@
+{
+ "TIC": 162031311,
+ "D_h": 6.34,
+ "depth_ppm": 2619.0,
+ "event_T": 2829.998316666699,
+ "dips": [
+  {
+   "t_step": 2837.633839415784,
+   "t_mid_est": 2837.7659227491176,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.953174588014537,
+   "depth_ppm": [
+    1501
+   ],
+   "direction": "end",
+   "sector": 56
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 1761.8445657474276,
+   "t_mid_est": 1761.976649080761,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "single-product",
+   "max_snr": 8.498505765981102,
+   "depth_ppm": [
+    1914
+   ],
+   "direction": "end",
+   "sector": 16
+  }
+ ],
+ "edges_tested": 23
+}

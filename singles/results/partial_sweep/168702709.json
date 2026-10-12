@@ -1,0 +1,44 @@
+{
+ "TIC": 168702709,
+ "D_h": 3.408,
+ "depth_ppm": 2070.0,
+ "event_T": 2152.3569999998435,
+ "dips": [],
+ "bumps": [
+  {
+   "t_step": 4291.139188302081,
+   "t_mid_est": 4291.068188302081,
+   "products": [
+    "OWN"
+   ],
+   "covering": [
+    "OWN"
+   ],
+   "cls": "single-product",
+   "max_snr": 9.74383511180702,
+   "depth_ppm": [
+    1927
+   ],
+   "direction": "start",
+   "sector": 108
+  },
+  {
+   "t_step": 4298.176603308895,
+   "t_mid_est": 4298.105603308895,
+   "products": [
+    "OWN"
+   ],
+   "covering": [
+    "OWN"
+   ],
+   "cls": "single-product",
+   "max_snr": 8.342047820397905,
+   "depth_ppm": [
+    1105
+   ],
+   "direction": "start",
+   "sector": 108
+  }
+ ],
+ "edges_tested": 45
+}

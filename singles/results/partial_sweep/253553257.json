@@ -1,0 +1,156 @@
+{
+ "TIC": 253553257,
+ "D_h": 10.656,
+ "depth_ppm": 1670.0,
+ "event_T": 1679.4030000001935,
+ "dips": [
+  {
+   "t_step": 1657.5183330843427,
+   "t_mid_est": 1657.2963330843427,
+   "products": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "cls": "2-product",
+   "max_snr": 13.363841198663266,
+   "depth_ppm": [
+    1527,
+    996
+   ],
+   "direction": "start",
+   "sector": 13,
+   "matches_period": [
+    22.17684,
+    21.9823
+   ]
+  },
+  {
+   "t_step": 1658.585729700118,
+   "t_mid_est": 1658.363729700118,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.105306648547783,
+   "depth_ppm": [
+    2212
+   ],
+   "direction": "start",
+   "sector": 13,
+   "matches_period": [
+    21.05868
+   ]
+  },
+  {
+   "t_step": 1667.1971085514526,
+   "t_mid_est": 1667.4191085514526,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.880303768471477,
+   "depth_ppm": [
+    2486
+   ],
+   "direction": "end",
+   "sector": 13,
+   "matches_period": []
+  },
+  {
+   "t_step": 1682.1051958164599,
+   "t_mid_est": 1682.3271958164598,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.289659617205596,
+   "depth_ppm": [
+    1222
+   ],
+   "direction": "end",
+   "sector": 13,
+   "matches_period": []
+  },
+  {
+   "t_step": 3857.2015280883975,
+   "t_mid_est": 3856.9795280883973,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.859531966804916,
+   "depth_ppm": [
+    2706
+   ],
+   "direction": "start",
+   "sector": 94,
+   "matches_period": [
+    41.08168,
+    29.83312
+   ]
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 1658.8773977987503,
+   "t_mid_est": 1658.6553977987503,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.103852936135567,
+   "depth_ppm": [
+    1978
+   ],
+   "direction": "start",
+   "sector": 13
+  },
+  {
+   "t_step": 1681.5927241368677,
+   "t_mid_est": 1681.8147241368677,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.069636795458014,
+   "depth_ppm": [
+    2130
+   ],
+   "direction": "end",
+   "sector": 13
+  }
+ ],
+ "edges_tested": 20
+}

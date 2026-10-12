@@ -1,0 +1,27 @@
+{
+ "TIC": 140215502,
+ "D_h": 6.936,
+ "depth_ppm": 3850.0,
+ "event_T": 2194.4489000001863,
+ "dips": [
+  {
+   "t_step": 4017.3488736640243,
+   "t_mid_est": 4017.493373664024,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "single-product",
+   "max_snr": 11.43270391827455,
+   "depth_ppm": [
+    2783
+   ],
+   "direction": "end",
+   "sector": 98
+  }
+ ],
+ "bumps": [],
+ "edges_tested": 60
+}

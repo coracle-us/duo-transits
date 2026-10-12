@@ -1,0 +1,120 @@
+{
+ "TIC": 436663419,
+ "D_h": 2.733,
+ "depth_ppm": 7690.0,
+ "event_T": 2176.691000000108,
+ "dips": [
+  {
+   "t_step": 3993.329126667263,
+   "t_mid_est": 3993.272189167263,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "single-product",
+   "max_snr": 11.336130627109663,
+   "depth_ppm": [
+    10864
+   ],
+   "direction": "start",
+   "sector": 98
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 1450.0707552189365,
+   "t_mid_est": 1450.1276927189365,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 9.095680692987107,
+   "depth_ppm": [
+    4156
+   ],
+   "direction": "end",
+   "sector": 5
+  },
+  {
+   "t_step": 2498.1695086043055,
+   "t_mid_est": 2498.2264461043055,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 11.314984294046392,
+   "depth_ppm": [
+    13152
+   ],
+   "direction": "end",
+   "sector": 43
+  },
+  {
+   "t_step": 2498.4357000259333,
+   "t_mid_est": 2498.492637525933,
+   "products": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "cls": "2-product",
+   "max_snr": 9.882651007066865,
+   "depth_ppm": [
+    3951,
+    8519
+   ],
+   "direction": "end",
+   "sector": 43
+  },
+  {
+   "t_step": 4017.661267723917,
+   "t_mid_est": 4017.718205223917,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.43320106798247,
+   "depth_ppm": [
+    8889
+   ],
+   "direction": "end",
+   "sector": 98
+  },
+  {
+   "t_step": 4022.322984062645,
+   "t_mid_est": 4022.266046562645,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.49674140714404,
+   "depth_ppm": [
+    5104
+   ],
+   "direction": "start",
+   "sector": 98
+  }
+ ],
+ "edges_tested": 87
+}

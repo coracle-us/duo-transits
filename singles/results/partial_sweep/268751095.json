@@ -1,0 +1,96 @@
+{
+ "TIC": 268751095,
+ "D_h": 7.464,
+ "depth_ppm": 5460.0,
+ "event_T": 2139.362100000033,
+ "dips": [
+  {
+   "t_step": 3960.3776598278173,
+   "t_mid_est": 3960.533159827817,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "single-product",
+   "max_snr": 12.305322021201333,
+   "depth_ppm": [
+    4927
+   ],
+   "direction": "end",
+   "sector": 97
+  },
+  {
+   "t_step": 3963.3641693100544,
+   "t_mid_est": 3963.2086693100546,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.281014462734926,
+   "depth_ppm": [
+    2865
+   ],
+   "direction": "start",
+   "sector": 97
+  },
+  {
+   "t_step": 3974.5696522680655,
+   "t_mid_est": 3974.7251522680654,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "single-product",
+   "max_snr": 9.358913974385086,
+   "depth_ppm": [
+    9786
+   ],
+   "direction": "end",
+   "sector": 97
+  },
+  {
+   "t_step": 3980.111187312893,
+   "t_mid_est": 3980.266687312893,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "single-product",
+   "max_snr": 10.583921712328785,
+   "depth_ppm": [
+    3031
+   ],
+   "direction": "end",
+   "sector": 97
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 4291.240321460823,
+   "t_mid_est": 4291.084821460823,
+   "products": [
+    "OWN"
+   ],
+   "covering": [
+    "OWN"
+   ],
+   "cls": "single-product",
+   "max_snr": 12.355275224991564,
+   "depth_ppm": [
+    3180
+   ],
+   "direction": "start",
+   "sector": 108
+  }
+ ],
+ "edges_tested": 46
+}

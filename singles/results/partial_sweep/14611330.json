@@ -1,0 +1,67 @@
+{
+ "TIC": 14611330,
+ "D_h": 4.6,
+ "depth_ppm": 1274.03,
+ "event_T": 2220.1127000002,
+ "dips": [
+  {
+   "t_step": 2511.226764428295,
+   "t_mid_est": 2511.3225977616285,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.468845627204638,
+   "depth_ppm": [
+    767
+   ],
+   "direction": "end",
+   "sector": 44
+  },
+  {
+   "t_step": 3688.749126948678,
+   "t_mid_est": 3688.8449602820115,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 9.290558261343936,
+   "depth_ppm": [
+    1434
+   ],
+   "direction": "end",
+   "sector": 87
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 3246.2608350272717,
+   "t_mid_est": 3246.356668360605,
+   "products": [
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 9.993113660866802,
+   "depth_ppm": [
+    1068
+   ],
+   "direction": "end",
+   "sector": 71
+  }
+ ],
+ "edges_tested": 90
+}

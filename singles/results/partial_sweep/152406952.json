@@ -1,0 +1,29 @@
+{
+ "TIC": 152406952,
+ "D_h": 2.6,
+ "depth_ppm": 5994.06,
+ "event_T": 2253.012133333509,
+ "dips": [],
+ "bumps": [
+  {
+   "t_step": 2987.841276267747,
+   "t_mid_est": 2987.895442934414,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 8.717198082098685,
+   "depth_ppm": [
+    8384
+   ],
+   "direction": "end",
+   "sector": 61
+  }
+ ],
+ "edges_tested": 39
+}

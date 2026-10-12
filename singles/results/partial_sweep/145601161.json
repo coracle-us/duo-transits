@@ -1,0 +1,134 @@
+{
+ "TIC": 145601161,
+ "D_h": 3.216,
+ "depth_ppm": 731.4,
+ "event_T": 1566.0962000001268,
+ "dips": [
+  {
+   "t_step": 2281.7924968827037,
+   "t_mid_est": 2281.7254968827037,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "single-product",
+   "max_snr": 11.352292672994386,
+   "depth_ppm": [
+    449
+   ],
+   "direction": "start",
+   "sector": 36
+  },
+  {
+   "t_step": 3774.689438757689,
+   "t_mid_est": 3774.756438757689,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.66794025823152,
+   "depth_ppm": [
+    419
+   ],
+   "direction": "end",
+   "sector": 90
+  },
+  {
+   "t_step": 3774.93755829148,
+   "t_mid_est": 3775.00455829148,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "single-product",
+   "max_snr": 9.672978810399346,
+   "depth_ppm": [
+    634
+   ],
+   "direction": "end",
+   "sector": 90
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 1535.0634135690264,
+   "t_mid_est": 1534.9964135690263,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.160491852519186,
+   "depth_ppm": [
+    400
+   ],
+   "direction": "start",
+   "sector": 8
+  },
+  {
+   "t_step": 2989.1311792867787,
+   "t_mid_est": 2989.0641792867787,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 8.187800177435463,
+   "depth_ppm": [
+    665
+   ],
+   "direction": "start",
+   "sector": 62
+  },
+  {
+   "t_step": 3013.981824712302,
+   "t_mid_est": 3014.048824712302,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 8.030009251575391,
+   "depth_ppm": [
+    413
+   ],
+   "direction": "end",
+   "sector": 62
+  },
+  {
+   "t_step": 3746.831396517989,
+   "t_mid_est": 3746.898396517989,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.497423604378234,
+   "depth_ppm": [
+    437
+   ],
+   "direction": "end",
+   "sector": 89
+  }
+ ],
+ "edges_tested": 76
+}

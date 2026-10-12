@@ -1,0 +1,126 @@
+{
+ "TIC": 197736350,
+ "D_h": 19.27,
+ "depth_ppm": 3745.44,
+ "event_T": 1342.7723999999275,
+ "dips": [
+  {
+   "t_step": 1350.717028377376,
+   "t_mid_est": 1350.3155700440427,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 5.271035757611134,
+   "depth_ppm": [
+    2448
+   ],
+   "direction": "start",
+   "sector": 1,
+   "matches_period": []
+  },
+  {
+   "t_step": 1352.0446811055356,
+   "t_mid_est": 1352.4461394388688,
+   "products": [
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.9570619051270395,
+   "depth_ppm": [
+    2360
+   ],
+   "direction": "end",
+   "sector": 1,
+   "matches_period": []
+  },
+  {
+   "t_step": 2071.9611192748216,
+   "t_mid_est": 2072.362577608155,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.658395052207973,
+   "depth_ppm": [
+    2658
+   ],
+   "direction": "end",
+   "sector": 28,
+   "matches_period": []
+  },
+  {
+   "t_step": 2083.6693167484505,
+   "t_mid_est": 2084.0707750817837,
+   "products": [
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 15.537418260363705,
+   "depth_ppm": [
+    6005
+   ],
+   "direction": "end",
+   "sector": 28,
+   "matches_period": []
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 2071.4402859414886,
+   "t_mid_est": 2071.841744274822,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 7.232435705797375,
+   "depth_ppm": [
+    2198
+   ],
+   "direction": "end",
+   "sector": 28
+  },
+  {
+   "t_step": 2084.273483415117,
+   "t_mid_est": 2084.6749417484502,
+   "products": [
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.108713925781698,
+   "depth_ppm": [
+    3180
+   ],
+   "direction": "end",
+   "sector": 28
+  }
+ ],
+ "edges_tested": 36
+}

@@ -1,0 +1,54 @@
+stars: 272
+[7/272] TIC 147855066: 2-product dips 1, bumps 0
+[8/272] TIC 140298355: 2-product dips 1, bumps 0
+[13/272] TIC 53847727: 2-product dips 1, bumps 0
+[16/272] TIC 98794593: 2-product dips 0, bumps 1
+[20/272] TIC 89620053: 2-product dips 0, bumps 1
+[23/272] TIC 149990098: 2-product dips 2, bumps 1
+[25/272] ...
+[45/272] TIC 303050301: 2-product dips 0, bumps 2
+[50/272] ...
+[51/272] TIC 427344083: 2-product dips 2, bumps 0
+[59/272] TIC 115171750: 2-product dips 1, bumps 1
+[61/272] TIC 126278294: 2-product dips 1, bumps 0
+[74/272] TIC 159614322: 2-product dips 1, bumps 0
+[75/272] TIC 159159904: 2-product dips 1, bumps 0
+[97/272] TIC 188835620: 2-product dips 5, bumps 1
+[100/272] ...
+[104/272] TIC 167653919: 2-product dips 0, bumps 1
+[106/272] TIC 239190192: 2-product dips 0, bumps 1
+[107/272] TIC 246058802: 2-product dips 0, bumps 1
+[117/272] TIC 253553257: 2-product dips 1, bumps 0
+[125/272] ...
+[131/272] TIC 236770234: 2-product dips 19, bumps 13
+[134/272] TIC 258799245: 2-product dips 1, bumps 0
+[136/272] TIC 27550937: 2-product dips 0, bumps 1
+[142/272] TIC 289718679: 2-product dips 0, bumps 1
+[150/272] ...
+[168/272] TIC 350274116: 2-product dips 1, bumps 0
+[175/272] ...
+[180/272] TIC 384882500: 2-product dips 1, bumps 0
+[181/272] TIC 387541380: 2-product dips 1, bumps 0
+[192/272] TIC 388134787: 2-product dips 1, bumps 1
+[197/272] TIC 412200591: 2-product dips 1, bumps 1
+[200/272] ...
+[204/272] TIC 435904852: 2-product dips 0, bumps 1
+[207/272] TIC 436663419: 2-product dips 0, bumps 1
+[212/272] TIC 441056242: 2-product dips 0, bumps 1
+[218/272] TIC 453029782: 2-product dips 2, bumps 0
+[220/272] TIC 456302722: 2-product dips 1, bumps 2
+[225/272] ...
+[235/272] TIC 5636329: 2-product dips 0, bumps 1
+[241/272] TIC 67651371: 2-product dips 0, bumps 1
+[250/272] TIC 76140400: 2-product dips 0, bumps 1
+[252/272] TIC 82223761: 2-product dips 0, bumps 1
+[257/272] TIC 82550215: 2-product dips 1, bumps 0
+[272/272] TIC 55454149: 2-product dips 2, bumps 1
+kind   cls           
+bumps  1-of-many         503
+       2-product          37
+       single-product     52
+dips   1-of-many         480
+       2-product          48
+       single-product     63
+DONE

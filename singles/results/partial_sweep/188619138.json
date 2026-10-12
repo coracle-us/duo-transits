@@ -1,0 +1,27 @@
+{
+ "TIC": 188619138,
+ "D_h": 2.8,
+ "depth_ppm": 27000.0,
+ "event_T": 1360.045333333475,
+ "dips": [
+  {
+   "t_step": 3933.1913801449296,
+   "t_mid_est": 3933.249713478263,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.633637047968125,
+   "depth_ppm": [
+    14611
+   ],
+   "direction": "end",
+   "sector": 96
+  }
+ ],
+ "bumps": [],
+ "edges_tested": 44
+}

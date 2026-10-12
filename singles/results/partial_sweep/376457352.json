@@ -1,0 +1,28 @@
+{
+ "TIC": 376457352,
+ "D_h": 1.933,
+ "depth_ppm": 3090.0,
+ "event_T": 2479.651999999769,
+ "dips": [],
+ "bumps": [
+  {
+   "t_step": 2474.3215594248113,
+   "t_mid_est": 2474.281288591478,
+   "products": [
+    "TESS-SPOC"
+   ],
+   "covering": [
+    "SPOC_120",
+    "TESS-SPOC"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 8.256075302679042,
+   "depth_ppm": [
+    1851
+   ],
+   "direction": "start",
+   "sector": 43
+  }
+ ],
+ "edges_tested": 36
+}

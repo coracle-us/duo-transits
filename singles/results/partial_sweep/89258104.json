@@ -1,0 +1,64 @@
+{
+ "TIC": 89258104,
+ "D_h": 6.6,
+ "depth_ppm": 2142.18,
+ "event_T": 1342.7733999998309,
+ "dips": [
+  {
+   "t_step": 3899.6350605462703,
+   "t_mid_est": 3899.77256054627,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 12.836031554820904,
+   "depth_ppm": [
+    2082
+   ],
+   "direction": "end",
+   "sector": 95
+  },
+  {
+   "t_step": 3906.5746662974307,
+   "t_mid_est": 3906.7121662974305,
+   "products": [
+    "QLP"
+   ],
+   "covering": [
+    "SPOC_120",
+    "QLP"
+   ],
+   "cls": "1-of-many",
+   "max_snr": 6.206742381816561,
+   "depth_ppm": [
+    1222
+   ],
+   "direction": "end",
+   "sector": 95
+  }
+ ],
+ "bumps": [
+  {
+   "t_step": 3883.4296512540236,
+   "t_mid_est": 3883.292151254024,
+   "products": [
+    "SPOC_120"
+   ],
+   "covering": [
+    "SPOC_120"
+   ],
+   "cls": "single-product",
+   "max_snr": 10.333391946597745,
+   "depth_ppm": [
+    1821
+   ],
+   "direction": "start",
+   "sector": 95
+  }
+ ],
+ "edges_tested": 35
+}
