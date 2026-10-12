@@ -37,9 +37,10 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
 
 ## Before submitting
 
-- [ ] **References.** Check every entry on ADS, including the co-author lists. These were
-      written from memory and then checked against web sources only for existence, venue and
-      volume (2026-10-11).
+- [x] **References** (verified 2026-10-12). All 12 entries were checked for first and co-authors,
+      journal, volume and page against arXiv API metadata, ASCL, the NASA TESS BibTeX file
+      (Huang 2020, Caldwell 2020) and the A&A/arXiv listing (Heidari 2024). All match `rnaas.tex`;
+      no changes were needed.
 - [ ] **Placeholders.** Add an ORCID to `\author[orcid=...]` or remove the option. Confirm the
       affiliation wording. CLAUDE.md suggests "Coracle".
 - [ ] **Repository.** Push it to GitHub. The note cites `github.com/coracle-us/duo-transits`,
