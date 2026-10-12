@@ -15,8 +15,9 @@ Re-check before any outreach or paper.
 - **Sample.** About half are binary-star eclipses (flagged deep or with a secondary eclipse). 65 are
   planet-like (depth ≤ 2%, not flagged). Of those, **50** have TESS coverage and an expected
   per-transit TESS SNR ≥ 7, giving 136 sector-observations.
-- **Already followed up.** None of the stars has a TOI. 3 have CTOIs and 2 are confirmed planet
-  hosts; both of those are validation cases.
+- **Already followed up.** 3 have CTOIs and 2 are confirmed planet hosts; both of those are
+  validation cases. One star has a TOI: **EPIC 211924561 = TOI-5560.01**. The feasibility printout
+  said "0 TOIs" because of a counting bug; the CSV was right all along. Found by the Fable review.
 
 ## Pilot plan (pre-registered)
 
@@ -89,3 +90,57 @@ same Gaia source, 0.27″.)
   uncertain and possibly stellar; RVs or high-resolution imaging would settle it.
 - **Next distinguishing epoch:** BTJD 4324.47 (70.2 d only), which was 2026-10-11, just missed. The
   next shared epoch is BTJD 4394.7 (about 2026-12-20).
+
+
+## Fable 5.1 adversarial review (2026-10-12) and corrections
+
+The review (`review_fable/`, test scripts included) found two critical code bugs and several major
+issues. `run_full.py` results were discarded, never used and never committed. All fixes are in
+`scripts/k2lib.py` and `scripts/run_full2.py`.
+
+**Critical code bugs:**
+- **C1, cross-contamination.** `run_full.py` monkeypatched the light-curve loader inside reused
+  worker processes, so later targets were searched with other stars' K2 data. That produced
+  spurious repeats, false exclusions and `KeyError` crashes. Fixed: explicit loading,
+  `max_tasks_per_child=1`, and a duplicate-timestamp guard.
+- **C2, fragile period inference.** `periods_from_repeats` (`singles/scripts/pilot.py`) proposes
+  periods only from the repeat nearest the event, and needs every repeat to fit. One spurious
+  repeat deletes the true period. Fixed for this project with `k2lib.robust_periods`: every repeat
+  can anchor, and support counts are reported. Tested on the reviewer's scenarios: the true period
+  survives with full support. **Note:** the singles project used the old function. Its hand-vetted
+  claims were derived separately, but its `n_candidate_periods` counts should be re-checked.
+
+**Major issues:**
+- **M3.** `min_allowed_P` / `allowed_ranges` are grid artefacts. They are no longer reported;
+  never quote them.
+- **M4.** The K2 P_min cut ignored gaps. It is removed; K2 data are now in the search.
+- **M5.** "Excluded" now needs cover ≥ 0.8.
+- **M6.** K2 repeats need n_in ≥ 4 and β ≤ 2, and the "possible thruster firing" flag is masked.
+- **M2.** The control run for EPIC 211924561 used hand-measured inputs; `run_full2` uses catalogue
+  values for every target.
+
+**Lead star corrections:**
+- **It is TOI-5560.01.** It was alerted 2022-05-17 from the S46 single transit and updated
+  2024-11-12 with S72: "maximum period of ~702.47 d; true period likely shorter". 702.469/5 =
+  140.494, so the TESS events are not new.
+- **What is new:** linking them to the K2 C5 and C16 transits, which narrows SPOC's 702.47-d
+  maximum to 140.494 or 70.247 d.
+- **ExoFOP already holds:**
+  - Palomar AO (2024-02-17): no companion, Δ6.7 mag at 0.5″;
+  - SAI speckle: none, Δ7.6 mag at 1″;
+  - two TRES spectra (2022): Teff 6640–6730 K, log g 4.04–4.23, v sin i 14.6 km/s.
+  These close off a wide "different host".
+- **Companion nature, reframed:**
+  - "Possibly stellar" is not supported: eccentricity is needed whatever the companion is.
+  - Gaia DR3 RVs (22 transits, rv_chisq_pvalue 0.08) limit M₂ sin i to ≲ 0.1 M☉. To be computed in
+    the repo.
+  - Honest statement: R ≈ 0.9–2.7 R_J or more, mass below about 0.1 M☉ (planet, brown dwarf or
+    late M dwarf), eccentric orbit. An eccentric warm Jupiter is at least as likely as anything
+    stellar.
+- **Withdrawn or softened:**
+  - The secondary-eclipse limit is withdrawn: it assumed a circular orbit.
+  - "b ≥ 0.95" is softened to "b ≳ 0.9", given red noise and white-noise Δχ² ≈ 19. SPOC's TOI
+    duration is 2.36 ± 0.20 h.
+- **Depth convention:** box-mean depths are about 1.6–1.9 ppt; model maximum depths about
+  2.2–2.4 ppt. Say which is meant.
+- **Gaia:** astrometric_excess_noise_sig = 58 belongs next to RUWE 1.19 in the vetting list.
