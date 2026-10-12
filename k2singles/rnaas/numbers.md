@@ -90,3 +90,9 @@ Draft: `k2singles/rnaas/rnaas.tex` (NOT submitted).
 | 11 | Three blind analyses (`independent_211924561/`, `independent_table/`, `independent_table2/`); three adversarial reviews (`review_fable/`, `review_fable2/`, `review_fable3/`) |
 | 12 | M2 sin i ≲ 0.1 M☉ from the scatter-based limit (b) in `gaia_rv_limit.py` (0.086 M☉ at 140.5 d, 0.068 M☉ at 70.2 d) |
 | Optional | Villanova 100-d placeholder and the 31.27-d SPOC TCE (Valizadegan+2025 table13) for TOI-5560.01 noted as excluded; "red-clump" changed to "red giant"; Events column = events used in the fit |
+
+**Ratio wording fix (2026-10-12, review comment).** The S/P ratios 0.21 → 0.43 compare 2021 with 2023:
+own TESScut r = 1.5 px, P 19.71% (n = 3) vs 25.85% (n = 2), S 4.14% (n = 2) vs 11.03% (n = 3). No
+secondary eclipse fell in the 2025 segment (one primary, 32.44%). The old wording ("over the same
+time") implied 2021–2025, and a reader computed 11/32 = 0.34. The paragraph now states the epochs.
+Source: `rnaas/epic202126877_depths.csv`.
