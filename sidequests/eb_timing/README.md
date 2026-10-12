@@ -36,7 +36,9 @@ Borkovits+2026 northern CVZ results. It is separate from the duotransit work and
   long-period ETVs with only about one cycle covered, 6 dominated by spots or anticorrelated signals, 7 flat, and
   3 too noisy. All 4 third-body signals were re-derived by an independent timing method
   (correlation 0.90–0.998), and none appears in the 27 triple/ETV papers checked or in its SIMBAD
-  reference list.
+  reference list. None is in Tokovinin's MSC or the WDS. An ADS full-text search found no prior third-body or ETV work
+  (`notes/ads_fulltext_check.md`), except that **TIC 32000625's TESS O−C was plotted for period refinement in two 2023
+  CATS conference abstracts** (Larkin & Pyshna; Dzygunenko & Tvardovskyi). Neither reports a third body, but both must be cited.
   - **TIC 32000625** (TYC 9155-22-1, P = 0.7018 d): **P3 = 749 ± 5 d, A_LTTE = 371 ± 14 s, e3 = 0.43 ± 0.06**
     (calibrated noise-model errors),
     with 3.6 cycles covered and primary and secondary moving together. f(m3) = 0.13 M☉, so **m3,min ≈ 0.9–1.1 M☉**
