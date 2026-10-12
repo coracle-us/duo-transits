@@ -1,5 +1,7 @@
 # Draft email: southern CVZ eclipse timing (Borkovits / Mitnyan)
 
+**Status:** sent by Jon on 2026-10-12, with the four `figs/*_oc.png` plots attached. Awaiting a reply.
+
 **To:** borko@bajaobs.hu (Tamás Borkovits, corresponding author)
 **Cc:** mtibor@titan.physx.u-szeged.hu (Tibor Mitnyan)
 These addresses come from the arXiv source of Borkovits et al. 2026 (arXiv:2604.04004, Universe 12, 107),
