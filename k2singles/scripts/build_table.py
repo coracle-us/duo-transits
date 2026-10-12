@@ -18,29 +18,29 @@ OUT = ROOT / "k2singles" / "rnaas"
 # EPIC, TIC, group, alias divisors n (P = P_fit / n), events, prior period (with source), note
 ROWS = [
     (211924561, 238606535, "planet", [1, 2], "C5, C16; S46, S72",
-     "$\\leq702.47$\\,d (TOI)", "TOI-5560.01; V-shaped"),
+     "$\\leq702.47$ (TOI)", "TOI-5560.01"),
     (211503363, 20444116, "planet", [1, 2], "C5; S45, S72",
-     "none (single)$^g$", "$R_2\\approx2.2\\,R_{\\rm J}$: probably an M dwarf"),
+     "none$^g$", "probably M dwarf"),
     (211411112, 437034781, "validation", [1], "C5, C16; S46",
-     "62.59484(3)\\,d$^a$", "Sanders 617 (M67)"),
+     "62.59484(3)$^a$", "Sanders 617 (M67)"),
     (246194159, 301328232, "eb", [1], "C12; S70, S92",
-     "none", "HD 220967; secondary at phase 0.867"),
+     "none", "HD 220967; sec.\\ 0.867"),
     (211489484, 6951741, "eb", [1], "C5, C18; S7, S46",
-     "TCE 106.94\\,d (excluded)", "secondary at phase 0.194"),
+     "TCE 106.94 (excl.)", "sec.\\ 0.194"),
     (211892898, 184895645, "eb", [1], "C5, C16, C18",
-     "Gaia SB1 72.53(3)\\,d", "red giant; matches Gaia conjunction"),
+     "Gaia SB1 72.53(3)", "red giant"),
     (248811085, 349987241, "eb", [1], "C14; S46, S72", "none", ""),
-    (246089124, 49603732, "eb", [1], "C12; S70, S92", "none", "K2 secondary at phase 0.494"),
-    (246696483, 436612436, "eb", [1, 2], "C13; S43, S70", "none", "$P/2$ disfavoured by one S98 epoch"),
-    (211390677, 366568535, "eb", [1, 2], "C5, C18; S45", "none", "red giant; $M_2$ stellar"),
+    (246089124, 49603732, "eb", [1], "C12; S70, S92", "none", "sec.\\ 0.494"),
+    (246696483, 436612436, "eb", [1, 2], "C13; S43, S70", "none", "$P/2$ disfavoured"),
+    (211390677, 366568535, "eb", [1, 2], "C5, C18; S45", "none", "red giant"),
     (247967714, 268396693, "eb", [1, 2, 3], "C13; S44, S71", "none", ""),
-    (212012030, 14394716, "eb", [1, 2, 3, 4, 5], "C5, C18; S71", "none", "grazing; $2P$ possible"),
+    (212012030, 14394716, "eb", [1, 2, 3, 4, 5], "C5, C18; S71", "none", "grazing"),
     (202126877, 86491361, "known", [1], "C0; S43--45, S71--72",
-     "21.78\\,d$^b$", "primary 6\\% (K2) to 20--32\\%$^f$; timing variations"),
+     "21.78$^b$", "deepening$^f$"),
     (202072917, 308255000, "known", [1], "C0; S6, S43, S45",
-     "34.744\\,d$^{b}$, 34.7457\\,d$^{c}$", "VSX 3.842\\,d is wrong"),
+     "34.744$^{b}$, 34.7457$^{c}$", "VSX 3.842 wrong"),
     (202071902, 57051340, "known", [1], "C0; S44, S71",
-     "22.859(15)\\,d$^d$ (3$\\sigma$)", "VSX 8.697\\,d is wrong"),
+     "22.859(15)$^d$", "VSX 8.697 wrong"),
 ]
 
 
@@ -52,8 +52,8 @@ def fmt(p, s):
     return f"{p:.{nd}f}({round(s * 10 ** nd):d})"
 
 
-GROUPS = {"planet": "Transiting-planet candidates (as catalogued)", "validation": "Validation: published orbit",
-          "eb": "Eclipsing binaries: new or refined periods", "known": "Eclipsing binaries: periods already published"}
+GROUPS = {"planet": "Planet candidates (as catalogued)", "validation": "Validation (published orbit)",
+          "eb": "Eclipsing binaries: new or refined periods", "known": "Eclipsing binaries: published periods"}
 
 
 def main():
@@ -70,11 +70,11 @@ def main():
         elif len(ns) > 2:
             ptxt = f"{fmt(P, sP)}/$n$, $n={ns[0]}$--${ns[-1]}$"
         else:
-            ptxt = " or ".join(fmt(P / n, sP / n) for n in ns)
+            ptxt = ", ".join(fmt(P / n, sP / n) for n in ns)
         rows.append(dict(EPIC=epic, TIC=tic, group=grp, events=events, P_fit=P, sigma_P=sP,
                          n_allowed=" ".join(map(str, ns)), periods=ptxt, T0_btjd=j["T0"], sigma_T0=j["sigma_T0"],
                          prior=prior, note=note))
-        tex.append(f"{epic} & {tic} & {events} & {ptxt} & {prior} & {note} \\\\")
+        tex.append(f"{epic} & {events} & {ptxt} & {prior} & {note} \\\\")   # TIC IDs are in table.csv
     OUT.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).to_csv(OUT / "table.csv", index=False)
     (OUT / "table_rows.tex").write_text("\n".join(tex) + "\n")
