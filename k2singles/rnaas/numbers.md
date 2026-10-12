@@ -118,4 +118,6 @@ The 2023 primaries (> 2×) were rejected by the search.
   - `k2_note.tex`: linked to https://raw.githubusercontent.com/coracle-us/duo-transits/fb3bd0c/k2singles/rnaas/rnaas.tex;
   - `aastex701.cls`, `aasjournalv7.bst`, `orcid-ID.png`.
 - **Submitted text:** commit `fb3bd0c`.
-- **Still to do:** complete the submission on aas.msubmit.net from the AAS email. The manuscript number is still to be recorded.
+- **Received:** 2026-10-12 (AAS email 18:04 EDT), manuscript **AAS82225**. The title was recorded as
+  "(Untitled)Orbital Periods for ...": an Overleaf-import artefact. Ask journals.manager@aas.org to
+  correct it if the status page still shows it.
