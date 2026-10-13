@@ -228,3 +228,15 @@ Task 5175445 (reduced images) is still queued; it will probably be affected by s
 accidental duplicate of 5175441.
 
 For 2014-2021 coverage, ASAS-SN (by hand, reCAPTCHA) remains the best option.
+
+ADDENDUM 2 (2026-10-12): ATLAS reduced images
+----------------------------------------------
+Task 5175445 (reduced images): 4101 points, 2015-10 onwards (data/atlas/job5175445_reduced.txt). The median magnitude
+is 11.16, but chi/N has a median of ~4.7e4 (saturated).
+
+After dropping flux outliers outside 0.4-1.3 of the seasonal median, the robust (MAD) out-of-eclipse scatter is
+7-29% per season. Seasonal "depths" are physically inconsistent with TESS and K2: for example, a 24% secondary in
+2018, whereas K2 showed no secondary in 2014 and TESS showed 4% in 2021.
+
+Verdict: ATLAS (difference and reduced) is UNUSABLE for this G = 11 star. Nothing from ATLAS enters the analysis.
+The duplicate task 5175443 is saved for completeness.
