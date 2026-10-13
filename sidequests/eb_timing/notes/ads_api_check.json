@@ -1,0 +1,374 @@
+{
+ "date": "2026-10-13",
+ "stars": {
+  "TIC 32000625": {
+   "full": {
+    "query": "full:\"32000625\" OR full:\"TYC 9155-22-1\" OR full:\"TYC 9155-0022-1\" OR full:\"4642053155197039104\" OR full:\"2MASS J03435710-7128445\" OR full:\"J03435710-7128445\"",
+    "n": 4,
+    "docs": [
+     {
+      "bibcode": "2023EcoEv..1310456K",
+      "year": "2023",
+      "pub": "Ecology and Evolution",
+      "doctype": "article",
+      "title": "The cycle of seagrass life: From flowers to new meadows",
+      "highlights": []
+     },
+     {
+      "bibcode": "2023JPhSt..2739982L",
+      "year": "2023",
+      "pub": "Journal of Physical Studies",
+      "doctype": "article",
+      "title": "Period Analysis of 3 Eclipsing Binary Stars Based on Tess Data",
+      "highlights": [
+       "c data from the TESS space telescope for three eclipsing binary systems: TIC 30313682, TIC <em>32000625,</em> and TIC 455153566. These star systems were chosen because their light curves promised cert"
+      ]
+     },
+     {
+      "bibcode": "2023JPhSt..2739982D",
+      "year": "2023",
+      "pub": "Journal of Physical Studies",
+      "doctype": "article",
+      "title": "Period Analysis of 6 Eclipsing Binary Stars of EA Type with Tess Data",
+      "highlights": [
+       "ing them from the Mikulski archive for space telescopes. The objects of our study are: TIC <em>32000625,</em> TIC 32150630, TIC 55524055, TIC 233006806, TIC 379628805, and TIC 396059992. We have de ne"
+      ]
+     },
+     {
+      "bibcode": "2019NatSR...919693K",
+      "year": "2019",
+      "pub": "Scientific Reports",
+      "doctype": "article",
+      "title": "A novel adaptation facilitates seed establishment under marine turbulent flows",
+      "highlights": [
+       "These collections were made between 2 and 5 m depths using SCUBA at Rottnest Island (S <em>32.000625\u00b0,</em> E 115.548531\u00b0), and Parmelia Bank (S 32.096408\u00b0, E 115.728296\u00b0), Western Australia. The frui"
+      ]
+     }
+    ]
+   }
+  },
+  "TIC 279323859": {
+   "full": {
+    "query": "full:\"279323859\" OR full:\"UCAC4 155-008982\" OR full:\"5480636311333638272\" OR full:\"2MASS J06565890-5909400\" OR full:\"J06565890-5909400\"",
+    "n": 0,
+    "docs": []
+   }
+  },
+  "TIC 278861826": {
+   "full": {
+    "query": "full:\"278861826\" OR full:\"TYC 8544-1497-1\" OR full:\"GSC 08544-01497\" OR full:\"5484778171633161088\" OR full:\"2MASS J06423805-5632306\" OR full:\"J06423805-5632306\"",
+    "n": 1,
+    "docs": [
+     {
+      "bibcode": "2020MNRAS.499.4011C",
+      "year": "2020",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "doctype": "article",
+      "title": "Hundreds of new periodic signals detected in the first year of TESS with the weirddetector",
+      "highlights": []
+     }
+    ]
+   }
+  },
+  "TIC 294327312": {
+   "full": {
+    "query": "full:\"294327312\" OR full:\"HD 56910\" OR full:\"HD56910\" OR full:\"HIP 35095\" OR full:\"HIP35095\" OR full:\"CD-58 1696\" OR full:\"CPD-58 885\" OR full:\"5485783679313899136\" OR full:\"2MASS J07152908-5832334\" OR full:\"J07152908-5832334\"",
+    "n": 1,
+    "docs": [
+     {
+      "bibcode": "2019ApJS..244...15M",
+      "year": "2019",
+      "pub": "The Astrophysical Journal Supplement Series",
+      "doctype": "article",
+      "title": "Bright Southern Variable Stars in the bRing Survey",
+      "highlights": [
+       "inspection of the phase-folded light curve (DV Gru, BR Ind, V452 Car, HD 66623, HD 205877, <em>HD 56910,</em> V376 Pup, HR Lup, R Ara). For eight stars (\u223c7%) a different period was detected that repro"
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "controls": {
+  "TIC 424461577": {
+   "full": {
+    "query": "full:\"424461577\"",
+    "n": 1,
+    "docs": [
+     {
+      "bibcode": "2024ApJ...976..242M",
+      "year": "2024",
+      "pub": "The Astrophysical Journal",
+      "doctype": "article",
+      "title": "Precision Timing of Eclipsing Binaries from TESS Full Frame Images: Method and Performance",
+      "highlights": []
+     }
+    ]
+   },
+   "known_in": [
+    "Mitnyan+2024 (A&A)",
+    "Borkovits+2026 (Universe)",
+    "Marcadon & Prsa 2024 (ApJ)"
+   ]
+  },
+  "TIC 229771234": {
+   "full": {
+    "query": "full:\"229771234\"",
+    "n": 2,
+    "docs": [
+     {
+      "bibcode": "2024ApJ...976..242M",
+      "year": "2024",
+      "pub": "The Astrophysical Journal",
+      "doctype": "article",
+      "title": "Precision Timing of Eclipsing Binaries from TESS Full Frame Images: Method and Performance",
+      "highlights": []
+     },
+     {
+      "bibcode": "2022ApJS..263...34C",
+      "year": "2022",
+      "pub": "The Astrophysical Journal Supplement Series",
+      "doctype": "article",
+      "title": "Detection of \u03b4 Scuti Pulsators in the Eclipsing Binaries Observed by TESS",
+      "highlights": [
+       "93145 and TIC <em>229771234</em> are two cool stars of unknown type. Gaulme Guzik ( 2019 ) classified TIC 138893145 to be a pulsating red giant or a triple system. TIC <em>229771234</em> is an unclass"
+      ]
+     }
+    ]
+   },
+   "known_in": [
+    "Mitnyan+2024",
+    "Borkovits+2026",
+    "Marcadon & Prsa 2024"
+   ]
+  },
+  "TIC 167692429": {
+   "full": {
+    "query": "full:\"167692429\"",
+    "n": 12,
+    "docs": [
+     {
+      "bibcode": "2026A&A...710A.394M",
+      "year": "2026",
+      "pub": "Astronomy and Astrophysics",
+      "doctype": "article",
+      "title": "RX Gru: A short-period pre-main-sequence eclipsing binary with a distant circumbinary companion",
+      "highlights": [
+       "a et al. 2017 ), TWA 3 ( Kellogg et al. 2017 ), V807 Tau ( Schaefer et al. 2012 ), and TIC <em>167692429</em> and TIC 220397947 ( Borkovits et al. 2020 ). As noticed by Laos et al. (2020) , all of the"
+      ]
+     },
+     {
+      "bibcode": "2025AJ....170..322E",
+      "year": "2025",
+      "pub": "The Astronomical Journal",
+      "doctype": "article",
+      "title": "Eclipse Timing Variations of Circumbinary Substellar Objects in TESS Data",
+      "highlights": []
+     },
+     {
+      "bibcode": "2025A&A...695A.209B",
+      "year": "2025",
+      "pub": "Astronomy and Astrophysics",
+      "doctype": "article",
+      "title": "Then and now: A new look at the eclipse timing variations of hierarchical triple star candidates in the primordial Kepler field, revisited by TESS",
+      "highlights": []
+     },
+     {
+      "bibcode": "2023Univ....9..485B",
+      "year": "2023",
+      "pub": "Universe",
+      "doctype": "article",
+      "title": "Observational Detection of Higher-Order Secular Perturbations in Tight Hierarchical Triple Stars",
+      "highlights": []
+     },
+     {
+      "bibcode": "2023yCat..74935005B",
+      "year": "2023",
+      "pub": "VizieR Online Data Catalog",
+      "doctype": "dataset",
+      "title": "VizieR Online Data Catalog: TICs 167692429 and 220397947 triple stars (Borkovits+, 2020)",
+      "highlights": [
+       "TIC <em>167692429</em> was observed by the TESS spacecraft (Ricker et al. 2015JATIS...1a4003R) during Year 1 in short cadence (SC) mode nearly continuously with the exception of Sector 5. ",
+       "AST Portal (https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html). <P />Both TICs <em>167692429</em> and 220397947 are amongst the millions of stars that have been observed as part of the WAS"
+      ]
+     },
+     {
+      "bibcode": "2022MNRAS.515.3773B",
+      "year": "2022",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "doctype": "article",
+      "title": "Von Zeipel - Lidov - Kozai cycles in action: Kepler triples with eclipse depth variations: KICs 6964043, 5653126, 5731312, and 8023317",
+      "highlights": []
+     },
+     {
+      "bibcode": "2022Galax..10....9B",
+      "year": "2022",
+      "pub": "Galaxies",
+      "doctype": "article",
+      "title": "Eclipsing Binaries in Dynamically Interacting Close, Multiple Systems",
+      "highlights": []
+     },
+     {
+      "bibcode": "2021Univ....7..369S",
+      "year": "2021",
+      "pub": "Universe",
+      "doctype": "article",
+      "title": "Space-Based Photometry of Binary Stars: From Voyager to TESS",
+      "highlights": []
+     },
+     {
+      "bibcode": "2020MNRAS.499.4011C",
+      "year": "2020",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "doctype": "article",
+      "title": "Hundreds of new periodic signals detected in the first year of TESS with the weirddetector",
+      "highlights": []
+     },
+     {
+      "bibcode": "2020ApJ...902..107L",
+      "year": "2020",
+      "pub": "The Astrophysical Journal",
+      "doctype": "article",
+      "title": "Assessing Spectroscopic Binary Multiplicity Properties Using Robo-AO Imaging",
+      "highlights": [
+       "la et al. 2017 ), TWA 3A (Kellogg et al. 2017 ), V807 Tau (Schaefer et al. 2012 ), and TIC <em>167692429</em> and TIC 220397947 (Borkovits et al. 2020 ). The tendency for these PMS systems to lie at l"
+      ]
+     },
+     {
+      "bibcode": "2020MNRAS.493.5005B",
+      "year": "2020",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "doctype": "article",
+      "title": "TICs 167692429 and 220397947: the first compact hierarchical triple stars discovered with TESS",
+      "highlights": [
+       "55 d for TICs <em>167692429</em> and 220397947, respectively. Both of them exhibit three-body perturbation-dominated, short-term ETVs, with periods P 2 = 331 d for TIC <em>167692429</em> and P 2 = 77 ",
+       " periods P 2 = 331 d for TIC <em>167692429</em> and P 2 = 77 d for TIC 220397947. For TIC <em>167692429,</em> the moderately eccentric EB exhibits eclipse depth variations with a clear signature of an",
+       "s are listed in Section 2.4 . 2.1 <italic>TESS</italic> observations 2.1.1 TIC <em>167692429</em> TIC <em>167692429</em> was observed by the TESS spacecraft (Ricker et al. 2015 ) during Year 1 in shor"
+      ]
+     },
+     {
+      "bibcode": "2020CoSka..50..400B",
+      "year": "2020",
+      "pub": "Contributions of the Astronomical Observatory Skalnate Pleso",
+      "doctype": "article",
+      "title": "(Not so) hierarchical stellar multiples seen through the eyes of Kepler, TESS, and other missions",
+      "highlights": [
+       "red with TESS in and near to its southern continuous viewing zone. We identified both TICs <em>167692429</em> and 220397947 through their rapidly varying ETVs showing clear signs of the perturbations "
+      ]
+     }
+    ]
+   },
+   "known_in": [
+    "Borkovits+2020 (MNRAS)"
+   ]
+  },
+  "TIC 220397947": {
+   "full": {
+    "query": "full:\"220397947\"",
+    "n": 11,
+    "docs": [
+     {
+      "bibcode": "2026A&A...710A.394M",
+      "year": "2026",
+      "pub": "Astronomy and Astrophysics",
+      "doctype": "article",
+      "title": "RX Gru: A short-period pre-main-sequence eclipsing binary with a distant circumbinary companion",
+      "highlights": [
+       "WA 3 ( Kellogg et al. 2017 ), V807 Tau ( Schaefer et al. 2012 ), and TIC 167692429 and TIC <em>220397947</em> ( Borkovits et al. 2020 ). As noticed by Laos et al. (2020) , all of these systems are fou"
+      ]
+     },
+     {
+      "bibcode": "2024A&A...690A.153M",
+      "year": "2024",
+      "pub": "Astronomy and Astrophysics",
+      "doctype": "article",
+      "title": "Spectroscopy of eclipsing compact hierarchical triples: I. Low-mass double-lined and triple-lined systems",
+      "highlights": [
+       " photometry using the standard pipeline aperture. While CD32 (TIC 24972851) and CD58 (TIC <em>220397947)</em> are well isolated in the TESS frames, CD62 (TIC 387107961) and BD11 (TIC 408834852) have c"
+      ]
+     },
+     {
+      "bibcode": "2023Univ....9..485B",
+      "year": "2023",
+      "pub": "Universe",
+      "doctype": "article",
+      "title": "Observational Detection of Higher-Order Secular Perturbations in Tight Hierarchical Triple Stars",
+      "highlights": []
+     },
+     {
+      "bibcode": "2023yCat..74935005B",
+      "year": "2023",
+      "pub": "VizieR Online Data Catalog",
+      "doctype": "dataset",
+      "title": "VizieR Online Data Catalog: TICs 167692429 and 220397947 triple stars (Borkovits+, 2020)",
+      "highlights": [
+       " Year 1 in short cadence (SC) mode nearly continuously with the exception of Sector 5. TIC <em>220397947</em> was observed by TESS during Sectors 2-6, 8, 9, and 12. SC light curves are available only ",
+       "tps://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html). <P />Both TICs 167692429 and <em>220397947</em> are amongst the millions of stars that have been observed as part of the WASP survey. The "
+      ]
+     },
+     {
+      "bibcode": "2022Galax..10....9B",
+      "year": "2022",
+      "pub": "Galaxies",
+      "doctype": "article",
+      "title": "Eclipsing Binaries in Dynamically Interacting Close, Multiple Systems",
+      "highlights": []
+     },
+     {
+      "bibcode": "2021Univ....7..369S",
+      "year": "2021",
+      "pub": "Universe",
+      "doctype": "article",
+      "title": "Space-Based Photometry of Binary Stars: From Voyager to TESS",
+      "highlights": []
+     },
+     {
+      "bibcode": "2020MNRAS.499.4011C",
+      "year": "2020",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "doctype": "article",
+      "title": "Hundreds of new periodic signals detected in the first year of TESS with the weirddetector",
+      "highlights": []
+     },
+     {
+      "bibcode": "2020ApJ...902..107L",
+      "year": "2020",
+      "pub": "The Astrophysical Journal",
+      "doctype": "article",
+      "title": "Assessing Spectroscopic Binary Multiplicity Properties Using Robo-AO Imaging",
+      "highlights": [
+       "TWA 3A (Kellogg et al. 2017 ), V807 Tau (Schaefer et al. 2012 ), and TIC 167692429 and TIC <em>220397947</em> (Borkovits et al. 2020 ). The tendency for these PMS systems to lie at low tertiary\u2013binary"
+      ]
+     },
+     {
+      "bibcode": "2020MNRAS.496.4624B",
+      "year": "2020",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "doctype": "article",
+      "title": "The compact triply eclipsing triple star TIC 209409435 discovered with TESS",
+      "highlights": []
+     },
+     {
+      "bibcode": "2020MNRAS.493.5005B",
+      "year": "2020",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "doctype": "article",
+      "title": "TICs 167692429 and 220397947: the first compact hierarchical triple stars discovered with TESS",
+      "highlights": []
+     },
+     {
+      "bibcode": "2020CoSka..50..400B",
+      "year": "2020",
+      "pub": "Contributions of the Astronomical Observatory Skalnate Pleso",
+      "doctype": "article",
+      "title": "(Not so) hierarchical stellar multiples seen through the eyes of Kepler, TESS, and other missions",
+      "highlights": []
+     }
+    ]
+   },
+   "known_in": [
+    "Borkovits+2020 (MNRAS)"
+   ]
+  }
+ }
+}
