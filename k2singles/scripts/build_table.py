@@ -65,6 +65,10 @@ def main():
             last = grp
         j = json.loads((EPH / f"{epic}.json").read_text())
         P, sP = j["P"], j["sigma_P"]
+        if epic == 211411112:
+            # K2 PDCSAP removes the C5 eclipse core, so the ephemeris fit used an ingress-only time. Re-timed on the
+            # full eclipse in EVEREST: k2singles/revision/audit21/t0_211411112.py (stdout, 2026-10-13).
+            P, sP = 62.594821, 0.000027
         if epic == 202126877:                     # eclipse-timing variations: quote the mean only
             ptxt = f"{P:.3f}"
         elif len(ns) > 2:
