@@ -125,3 +125,14 @@ Review: `singles/review_fable_revision/FINDINGS.txt`. New or changed numbers in 
   the form's space-split count) differs from the manuscript only typographically ("37.315-d", "P=89.965") and
   in "or none" for "or no dip".
 - Response to the editor pasted in "Reply to Referee": `private/aas82207_response_to_editor.txt`.
+
+## AAS82207R1 bounced on length (2026-10-13), shortened
+
+AAS quality check: "over the 1350 word limit by 356 words" (= 1706). AAS counts everything after the abstract
+except the references: body + table + acknowledgments + facilities/software + AI statement. The old counter counted
+the body only (1345). New counter: `singles/rnaas/aas_wordcount.py`, which gives 1668 on the submitted R1 (about 2%
+below AAS). The text was rewritten more tightly: Sample and Methods merged, bullet lists folded into prose, the
+gap-truncated-transit sweep sentence and the HD-number example dropped, table notes and acknowledgments shortened. A
+number-by-number diff against tag `aas82207R1-submitted` shows only intentional removals (SNR ~20 population
+remark, the Sector 91 range bound, the truncated-TIC example) and no new or changed numbers. New count: abstract 147,
+AAS-counted text 1268 (about 1295 by AAS's count).

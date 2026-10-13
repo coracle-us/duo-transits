@@ -15,8 +15,8 @@ Community TESS Objects of Interest (CTOIs) flagged as single transits are rarely
 I re-examined 303 such stars against all TESS data through Sector 108, with a validated repeat
 search, difference imaging and Gaia DR3 binarity diagnostics. I recover the catalogued event for 272 stars; the other 31 mostly have a wrong
 epoch, a weaker dip than catalogued, or no dip. Of the 272, 79 show repeats: 21 are Gaia-flagged binaries,
-18 are blends, 23 fit no single period, and 17 needed vetting by hand. A search for dips of any depth
-shows that the CTOI 147035057.01 event is the secondary eclipse of a 37.315\,d eccentric binary
+18 are blends, 23 fit no single period, and 17 needed vetting by hand. An any-depth search shows that the
+CTOI 147035057.01 event is the secondary eclipse of a 37.315\,d eccentric binary
 with a 5.5\% primary. Two on-target candidates with two transits survive: TIC 159614322, where a
 partial third transit leaves $P=89.965$ or $179.930$\,d, and TIC 229055790. For 193 candidates that
 remain single, a median 52\% of log-period space (5--1500\,d) is now excluded.
@@ -24,164 +24,131 @@ remain single, a median 52\% of log-period space (5--1500\,d) is now excluded.
 
 \keywords{\uat{Exoplanet detection methods}{489} --- \uat{Transit photometry}{1709} --- \uat{Eclipsing binary stars}{444}}
 
-\section{Sample}
+\section{Sample and Methods}
 
-ExoFOP lists hundreds of CTOIs uploaded as single transits, with no period, mostly in
-2020--2022. Of 794 open CTOIs with no period or tagged ``single'', ``duo'' or ``mono'', I excluded
-the 344 uploaded by groups still following up their own single transits, identified by the ExoFOP
-uploader: members of the TESS Single Transit Planet Candidate working group (223), the NGTS duotransit program
-\citep[55;][]{Hawthorn2024}, and the transformer search of \citet{Salinas2025} (66). From the remaining
-450 I then removed 46 with missing parameters, 8 on stars
-hosting confirmed planets, 4 on stars with a TOI, and 24 on catalogued TESS eclipsing binaries
-\citep{Prsa2022}. This left 368 CTOIs on 359 stars. Of these, 32 already carry a community
-period and were not re-analyzed. Another 22 fall outside the range I analyzed: 7 are brighter than
-$T=7$, and 15 have catalogued depths outside 200--50{,}000\,ppm, mostly placeholder values near
-100\%. I analyzed the remaining 305 stars, plus one pilot target (TIC 53847727) later found in the
-TESS EB catalogue. Three of these CTOIs carry truncated TIC IDs that duplicate other CTOIs in the
-sample (e.g., TIC 1461133 for 14611330), leaving 303 unique stars.
+Of 794 open CTOIs with no period or tagged ``single'', ``duo'' or ``mono'', I excluded 344 from
+groups still following up their own single transits, identified by ExoFOP uploader: members of the
+TESS Single Transit Planet Candidate working group (223), the NGTS duotransit program
+\citep[55;][]{Hawthorn2024} and the search of \citet{Salinas2025} (66). Of the other 450, I removed
+46 with missing parameters, 8 on confirmed-planet hosts, 4 on TOI hosts and 24 on catalogued TESS
+EBs \citep{Prsa2022}, leaving 368 CTOIs on 359 stars. Of these, 32 already have a community period
+and 22 have $T<7$ or catalogued depths outside 200--50{,}000\,ppm. I analyzed the other 305 stars
+plus one pilot target (TIC 53847727) later found in the EB catalogue; three truncated TIC IDs
+duplicate other CTOIs, leaving 303 unique stars.
 
-\section{Methods}
+I used SPOC 2-min, TESS-SPOC \citep{Caldwell2020} and QLP \citep{Huang2020} light curves, and my own
+TESScut aperture photometry \citep{Brasseur2019} for Sectors $\geq100$ without pipeline products.
+Against SPOC 2-min data for ten stars ($T=8.5$--14.1, eight known planet hosts), my 8--9 pixel
+aperture collects 0.78--0.99 of the SAP flux for $T<11.5$, and more for fainter stars, where SPOC
+uses 4--7 pixels. Depths match PDCSAP to 3\% for uncrowded hosts (about 30\% shallower for crowded
+ones, as I apply no crowding correction), mid-times agree to 2\,min, and the scatter is 1.07 times
+SPOC's. The main difference is flux steps of a few ppt between segments.
 
-I used SPOC 2-min, TESS-SPOC \citep{Caldwell2020} and QLP \citep{Huang2020} light curves from
-MAST. For Sectors $\geq100$ without pipeline products, I performed my own aperture photometry
-on TESScut cutouts \citep{Brasseur2019}. I tested it against SPOC 2-min light curves of ten stars
-($T=8.5$--14.1, Sectors 33 and 91--107), eight of them hosts of known transiting planets. Its 8--9
-pixel aperture collects 0.78--0.99 of the SPOC SAP flux for $T<11.5$, and more for fainter stars,
-where SPOC uses 4--7 pixels. Transit depths match PDCSAP to 3\% for
-uncrowded hosts, but are about 30\% shallower for crowded ones, since I apply no crowding
-correction. Mid-times agree to 2\,min, and the per-cadence scatter is a median 1.07 times SPOC's.
-The main difference is flux steps of a few ppt between data segments.
+A catalogued event is present if a dip deeper than $0.5\,\delta$ lies at SNR $\geq5$ within
+$\pm0.03$\,d of the catalogued epoch ($\delta$, $D$: catalogued depth and duration). The repeat
+search slides a box of that depth and duration on a $D/4$ grid with local baselines; a detection
+needs SNR $\geq8$, a depth of 0.5--2$\,\delta$, 80\% coverage and baseline on both sides. The
+matching is deliberate: only a recurrence of the same event enters $P=\Delta T/n$. Periods of
+5--1500\,d come from linear-ephemeris fits, and any period predicting an epoch on flat data is
+rejected. Validated blind from the first transit alone on 26 stars with two transits and a known
+period, including duotransit candidates of \citet{Hawthorn2024}, the method kept the true period in
+26 and found it uniquely in 19, with no wrong unique answers.
 
-I first test whether the catalogued event is present: a dip deeper than $0.5\,\delta$ at SNR
-$\geq5$ within $\pm0.03$\,d of the catalogued epoch, where $\delta$ and $D$ are the catalogued depth
-and duration. The repeat search then slides a box of that depth and duration on a $D/4$ grid,
-with segment-aware local baselines. A detection needs SNR $\geq8$, a depth of 0.5--2$\,\delta$, at
-least 80\% coverage, and baseline on both sides. This matching is deliberate: only a recurrence
-of the same event can enter $P=\Delta T/n$, while an eclipse of different depth (e.g., a
-secondary at unknown phase) or a second body cannot. Candidate periods of 5--1500\,d come from
-linear-ephemeris fits to all events. Any period with a predicted epoch on flat data is
-rejected. I validated the method blind, starting from the first transit only, on 26 TESS
-stars with two transits and a known period, including duotransit candidates of \citet{Hawthorn2024}. It kept the true period
-in 26/26 and returned it as the unique solution in 19, with no wrong unique answers.
+A source is off-target if TESScut difference images place it $\geq6''$ ($\geq3\sigma$) from the Gaia
+DR3 position \citep{Gaia2023}; ``firm'' needs two agreeing images. Binarity indicators are Gaia DR3
+\texttt{non\_single\_star}, two-body orbits and RV variability \citep[$p\leq0.01$, renormalised GOF
+$>4$;][]{Katz2023}.
 
-I localized sources with TESScut difference images, measuring offsets from the target's Gaia
-DR3 position \citep{Gaia2023}. A source is off-target if it is offset by $\geq6''$ at
-$\geq3\sigma$; ``firm'' requires two agreeing images. Binarity indicators are Gaia DR3 \texttt{non\_single\_star}, two-body orbits, and RV
-variability \citep[$p\leq0.01$, renormalised GOF $>4$;][]{Katz2023}.
-
-To find what the matched search misses, I re-searched all 272 stars for dips of any depth
-(durations 1--24\,h). The cuts were SNR $\geq8$ including red noise, at least 80\% coverage,
-baseline on both sides, no edge or momentum-dump coincidence, and confirmation in a second
-reduction. The identical search on inverted light curves gives 0.085 false events per
-star-sector, against 0.092 for the real data. As a population, extra dips below SNR $\approx20$
-are therefore no more common than noise, so I accept individual extra events only after vetting
-by eye. The search re-detects 234 of the 272 catalogued events; most misses fall below its SNR
-cut. It recovers the secondary eclipses of six known TESS EBs.
+To find what the matched search misses, I also searched all 272 stars for dips of any depth
+(1--24\,h; SNR $\geq8$ with red noise, 80\% coverage, baseline on both sides, no edge or momentum
+dump, and a second reduction). On inverted light curves it finds 0.085 false events per
+star-sector, against 0.092 in the real data, so individual extra events need vetting by eye. It
+re-detects 234 of the 272 catalogued events (most misses are below SNR 8) and the secondary eclipses
+of six known TESS EBs.
 
 \section{Results}
 
-The event test used pipeline light curves at every catalogued epoch (SPOC 2-min for 285 stars),
-never my own photometry. Of the 303 stars, 31 fail it. I inspected each in every available light
-curve: SPOC SAP and PDCSAP, TESS-SPOC, QLP, six other reductions, and my own photometry. The
-failures do not come from my photometry, but in three near-threshold cases a different pipeline
-product would pass the test. Eighteen of the 31 come from one uploader's batch, including all six
-half-day epoch slips.
-\begin{itemize}
-\item 9 CTOIs have wrong epochs; six are 0.5\,d early.
-\item 13 show only a dip shallower than $0.5\,\delta$ or below SNR 5.
-\item 6 show no dip in any reduction.
-\item 3 are explained by flagged data, a blend with a neighboring CTOI, or no data at the epoch.
-\end{itemize}
-Of the 272 stars with the catalogued event, 193 show no repeat. The 79 stars with repeats break
-down as follows:
-\begin{itemize}
-\item 21 are on Gaia-flagged binaries. Three Gaia SB1 orbits reproduce the TESS periods
-  (Table~\ref{tab:systems}), so these three are eccentric eclipsing binaries.
-\item 18 are firmly off-target, i.e.\ blends with neighbors.
-\item 23 show repeats that no single period of 5--1500\,d explains.
-\item 17 were vetted by hand: 2 survive (below), 3 remain tentative, 5 are possibly off-target,
-  and 7 were rejected (inconsistent depths, absent in an independent reduction, or a host too
-  large).
-\end{itemize}
-The 3 tentative repeats are seen only in my own Sector~107 photometry, which has inter-segment steps.
+The event test used pipeline light curves (SPOC 2-min for 285 stars), never my photometry; 31 stars
+fail it. Inspected in every light curve (SPOC SAP and PDCSAP, TESS-SPOC, QLP, six other reductions
+and mine), none fails because of my photometry, though in three marginal cases another pipeline
+product would pass. Nine CTOIs have wrong epochs (six are 0.5\,d early), 13 show only a dip below
+$0.5\,\delta$ or SNR 5, 6 show no dip, and 3 have flagged data, a blended neighboring CTOI or no data
+at the epoch; 18 of the 31 come from one uploader's batch.
 
-In the any-depth search, vetted extra eclipses appear on 14 stars: nine already classed as
-binaries, four of the 23 without a single period, and one single, TIC 250492521, whose differently
-shaped event (in three reductions) makes it an EB or blend candidate. No single star gains a period.
-The extra eclipses give periods for four stars, including TIC 188835620 (22.217\,d) and TIC 83384234
-(4.33\,d) from the no-single-period class. For two, the catalogued event is the secondary of a
-deeper eclipse.
+Of the 272 stars with the catalogued event, 193 show no repeat. Of the 79 with repeats, 21 are
+Gaia-flagged binaries (three Gaia SB1 orbits reproduce the TESS periods; Table~\ref{tab:systems}),
+18 are firmly off-target, 23 fit no single period of 5--1500\,d, and 17 were vetted by hand: 2
+survive (below), 3 remain tentative (seen only in my Sector~107 photometry), 5 are possibly
+off-target and 7 were rejected.
 
-\textit{CTOI 147035057.01.} Three events matching the catalogued one (Sectors 7, 33, and 108, the last from my own
-photometry) fix $P=37.31497\pm0.00003$\,d; the S108 event rules out every shorter alias. The
-any-depth search shows that they are the secondary eclipses of a binary. A V-shaped primary eclipse
-5.3--5.6\% deep falls at phase 0.239 relative to them, in Sector 6 (TESS-SPOC) and Sector 87 (QLP),
-exactly 59 cycles apart. All Gaia sources within $60''$ together supply only 3.5\% of the target's
-flux, so the deep eclipse must be on the target. Gaia DR3 measures an RV amplitude of
-50\,km\,s$^{-1}$, so the companion is stellar. The depth ratio argues against near-equal twins,
-but grazing geometry in the eccentric orbit ($e\cos\omega\approx0.4$) could produce it, and Gaia DR4
-epoch RVs should decide.
+Vetted extra eclipses from the any-depth search appear on 14 stars: nine binaries, four of the 23
+without a single period, and one single star, TIC 250492521, whose differently shaped event makes it
+an EB or blend candidate. No single star gains a period. The extra eclipses give periods for four
+stars, including TIC 188835620 (22.217\,d) and TIC 83384234 (4.33\,d); for two, the catalogued event
+is a secondary eclipse.
 
-\textit{TIC 159614322.} Transits in Sectors 14 and 41 have consistent depths ($\approx3.2$\,ppt,
-$\approx9.7$\,h) across products, and they are on target. Flat data leave $P=719.72/n$ with
-$n\in\{1,2,4,5,8\}$. Sector 21 then contains an ingress and $\approx9$\,h of transit floor,
-with the egress lost in the orbit-1 downlink gap. It appears in TESS-SPOC, QLP, and my own
-photometry, with a flat background and no pointing step. A blind re-analysis with independent
-code also found it. It selects $n=8$ or $n=4$, giving $P=89.9651\pm0.0006$ or
-$179.9302\pm0.0012$\,d with $T_0={\rm BJD_{TDB}}\,2458703.8277\pm0.0041$. These values are fitted
-from the two full transits; the partial transit arrives 13--26\,min late, possibly a bias from
-the missing egress. The companion is $\approx0.9\,R_{\rm J}$, and the host is
-RV-stable in Gaia DR3. Both periods predict a transit at 2026-12-28 06:40\,UTC ($\pm45$\,min,
-errors inflated $\times2.1$). A sweep of all 272 stars for gap-truncated
-transits found no other convincing case.
+\textit{CTOI 147035057.01.} Three matching events (Sectors 7, 33 and 108, the last in my
+photometry) give $P=37.31497\pm0.00003$\,d, but they are secondary eclipses: a V-shaped primary
+5.3--5.6\% deep falls at phase 0.239 in Sectors 6 (TESS-SPOC) and 87 (QLP), 59 cycles apart. Gaia
+sources within $60''$ supply only 3.5\% of the flux, so the deep eclipse is on target, and the Gaia DR3 RV
+amplitude of 50\,km\,s$^{-1}$ makes the companion stellar. Grazing geometry in the eccentric orbit
+($e\cos\omega\approx0.4$) could explain the depth ratio; Gaia DR4 epoch RVs should decide.
 
-\textit{TIC 229055790.} This candidate, uploaded by the Planet Hunters TESS project
-\citep[see][]{Eisner2021}, shows transits in
-Sectors 1 and 68 with consistent depths, on target, re-detected independently. With 38 allowed
-periods $\geq26.7$\,d and $R_p\approx3.8\,R_\oplus$, it is worth monitoring.
+\textit{TIC 159614322.} Transits in Sectors 14 and 41 ($\approx3.2$\,ppt, $\approx9.7$\,h) are
+consistent across products and on target, leaving $P=719.72/n$ with $n\in\{1,2,4,5,8\}$. Sector 21
+shows an ingress and $\approx9$\,h of transit floor before the orbit-1 downlink gap, in TESS-SPOC,
+QLP and my photometry, with a flat background and no pointing step; a blind re-analysis with
+independent code also found it. It selects $n=8$ or 4: $P=89.9651\pm0.0006$ or
+$179.9302\pm0.0012$\,d, $T_0={\rm BJD_{TDB}}\,2458703.8277\pm0.0041$ (fitted to the full transits;
+the partial one is 13--26\,min late, perhaps biased by the missing egress). The companion is
+$\approx0.9\,R_{\rm J}$ and the host is RV-stable in Gaia DR3. Both periods predict a transit at
+2026-12-28 06:40\,UTC ($\pm45$\,min, errors inflated $\times2.1$).
+
+\textit{TIC 229055790.} This Planet Hunters TESS candidate \citep[see][]{Eisner2021} has consistent,
+on-target transits in Sectors 1 and 68, re-detected independently. With 38 allowed periods
+$\geq26.7$\,d and $R_p\approx3.8\,R_\oplus$, it is worth monitoring.
 
 \begin{deluxetable*}{llll}
 \tablecaption{Selected systems.\label{tab:systems}}
 \tablehead{\colhead{TIC} & \colhead{Events (Sectors)} & \colhead{Period} & \colhead{Notes}}
 \startdata
 147035057 & 7, 33, 108$^a$; 6, 87$^c$ & $37.31497\pm0.00003$\,d & EB; Gaia RV-variable \\
-159614322 & 14, 41; 21 (partial) & $89.9651\pm0.0006$ or $179.9302\pm0.0012$\,d & $\approx0.9\,R_{\rm J}$; on target; Gaia RV-stable \\
-229055790 & 1, 68 & $1838.945/n\geq26.7$\,d (38 aliases) & $\approx3.8\,R_\oplus$; on target \\
+159614322 & 14, 41; 21 (partial) & $89.9651\pm0.0006$ or $179.9302\pm0.0012$\,d & $\approx0.9\,R_{\rm J}$; Gaia RV-stable \\
+229055790 & 1, 68 & $1838.945/n\geq26.7$\,d (38 aliases) & $\approx3.8\,R_\oplus$ \\
 231969683 & 6, 32, 34, 87, 98 & 21.978\,d & Gaia SB1: $21.969\pm0.005$\,d \\
 230130556 & 32 sectors, 15--86 & 22.259\,d & Gaia SB1: $22.245\pm0.024$\,d \\
 458419988 & 48, 75 & $734.56/40=18.36$\,d & Gaia SB1: 18.355\,d \\
-268534931 & 3, 30; 107$^{a,b}$ & 92.60, 46.30, 30.87 or 23.15\,d$^b$ & candidate of \citet{Hawthorn2024} \\
+268534931 & 3, 30; 107$^{a,b}$ & 92.60, 46.30, 30.87 or 23.15\,d$^b$ & \citet{Hawthorn2024} candidate \\
 139726266 & 32; 107$^{a,b}$ & $2109.0/n$\,d$^b$ & $\approx2.8\,R_\oplus$ \\
 \enddata
-\tablecomments{$^a$My own TESScut photometry. $^b$Tentative; to be rechecked when pipeline products for Sector 107 appear. $^c$Primary eclipse (5.3--5.6\%) at phase 0.239; the catalogued event is the secondary. The per-CTOI classification of all 306 CTOIs (303 stars) is available in the repository cited below.}
+\tablecomments{$^a$My TESScut photometry. $^b$Tentative until Sector 107 pipeline products appear.
+$^c$Primary eclipse (5.3--5.6\%) at phase 0.239; the catalogued event is the secondary.}
 \end{deluxetable*}
 
 \section{Conclusion}
 
-Stale single-transit CTOIs with repeat signals are mostly stellar, and inexpensive Gaia binarity
-checks and difference imaging dispose of half of them. The residue is small but useful: two
-on-target candidates with two transits and alias lists short enough to target, and a few tentative repeats that
-pipeline products will confirm or reject. Code, light-curve products and classifications are at
-\url{https://github.com/coracle-us/duo-transits}.
+Stale single-transit CTOIs with repeats are mostly stellar; Gaia binarity checks and difference
+imaging dispose of half of them. Two on-target candidates with short alias lists remain, plus
+tentative repeats that pipeline products will settle. Code and classifications of all 306 CTOIs are
+at \url{https://github.com/coracle-us/duo-transits}.
 
 \begin{acknowledgments}
-This work uses TESS data from MAST, ESA Gaia DR3, ExoFOP, and the NASA Exoplanet Archive.
-The MAST data are the SPOC light curves \dataset[doi:10.17909/t9-nmc8-f686]{https://doi.org/10.17909/t9-nmc8-f686},
-TESS-SPOC light curves \dataset[doi:10.17909/t9-wpz1-8s54]{https://doi.org/10.17909/t9-wpz1-8s54},
-QLP light curves \dataset[doi:10.17909/t9-r086-e880]{https://doi.org/10.17909/t9-r086-e880}, and
-calibrated full-frame images \dataset[doi:10.17909/0cp4-2j79]{https://doi.org/10.17909/0cp4-2j79}.
-I also used ExoFOP \dataset[doi:10.26134/ExoFOP5]{https://doi.org/10.26134/ExoFOP5} and the
-Planetary Systems Composite table \dataset[doi:10.26133/NEA13]{https://doi.org/10.26133/NEA13}.
+This work uses TESS data from MAST: SPOC \dataset[doi:10.17909/t9-nmc8-f686]{https://doi.org/10.17909/t9-nmc8-f686},
+TESS-SPOC \dataset[doi:10.17909/t9-wpz1-8s54]{https://doi.org/10.17909/t9-wpz1-8s54} and QLP
+\dataset[doi:10.17909/t9-r086-e880]{https://doi.org/10.17909/t9-r086-e880} light curves and
+full-frame images \dataset[doi:10.17909/0cp4-2j79]{https://doi.org/10.17909/0cp4-2j79}; Gaia DR3;
+ExoFOP \dataset[doi:10.26134/ExoFOP5]{https://doi.org/10.26134/ExoFOP5}; and the NASA Exoplanet
+Archive \dataset[doi:10.26133/NEA13]{https://doi.org/10.26133/NEA13}.
 \end{acknowledgments}
 
 \facilities{TESS, Gaia}
 \software{lightkurve \citep{Lightkurve2018}, astroquery \citep{Ginsburg2019}, batman \citep{Kreidberg2015}, astrocut \citep{Brasseur2019}}
 
 \section*{AI disclosure statement}
-I used an AI assistant, Anthropic's Claude (a large language model), under my supervision. It
-wrote and ran the analysis code and drafted and edited the text of this note. I reviewed and edited
-the text, checked the numbers against the saved analysis outputs, and take full responsibility for
-the content. Every reference was checked against ADS and arXiv records. The note contains no AI-generated figures.
+I used Anthropic's Claude, an AI assistant, under my supervision to write and run the analysis code
+and to draft and edit this note. I reviewed the text, checked every number against the saved
+outputs and every reference against ADS and arXiv, and take full responsibility for the content.
+The note contains no AI-generated figures.
 
 \begin{thebibliography}{}
 \bibitem[Brasseur et al.(2019)]{Brasseur2019} Brasseur, C.~E., Phillip, C., Fleming, S.~W., Mullally, S.~E., \& White, R.~L. 2019, Astrocut: Tools for creating cutouts of TESS images, Astrophysics Source Code Library, ascl:1905.007
