@@ -136,3 +136,7 @@ gap-truncated-transit sweep sentence and the HD-number example dropped, table no
 number-by-number diff against tag `aas82207R1-submitted` shows only intentional removals (SNR ~20 population
 remark, the Sector 91 range bound, the truncated-TIC example) and no new or changed numbers. New count: abstract 147,
 AAS-counted text 1268 (about 1295 by AAS's count).
+
+**Resubmitted 2026-10-13 after the length bounce:** text = commit 9bfccae (tag `aas82207R1-length-fix`). The AAS
+merged PDF (3 pages) was checked: about 1316 words after the abstract excluding references, scaled from the
+pdftotext count with the ratio calibrated on the bounce (AAS 1706 vs pdftotext 1753).
