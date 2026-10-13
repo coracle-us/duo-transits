@@ -1,0 +1,30 @@
+## full:"202126877"  ->  0 hits
+## full:"86491361"  ->  0 hits
+## full:"1883-1721-1"  ->  0 hits
+## full:"3383995253529149056"  ->  0 hits
+## full:"EPIC 202126877"  ->  0 hits
+## full:"J063155.2+252855"  ->  0 hits
+## object:"EPIC 202126877"
+  ERROR HTTPError: HTTP Error 400: BAD REQUEST
+## abs:("eclipse depth variation" OR "disappearing eclipses" OR "appearing eclipses") year:2020-2026  ->  21 hits
+  2026arXiv260825439H  Hakala, Pasi  Circular polarimetry of suspect wind-accreting pre-polars II
+  2026Univ...12..107B  Borkovits, Tamás  A Few Years Later: Revisiting Period Variations of Eclipsing Binaries in the Northern Continuous Viewing Zone 
+  2026AJ....171..193S  Surana, Suhani  Stellar and Orbital Characterization of Three Low Mass M Dwarf Binary Stars with Dynamical Spectroscopy from t
+  2025ApJ...992..144G  Guo, Yunlang  Eclipsing Millisecond Pulsars with He Star Companions
+  2025Toxic..13..885H  Hanekamp, Jaap C.  The PFAS Conundrum—Of Logic, Science, Policy
+  2025epsc.conf.1101C  Colwell, Joshua  Opaque Expanses in Saturn's B ring
+  2025A&A...695A.209B  Borkovits, T.  Then and now: A new look at the eclipse timing variations of hierarchical triple star candidates in the primor
+  2025oenh.book..487N  Ng, Reuben  Social Media and Disaster Risk Reduction: Knowledge Synthesis and Future Directions
+  2024A&A...691A...4Z  Zhang, Liang  A type II radio burst associated with solar filament─filament interaction
+  2024hst..prop17739R  Roth, Lorenz  A UV eclipse test for Callisto's atmosphere, plasma interaction and water ocean
+  2023JAHH...26..391G  Gislén, Lars  Analysis of the Tamil parallax procedures in Le Gentil's report of 1776
+  2023plat.confE..46M  Moharana, Ayush  Observational probe into evolution of Compact Hierarchical Triples
+  2023JGRA..12830892W  Wang, Jie  Mid-Latitude Mesospheric Responses of the Solar Eclipse on 21 June 2020 Observed by the Wuhan MST Radar
+  2023PSJ.....4...36S  Schmidt, Carl  Io's Optical Aurorae in Jupiter's Shadow
+  2022AAS...24030803K  Knote, Matthew  Characterizing Four Subsets of Kepler O'Connell Effect Binaries
+  2022HEAD...1911126C  Chavez, Amanda  X-ray Transients and Transits Hidden in the Chandra Source Catalog
+  2022JPhCS2214a2005V  Vidante, C.  Conservative mass transfer on eclipsing binary AE Phe from O-C diagram analysis
+  2022PhDT........26K  Khangale, Zwidofhelangani  Accretion processes in magnetic cataclysmic variables - a detailed study of UZ Fornacis
+  2021ApJ...922L..13W  Wang, S. Q.  Unusual Emission Variations Near the Eclipse of Black Widow Pulsar PSR J1720-0533
+  2021cosp...43E1021K  Kwon, Ryun Young  The Effect of True CME Angular Widths on the Longitudinal Spread of Solar Energetic Particles
+  2020MNRAS.492.4298K  Khangale, Z. N.  A spectroscopic, photometric, polarimetric, and radio study of the eclipsing polar UZ Fornacis: the first simu
