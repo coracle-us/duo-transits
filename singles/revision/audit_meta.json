@@ -1,0 +1,2027 @@
+{
+ "152283270": {
+  "TIC": 152283270,
+  "CTOI": 152283270.01,
+  "user": "lipponen",
+  "epoch_btjd": 1336.0,
+  "dur_h": 8.6,
+  "depth_ppm": 9992.216,
+  "Tmag": 7.503,
+  "epoch_sector": "1",
+  "observed_epoch_sectors": [
+   1
+  ],
+  "tesscut_sectors": [
+   1,
+   28,
+   68,
+   95,
+   106
+  ],
+  "lc_sectors": [
+   1,
+   28,
+   95,
+   106
+  ],
+  "pipeline_product": {
+   "1": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "SPOC_120",
+   "T16_1800",
+   "TARS_1800",
+   "TASOC_120",
+   "TASOC_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 152283270.01",
+    "notes": "drop_in_two_phases",
+    "date": "2019-04-22",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 152283270.01",
+    "epoch": "2458336",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "9992.216",
+    "dur": "8.6",
+    "snr": "",
+    "pnotes": "drop_in_two_phases",
+    "puser": "lipponen",
+    "pdate": "2019-04-22 08:27:21"
+   }
+  ],
+  "exofop_files": [
+   "DropInTwoPhases.png"
+  ],
+  "exofop_tois": []
+ },
+ "209217764": {
+  "TIC": 209217764,
+  "CTOI": 209217764.01,
+  "user": "amarino",
+  "epoch_btjd": 3128.938982000109,
+  "dur_h": 3.32,
+  "depth_ppm": 17542.0,
+  "Tmag": 10.0253,
+  "epoch_sector": "67",
+  "observed_epoch_sectors": [
+   67
+  ],
+  "tesscut_sectors": [
+   67,
+   92,
+   94
+  ],
+  "lc_sectors": [
+   67,
+   92,
+   94
+  ],
+  "pipeline_product": {
+   "67": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TARS_200",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 209217764.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-13",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 209217764.01",
+    "epoch": "2460128.938982",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "17542",
+    "dur": "3.32",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-13 08:57:06"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "408921284": {
+  "TIC": 408921284,
+  "CTOI": 408921284.01,
+  "user": "deelias",
+  "epoch_btjd": 3124.5012019998394,
+  "dur_h": 1.09,
+  "depth_ppm": 36200.0,
+  "Tmag": 12.384,
+  "epoch_sector": "66",
+  "observed_epoch_sectors": [],
+  "tesscut_sectors": [
+   54,
+   81
+  ],
+  "lc_sectors": [
+   54,
+   81
+  ],
+  "pipeline_product": {},
+  "products_at_epoch_sector": [],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 408921284.01",
+    "notes": "Recorded a first clear transit and a second very doubtful transit with a period of 2.98 days.",
+    "date": "2023-08-03",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 408921284.01",
+    "epoch": "2460124.501202",
+    "epoch_e": "0.003",
+    "per": null,
+    "dep_p": "36200",
+    "dur": "1.09",
+    "snr": "",
+    "pnotes": "Recorded a first clear transit and a second very doubtful transit with a period of 2.98 days.",
+    "puser": "deelias",
+    "pdate": "2023-08-03 14:58:24"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "431945694": {
+  "TIC": 431945694,
+  "CTOI": 431945694.01,
+  "user": "marlecha",
+  "epoch_btjd": 2966.9449999998324,
+  "dur_h": 9.5,
+  "depth_ppm": 14000.0,
+  "Tmag": 11.8097,
+  "epoch_sector": "61",
+  "observed_epoch_sectors": [
+   61
+  ],
+  "tesscut_sectors": [
+   7,
+   61,
+   88
+  ],
+  "lc_sectors": [
+   61,
+   88
+  ],
+  "pipeline_product": {
+   "61": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 431945694.01",
+    "notes": "Found with our in-house single transit finder;Sector 61",
+    "date": "2023-03-30",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 431945694.01",
+    "epoch": "2459966.945",
+    "epoch_e": "0.00368",
+    "per": null,
+    "dep_p": "14000",
+    "dur": "9.5",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder;Sector 61",
+    "puser": "marlecha",
+    "pdate": "2023-03-30 22:27:15"
+   }
+  ],
+  "exofop_files": [
+   "0000000431945694-0250_single_detect_.pdf"
+  ],
+  "exofop_tois": []
+ },
+ "6121688": {
+  "TIC": 6121688,
+  "CTOI": 6121688.01,
+  "user": "amarino",
+  "epoch_btjd": 2693.657085000072,
+  "dur_h": 3.1,
+  "depth_ppm": 13856.0,
+  "Tmag": 9.3574,
+  "epoch_sector": "51",
+  "observed_epoch_sectors": [
+   51
+  ],
+  "tesscut_sectors": [
+   51,
+   91
+  ],
+  "lc_sectors": [
+   51,
+   91
+  ],
+  "pipeline_product": {
+   "51": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 6121688.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-13",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 6121688.01",
+    "epoch": "2459693.657085",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "13856",
+    "dur": "3.1",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-13 07:57:15"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "130718055": {
+  "TIC": 130718055,
+  "CTOI": 130718055.01,
+  "user": "eisner",
+  "epoch_btjd": 1897.8199999998324,
+  "dur_h": 7.3,
+  "depth_ppm": 3150.0,
+  "Tmag": 9.595,
+  "epoch_sector": "21",
+  "observed_epoch_sectors": [],
+  "tesscut_sectors": [
+   23,
+   46,
+   50,
+   91
+  ],
+  "lc_sectors": [
+   23,
+   46,
+   50,
+   91
+  ],
+  "pipeline_product": {},
+  "products_at_epoch_sector": [],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 130718055.01",
+    "notes": "PHT candidate. Possible period 207.65 d. Unusual transit shape needs to be investigated. Events close to momentum dumps.",
+    "date": "2022-02-11",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 130718055.01",
+    "epoch": "2458897.82",
+    "epoch_e": "0.1",
+    "per": null,
+    "dep_p": "3150",
+    "dur": "7.3",
+    "snr": "",
+    "pnotes": "PHT candidate. Possible period 207.65 d. Unusual transit shape needs to be investigated. Events close to momentum dumps.",
+    "puser": "eisner",
+    "pdate": "2022-02-11 05:47:11"
+   },
+   {
+    "name": "TIC 130718055.01",
+    "epoch": "2459572.68",
+    "epoch_e": "0.002",
+    "per": null,
+    "dep_p": "4276",
+    "dur": "7.76",
+    "snr": "",
+    "pnotes": "Corrected parameters based on single transit in sector 46",
+    "puser": "mason",
+    "pdate": "2026-09-24 04:10:15"
+   }
+  ],
+  "exofop_files": [
+   "251556624I-ic20150523b.png",
+   "251556624P-ic20150523a.csv",
+   "TIC130718055S-ct20230128_1175.fits",
+   "TIC130718055S-ct20230123_1170.fits",
+   "TIC130718055S-ct20230118_1168.fits",
+   "TIC130718055S-ct20230111_1166.fits",
+   "TIC130718055S-ct20220409_1144.fits",
+   "TIC130718055S-ct20220403_1139.fits",
+   "TIC130718055S-ct20220329_1147.fits",
+   "TIC130718055S-ct20220322_1142.fits",
+   "TIC130718055S-ct20220317_1156.fits",
+   "TIC130718055S-ct20220312_1184.fits"
+  ],
+  "exofop_tois": []
+ },
+ "1461133": {
+  "TIC": 1461133,
+  "CTOI": 1461133.01,
+  "user": "steuer",
+  "epoch_btjd": 2220.1427000002004,
+  "dur_h": 4.6,
+  "depth_ppm": 1274.03,
+  "Tmag": 15.4872,
+  "epoch_sector": "33",
+  "observed_epoch_sectors": [],
+  "tesscut_sectors": [
+   12,
+   39,
+   66,
+   93,
+   103
+  ],
+  "lc_sectors": [
+   12,
+   66,
+   93
+  ],
+  "pipeline_product": {},
+  "products_at_epoch_sector": [],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 1461133.01",
+    "notes": "Found with our in-house single transit finder",
+    "date": "2021-02-15",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 1461133.01",
+    "epoch": "2459220.1427",
+    "epoch_e": "0.0167",
+    "per": null,
+    "dep_p": "1274.03",
+    "dur": "4.6",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder",
+    "puser": "steuer",
+    "pdate": "2021-02-15 04:50:07"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "169251938": {
+  "TIC": 169251938,
+  "CTOI": 169251938.01,
+  "user": "steuer",
+  "epoch_btjd": 1566.877400000114,
+  "dur_h": 4.33,
+  "depth_ppm": 1176.84,
+  "Tmag": 9.3522,
+  "epoch_sector": "9",
+  "observed_epoch_sectors": [
+   9
+  ],
+  "tesscut_sectors": [
+   9,
+   35,
+   45,
+   46,
+   62,
+   72,
+   89
+  ],
+  "lc_sectors": [
+   9,
+   35,
+   46,
+   62,
+   72,
+   89
+  ],
+  "pipeline_product": {
+   "9": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "SPOC_120",
+   "T16_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 169251938.01",
+    "notes": "Found with our in-house single transit finder",
+    "date": "2021-04-07",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 169251938.01",
+    "epoch": "2458566.8774",
+    "epoch_e": "0.0062",
+    "per": null,
+    "dep_p": "1176.84",
+    "dur": "4.33",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder",
+    "puser": "steuer",
+    "pdate": "2021-04-07 01:37:13"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "250103631": {
+  "TIC": 250103631,
+  "CTOI": 250103631.01,
+  "user": "amarino",
+  "epoch_btjd": 2448.830761999823,
+  "dur_h": 4.9,
+  "depth_ppm": 4241.0,
+  "Tmag": 11.1893,
+  "epoch_sector": "42",
+  "observed_epoch_sectors": [
+   42
+  ],
+  "tesscut_sectors": [
+   42,
+   70,
+   92
+  ],
+  "lc_sectors": [
+   42,
+   92
+  ],
+  "pipeline_product": {
+   "42": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 250103631.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-12",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 250103631.01",
+    "epoch": "2459448.830762",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "4241",
+    "dur": "4.9",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-12 05:46:14"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "255989063": {
+  "TIC": 255989063,
+  "CTOI": 255989063.01,
+  "user": "kzhu",
+  "epoch_btjd": 1667.2250000000931,
+  "dur_h": 3.6,
+  "depth_ppm": 2000.0,
+  "Tmag": 10.7595,
+  "epoch_sector": "13",
+  "observed_epoch_sectors": [
+   13
+  ],
+  "tesscut_sectors": [
+   12,
+   13,
+   39,
+   66,
+   93,
+   100,
+   101,
+   102,
+   103
+  ],
+  "lc_sectors": [
+   12,
+   13,
+   39,
+   66,
+   93,
+   100,
+   101,
+   102,
+   103
+  ],
+  "pipeline_product": {
+   "13": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "SPOC_120",
+   "TARS_1800",
+   "TESS-SPOC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 255989063.01",
+    "notes": "Potential single transit event",
+    "date": "2025-09-01",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 255989063.01",
+    "epoch": "2458667.225",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "2000",
+    "dur": "3.6",
+    "snr": "",
+    "pnotes": "Potential single transit event",
+    "puser": "kzhu",
+    "pdate": "2025-09-01 08:44:30"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "3181884": {
+  "TIC": 3181884,
+  "CTOI": 3181884.01,
+  "user": "steuer",
+  "epoch_btjd": 2212.6444000001065,
+  "dur_h": 1.6,
+  "depth_ppm": 4093.06,
+  "Tmag": 16.83,
+  "epoch_sector": "33",
+  "observed_epoch_sectors": [],
+  "tesscut_sectors": [
+   12,
+   39,
+   66,
+   93,
+   103
+  ],
+  "lc_sectors": [
+   66,
+   93
+  ],
+  "pipeline_product": {},
+  "products_at_epoch_sector": [],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 3181884.01",
+    "notes": "Found with our in-house single transit finder",
+    "date": "2021-02-15",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 3181884.01",
+    "epoch": "2459212.6444",
+    "epoch_e": "0.0083",
+    "per": null,
+    "dep_p": "4093.06",
+    "dur": "1.6",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder",
+    "puser": "steuer",
+    "pdate": "2021-02-15 04:50:07"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "326397318": {
+  "TIC": 326397318,
+  "CTOI": 326397318.01,
+  "user": "steuer",
+  "epoch_btjd": 1343.4889000002297,
+  "dur_h": 0.27,
+  "depth_ppm": 998.1,
+  "Tmag": 10.317,
+  "epoch_sector": "1",
+  "observed_epoch_sectors": [
+   1
+  ],
+  "tesscut_sectors": [
+   1,
+   28,
+   68,
+   92,
+   95
+  ],
+  "lc_sectors": [
+   1,
+   28,
+   68,
+   92,
+   95
+  ],
+  "pipeline_product": {
+   "1": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "SPOC_120",
+   "T16_1800",
+   "TARS_1800",
+   "TASOC_120",
+   "TASOC_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 326397318.01",
+    "notes": "Found with our in-house single transit finder",
+    "date": "2021-06-16",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 326397318.01",
+    "epoch": "2458343.4889",
+    "epoch_e": "0.0104",
+    "per": null,
+    "dep_p": "998.1",
+    "dur": "0.27",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder",
+    "puser": "steuer",
+    "pdate": "2021-06-16 09:18:55"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "329064084": {
+  "TIC": 329064084,
+  "CTOI": 329064084.01,
+  "user": "amarino",
+  "epoch_btjd": 2335.913300000131,
+  "dur_h": 8.15,
+  "depth_ppm": 4901.0,
+  "Tmag": 11.4534,
+  "epoch_sector": "38",
+  "observed_epoch_sectors": [
+   38
+  ],
+  "tesscut_sectors": [
+   11,
+   38,
+   65,
+   99,
+   100,
+   101,
+   102
+  ],
+  "lc_sectors": [
+   11,
+   38,
+   65,
+   99,
+   100,
+   101,
+   102
+  ],
+  "pipeline_product": {
+   "38": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_600",
+   "SPOC_120",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 329064084.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-14",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 329064084.01",
+    "epoch": "2459335.9133",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "4901",
+    "dur": "8.15",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-14 12:00:47"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "354032500": {
+  "TIC": 354032500,
+  "CTOI": 354032500.01,
+  "user": "amarino",
+  "epoch_btjd": 3341.044641999993,
+  "dur_h": 2.67,
+  "depth_ppm": 31169.0,
+  "Tmag": 14.2309,
+  "epoch_sector": "75",
+  "observed_epoch_sectors": [
+   75
+  ],
+  "tesscut_sectors": [
+   21,
+   48,
+   75
+  ],
+  "lc_sectors": [
+   75
+  ],
+  "pipeline_product": {
+   "75": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TARS_200",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 354032500.01",
+    "notes": "ExoMAST single transit event from the UAN working group",
+    "date": "2024-08-05",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 354032500.01",
+    "epoch": "2460341.044642",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "31169",
+    "dur": "2.67",
+    "snr": "",
+    "pnotes": "ExoMAST single transit event from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-05 06:30:54"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "354032501": {
+  "TIC": 354032501,
+  "CTOI": 354032501.01,
+  "user": "amarino",
+  "epoch_btjd": 3340.54248799989,
+  "dur_h": 2.61,
+  "depth_ppm": 6341.0,
+  "Tmag": 12.5317,
+  "epoch_sector": "74 75",
+  "observed_epoch_sectors": [
+   75
+  ],
+  "tesscut_sectors": [
+   21,
+   48,
+   75
+  ],
+  "lc_sectors": [
+   75
+  ],
+  "pipeline_product": {
+   "75": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TARS_200",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 354032501.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-14",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 354032501.01",
+    "epoch": "2460340.542488",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "6341",
+    "dur": "2.61",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-14 12:16:22"
+   }
+  ],
+  "exofop_files": [
+   "TIC354032501I-cl20200115summary.pdf",
+   "TIC354032501I-cl20200115contrastcurve.txt"
+  ],
+  "exofop_tois": []
+ },
+ "355095316": {
+  "TIC": 355095316,
+  "CTOI": 355095316.01,
+  "user": "amarino",
+  "epoch_btjd": 2037.0180130000224,
+  "dur_h": 1.15,
+  "depth_ppm": 4766.0,
+  "Tmag": 10.6429,
+  "epoch_sector": "27",
+  "observed_epoch_sectors": [
+   27
+  ],
+  "tesscut_sectors": [
+   1,
+   27,
+   68,
+   95,
+   105
+  ],
+  "lc_sectors": [
+   1,
+   27,
+   95,
+   105
+  ],
+  "pipeline_product": {
+   "27": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 355095316.01",
+    "notes": "ExoMAST single transit event from the UAN working group",
+    "date": "2024-08-04",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 355095316.01",
+    "epoch": "2459037.018013",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "4766",
+    "dur": "1.15",
+    "snr": "",
+    "pnotes": "ExoMAST single transit event from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-04 12:17:17"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "356240333": {
+  "TIC": 356240333,
+  "CTOI": 356240333.01,
+  "user": "steuer",
+  "epoch_btjd": 2029.586000000127,
+  "dur_h": 9.744,
+  "depth_ppm": 420.0,
+  "Tmag": 9.8546,
+  "epoch_sector": "26",
+  "observed_epoch_sectors": [
+   26
+  ],
+  "tesscut_sectors": [
+   14,
+   24,
+   25,
+   26,
+   40,
+   51,
+   52,
+   53,
+   54,
+   74,
+   78,
+   79,
+   80,
+   81,
+   85
+  ],
+  "lc_sectors": [
+   14,
+   24,
+   25,
+   26,
+   40,
+   51,
+   52,
+   53,
+   54,
+   74,
+   78,
+   79,
+   80,
+   81,
+   85
+  ],
+  "pipeline_product": {
+   "26": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_1800",
+   "SPOC_120",
+   "TARS_1800",
+   "TASOC_120",
+   "TASOC_1800",
+   "TESS-SPOC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 356240333.01",
+    "notes": "Found with our in-house single transit finder; transit finder output attached under &#039;Files&#039;",
+    "date": "2020-08-25",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 356240333.01",
+    "epoch": "2459029.586",
+    "epoch_e": null,
+    "per": "0",
+    "dep_p": "420",
+    "dur": "9.744",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder; transit finder output attached under &#039;Files&#039;",
+    "puser": "steuer",
+    "pdate": "2020-08-25 03:26:14"
+   }
+  ],
+  "exofop_files": [
+   "0000000356240333-0188_single_detect.pdf"
+  ],
+  "exofop_tois": []
+ },
+ "359819459": {
+  "TIC": 359819459,
+  "CTOI": 359819459.01,
+  "user": "kzhu",
+  "epoch_btjd": 1558.0,
+  "dur_h": 6.24,
+  "depth_ppm": 700.0,
+  "Tmag": 10.304,
+  "epoch_sector": "9",
+  "observed_epoch_sectors": [
+   9
+  ],
+  "tesscut_sectors": [
+   9,
+   10,
+   36,
+   37,
+   62,
+   63,
+   64,
+   89
+  ],
+  "lc_sectors": [
+   9,
+   10,
+   36,
+   37,
+   62,
+   64,
+   89
+  ],
+  "pipeline_product": {
+   "9": "TESS-SPOC"
+  },
+  "products_at_epoch_sector": [
+   "CDIPS_1800",
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "T16_1800",
+   "TARS_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 359819459.01",
+    "notes": "Possible single transit event; data can easily mask other transits",
+    "date": "2025-07-25",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 359819459.01",
+    "epoch": "2458558",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "700",
+    "dur": "6.24",
+    "snr": "",
+    "pnotes": "Possible single transit event; data can easily mask other transits",
+    "puser": "kzhu",
+    "pdate": "2025-07-25 09:40:46"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "36887038": {
+  "TIC": 36887038,
+  "CTOI": 36887038.01,
+  "user": "wzhou",
+  "epoch_btjd": 2701.6690000002272,
+  "dur_h": 3.7,
+  "depth_ppm": 4000.0,
+  "Tmag": 10.0907,
+  "epoch_sector": "51",
+  "observed_epoch_sectors": [
+   51
+  ],
+  "tesscut_sectors": [
+   51
+  ],
+  "lc_sectors": [
+   51
+  ],
+  "pipeline_product": {
+   "51": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 36887038.01",
+    "notes": "Single transit event from the XESP working group. Details at: http://xjltp.china-vo.org/xesp.html",
+    "date": "2022-07-02",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 36887038.01",
+    "epoch": "2459701.669",
+    "epoch_e": "0.005",
+    "per": null,
+    "dep_p": "4000",
+    "dur": "3.7",
+    "snr": "",
+    "pnotes": "Single transit event from the XESP working group. Details at: http://xjltp.china-vo.org/xesp.html",
+    "puser": "wzhou",
+    "pdate": "2022-07-02 23:51:24"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "38005437": {
+  "TIC": 38005437,
+  "CTOI": 38005437.01,
+  "user": "amarino",
+  "epoch_btjd": 2989.642033000011,
+  "dur_h": 3.82,
+  "depth_ppm": 2141.0,
+  "Tmag": 11.4962,
+  "epoch_sector": "62",
+  "observed_epoch_sectors": [
+   62
+  ],
+  "tesscut_sectors": [
+   62,
+   89,
+   99
+  ],
+  "lc_sectors": [
+   62,
+   89,
+   99
+  ],
+  "pipeline_product": {
+   "62": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 38005437.01",
+    "notes": "ExoMAST single transit event from the UAN working group",
+    "date": "2024-08-05",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 38005437.01",
+    "epoch": "2459989.642033",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "2141",
+    "dur": "3.82",
+    "snr": "",
+    "pnotes": "ExoMAST single transit event from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-05 06:07:02"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "425585592": {
+  "TIC": 425585592,
+  "CTOI": 425585592.01,
+  "user": "steuer",
+  "epoch_btjd": 1618.404999999795,
+  "dur_h": 3.73,
+  "depth_ppm": 1746.76,
+  "Tmag": 10.1122,
+  "epoch_sector": "11",
+  "observed_epoch_sectors": [
+   11
+  ],
+  "tesscut_sectors": [
+   11,
+   37,
+   64,
+   102
+  ],
+  "lc_sectors": [
+   11,
+   37,
+   64,
+   102
+  ],
+  "pipeline_product": {
+   "11": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "SPOC_120",
+   "TARS_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 425585592.01",
+    "notes": "Found with our in-house single transit finder",
+    "date": "2021-02-11",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 425585592.01",
+    "epoch": "2458618.405",
+    "epoch_e": "0.0146",
+    "per": null,
+    "dep_p": "1746.76",
+    "dur": "3.73",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder",
+    "puser": "steuer",
+    "pdate": "2021-02-11 05:15:01"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "427459423": {
+  "TIC": 427459423,
+  "CTOI": 427459423.01,
+  "user": "steuer",
+  "epoch_btjd": 2192.126000000164,
+  "dur_h": 19.2,
+  "depth_ppm": 1100.0,
+  "Tmag": 10.4074,
+  "epoch_sector": "32",
+  "observed_epoch_sectors": [
+   32
+  ],
+  "tesscut_sectors": [
+   6,
+   32,
+   98
+  ],
+  "lc_sectors": [
+   6,
+   32,
+   98
+  ],
+  "pipeline_product": {
+   "32": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "CDIPS_1800",
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 427459423.01",
+    "notes": "Found with our in-house single transit finder; Sector 32",
+    "date": "2021-02-05",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 427459423.01",
+    "epoch": "2459192.126",
+    "epoch_e": "0.018",
+    "per": null,
+    "dep_p": "1100",
+    "dur": "19.2",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder; Sector 32",
+    "puser": "steuer",
+    "pdate": "2021-02-05 05:03:34"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "4689632": {
+  "TIC": 4689632,
+  "CTOI": 4689632.01,
+  "user": "steuer",
+  "epoch_btjd": 2207.1490000002086,
+  "dur_h": 2.4,
+  "depth_ppm": 4960.0,
+  "Tmag": 17.0816,
+  "epoch_sector": "33",
+  "observed_epoch_sectors": [],
+  "tesscut_sectors": [
+   92
+  ],
+  "lc_sectors": [
+   92
+  ],
+  "pipeline_product": {},
+  "products_at_epoch_sector": [],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 4689632.01",
+    "notes": "Found with our in-house single transit finder",
+    "date": "2021-02-15",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 4689632.01",
+    "epoch": "2459207.149",
+    "epoch_e": "0.006",
+    "per": null,
+    "dep_p": "4960",
+    "dur": "2.4",
+    "snr": "",
+    "pnotes": "Found with our in-house single transit finder",
+    "puser": "steuer",
+    "pdate": "2021-02-15 04:52:08"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "63700569": {
+  "TIC": 63700569,
+  "CTOI": 63700569.01,
+  "user": "amarino",
+  "epoch_btjd": 2826.5709150000475,
+  "dur_h": 3.1,
+  "depth_ppm": 343.0,
+  "Tmag": 9.32204,
+  "epoch_sector": "56",
+  "observed_epoch_sectors": [
+   56
+  ],
+  "tesscut_sectors": [
+   15,
+   16,
+   56,
+   57,
+   76,
+   77,
+   82,
+   83,
+   84
+  ],
+  "lc_sectors": [
+   15,
+   16,
+   56,
+   57,
+   76,
+   77,
+   83,
+   84
+  ],
+  "pipeline_product": {
+   "56": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TARS_200",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 63700569.01",
+    "notes": "ExoMAST. transit event detected from the UAN working group",
+    "date": "2024-08-14",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 63700569.01",
+    "epoch": "2459826.570915",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "343",
+    "dur": "3.1",
+    "snr": "",
+    "pnotes": "ExoMAST. transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-14 13:08:22"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "64254425": {
+  "TIC": 64254425,
+  "CTOI": 64254425.01,
+  "user": "amarino",
+  "epoch_btjd": 1492.739035999868,
+  "dur_h": 2.23,
+  "depth_ppm": 15833.0,
+  "Tmag": 14.2293,
+  "epoch_sector": "7",
+  "observed_epoch_sectors": [
+   7
+  ],
+  "tesscut_sectors": [
+   7,
+   87
+  ],
+  "lc_sectors": [
+   7,
+   87
+  ],
+  "pipeline_product": {
+   "7": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "SPOC_120",
+   "T16_1800",
+   "TARS_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 64254425.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-14",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 64254425.01",
+    "epoch": "2458492.739036",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "15833",
+    "dur": "2.23",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-14 10:17:11"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "65290698": {
+  "TIC": 65290698,
+  "CTOI": 65290698.01,
+  "user": "amarino",
+  "epoch_btjd": 1396.4133150000123,
+  "dur_h": 8.95,
+  "depth_ppm": 2243.0,
+  "Tmag": 10.4392,
+  "epoch_sector": "3",
+  "observed_epoch_sectors": [
+   3
+  ],
+  "tesscut_sectors": [
+   3,
+   4,
+   30,
+   97,
+   105,
+   106,
+   107,
+   108
+  ],
+  "lc_sectors": [
+   3,
+   4,
+   30,
+   97,
+   105,
+   106,
+   107
+  ],
+  "pipeline_product": {
+   "3": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "SPOC_120",
+   "T16_1800",
+   "TASOC_120",
+   "TASOC_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 65290698.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-15",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 65290698.01",
+    "epoch": "2458396.413315",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "2243",
+    "dur": "8.95",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-15 02:12:24"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "66013259": {
+  "TIC": 66013259,
+  "CTOI": 66013259.01,
+  "user": "amarino",
+  "epoch_btjd": 2910.848755000159,
+  "dur_h": 1.77,
+  "depth_ppm": 6735.0,
+  "Tmag": 12.8029,
+  "epoch_sector": "58 59",
+  "observed_epoch_sectors": [
+   59
+  ],
+  "tesscut_sectors": [
+   19,
+   59,
+   73,
+   86
+  ],
+  "lc_sectors": [
+   59,
+   73,
+   86
+  ],
+  "pipeline_product": {
+   "59": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TARS_200",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 66013259.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-15",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 66013259.01",
+    "epoch": "2459910.848755",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "6735",
+    "dur": "1.77",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-15 11:23:12"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "66101137": {
+  "TIC": 66101137,
+  "CTOI": 66101137.01,
+  "user": "amarino",
+  "epoch_btjd": 2239.0203550001606,
+  "dur_h": 3.97,
+  "depth_ppm": 18714.0,
+  "Tmag": 13.4902,
+  "epoch_sector": "34",
+  "observed_epoch_sectors": [
+   34
+  ],
+  "tesscut_sectors": [
+   7,
+   34,
+   88
+  ],
+  "lc_sectors": [
+   7,
+   34,
+   88
+  ],
+  "pipeline_product": {
+   "34": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 66101137.01",
+    "notes": "ExoMAST. transit event detected from the UAN working group",
+    "date": "2024-08-15",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 66101137.01",
+    "epoch": "2459239.020355",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "18714",
+    "dur": "3.97",
+    "snr": "",
+    "pnotes": "ExoMAST. transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-15 11:58:56"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "83524788": {
+  "TIC": 83524788,
+  "CTOI": 83524788.01,
+  "user": "amarino",
+  "epoch_btjd": 2884.018141000066,
+  "dur_h": 2.58,
+  "depth_ppm": 576.0,
+  "Tmag": 9.829001,
+  "epoch_sector": "58",
+  "observed_epoch_sectors": [
+   58
+  ],
+  "tesscut_sectors": [
+   17,
+   18,
+   24,
+   57,
+   58,
+   77,
+   78,
+   85
+  ],
+  "lc_sectors": [
+   17,
+   18,
+   24,
+   58,
+   77,
+   78,
+   85
+  ],
+  "pipeline_product": {
+   "58": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 83524788.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-13",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 83524788.01",
+    "epoch": "2459884.018141",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "576",
+    "dur": "2.58",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-13 09:10:24"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "87949211": {
+  "TIC": 87949211,
+  "CTOI": 87949211.01,
+  "user": "amarino",
+  "epoch_btjd": 2529.801529000048,
+  "dur_h": 3.21,
+  "depth_ppm": 5687.0,
+  "Tmag": 11.7193,
+  "epoch_sector": "45",
+  "observed_epoch_sectors": [
+   45
+  ],
+  "tesscut_sectors": [
+   20,
+   44,
+   45,
+   47,
+   71,
+   72
+  ],
+  "lc_sectors": [
+   20,
+   44,
+   45,
+   47,
+   71,
+   72
+  ],
+  "pipeline_product": {
+   "45": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 87949211.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-14",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 87949211.01",
+    "epoch": "2459529.801529",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "5687",
+    "dur": "3.21",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-14 10:31:56"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "88212067": {
+  "TIC": 88212067,
+  "CTOI": 88212067.01,
+  "user": "amarino",
+  "epoch_btjd": 2940.550112999976,
+  "dur_h": 1.78,
+  "depth_ppm": 6016.0,
+  "Tmag": 10.3833,
+  "epoch_sector": "60",
+  "observed_epoch_sectors": [
+   60
+  ],
+  "tesscut_sectors": [
+   20,
+   47,
+   60,
+   73
+  ],
+  "lc_sectors": [
+   60,
+   73
+  ],
+  "pipeline_product": {
+   "60": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "QLP_200",
+   "SPOC_120",
+   "TARS_200",
+   "TESS-SPOC_200"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 88212067.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-14",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 88212067.01",
+    "epoch": "2459940.550113",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "6016",
+    "dur": "1.78",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-14 10:45:41"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "88467632": {
+  "TIC": 88467632,
+  "CTOI": 88467632.01,
+  "user": "amarino",
+  "epoch_btjd": 2777.8327119997703,
+  "dur_h": 5.52,
+  "depth_ppm": 3527.0,
+  "Tmag": 10.3978,
+  "epoch_sector": "54",
+  "observed_epoch_sectors": [
+   54
+  ],
+  "tesscut_sectors": [
+   54,
+   81
+  ],
+  "lc_sectors": [
+   54,
+   81
+  ],
+  "pipeline_product": {
+   "54": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "CDIPS_1800",
+   "QLP_600",
+   "SPOC_120",
+   "TARS_600",
+   "TESS-SPOC_600"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 88467632.01",
+    "notes": "ExoMAST. single transit event detected from the UAN working group",
+    "date": "2024-08-14",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 88467632.01",
+    "epoch": "2459777.832712",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "3527",
+    "dur": "5.52",
+    "snr": "",
+    "pnotes": "ExoMAST. single transit event detected from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-14 11:44:32"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "92709947": {
+  "TIC": 92709947,
+  "CTOI": 92709947.01,
+  "user": "amarino",
+  "epoch_btjd": 1327.5907519999892,
+  "dur_h": 2.41,
+  "depth_ppm": 1885.0,
+  "Tmag": 9.6242,
+  "epoch_sector": "1",
+  "observed_epoch_sectors": [
+   1
+  ],
+  "tesscut_sectors": [
+   1,
+   28,
+   68,
+   95
+  ],
+  "lc_sectors": [
+   1,
+   28,
+   68,
+   95
+  ],
+  "pipeline_product": {
+   "1": "SPOC_120"
+  },
+  "products_at_epoch_sector": [
+   "GSFC-ELEANOR-LITE_1800",
+   "QLP_1800",
+   "SPOC_120",
+   "T16_1800",
+   "TARS_1800",
+   "TASOC_120",
+   "TASOC_1800",
+   "TESS-SPOC_1800",
+   "TGLC_1800"
+  ],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 92709947.01",
+    "notes": "ExoMAST single transit event from the UAN working group",
+    "date": "2024-08-04",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 92709947.01",
+    "epoch": "2458327.590752",
+    "epoch_e": null,
+    "per": null,
+    "dep_p": "1885",
+    "dur": "2.41",
+    "snr": "",
+    "pnotes": "ExoMAST single transit event from the UAN working group",
+    "puser": "amarino",
+    "pdate": "2024-08-04 13:18:22"
+   }
+  ],
+  "exofop_files": [],
+  "exofop_tois": []
+ },
+ "95768667": {
+  "TIC": 95768667,
+  "CTOI": 95768667.01,
+  "user": "eisner",
+  "epoch_btjd": 1818.350000000093,
+  "dur_h": 4.5,
+  "depth_ppm": 1000.0,
+  "Tmag": 9.79566,
+  "epoch_sector": "19",
+  "observed_epoch_sectors": [],
+  "tesscut_sectors": [
+   22,
+   45,
+   46,
+   48
+  ],
+  "lc_sectors": [
+   22,
+   48
+  ],
+  "pipeline_product": {},
+  "products_at_epoch_sector": [],
+  "exofop_ctoi": [
+   {
+    "ctoi": "TIC 95768667.01",
+    "notes": "Planet Hunters TESS candidate. Single transit event.",
+    "date": "2020-06-22",
+    "disp": "PC"
+   }
+  ],
+  "exofop_params": [
+   {
+    "name": "TIC 95768667.01",
+    "epoch": "2458818.35",
+    "epoch_e": "0.05",
+    "per": "0",
+    "dep_p": "1000",
+    "dur": "4.5",
+    "snr": "",
+    "pnotes": "Planet Hunters TESS candidate. Single transit event.",
+    "puser": "eisner",
+    "pdate": "2020-06-22 01:22:25"
+   }
+  ],
+  "exofop_files": [
+   "TIC95768667S-ct20210513_1141.fits",
+   "TIC95768667S-ct20210513_1142.fits",
+   "TIC95768667S-ct20210513_1140.fits",
+   "TIC95768667S-ct20210508_1131.fits",
+   "TIC95768667S-ct20210508_1132.fits",
+   "TIC95768667S-ct20210508_1130.fits",
+   "TIC95768667S-ct20210430_1132.fits",
+   "TIC95768667S-ct20210430_1131.fits",
+   "TIC95768667S-ct20210430_1130.fits",
+   "TIC95768667S-ct20210415_1143.fits",
+   "TIC95768667S-ct20210415_1142.fits",
+   "TIC95768667S-ct20210415_1141.fits",
+   "TIC95768667S-ct20210410_1140.fits",
+   "TIC95768667S-ct20210410_1142.fits",
+   "TIC95768667S-ct20210410_1141.fits",
+   "TIC95768667S-ct20210404_1135.fits",
+   "TIC95768667S-ct20210404_1134.fits",
+   "TIC95768667S-ct20210404_1133.fits"
+  ],
+  "exofop_tois": []
+ }
+}

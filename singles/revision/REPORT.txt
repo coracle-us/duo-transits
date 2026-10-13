@@ -1,0 +1,218 @@
+AAS82207 REVISION: EDITOR QUESTIONS Q6 (34 NOT-RECOVERED EVENTS) AND Q4 (OWN PHOTOMETRY)
+===================================================================================
+Date: 2026-10-13. Work directory: singles/revision/ (big downloads in data/, gitignored).
+Nothing outside singles/revision/ was modified; nothing committed. data/raw/ was read only:
+new light curves, HLSP files and TESScut cutouts went to singles/revision/data/.
+
+Scripts (run in this order, from the repo root, with .venv/Scripts/python):
+  search_products.py      fresh MAST searches (all LC products incl. HLSPs; TESScut sectors) for the 34
+  audit_34.py             per-star, per-product, per-column measurements at the epoch; plots
+  offset_check.py         pipeline event test at epoch -0.5 d / 0 / +0.5 d (34 + all 34 UAN CTOIs)
+  classify_audit.py       hand-assigned reason categories -> audit_34.csv, audit_34_summary.csv
+  recovery_stats.py       overall recovery of the 306 by product -> recovery_by_product.csv
+  photometry_validation.py  own TESScut photometry vs SPOC 2-min -> photometry_validation*.csv
+  revlib.py, hlsp_io.py   shared code (revlib.own_photometry is a copy of
+                          singles/scripts/tesscut_photometry.photometry that returns e-/s instead of
+                          writing into data/raw)
+  show_audit.py           prints a per-star view of the audit outputs
+Outputs:
+  audit_34.csv            TIC, CTOI, uploader, epoch, sector, products, pipeline verdict, dip depth/SNR
+                          per product (SPOC PDCSAP+SAP, TESS-SPOC, QLP, TGLC, eleanor, T16, CDIPS, TARS,
+                          TASOC, own), dip at +0.5 d, reason, notes, ExoFOP note
+  audit_34_summary.csv    counts per reason
+  audit_measurements.csv  all 400-odd star x product x column measurements
+  audit_sector_scan.csv   single-event box search over the epoch sector (strongest dip, # dips)
+  offset_check.csv        half-day offset test
+  plots/<TIC>_audit.png   34 diagnostic plots, every product +-1 d around the epoch, catalogued
+                          depth/duration drawn in red, quality-flagged cadences as orange crosses
+  photometry_validation.csv, photometry_validation_transits.csv, plots/phot_<TIC>_s<sector>.png
+
+---------------------------------------------------------------------------------
+PART 1 (Q6). OVERALL RECOVERY OF THE CATALOGUED EVENT
+---------------------------------------------------------------------------------
+Event test (pilot.py): alias_pipeline.test_window at epoch_btjd, +-0.03 d offset scan, quality==0,
+best product per sector (SPOC 2-min PDCSAP > TESS-SPOC PDCSAP > QLP SAP > SPOC 20-s > own).
+"Recovered" = verdict 'supported' (depth > 0.5x catalogued and SNR > 5).
+
+  306 stars: 272 recovered (89%), 34 not.
+  Product used at the epoch:  SPOC 2-min 258/285 recovered;  TESS-SPOC 6/7;  QLP 8/8;
+                              no data at the epoch 0/6.
+  Own TESScut photometry was never the product at a catalogued epoch (all epochs precede S100).
+  34 stars had own photometry in some later sector; 32 of them recovered the event.
+  Recovered events: median depth / catalogued depth = 1.16 (16-84%: 0.91-1.34); median SNR 14.6.
+  (recovery_by_product.csv)
+
+Uploader concentration: the UAN working group ("ExoMAST ... UAN", user amarino) uploaded 34 of
+the 306 CTOIs; 18 of those 34 (53%) are among the not-recovered, against 16 of the other 272 (6%).
+
+---------------------------------------------------------------------------------
+PART 1 (Q6). AUDIT OF THE 34
+---------------------------------------------------------------------------------
+For each star: fresh MAST search; every LC product covering the epoch (SPOC 2-min SAP and PDCSAP,
+TESS-SPOC SAP/PDCSAP, QLP SAP/KSPSAP, TGLC, GSFC-ELEANOR-LITE, T16, CDIPS, TARS, TASOC) plus our
+own TESScut aperture photometry; measured with the same test_window (a) as the pipeline does
+(quality==0), (b) keeping quality-flagged cadences, (c) scanning +-1 d for the best dip; a box search
+over the whole sector; a half-day offset test; the ExoFOP target record. Then each plot was
+inspected and one reason assigned, taking the first that applies in the order a, b, f, d, c, e.
+
+Reason counts (audit_34_summary.csv):
+  (a) no TESS data at the epoch in any product ..................................  1
+  (b) data exist but not used by the pipeline (flagged / PDCSAP NaN), dip visible   1
+  (c) dip at the catalogued time, failed the test (depth < 0.5x or SNR < 5) ...... 13
+        5 too shallow (0.28-0.49x: CTOI depth overstated), 8 below SNR 5
+  (d) dip at a different time: epoch error in the CTOI ............................  9
+        6 UAN epochs 0.5 d early (dip at +11.2 to +12.1 h); 1 typo of exactly -100 d;
+        1 wrong epoch since corrected on ExoFOP by another user (2026-09-24);
+        1 epoch given to the integer day (feature at +9.5 h, 2-min apertures only)
+  (e) no dip in any reduction ...................................................  6
+  (f) other ......................................................................  4
+        3 truncated TIC IDs (trailing zeros dropped) that duplicate CTOIs we ALSO analysed;
+        1 neighbour's blended event shared by two CTOIs 7.5" apart
+  Total 34
+
+Bottom line for the editor: in no case did a pipeline light curve (SAP or PDCSAP) show the
+catalogued event where our pipeline product missed it because of photometry. The causes are the
+CTOI entries themselves (epoch errors 9, wrong TIC 3, catalogued depth overstated 5, no event 6,
+no data 1), the event-test thresholds (8 below SNR 5), quality flags (1) and a blend (1). The one
+product-dependent case inside (c) is TIC 38005437, where PDCSAP suppresses a dip that SAP,
+TESS-SPOC and our photometry all show; and in TIC 152283270 the only feature is 2-min-aperture-only.
+Counting (b)+(c)+(d) and 354032500, the event is present in TESS data for 24 of the 34.
+
+Side findings that matter for the note:
+  * The 306 include three duplicate stars: CTOIs 1461133.01, 3181884.01 and 4689632.01 are copies of
+    14611330.01, 318188400.01 and 468963200.01 (same uploader, epoch, depth and duration; re-uploaded
+    under the correct TIC on 2021-03-11). The truncated TICs were never observed at the epoch; the
+    correct TICs are in our sample and recovered. Unique stars: 303. CTOIs 354032500.01 and
+    354032501.01 describe one blended event.
+  * Seven of the 34 show periodic dips once the epoch is fixed or flags ignored (6121688,
+    329064084 (~4.75 d), 38005437 (~2.1 d), 66013259 (~2.91 d), 88212067, 354032500/501 (~1.6 d)):
+    EB-like, not single transits. Had the epochs been right, they would have entered the
+    repeat classes rather than "not recovered".
+  * Rule change worth considering (not applied): widening the event search to +-0.6 d would have
+    recovered the six half-day UAN slips; this was NOT done, as it changes the pre-registered method.
+
+One line per star:
+  (a) TIC 408921284 [deelias, S66, T=12.4, 36200 ppm, 1.1 h]: epoch in S66, star observed only in S54/S81 (TESScut and MAST); no data at the epoch.
+  (b) TIC 66013259 [amarino, S59]: epoch in flagged scattered light (PDCSAP NaN); TARS 6.9 ppt SNR 6.7, own 4.3 ppt SNR 4.1 at the epoch; ~2.91 d periodic dips through the epoch.
+  (c) TIC 36887038 [wzhou, S51]: clear dip 1.9 ppt = 0.48x of 4.0 ppt, SNR 15.7; just under the depth cut.
+  (c) TIC 38005437 [amarino, S62]: PDCSAP 1.6 ppt SNR 3.3; SAP 3.3 ppt SNR 7.2, TESS-SPOC and own supported; ~2.1 d periodic.
+  (c) TIC 63700569 [amarino, S56]: 440-620 ppm (1.3-1.8x) at SNR 2.0 (PDCSAP) to 4.6; below SNR 5.
+  (c) TIC 83524788 [amarino, S58]: 720-830 ppm (1.3-1.45x), SNR 4.4-4.9; below SNR 5.
+  (c) TIC 87949211 [amarino, S45]: 2.8-4.7 ppt (0.5-0.8x), SNR 3.1-3.9; below SNR 5.
+  (c) TIC 169251938 [steuer, S9]: 577 ppm (0.49x) SNR 4.2 in SPOC 2-min only.
+  (c) TIC 250103631 [amarino, S42]: 1.2-1.3 ppt = 0.28-0.31x, SNR 5-7 in all products; CTOI depth ~3x too large.
+  (c) TIC 355095316 [amarino, S27]: 1.15-h event, 6.8 ppt (1.4x) SNR 4.1 in PDCSAP; QLP KSPSAP SNR 8.5.
+  (c) TIC 356240333 [steuer, S26]: 434 ppm (1.03x) SNR 3.0; 9.7-h, 420 ppm event at the noise level.
+  (c) TIC 359819459 [kzhu, S9]: integer-day epoch; 650 ppm (0.93x) SNR 4.1 at the epoch, best 720 ppm SNR 8 at -2.2 h; marginal (two similar dips in S9).
+  (c) TIC 425585592 [steuer, S11]: 1.55 ppt (0.89x) SNR 3.9 in SPOC 2-min, SNR 5.8 in TESS-SPOC; absent in QLP/TGLC/TARS/own. Marginal.
+  (c) TIC 427459423 [steuer, S32]: 19-h event; 516 ppm (0.47x) SNR 6.2 in PDCSAP only. Marginal.
+  (c) TIC 431945694 [marlecha, S61]: 5.6 ppt = 0.40x of 14 ppt, SNR 16, all products; CTOI depth overstated.
+  (d) TIC 6121688 [amarino, S51]: 12-13 ppt dip at +12 h (flagged cadences); more ~13 ppt dips in S51 (EB-like).
+  (d) TIC 64254425 [amarino, S7, T=14.2]: 15-18 ppt dip at +11.9 h, SNR ~6 (PDCSAP, TESS-SPOC, TGLC).
+  (d) TIC 88212067 [amarino, S60]: 4.85 ppt dip at +11.96 h, SNR 23; periodic.
+  (d) TIC 95768667 [eisner/PHT]: epoch in unobserved S19; 0.8 ppt SNR 8 dip at exactly +100.0 d (S22): typo.
+  (d) TIC 130718055 [eisner/PHT]: epoch in unobserved S21; ExoFOP correction (2026-09-24) to S46, BTJD 2572.68; we see 3.9 ppt SNR 55 at 2572.71.
+  (d) TIC 152283270 [lipponen, S1]: epoch given as integer day; only a 3.3 ppt (0.33x) feature at +9.5 h, in 2-min apertures only (SPOC, TASOC), absent in FFI products.
+  (d) TIC 209217764 [amarino, S67]: 13.3 ppt dip at +12.05 h, SNR ~100, all products.
+  (d) TIC 329064084 [amarino, S38]: 4.8 ppt at +11.3 h, SNR 17; six dips ~4.75 d apart.
+  (d) TIC 354032501 [amarino, S75]: the BTJD 3341.04 event, 0.50 d after its epoch (QLP, own); shared with 354032500.
+  (e) TIC 65290698 [amarino, S3]: epoch in data flagged in every product; no dip flagged or not; only a post-gap ramp.
+  (e) TIC 66101137 [amarino, S34]: no 18.7 ppt dip anywhere (PDCSAP 3.2 ppt SNR 2.9); an unrelated deep event 12.2 d later.
+  (e) TIC 88467632 [amarino, S54]: PDCSAP NaN; flagged SAP, TESS-SPOC SAP, CDIPS and own flat (< 0.5 ppt vs 3.5 ppt).
+  (e) TIC 92709947 [amarino, S1]: flat in 19 product/column combinations; epoch equals CTOI 237332597.02's (33 deg away) to 2.6 min.
+  (e) TIC 255989063 [kzhu, S13]: nothing in any of 6 products (PDCSAP -109 ppm).
+  (e) TIC 326397318 [steuer, S1]: 16-min, 1 ppt event; 1.2 ppt at SNR 2.0-2.8 in 2-min; unresolvable in FFIs.
+  (f) TIC 1461133, 3181884, 4689632 [steuer, S33]: truncated TIC IDs duplicating 14611330.01, 318188400.01, 468963200.01.
+  (f) TIC 354032500 [amarino, S75, T=14.2]: neighbour's blended event (354032501, 7.5" away): 131 ppt in QLP, 5.8 ppt SAP, 9.0 ppt own (0.29x).
+Full notes, with per-product depth/SNR: audit_34.csv (columns notes, depth_snr_per_product).
+
+---------------------------------------------------------------------------------
+PART 2 (Q4). VALIDATION OF OUR TESSCUT APERTURE PHOTOMETRY
+---------------------------------------------------------------------------------
+Method under test (singles/scripts/tesscut_photometry.py): 15x15-px TESScut cutout; aperture = pixels
+within 1.6 px of the WCS position AND above the cutout's 60th-percentile median flux (8-9 px; 4 px
+for the T=15.5 star); background = per-frame median of the faintest 40% of pixels; quality == 0.
+No crowding or flux-fraction correction. Reference: SPOC 2-min SAP_FLUX/PDCSAP_FLUX of the same
+sector, quality == 0, averaged over each FFI exposure (>= 60% coverage).
+
+Sample (11 stars, T = 8.5-15.5): TIC 147035057 S33 (original case, 600-s FFIs); eight CP/KP TOIs in
+S91-S107 (200-s FFIs; S103/105/106/107 are the regime in which we used own photometry):
+TOI-267 S105, TOI-105 S106, TOI-102 S98, TOI-192 S103, TOI-774 S91, TOI-7716 S107, TOI-108 S95,
+TOI-7501 S92; non-transiting TIC 65290698 S105; faint TIC 1461133 S93 (T=15.5, CROWDSAP 0.04, out of
+range, reported for completeness).
+
+Per-star numbers (photometry_validation.csv):
+ TIC        S   Tmag  ap own/SPOC  own/SAP own/PDC own/ZP  p2p own/SAP  1h own/SAP  steps  depth own/SAP/PDC (ppm)  own/PDC  dT0 own-PDC
+ 147035057  33  8.49   8 / 26      0.798   0.802   0.85    277/244     153/140      0.8   3631/3542/3740           0.97     -0.5 min (1 ecl.)
+ 166836920 105  8.93   8 / 22      0.794   0.757   0.81    958/546    1091/218     20.6   5427/5421/5476           0.99     -2.0 +- 1.9 (4)
+ 144065872 106  9.50   8 / 21      0.782   0.737   0.80    729/546     279/165     13.0  11842/11797/11826         1.00     -0.1 +- 0.4 (8)
+ 149603524  98  9.71   8 / 16      0.882   0.830   0.87    789/766     337/280     15.6  14044/13774/14088         1.00     +0.4 +- 0.5 (9)
+ 183537452 103 10.25   9 / 14      0.883   0.800   0.85    926/845     354/303      3.4  11350/11389/11462         0.99     -0.2 +- 0.1 (5)
+  65290698 105 10.44   8 / 13      0.900   0.801   0.84   1159/1018    448/348      2.9   (no transit)
+ 294301883  91 11.35   8 /  8      0.991   0.799   0.87   1539/1664    449/504     21.4  18096/17673/17715         1.02     -0.2 +- 0.1 (3)
+  46432937 107 12.37   8 /  5      1.261   0.894   0.91   2987/2871    941/897     12.5  40834/45793/47520         0.86     -0.8 +- 0.4 (15)
+ 289793076  95 13.16   8 /  7      1.137   1.135   1.22   4610/5105   2252/2508    58.7  16238/16835/21840         0.74     +1.7 +- 3.0 (7)
+ 271898990  92 14.07   8 /  4      1.585   1.025   0.99  10915/11828  3253/3392    13.4  12031/14655/17394         0.69     +0.6 +- 7.7 (12)
+   1461133  93 15.49   4 /  4      0.840  13.4    13.3    4801/3502   1657/1442    32.6   (no transit)
+ (own/ZP = own flux / (15000 e-/s x 10^(-0.4 (T-10))), the TESS handbook zero point; PDC/ZP is
+  1.02-1.09 for all but the T=15.5 star. p2p and 1h in ppm, detrended with a 1-d running median,
+  transits masked. "steps" = max-min spread (ppt) of the own/SAP level between data segments split
+  at gaps > 1 h. depth = maximum depth of a batman fit (P fixed, rp, a/R*, b, T0 free). dT0 = mean
+  +- rms of per-transit own - PDCSAP mid-time differences, number of transits in brackets.)
+
+(i) Absolute flux. For T < 11.5 our flux is 0.78-0.99 of SAP_FLUX and 0.74-0.83 of PDCSAP_FLUX
+    (0.80-0.87 of the zero-point expectation, against 1.05-1.09 for PDCSAP): the flux lost outside
+    our 8-9-pixel aperture, which is smaller than SPOC's (13-26 px) for bright stars; the ratio is
+    stable within a sector (16-84%: 0.7975-0.7980 for TIC 147035057). For T = 12.4-14.1, where SPOC
+    uses 4-7 px, our 8-px aperture collects 1.14-1.59x SAP and 0.89-1.13x PDCSAP, i.e. more
+    contaminating flux (CROWDSAP 0.71-0.96). Background per pixel agrees with SAP_BKG/N_ap to
+    1-9% (29% for the T=15.5 star), correlation >= 0.97.
+(ii) Normalised light curves. Point-to-point scatter per FFI cadence: own/SAP median 1.07
+    (0.90-1.75); 1-h scatter after a 1-d running median: own/SAP median 1.13 (0.89-5.0).
+    Equal or better than SPOC for T >= 11.3; worse for the brightest stars (TOI-267 T=8.9:
+    1.75x p2p, 5x at 1 h; TOI-105: 1.3x, 1.7x), where the small aperture makes the flux pointing-
+    sensitive. Cadence retention: own 80-100% vs SPOC 58-94% (SPOC flags more scattered light).
+(iii) Transits. Depths own/PDCSAP = 0.97-1.02 for the six uncrowded systems (T = 8.5-11.4,
+    CROWDSAP >= 0.94), own/SAP 1.00-1.03. For the three crowded faint hosts own/PDCSAP = 0.86, 0.74,
+    0.69 (own/SAP 0.89, 0.97, 0.82): we apply no crowding correction, so depths there are diluted.
+    The original case TIC 147035057 S33: 3631 vs 3740 ppm PDCSAP (0.97) and 3542 SAP; the README's
+    3.21 vs 3.28 ppt used box depths and is consistent. Mid-times: mean per-transit own-PDCSAP
+    offsets -2.0 to +1.7 min (|offset| <= 0.8 min for 7 of 9), rms 0.1-3.0 min (7.7 min at T=14.1),
+    in line with the own-photometry timing errors (median 0.4-7 min).
+(iv) Systematics. Within a data segment our curve follows SAP (not PDCSAP: we do no cotrending):
+    after per-segment normalisation the 1-h binned own vs SAP correlation is 0.76-1.00 for 8 of 10
+    (0.18 and -0.21 for TOI-102 and TOI-267, two of the three brightest 200-s cases). The main difference is LEVEL STEPS of the
+    own/SAP ratio between data segments: median 13 ppt (0.8-59 ppt) across gaps > 1 h, median 5 ppt
+    across gaps > 0.5 d. The event and repeat tests fit a free offset per segment only at gaps > 0.5 d
+    (alias_pipeline.SEG_GAP), so a step at a momentum dump (short gap) inside a test window is NOT
+    absorbed except by the local polynomial.
+
+CAVEAT worth a look before the revision (not acted on): the three tentative S107 repeats rest
+only on own photometry (268534931, 139726266, 168702709), and 268534931's egress gap coincides
+with a momentum dump across which "the flux level jumps by ~5 ppt" (singles/README.md). That is
+the step behaviour found here. Wording in the note should keep them tentative.
+
+---------------------------------------------------------------------------------
+SUGGESTED MANUSCRIPT TEXT
+---------------------------------------------------------------------------------
+Q6 (Methods or Results):
+  "We recover the catalogued event (depth 0.5-2x catalogued, SNR >= 5, within 0.03 d of the
+  catalogued epoch) for 272 of the 306 stars, 258 of them in SPOC 2-min light curves; recovered
+  depths have a median of 1.16 times the catalogued value. We inspected the other 34 in every
+  available light curve (SPOC SAP and PDCSAP, TESS-SPOC, QLP and five other FFI reductions) and in
+  our own photometry; in none does a pipeline light curve show an event that our reduction misses.
+  Instead, 9 CTOIs have wrong epochs (six are 0.5 d early), 3 carry truncated TIC IDs duplicating
+  other CTOIs, 13 show a dip that is shallower than half the catalogued depth or below SNR 5,
+  6 show no dip in any reduction, and 3 are explained by quality flags, a blend or no data."
+  [If the word budget is tight, keep the first and last sentences.]
+  Also: correct 306 -> 303 unique stars (three truncated-TIC duplicates), or footnote it.
+
+Q4 (Methods, replacing "it recovers a known eclipse depth to 2%"):
+  "We validated this photometry against SPOC 2-min light curves of 11 stars (T = 8.5-15.5)
+  in Sectors 33 and 91-107, including eight known transiting planets. Our 8-9-pixel aperture
+  collects 0.78-0.99 of the SPOC SAP flux for T < 11.5 (more than SAP for fainter, crowded stars,
+  where SPOC uses 4-7 pixels), with backgrounds agreeing to 1-9%. Transit depths match PDCSAP to
+  within 3% for uncrowded hosts (we apply no crowding correction, so crowded faint hosts appear up
+  to 30% shallower), mid-times agree to within 2 min, and the per-cadence scatter is a median 1.07
+  times SPOC's; the main difference is flux steps of several ppt between data segments, which our
+  segment-wise baselines absorb at orbit gaps."

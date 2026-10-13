@@ -1,0 +1,50 @@
+TIC,user,cls,epoch,depth_ppm,dur_h,v_m05,d_m05,snr_m05,bestdt_h_m05,bestd_m05,bestsnr_m05,prod_m05,v_0,d_0,snr_0,bestdt_h_0,bestd_0,bestsnr_0,prod_0,v_p05,d_p05,snr_p05,bestdt_h_p05,bestd_p05,bestsnr_p05,prod_p05
+152283270,lipponen,event-not-recovered,1336.0,9992.216,8.6,ambiguous,500.0,0.9,-15.6,220.0,0.9,S1 SPOC_120,ambiguous,-1695.0,-1.3,3.28,-695.0,-0.9,S1 SPOC_120,ambiguous,2276.0,9.2,9.26,3405.0,49.4,S1 SPOC_120
+51079186,amarino,duotransit / narrowed,1658.7063119998202,681.0,2.8,ambiguous,350.0,2.0,-11.26,328.0,1.9,S13 SPOC_120,supported,816.0,5.9,0.18,822.0,7.7,S13 SPOC_120,ambiguous,190.0,1.0,13.86,292.0,1.6,S13 SPOC_120
+209217764,amarino,event-not-recovered,3128.938982000109,17542.0,3.32,excluded,-7.0,-0.1,-15.6,214.0,1.5,S67 SPOC_120,ambiguous,-913.0,-0.6,-3.1,72.0,0.1,S67 SPOC_120,supported,13496.0,99.1,12.05,13346.0,102.7,S67 SPOC_120
+408921284,deelias,event-not-recovered,3124.5012019998394,36200.0,1.09,no-data,,,,,,,no-data,,,,,,,no-data,,,,,,
+431945694,marlecha,event-not-recovered,2966.9449999998324,14000.0,9.5,ambiguous,-2384.0,-1.1,-15.6,-1310.0,-0.9,S61 SPOC_120,ambiguous,5643.0,16.0,1.15,4977.0,24.5,S61 SPOC_120,ambiguous,-1748.0,-1.1,15.52,-685.0,-0.5,S61 SPOC_120
+6121688,amarino,event-not-recovered,2693.657085000072,13856.0,3.1,ambiguous,353.0,4.0,-13.59,455.0,3.5,S51 SPOC_120,ambiguous,583.0,0.7,-1.59,1196.0,2.7,S51 SPOC_120,unconstrained,,,,,,
+6610653,amarino,off-target-EB,2235.4382509998977,6338.0,5.77,ambiguous,-1166.0,-1.0,-15.6,-362.0,-0.3,S34 SPOC_120,supported,4954.0,34.9,-0.72,4667.0,43.4,S34 SPOC_120,ambiguous,-910.0,-0.7,15.32,-68.0,-0.1,S34 SPOC_120
+77437461,amarino,single,2174.3072089999914,14965.0,0.52,unconstrained,,,,,,,supported,14200.0,5.2,-0.01,16859.0,7.6,S32 SPOC_120,ambiguous,559.0,0.2,14.54,12834.0,5.4,S32 SPOC_120
+130718055,eisner,event-not-recovered,1897.8199999998324,3150.0,7.3,no-data,,,,,,,no-data,,,,,,,no-data,,,,,,
+1461133,steuer,event-not-recovered,2220.1427000002004,1274.03,4.6,no-data,,,,,,,no-data,,,,,,,no-data,,,,,,
+169251938,steuer,event-not-recovered,1566.877400000114,1176.84,4.33,ambiguous,-16.0,-0.1,-14.3,131.0,0.8,S9 SPOC_120,ambiguous,577.0,4.2,1.38,735.0,5.6,S9 SPOC_120,excluded,-153.0,-0.6,8.4,42.0,0.2,S9 SPOC_120
+209218292,amarino,single,3127.008067000192,2434.0,1.35,unconstrained,,,-8.65,-409.0,-0.5,S67 SPOC_120,supported,2244.0,5.0,0.04,2270.0,4.0,S67 SPOC_120,ambiguous,1657.0,2.8,11.1,2237.0,3.8,S67 SPOC_120
+246058802,amarino,single,3101.6865190002136,2005.0,4.17,ambiguous,-569.0,-0.8,-15.6,1097.0,1.7,S66 SPOC_120,supported,2721.0,7.4,-0.06,2643.0,7.1,S66 SPOC_120,ambiguous,-132.0,-0.2,15.49,351.0,0.6,S66 SPOC_120
+250103631,amarino,event-not-recovered,2448.830761999823,4241.0,4.9,excluded,-461.0,-1.0,-15.36,1.0,0.0,S42 SPOC_120,ambiguous,1179.0,5.1,-0.42,1154.0,6.0,S42 SPOC_120,excluded,115.0,0.3,15.5,134.0,0.3,S42 SPOC_120
+255989063,kzhu,event-not-recovered,1667.2250000000931,2000.0,3.6,ambiguous,2284.0,0.9,-8.76,2569.0,2.5,S13 SPOC_120,ambiguous,-109.0,-0.1,-3.6,258.0,0.3,S13 SPOC_120,unconstrained,3691.0,1.1,8.58,2133.0,9.1,S13 SPOC_120
+3181884,steuer,event-not-recovered,2212.6444000001065,4093.06,1.6,no-data,,,,,,,no-data,,,,,,,no-data,,,,,,
+326397318,steuer,event-not-recovered,1343.4889000002297,998.1,0.27,ambiguous,1879.0,3.0,-11.82,1926.0,3.4,S1 SPOC_120,ambiguous,1229.0,2.0,-2.56,1902.0,3.5,S1 SPOC_120,ambiguous,477.0,0.9,10.8,1450.0,2.4,S1 SPOC_120
+329064084,amarino,event-not-recovered,2335.913300000131,4901.0,8.15,excluded,9.0,0.0,-9.89,602.0,0.7,S38 SPOC_120,ambiguous,-1979.0,-1.1,-3.6,-277.0,-0.4,S38 SPOC_120,supported,4836.0,17.7,11.25,4528.0,16.3,S38 SPOC_120
+354032500,amarino,event-not-recovered,3341.044641999993,31169.0,2.67,excluded,-5882.0,-1.0,-14.0,2111.0,0.4,S75 SPOC_120,unconstrained,,,-2.8,32615.0,9.4,S75 SPOC_120,unconstrained,,,,,,
+354032501,amarino,event-not-recovered,3340.54248799989,6341.0,2.61,excluded,56.0,0.1,-15.6,808.0,1.3,S75 SPOC_120,excluded,-445.0,-0.6,2.79,1254.0,2.1,S75 SPOC_120,unconstrained,,,9.18,-285.0,-0.4,S75 SPOC_120
+355095316,amarino,event-not-recovered,2037.0180130000224,4766.0,1.15,ambiguous,-2187.0,-1.4,-14.74,279.0,0.2,S27 SPOC_120,ambiguous,6832.0,4.1,-0.03,6450.0,3.8,S27 SPOC_120,ambiguous,-2864.0,-1.7,15.07,-645.0,-0.4,S27 SPOC_120
+356240333,steuer,event-not-recovered,2029.586000000127,420.0,9.744,ambiguous,-469.0,-4.1,-8.78,-197.0,-1.4,S26 SPOC_120,ambiguous,434.0,3.0,-3.11,460.0,5.4,S26 SPOC_120,ambiguous,-390.0,-4.4,8.89,-232.0,-1.5,S26 SPOC_120
+359819459,kzhu,event-not-recovered,1558.0,700.0,6.24,ambiguous,-93.0,-0.2,-11.23,-67.0,-0.2,S9 TESS-SPOC,ambiguous,649.0,4.1,-2.04,711.0,7.9,S9 TESS-SPOC,excluded,-357.0,-1.8,15.58,25.0,0.2,S9 TESS-SPOC
+36887038,wzhou,event-not-recovered,2701.6690000002272,4000.0,3.7,ambiguous,62.0,0.1,-12.64,203.0,0.5,S51 SPOC_120,ambiguous,1911.0,15.7,0.1,1957.0,14.8,S51 SPOC_120,ambiguous,-199.0,-0.4,14.32,204.0,0.4,S51 SPOC_120
+38005437,amarino,event-not-recovered,2989.642033000011,2141.0,3.82,unconstrained,,,,,,,ambiguous,1580.0,3.3,0.6,1765.0,6.4,S62 SPOC_120,ambiguous,179.0,0.3,10.88,568.0,1.1,S62 SPOC_120
+425585592,steuer,event-not-recovered,1618.404999999795,1746.76,3.73,ambiguous,-90.0,-0.2,-14.85,160.0,0.4,S11 SPOC_120,ambiguous,1553.0,3.9,-0.62,1614.0,4.6,S11 SPOC_120,ambiguous,-374.0,-0.7,8.4,446.0,1.0,S11 SPOC_120
+427459423,steuer,event-not-recovered,2192.126000000164,1100.0,19.2,ambiguous,-368.0,-4.4,-8.88,120.0,1.5,S32 SPOC_120,ambiguous,516.0,6.2,-3.6,749.0,9.1,S32 SPOC_120,ambiguous,-570.0,-6.8,8.4,-101.0,-1.2,S32 SPOC_120
+4689632,steuer,event-not-recovered,2207.1490000002086,4960.0,2.4,no-data,,,,,,,no-data,,,,,,,no-data,,,,,,
+63700569,amarino,event-not-recovered,2826.5709150000475,343.0,3.1,ambiguous,160.0,0.3,-15.6,742.0,1.5,S56 SPOC_120,ambiguous,439.0,2.0,0.12,506.0,2.7,S56 SPOC_120,ambiguous,571.0,1.9,12.12,542.0,1.9,S56 SPOC_120
+64254425,amarino,event-not-recovered,1492.739035999868,15833.0,2.23,ambiguous,3885.0,0.3,-13.59,4095.0,0.4,S7 SPOC_120,ambiguous,1118.0,0.3,1.53,3166.0,0.8,S7 SPOC_120,supported,15776.0,5.7,11.86,16766.0,6.1,S7 SPOC_120
+64365035,amarino,single,2202.172360000201,702.0,2.74,unconstrained,,,-8.61,-32.0,-0.1,S33 SPOC_120,supported,1215.0,6.6,-0.18,1176.0,6.4,S33 SPOC_120,ambiguous,124.0,0.4,15.39,311.0,0.8,S33 SPOC_120
+65290698,amarino,event-not-recovered,1396.4133150000123,2243.0,8.95,unconstrained,,,,,,,unconstrained,,,,,,,ambiguous,-343.0,-3.4,8.85,1593.0,14.6,S3 SPOC_120
+66013259,amarino,event-not-recovered,2910.848755000159,6735.0,1.77,no-data,,,,,,,unconstrained,,,,,,,unconstrained,,,,,,
+66101137,amarino,event-not-recovered,2239.0203550001606,18714.0,3.97,excluded,-187.0,-0.1,-13.02,365.0,0.2,S34 SPOC_120,excluded,3209.0,2.9,-1.42,3672.0,3.4,S34 SPOC_120,excluded,1737.0,1.1,14.16,2158.0,1.6,S34 SPOC_120
+75577433,amarino,EB-on-target (Gaia),3015.167506999802,1446.0,3.26,ambiguous,207.0,0.4,-12.99,186.0,0.4,S63 SPOC_120,supported,1586.0,7.0,-0.18,1477.0,6.2,S63 SPOC_120,ambiguous,-99.0,-0.3,13.13,112.0,0.3,S63 SPOC_120
+76804724,amarino,repeats-inconsistent,2362.2091100001708,13853.0,2.07,unconstrained,,,-8.56,2437.0,0.8,S39 SPOC_120,supported,17400.0,11.3,-0.18,16905.0,11.4,S39 SPOC_120,ambiguous,129.0,0.0,10.88,1042.0,0.4,S39 SPOC_120
+8051892,amarino,single,1544.9140159999952,1022.0,11.55,ambiguous,-2429.0,-8.7,-10.98,-2270.0,-10.7,S9 SPOC_120,supported,1410.0,9.9,-0.14,1341.0,9.5,S9 SPOC_120,ambiguous,-664.0,-1.3,8.4,-318.0,-0.8,S9 SPOC_120
+81331641,amarino,single,2497.0299920002,16110.0,6.9,ambiguous,-4513.0,-0.9,-15.6,-1595.0,-0.5,S43 SPOC_120,supported,19402.0,37.7,-0.15,19474.0,37.6,S43 SPOC_120,ambiguous,-6653.0,-1.2,15.3,-1795.0,-0.2,S43 SPOC_120
+82223761,amarino,single,1875.6626490000635,885.0,7.5,ambiguous,-171.0,-0.9,-15.6,-61.0,-0.4,S21 SPOC_120,supported,577.0,9.1,0.9,491.0,7.8,S21 SPOC_120,ambiguous,-269.0,-3.3,15.52,14.0,0.1,S21 SPOC_120
+83384234,amarino,repeats-inconsistent,2475.545967000071,4200.0,7.25,ambiguous,-739.0,-0.6,-15.6,44.0,0.1,S43 SPOC_120,supported,3780.0,12.2,-0.34,3549.0,12.3,S43 SPOC_120,ambiguous,-701.0,-0.5,15.29,195.0,0.1,S43 SPOC_120
+83524788,amarino,event-not-recovered,2884.018141000066,576.0,2.58,ambiguous,299.0,1.4,-13.15,293.0,1.4,S58 SPOC_120,ambiguous,834.0,4.5,-0.12,802.0,6.1,S58 SPOC_120,ambiguous,129.0,0.6,10.85,202.0,0.9,S58 SPOC_120
+83580723,amarino,off-target-EB,3100.145911000204,5328.0,4.43,ambiguous,-293.0,-0.2,-13.39,-186.0,-0.1,S66 SPOC_120,supported,4331.0,15.6,0.39,3948.0,13.5,S66 SPOC_120,excluded,33.0,0.0,10.84,276.0,0.3,S66 SPOC_120
+86202456,amarino,EB-on-target (Gaia),3340.3410120001063,5406.0,2.04,ambiguous,-462.0,-0.5,-12.34,-207.0,-0.2,S75 SPOC_120,supported,4725.0,19.7,-0.13,4721.0,19.4,S75 SPOC_120,unconstrained,,,8.4,-341.0,-0.3,S75 SPOC_120
+87949211,amarino,event-not-recovered,2529.801529000048,5687.0,3.21,excluded,-739.0,-0.7,-15.44,473.0,0.8,S45 SPOC_120,ambiguous,2969.0,3.3,-0.07,2880.0,3.1,S45 SPOC_120,excluded,-257.0,-0.3,14.82,1282.0,1.3,S45 SPOC_120
+88212067,amarino,event-not-recovered,2940.550112999976,6016.0,1.78,ambiguous,689.0,3.1,-10.97,664.0,3.1,S60 SPOC_120,ambiguous,-171.0,-0.2,1.65,369.0,0.6,S60 SPOC_120,supported,4852.0,21.7,11.96,4851.0,23.4,S60 SPOC_120
+88467632,amarino,event-not-recovered,2777.8327119997703,3527.0,5.52,ambiguous,315.0,0.7,-8.42,320.0,1.0,S54 SPOC_120,unconstrained,,,2.47,847.0,2.4,S54 SPOC_120,excluded,-317.0,-1.1,13.64,-125.0,-0.4,S54 SPOC_120
+9252368,amarino,single,2362.7026470000856,1161.0,2.69,ambiguous,91.0,0.2,-12.37,129.0,0.3,S39 SPOC_120,supported,1389.0,6.6,0.17,1435.0,7.1,S39 SPOC_120,ambiguous,144.0,0.4,12.03,180.0,0.5,S39 SPOC_120
+92709947,amarino,event-not-recovered,1327.5907519999892,1885.0,2.41,excluded,-33.0,-0.3,-13.79,93.0,0.7,S1 SPOC_120,ambiguous,375.0,3.2,-0.11,457.0,3.9,S1 SPOC_120,excluded,-90.0,-0.7,15.15,102.0,0.8,S1 SPOC_120
+95768667,eisner,event-not-recovered,1818.350000000093,1000.0,4.5,no-data,,,,,,,no-data,,,,,,,no-data,,,,,,

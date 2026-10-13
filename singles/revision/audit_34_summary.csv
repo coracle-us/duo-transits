@@ -1,0 +1,7 @@
+reason,n,stars,label
+a,1,408921284,no TESS data at the epoch
+b,1,66013259,data exist but not used by the pipeline (flagged / PDC NaN)
+c,13,431945694 169251938 250103631 355095316 356240333 359819459 36887038 38005437 425585592 427459423 63700569 83524788 87949211,dip at the epoch but failed the event test (depth < 0.5x or SNR < 5)
+d,9,152283270 209217764 6121688 130718055 329064084 354032501 64254425 88212067 95768667,dip at a different time (epoch error in the CTOI)
+e,6,255989063 326397318 65290698 66101137 88467632 92709947,no dip in any reduction
+f,4,1461133 3181884 354032500 4689632,other: wrong (truncated) TIC or blend shared with a neighbour CTOI

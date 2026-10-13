@@ -1,0 +1,307 @@
+TIC,run,cls,event_verdict,recovered,event_product,event_sector,own_used_any,depth_ratio,event_snr
+105850602,pilot,single,supported,True,SPOC_120,25.0,False,0.6438823529411765,10.3
+121724183,pilot,single,supported,True,SPOC_120,11.0,False,1.714461048546266,7.8
+130370378,pilot,single,supported,True,SPOC_120,34.0,False,0.913875,12.8
+140298355,pilot,repeats-inconsistent,supported,True,SPOC_120,35.0,False,1.1284637822070978,20.4
+145601161,pilot,single,supported,True,SPOC_120,9.0,False,0.5210555099808587,6.7
+14611330,pilot,single,supported,True,SPOC_120,33.0,False,1.1917301790381702,16.8
+147035057,pilot,EB-on-target (Gaia),supported,True,SPOC_120,33.0,False,1.122344938960968,51.8
+147855066,pilot,single,supported,True,SPOC_120,6.0,False,4.198663302189184,9.3
+149990098,pilot,EB-on-target (Gaia),supported,True,SPOC_120,34.0,False,0.9387755102040817,8.7
+152283270,pilot,event-not-recovered,ambiguous,False,SPOC_120,1.0,False,-0.16967207274142193,-1.3
+152359413,pilot,single,supported,True,SPOC_120,3.0,False,1.0781807172172508,11.7
+164365027,pilot,single,supported,True,SPOC_120,25.0,False,0.8916666666666667,5.3
+228463329,pilot,single,supported,True,SPOC_120,2.0,False,1.2036649762116378,9.7
+235060821,pilot,repeats-inconsistent,supported,True,SPOC_120,7.0,False,0.51525,7.2
+437935628,pilot,single,supported,True,SPOC_120,33.0,False,1.3161348141983804,14.2
+51079186,pilot,duotransit / narrowed,supported,True,SPOC_120,13.0,False,1.198531571218796,5.9
+53847727,pilot,repeats-inconsistent,supported,True,SPOC_120,57.0,False,0.7381808566895823,37.4
+72669209,pilot,single,supported,True,SPOC_120,3.0,False,1.2864480073203488,39.9
+89620053,pilot,repeats-inconsistent,supported,True,SPOC_120,35.0,False,0.9497178040020523,16.2
+98794593,pilot,single,supported,True,SPOC_120,31.0,False,1.0739010989010989,16.6
+100776118,batch2,EB-on-target (Gaia),supported,True,SPOC_120,33.0,False,0.933336,115.8
+206666063,batch2,EB-on-target (Gaia),supported,True,SPOC_120,28.0,False,1.1705063890203502,64.8
+209217764,batch2,event-not-recovered,ambiguous,False,SPOC_120,67.0,False,-0.05202941511800251,-0.6
+2236662,batch2,single,supported,True,SPOC_120,19.0,False,1.0352736486486487,41.3
+230130556,batch2,EB-on-target (Gaia),supported,True,SPOC_120,49.0,False,1.2505505415162455,81.0
+231969683,batch2,EB-on-target (Gaia),supported,True,SPOC_120,32.0,False,1.1478024007386889,40.8
+264766922,batch2,EB-on-target (Gaia),supported,True,SPOC_120,8.0,False,0.905984126984127,6.3
+270450687,batch2,EB-on-target (Gaia),supported,True,SPOC_120,26.0,False,0.9506886075949367,555.9
+275179540,batch2,single,supported,True,SPOC_120,35.0,False,1.2137693836562369,50.9
+290596726,batch2,single,supported,True,SPOC_120,27.0,False,1.353320158102767,16.1
+30836645,batch2,EB-on-target (Gaia),supported,True,SPOC_120,11.0,False,1.1305210425514993,136.9
+408921284,batch2,event-not-recovered,no-data,False,none,,False,,
+431945694,batch2,event-not-recovered,ambiguous,False,SPOC_120,61.0,False,0.4030642857142857,16.0
+434105091,batch2,single,supported,True,SPOC_120,2.0,False,1.3425220729016827,65.2
+458419988,batch2,EB-on-target (Gaia),supported,True,SPOC_120,48.0,False,1.3171417197452229,38.1
+59942318,batch2,single,supported,True,SPOC_120,33.0,False,1.396207216062457,18.8
+6121688,batch2,event-not-recovered,ambiguous,False,SPOC_120,51.0,False,0.042097286374133944,0.7
+6610653,batch2,off-target-EB,supported,True,SPOC_120,34.0,False,0.7815872514988955,34.9
+68326706,batch2,single,supported,True,SPOC_120,12.0,False,1.3569058016219588,68.1
+77437461,batch2,single,supported,True,SPOC_120,32.0,False,0.9489007684597394,5.2
+130718055,batch3,event-not-recovered,no-data,False,none,,False,,
+150986109,batch3,single,supported,True,SPOC_120,43.0,False,0.7820285714285714,38.5
+173639849,batch3,single,supported,True,SPOC_120,34.0,False,1.1630236257585576,24.5
+190989264,batch3,off-target-EB,supported,True,SPOC_120,35.0,False,1.1520871864872126,17.3
+197736350,batch3,periodic (source off-target (possible)),supported,True,SPOC_120,1.0,False,0.8288478790208894,25.9
+222078568,batch3,single,supported,True,SPOC_120,12.0,False,1.5895183486238533,9.2
+240101705,batch3,single,supported,True,SPOC_120,20.0,False,1.0761410788381742,39.3
+290686569,batch3,off-target-EB,supported,True,SPOC_120,41.0,False,1.0459892086330935,23.3
+303050301,batch3,single,supported,True,SPOC_120,2.0,True,1.0147333333333333,5.7
+350517548,batch3,single,supported,True,SPOC_120,46.0,False,1.3459437751004018,18.4
+356868485,batch3,off-target-EB,supported,True,SPOC_120,41.0,False,1.110544069640914,58.3
+361983224,batch3,single,supported,True,SPOC_120,20.0,False,1.4064187866927593,13.1
+374268399,batch3,single,supported,True,SPOC_120,35.0,False,0.74064,15.5
+376457352,batch3,single,supported,True,SPOC_120,43.0,False,1.4088025889967637,24.5
+386484325,batch3,single,supported,True,SPOC_120,33.0,True,1.1477082322774876,27.1
+387610076,batch3,single,supported,True,SPOC_120,31.0,False,1.3393801652892563,10.4
+427344083,batch3,off-target-EB,supported,True,SPOC_120,24.0,False,0.83,14.4
+58946313,batch3,duotransit / narrowed,supported,True,SPOC_120,45.0,True,1.3438865836791147,32.3
+60958874,batch3,single,supported,True,SPOC_120,43.0,False,0.8830333333333333,28.0
+814205011,batch3,off-target-EB,supported,True,SPOC_120,35.0,False,1.0017871885319725,10.9
+100665013,full,single,supported,True,SPOC_120,32.0,True,1.1464423076923076,8.7
+103629155,full,single,supported,True,TESS-SPOC,10.0,False,1.1078207981987376,62.9
+110642204,full,single,supported,True,SPOC_120,80.0,False,0.9871062702384457,13.6
+113918063,full,single,supported,True,SPOC_120,44.0,False,1.3557798165137616,10.0
+115171750,full,repeats-inconsistent,supported,True,SPOC_120,25.0,False,1.2561111111111112,5.8
+121636363,full,off-target-EB,supported,True,SPOC_120,32.0,True,0.7722727272727272,14.6
+126278294,full,single,supported,True,SPOC_120,46.0,False,1.0845871559633027,7.9
+12631674,full,single,supported,True,SPOC_120,31.0,False,1.3901639344262295,9.4
+126984335,full,single,supported,True,SPOC_120,43.0,False,1.2412295081967213,17.6
+13073396,full,single,supported,True,SPOC_120,2.0,True,1.330192617418982,14.8
+136798415,full,single,supported,True,SPOC_120,42.0,False,1.4128936170212767,19.5
+138707225,full,single,supported,True,SPOC_120,2.0,False,0.80064390409218,7.4
+139726266,full,duotransit / narrowed,supported,True,SPOC_120,32.0,True,1.069504132231405,15.7
+140215502,full,repeats-inconsistent,supported,True,SPOC_120,32.0,True,1.1307792207792209,28.2
+1461133,full,event-not-recovered,no-data,False,none,,True,,
+152406952,full,single,supported,True,SPOC_120,34.0,True,1.2062942312889762,14.4
+158209498,full,repeats-inconsistent,supported,True,SPOC_120,27.0,True,1.215,14.1
+159159904,full,single,supported,True,SPOC_120,22.0,False,1.2702,21.2
+159614322,full,duotransit / narrowed,supported,True,SPOC_120,41.0,False,1.0853993610223642,28.1
+160041500,full,off-target-EB,supported,True,SPOC_120,15.0,False,1.238780487804878,35.2
+160363,full,single,supported,True,SPOC_120,11.0,False,1.237082368394947,13.7
+162031311,full,repeats-inconsistent,supported,True,QLP,56.0,False,1.102520045819015,11.0
+16326602,full,single,supported,True,SPOC_120,7.0,False,1.506544915851082,29.4
+167456277,full,single,supported,True,SPOC_120,30.0,True,1.0184916201117318,10.1
+167653919,full,single,supported,True,SPOC_120,35.0,False,0.9940626800611269,7.4
+168702709,full,duotransit / narrowed,supported,True,SPOC_120,31.0,True,1.2118357487922706,24.3
+169251938,full,event-not-recovered,ambiguous,False,SPOC_120,9.0,False,0.49021107372285105,4.2
+176366125,full,single,supported,True,SPOC_120,32.0,False,0.5388775510204082,6.9
+176402194,full,EB-on-target (Gaia),supported,True,QLP,32.0,False,1.189142857142857,15.4
+178472673,full,single,supported,True,SPOC_120,7.0,False,1.1203613026686758,12.4
+188377183,full,single,supported,True,SPOC_120,47.0,False,1.0874564459930314,17.5
+188619138,full,single,supported,True,SPOC_120,2.0,False,0.5423370370370371,7.4
+188835620,full,repeats-inconsistent,supported,True,SPOC_120,51.0,False,10.93216589861751,57.0
+188902169,full,EB-on-target (Gaia),supported,True,QLP,56.0,False,1.0372348484848486,15.8
+19026420,full,single,supported,True,SPOC_120,7.0,False,1.4736245639509145,12.5
+197596346,full,single,supported,True,SPOC_120,1.0,True,1.0961535809981662,6.7
+202712304,full,single,supported,True,SPOC_120,17.0,False,1.054,12.7
+206561817,full,single,supported,True,SPOC_120,28.0,False,1.268993288590604,26.0
+206588321,full,single,supported,True,SPOC_120,28.0,False,1.1681739130434783,15.2
+209218292,full,single,supported,True,SPOC_120,67.0,False,0.9219802793755135,5.0
+212378056,full,single,supported,True,SPOC_120,3.0,True,1.377327806122449,13.6
+219641816,full,single,supported,True,SPOC_120,36.0,False,0.91225,13.7
+22642772,full,off-target-EB,supported,True,SPOC_120,33.0,False,1.1368371398246786,9.6
+229055790,full,duotransit / narrowed,supported,True,SPOC_120,1.0,False,0.8171818181818181,15.4
+229076808,full,single,supported,True,SPOC_120,5.0,True,0.8899833357316264,15.3
+229184365,full,single,supported,True,SPOC_120,64.0,False,0.7703,11.1
+229556468,full,single,supported,True,SPOC_120,25.0,False,0.8521818181818182,9.2
+233267414,full,EB-on-target (Gaia),supported,True,SPOC_120,41.0,False,1.1678527607361964,10.0
+236770234,full,repeats-inconsistent,supported,True,SPOC_120,21.0,False,1.070754716981132,8.6
+237597612,full,single,supported,True,SPOC_120,33.0,False,1.210089922142398,15.3
+238605434,full,single,supported,True,SPOC_120,45.0,False,1.5718611987381703,21.7
+239142212,full,single,supported,True,SPOC_120,20.0,False,1.3670724637681158,16.2
+239190192,full,repeats-inconsistent,supported,True,SPOC_120,20.0,False,0.9175735294117647,9.9
+242347787,full,single,supported,True,QLP,56.0,False,2.459378372544787,16.1
+244247384,full,single,supported,True,SPOC_120,32.0,False,1.1501379310344828,7.4
+246058802,full,single,supported,True,SPOC_120,66.0,False,1.3571571072319202,7.4
+246976997,full,single,supported,True,SPOC_120,43.0,False,1.554322033898305,9.2
+24795168,full,single,supported,True,SPOC_120,17.0,False,0.9579676674364896,16.1
+248687282,full,single,supported,True,SPOC_120,32.0,False,1.2184228187919464,18.4
+248957032,full,single,supported,True,SPOC_120,43.0,False,1.0837086092715233,26.6
+248959076,full,single,supported,True,SPOC_120,3.0,False,1.1022760700102956,14.8
+248960573,full,repeats-inconsistent,supported,True,SPOC_120,3.0,True,0.7695321107656147,7.9
+250103631,full,event-not-recovered,ambiguous,False,SPOC_120,42.0,False,0.27804763027587837,5.1
+250187388,full,single,supported,True,SPOC_120,32.0,False,1.068984771573604,12.1
+250492521,full,single,supported,True,SPOC_120,33.0,False,1.215483870967742,12.2
+252908198,full,single,supported,True,SPOC_120,20.0,False,1.3302904564315352,22.3
+253553257,full,duotransit / narrowed,supported,True,SPOC_120,13.0,False,0.5750299401197605,5.1
+253917513,full,single,supported,True,SPOC_120,67.0,False,1.2485897435897435,28.5
+255989063,full,event-not-recovered,ambiguous,False,SPOC_120,13.0,False,-0.05465,-0.1
+257430997,full,single,supported,True,SPOC_120,43.0,False,1.2773263888888888,17.4
+257803459,full,single,supported,True,SPOC_120,43.0,False,1.56,10.3
+258617228,full,single,supported,True,TESS-SPOC,42.0,False,1.0983706437536187,28.1
+258799245,full,EB-on-target (Gaia),supported,True,SPOC_120,49.0,False,1.281574074074074,39.5
+261155038,full,single,supported,True,TESS-SPOC,68.0,False,1.0670626576955424,106.1
+262725099,full,single,supported,True,SPOC_120,42.0,False,1.1938341968911916,21.5
+264333501,full,EB-on-target (Gaia),supported,True,SPOC_120,40.0,False,1.181588785046729,19.9
+265135454,full,single,supported,True,SPOC_120,34.0,False,1.0825389605252749,14.5
+265453074,full,off-target-EB,supported,True,SPOC_120,6.0,False,0.7173176591007177,11.4
+266813717,full,single,supported,True,SPOC_120,34.0,False,1.1838203272433174,12.3
+268534931,full,duotransit / narrowed,supported,True,SPOC_120,30.0,True,1.2262333262756722,20.4
+268751095,full,single,supported,True,SPOC_120,30.0,True,1.3246703296703297,21.3
+269527403,full,single,supported,True,SPOC_120,67.0,True,1.1769473684210525,9.5
+270651953,full,single,supported,True,SPOC_120,34.0,False,0.6874141425341737,7.9
+271369421,full,single,supported,True,SPOC_120,7.0,False,1.1591759824921628,14.3
+274150793,full,single,supported,True,SPOC_120,31.0,False,1.3328445747800586,17.4
+27541714,full,single,supported,True,SPOC_120,44.0,False,1.1740686274509804,20.5
+27550937,full,single,supported,True,SPOC_120,46.0,False,1.2183713942307692,9.5
+27986571,full,single,supported,True,SPOC_120,3.0,False,1.2953684210526315,12.7
+283222856,full,repeats-inconsistent,supported,True,QLP,56.0,False,1.4368464473548521,21.0
+283786459,full,single,supported,True,SPOC_120,46.0,False,1.1749175824175824,14.7
+284677262,full,single,supported,True,SPOC_120,32.0,False,1.1283103448275862,12.7
+285248964,full,single,supported,True,QLP,59.0,False,2.9737045630317094,17.5
+286097964,full,single,supported,True,SPOC_120,45.0,False,1.2427659574468086,22.6
+289718679,full,single,supported,True,SPOC_120,48.0,False,1.2191335740072202,13.6
+290596728,full,single,supported,True,SPOC_120,27.0,False,1.1704885993485343,26.3
+293845053,full,repeats-inconsistent,supported,True,SPOC_120,35.0,False,1.164986012107035,19.9
+293893405,full,single,supported,True,SPOC_120,32.0,False,1.1526595744680852,15.7
+294216479,full,off-target-EB,supported,True,SPOC_120,33.0,False,1.0097861312100338,17.8
+294501647,full,single,supported,True,SPOC_120,34.0,False,1.4163654964296546,16.7
+296859112,full,single,supported,True,SPOC_120,9.0,False,0.7073470205195491,17.1
+299739645,full,single,supported,True,SPOC_120,7.0,True,1.2009216355152628,14.6
+301558096,full,single,supported,True,SPOC_120,31.0,False,1.1356028368794326,12.3
+302926645,full,single,supported,True,SPOC_120,6.0,False,1.5503296661716155,7.5
+313327244,full,repeats-inconsistent,supported,True,QLP,56.0,False,0.8016578014184398,13.0
+316340057,full,single,supported,True,SPOC_120,13.0,False,1.1533333333333333,7.6
+3181884,full,event-not-recovered,no-data,False,none,,False,,
+318188400,full,single,supported,True,SPOC_120,33.0,False,1.4564653340043878,13.4
+318753114,full,single,supported,True,SPOC_120,31.0,False,1.5112612612612613,6.8
+326053539,full,single,supported,True,SPOC_120,80.0,False,1.5079337401918047,47.9
+326397318,full,event-not-recovered,ambiguous,False,SPOC_120,1.0,False,1.2310389740506964,2.0
+328162246,full,single,supported,True,SPOC_120,31.0,False,1.3236103151862464,13.5
+329064084,full,event-not-recovered,ambiguous,False,SPOC_120,38.0,False,-0.4038767598449296,-1.1
+333136751,full,single,supported,True,SPOC_120,17.0,False,1.2691044776119402,9.1
+333792947,full,single,supported,True,SPOC_120,47.0,False,1.2277922077922077,11.9
+336892053,full,single,supported,True,SPOC_120,43.0,False,0.6980666666666667,11.1
+337665591,full,duotransit / narrowed,supported,True,SPOC_120,66.0,False,1.1808227848101267,17.7
+342004815,full,off-target-EB,supported,True,SPOC_120,36.0,False,0.79898,16.2
+343870806,full,single,supported,True,TESS-SPOC,57.0,False,0.9110487941671341,27.9
+344713453,full,single,supported,True,SPOC_120,43.0,False,1.5297637795275592,17.9
+346477717,full,single,supported,True,QLP,57.0,False,1.9854232972628898,20.5
+348063710,full,EB-on-target (Gaia),supported,True,SPOC_120,53.0,False,0.9542641509433963,18.1
+349793830,full,single,supported,True,SPOC_120,21.0,False,1.0971428571428572,11.5
+350274116,full,off-target-EB,supported,True,SPOC_120,1.0,True,1.3405040515871454,37.9
+354032500,full,event-not-recovered,unconstrained,False,SPOC_120,75.0,False,,
+354032501,full,event-not-recovered,excluded,False,SPOC_120,75.0,False,-0.07022551648005047,-0.6
+355095316,full,event-not-recovered,ambiguous,False,SPOC_120,27.0,False,1.4334242551405791,4.1
+356240333,full,event-not-recovered,ambiguous,False,SPOC_120,26.0,False,1.0321428571428573,3.0
+358658763,full,single,supported,True,SPOC_120,45.0,False,1.234375,11.6
+359683436,full,off-target-EB,supported,True,SPOC_120,11.0,False,1.1740335319384785,17.8
+359819459,full,event-not-recovered,ambiguous,False,TESS-SPOC,9.0,False,0.9265714285714286,4.1
+365250897,full,duotransit / narrowed,supported,True,SPOC_120,31.0,False,1.1705681818181817,8.5
+365463946,full,single,supported,True,SPOC_120,32.0,False,1.2926650366748167,24.9
+36887038,full,event-not-recovered,ambiguous,False,SPOC_120,51.0,False,0.47777499999999995,15.7
+369476686,full,single,supported,True,SPOC_120,42.0,False,1.3586134453781513,14.8
+373026096,full,single,supported,True,SPOC_120,32.0,False,1.3239583333333333,18.0
+37652870,full,single,supported,True,SPOC_120,42.0,False,1.1830659025787964,15.5
+376537276,full,single,supported,True,SPOC_120,49.0,False,0.8138593749999999,32.6
+377020459,full,duotransit / narrowed,supported,True,SPOC_120,43.0,False,1.2060000000000002,9.7
+38005437,full,event-not-recovered,ambiguous,False,SPOC_120,62.0,False,0.7381597384399814,3.3
+384882500,full,EB-on-target (Gaia),supported,True,SPOC_120,42.0,False,1.2285678391959798,53.1
+387513450,full,single,supported,True,SPOC_120,31.0,False,1.181965811965812,8.8
+387541380,full,single,supported,True,SPOC_120,31.0,False,1.1155913978494623,12.6
+388134787,full,single,supported,True,SPOC_120,18.0,False,1.4267999999999998,8.5
+388803989,full,single,supported,True,SPOC_120,46.0,False,1.2020661157024792,12.0
+389041242,full,single,supported,True,SPOC_120,46.0,False,1.3292929292929292,26.7
+3892209,full,single,supported,True,SPOC_120,30.0,False,1.1810869565217392,9.8
+393565707,full,single,supported,True,SPOC_120,45.0,False,1.3143827671913837,60.2
+396935226,full,single,supported,True,SPOC_120,32.0,False,1.2698076923076924,13.2
+397483270,full,single,supported,True,SPOC_120,49.0,False,1.185,19.4
+397487633,full,single,supported,True,SPOC_120,49.0,False,1.1452,15.8
+399784500,full,single,supported,True,SPOC_120,32.0,False,1.110257731958763,11.4
+403139386,full,EB-on-target (Gaia),supported,True,SPOC_120,59.0,False,0.8791555555555555,7.1
+407663579,full,repeats-inconsistent,supported,True,SPOC_120,35.0,False,0.9215168502846259,6.3
+408254149,full,single,supported,True,SPOC_120,42.0,False,1.116470588235294,8.5
+409473377,full,repeats-inconsistent,supported,True,SPOC_120,7.0,True,0.7488171158197903,13.6
+412200591,full,single,supported,True,SPOC_120,32.0,False,1.065,10.1
+418036300,full,single,supported,True,SPOC_120,51.0,False,1.166,20.0
+420031102,full,single,supported,True,SPOC_120,31.0,False,1.1485507246376812,12.7
+422082582,full,single,supported,True,SPOC_120,42.0,False,1.128639053254438,13.8
+422484720,full,single,supported,True,SPOC_120,42.0,False,1.263167701863354,17.3
+425585592,full,event-not-recovered,ambiguous,False,SPOC_120,11.0,False,0.8891318784492431,3.9
+427459423,full,event-not-recovered,ambiguous,False,SPOC_120,32.0,False,0.46872727272727277,6.2
+4299199,full,single,supported,True,SPOC_120,20.0,False,1.1844791666666665,20.4
+434095530,full,single,supported,True,TESS-SPOC,42.0,False,1.0025868524021468,24.3
+434217306,full,single,supported,True,SPOC_120,43.0,False,0.6931999999999999,17.6
+434307868,full,single,supported,True,SPOC_120,33.0,False,1.2614068289527922,10.4
+435904852,full,single,supported,True,SPOC_120,44.0,False,1.0696954314720812,12.9
+436663419,full,single,supported,True,SPOC_120,32.0,False,1.139219765929779,12.0
+437234869,full,single,supported,True,SPOC_120,9.0,False,3.0837719399939716,12.1
+439406850,full,repeats-inconsistent,supported,True,SPOC_120,30.0,True,0.8664835164835165,11.0
+441017467,full,single,supported,True,SPOC_120,1.0,False,1.2567145720182085,17.2
+441056242,full,repeats-inconsistent,supported,True,SPOC_120,2.0,True,0.9267889560246024,9.2
+441131943,full,single,supported,True,SPOC_120,31.0,True,1.0288702928870292,15.3
+441199415,full,single,supported,True,SPOC_120,1.0,True,1.254688848444456,10.2
+441705792,full,single,supported,True,SPOC_120,50.0,False,1.1633333333333333,22.8
+443994883,full,single,supported,True,SPOC_120,44.0,False,1.2886835443037976,28.4
+444041825,full,single,supported,True,SPOC_120,34.0,False,1.0149686939558884,10.3
+446044800,full,single,supported,True,SPOC_120,43.0,False,0.772,17.5
+453029782,full,duotransit / narrowed,supported,True,SPOC_120,45.0,False,1.06158357771261,10.7
+454142943,full,single,supported,True,SPOC_120,32.0,False,1.0951832460732984,8.7
+456302722,full,single,supported,True,SPOC_120,47.0,False,1.1503947368421052,10.8
+458382304,full,single,supported,True,SPOC_120,46.0,False,1.1182183908045977,12.6
+458451774,full,single,supported,True,SPOC_120,22.0,False,0.9009333333333334,15.5
+458645327,full,single,supported,True,SPOC_120,34.0,False,1.176739975504553,11.5
+458647366,full,single,supported,True,SPOC_120,34.0,False,1.517500134823843,5.3
+466930780,full,off-target-EB,supported,True,SPOC_120,55.0,False,1.0554999999999999,11.8
+467785319,full,single,supported,True,SPOC_120,19.0,False,1.0964435146443514,13.0
+468888472,full,duotransit / narrowed,supported,True,SPOC_120,5.0,False,0.9073873854441626,13.8
+468910725,full,single,supported,True,SPOC_120,5.0,False,0.9006015502401445,12.6
+4689632,full,event-not-recovered,no-data,False,none,,False,,
+468963200,full,single,supported,True,SPOC_120,33.0,False,1.2018548387096775,16.8
+470981906,full,single,supported,True,SPOC_120,47.0,False,1.1752413793103447,10.7
+47142025,full,single,supported,True,SPOC_120,8.0,False,1.293043066729768,15.0
+48882295,full,off-target-EB,supported,True,SPOC_120,33.0,True,1.1871370255029037,16.7
+53309262,full,single,supported,True,SPOC_120,20.0,False,0.726595,11.7
+53952541,full,single,supported,True,SPOC_120,1.0,True,1.5368319691863264,7.7
+55454149,full,repeats-inconsistent,supported,True,SPOC_120,8.0,False,1.0617417510238776,12.1
+56099207,full,single,supported,True,SPOC_120,32.0,False,0.9528971962616822,12.9
+5636329,full,single,supported,True,TESS-SPOC,58.0,False,1.4373413258110015,6.7
+58843267,full,single,supported,True,SPOC_120,43.0,False,1.318896321070234,18.6
+60369879,full,single,supported,True,SPOC_120,1.0,True,1.1528379571290912,12.2
+61126715,full,single,supported,True,SPOC_120,46.0,False,1.1854455445544554,23.1
+62632191,full,single,supported,True,SPOC_120,35.0,False,1.0918967275754574,15.0
+63700569,full,event-not-recovered,ambiguous,False,SPOC_120,56.0,False,1.279591836734694,2.0
+64254425,full,event-not-recovered,ambiguous,False,SPOC_120,7.0,False,0.07063096065180319,0.3
+64365035,full,single,supported,True,SPOC_120,33.0,True,1.7303418803418804,6.6
+64549889,full,periodic-on-target,supported,True,SPOC_120,34.0,True,1.1821027201961014,16.7
+65290698,full,event-not-recovered,unconstrained,False,SPOC_120,3.0,True,,
+66013259,full,event-not-recovered,unconstrained,False,SPOC_120,59.0,False,,
+66101137,full,event-not-recovered,excluded,False,SPOC_120,34.0,False,0.17146521320936198,2.9
+67651371,full,single,supported,True,SPOC_120,21.0,False,1.1301719901719902,19.2
+67747088,full,off-target-EB,supported,True,SPOC_120,32.0,False,1.1663506261180678,28.1
+67884964,full,periodic-on-target,supported,True,SPOC_120,20.0,False,1.0591452991452992,7.7
+69745398,full,duotransit / narrowed,supported,True,SPOC_120,28.0,False,0.6263302752293578,14.3
+75577433,full,EB-on-target (Gaia),supported,True,SPOC_120,63.0,False,1.0968879668049791,7.0
+76140400,full,repeats-inconsistent,supported,True,SPOC_120,26.0,False,1.1647252747252748,8.9
+76804724,full,repeats-inconsistent,supported,True,SPOC_120,39.0,False,1.2560456218869558,11.3
+77560191,full,single,supported,True,SPOC_120,35.0,False,1.0778357048593417,17.9
+7984988,full,single,supported,True,SPOC_120,35.0,False,1.1399952301454805,12.9
+8051892,full,single,supported,True,SPOC_120,9.0,False,1.379549902152642,9.9
+81331641,full,single,supported,True,SPOC_120,43.0,False,1.2043637492240844,37.7
+82204651,full,single,supported,True,SPOC_120,45.0,False,1.0945183486238532,33.6
+82223761,full,single,supported,True,SPOC_120,21.0,False,0.6517514124293785,9.1
+82550215,full,EB-on-target (Gaia),supported,True,SPOC_120,51.0,False,11.171773142112125,122.0
+83384234,full,repeats-inconsistent,supported,True,SPOC_120,43.0,False,0.8999047619047619,12.2
+83524788,full,event-not-recovered,ambiguous,False,SPOC_120,58.0,False,1.4473958333333334,4.5
+83580723,full,off-target-EB,supported,True,SPOC_120,66.0,False,0.8128753753753754,15.6
+86119201,full,single,supported,True,SPOC_120,44.0,False,1.1805397727272726,14.1
+86202456,full,EB-on-target (Gaia),supported,True,SPOC_120,75.0,False,0.8739733629300777,19.7
+86433395,full,single,supported,True,SPOC_120,50.0,False,1.2048025477707007,32.7
+87949211,full,event-not-recovered,ambiguous,False,SPOC_120,45.0,False,0.5220502901353965,3.3
+88212067,full,event-not-recovered,ambiguous,False,SPOC_120,60.0,False,-0.02839095744680851,-0.2
+88467632,full,event-not-recovered,unconstrained,False,SPOC_120,54.0,False,,
+89258104,full,single,supported,True,SPOC_120,1.0,True,1.1067697392375992,12.6
+89288586,full,single,supported,True,SPOC_120,33.0,False,1.2225016038575363,30.7
+89330719,full,single,supported,True,SPOC_120,28.0,False,1.5942528735632184,19.4
+9099764,full,single,supported,True,SPOC_120,5.0,False,1.28853907269062,5.6
+9176290,full,single,supported,True,SPOC_120,5.0,False,1.3262587909723318,16.4
+91987487,full,single,supported,True,SPOC_120,21.0,False,1.1890588235294117,13.4
+9252368,full,single,supported,True,SPOC_120,39.0,False,1.1963824289405685,6.6
+92709947,full,event-not-recovered,ambiguous,False,SPOC_120,1.0,False,0.19909814323607428,3.2
+9376051,full,single,supported,True,SPOC_120,21.0,False,1.1739263803680982,23.2
+95768667,full,event-not-recovered,no-data,False,none,,False,,
+95857505,full,single,supported,True,SPOC_120,22.0,False,1.106027397260274,24.0
+97255991,full,single,supported,True,SPOC_120,47.0,False,1.1985714285714284,18.4
+99673151,full,single,supported,True,SPOC_120,1.0,False,0.9173200111878341,15.1
