@@ -240,3 +240,18 @@ After dropping flux outliers outside 0.4-1.3 of the seasonal median, the robust 
 
 Verdict: ATLAS (difference and reduced) is UNUSABLE for this G = 11 star. Nothing from ATLAS enters the analysis.
 The duplicate task 5175443 is saved for completeness.
+
+ADDENDUM 3 (2026-10-12): ASAS-SN Sky Patrol (by hand)
+------------------------------------------------------
+File: data/AP24908321.xlsx (Jon, via the web form: aperture photometry, 5500 days, Gaia proper motion). It holds
+118 V-band points from camera "ba", 2014-12-17 to 2018-04-12. There are NO g-band (2018+) data in this export.
+Median V 10.973, robust scatter 0.030 mag.
+
+Points near eclipse on the TESS 2021-2023 ephemeris (timing uncertain by ~1-2 h this far back):
+- 2015-02-18: primary +5.5 h, -3.2% (outside eclipse);
+- 2015-10-15: primary -1.4 h, 2.7% dimming;
+- 2016-02-01: primary -3.0 h, 8.4% dimming (~2.8 sigma; plausibly the ingress or edge of a ~10% eclipse);
+- 2017-03-28: secondary -4.1 h, 3.6% (likely outside the eclipse).
+
+Verdict: consistent with shallow primary eclipses in 2015-16, but too sparse to measure a depth. Next step: re-run
+Sky Patrol with the other photometry method (image subtraction) or the g-band option, to get 2018-2026 g-band data.
