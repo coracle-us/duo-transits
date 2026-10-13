@@ -13,8 +13,8 @@
 \begin{abstract}
 Community TESS Objects of Interest (CTOIs) flagged as single transits are rarely revisited.
 I re-examined 303 such stars against all TESS data through Sector 108, with a validated repeat
-search, difference imaging and Gaia DR3 binarity diagnostics. I recover the catalogued event for 272 stars; most of the other 31 have a wrong
-catalogued epoch or no significant dip. Of the 272, 79 show repeats: 21 are Gaia-flagged binaries,
+search, difference imaging and Gaia DR3 binarity diagnostics. I recover the catalogued event for 272 stars; the other 31 mostly have a wrong
+epoch, a weaker dip than catalogued, or no dip. Of the 272, 79 show repeats: 21 are Gaia-flagged binaries,
 18 are blends, 23 fit no single period, and 17 needed vetting by hand. A search for dips of any depth
 shows that the CTOI 147035057.01 event is the secondary eclipse of a 37.315\,d eccentric binary
 with a 5.5\% primary. Two on-target candidates with two transits survive: TIC 159614322, where a
@@ -82,9 +82,9 @@ cut. It recovers the secondary eclipses of six known TESS EBs.
 
 The event test used pipeline light curves at every catalogued epoch (SPOC 2-min for 285 stars),
 never my own photometry. Of the 303 stars, 31 fail it. I inspected each in every available light
-curve: SPOC SAP and PDCSAP, TESS-SPOC, QLP, six other reductions, and my own photometry. None
-fails because of the photometry used. In three near-threshold cases, a different pipeline product
-would pass the test. Eighteen of the 31 come from one uploader's batch, including all six
+curve: SPOC SAP and PDCSAP, TESS-SPOC, QLP, six other reductions, and my own photometry. The
+failures do not come from my photometry, but in three near-threshold cases a different pipeline
+product would pass the test. Eighteen of the 31 come from one uploader's batch, including all six
 half-day epoch slips.
 \begin{itemize}
 \item 9 CTOIs have wrong epochs; six are 0.5\,d early.
@@ -96,7 +96,7 @@ Of the 272 stars with the catalogued event, 193 show no repeat. The 79 stars wit
 down as follows:
 \begin{itemize}
 \item 21 are on Gaia-flagged binaries. Three Gaia SB1 orbits reproduce the TESS periods
-  (Table~\ref{tab:systems}), so these are eccentric eclipsing binaries.
+  (Table~\ref{tab:systems}), so these three are eccentric eclipsing binaries.
 \item 18 are firmly off-target, i.e.\ blends with neighbors.
 \item 23 show repeats that no single period of 5--1500\,d explains.
 \item 17 were vetted by hand: 2 survive (below), 3 remain tentative, 5 are possibly off-target,
@@ -112,7 +112,7 @@ The extra eclipses give periods for four stars, including TIC 188835620 (22.217\
 (4.33\,d) from the no-single-period class. For two, the catalogued event is the secondary of a
 deeper eclipse.
 
-\textit{CTOI 147035057.01.} Three catalogued events (Sectors 7, 33, and 108, the last from my own
+\textit{CTOI 147035057.01.} Three events matching the catalogued one (Sectors 7, 33, and 108, the last from my own
 photometry) fix $P=37.31497\pm0.00003$\,d; the S108 event rules out every shorter alias. The
 any-depth search shows that they are the secondary eclipses of a binary. A V-shaped primary eclipse
 5.3--5.6\% deep falls at phase 0.239 relative to them, in Sector 6 (TESS-SPOC) and Sector 87 (QLP),
@@ -159,7 +159,7 @@ periods $\geq26.7$\,d and $R_p\approx3.8\,R_\oplus$, it is worth monitoring.
 \section{Conclusion}
 
 Stale single-transit CTOIs with repeat signals are mostly stellar, and inexpensive Gaia binarity
-checks and difference imaging dispose of most of them. The residue is small but useful: two
+checks and difference imaging dispose of half of them. The residue is small but useful: two
 on-target candidates with two transits and alias lists short enough to target, and a few tentative repeats that
 pipeline products will confirm or reject. Code, light-curve products and classifications are at
 \url{https://github.com/coracle-us/duo-transits}.
