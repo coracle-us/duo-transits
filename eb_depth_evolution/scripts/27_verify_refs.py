@@ -26,6 +26,12 @@ REFS = {
     "Kreidberg2015": 'author:"^Kreidberg" year:2015 bibstem:PASP volume:127',
     "Ginsburg2019": 'author:"^Ginsburg" year:2019 bibstem:AJ volume:157',
     "Gaia2023": 'year:2023 bibstem:A&A volume:674 page:A1',
+    "Zasche2023": 'author:"^Zasche" year:2023 bibstem:AJ volume:165',
+    "Davenport2021": 'author:"^Davenport" year:2021 bibstem:AJ volume:162',
+    "Luger2016": 'author:"^Luger" year:2016 bibstem:AJ volume:152 page:100',
+    "Vanderburg2014": 'author:"^Vanderburg" year:2014 bibstem:PASP volume:126 page:948',
+    "Butters2010": 'author:"^Butters" year:2010 bibstem:A&A volume:520',
+    "Borkovits2016": 'author:"^Borkovits" year:2016 bibstem:MNRAS volume:455',
 }
 
 

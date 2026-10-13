@@ -94,3 +94,28 @@ properly and submit. Reason: avoid the appearance of salami-slicing with an over
 - Totality: i ≈ 89.2–89.9°, ~2028–2031, 40–45% deep.
 - The S−P interval sentence now has both seasons.
 - Abstract updated to match.
+
+## Fact-check fixes (2026-10-12, `eb_depth_evolution/review_fable/REPORT.txt`) and new provenance
+
+**Word count:** abstract 136, body 932 (`rnaas/wordcount.py`). The "137 / 734" line above is superseded.
+
+| Fix | New text and source |
+|---|---|
+| R1 rate | "0.31–0.36 deg/yr (2021–2026)" = linear fits to the three TESS seasons: blind 0.31, ours 0.358 (`scripts/29_note_figure.py` stdout). The difference is mostly the 2026 eclipse. "Constant excluded": a constant 0.31 predicts a ~1% K2 primary (blind REPORT; review_fable check) |
+| R2 inclinations | Base values (`data/inclination_trend.csv`, variant base, ph14 0.3322): 85.74, 87.26, 87.91, 88.77, so 85.7, 87.3, 87.9, 88.8. The abstract gives the 2026 span of both analyses, 88.5–88.8 |
+| R3/R4/R5 timing | "Interval from primary to secondary fell by 26 ± 2.5 min within one orbit (2021); 3–4 min/orbit on average 2021–23" (`data/sec_minus_pri_interval.csv`). The 2023 "~50 min" is dropped: it relied on the excluded partial S72 secondary |
+| R6 totality | "2027–2031": ours 2027.2–2027.6 (threshold 89.25, i 88.77, rate 0.36–0.40); blind 2027.5–2031 |
+| R7 turnaround | Now specific: "a quadratic trend through the four epochs, turning around in 2010" (`data/inclination_trend.csv`, quad columns) |
+| R8 figure | New `rnaas/eb_history.png` (`scripts/29_note_figure.py`): measured values from both analyses, TESS-era linear fits, thresholds, totality band; no rejected model curves |
+| R9 K2 secondary | "< 0.1%" (consistent with AAS82225; blind < 0.08%) |
+| S3 duration | "about 8 h": model 8.1–8.5 h, blind 7.6–8.4 h (review_fable check_numbers_out.txt) |
+| S6 apsidal motion | "GR + tidal + rotational < 0.01 deg/yr": GR 0.0035, tidal < 2e-4, rotational < 0.007 deg/yr (review_fable check_numbers_out.txt) |
+| S7/S8 Gaia | "tertiary below ~0.3 Msun or an outer period near 100 d" (review_fable: 0.5 Msun at 200 d → 0.18 mas) |
+| S1/S2 refs | Added Zasche+2023, Davenport+2021, Borkovits+2016, Luger+2016 (EVEREST), Vanderburg & Johnson 2014 (K2SFF), Butters+2010 (WASP). All verified in ADS (`scripts/27_verify_refs.py` → `refs_check.txt`); 20 journal refs plus 2 ASCL |
+| S12 overlap | The intro says the companion note (J. McBee 2026, submitted) reported the deepening, and lists what's new here. §2 says "The depths repeat those of the companion note" |
+
+**Deferred:**
+- the exact DASCH NSF-grant acknowledgment sentence (check the DASCH site before submission);
+- the NASA Exoplanet Archive acknowledgment wording.
+
+**STATUS: content-final draft, HELD until the AAS82225 decision.**

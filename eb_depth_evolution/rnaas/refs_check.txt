@@ -27,3 +27,15 @@
   2019AJ....157...98G  p.98  Ginsburg, Adam; Sipőcz, Brigitta M.; Brasseur, C. E.  | astroquery: An Astronomical Web-querying Package in Python
 ## Gaia2023: 1 match(es) for year:2023 bibstem:A&A volume:674 page:A1
   2023A&A...674A...1G  p.A1  Gaia Collaboration; Vallenari, A.; Brown, A. G. A.  | Gaia Data Release 3. Summary of the content and survey properties
+## Zasche2023: 1 match(es) for author:"^Zasche" year:2023 bibstem:AJ volume:165
+  2023AJ....165...81Z  p.81  Zasche, Petr; Vokrouhlický, David; Barlow, Brad N.  | V907 Sco Switched to the Eclipsing Mode Again
+## Davenport2021: 1 match(es) for author:"^Davenport" year:2021 bibstem:AJ volume:162
+  2021AJ....162..189D  p.189  Davenport, James. R. A.; Windemuth, Diana; Warmbein, Karen  | The Rise and Fall of the Eclipsing Binary HS Hydrae
+## Luger2016: 1 match(es) for author:"^Luger" year:2016 bibstem:AJ volume:152 page:100
+  2016AJ....152..100L  p.100  Luger, Rodrigo; Agol, Eric; Kruse, Ethan  | EVEREST: Pixel Level Decorrelation of K2 Light Curves
+## Vanderburg2014: 1 match(es) for author:"^Vanderburg" year:2014 bibstem:PASP volume:126 page:948
+  2014PASP..126..948V  p.948  Vanderburg, Andrew; Johnson, John Asher  | A Technique for Extracting Highly Precise Photometry for the Two-Wheeled Kepler Mission
+## Butters2010: 1 match(es) for author:"^Butters" year:2010 bibstem:A&A volume:520
+  2010A&A...520L..10B  p.L10  Butters, O. W.; West, R. G.; Anderson, D. R.  | The first WASP public data release
+## Borkovits2016: 1 match(es) for author:"^Borkovits" year:2016 bibstem:MNRAS volume:455
+  2016MNRAS.455.4136B  p.4136  Borkovits, T.; Hajdu, T.; Sztakovics, J.  | A comprehensive study of the Kepler triples via eclipse timing

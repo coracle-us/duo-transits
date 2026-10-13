@@ -1,0 +1,230 @@
+ADVERSARIAL FACT-CHECK of eb_depth_evolution/rnaas/rnaas.tex (EPIC 202126877 note)
+=====================================================================================
+Reviewer: Fable (separate agent). Date: 2026-10-12. Draft at commit ac56c5f (working tree).
+Scripts: check_numbers.py -> check_numbers_out.txt (recomputations); ads_extra_refs.py -> ads_extra_refs.txt (ADS).
+Nothing outside review_fable/ was modified.
+
+Summary verdict: the science is sound and the note is distinct enough from AAS82225, but the draft mixes numbers
+from the two analyses in a way that is internally inconsistent (inclinations from ours, rates and dates from the
+blind), it quotes one timing number that our own REPORT.txt excludes, and the figure shows the model the text
+rejects. All fixable in an hour. Required fixes R1-R10, then suggestions S1-S14.
+
+-------------------------------------------------------------------------------------------------
+REQUIRED
+-------------------------------------------------------------------------------------------------
+
+R1. The 2021-2026 rate "0.31 deg/yr" is the blind value only; our own model gives 0.36, and the text's own
+    inclinations imply 0.38.
+    Text (abstract and Sec. 3): "The rate rose from 0.20 deg/yr (2014-2021) to 0.31 deg/yr (2021-2026)."
+    Evidence: data/inclination_trend.csv base: i = 85.69, 87.26, 87.91, 88.77 -> 2021-26 rate 0.357 (variants
+    0.35-0.40). Blind results.csv: 87.234 -> 88.549 -> 0.310. Text's rounded 87.3 -> 88.9 over 4.23 yr = 0.38.
+    The two analyses disagree on i(2026)-i(2023): ours 0.87 deg (rate 0.39-0.45), blind 0.69 deg (0.316 +- 0.005,
+    variants 0.30-0.37). The ranges do not overlap; this is beyond the stated uncertainties and is NOT covered by
+    "they shift all seasons together". The cause is the 2026 eclipse (truncated egress, one eclipse, different
+    aperture/background).
+    Fix: "to 0.31-0.36 deg/yr (2021-2026; the two reductions differ on the single 2026 eclipse)". Say the same in
+    the abstract ("0.31-0.36"). Keep "a constant rate is excluded" (robust: a constant 0.31 deg/yr predicts
+    i(2014) = 84.9 and a 1% K2 primary vs 6.2% observed, independent/k2_depth_vs_i.txt).
+
+R2. Inclinations are rounded inconsistently between abstract, body and source.
+    Abstract: "85.8 deg (2014)"; body: "85.7 (2014.4) ... 88.0 (2023.9) and 88.9 (2026.0)".
+    Evidence: base model (REPORT.txt Sec. 0, physical_fit_base.json): 85.69, 87.26, 87.91, 88.77 -> 85.7, 87.3,
+    87.9, 88.8. The body's 88.0 and 88.9 are midpoints of the variant ranges (87.88-88.10, 88.72-89.08) while
+    85.7 and 87.3 are base values. numbers.md admits this ("text: 85.7, 87.3, 88.0, 88.9").
+    Fix: use one convention. Recommended: base values 85.7, 87.3, 87.9, 88.8 in the body; abstract "85.7-85.8
+    (2014) to 88.5-88.8 (2026)" (ours vs blind). Then the 2021-26 rate (R1) follows from the quoted numbers.
+
+R3. "by about 50 min within one orbit in 2023" uses the partial S72 secondary that our own analysis excludes.
+    Text (Sec. 4): "fell by 26 +- 2.5 min within one orbit in 2021 and by about 50 min within one orbit in 2023".
+    Evidence: REPORT.txt Sec. 3: "the partial S72 secondary (egress only), whose two time estimates differ by
+    15 min; it is excluded." data/sec_minus_pri_interval.csv gives, for 2023, E34 -> E35 = -30.3 +- 15 min (E34
+    primary estimated). The -52 min only appears if S36 is used (E35 -> E36; blind timing.csv, coverage 0.63).
+    numbers.md does not source the 50.
+    Fix: either "about 30 min (2023, with one primary interpolated)" or "about 50 min (2023, using a partial
+    secondary with a 15-min timing uncertainty)". Also add the 2023 number's provenance to numbers.md.
+
+R4. Abstract misstates what shifts by 26 min.
+    Text: "the primary and secondary eclipse times shift in opposite directions by up to 26 min".
+    Evidence: the INTERVAL T_S - T_P changed by 26 min in one orbit (2021); the individual eclipses moved by about
+    +13 and -13 min (check_numbers_out.txt Sec. 5: P1-P0 - P = +13.3 min, S1-S0 - P = -12.9 min).
+    Fix: "the interval between primary and secondary eclipse changes by up to 26-30 min from one orbit to the
+    next, with the two eclipses shifting in opposite directions".
+
+R5. "The interval from secondary to primary eclipse fell" is the wrong interval.
+    Text (Sec. 4). The measured quantity is T_S - T_P within the same cycle (primary to secondary), which fell.
+    The secondary-to-next-primary interval rose by the same amount.
+    Fix: "The interval from primary to secondary eclipse fell ...".
+
+R6. Totality date "2028-2031" drops our own model's answer (2027-2028).
+    Text (abstract, Sec. 3): "could become total ... around 2028-2031"; "At the current rate that happens around
+    2028-2031".
+    Evidence: REPORT.txt Sec. 4: "total around 2027-2029" (threshold 89.25, i2026 88.77, rate 0.36-0.40 ->
+    2027.2-2027.6). Blind: 2029.5 (2027.5-2031). With the text's OWN numbers (i2026 = 88.9, i_tot = 89.2, rate
+    0.31) the date is 2027.0. check_numbers_out.txt Sec. 1 tabulates all combinations: 2026.4-2030.6.
+    Fix: "around 2027-2031" (and in the abstract), or state explicitly which threshold/rate gives 2028-2031.
+    Also Sec. 5 "through 2028-2031" -> "2027-2031".
+
+R7. The turnaround argument is stated more generally than it is proved.
+    Text (Sec. 3): "A trend that turned around before 2014 would predict a 4-7% primary in 2004-08, which those
+    limits exclude."
+    Evidence: the 4-7% comes from the one quadratic through the four epochs (quad_i2006.9 = 85.53-86.16 ->
+    V-band 4.5-9.9%, check_numbers_out.txt Sec. 4; REPORT says 4-7%). The ground limits only require
+    i(2004-08) < 85.5 (worst case) or < 85.0 (typical). A turnaround with a minimum below ~85.0 in 2008-2012
+    followed by a faster rise to 85.7 by 2014 is NOT excluded.
+    Fix: "A quadratic trend through the four epochs, which turns around in 2010, would predict a 4-7% primary in
+    2004-08; the limits exclude it." (Also the recomputed range is 4.5-10%, so "4-10%" or "at least 4.5%".)
+
+R8. Figure vs text: the solid curve is the constant-rate model the text excludes, and the caption does not say so.
+    Figure legend: "linear: 0.253 deg/yr" (bottom), "primary: model, linear i(t)" (top). Text: "A constant rate
+    is excluded." The 0.253 deg/yr never appears in the text. The dotted quadratic (d2i/dt2 = 0.026 deg/yr^2,
+    rate 0.41 deg/yr at 2026) is the accelerating model the text now declines to endorse, and in the top panel it
+    predicts totality at 2027 and a decline after 2030; the solid curve plateaus at 39.7% (our radii) while the
+    text says 40-45%.
+    Fix (minimum, caption only): "Curves show the eclipse model for a constant rate (solid, 0.25 deg/yr, excluded
+    by the 2014 point) and for a quadratic trend (dotted; one possible acceleration). Both plateau at the
+    totality depth of our radii (40%); the blind radii give 45%." Better: regenerate with the blind inclinations
+    overplotted (open symbols) and a TESS-era-only linear trend; drop the extrapolation past 2028 or hatch it.
+    Minor figure issues: the green dotted (secondary, quadratic) curve has no legend entry; the limits are V/R
+    band while the curves are TESS band; inclination points have no (systematic) error bars.
+
+R9. Internal inconsistency on the K2 secondary limit across the two notes and the blind.
+    This note: "< 0.03%" (3 sigma). AAS82225: "< 0.1%". Blind: "< 0.08% (99% false-alarm level)".
+    Evidence: the 0.03% is EVEREST-only (data/k2_secondary_scan_EVEREST.csv, max depth 0.00014 + 3 x median err
+    0.00004); K2SFF gives up to 0.003 +- 0.002 at some phases. EVEREST flags in-eclipse cadences (blind REPORT
+    Sec. 1), which makes its secondary window suspect.
+    Fix: "< 0.1%" everywhere (consistent with AAS82225 and conservative against the blind's 0.08%).
+
+R10. numbers.md is stale on the word count and is missing provenance for several text numbers.
+    numbers.md: "abstract 137, body 734". wordcount.py today: abstract 142, body 812. Missing provenance: the
+    "50 min" (R3), the "0.31" (R1, blind), "2028-2031" (R6, blind), "7 h" duration (see S3), "40-45%" (blind
+    45.1%, ours 39.7%).
+    Fix: update numbers.md after the edits (every number must trace to a file, per CLAUDE.md Sec. 5).
+
+-------------------------------------------------------------------------------------------------
+CHECKED AND CORRECT (no action)
+-------------------------------------------------------------------------------------------------
+- Depths: 20.58 +- 0.12, 27.40 +- 0.16, 35.64; 4.36 +- 0.14, 12.52 +- 0.10; S/P 0.212 -> 0.457
+  (results_depth_events.csv, recomputed). The +- are eclipse-to-eclipse scatter; reduction systematics are
+  1-2% absolute (blind "ap/red"); fine since the text says "one fixed aperture".
+- Ground limits: worst 3-sigma 4.49%, median 1.61%, 100% coverage of -0.6..+0.3 d (ground_combined_scan.csv).
+- Thresholds 84.47 / 86.55 (ours), 84.41 / 86.52 (blind) -> "84.4 / 86.5" OK.
+- Primary onset 2007-2011: union of back-extrapolations (ours 2008.6 from the 2014-21 rate, global linear
+  2009.2-2010.6; blind 2007.5, TESS-era rate 2010.0). OK, method unstated (S5).
+- Secondary onset 2018-2019: ours 2017.7-2019.3, blind 2018.2-2019.2. OK.
+- Fit: chi2_red 1.43, R1/a 0.0297, R2/a 0.0391, e 0.35, w 138 deg; 11 TESS eclipses. OK.
+- Timing: rms 10.3 min, chi2 483 / 4 dof, P = 21.774799, T0 = 2488.58926 (unweighted fit reproduces 21.774808,
+  2488.58923, rms 10.3). "3-4 min per orbit on average" OK (-3.1 ours, -4.2 blind). "(P+S)/2 stays on the
+  period": true to 0.2 min in 2021, ~5 min in 2023.
+- Delta(e cos w) for 26 min: 0.0013 per orbit (REPORT) reproduced.
+- Apsidal motion: GR 0.0035 deg/yr; tidal 5e-5 to 2e-4 deg/yr (k2 = 0.005); rotational <~ 0.007 deg/yr even at
+  100 km/s. Observed secular dw/dt is 0.35 (ours) to 0.9 (blind) deg/yr, within-season 0.3-0.6 deg per ORBIT.
+  "Orders of magnitude too slow" is correct (factor >100).
+- Nodal precession estimate: P_nodal ~ (4/3)(M/m3)(P2^2/P1) with di/dt_max ~ 2 pi i_mut / P_nodal reproduces
+  100-600 d for i_mut 2-10 deg, m3/M 0.05-0.3 (check_numbers_out.txt Sec. 7). Stability P2 > ~100 d for a
+  circular outer orbit. Sane.
+- Gaia: 0.5 Msun at 200 d -> 0.18 mas wobble (REPORT "about 0.2 mas") reproduced. RUWE 1.007 disfavours
+  m3 >~ 0.4 Msun at P2 >~ 200 d and says nothing about <~ 0.2 Msun or P2 ~ 100 d. "Mildly favours" is fair.
+- Mass/radius: M_G = 1.48; Teff 7400-7700 K -> R1 1.5-1.6, R2 2.0-2.1 Rsun, a 50-54 Rsun, M_tot 3.5-4.3 Msun.
+  Text OK. (It is a self-consistency check, not an independent one: M_tot comes from R/a and the radii.)
+- Predictions: BJD_TDB 2461339.4472 etc. -> geocentric UTC 2026-10-25 22:39, 11-16 17:12, 12-08 11:46,
+  12-30 06:21 (astropy, light-travel time removed, TDB->UTC). Ephemeris error at E=88 ~3 min; +-30 min for
+  ETVs is fine (max TESS excursion 19 min; the 2014 point was 102 min off over 124 cycles).
+- Bibliography: all 14 entries match ADS (refs_check.txt); Torres & Stefanik 2000 AJ 119, 1914 (SS Lac
+  cessation) and Lacy, Helt & Vaz 1999 AJ 117, 541 (V907 Sco) are the right classic papers.
+- UAT: 444 = Eclipsing binary stars, 1714 = Trinary stars, 1178 = Orbital evolution (verified against the UAT
+  GitHub JSON today).
+- RNAAS: abstract 142 <= 150; body 812 <= 1350; total with caption, acknowledgments and AI statement ~1180
+  < 1500 whichever way AAS counts; one figure; aastex701; AI disclosure present; ORCID/author syntax v7.
+- Dataset DOIs (K2 t9ws3r, TESS-SPOC t9-wpz1-8s54, QLP t9-r086-e880, FFI 0cp4-2j79) match the K2 note.
+- ADS full text: 0 hits for every identifier (ads_fulltext_results.txt). "No other study" holds.
+
+-------------------------------------------------------------------------------------------------
+SUGGESTIONS (optional, in priority order)
+-------------------------------------------------------------------------------------------------
+S1. Cite the directly analogous recent work (all verified in ADS today, ads_extra_refs.txt):
+    - Zasche, Vokrouhlicky, Barlow et al. 2023, AJ 165, 81, "V907 Sco Switched to the Eclipsing Mode Again"
+      (same phenomenon, same star you cite; without it the V907 Sco citation is 24 years stale).
+    - Davenport, Windemuth, Warmbein et al. 2021, AJ 162, 189, "The Rise and Fall of the Eclipsing Binary HS
+      Hydrae" (eclipses switching off, DASCH used exactly as here, TESS).
+    - Baum, Pepper, Davenport et al. 2025, AJ 170, 331, "Eclipse Depth Variations in Seven Eclipsing Binaries
+      as Observed by KELT and TESS" (same surveys; establishes that such systems are now found in bulk).
+    - Borkovits, Hajdu, Sztakovics et al. 2016, MNRAS 455, 4136 (Kepler triples via eclipse timing; the ETV +
+      EDV -> tertiary logic), or Borkovits, Rappaport, Toonen et al. 2022, MNRAS 515, 3773 (Kepler EDV triples).
+    - Torres 2001, AJ 121, 2227 (SS Lac future eclipses) if you want the "predicted return" precedent.
+    Suggested intro sentence: "Binaries whose eclipses appear or disappear are uncommon; the classic cases are
+    SS Lac \citep{Torres2000} and V907 Sco \citep{Lacy1999, Zasche2023}, and Kepler and TESS have added a few
+    dozen \citep[e.g.][]{Borkovits2016, Davenport2021, Baum2025}." ("rare" is no longer accurate.)
+S2. Pipelines named without citations: EVEREST (Luger et al. 2016, AJ 152, 100), K2SFF (Vanderburg & Johnson
+    2014, PASP 126, 948), WASP public archive (Butters et al. 2010, A&A 520, L10, which the WASP archive asks
+    you to cite). ASAS-SN is mentioned but uncited (Shappee et al. 2014 / Kochanek et al. 2017) - either cite
+    or drop the ASAS-SN sentence.
+S3. "Each lasts about 7 h": the base model gives 7.6 h (2021), 8.1 h (2023), 8.5 h (2026) and 8.6-8.7 h near
+    totality; the blind's durations are 7.6-8.4 h. Say "about 8 h".
+S4. Say how the 2026 e cos w was handled: "e cos w for 2026 is tied to 2023 (no secondary observed)". Also list
+    the per-eclipse time shifts among the free parameters, since the ETVs are a result of the note.
+S5. State the onset method in one clause: "extrapolating the 2014-2021 rate back from the 2014 point".
+S6. Give the observed secular apsidal rate so "orders of magnitude" has a referent: "omega advances by ~0.4-0.9
+    deg/yr between seasons and by 0.3-0.6 deg per orbit within seasons, against 0.004 deg/yr from GR and less
+    from tides". (Our 0.7 deg in 2 yr vs the blind's 1.8 deg is a parametrisation difference: both have
+    Delta(e cos w) = -0.0064; ours lets e change, theirs holds e fixed.)
+S7. The fast ETV argues for the LOW end of 100-600 d: a 26-min change in one orbit against 3-4 min/orbit on
+    average needs the perturbation to vary on a few-orbit timescale, i.e. P2 ~ 100-200 d (check_numbers_out.txt
+    Sec. 7). Worth one sentence; it also sharpens the Gaia argument (at P2 ~ 100 d Gaia constrains nothing).
+S8. Gaia sentence: add "or a short outer period": "which mildly favours a tertiary below ~0.3 Msun or an outer
+    period near 100 d".
+S9. "limb darkening" is listed among OUR systematic variants (Sec. 3) but only the blind varied it (ours fixed
+    u = 0.20, 0.27). Say "third light, limb darkening (blind) and phase assumptions".
+S10. Depth uncertainties: say once that the +- are the scatter between eclipses and that the absolute scale
+    depends on the aperture by 1-2% (QLP runs 3-5% relative higher). This pre-empts a referee comparing with
+    the blind's 20.1/27.0/34.5.
+S11. "In a separate note (McBee 2026, submitted)": AAS style is "(J. McBee 2026, submitted)" and it must be
+    updated to the RNAAS citation once AAS82225 is published (numbers.md already says so). RNAAS do not list
+    unpublished work in the bibliography, so the in-text form is right.
+S12. Overlap with AAS82225 (see Sec. "Overlap" below).
+S13. Figure: label the green dotted curve; add the blind inclinations as open circles with their systematic
+     error bars (0.19-0.32 deg); state in the caption that curves are TESS band and limits are V/R.
+S14. Acknowledgments: DASCH asks for "The DASCH project at Harvard is grateful for partial support from NSF
+     grants AST-0407380, AST-0909073, and AST-1313370"; KELT/WASP data via the NASA Exoplanet Archive carry
+     the standard Archive acknowledgment. Cheap to add if the word budget outside the body allows.
+
+-------------------------------------------------------------------------------------------------
+OVERLAP WITH AAS82225 (the K2 note)
+-------------------------------------------------------------------------------------------------
+What AAS82225 already says about this star (k2singles/rnaas/rnaas.tex): the 21.78-d period, the K2 eclipse 2.2 h
+early (3 sigma), the 6% K2 primary and no secondary (< 0.1%), the TESS depths 21/27/36% and 4->12%, S/P 0.21 ->
+0.46, CROWDSAP 0.999, and "a precessing orbit, perhaps driven by a third body, is a plausible cause".
+
+What is new here: the 2004-08 WASP/KELT limits and DASCH; the physical model and the inclination history; the
+onset dates; the acceleration/constant-rate test; the totality prediction; the S-P interval analysis (e cos w
+on month timescales) and the LTTE exclusion; the tertiary order-of-magnitude constraints and Gaia; eclipse
+predictions. That is clearly a separate note. The depth paragraph (Sec. 2, second paragraph) is the only real
+duplication; it is needed for self-containment, but it should be visibly attributed.
+
+Suggested wording (replace the last sentence of the Introduction and the first sentence of the depth paragraph):
+  Intro: "A companion note on K2 single events (J. McBee 2026, submitted) reported the deepening of its eclipses
+  between 2014 and 2026 from the same TESS photometry. Here we add pre-K2 ground limits, a physical eclipse model
+  that converts the depths into an inclination history, the eclipse timing, and predictions."
+  Sec. 2: "The depths repeat those of the companion note: the primary is 6.2% ..."
+Keep the HOLD decision in numbers.md: submit only after the AAS82225 decision, and cite its published form. If
+AAS82225 is returned for revision, consider moving the EPIC 202126877 depth sentences out of it entirely and
+pointing to this note instead; that removes the salami-slicing appearance.
+
+-------------------------------------------------------------------------------------------------
+LOGIC OF THE KEY CLAIMS (verdicts)
+-------------------------------------------------------------------------------------------------
+- "dilution cannot alter S/P": correct. Any third light in a given season multiplies both depths by the same
+  factor 1/(1+l3); the ratio within a season is invariant even if l3 differs between seasons. Wording "no
+  constant dilution" is fine (and could be stronger: no dilution at all).
+- "opposite O-C of P and S means e cos w changes, not light-travel time": correct. LTTE and a period change
+  move both eclipses together; only a change in e cos w (or e, w) moves them apart. Verified numerically
+  (+13.3 / -12.9 min in 2021). Secular apsidal motion would also do this, which is why the GR/tidal comparison
+  is needed; it holds (above).
+- "tidal/GR apsidal motion orders of magnitude too slow": correct, GR 0.0035 deg/yr, classical < 0.01 deg/yr
+  at R/a 0.03-0.04 even with fast rotation, vs observed >~ 0.4 deg/yr secular and ~5-10 deg/yr within seasons.
+- "a turnaround before 2014 would predict 4-7% in 2004-08": true only for the quadratic (R7).
+- "outer period ~100-600 d": the formula is the standard nodal-precession period (Soderhjelm 1975); the range
+  follows from the stated assumptions, which the text should name (S7). i_mut >= ~2.5 deg is needed for the
+  >= 4.8 deg swing from onset to totality; 2 deg is slightly too small.
+- "Gaia RUWE mildly favours a low-mass tertiary": fair, with the P2 caveat (S8).
+- "rate rose from 0.20 to 0.31; constant excluded": the rise and the exclusion are robust (a constant TESS-era
+  rate underpredicts the 2014 depth by 6x); the number 0.31 is not ours (R1).

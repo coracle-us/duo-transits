@@ -1,0 +1,47 @@
+## SS Lac third body (Torres 2001): 1 match(es) for author:"^Torres, G" year:2001 title:"SS Lacertae"
+  2001AJ....121.2227T  The Astronomical Journal v121 p.2227  Torres, Guillermo  | The Change in the Inclination Angle of the Noneclipsing Binary SS Lacertae: Future Eclipses
+## V907 Sco revisited: 2 match(es) for title:"V907 Sco" year:2000-2026
+  2023AJ....165...81Z  The Astronomical Journal v165 p.81  Zasche, Petr; Vokrouhlický, David; Barlow, Brad N.  | V907 Sco Switched to the Eclipsing Mode Again
+  2023yCat..51650081Z  VizieR Online Data Catalog v516 p.J/AJ/165/81  Zasche, P.; Vokrouhlicky, D.; Barlow, B. N.  | VizieR Online Data Catalog: CHIRON radial velocity of V907 Sco system components (Zasche+, 2023)
+## HS Hya vanishing eclipses (Zasche & Paschke 2012): 1 match(es) for title:"HS Hya" year:2012
+  2012A&A...542L..23Z  Astronomy and Astrophysics v542 p.L23  Zasche, P.; Paschke, A.  | HS Hydrae about to turn off its eclipses
+## HS Hya TESS (Davenport 2021): 3 match(es) for author:"^Davenport" title:"HS Hya"
+  2021AJ....162..189D  The Astronomical Journal v162 p.189  Davenport, James. R. A.; Windemuth, Diana; Warmbein, Karen  | The Rise and Fall of the Eclipsing Binary HS Hydrae
+  2021AAS...23713306D  American Astronomical Society Meeting Abstracts #237 v237 p.133.06  Davenport, J.; Windemuth, D.; Howard, E.  | The Rise and Fall of HS Hydra
+  2021yCat..51620189D  VizieR Online Data Catalog v516 p.J/AJ/162/189  Davenport, J. R. A.; Windemuth, D.; Warmbein, K.  | VizieR Online Data Catalog: 125 years light curve of HS Hydrae with DASCH (Davenport+, 2021)
+## Borkovits 2016 Kepler triples: 1 match(es) for author:"^Borkovits" year:2016 bibstem:MNRAS title:"triple"
+  2016MNRAS.455.4136B  Monthly Notices of the Royal Astronomical Society v455 p.4136  Borkovits, T.; Hajdu, T.; Sztakovics, J.  | A comprehensive study of the Kepler triples via eclipse timing
+## Borkovits 2026 northern CVZ EDVs: 1 match(es) for author:"^Borkovits" year:2025-2026 abs:"eclipse depth"
+  2026Univ...12..107B  Universe v12 p.107  Borkovits, Tamás; Mitnyan, Tibor; Czavalinga, Donát R.  | A Few Years Later: Revisiting Period Variations of Eclipsing Binaries in the Northern Continuous Viewing Zone 
+## Baum 2025 KELT+TESS EDVs: 0 match(es) for author:"^Baum" year:2025 abs:"eclipse depth variation"
+## Kostov 2025 TESS Ten-Thousand: 1 match(es) for author:"^Kostov" year:2025 title:"ten thousand"
+  2025ApJS..279...50K  The Astrophysical Journal Supplement Series v279 p.50  Kostov, Veselin B.; Powell, Brian P.; Fornear, Aline U.  | The TESS Ten Thousand Catalog: 10,001 Uniformly Vetted and Validated Eclipsing Binary Stars Detected in Full-f
+## Quadruples changing inclination 2025: 1 match(es) for year:2025 abs:"changing inclination" abs:"quadruple"
+  2025MNRAS.539.1015Z  Monthly Notices of the Royal Astronomical Society v539 p.1015  Zasche, P.; Henzl, Z.; Mašek, M.  | Three new 2+2 quadruple systems with changing inclination
+## Juryšek 2018 dynamical EDV (V907 Sco / others): 1 match(es) for author:"^Jurysek" year:2018 bibstem:A&A
+  2018A&A...609A..46J  Astronomy and Astrophysics v609 p.A46  Juryšek, J.; Zasche, P.; Wolf, M.  | New inclination changing eclipsing binaries in the Magellanic Clouds
+## KIC 2856960 Marsh 2014: 1 match(es) for author:"^Marsh, T" year:2014 title:"KIC 2856960"
+  2014MNRAS.445..309M  Monthly Notices of the Royal Astronomical Society v445 p.309  Marsh, T. R.; Armstrong, D. J.; Carter, P. J.  | KIC 2856960: the impossible triple star
+## Butters 2010 WASP public archive: 1 match(es) for author:"^Butters" year:2010 bibstem:A&A
+  2010A&A...520L..10B  Astronomy and Astrophysics v520 p.L10  Butters, O. W.; West, R. G.; Anderson, D. R.  | The first WASP public data release
+## Luger 2016 EVEREST: 2 match(es) for author:"^Luger" year:2016 title:"EVEREST"
+  2016AJ....152..100L  The Astronomical Journal v152 p.100  Luger, Rodrigo; Agol, Eric; Kruse, Ethan  | EVEREST: Pixel Level Decorrelation of K2 Light Curves
+  2016zndo.....56577L  Zenodo v? p.?  Luger, Rodrigo  | EVEREST
+## Vanderburg & Johnson 2014 K2SFF: 1 match(es) for author:"^Vanderburg" year:2014 bibstem:PASP
+  2014PASP..126..948V  Publications of the Astronomical Society of the Pacific v126 p.948  Vanderburg, Andrew; Johnson, John Asher  | A Technique for Extracting Highly Precise Photometry for the Two-Wheeled Kepler Mission
+## Shappee 2014 ASAS-SN: 0 match(es) for author:"^Shappee" year:2014 bibstem:ApJ title:"ASAS-SN"
+## Soderhjelm 1975 nodal precession: 4 match(es) for author:"^Soderhjelm" year:1975
+  1975A&A....42..229S  Astronomy and Astrophysics v42 p.229  Soderhjelm, S.  | The three-body problem and eclipsing binaries. Application to Algol and lambda Tauri.
+  1975A&AS...22..263S  Astronomy and Astrophysics Supplement Series v22 p.263  Soderhjelm, S.  | Observations of six southern eclipsing binaries for apsidal motion.
+  1975Ana...100..349S  The Analyst v100 p.349  Söderhjelm, P.; Lindquist, J.  | Voltammetric determination of pyridoxine by use of a carbon paste electrode
+  1975JSFA...26.1469S  Journal of the Science of Food and Agriculture v26 p.1469  Söderhjelm, Petter  | The determination of pyridoxine in enriched foodstuffs by direct spectrofluorometric measurement
+## AAS journals AI policy / RNAAS guidelines (sanity): 0 match(es) for bibstem:RNAAS year:2026 title:"Research Notes"
+## Eclipse depth variation TESS 2022-2026: 8 match(es) for abs:"eclipse depth variations" year:2022-2026 property:refereed
+  2023ApJ...956L..20H  The Astrophysical Journal Letters v956 p.L20  Heng, Kevin  | The Transient Outgassed Atmosphere of 55 Cancri e
+  2022MNRAS.515.3773B  Monthly Notices of the Royal Astronomical Society v515 p.3773  Borkovits, T.; Rappaport, S. A.; Toonen, S.  | Von Zeipel - Lidov - Kozai cycles in action: Kepler triples with eclipse depth variations: KICs 6964043, 56531
+  2023MNRAS.525.4628G  Monthly Notices of the Royal Astronomical Society v525 p.4628  Goldberg, Max; Fabrycky, Daniel; Martin, David V.  | A 5M<SUB>Jup</SUB> non-transiting coplanar circumbinary planet around Kepler-1660AB
+  2023MNRAS.526.3730S  Monthly Notices of the Royal Astronomical Society v526 p.3730  Sun, Qi-Bin; Qian, Sheng-Bang; Zhu, Li-Ying  | New evidence for the precession of tilted disc in SDSS J081256.85+191157.8
+  2023Univ....9..485B  Universe v9 p.485  Borkovits, Tamás; Mitnyan, Tibor  | Observational Detection of Higher-Order Secular Perturbations in Tight Hierarchical Triple Stars
+  2025AJ....169...62S  The Astronomical Journal v169 p.62  Sun, Qi-Bin; Qian, Sheng-Bang; Zhu, Li-Ying  | Photometric Analysis of the Cataclysmic Variable Star LT Eri
+  2025MNRAS.539.1015Z  Monthly Notices of the Royal Astronomical Society v539 p.1015  Zasche, P.; Henzl, Z.; Mašek, M.  | Three new 2+2 quadruple systems with changing inclination
+  2025AJ....170..331B  The Astronomical Journal v170 p.331  Baum, Anna C.; Pepper, Joshua; Davenport, James R. A.  | Eclipse Depth Variations in Seven Eclipsing Binaries as Observed by KELT and TESS

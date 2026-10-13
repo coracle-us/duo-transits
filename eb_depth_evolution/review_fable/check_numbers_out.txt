@@ -1,0 +1,208 @@
+====================================================================================================
+1. INCLINATION HISTORY: ours (data/inclination_trend.csv) vs blind (independent/results.csv)
+our epochs used by 18_inclination_trend.py (decimal yr): {'2014': np.float64(2014.356), '2021': np.float64(2021.808), '2023': np.float64(2023.866), '2026': np.float64(2026.041)}
+  ours base  i = 85.69 87.26 87.91 88.77 | di/dt 14-21 0.211  21-23 0.314  23-26 0.398  | 21-26 0.357 deg/yr
+  ours min   i = 85.68 87.24 87.87 88.72 | di/dt 14-21 0.209  21-23 0.309  23-26 0.390  | 21-26 0.351 deg/yr
+  ours max   i = 85.84 87.39 88.10 89.08 | di/dt 14-21 0.208  21-23 0.342  23-26 0.453  | 21-26 0.399 deg/yr
+  text       i = 85.70 87.30 88.00 88.90 | di/dt 14-21 0.215  21-23 0.339  23-26 0.414  | 21-26 0.378 deg/yr
+  blind      i = 85.76 87.23 87.86 88.55 | di/dt 14-21 0.197  21-23 0.304  23-26 0.317  | 21-26 0.310 deg/yr
+  TEXT says: 0.20 (2014-2021) and 0.31 (2021-2026).  Our own base model gives 0.36 for 2021-2026; the text's own
+  inclinations (87.3 -> 88.9 over 4.2 yr) imply 0.38. Only the blind analysis gives 0.31.
+  ours: i2026 - i2023 = 0.865;  blind: 0.689  (difference 0.18 deg)
+  ours variant ranges: 2023->2026 rate 0.390-0.453; blind 0.316 +- 0.005 (variants 0.303-0.370): NO overlap of ranges
+
+  Primary onset (i = i_graze_P) by back-extrapolation from the 2014 point:
+    ours base, 2014-21 rate     : 2014.36 - (85.69-84.47)/0.211 = 2008.6
+    ours max i2014, min rate    : 2014.36 - (85.84-84.45)/0.194 = 2007.2
+    ours min i2014, max rate    : 2014.36 - (85.68-84.58)/0.223 = 2009.4
+    blind nominal               : 2014.36 - (85.76-84.42)/0.197 = 2007.5
+    blind, TESS-era rate        : 2014.36 - (85.76-84.42)/0.308 = 2010.0
+    ours global-linear fit (18_inclination_trend.py lin_tP_onset): 2009.2-2010.6
+    TEXT: 2007-2011. OK as a union of methods, but the method is not stated.
+
+  Totality dates. Threshold ours 89.25 (REPORT), blind 89.59 (89.20-89.95). From each i2026 at each 2021-26 rate:
+    ours base        i2026=88.77 rate=0.357 -> i_tot=89.20: 2027.2
+    ours base        i2026=88.77 rate=0.357 -> i_tot=89.25: 2027.4
+    ours base        i2026=88.77 rate=0.357 -> i_tot=89.59: 2028.3
+    ours base        i2026=88.77 rate=0.357 -> i_tot=89.90: 2029.2
+    ours min         i2026=88.72 rate=0.340 -> i_tot=89.20: 2027.4
+    ours min         i2026=88.72 rate=0.340 -> i_tot=89.25: 2027.6
+    ours min         i2026=88.72 rate=0.340 -> i_tot=89.59: 2028.6
+    ours min         i2026=88.72 rate=0.340 -> i_tot=89.90: 2029.5
+    ours max         i2026=89.08 rate=0.380 -> i_tot=89.20: 2026.4
+    ours max         i2026=89.08 rate=0.380 -> i_tot=89.25: 2026.5
+    ours max         i2026=89.08 rate=0.380 -> i_tot=89.59: 2027.4
+    ours max         i2026=89.08 rate=0.380 -> i_tot=89.90: 2028.2
+    blind            i2026=88.55 rate=0.310 -> i_tot=89.20: 2028.1
+    blind            i2026=88.55 rate=0.310 -> i_tot=89.25: 2028.3
+    blind            i2026=88.55 rate=0.310 -> i_tot=89.59: 2029.4
+    blind            i2026=88.55 rate=0.310 -> i_tot=89.90: 2030.4
+    text i2026=88.9  i2026=88.90 rate=0.310 -> i_tot=89.20: 2027.0
+    text i2026=88.9  i2026=88.90 rate=0.310 -> i_tot=89.25: 2027.2
+    text i2026=88.9  i2026=88.90 rate=0.310 -> i_tot=89.59: 2028.3
+    text i2026=88.9  i2026=88.90 rate=0.310 -> i_tot=89.90: 2029.3
+    text i2026=88.5  i2026=88.50 rate=0.310 -> i_tot=89.20: 2028.3
+    text i2026=88.5  i2026=88.50 rate=0.310 -> i_tot=89.25: 2028.5
+    text i2026=88.5  i2026=88.50 rate=0.310 -> i_tot=89.59: 2029.6
+    text i2026=88.5  i2026=88.50 rate=0.310 -> i_tot=89.90: 2030.6
+    TEXT: 'around 2028-2031'. With the text's own i2026 = 88.9 and i_tot = 89.2 the date is 2027.0; our model gives 2027-2028.
+    REPORT (ours) said 2027-29; blind 2027.5-2031. An honest union is 2027-2031.
+
+====================================================================================================
+2. DEPTHS (results_depth_events.csv)
+               mean     std  size
+season kind                      
+2014   P     0.0618     NaN     1
+2021   P     0.2058  0.0012     3
+       S     0.0436  0.0014     2
+2023   P     0.2740  0.0016     2
+       S     0.1252  0.0010     2
+2026   P     0.3564     NaN     1
+  S/P 2021: 0.212
+  S/P 2023: 0.457
+  TEXT: 20.6+-0.1, 27.4+-0.2, 35.6; 4.4+-0.1, 12.5+-0.1; S/P 0.21 -> 0.46. OK. The +- are eclipse-to-eclipse std only.
+  Reduction systematics (QLP vs own aperture) are 1-2% absolute (blind: 'ap/red' 0.016-0.022), not quoted in the text.
+  Blind depths (model, r=2 px): 20.1/27.0/34.5 and 4.3/12.0 -> S/P 0.216 / 0.446.
+
+====================================================================================================
+3. GROUND LIMITS (data/ground_combined_scan.csv), offsets -0.6..+0.3 d
+  P: coverage 100%, worst 3-sigma limit 0.0449, median 0.0161, max fitted depth 0.0237
+  S: coverage 96%, worst 3-sigma limit 0.1436, median 0.0228, max fitted depth 0.0172
+  TEXT: < 4.5% (3 sigma), typically < 1.6%. OK.
+
+====================================================================================================
+4. TURNAROUND ARGUMENT: V-band depth at the quadratic i(2006.9); inclination allowed by the ground limits
+  quad_i2006.9 over variants: 85.53-86.16 deg
+  -> V-band primary depth: 0.045-0.099
+  lin_i2006.9: 83.56-83.90 -> depth 0.000
+  inclination at which the V-band primary depth = 4.5%: 85.52 deg
+  inclination at which the V-band primary depth = 1.6%: 85.04 deg
+  V-band depth at i2014 = 85.69-85.86: 0.058-0.072
+  So the ground limits say i(2004-08) < ~85.5 (worst case) or < ~85.0 (typical). They exclude the specific quadratic through
+  the four points (minimum i ~ 85.45 near 2010). They do NOT exclude every turnaround: e.g. a minimum below ~85.0 in 2008-2012
+  followed by a faster rise to 85.7 by 2014 is not excluded by WASP/KELT. The text should say 'the quadratic trend', not 'a trend'.
+  quadratic through base points: minimum i = 85.44 at 2009.9; d2i/dt2 = 0.0257 deg/yr^2; rate at 2026: 0.413
+
+====================================================================================================
+5. TIMING: S-P intervals (data/sec_minus_pri_interval.csv, data/eclipse_times.csv)
+ cycle       year  interval_d  err_min                    ref
+     0 2021.76802     7.24283  1.80552  observed P same cycle
+     1 2021.82765     7.22460  1.75786  observed P same cycle
+    34 2023.79614     7.17192 15.09966 P(next cycle) - P_mean
+    35 2023.85574     7.15087  1.73133  observed P same cycle
+  2021 one-orbit change: -26.2 +- 2.5 min;  2023 E34->E35: -30.3 +- 15.2 min
+  2023 E35->E36 using the PARTIAL S36 (excluded from timing in REPORT.txt): -52.3 min
+  TEXT: 'by about 50 min within one orbit in 2023'. That number only exists if the partial S36 (egress only, two time
+  estimates differing by 15 min) is used; our own REPORT.txt excludes it. Without it, the 2023 one-orbit change is -30 +- 15 min.
+  mean change 2021->2023: -3.06 min/orbit (text 3-4; blind -4.2). OK.
+  2021: P1-P0 - Pm = +13.3 min; S1-S0 - Pm = -12.9 min; mean +0.2 min
+  2023: P36-P35 - Pm = +20.0 min; S35-S34 - Pm = -30.3 min; mean -5.1 min
+  TEXT: 'their mean stays on the period' - true to 0.2 min in 2021, to ~5 min in 2023.
+  unweighted TESS-primary linear fit: P=21.774808 T0=2488.58923; rms 10.3 min  (text P=21.774799, T0=2488.58926, rms 10 min)
+  secular Delta(e cos w) 2021->2023 ours: -0.25953 -> -0.26595 = -0.0064; blind -0.2593 -> -0.2658. Same.
+  Per-orbit Delta(e cos w) for -26 min: d(phase)/d(ecosw) = 0.631; 26 min = 0.00083 in phase -> Delta(ecosw) = 0.00131 per orbit (REPORT: 0.0013)
+
+====================================================================================================
+6. CLASSICAL + GR APSIDAL MOTION (R/a 0.03-0.04, e 0.35, M_tot 4.3 Msun, P 21.775 d)
+  GR: 0.0035 deg/yr  (REPORT: 0.003 deg/yr)
+  R/a=0.03: tidal 5.02e-05 deg/yr; rotational (v=100 km/s, Omega/n=27) 2.76e-03 deg/yr
+  R/a=0.04: tidal 2.11e-04 deg/yr; rotational (v=100 km/s, Omega/n=20) 6.54e-03 deg/yr
+  Observed: secular dw/dt 0.35 (ours) to 0.9 (blind) deg/yr between seasons; within-season 0.3-0.6 deg per ORBIT (5-10 deg/yr).
+  'Orders of magnitude too slow' is correct (factor >100). The text never states the observed secular apsidal rate.
+
+====================================================================================================
+7. NODAL PRECESSION ESTIMATE: P_nodal ~ (4/3)(M/m3)(P2^2/P1);  di/dt_max ~ 2 pi i_mut / P_nodal
+  di/dt=0.2 deg/yr, i_mut= 2 deg -> P_nodal=    63 yr; m3/M=0.05: P2=  137 d
+  di/dt=0.2 deg/yr, i_mut= 2 deg -> P_nodal=    63 yr; m3/M=0.1: P2=  194 d
+  di/dt=0.2 deg/yr, i_mut= 2 deg -> P_nodal=    63 yr; m3/M=0.3: P2=  335 d
+  di/dt=0.2 deg/yr, i_mut= 5 deg -> P_nodal=   157 yr; m3/M=0.05: P2=  216 d
+  di/dt=0.2 deg/yr, i_mut= 5 deg -> P_nodal=   157 yr; m3/M=0.1: P2=  306 d
+  di/dt=0.2 deg/yr, i_mut= 5 deg -> P_nodal=   157 yr; m3/M=0.3: P2=  530 d
+  di/dt=0.2 deg/yr, i_mut=10 deg -> P_nodal=   314 yr; m3/M=0.05: P2=  306 d
+  di/dt=0.2 deg/yr, i_mut=10 deg -> P_nodal=   314 yr; m3/M=0.1: P2=  433 d
+  di/dt=0.2 deg/yr, i_mut=10 deg -> P_nodal=   314 yr; m3/M=0.3: P2=  750 d
+  di/dt=0.31 deg/yr, i_mut= 2 deg -> P_nodal=    41 yr; m3/M=0.05: P2=  110 d
+  di/dt=0.31 deg/yr, i_mut= 2 deg -> P_nodal=    41 yr; m3/M=0.1: P2=  155 d
+  di/dt=0.31 deg/yr, i_mut= 2 deg -> P_nodal=    41 yr; m3/M=0.3: P2=  269 d
+  di/dt=0.31 deg/yr, i_mut= 5 deg -> P_nodal=   101 yr; m3/M=0.05: P2=  174 d
+  di/dt=0.31 deg/yr, i_mut= 5 deg -> P_nodal=   101 yr; m3/M=0.1: P2=  246 d
+  di/dt=0.31 deg/yr, i_mut= 5 deg -> P_nodal=   101 yr; m3/M=0.3: P2=  426 d
+  di/dt=0.31 deg/yr, i_mut=10 deg -> P_nodal=   203 yr; m3/M=0.05: P2=  246 d
+  di/dt=0.31 deg/yr, i_mut=10 deg -> P_nodal=   203 yr; m3/M=0.1: P2=  348 d
+  di/dt=0.31 deg/yr, i_mut=10 deg -> P_nodal=   203 yr; m3/M=0.3: P2=  602 d
+  di/dt=0.4 deg/yr, i_mut= 2 deg -> P_nodal=    31 yr; m3/M=0.05: P2=   97 d
+  di/dt=0.4 deg/yr, i_mut= 2 deg -> P_nodal=    31 yr; m3/M=0.1: P2=  137 d
+  di/dt=0.4 deg/yr, i_mut= 2 deg -> P_nodal=    31 yr; m3/M=0.3: P2=  237 d
+  di/dt=0.4 deg/yr, i_mut= 5 deg -> P_nodal=    79 yr; m3/M=0.05: P2=  153 d
+  di/dt=0.4 deg/yr, i_mut= 5 deg -> P_nodal=    79 yr; m3/M=0.1: P2=  216 d
+  di/dt=0.4 deg/yr, i_mut= 5 deg -> P_nodal=    79 yr; m3/M=0.3: P2=  375 d
+  di/dt=0.4 deg/yr, i_mut=10 deg -> P_nodal=   157 yr; m3/M=0.05: P2=  216 d
+  di/dt=0.4 deg/yr, i_mut=10 deg -> P_nodal=   157 yr; m3/M=0.1: P2=  306 d
+  di/dt=0.4 deg/yr, i_mut=10 deg -> P_nodal=   157 yr; m3/M=0.3: P2=  530 d
+  TEXT '~100-600 d' is reproduced for i_mut 2-10 deg, m3/M 0.05-0.3. Note i_mut >= ~2.5 deg is required by the >= 4.8 deg swing
+  (from < 84.4 in ~2008 to > 89.2 by ~2030): the amplitude of i(t) is 2 i_mut (for a nearly edge-on outer orbit).
+  Mardling-Aarseth (e_out=0, q_out~0.1, i_mut small): a2/a1 > 2.8*(1.1)^0.4 = 2.91 -> P2/P1 > 4.7 -> P2 > 103 d
+  dynamical ETV amplitude ~ (1/2pi)(m3/M)(P1^2/P2): m3/M=0.1, P2=100 d -> 109 min (x f(e) ~ 1-3)
+  dynamical ETV amplitude ~ (1/2pi)(m3/M)(P1^2/P2): m3/M=0.1, P2=200 d -> 54 min (x f(e) ~ 1-3)
+  dynamical ETV amplitude ~ (1/2pi)(m3/M)(P1^2/P2): m3/M=0.3, P2=300 d -> 109 min (x f(e) ~ 1-3)
+  dynamical ETV amplitude ~ (1/2pi)(m3/M)(P1^2/P2): m3/M=0.05, P2=100 d -> 54 min (x f(e) ~ 1-3)
+  A 26-min change of T_S-T_P in ONE orbit, vs 3-4 min/orbit averaged over 2 yr, needs the perturbation to vary on a few-orbit
+  timescale, i.e. P2 of order 100-200 d, the LOW end of the quoted range. Worth saying.
+
+====================================================================================================
+8. GAIA: photocentre wobble of the inner binary around the triple's barycentre, d = 661 pc
+  m3=0.1 Msun, P2=100 d: a_out=0.69 AU, binary wobble semi-amplitude 0.024 mas
+  m3=0.1 Msun, P2=200 d: a_out=1.10 AU, binary wobble semi-amplitude 0.038 mas
+  m3=0.1 Msun, P2=400 d: a_out=1.74 AU, binary wobble semi-amplitude 0.060 mas
+  m3=0.1 Msun, P2=600 d: a_out=2.28 AU, binary wobble semi-amplitude 0.078 mas
+  m3=0.2 Msun, P2=100 d: a_out=0.70 AU, binary wobble semi-amplitude 0.047 mas
+  m3=0.2 Msun, P2=200 d: a_out=1.11 AU, binary wobble semi-amplitude 0.074 mas
+  m3=0.2 Msun, P2=400 d: a_out=1.75 AU, binary wobble semi-amplitude 0.118 mas
+  m3=0.2 Msun, P2=600 d: a_out=2.30 AU, binary wobble semi-amplitude 0.155 mas
+  m3=0.3 Msun, P2=100 d: a_out=0.70 AU, binary wobble semi-amplitude 0.069 mas
+  m3=0.3 Msun, P2=200 d: a_out=1.11 AU, binary wobble semi-amplitude 0.110 mas
+  m3=0.3 Msun, P2=400 d: a_out=1.77 AU, binary wobble semi-amplitude 0.174 mas
+  m3=0.3 Msun, P2=600 d: a_out=2.32 AU, binary wobble semi-amplitude 0.228 mas
+  m3=0.5 Msun, P2=100 d: a_out=0.71 AU, binary wobble semi-amplitude 0.112 mas
+  m3=0.5 Msun, P2=200 d: a_out=1.13 AU, binary wobble semi-amplitude 0.178 mas
+  m3=0.5 Msun, P2=400 d: a_out=1.79 AU, binary wobble semi-amplitude 0.282 mas
+  m3=0.5 Msun, P2=600 d: a_out=2.35 AU, binary wobble semi-amplitude 0.370 mas
+  Gaia DR3 per-transit AL precision at G=11 is ~0.1-0.2 mas; wobbles >~0.2 mas (0.5 Msun at P2 >~ 200 d) would raise RUWE.
+  RUWE 1.007 therefore disfavours m3 >~ 0.4 Msun for P2 >~ 200 d; it says nothing about m3 <~ 0.2 Msun at any P2 or any mass at P2 ~ 100 d.
+  'Mildly favours a low-mass tertiary' is fair; 'or a short outer period' should be added.
+
+====================================================================================================
+9. MASS/RADIUS: R1/a=0.0297, R2/a=0.0391, G=10.95, A_G=0.37, plx -> 661 pc, Teff 7400-7700 K
+  M_G(system) = 1.48 (REPORT 1.49)
+  Teff=7400: L=18.7 Lsun, R1=1.59, R2=2.10 Rsun, a=53.5 Rsun, M_tot=4.34 Msun
+  Teff=7700: L=19.1 Lsun, R1=1.48, R2=1.96 Rsun, a=49.9 Rsun, M_tot=3.52 Msun
+  TEXT: 1.6 and 2.1 Rsun, 4.3 Msun. Reproduced within the Teff/BC/extinction slop (R1 1.5-1.6, M_tot 3.5-4.4).
+  Note M_tot is derived from the radii and R/a, so 'consistent with two A stars' is a self-consistency check, not independent.
+  Blind radii (R1/a 0.032, R2/a 0.037) would give R1~R2~1.8 Rsun and a similar M_tot.
+
+====================================================================================================
+10. PREDICTED PRIMARIES (P=21.774799, T0=BTJD 2488.58926), geocentric UTC with light-travel time removed
+  E=85: BJD_TDB 2461339.4472  ltt +3.4 min  UTC 2026-10-25 22:39:19  (text: see draft)
+  E=86: BJD_TDB 2461361.2220  ltt +5.9 min  UTC 2026-11-16 17:12:32  (text: see draft)
+  E=87: BJD_TDB 2461382.9968  ltt +7.6 min  UTC 2026-12-08 11:46:36  (text: see draft)
+  E=88: BJD_TDB 2461404.7716  ltt +8.1 min  UTC 2026-12-30 06:21:46  (text: see draft)
+  Text: Oct 25 22:39, Nov 16 17:12, Dec 8 11:46, Dec 30 06:21. iso[:16] truncates seconds (fine at +-30 min).
+  ephemeris error at E=88 (16 cycles past E72): ~3.3 min (inflated), ETV +-20 min -> +-30 min OK
+
+====================================================================================================
+11. PRIMARY ECLIPSE DURATION from the base model (first to last contact)
+  i=87.26: duration 7.56 h, depth 21.0%
+  i=87.91: duration 8.06 h, depth 28.1%
+  i=88.77: duration 8.48 h, depth 36.8%
+  i=89.30: duration 8.63 h, depth 39.7%
+  i=89.60: duration 8.68 h, depth 39.7%
+  i=90.00: duration 8.70 h, depth 39.7%
+  TEXT: 'Each lasts about 7 h'. The model gives ~8 h now and ~8.5 h near totality; blind 'duration' 7.6-8.4 h. Say 'about 8 h'.
+
+====================================================================================================
+12. K2 2014 SECONDARY LIMIT: ours < 0.03% (3 sigma); blind < 0.08% (99% false-alarm of a box scan); K2 note (AAS82225) says < 0.1%.
+    Three different numbers for the same null. The blind's trials-corrected limit is the defensible one; < 0.1% is consistent with AAS82225.
+
+====================================================================================================
+13. DASCH: 1206 points, eclipse duty cycle ~8 h / 21.77 d = 1.5% -> 18 points expected in a primary eclipse;
+    8/1206 > 0.3 mag vs 0.64% in comparisons (7.7 expected). A 35% eclipse (0.47 mag) persisting would add ~10-15 faint points. OK.
