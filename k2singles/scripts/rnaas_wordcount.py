@@ -10,7 +10,7 @@ RN = Path(__file__).resolve().parents[1] / "rnaas"
 
 
 def words(s):
-    s = re.sub(r"%.*", "", s)
+    s = re.sub(r"(?<!\\)%.*", "", s)   # strip comments, not escaped \%
     s = re.sub(r"\\cite[tp]\{[^}]*\}", "CITE", s)
     s = re.sub(r"\$[^$]*\$", "X", s)
     s = re.sub(r"\\[a-zA-Z]+\*?(\[[^\]]*\])?", "", s)

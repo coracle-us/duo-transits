@@ -1,0 +1,149 @@
+%% Research Note of the AAS (draft, NOT submitted): EPIC 202126877, eclipses switching on.
+%% Source, numbers and provenance: https://github.com/coracle-us/duo-transits (eb_depth_evolution/; see rnaas/numbers.md).
+\documentclass{aastex701}
+
+\begin{document}
+
+\title{Eclipses Switching On: Rapid Inclination Change in the Eccentric A-star Binary EPIC 202126877}
+
+\author[orcid=0009-0000-7524-4470]{Jon McBee}
+\affiliation{Independent researcher, USA}
+\email{jon.mcbee@gmail.com}
+
+\begin{abstract}
+EPIC~202126877 (TYC~1883-1721-1) is a 21.775-d eccentric binary of two A stars whose eclipses have
+appeared within the last two decades. SuperWASP and KELT saw no eclipse in 2004--2008 ($<4.5\%$, $3\sigma$).
+K2 caught a 6.2\% primary and no secondary in 2014. TESS measured a primary 20.6\% deep in 2021, 27.4\% in
+2023 and 35.6\% in 2026, and a secondary growing from 4.4\% to 12.5\%. A joint eclipse model gives an
+orbital inclination rising from $85.7^\circ$ to $88.9^\circ$, at an average $0.25^\circ$\,yr$^{-1}$ and
+accelerating. The primary eclipses probably began in 2008--2011, and should become total, about 40\% deep,
+by 2027--2029. Within single orbits the primary and secondary eclipse times shift in opposite directions by
+up to 26\,min, so $e\cos\omega$ varies on month timescales. Both effects point to a close third body that
+Gaia DR3 does not detect.
+\end{abstract}
+
+\keywords{\uat{Eclipsing binary stars}{444} --- \uat{Trinary stars}{1714} --- \uat{Orbital evolution}{1178}}
+
+\section{Introduction}
+
+Binaries whose eclipses appear or disappear are rare: SS~Lac \citep{Torres2000} and V907~Sco
+\citep{Lacy1999} are classic cases. They record nodal precession driven by a third body, and so measure the
+architecture of a hierarchical triple. EPIC~202126877 (TIC~86491361; Gaia DR3 3383995253529149056; $G=10.95$)
+is an Am star \citep[A5;][]{Shang2022}. It is listed with a single K2 Campaign~0 eclipse and no period by
+\citet{LaCourse2015}, and it is detected automatically in TESS by \citet{IJspeert2024} with $P=21.78$\,d.
+In a separate note (McBee 2026, submitted) we pointed out that its eclipses are deepening. Here we quantify
+the change and its cause. No other study of the system's eclipses exists (ADS full text, SIMBAD, VizieR).
+
+\section{Data and depths}
+
+We used:
+\begin{itemize}
+\item K2 Campaign~0 (EVEREST and K2SFF, 2014 May; \citealt{Howell2014});
+\item TESS Sectors 43--45 (2021) and 71--72 (2023), from TESS-SPOC \citep{Caldwell2020}, QLP \citep{Huang2020},
+  and our own TESScut \citep{Brasseur2019} photometry;
+\item a 2026 January TESS full-frame segment (BTJD 4055.8--4063.0) with our own photometry;
+\item ground photometry: SuperWASP (2004--2008; \citealt{Pollacco2006}), KELT-North (2006--2008;
+  \citealt{Pepper2007}) and DASCH plates \citep[1890--1990;][]{Grindlay2009}.
+\end{itemize}
+ZTF and ATLAS saturate on this star. ASAS-SN V photometry (2014--2018) is too sparse at eclipse phase to
+measure depths. The faint neighbor ($G=14.9$ at $21''$) contributes about 3\% of the light in TESS. For
+TESS, all depths come from one fixed aperture, with the depth taken as the median flux within $\pm15$\,min of
+mid-eclipse.
+
+The primary depth is 6.2\% (2014), $20.6\pm0.1\%$ (2021), $27.4\pm0.2\%$ (2023) and 35.6\% (2026). The
+secondary is $<0.03\%$ (2014), $4.4\pm0.1\%$ (2021) and $12.5\pm0.1\%$ (2023); none fell in the 2026 segment.
+The secondary-to-primary ratio, which no constant dilution can alter, doubles from 0.21 to 0.46. Folding the
+ground data on the TESS ephemeris gives a primary depth below 4.5\% ($3\sigma$, typically $<1.6\%$) in
+2004--2008, for any phase offset from $-0.6$ to $+0.3$\,d. DASCH shows no excess of faint points relative to
+30 comparison stars, which rules out deep eclipses lasting through most of the century.
+
+\section{Inclination history}
+
+We fit all eleven TESS eclipses jointly with two limb-darkened spheres on a Keplerian orbit.
+\begin{itemize}
+\item \textbf{Free parameters:} the radii, the surface-brightness ratio and $e\sin\omega$, shared across
+  seasons, plus one inclination per season. $e\cos\omega$ is set by each season's secondary phase.
+\item \textbf{Fit:} reduced $\chi^2=1.43$, $R_1/a=0.0297$, $R_2/a=0.0391$, $e=0.35$ and $\omega\approx138^\circ$.
+\item \textbf{2014:} the K2 primary then fixes the inclination, and the model reproduces the absent secondary.
+\end{itemize}
+The inclination rises from $85.7^\circ$ (2014.4) to $87.3^\circ$ (2021.8), $88.0^\circ$ (2023.9) and
+$88.9^\circ$ (2026.0). The ranges across third light (0--15\%) and phase assumptions are $0.1$--$0.4^\circ$,
+larger than the formal errors. The rate grows from $0.21$ to $0.33$ to $0.42^\circ$\,yr$^{-1}$.
+
+Primary eclipses require $i>84.47^\circ$ and secondaries $i>86.55^\circ$. Extrapolating places the primary
+onset in about 2008--2011, consistent with the ground limits. A trend that turned around before 2014 would
+predict a 4--7\% primary in 2004--2008, which those limits exclude. The secondary onset falls in about
+2018--2019. The primary becomes total (flat-bottomed, about 40\% deep) at $i>89.25^\circ$, around
+2027--2029 (Figure~\ref{fig:hist}). With the Gaia distance and the fitted light ratio, the radii
+($1.6$ and $2.1\,R_\odot$) and total mass ($\approx4.3\,M_\odot$) are consistent with two A stars.
+
+\section{Eclipse timing and a third body}
+
+The TESS primary times scatter by 10\,min rms about a linear ephemeris ($\chi^2=483$ for 4 degrees of freedom),
+consistent across three reductions and two timing methods. The interval from secondary to primary eclipse fell
+by $26\pm2.5$\,min within one orbit in 2021, and by 104\,min in total from 2021 to 2023. Within each season the
+primary and secondary times move in opposite directions, while their mean stays on the period. That pattern is
+a changing $e\cos\omega$, not light-travel time, and it varies over months. Tidal and relativistic apsidal
+motion are orders of magnitude too slow. Rapid nodal precession together with these dynamical timing variations
+therefore requires a close third body; an order-of-magnitude precession estimate suggests an outer period of
+$\sim$100--600\,d. Gaia DR3 \citep{Gaia2023} shows a normal RUWE (1.007), no non-single-star solution and no
+co-moving wide companion, which mildly favors a low-mass tertiary.
+
+\begin{figure}[ht!]
+\plotone{depth_history_summary.png}
+\caption{Top: primary (blue) and secondary (green) eclipse depths of EPIC~202126877 from K2 (2014) and TESS
+(2021--2026), with SuperWASP/KELT upper limits (2004--2008). Curves show the eclipse model for a linear (solid)
+and quadratic (dotted) inclination trend. Bottom: inclination per season, with the thresholds below which
+primary and secondary eclipses vanish.\label{fig:hist}}
+\end{figure}
+
+\section{Predictions}
+
+On the linear TESS ephemeris ($P=21.774799$\,d, $T_0={\rm BJD_{TDB}}\,2459488.58926$), the next primaries
+fall on 2026 Oct~25 22:39, Nov~16 17:12, Dec~8 11:46 and Dec~30 06:21~UTC ($\pm30$\,min, set by the timing
+variations).
+Each lasts about 7\,h at $V\approx11$, which is within reach of small telescopes. Timings and depths through
+2027--2029 will test the predicted totality. Radial velocities and a photodynamical model could then measure
+the tertiary's orbit and mass. Data, code and fits are at
+\url{https://github.com/coracle-us/duo-transits} (directory \texttt{eb\_depth\_evolution}).
+
+\begin{acknowledgments}
+This work uses K2 and TESS data from MAST: K2 light curves
+\dataset[doi:10.17909/t9ws3r]{https://doi.org/10.17909/t9ws3r}, TESS-SPOC light curves
+\dataset[doi:10.17909/t9-wpz1-8s54]{https://doi.org/10.17909/t9-wpz1-8s54}, QLP light curves
+\dataset[doi:10.17909/t9-r086-e880]{https://doi.org/10.17909/t9-r086-e880} and full-frame images
+\dataset[doi:10.17909/0cp4-2j79]{https://doi.org/10.17909/0cp4-2j79}. It also uses the SuperWASP public archive,
+KELT-North data from the NASA Exoplanet Archive, DASCH, ESA Gaia DR3, VizieR, SIMBAD and ADS.
+\end{acknowledgments}
+
+\facilities{Kepler (K2), TESS, SuperWASP, KELT, Gaia}
+\software{lightkurve \citep{Lightkurve2018}, astroquery \citep{Ginsburg2019}, batman \citep{Kreidberg2015}, astrocut \citep{Brasseur2019}}
+
+\section*{AI disclosure statement}
+The author used an AI assistant, Anthropic's Claude (a large language model), under his supervision. It wrote
+and ran the analysis code, including an independent blind re-analysis and adversarial reviews performed by
+separate AI agents, and drafted and edited the text of this note. The author reviewed and edited the text,
+checked the numbers against the saved analysis outputs, and takes full responsibility for the content. Every
+reference was checked against ADS, arXiv, Crossref or VizieR records. The figure was generated by analysis
+code from the data, not by a generative AI model.
+
+\begin{thebibliography}{}
+\bibitem[Brasseur et al.(2019)]{Brasseur2019} Brasseur, C.~E., Phillip, C., Fleming, S.~W., Mullally, S.~E., \& White, R.~L. 2019, Astrocut: Tools for creating cutouts of TESS images, Astrophysics Source Code Library, ascl:1905.007
+\bibitem[Caldwell et al.(2020)]{Caldwell2020} Caldwell, D.~A., Tenenbaum, P., Twicken, J.~D., et al. 2020, RNAAS, 4, 201
+\bibitem[Gaia Collaboration et al.(2023)]{Gaia2023} Gaia Collaboration, Vallenari, A., Brown, A.~G.~A., et al. 2023, A\&A, 674, A1
+\bibitem[Ginsburg et al.(2019)]{Ginsburg2019} Ginsburg, A., Sip{\H o}cz, B.~M., Brasseur, C.~E., et al. 2019, AJ, 157, 98
+\bibitem[Grindlay et al.(2009)]{Grindlay2009} Grindlay, J., Tang, S., Simcoe, R., et al. 2009, ASP Conf. Ser., 410, 101
+\bibitem[Howell et al.(2014)]{Howell2014} Howell, S.~B., Sobeck, C., Haas, M., et al. 2014, PASP, 126, 398
+\bibitem[Huang et al.(2020)]{Huang2020} Huang, C.~X., Vanderburg, A., P\'al, A., et al. 2020, RNAAS, 4, 204
+\bibitem[IJspeert et al.(2024)]{IJspeert2024} IJspeert, L.~W., Tkachenko, A., Johnston, C., \& Aerts, C. 2024, A\&A, 691, A242
+\bibitem[Kreidberg(2015)]{Kreidberg2015} Kreidberg, L. 2015, PASP, 127, 1161
+\bibitem[LaCourse et al.(2015)]{LaCourse2015} LaCourse, D.~M., Jek, K.~J., Jacobs, T.~L., et al. 2015, MNRAS, 452, 3561
+\bibitem[Lacy et al.(1999)]{Lacy1999} Lacy, C.~H.~S., Helt, B.~E., \& Vaz, L.~P.~R. 1999, AJ, 117, 541
+\bibitem[Lightkurve Collaboration et al.(2018)]{Lightkurve2018} Lightkurve Collaboration, Cardoso, J.~V.~d.~M., Hedges, C., et al. 2018, Lightkurve: Kepler and TESS time series analysis in Python, Astrophysics Source Code Library, ascl:1812.013
+\bibitem[Pepper et al.(2007)]{Pepper2007} Pepper, J., Pogge, R.~W., DePoy, D.~L., et al. 2007, PASP, 119, 923
+\bibitem[Pollacco et al.(2006)]{Pollacco2006} Pollacco, D.~L., Skillen, I., Collier Cameron, A., et al. 2006, PASP, 118, 1407
+\bibitem[Shang et al.(2022)]{Shang2022} Shang, L.-H., Luo, A.-L., Wang, L., et al. 2022, ApJS, 259, 63
+\bibitem[Torres \& Stefanik(2000)]{Torres2000} Torres, G., \& Stefanik, R.~P. 2000, AJ, 119, 1914
+\end{thebibliography}
+
+\end{document}

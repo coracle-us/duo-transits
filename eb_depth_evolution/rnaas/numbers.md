@@ -1,0 +1,65 @@
+# EPIC 202126877 RNAAS draft: provenance of every number
+
+**Draft:** `eb_depth_evolution/rnaas/rnaas.tex`. NOT submitted.
+**Figure:** `depth_history_summary.png`, copied from `eb_depth_evolution/figures/` (`scripts/25_summary_figure.py`).
+**Word count:** abstract 137, body 734 (`rnaas/wordcount.py`, 2026-10-12, after fixing the `\%` comment-regex bug).
+
+## Abstract and depths
+
+| Number | Source |
+|---|---|
+| P = 21.775 d; linear TESS ephemeris P = 21.774799 d, T0 = BTJD 2488.58926 | `REPORT.txt` §3; `scripts/13_oc_basic.py` |
+| 2004–08 primary < 4.5% (3σ worst case), typically < 1.6%, for offsets −0.6…+0.3 d | `scripts/19_ground_combined_limits.py`, `12_ground_eclipse_scan.py`; `REPORT.txt` §2 |
+| K2 2014 primary 6.18% (EVEREST/K2SFF); secondary < 0.03% (3σ) | `results_depth_events.csv` (`scripts/20_depth_table.py`); `08_k2_events.py` |
+| TESS primary 20.58 ± 0.12% (2021), 27.40 ± 0.16% (2023), 35.64% (2026) | `REPORT.txt` §2 table; `results_depth_events.csv` |
+| TESS secondary 4.36 ± 0.14% (2021), 12.52 ± 0.10% (2023); S/P 0.212 → 0.457 | same |
+| Depth = median flux within ±15 min of mid-eclipse, own TESScut photometry, r = 1.5 px | `REPORT.txt` §2; `scripts/04_tesscut_photometry.py`, `06_measure_tess_events.py` |
+| Neighbour G 14.9 at 21″, ~2.7% of the TESS flux | `scripts/03_gaia_neighbours.py`; `REPORT.txt` §2 |
+| 2026 segment BTJD 4055.8–4063.0 | `REPORT.txt` (Sector "1751", BTJD 4055.76–4063.00) |
+| DASCH: no excess faint points versus 30 comparison stars | `scripts/22_dasch.py`–`24_dasch_sensitivity.py`; `REPORT.txt` §2 |
+| ZTF and ATLAS saturated; ASAS-SN V sparse | `REPORT.txt` §2 and Addenda 1–4 |
+
+## Inclination model
+
+| Number | Source |
+|---|---|
+| Joint fit to 11 TESS eclipses, reduced χ² 1.43 | `scripts/16_physical_fit.py`, `ebmodel.py`; `REPORT.txt` §4 |
+| R1/a = 0.0297, R2/a = 0.0391, e = 0.35, ω ≈ 138° | same |
+| i: 2014.4 85.69–85.84; 2021.8 87.24–87.39; 2023.9 87.88–88.10; 2026.0 88.72–89.08 (text: 85.7, 87.3, 88.0, 88.9) | `REPORT.txt` §4; `data/inclination_trend.csv` |
+| di/dt 0.19–0.22, 0.31–0.34, 0.39–0.45 deg/yr (text: 0.21, 0.33, 0.42); average 0.25 | `scripts/18_inclination_trend.py` |
+| Thresholds: primary i > 84.47°, secondary i > 86.55°, totality i > 89.25° | `REPORT.txt` §4 |
+| Onset: primary 2008–2011, secondary 2018–19; totality 2027–29; a turnaround predicts 4–7% in 2004–08 (excluded) | `REPORT.txt` §4 |
+| R1 = 1.6, R2 = 2.1 R☉; M_tot ≈ 4.3 M☉ | `REPORT.txt` §4 (sanity check) |
+
+## Timing
+
+| Number | Source |
+|---|---|
+| O−C rms 10.3 min; χ² 483 for 4 dof | `REPORT.txt` §3; `13_oc_basic.py`, `14_timing_check.py` |
+| S−P interval −26.2 ± 2.5 min in one orbit (2021); −104 min from 2021 to 2023 | `scripts/21_timing_models.py` |
+| Outer period ~100–600 d (order of magnitude) | `REPORT.txt` §4, third body |
+| Gaia RUWE 1.007, no NSS solution, no co-moving companion | `scripts/17_gaia_astrometry.py`, `03_gaia_neighbours.py` |
+
+## Predictions
+
+| Number | Source |
+|---|---|
+| 2026-10-25 22:39, 11-16 17:12, 12-08 11:46, 12-30 06:21 UTC (geocentric, light-travel corrected) | `scripts/28_predictions.py` → `predictions_2026_27.csv` |
+
+`REPORT.txt` §3 lists the same epochs about 3–8 min later; those were BJD_TDB read as UTC (the same bug as in the K2 note).
+
+## References
+
+All 14 journal references were verified against ADS on 2026-10-12: `scripts/27_verify_refs.py` → `rnaas/refs_check.txt`.
+
+UAT keywords were checked in the official UAT.json:
+- Eclipsing binary stars 444;
+- Trinary stars 1714 (not "Triple stars");
+- Orbital evolution 1178.
+
+## Still pending before any submission
+
+1. The blind independent re-derivation (`eb_depth_evolution/independent/`) must agree.
+2. A Fable fact-check of the draft.
+3. Optional: an ASAS-SN g-band retry when Sky Patrol V2 is back.
+4. The "McBee 2026, submitted" citation refers to AAS82225. Update it when that note is accepted.

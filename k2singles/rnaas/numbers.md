@@ -152,3 +152,8 @@ Conclusions are unchanged. The deepening and the S/P doubling are stronger.
 - 2026-10-12: Jon emailed journals.manager@aas.org with the two corrections (2026 not 2025; consistent depths
   21/27/36%, S/P 0.21 → 0.46) and the "(Untitled)" title fix. He offered corrected LaTeX/PDF now or at
   revision/proof. The corrected text is in the repo at 51bfd7f or later. Awaiting the reply.
+
+**Word-count correction (2026-10-12).** `scripts/rnaas_wordcount.py` stripped everything after any `\%` (the regex
+treated it as a LaTeX comment), so it undercounted. With the regex fixed, the submitted AAS82225 text is abstract
+129, body 1066. That is within the limits (150 / 1350), and the earlier "119 / 845" was low. The AAS82207 text is
+145 / 814.

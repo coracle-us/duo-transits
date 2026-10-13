@@ -1,0 +1,29 @@
+## Torres2000: 2 match(es) for author:"^Torres, G" year:2000 bibstem:AJ volume:119
+  2000AJ....119.1914T  p.1914  Torres, Guillermo; Stefanik, Robert P.  | The Cessation of Eclipses in SS Lacertae: The Mystery Solved
+  2000AJ....119.1942T  p.1942  Torres, Guillermo; Andersen, Johannes; Nordström, Birgitta  | Absolute Dimensions of Eclipsing Binaries. XXIII. The F-Type System EI Cephei
+## Lacy1999: 1 match(es) for author:"^Lacy" year:1999 bibstem:AJ volume:117
+  1999AJ....117..541L  p.541  Lacy, Claud H. Sandberg; Helt, Bodil E.; Vaz, Luiz Paulo R.  | V907 Scorpii: A Remarkable Binary Star Whose Eclipses Turn On and Off and On and Off
+## Pollacco2006: 1 match(es) for author:"^Pollacco" year:2006 bibstem:PASP volume:118
+  2006PASP..118.1407P  p.1407  Pollacco, D. L.; Skillen, I.; Collier Cameron, A.  | The WASP Project and the SuperWASP Cameras
+## Pepper2007: 1 match(es) for author:"^Pepper, J" year:2007 bibstem:PASP volume:119
+  2007PASP..119..923P  p.923  Pepper, Joshua; Pogge, Richard W.; DePoy, D. L.  | The Kilodegree Extremely Little Telescope (KELT): A Small Robotic Telescope for Large-Area
+## Grindlay2009: 1 match(es) for author:"^Grindlay" year:2009 bibstem:ASPC volume:410
+  2009ASPC..410..101G  p.101  Grindlay, J.; Tang, S.; Simcoe, R.  | DASCH to Measure (and preserve) the Harvard Plates: Opening the ∼100-year Time Domain Astr
+## LaCourse2015: 1 match(es) for author:"^LaCourse" year:2015 bibstem:MNRAS volume:452
+  2015MNRAS.452.3561L  p.3561  LaCourse, Daryll M.; Jek, Kian J.; Jacobs, Thomas L.  | Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaig
+## Shang2022: 1 match(es) for author:"^Shang" year:2022 bibstem:ApJS volume:259
+  2022ApJS..259...63S  p.63  Shang, Lun-Hua; Luo, A.-Li; Wang, Liang  | Objective Separation between CP1 and CP2 Based on Feature Extraction with Machine Learning
+## IJspeert2024: 1 match(es) for author:"^IJspeert" year:2024 bibstem:A&A volume:691
+  2024A&A...691A.242I  p.A242  IJspeert, L. W.; Tkachenko, A.; Johnston, C.  | Statistical view of orbital circularisation with 14 000 characterised TESS eclipsing binar
+## Howell2014: 1 match(es) for author:"^Howell, S" year:2014 bibstem:PASP volume:126
+  2014PASP..126..398H  p.398  Howell, Steve B.; Sobeck, Charlie; Haas, Michael  | The K2 Mission: Characterization and Early Results
+## Caldwell2020: 1 match(es) for author:"^Caldwell, D" year:2020 bibstem:RNAAS volume:4
+  2020RNAAS...4..201C  p.201  Caldwell, Douglas A.; Tenenbaum, Peter; Twicken, Joseph D.  | TESS Science Processing Operations Center FFI Target List Products
+## Huang2020: 1 match(es) for author:"^Huang, C" year:2020 bibstem:RNAAS volume:4 page:204
+  2020RNAAS...4..204H  p.204  Huang, Chelsea X.; Vanderburg, Andrew; Pál, Andras  | Photometry of 10 Million Stars from the First Two Years of TESS Full Frame Images: Part I
+## Kreidberg2015: 1 match(es) for author:"^Kreidberg" year:2015 bibstem:PASP volume:127
+  2015PASP..127.1161K  p.1161  Kreidberg, Laura  | batman: BAsic Transit Model cAlculatioN in Python
+## Ginsburg2019: 1 match(es) for author:"^Ginsburg" year:2019 bibstem:AJ volume:157
+  2019AJ....157...98G  p.98  Ginsburg, Adam; Sipőcz, Brigitta M.; Brasseur, C. E.  | astroquery: An Astronomical Web-querying Package in Python
+## Gaia2023: 1 match(es) for year:2023 bibstem:A&A volume:674 page:A1
+  2023A&A...674A...1G  p.A1  Gaia Collaboration; Vallenari, A.; Brown, A. G. A.  | Gaia Data Release 3. Summary of the content and survey properties
