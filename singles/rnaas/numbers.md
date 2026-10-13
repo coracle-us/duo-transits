@@ -114,3 +114,14 @@ Review: `singles/review_fable_revision/FINDINGS.txt`. New or changed numbers in 
   `singles/scripts/build_ctoi_singles.py` and `singles/revision/count_owner_exclusion.py`.
 - Removed: the HD 88986 b sentence and the Heidari et al. 2024 reference; "offsets on known
   planets are 1–3″"; the backgrounds 1–9% clause (still in the letter). Body 1339 words, abstract 146.
+
+## Resubmitted 2026-10-13 as AAS82207R1
+
+- Received by AAS 13-Oct-2026 10:37, manuscript AAS82207R1.
+- Submitted text = commit 99afd3f (`singles/rnaas/rnaas.tex`; git tag `aas82207R1-submitted`), uploaded as a
+  single self-contained file `McBee_AAS82207_R1.tex` with aastex701.cls, aasjournalv7.bst and orcid-ID.png.
+  The AAS-built merged PDF was checked word for word against the Overleaf build: identical, 4 pages.
+- The plain-text abstract in the submission form (`private/aas82207_R1_abstract_plaintext.txt`, 149 words by
+  the form's space-split count) differs from the manuscript only typographically ("37.315-d", "P=89.965") and
+  in "or none" for "or no dip".
+- Response to the editor pasted in "Reply to Referee": `private/aas82207_response_to_editor.txt`.
