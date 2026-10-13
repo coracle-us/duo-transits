@@ -69,3 +69,28 @@ UAT keywords were checked in the official UAT.json:
 **Finish, then HOLD.** Bring the draft to submission-ready (blind check plus Fable fact-check), but do not submit
 until AAS82225 (the K2 note, which already mentions this star's deepening) has an editor decision. Then cite it
 properly and submit. Reason: avoid the appearance of salami-slicing with an overlapping note weeks later.
+
+## Blind re-derivation (2026-10-12, `eb_depth_evolution/independent/`; agent without access to our analysis)
+
+| Quantity | Ours (REPORT.txt) | Blind (independent/REPORT.txt, results.csv) |
+|---|---|---|
+| i 2014.36 | 85.69–85.84° | 85.77 ± 0.04 (stat) ± 0.19 (syst) |
+| i 2021.8 | 87.24–87.39 | 87.234 ± 0.004 ± 0.21 |
+| i 2023.9 | 87.88–88.10 | 87.860 ± 0.004 ± 0.29 |
+| i 2026.04 | 88.72–89.08 | 88.549 ± 0.011 ± 0.32 |
+| di/dt 2014→21 | 0.19–0.22 | 0.197 ± 0.023 |
+| di/dt 2021→23 | 0.31–0.34 | 0.305 ± 0.003 |
+| di/dt 2023→26 | 0.39–0.45 | 0.316 ± 0.005 (0.30–0.37) |
+| Primary onset threshold | i > 84.47 → 2008–2011 | i > 84.41 (84.33–84.56) → 2007–2010 |
+| Totality threshold | 89.25 → 2027–29 | 89.59 (89.20–89.95) → ~2029.5 (2027.5–2031) |
+| S−P interval change | −26.2 min/orbit (2021) | −27 (2021), −52 (2023); ~4 min/orbit between seasons |
+| K2 primary early | 102 min | 80–100 ± 29 min |
+| Model depths (r = 2 px) | median ±15 min (r = 1.5): 20.6 / 27.4 / 35.6 | 20.1 / 27.0 / 34.5; reduction systematics 1.6–2.2% |
+
+**Changes made to the draft:**
+- "Accelerating 0.21 → 0.33 → 0.42" became "0.20 (2014–21) to 0.31 deg/yr (2021–26); a constant rate is excluded,
+  continued increase not established".
+- Onset: 2007–2011.
+- Totality: i ≈ 89.2–89.9°, ~2028–2031, 40–45% deep.
+- The S−P interval sentence now has both seasons.
+- Abstract updated to match.

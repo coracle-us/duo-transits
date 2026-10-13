@@ -1,0 +1,127 @@
+====================================================================================================
+A. FIT QUALITY / NOMINAL GLOBAL SOLUTION (own TESScut r=2.0 px photometry, l3=0.035, LD (0.20,0.30) both stars)
+   chi2 = 5141.2 for N = 3757 points (per-eclipse errors = OOT rms, before beta inflation)
+   r1     = 0.03203 +0.00031 -0.00031 (stat)
+   r2     = 0.03708 +0.00026 -0.00026 (stat)
+   J      = 0.90609 +0.00247 -0.00249 (stat)
+   esw    = 0.23254 +0.00073 -0.00067 (stat)
+   i2021  = 87.23216 +0.00357 -0.00371 (stat)
+   i2023  = 87.85931 +0.00439 -0.00414 (stat)
+   i2026  = 88.54683 +0.01185 -0.01028 (stat)
+   e cos w: 2021 -0.2593, 2023 -0.2658 (2026 tied to 2023);  e(2023) = 0.3532, w(2023) = 138.82 deg
+   esw-per-season variant: esw2021=0.2360 esw2023=0.2272 -> w2021=137.67 w2023=139.51 deg (dw=1.84 deg in 2.05 yr); e=0.3504/0.3500; chi2 4655.4 vs 5141.2 nominal
+====================================================================================================
+B. INCLINATION PER SEASON: statistical (MCMC 16-84%) and systematic (variant fits, LS) 
+   variant                          i2014     i2021     i2023     i2026
+   nominal                         85.765    87.234    87.860    88.549
+   l3=0                            85.751    87.189    87.798    88.471
+   l3=0.15                         85.814    87.392    88.079    88.849
+   LD u1-0.1                       85.788    87.244    87.874    88.563
+   LD u1+0.1                       85.739    87.223    87.845    88.532
+   LD u2-0.1                       85.781    87.241    87.870    88.559
+   LD u2+0.1                       85.747    87.227    87.849    88.538
+   LD star1!=star2                 85.774    87.247    87.875    88.574
+   aperture r=1.5                  85.757    87.246    87.871    88.594
+   aperture r=2.5                  85.730    87.216    87.805    88.611
+   aperture r=3.0                  85.727    87.173    87.767    88.436
+   QLP reduction                   85.815    87.352    88.022       nan
+   esw per season                  85.810    87.228    87.850    88.530
+   l3=-0.025 (data-preferred)      85.743    87.158    87.756    88.417
+
+   season  year      i_nom    stat     third light (0..0.15)  limb darkening  aperture  reduction (QLP)  e sin w per season  K2-only terms
+   2014  2014.356    85.765   0.042    0.049   0.025   0.037   0.051   0.045    0.164  -> syst total 0.190
+   2021  2021.804    87.234   0.004    0.158   0.013   0.061   0.117   0.007    0.000  -> syst total 0.206
+   2023  2023.859    87.860   0.004    0.219   0.015   0.093   0.162   0.010    0.000  -> syst total 0.289
+   2026  2026.041    88.549   0.011    0.300   0.025   0.113   0.000   0.019    0.000  -> syst total 0.322
+====================================================================================================
+C. RATE OF INCLINATION CHANGE
+   2014 -> 2021 : di/dt = 0.1973 +- 0.0228 deg/yr (stat+epoch-specific)   variant range 0.1901 .. 0.2119
+   2021 -> 2023 : di/dt = 0.3046 +- 0.0027 deg/yr (stat+epoch-specific)   variant range 0.2867 .. 0.3347
+   2023 -> 2026 : di/dt = 0.3157 +- 0.0054 deg/yr (stat+epoch-specific)   variant range 0.3030 .. 0.3695
+   2014 -> 2026 : di/dt = 0.2383 +- 0.0146 deg/yr (stat+epoch-specific)   variant range 0.2288 .. 0.2598
+   2021 -> 2026 : di/dt = 0.3103 +- 0.0027 deg/yr (stat+epoch-specific)   variant range 0.2970 .. 0.3440
+   TESS-only linear (2021,2023,2026): di/dt = 0.3082 +- 0.0025 deg/yr, chi2 = 2.28 (1 dof)
+   All-epoch linear (2014..2026): di/dt = 0.3067 +- 0.0025 deg/yr, chi2 = 25.7 (2 dof)  -> NOT constant
+   All-epoch quadratic: i = 86.7369 + 0.2676 (t-2020) + 0.00568 (t-2020)^2 ; d2i/dt2 = 0.0114 +- 0.0027 deg/yr^2, chi2 = 7.62 (1 dof)
+      quadratic rate at 2014.36: 0.204 deg/yr
+      quadratic rate at 2021.80: 0.288 deg/yr
+      quadratic rate at 2023.85: 0.311 deg/yr
+      quadratic rate at 2026.04: 0.336 deg/yr
+   within 2021 (per-eclipse i, P+S, 5 eclipses): slope 0.058 +- 0.030 deg/yr, chi2/dof = 74.5/3; per-eclipse i rms 0.0116 deg
+   within 2023 (per-eclipse i, P+S, 5 eclipses): slope -0.105 +- 0.022 deg/yr, chi2/dof = 13.4/3; per-eclipse i rms 0.0062 deg
+====================================================================================================
+D. GEOMETRIC THRESHOLDS (2023 e,w) AND ONSET / TOTALITY EPOCHS
+   variant                         ion_P    ion_S   itot_P   itot_S   r1, r2
+   nominal                        84.415   86.523   89.590   89.744   0.0320 0.0371
+   l3=0                           84.372   86.506   89.750   89.845   0.0332 0.0363
+   l3=0.15                        84.559   86.577   89.312   89.566   0.0296 0.0382
+   LD u1-0.1                      84.451   86.543   89.560   89.726   0.0316 0.0371
+   LD u1+0.1                      84.376   86.500   89.624   89.766   0.0325 0.0371
+   LD u2-0.1                      84.441   86.537   89.571   89.732   0.0318 0.0371
+   LD u2+0.1                      84.388   86.508   89.614   89.759   0.0323 0.0371
+   LD star1!=star2                84.426   86.533   89.558   89.725   0.0317 0.0372
+   aperture r=1.5                 84.407   86.526   89.509   89.695   0.0315 0.0376
+   aperture r=2.5                 84.340   86.517   89.537   89.715   0.0319 0.0376
+   aperture r=3.0                 84.325   86.501   89.816   89.887   0.0338 0.0360
+   QLP reduction                  84.537   86.581   89.203   89.500   0.0290 0.0389
+   esw per season                 84.449   86.508   89.754   89.845   0.0330 0.0361
+   l3=-0.025 (data-preferred)     84.343   86.494   89.946   89.966   0.0346 0.0352
+   MCMC (nominal): ion_P 84.414 +0.009 -0.009 ; ion_S 86.525 ; itot_P 89.591 +0.046 -0.044
+   Primary-eclipse onset (i = ion_P = 84.415):
+     linear, 2014-2021 rate (0.197 deg/yr) back from 2014:  2007.5
+     linear, TESS-era rate (0.308 deg/yr) back from 2014 K2 point: 2010.0
+     quadratic all epochs: roots [1984.3 2008.5]
+     variant range (2014-2021 linear): 2007.0 .. 2008.4
+   Secondary-eclipse onset (i = ion_S = 86.523): 2014-2021 linear -> 2018.2 ; quadratic -> [1973.7 2019.2]
+   Primary totality (star 1 fully covered by the larger star 2; i >= itot_P = 89.590):
+     TESS-era linear: 2029.5 ; quadratic: [1963.9 2029. ]
+     variant range (TESS-era linear from each variant's i2026): 2027.5 .. 2031.0
+   i = 90 deg (deepest possible primary): TESS-era linear 2030.8 ; quadratic [1962.8 2030.1]
+   Secondary totality i >= itot_S = 89.744: TESS-era linear 2030.0
+====================================================================================================
+E. ECLIPSE DEPTHS PER SEASON
+   Definition: D = 1 - F_min/F_out of the best-fit physical model at mid-eclipse (instantaneous).
+   'obs' = in our r=2.0 px TESScut aperture (nominal l3=0.035);  'undil' = corrected to l3=0.
+   2021 P  D_obs = 0.2010 +- 0.0002 (stat) [eclipse-to-eclipse rms 0.0010; aperture/QLP range +-0.0157]  D_undil = 0.2082  (3 eclipses)
+   2021 S  D_obs = 0.0434 +- 0.0001 (stat) [eclipse-to-eclipse rms 0.0002; aperture/QLP range +-0.0043]  D_undil = 0.0450  (2 eclipses)
+   2023 P  D_obs = 0.2699 +- 0.0002 (stat) [eclipse-to-eclipse rms 0.0004; aperture/QLP range +-0.0222]  D_undil = 0.2797  (2 eclipses)
+   2023 S  D_obs = 0.1205 +- 0.0001 (stat) [eclipse-to-eclipse rms 0.0009; aperture/QLP range +-0.0086]  D_undil = 0.1249  (3 eclipses)
+   2026 P  D_obs = 0.3453 +- 0.0006 (stat) [eclipse-to-eclipse rms n/a; aperture/QLP range +-0.0178]  D_undil = 0.3578  (1 eclipse)
+   2026 S  D_obs = 0.2247 +- 0.0012 (stat) [eclipse-to-eclipse rms n/a; aperture/QLP range +-0.0157]  D_undil = 0.2329  (NOT OBSERVED: model prediction)
+   2014 P  Kepler band (K2SFF/PDCSAP, l3~0): D_model = 0.0618 (instantaneous); lowest 30-min point 0.0621 (K2SFF), 0.0606 (PDCSAP)
+           same geometry in TESS band & our aperture: D_obs-equivalent = 0.0599
+   K2 secondary window K2SFF  centre BTJD -225.766 (box scan +-0.5 d, widths 0.15-0.35 d): best dip 0.00019, S/N 3.7
+   K2 secondary window PDCSAP centre BTJD -225.766 (box scan +-0.5 d, widths 0.15-0.35 d): best dip 0.00026, S/N 1.6
+   K2 secondary window K2SFF  centre BTJD -203.991 (box scan +-0.5 d, widths 0.15-0.35 d): best dip 0.00015, S/N 2.2
+   K2 secondary window PDCSAP centre BTJD -203.991 (box scan +-0.5 d, widths 0.15-0.35 d): best dip 0.00021, S/N 2.2
+   random off-eclipse epochs (K2SFF, N=225): best-box S/N median 3.2, 99% 13.1; best-box depth median 0.00026, 99% 0.00081
+   => no 2014 secondary; depth < 0.0008 (99% false-alarm level of the box scan, Kepler band); the model predicts no secondary for i2014=85.765 < ion_S=86.523
+====================================================================================================
+F. ECLIPSE TIMES
+   Linear ephemeris (TESS primaries, weighted): T0 = 2488.58407 BTJD, P = 21.774870 d
+     formal errors 0.00007 / 0.0000017 d; chi2 = 36302 for 4 dof -> errors x95: 0.0067 d / 0.000158 d
+   Unweighted linear fit: P = 21.774801 +- 0.000134 d, T0 = 2488.58925 +- 0.00481 ; rms O-C = 12.5 min
+   ecl   seas      Tmid(BTJD)  err(min)   O-C(min)     cover        i    D_obs
+   P0    2021      2488.58370      0.17      -0.54      1.00   87.240   0.2017
+   S0    2021      2495.82700      0.88      85.75      1.00   87.220   0.0425
+   P1    2021      2510.36775      0.24      12.68      1.00   87.230   0.2007
+   S1    2021      2517.59235      0.74      72.04      1.00   87.225   0.0430
+   P2    2021      2532.14690      0.22      18.84      0.97   87.253   0.2031
+   S34   2023      3236.09170      0.50     -30.71      1.00   87.870   0.1222
+   P35   2023      3250.69460      0.10     -14.29      1.00   87.859   0.2697
+   S35   2023      3257.84535      0.34     -61.27      1.00   87.857   0.1204
+   P36   2023      3272.48325      0.13       5.55      1.00   87.851   0.2689
+   S36   2023      3279.59810      0.52     -93.12      0.63   87.856   0.1203
+   P72   2026      4056.38020      0.12       7.90      0.86   88.549   0.3455
+   (secondary O-C relative to primary ephemeris + mean S-P interval 7.18337 d)
+   K2 primary (epoch -124): Tmid = -211.55714 BTJD (K2SFF; PDCSAP -211.55596); O-C = -82.6 min (weighted eph), -102.4 +- 29.1 min (unweighted eph, extrapolated)
+   Secondary-minus-primary intervals (same cycle):
+     epoch   0 (2021): 7.24330 +- 0.00062 d 
+     epoch   1 (2021): 7.22460 +- 0.00054 d 
+     epoch  35 (2023): 7.15075 +- 0.00024 d 
+     epoch  36 (2023): 7.11485 +- 0.00037 d S partial
+     within-2021 change: -26.9 min/cycle; within-2023: -51.7 min/cycle; 2021->2023 mean change: -4.16 min/cycle
+     local P period 2021: 21.78405, 21.77915 d
+     local S period 2021: 21.76535 d
+     local P period 2023: 21.78865 d
+     local S period 2023: 21.75365, 21.75275 d

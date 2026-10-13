@@ -14,10 +14,10 @@
 EPIC~202126877 (TYC~1883-1721-1) is a 21.775-d eccentric binary of two A stars whose eclipses have
 appeared within the last two decades. SuperWASP and KELT saw no eclipse in 2004--2008 ($<4.5\%$, $3\sigma$).
 K2 caught a 6.2\% primary and no secondary in 2014. TESS measured a primary 20.6\% deep in 2021, 27.4\% in
-2023 and 35.6\% in 2026, and a secondary growing from 4.4\% to 12.5\%. A joint eclipse model gives an
-orbital inclination rising from $85.7^\circ$ to $88.9^\circ$, at an average $0.25^\circ$\,yr$^{-1}$ and
-accelerating. The primary eclipses probably began in 2008--2011, and should become total, about 40\% deep,
-by 2027--2029. Within single orbits the primary and secondary eclipse times shift in opposite directions by
+2023 and 35.6\% in 2026, and a secondary growing from 4.4\% to 12.5\%. Two independent eclipse models give
+an orbital inclination rising from $85.8^\circ$ (2014) to $88.5$--$88.9^\circ$ (2026). The rate rose from
+$0.20^\circ$\,yr$^{-1}$ (2014--2021) to $0.31^\circ$\,yr$^{-1}$ (2021--2026). The primary eclipses probably
+began in 2007--2011, and could become total, about 40--45\% deep, around 2028--2031. Within single orbits the primary and secondary eclipse times shift in opposite directions by
 up to 26\,min, so $e\cos\omega$ varies on month timescales. Both effects point to a close third body that
 Gaia DR3 does not detect.
 \end{abstract}
@@ -67,21 +67,26 @@ We fit all eleven TESS eclipses jointly with two limb-darkened spheres on a Kepl
 \item \textbf{2014:} the K2 primary then fixes the inclination, and the model reproduces the absent secondary.
 \end{itemize}
 The inclination rises from $85.7^\circ$ (2014.4) to $87.3^\circ$ (2021.8), $88.0^\circ$ (2023.9) and
-$88.9^\circ$ (2026.0). The ranges across third light (0--15\%) and phase assumptions are $0.1$--$0.4^\circ$,
-larger than the formal errors. The rate grows from $0.21$ to $0.33$ to $0.42^\circ$\,yr$^{-1}$.
+$88.9^\circ$ (2026.0). The ranges across third light (0--15\%), limb darkening and phase assumptions are
+$0.1$--$0.4^\circ$, larger than the formal errors, and they shift all seasons together. A blind re-analysis
+with independent code and its own photometry agrees within these ranges: 85.8, 87.2, 87.9 and $88.5^\circ$.
+The rate rose from $0.20^\circ$\,yr$^{-1}$ (2014--2021) to $0.31^\circ$\,yr$^{-1}$ (2021--2026). A
+constant rate is excluded, but the data do not show whether the rate is still increasing.
 
-Primary eclipses require $i>84.47^\circ$ and secondaries $i>86.55^\circ$. Extrapolating places the primary
-onset in about 2008--2011, consistent with the ground limits. A trend that turned around before 2014 would
+Primary eclipses require $i>84.4^\circ$ and secondaries $i>86.5^\circ$. Extrapolating places the primary
+onset in about 2007--2011, consistent with the ground limits. A trend that turned around before 2014 would
 predict a 4--7\% primary in 2004--2008, which those limits exclude. The secondary onset falls in about
-2018--2019. The primary becomes total (flat-bottomed, about 40\% deep) at $i>89.25^\circ$, around
-2027--2029 (Figure~\ref{fig:hist}). With the Gaia distance and the fitted light ratio, the radii
+2018--2019. The primary becomes total (flat-bottomed, about 40--45\% deep) at $i\approx89.2$--$89.9^\circ$:
+the split between the two radii is poorly constrained. At the current rate that happens around 2028--2031
+(Figure~\ref{fig:hist}). With the Gaia distance and the fitted light ratio, the radii
 ($1.6$ and $2.1\,R_\odot$) and total mass ($\approx4.3\,M_\odot$) are consistent with two A stars.
 
 \section{Eclipse timing and a third body}
 
 The TESS primary times scatter by 10\,min rms about a linear ephemeris ($\chi^2=483$ for 4 degrees of freedom),
 consistent across three reductions and two timing methods. The interval from secondary to primary eclipse fell
-by $26\pm2.5$\,min within one orbit in 2021, and by 104\,min in total from 2021 to 2023. Within each season the
+by $26\pm2.5$\,min within one orbit in 2021 and by about 50\,min within one orbit in 2023, but by only about
+3--4\,min per orbit on average between the two seasons. Within each season the
 primary and secondary times move in opposite directions, while their mean stays on the period. That pattern is
 a changing $e\cos\omega$, not light-travel time, and it varies over months. Tidal and relativistic apsidal
 motion are orders of magnitude too slow. Rapid nodal precession together with these dynamical timing variations
@@ -103,7 +108,7 @@ On the linear TESS ephemeris ($P=21.774799$\,d, $T_0={\rm BJD_{TDB}}\,2459488.58
 fall on 2026 Oct~25 22:39, Nov~16 17:12, Dec~8 11:46 and Dec~30 06:21~UTC ($\pm30$\,min, set by the timing
 variations).
 Each lasts about 7\,h at $V\approx11$, which is within reach of small telescopes. Timings and depths through
-2027--2029 will test the predicted totality. Radial velocities and a photodynamical model could then measure
+2028--2031 will test the predicted totality and whether the rate keeps increasing. Radial velocities and a photodynamical model could then measure
 the tertiary's orbit and mass. Data, code and fits are at
 \url{https://github.com/coracle-us/duo-transits} (directory \texttt{eb\_depth\_evolution}).
 
