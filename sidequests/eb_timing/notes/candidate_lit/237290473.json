@@ -1,0 +1,45 @@
+{
+ "tic": 237290473,
+ "ra": 300.8466493547,
+ "dec": 73.5293927203,
+ "simbad_id": "UCAC4 818-024624",
+ "simbad_otype": "*",
+ "simbad_nbref": 3,
+ "simbad_refs": [
+  "2018A&A...620A.172Z 3D mapping of young stars in the solar neighbourhood with Gaia DR2.",
+  "2022ApJS..258...16P TESS Eclipsing Binary stars. I. Short-cadence observations of 4584 eclipsing binaries in sectors 1-2",
+  "2025AJ....170..356T A Sample of Eccentric Eclipsing Binaries in TESS."
+ ],
+ "simbad_timing_refs": [],
+ "simbad_ids": [
+  "Gaia DR2 2287990208850736512",
+  "TIC 237290473",
+  "2MASS J20032322+7331458",
+  "UCAC4 818-024624",
+  "WISE J200323.22+733145.8",
+  "Gaia DR3 2287990208850736512"
+ ],
+ "msc": [],
+ "wds": [],
+ "vsx": [],
+ "known_multiples": "",
+ "b26": [],
+ "ads_ids": [
+  "237290473",
+  "2MASS J20032322+7331458",
+  "UCAC4 818-024624",
+  "2287990208850736512"
+ ],
+ "ads_n": 1,
+ "ads_docs": [
+  {
+   "bibcode": "2026arXiv260926036Z",
+   "year": "2026",
+   "pub": "arXiv e-prints",
+   "doctype": "eprint",
+   "title": "Are there really some eccentric eclipsing binaries having orbital periods below 1 d?",
+   "highlights": []
+  }
+ ],
+ "ads_timing_hits": []
+}

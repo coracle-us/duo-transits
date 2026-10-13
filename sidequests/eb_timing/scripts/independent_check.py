@@ -11,7 +11,8 @@ Shares only the light-curve loader. No template, no per-eclipse fits, no iterati
     to the binned medians around the lowest bin; the vertex gives that sector's primary O-C
     (error: 20 bootstrap resamples). Same for the secondary at catalogue phase Phis-2g.
   - compare with the sector-mean O-C from run_etv.py (results/oc/<TIC>_oc.csv).
-Usage:  python sidequests/eb_timing/scripts/independent_check.py TIC [TIC ...]
+Usage:  python sidequests/eb_timing/scripts/independent_check.py [--oc=results/oc_X] [--out=NAME.csv]
+        [--max-sector=N] TIC [TIC ...]   (defaults: results/oc, independent_check.csv, all sectors)
 Output: sidequests/eb_timing/results/independent_check.csv and figs/<TIC>_indep.png
 """
 import sys
@@ -67,12 +68,22 @@ def sector_times(lc, P, T0, ph_ecl, w, win=None):
 def main():
     cat = pd.read_csv(HERE / "data" / "prsa2022_tess_ebs.csv").drop_duplicates("TIC").set_index("TIC")
     out = []
-    for tic in [int(x) for x in sys.argv[1:]]:
+    args = sys.argv[1:]
+    ocdir, outname, maxsec = HERE / "results" / "oc", "independent_check.csv", None
+    while args and args[0].startswith("--"):
+        k, v = args.pop(0)[2:].split("=", 1)
+        if k == "oc":
+            ocdir = HERE / v
+        elif k == "out":
+            outname = v
+        elif k == "max-sector":
+            maxsec = int(v)
+    for tic in [int(x) for x in args]:
         r = cat.loc[tic]
         P, T0 = r.Per, r.BJD0
-        lc = ap.load_lightcurves(tic, products=["SPOC_120", "TESS-SPOC", "QLP"])
+        lc = ap.load_lightcurves(tic, max_sector=maxsec, products=["SPOC_120", "TESS-SPOC", "QLP"])
         fig, ax = plt.subplots(figsize=(8, 4))
-        mine = pd.read_csv(HERE / "results" / "oc" / f"{tic}_oc.csv")
+        mine = pd.read_csv(ocdir / f"{tic}_oc.csv")
         mine = mine[mine.flag.isna() | (mine.flag == "")]
         for kind, ph_ecl, w, col in (("p", 0.0, r["Wp-2g"], "C0"), ("s", r["Phis-2g"], r["Ws-2g"], "C3")):
             if not np.isfinite(w) or not np.isfinite(ph_ecl):
@@ -110,7 +121,7 @@ def main():
         ax.legend(fontsize=8)
         fig.savefig(HERE / "figs" / f"{tic}_indep.png", dpi=90, bbox_inches="tight")
         plt.close(fig)
-    pd.DataFrame(out).to_csv(HERE / "results" / "independent_check.csv", index=False)
+    pd.DataFrame(out).to_csv(HERE / "results" / outname, index=False)
 
 
 if __name__ == "__main__":

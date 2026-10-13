@@ -1,0 +1,41 @@
+{
+ "N": 38,
+ "timed": 38,
+ "v1": {
+  "flagged": 2,
+  "flag_rate_CI": [
+   0.053,
+   0.006,
+   0.177
+  ],
+  "pipeline_false_alarms": 1,
+  "false_alarm_rate_CI": [
+   0.026,
+   0.001,
+   0.138
+  ],
+  "real_or_plausible": 1,
+  "flagged_tics": [
+   255921197,
+   392536805
+  ]
+ },
+ "v2": {
+  "flagged": 1,
+  "flag_rate_CI": [
+   0.026,
+   0.001,
+   0.138
+  ],
+  "pipeline_false_alarms": 0,
+  "false_alarm_rate_CI": [
+   0.0,
+   0.0,
+   0.093
+  ],
+  "real_or_plausible": 1,
+  "flagged_tics": [
+   255921197
+  ]
+ }
+}

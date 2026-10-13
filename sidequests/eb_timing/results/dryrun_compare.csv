@@ -1,0 +1,4 @@
+tic,n_old,n_new,n_matched,max_dT_s,max_dsig_s,identical_times,d_P3,d_P3_sig,d_A_s,d_A_sig,d_e3,d_dBIC,cls_old,cls_new
+32000625,2121,2121,2121,0.0,0.0,True,0.0,0.0,0.0,0.0,0.0,0.0,LTTE,LTTE
+350622185,1476,1476,1476,0.0,0.0,True,0.0,0.0,0.0,0.0,0.0,0.0,no-flag,no-flag
+393491149,2561,2561,2561,0.0,0.0,True,0.0,0.0,0.0,0.0,0.0,0.0,no-flag,no-flag

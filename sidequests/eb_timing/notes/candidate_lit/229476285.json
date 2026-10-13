@@ -1,0 +1,32 @@
+{
+ "tic": 229476285,
+ "ra": 295.5345476253,
+ "dec": 60.4829944099,
+ "simbad_id": "UCAC4 753-059681",
+ "simbad_otype": "*",
+ "simbad_nbref": 1,
+ "simbad_refs": [
+  "2022ApJS..258...16P TESS Eclipsing Binary stars. I. Short-cadence observations of 4584 eclipsing binaries in sectors 1-2"
+ ],
+ "simbad_timing_refs": [],
+ "simbad_ids": [
+  "2MASS J19420831+6028587",
+  "Gaia DR3 2239078777687826688",
+  "UCAC4 753-059681",
+  "TIC 229476285"
+ ],
+ "msc": [],
+ "wds": [],
+ "vsx": [],
+ "known_multiples": "",
+ "b26": [],
+ "ads_ids": [
+  "229476285",
+  "2MASS J19420831+6028587",
+  "2239078777687826688",
+  "UCAC4 753-059681"
+ ],
+ "ads_n": 0,
+ "ads_docs": [],
+ "ads_timing_hits": []
+}

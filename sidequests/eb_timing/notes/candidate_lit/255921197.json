@@ -1,0 +1,47 @@
+{
+ "tic": 255921197,
+ "ra": 307.4419940901,
+ "dec": 71.4186300528,
+ "simbad_id": "BD+70  1123",
+ "simbad_otype": "*",
+ "simbad_nbref": 5,
+ "simbad_refs": [
+  "2014ASPC..485..223B The JMMC stellar diameters catalog v2 (JSDC): a new release based on SearchCal improvements",
+  "2019ApJS..241...12S The Asteroseismic Target list for solar-like oscillators observed in 2 minute cadence with the Trans",
+  "2019MNRAS.490.3158C A catalogue of stellar diameters and fluxes for mid-infrared interferometry.",
+  "2022ApJS..258...16P TESS Eclipsing Binary stars. I. Short-cadence observations of 4584 eclipsing binaries in sectors 1-2",
+  "2022ApJS..263...34C Detection of \u03b4 Scuti Pulsators in the Eclipsing Binaries Observed by TESS."
+ ],
+ "simbad_timing_refs": [
+  "2019ApJS..241...12S The Asteroseismic Target list for solar-like oscillators observed in 2 minute cadence with the Trans"
+ ],
+ "simbad_ids": [
+  "TIC 255921197",
+  "Gaia DR3 2274766275128228352",
+  "AG+71  605",
+  "BD+70  1123",
+  "GSC 04455-01250",
+  "PPM  10574",
+  "SAO   9790",
+  "TYC 4455-1250-1",
+  "2MASS J20294608+7125070",
+  "Gaia DR1 2274766275128228352",
+  "Gaia DR2 2274766275128228352"
+ ],
+ "msc": [],
+ "wds": [],
+ "vsx": [],
+ "known_multiples": "",
+ "b26": [],
+ "ads_ids": [
+  "255921197",
+  "2274766275128228352",
+  "BD+70 1123",
+  "GSC 04455-01250",
+  "TYC 4455-1250-1",
+  "2MASS J20294608+7125070"
+ ],
+ "ads_n": 0,
+ "ads_docs": [],
+ "ads_timing_hits": []
+}
