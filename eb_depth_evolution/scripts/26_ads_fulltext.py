@@ -61,7 +61,7 @@ def main():
         for d in r["docs"][:50]:
             lines.append(f"  {d.get('bibcode')}  {d.get('first_author', '')}  {(d.get('title') or [''])[0][:110]}")
     OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("\n".join(lines))
+    print("\n".join(lines).encode("ascii", "replace").decode())
 
 
 if __name__ == "__main__":
