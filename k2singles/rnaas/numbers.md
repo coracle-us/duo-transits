@@ -21,7 +21,7 @@ Draft: `k2singles/rnaas/rnaas.tex` (NOT submitted).
 | SNR ≥ 8, depth 0.5–2×, cover ≥ 80% | `singles/scripts/pilot.py` (DETECT_SNR, DMIN, DMAX), `scripts/alias_pipeline.py` (DETECT_COVER), used by `k2lib.robust_k2` |
 | Red-noise baseline ≥ 2 D | `k2lib.test_window_k2` (base_w = max(0.75, 2D)) |
 | Blind agreement within 2σ (except 202126877) | Comparison of `results/ephemerides/*.json` with `independent_table/REPORT.md`, `independent_table2/results_report.txt`, and `independent_211924561/`. Largest: 202072917, 34.7455865(70) vs 34.745606(7), 2.0σ |
-| Sanders 617: 62.59466 ± 0.00018 vs 62.59484 ± 0.00003 (submitted text; **superseded 2026-10-13 by 62.594821 ± 0.000027, see the AAS82225 correction section below**; `table.csv`/`table_rows.tex` still hold the PDCSAP value) | `results/ephemerides/211411112.json`; Sandquist+2021 (`review_fable2/sandquist2021.txt`) |
+| Sanders 617: 62.59466 ± 0.00018 vs 62.59484 ± 0.00003 (submitted text; **superseded 2026-10-13 by 62.594821 ± 0.000027, see the AAS82225 correction section below**; `build_table.py` overrides the PDCSAP ephemeris for this row) | `results/ephemerides/211411112.json`; Sandquist+2021 (`review_fable2/sandquist2021.txt`) |
 
 ## TOI-5560.01
 
