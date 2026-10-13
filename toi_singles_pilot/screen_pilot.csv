@@ -1,0 +1,21 @@
+TOI,event_depth_ppm,event_T14_h,n_repeats,n_passing,passing,failing,max_support,n_top,top_periods
+1301.02,1621,7.25,11,2,"2436.327(s41,2610ppm,9.93h) 2657.746(s49,1195ppm,6.48h)",1691.83(s14): unconstrained fit | 1739.07(s16): T14 ratio 1.70 | 2789.82(s54): unconstrained fit; T14 ratio 1.54 | 2791.83(s54): unconstrained fit | 2883.47(s58): T14 ratio 2.22 | 3319.64(s74): T14 ratio 2.06; gap 0.22 d in transit | 3341.71(s75): T14 ratio 2.22 | 3374.52(s76): T14 ratio 2.10 | 3655.71(s86): T14 ratio 2.03; gap 0.22 d in transit,0,0,
+1893.01,722,18.9,3,0,,2023.72(s26): depth ratio 0.46 | 2757.27(s53): depth ratio 0.39; one-sided (14/216 pts) | 2912.36(s59): one-sided (29/241 pts),0,0,
+2087.01,925,24.7,1,0,,1916.07(s22): unconstrained fit,0,0,
+2098.01,316,14.2,5,1,"3493.091(s80,362ppm,12.83h)",2757.09(s53): unconstrained fit; one-sided (0/317 pts) | 3532.91(s81): unconstrained fit; one-sided (216/0 pts) | 3585.28(s84): one-sided (216/0 pts) | 3586.44(s84): unconstrained fit; depth ratio 0.04; T14 ratio 0.26,1,7,115.763 289.408 347.289 434.112 578.815 868.223 1736.446
+2102.02,1303,2.61,0,0,,,0,0,
+2263.01,282,16.05,1,1,"3465.181(s79,330ppm,13.24h)",,1,9,73.200 146.401 219.601 250.973 292.802 439.202 585.603 878.405 1756.809
+2270.01,399,5.51,0,0,,,0,0,
+2296.01,599,4.87,1,0,,2838.25(s56): T14 ratio 4.29,0,0,
+2298.01,2306,6.74,2,1,"2839.486(s56,1662ppm,7.56h)",3506.67(s81): unconstrained fit; depth ratio 2.52; T14 ratio 1.97; one-sided (0/215 pts),1,4,146.576 293.152 439.728 879.455
+2433.01,4242,3.06,0,0,,,0,0,
+289.01,7259,6.23,0,0,,,0,0,
+4321.01,212,4.75,0,0,,,0,0,
+4344.01,355,14.74,1,0,,3757.62(s90): depth ratio 2.28; T14 ratio 1.74,0,0,
+4348.01,272,12.93,0,0,,,0,0,
+4355.01,217,15.84,2,0,,3013.93(s62): depth ratio 2.21; T14 ratio 0.44; one-sided (213/0 pts) | 4008.10(s98): T14 ratio 0.59,0,0,
+4585.01,543,15.25,5,1,"3657.099(s86,471ppm,16.23h)",3311.95(s73): unconstrained fit; T14 ratio 0.39 | 3506.09(s80): unconstrained fit; depth ratio 0.50; one-sided (171/0 pts) | 3520.06(s81): unconstrained fit; depth ratio 0.40; T14 ratio 0.38 | 3636.41(s86): unconstrained fit; one-sided (0/217 pts),1,5,217.639 435.278 580.370 870.555 1741.110
+5975.01,3032,15.93,4,3,"1848.991(s20,2956ppm,15.35h) 2781.665(s54,2895ppm,17.3h) 3341.318(s75,2481ppm,14.97h)",3339.94(s75): unconstrained fit; T14 ratio 1.92; one-sided (0/444 pts),3,1,186.540
+6075.01,666,10.7,1,0,,3533.01(s81): unconstrained fit; one-sided (215/0 pts),0,0,
+6690.02,624,25.0,3,0,,2337.69(s38): depth ratio 2.06 | 3155.64(s68): one-sided (14/488 pts) | 3884.23(s95): unconstrained fit; depth ratio 0.28; T14 ratio 0.34,0,0,
+6691.01,289,19.02,3,0,,3761.56(s90): unconstrained fit; one-sided (8/377 pts) | 3987.99(s97): unconstrained fit; depth ratio 0.44; T14 ratio 0.24 | 4024.02(s98): T14 ratio 0.62,0,0,

@@ -1,0 +1,46 @@
+[
+ {
+  "sector": 86,
+  "n_transits": 1,
+  "transits": [
+   3657.1
+  ],
+  "wcs_vs_image_centroid_px": 0.021217601003475188,
+  "crowded_reference": false,
+  "offset_from_image_centroid_px": 0.8346248648379603,
+  "snr_peak": 9.42006985872361,
+  "offset_from_target_px": 0.8205478618799994,
+  "offset_err_px": 0.25105814812761135,
+  "offset_from_target_arcsec": 17.23150509947999,
+  "offset_sigma": 3.2683578206867034,
+  "nearest_gaia_to_source": {
+   "source_id": 2157077647164391296,
+   "G": 10.076292037963867,
+   "sep_from_target_arcsec": 0.011836691855266711,
+   "dist_from_fit_px": 0.8205478618799994
+  },
+  "T": 3657.1
+ },
+ {
+  "sector": 22,
+  "n_transits": 1,
+  "transits": [
+   1915.99
+  ],
+  "wcs_vs_image_centroid_px": 0.06354812010207819,
+  "crowded_reference": false,
+  "offset_from_image_centroid_px": 0.0697477123814969,
+  "snr_peak": 2.8261403543034964,
+  "offset_from_target_px": 0.0424202518777689,
+  "offset_err_px": 1.141331793455889,
+  "offset_from_target_arcsec": 0.8908252894331469,
+  "offset_sigma": 0.03716732690791232,
+  "nearest_gaia_to_source": {
+   "source_id": 2157077647164391296,
+   "G": 10.076292037963867,
+   "sep_from_target_arcsec": 0.011836691855266711,
+   "dist_from_fit_px": 0.0424202518777689
+  },
+  "T": 1915.99
+ }
+]

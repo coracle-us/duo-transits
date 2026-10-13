@@ -1,0 +1,126 @@
+{
+ "TOI": "4585.01",
+ "TIC": 233529335,
+ "event": {
+  "T": 1915.989122584445,
+  "sigma_T": 0.015105549483051853,
+  "depth": 0.000542641444730965,
+  "sigma_depth": 6.218964716227872e-05,
+  "T14_h": 15.254779688236908,
+  "fin": 0.1652767830838929,
+  "beta": 1.0,
+  "n": 1349,
+  "cadence_min": 2.000004679102858,
+  "rms": 0.0009239750278271234,
+  "n_before": 225,
+  "n_after": 227,
+  "max_gap_in": 0.005555568731324456,
+  "cad": 0.0013888921382658737,
+  "sector": 22
+ },
+ "repeats": [
+  {
+   "T_grid": 3311.9499,
+   "sector": 73,
+   "grid_depth_ppm": 708,
+   "grid_snr": 8.1,
+   "passed": false,
+   "why": "unconstrained fit; T14 ratio 0.39",
+   "T_fit": 3312.078099511071,
+   "sigma_T": 0.030572213981591306,
+   "depth_ppm": 336,
+   "sigma_depth_ppm": 1112,
+   "T14_h": 5.9
+  },
+  {
+   "T_grid": 3506.0863,
+   "sector": 80,
+   "grid_depth_ppm": 635,
+   "grid_snr": 12.8,
+   "passed": false,
+   "why": "unconstrained fit; depth ratio 0.50; one-sided (171/0 pts)",
+   "T_fit": 3506.066351902173,
+   "sigma_T": 0.03247960626699667,
+   "depth_ppm": 270,
+   "sigma_depth_ppm": 152,
+   "T14_h": 14.43
+  },
+  {
+   "T_grid": 3520.0587,
+   "sector": 81,
+   "grid_depth_ppm": 529,
+   "grid_snr": 9.9,
+   "passed": false,
+   "why": "unconstrained fit; depth ratio 0.40; T14 ratio 0.38",
+   "T_fit": 3520.2489369733157,
+   "sigma_T": 0.03623619701080376,
+   "depth_ppm": 215,
+   "sigma_depth_ppm": 208,
+   "T14_h": 5.87
+  },
+  {
+   "T_grid": 3636.4061,
+   "sector": 86,
+   "grid_depth_ppm": 443,
+   "grid_snr": 8.2,
+   "passed": false,
+   "why": "unconstrained fit; one-sided (0/217 pts)",
+   "T_fit": 3636.367134574136,
+   "sigma_T": 0.5064347444892667,
+   "depth_ppm": 503,
+   "sigma_depth_ppm": 301,
+   "T14_h": 19.16
+  },
+  {
+   "T_grid": 3657.0961,
+   "sector": 86,
+   "grid_depth_ppm": 452,
+   "grid_snr": 8.6,
+   "passed": true,
+   "why": "",
+   "T_fit": 3657.099257174518,
+   "sigma_T": 0.023752482966735503,
+   "depth_ppm": 471,
+   "sigma_depth_ppm": 75,
+   "T14_h": 16.23
+  }
+ ],
+ "periods_screened": [
+  {
+   "P": 217.63876682375923,
+   "n_support": 1,
+   "support_T": [
+    3657.099257174518
+   ]
+  },
+  {
+   "P": 435.2775336475183,
+   "n_support": 1,
+   "support_T": [
+    3657.099257174518
+   ]
+  },
+  {
+   "P": 580.3700448633576,
+   "n_support": 1,
+   "support_T": [
+    3657.099257174518
+   ]
+  },
+  {
+   "P": 870.5550672950368,
+   "n_support": 1,
+   "support_T": [
+    3657.099257174518
+   ]
+  },
+  {
+   "P": 1741.110134590073,
+   "n_support": 1,
+   "support_T": [
+    3657.099257174518
+   ]
+  }
+ ],
+ "n_passing": 1
+}

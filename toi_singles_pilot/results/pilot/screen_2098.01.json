@@ -1,0 +1,140 @@
+{
+ "TOI": "2098.01",
+ "TIC": 356700488,
+ "event": {
+  "T": 1756.644724879982,
+  "sigma_T": 0.02047154659339394,
+  "depth": 0.0003159928376367486,
+  "sigma_depth": 4.725127791773204e-05,
+  "T14_h": 14.204849031815119,
+  "fin": 0.2611571743724078,
+  "beta": 1.34614737435525,
+  "n": 1543,
+  "cadence_min": 2.0000103319762275,
+  "rms": 0.0004591812952323641,
+  "n_before": 216,
+  "n_after": 216,
+  "max_gap_in": 0.0013888962962482765,
+  "cad": 0.0013888960638723802,
+  "sector": 16
+ },
+ "repeats": [
+  {
+   "T_grid": 2757.0902,
+   "sector": 53,
+   "grid_depth_ppm": 251,
+   "grid_snr": 8.4,
+   "passed": false,
+   "why": "unconstrained fit; one-sided (0/317 pts)",
+   "T_fit": 2756.8608605944087,
+   "sigma_T": 3213.616199362204,
+   "depth_ppm": 411,
+   "sigma_depth_ppm": 4397194,
+   "T14_h": 21.16
+  },
+  {
+   "T_grid": 3493.0861,
+   "sector": 80,
+   "grid_depth_ppm": 292,
+   "grid_snr": 10.9,
+   "passed": true,
+   "why": "",
+   "T_fit": 3493.0908651181558,
+   "sigma_T": 0.022239744383119636,
+   "depth_ppm": 362,
+   "sigma_depth_ppm": 79,
+   "T14_h": 12.83
+  },
+  {
+   "T_grid": 3532.9116,
+   "sector": 81,
+   "grid_depth_ppm": 318,
+   "grid_snr": 11.6,
+   "passed": false,
+   "why": "unconstrained fit; one-sided (216/0 pts)",
+   "T_fit": 3533.0486701031427,
+   "sigma_T": 0.4824953387618151,
+   "depth_ppm": 251,
+   "sigma_depth_ppm": 190,
+   "T14_h": 13.05
+  },
+  {
+   "T_grid": 3585.2796,
+   "sector": 84,
+   "grid_depth_ppm": 228,
+   "grid_snr": 8.0,
+   "passed": false,
+   "why": "one-sided (216/0 pts)",
+   "T_fit": 3585.3966384579303,
+   "sigma_T": 0.013906430358299035,
+   "depth_ppm": 532,
+   "sigma_depth_ppm": 39,
+   "T14_h": 11.46
+  },
+  {
+   "T_grid": 3586.4433,
+   "sector": 84,
+   "grid_depth_ppm": 294,
+   "grid_snr": 12.3,
+   "passed": false,
+   "why": "unconstrained fit; depth ratio 0.04; T14 ratio 0.26",
+   "T_fit": 3586.56472830288,
+   "sigma_T": 0.39109119389758334,
+   "depth_ppm": 12,
+   "sigma_depth_ppm": 375232,
+   "T14_h": 3.74
+  }
+ ],
+ "periods_screened": [
+  {
+   "P": 115.76307601587821,
+   "n_support": 1,
+   "support_T": [
+    3493.0908651181558
+   ]
+  },
+  {
+   "P": 289.4076900396957,
+   "n_support": 1,
+   "support_T": [
+    3493.0908651181558
+   ]
+  },
+  {
+   "P": 347.28922804763477,
+   "n_support": 1,
+   "support_T": [
+    3493.0908651181558
+   ]
+  },
+  {
+   "P": 434.1115350595435,
+   "n_support": 1,
+   "support_T": [
+    3493.0908651181558
+   ]
+  },
+  {
+   "P": 578.8153800793913,
+   "n_support": 1,
+   "support_T": [
+    3493.0908651181558
+   ]
+  },
+  {
+   "P": 868.2230701190874,
+   "n_support": 1,
+   "support_T": [
+    3493.0908651181558
+   ]
+  },
+  {
+   "P": 1736.4461402381746,
+   "n_support": 1,
+   "support_T": [
+    3493.0908651181558
+   ]
+  }
+ ],
+ "n_passing": 1
+}

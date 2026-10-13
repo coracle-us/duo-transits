@@ -1,0 +1,64 @@
+{
+ "TOI": "1893.01",
+ "TIC": 264544388,
+ "event": {
+  "T": 1824.8412237060727,
+  "sigma_T": 0.017395311537191892,
+  "depth": 0.0007218171327413554,
+  "sigma_depth": 7.235568220093049e-05,
+  "T14_h": 18.904893309480425,
+  "fin": 0.1994223967823644,
+  "beta": 2.3282185442283705,
+  "n": 1883,
+  "cadence_min": 1.9999849102532608,
+  "rms": 0.0005106354327690757,
+  "n_before": 283,
+  "n_after": 283,
+  "max_gap_in": 0.0013888786447751045,
+  "cad": 0.0013888784098980977,
+  "sector": 19
+ },
+ "repeats": [
+  {
+   "T_grid": 2023.7173,
+   "sector": 26,
+   "grid_depth_ppm": 286,
+   "grid_snr": 10.5,
+   "passed": false,
+   "why": "depth ratio 0.46",
+   "T_fit": 2023.6586091304152,
+   "sigma_T": 0.019271979032108283,
+   "depth_ppm": 335,
+   "sigma_depth_ppm": 67,
+   "T14_h": 14.05
+  },
+  {
+   "T_grid": 2757.2744,
+   "sector": 53,
+   "grid_depth_ppm": 354,
+   "grid_snr": 10.0,
+   "passed": false,
+   "why": "depth ratio 0.39; one-sided (14/216 pts)",
+   "T_fit": 2757.2095872253512,
+   "sigma_T": 0.023650826564370602,
+   "depth_ppm": 278,
+   "sigma_depth_ppm": 82,
+   "T14_h": 13.31
+  },
+  {
+   "T_grid": 2912.3559,
+   "sector": 59,
+   "grid_depth_ppm": 518,
+   "grid_snr": 10.4,
+   "passed": false,
+   "why": "one-sided (29/241 pts)",
+   "T_fit": 2912.1674194442758,
+   "sigma_T": 0.023152998416497088,
+   "depth_ppm": 1040,
+   "sigma_depth_ppm": 211,
+   "T14_h": 16.05
+  }
+ ],
+ "periods_screened": [],
+ "n_passing": 0
+}

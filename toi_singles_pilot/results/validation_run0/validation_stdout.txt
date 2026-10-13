@@ -1,0 +1,18 @@
+validation: 16 TOIs: ['772.02', '1894.01', '1895.01', '2300.03', '2321.01', '3500.02', '4187.02', '4629.01', '4958.01', '5626.01', '5724.01', '5893.01', '5990.01', '6663.01', '6890.01', '7044.01']
+[1/16] TOI 2321.01: ok sectors 2 event supported snr 8.2 repeats 0 periods(top5) [] minP 5.122964059694734 
+[2/16] TOI 772.02: ok sectors 5 event supported snr 20.4 repeats 2 periods(top5) [(32.357, 2), (26.474, 1), (26.578, 1), (27.473, 1), (27.562, 1)] minP 11.435647534419443 
+[3/16] TOI 3500.02: ok sectors 4 event supported snr 71.9 repeats 2 periods(top5) [(18.438, 2), (35.032, 2), (50.045, 2), (58.386, 2), (70.063, 2)] minP 15.297594042284105 
+[4/16] TOI 1895.01: ok sectors 8 event ambiguous snr 3.0 repeats 3 periods(top5) [(64.302, 1), (66.59, 1), (69.446, 1), (72.34, 1), (73.25, 1)] minP 30.482508448978948 
+[5/16] TOI 4958.01: ok sectors 4 event supported snr 12.3 repeats 3 periods(top5) [(26.744, 3), (53.489, 2), (37.715, 1), (39.411, 1), (42.026, 1)] minP 23.415764881246762 
+[6/16] TOI 4629.01: ok sectors 8 event supported snr 7.3 repeats 4 periods(top5) [(51.05, 4), (71.469, 3), (102.099, 3), (119.116, 3), (178.674, 3)] minP 21.349340434625823 
+[7/16] TOI 5626.01: ok sectors 3 event supported snr 20.9 repeats 1 periods(top5) [(18.848, 1), (19.357, 1), (19.895, 1), (20.463, 1), (21.065, 1)] minP 12.250021023179183 
+[8/16] TOI 5893.01: ok sectors 2 event supported snr 29.5 repeats 0 periods(top5) [] minP 20.171344610746516 
+[9/16] TOI 5724.01: ok sectors 9 event supported snr 10.7 repeats 3 periods(top5) [(69.741, 2), (52.132, 1), (56.142, 1), (60.821, 1), (66.35, 1)] minP 34.19502024562098 
+[10/16] TOI 5990.01: ok sectors 5 event supported snr 6.7 repeats 1 periods(top5) [(6.315, 1), (9.873, 1), (14.02, 1), (18.946, 1), (20.029, 1)] minP 5.7938748680297465 
+[11/16] TOI 2300.03: ok sectors 42 event supported snr 75.5 repeats 1 periods(top5) [(914.412, 1)] minP 166.02229720221047 
+[12/16] TOI 6890.01: ok sectors 5 event ambiguous snr 2.8 repeats 4 periods(top5) [(44.608, 1), (47.486, 1), (50.761, 1), (54.521, 1), (58.883, 1)] minP 24.610237734324176 
+[13/16] TOI 6663.01: ok sectors 8 event supported snr 33.1 repeats 3 periods(top5) [(35.231, 2), (36.992, 2), (49.323, 2), (61.654, 2), (67.259, 2)] minP 35.18776149697808 
+[14/16] TOI 7044.01: ok sectors 3 event supported snr 9.6 repeats 3 periods(top5) [(15.967, 3), (20.985, 2), (21.602, 2), (22.256, 2), (22.952, 2)] minP 12.272383775478547 
+[15/16] TOI 4187.02: ok sectors 7 event supported snr 28.8 repeats 1 periods(top5) [(56.636, 1), (141.59, 1), (283.181, 1)] minP 28.285549512688107 
+[16/16] TOI 1894.01: ok sectors 40 event supported snr 33.7 repeats 2 periods(top5) [(369.661, 1), (407.12, 1), (542.827, 1), (739.323, 1), (814.241, 1)] minP 176.38585130102325 
+DONE

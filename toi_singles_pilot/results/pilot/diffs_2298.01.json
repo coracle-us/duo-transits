@@ -1,0 +1,34 @@
+[
+ {
+  "sector": 56,
+  "n_transits": 1,
+  "transits": [
+   2839.49
+  ],
+  "wcs_vs_image_centroid_px": 0.06909859095829915,
+  "crowded_reference": false,
+  "offset_from_image_centroid_px": 5.692650594640991,
+  "snr_peak": 3.449223405663676,
+  "offset_from_target_px": 5.731593616758438,
+  "offset_err_px": 0.31288810168339903,
+  "offset_from_target_arcsec": 120.3634659519272,
+  "offset_sigma": 18.31834955027483,
+  "nearest_gaia_to_source": {
+   "source_id": 2267279979628254464,
+   "G": 9.790398597717285,
+   "sep_from_target_arcsec": 126.55633056244855,
+   "dist_from_fit_px": 0.5336185872646728
+  },
+  "T": 2839.49
+ },
+ {
+  "sector": 23,
+  "n_transits": 0,
+  "T": 1960.03
+ },
+ {
+  "sector": 22,
+  "n_transits": 0,
+  "T": 1960.03
+ }
+]

@@ -1,0 +1,158 @@
+OPEN SINGLE/DUO TOIs x NEW TESS DATA: BLIND VALIDATION + 20-TOI PILOT
+2026-10-12. Inputs: toi_singles_k2/targets_merged.csv (TOI, TIC, coordinates, epoch, depth, duration only),
+data/raw/exofop_toi.csv (sibling TOIs only), MAST light curves and TESScut cutouts, ExoFOP target JSON and
+NASA pscomppars fetched 2026-10-12 22:20, Gaia DR3. Nothing outside toi_singles_pilot/ was written; nothing committed.
+
+VERDICT
+  Validation: the pipeline works when the extra transit is SNR >~ 8 and inside quality-0 data.
+    Blind score on the 16 community-solved TOIs: 6 exact, 7 true period in our alias list, 3 not recovered
+    (1 'allowed, not recovered', 2 'missed'; one of the 2 misses is most likely a wrong reference period).
+  Pilot: 0 new claimable periods from 20 TOIs.
+    - 1 resolved (TOI-5975.01, P = 186.540 d) and 1 duo narrowed to 4 aliases (TOI-2298.01): BOTH were already
+      solved on ExoFOP by 'mason' in 2022, before the TOIs' last update, so the scoping's 'post-update' filter
+      missed them.
+    - 3 new candidate second transits, all weak (4-8 sigma) or not reproduced across reductions: 2263.01, 2098.01,
+      4585.01. None is claimable.
+    - 17 of the 20 pilot TOIs have TOI SNR 7.2-8.3. On these the TOI team's own second transits come out at
+      SNR 5-7.5 in our box test, i.e. below any honest repeat threshold. The 'most new sectors' ranking picks
+      bright stars with shallow, barely-detected signals: exactly where this method cannot work.
+  Go/no-go for the remaining 68: NO-GO as specified (same ranking). See section 5 for the one variant worth
+  running (32 high-SNR TOIs without any community period, expected yield a handful at best).
+
+------------------------------------------------------------------------------------------------------------
+1. METHOD  (scripts/common.py, s01_run.py)
+  Reused, validated code: k2singles/scripts/k2lib.py v3 (grid / find_repeats / robust_periods), alias_pipeline
+  load_lightcurves + test_window, pilot.compute_diffs / plot_windows, diff_image.analyse, eclipse_times.fit_event.
+  - Light curves: one product per sector (SPOC 120 s > TESS-SPOC > QLP > SPOC 20 s), quality == 0. Sectors that
+    TESScut lists without any product get our own aperture photometry (tesscut_photometry algorithm, written
+    into toi_singles_pilot/data). Own photometry filled 21 target-sectors.
+    - Pilot: 1301.02 S59; 2098.01 S15, S85; 2102.02 S56; 2263.01 S60; 2270.01 S20, S26; 2298.01 S73;
+      2433.01 S47; 4585.01 S48, S74; 6075.01 S59, S79; 6690.02 S94, S96; 6691.01 S2, S29, S35.
+    - Validation: 1894.01 S29; 4187.02 S106; 6663.01 S53.
+    Other TESScut sectors gave 0 good cadences (off-chip or flagged). For 4348.01 the TESScut search failed.
+  - Transits of sibling TOIs with a real period (not single/duo/max-period) are masked.
+  - Box test of the TOI depth/duration every D/4; repeats need SNR >= 8, depth 0.5-2x, coverage >= 0.8, baseline
+    on both sides; periods from robust_periods (P >= 5 d, every repeat can anchor, flat windows exclude).
+  - Allowed periods on a fine period grid (step such that the furthest epoch moves <= D/8; fixes review point
+    M3): min allowed P, fraction of log P excluded, allowed ranges (in each JSON).
+  - Change made BEFORE freezing the blind answers (prompted by our own event check, not by any reference):
+    if the TOI epoch is not itself a 'supported' dip (TOI epochs can be propagated reference epochs), the
+    highest-SNR robust dip becomes the anchor. Affected 1895.01, 6890.01 (validation), 2296.01 (pilot).
+  - Added AFTER the validation comparison (so not blind): s08_screen_repeats.py, a trapezoid shape screen on
+    every repeat (fit converges; depth 0.5-2x and T14 0.67-1.5x the event's fit; data on both sides; no gap in
+    transit), periods recomputed from passing repeats only.
+    Post-hoc on validation: it removed 5 spurious repeats (gap-edge ramps, half-depth dips) and no true one.
+    1894.01 tightens from 6 to 2 periods ({369.62, 739.24}, truth 369.60).
+    2300.03 loses its wrong 914 d answer.
+    All 6 exact answers survive.
+  - Vetting tools: s05_vet_events.py (trapezoid fits in every product: SPOC 120/20 s, TESS-SPOC, QLP;
+    ephemeris), s09_diff_at.py (difference image at a given time), s06_gaia_flags.py (RUWE, NSS orbit, RV
+    variability), s04_novelty_check.py (fresh ExoFOP JSON + live pscomppars).
+
+  Blindness caveat: toi_singles_k2/REPORT.txt, which I was told to read first, quotes 6 of the 16 reference
+  periods as examples (772.02, 1894.01, 4629.01, 5990.01, 2300.03, 4187.02). No pipeline parameter was tuned. The
+  only pre-freeze change (re-anchoring) was triggered by two events not being recovered at the TOI epoch.
+  The frozen file has a timestamp (validation_blind.csv, frozen_at 2026-10-12).
+
+2. PART A: BLIND VALIDATION  (validation_blind.csv -> validation_compare.csv)
+  Match tolerance 0.3% in P.
+  exact (6)       772.02 32.357 | 1895.01 74.808 (re-anchored) | 4629.01 51.050 | 4958.01 26.744 | 5724.01 69.741
+                  | 7044.01 15.967 (FLAG: the reference is the TOI comment itself, so it is not an independent
+                  upload; 5 exact without it)
+  in aliases (7)  1894.01 rank 1 of 6 | 3500.02 rank 9 of 31 (9 tied best) | 4187.02 3 of 3 | 5626.01 8 of 38 |
+                  5990.01 13 of 28 | 6663.01 3 of 19 | 6890.01 6 of 65 (re-anchored; 24 tied best)
+                  These are duo-type answers: we find the second transit and list the flat-window survivors;
+                  the community resolved them with a third transit or other data we did not detect or use.
+  not recovered (3):
+    2300.03 MISSED. The 2nd transit (S86, BTJD ~3651.5) is in SPOC quality-4096 cadences with NaN PDCSAP; the
+            uploader used SAP_FLUX. Our quality==0 rule drops it. Our only 'repeat' (S74) was a segment-start
+            ramp (plots/vet_2300.03.png) and gave a wrong 914.4 d; the shape screen removes it.
+    5893.01 MISSED, but the reference is very likely wrong. RAVEN's P = 7.344 d (lafargamagro upload,
+            Lafarga+2026) predicts transits at its own epoch BTJD 2802.48 (S55) and at 3536.87, 3551.56 and
+            3558.90 (S82). All of them are flat in SPOC, TESS-SPOC and QLP: |depth| < 460 ppm, < 2 sigma, vs
+            3543 ppm uploaded and ~7000 ppm observed in the S55 event. TESS excludes 7.34 d for this event.
+            Worth a polite note to the RAVEN authors.
+    2321.01 ALLOWED, NOT RECOVERED: the S50 duo transit is SNR 5.5-6.9 in our box test, below the repeat cut; the
+            RAVEN 12.567 d (= 716.35/57) is consistent and not excluded by our data.
+  Lessons: (i) SNR-8 threshold misses shallow second transits; (ii) quality-flagged cadences can hold real
+  transits (SAP fallback would help); (iii) edge/partial events are still untested (1894.01's S97 transit sits
+  at a segment end, 2298.01's S18 transit at a sector end); (iv) without the shape screen, gap-edge ramps
+  produce confident wrong periods.
+
+3. PART B: PILOT (20 TOIs)  (pilot_results.csv, vet_notes.csv, screen_pilot.csv, novelty_check.csv, gaia_flags.csv)
+  Selection: the 14 scoping TOIs plus the next 6 in the 88-pool by (n_new_since_update desc, Tmag asc):
+  2433.01, 4344.01, 2263.01, 2087.01, 6690.02, 4321.01. The scoping list itself had skipped 2433.01 and 4344.01.
+  Hits after the shape screen:
+    5975.01  RESOLVED, P = 186.540 +/- 0.002 d, T0 = 2408.616 +/- 0.007 BTJD.
+             4 transits: S20 1848.99, S40 2408.63, S54 2781.66, S75 3341.32; depth 2.5-3.0 ppt and
+             T14 15-17 h in SPOC, TESS-SPOC and QLP. Odd/even consistent. P/2-P/5 each excluded by >= 4 flat
+             windows; no dip at phase 0.5. Diff image on target (1.6 +/- 1.6"); Gaia RUWE 1.00.
+             NOT NOVEL: mason uploaded P = 186.535 d on 2022-09-11 (S20/40/47/54). Our S75 transit is an
+             independent confirmation and refinement. The TOI row still shows P = 373.04 d.
+             Plots: plots/vet_5975.01.png, plots/screen_5975.01.png.
+    2298.01  DUO, 4 surviving aliases: 146.58, 293.15, 439.73, 879.46 d.
+             S56 transit at 2839.49 seen in SPOC (10 sigma), TESS-SPOC (9) and QLP (5). The diff/err map peaks
+             on the target; the Gaussian fit locked onto a saturated star 120" away.
+             NOT NOVEL: mason, 2022-11-18, P = 146.5821 d (S18/24/56).
+    2263.01  WEAK new candidate.
+             S79 dip at 3465.18: 338-462 ppm in SPOC 120 s / 20 s / TESS-SPOC (4-8 sigma); QLP 748 ppm.
+             Event S14: 220-280 ppm. If real, 9 aliases: 73.2 ... 1756.8 d. Not claimable.
+    2098.01  MARGINAL. S80 dip at 3493.09 (357 ppm SPOC, 477 QLP, 241 +/- 123 TESS-SPOC), ending at a data gap.
+             On-target diff image. If real, 7 aliases. Not claimable.
+    4585.01  MARGINAL / likely noise. The S86 120-s dip (472 ppm) is not reproduced in the 20-s product of the
+             same pixels (132 +/- 119 ppm, with a trend). Not claimable.
+  No repeat or all repeats failed the screen (15):
+    2270.01, 2102.02, 2433.01, 4321.01, 4348.01, 289.01, 1301.02, 1893.01, 2087.01, 4344.01, 4355.01, 6075.01,
+    6690.02, 6691.01, 2296.01.
+    - For the max-period duos 6075.01, 4348.01 and 4344.01, the TOI's own second transit is SNR 7.5, 5.3 and 2.3
+      in our test, as are 6691.01's suggested extra events (SNR 6.2, 5.4).
+    - 1301.02 is variability-dominated. 2296.01 is red-noise limited: every window on SPOC's 139.26 d ephemeris
+      is 'ambiguous'.
+  Side flags:
+    - TOI-289.01 host: Gaia DR3 NSS orbit (OrbitalTargetedSearchValidated), P = 222.79 d, e = 0.36, RUWE 1.43,
+      RV amplitude 41 km/s. Our flat windows still allow 222.47-222.69 d. The single event is probably an
+      eclipse by a stellar companion (likely FP).
+    - 1893.01 host is Gaia RV-variable (consistent with its TOI comment).
+  Novelty check (ExoFOP JSON re-fetched and pscomppars queried 2026-10-12 22:20): community period uploads exist
+  for 5975.01 and 2298.01 (mason, 2022) and 1301.01 (RAVEN, sibling). No uploads for 2263.01, 2098.01 or
+  4585.01, and none of the 20 is in pscomppars. 1301.02's host is in pscomppars via TOI-1301.01.
+
+4. WHAT CHANGES FOR ANY FURTHER RUN
+  - Check ALL community period uploads, not only those dated after the TOI update. Of the remaining 68 TOIs,
+    12 already have a community period upload of some date (remaining_pool.csv, pre_upload).
+  - Rank by per-transit SNR, not by new-sector count.
+  - Keep the shape screen (s08) and the multi-product refit (s05) as standard steps.
+  - Add a SAP fallback for quality-flagged cadences and an edge/partial-event test. These cost 2 of the 16
+    validation recoveries.
+  - Difference-image offsets with snr_peak < ~5, or near a saturated neighbour, are unreliable; read the
+    diff/err map instead.
+
+5. GO / NO-GO
+  - Remaining 68 ranked as before: NO-GO. The pilot took its best-covered 20 and produced 0 claimable periods.
+    - 17/20 were SNR~7-8 TOIs where the method is blind.
+    - The 2 that worked were already solved by the community in 2022.
+    - The rest of the pool has fewer new sectors (median 2, max 7).
+  - Only variant worth doing: the 32 remaining TOIs with TOI SNR >= 15 and no community period upload of any
+    date (remaining_pool.csv).
+    - Run it without diff images except on screened hits; ~2-3 h wall, a few GB.
+    - Expected yield, rough: the remaining TOIs have ~2.5 new sectors each, which gives roughly a 20-30% chance
+      per TOI of a transit landing in new data, and part of the pool is EB/SB2-prone (e.g. 224.01).
+    - That is ~3-6 TOIs with a new transit: mostly duo -> alias-list narrowings, 0-3 full resolutions.
+    - slee and mason upload every few weeks, so some will be scooped.
+    - That is a short RNAAS table at best. If the goal is a publishable novelty yield, stop here.
+
+FILES (toi_singles_pilot/)
+  validation_blind.csv, validation_compare.csv, screen_validation.csv
+  pilot_results.csv (one row per pilot TOI: pipeline + screen + Gaia + ExoFOP + vetting conclusion + novelty)
+  vet_notes.csv (hand vetting, with evidence and plot paths), screen_pilot.csv, novelty_check.csv, gaia_flags.csv,
+  remaining_pool.csv (the other 68, with TOI SNR and any-date upload flag)
+  results/validation/, results/pilot/: per-TOI JSON (repeats, periods, allowed_ranges), window grids (csv.gz),
+    windows/diff-image PNGs, screen_*.json, vet_*.json; *_stdout.txt run logs;
+    results/validation_run0/ = the pre-re-anchoring run (kept for the record)
+  plots/: screen_<TOI>.png (event + every repeat, binned, with fits), vet_<TOI>.png (multi-product fits),
+    <TIC>_diffimg_s<N>.png
+  scripts/: common.py, s01_run.py (validation|pilot), s02_validation_blind.py (freeze), s03_validation_compare.py,
+    s04_novelty_check.py, s05_vet_events.py, s06_gaia_flags.py, s07_pilot_summary.py, s08_screen_repeats.py,
+    s09_diff_at.py
+  data/ (gitignored via toi_singles_pilot/.gitignore; 4.8 GB): light curves, TESScut cutouts, lightkurve cache,
+    ExoFOP JSON (data/exofop_20261012/)
