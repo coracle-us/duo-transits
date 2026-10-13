@@ -157,3 +157,28 @@ Conclusions are unchanged. The deepening and the S/P doubling are stronger.
 treated it as a LaTeX comment), so it undercounted. With the regex fixed, the submitted AAS82225 text is abstract
 129, body 1066. That is within the limits (150 / 1350), and the earlier "119 / 845" was low. The AAS82207 text is
 145 / 814.
+
+## Correction files for AAS82225 (2026-10-13), with the AAS82207 editor's points applied pre-emptively
+
+The journals manager asked for an updated ms.tex and ms.pdf. Jon chose to fold in the six points the same editor
+raised on AAS82207. New or changed numbers:
+
+- **Selection 164 -> 158 -> 145 -> 144:** `scripts/run_full3.py` `select()` on `data/k2_singles.csv` (TESS-observed;
+  expected SNR >= 7 from `scripts/build_catalog.py`: sig1h = 220 ppm x 10^(0.2 (T - 9.1)), SNR = depth / sig1h x
+  sqrt(dur_h); depth < 1e6 ppm).
+- **Own-photometry validation (ten stars, depths within 3% uncrowded, ~30% shallower crowded, mid-times 2 min):**
+  same code as AAS82207, `singles/revision/photometry_validation.py`, `singles/revision/REPORT.txt` Part 2.
+- **EPIC 202126877 depths across products:** `eb_depth_evolution/data/tess_events_all_products.csv` (gitignored;
+  made by eb_depth_evolution scripts): TESS-SPOC 2021 and QLP 2021/2023 agree with own photometry within 5%;
+  2026 own apertures r = 1.0-2.5 px give 0.352-0.356.
+- **Catalogued-event check, 123/144 present in K2 PDCSAP at the catalogued epoch** (dip > 0.5 delta, SNR > 5):
+  `k2singles/revision/catalogued_event_check.py` -> `catalogued_event_check.csv`.
+- **Audit of the other 21** (8 PDC-removed, 1 epoch = secondary at +7.6 d, 4 shallow/low-SNR, 1 roll systematics,
+  7 K2SFF-only with aperture-dependent depth): `k2singles/revision/audit21/` (REPORT.txt, audit21.csv, plots;
+  separate agent, SAP/EVEREST/K2SFF/K2SC). EPIC 211490542 (the epoch error) had no repeats, so the 62/16 counts
+  are unchanged.
+- **Sanders 617 = 62.594821 +- 0.000027 d** (was 62.59466 +- 0.00018 from a PDCSAP ingress-only C5 time):
+  `k2singles/revision/audit21/t0_211411112.py` (C5 re-timed in EVEREST, 178.95345; K2SFF 178.95336). Independent
+  support: C16 + S46 alone give 62.594786 d, and the blind analysis (`independent_table/REPORT.md`) found
+  62.59479 +- 0.00005 d with the same C5 time. Sandquist+2021: 62.59484 +- 0.00003.
+- Word count after the changes: abstract 130, body 1346 (`scripts/rnaas_wordcount.py`).

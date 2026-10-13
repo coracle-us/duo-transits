@@ -26,14 +26,22 @@ deepened from 6\% in 2014 to 21\% in 2021 and 36\% in early 2026.
 
 \section{Sample and Methods}
 
-The catalogue lists 164 events on 163 stars. I kept the 144 events that have TESS coverage, an
-expected TESS signal-to-noise ratio of at least 7 per event, and a physical depth. For each
+The catalogue lists 164 events on 163 stars. Of these, 158 fall in TESS sectors already observed,
+145 of those have an expected TESS signal-to-noise ratio of at least 7 per event (catalogued depth
+and duration against a 1-h noise of 220\,ppm at $T=9.1$, scaled with magnitude), and 144 have a
+physical depth ($<100\%$). For each
 star I combined K2 PDCSAP light curves from every campaign \citep{Howell2014} with TESS SPOC,
 TESS-SPOC \citep{Caldwell2020} and QLP \citep{Huang2020} light curves. For recent sectors
-without pipeline products I added my own TESScut photometry \citep{Brasseur2019}.
+without pipeline products I added my own TESScut aperture photometry \citep{Brasseur2019}. Tested
+against SPOC 2-min light curves of ten stars, it gives transit depths within 3\% for uncrowded
+stars (about 30\% shallower for crowded ones, as I apply no crowding correction) and mid-times
+within 2\,min.
 
 A box of the catalogued depth and duration was slid along the data. A repeat needs SNR $\geq8$,
-a depth of 0.5--2 times the catalogued value, and at least 80\% coverage. Periods were then
+a depth of 0.5--2 times the catalogued value, and at least 80\% coverage. The matching is deliberate: only a recurrence of the same event
+constrains $P=\Delta T/n$. Secondaries within the depth window are found this way; shallower
+secondaries and eclipses of other bodies were not searched for, so binaries that show only a shallow
+secondary are missed. Periods were then
 tested against every predicted epoch, and a period is rejected if one falls on flat data. The
 red-noise factor is measured on a baseline of at least twice the duration, so long eclipses on
 giants are not misjudged. For eccentric binaries, primary and secondary eclipses were assigned
@@ -43,14 +51,23 @@ Final periods come from trapezoid fits to each eclipse and a linear ephemeris. T
 analyses with independent code, starting from the catalogue epoch alone, re-derived every period
 in Table~\ref{tab:k2}. Apart from EPIC~202126877, which shows timing variations, they agree with
 mine within $2\sigma$. An adversarial review found pipeline problems that I fixed before the
-final run. As a validation, Sanders~617
-in M67 comes out at $62.59466\pm0.00018$\,d. \citet{Sandquist2021} give
-$62.59484\pm0.00003$\,d.
+final run. As a validation, Sanders~617 in M67 comes out at $62.59482\pm0.00003$\,d, against
+$62.59484\pm0.00003$\,d from \citet{Sandquist2021}; its C5 eclipse is timed in EVEREST, because K2
+PDCSAP removes the eclipse core.
 
 Before claiming a period, I checked each star against ExoFOP, VizieR (including VSX), SIMBAD, the
 Villanova K2 EB catalogue and Gaia DR3 \citep{Gaia2023,Arenou2023}.
 
 \section{Results}
+
+A dip deeper than half the catalogued depth at SNR $>5$ marks the catalogued event as present at
+its epoch in K2 PDCSAP for 123 of the 144 events.
+I checked the other 21 in K2 SAP, EVEREST, K2SFF and K2SC light curves. In eight, PDC removed or
+distorted the event, usually by blanking the eclipse core. One catalogued epoch is a secondary
+eclipse, 7.6\,d from the primary. Four events are shallower than half the catalogued depth or below
+SNR 5, and one is hidden by roll systematics. Seven appear only in K2SFF, with depths that change
+with aperture, so they are probably artefacts or blends. Because PDC can blank deep eclipses, some
+repeats may also have been missed.
 
 Of the 144 events, 62 show at least one candidate repeat, and 16 have a period that explains two
 or more. Of these, 14 are in Table~\ref{tab:k2}. EPIC~202137580 is already well catalogued, and
@@ -81,8 +98,8 @@ own photometry show them. Its host is evolved: Gaia DR3 gives $R_\star=3.6\,R_\o
 $\log g=3.46$. The companion is therefore $\approx2.1$--$2.4\,R_{\rm J}$. That is larger than a
 planet or brown dwarf on a non-irradiated orbit, and matches an M dwarf. \citet{Kovacs2020}
 lists $R_p=0.260$ in a column labelled Jupiter radii, but $\sqrt{0.004019}\times4.098\,R_\odot
-=0.260\,R_\odot$ ($2.5\,R_{\rm J}$), so the value is in solar radii. His BLS period of 73.91\,d is
-a formal value close to the data span, not one of my aliases.
+=0.260\,R_\odot$ ($2.5\,R_{\rm J}$), so the value is in solar radii. The BLS period of 73.91\,d in
+that paper is a formal value close to the data span, not one of my aliases.
 
 \textit{Eclipsing binaries.} HD~220967 ($G=9.4$, F7/8\,V) shows two eclipse types, 37\% and 30\%
 deep, in K2 C12 and TESS. The secondary falls at phase 0.867, so $e\cos\omega\approx0.59$ and
@@ -100,7 +117,9 @@ significant ($3\sigma$) and suggests the timing itself has changed. The K2 eclip
 deep in both EVEREST and K2SFF, and K2 shows no secondary ($<0.1\%$). In my own TESS photometry with a
 fixed aperture (depth = flux within $\pm15$\,min of mid-eclipse), the primary is 21\% deep in 2021,
 27\% in 2023 and 36\% in January 2026, and the secondary grows from 4\% in 2021 to 12\% in 2023
-(no secondary fell in the short 2026 segment).
+(no secondary fell in the short 2026 segment). Where pipeline light curves exist (TESS-SPOC in
+2021, QLP in 2021 and 2023) they give the same depths within 5\%; the 2026 depth rests on my
+photometry and agrees within 1\% across four aperture sizes.
 The secondary-to-primary ratio thus doubles from 0.21 to 0.46 between 2021 and 2023, which a
 constant dilution cannot do, and the K2 aperture is uncrowded (CROWDSAP 0.999). A precessing orbit, perhaps
 driven by a third body, is a plausible cause of both changes. The repeat search measures a box
@@ -173,11 +192,11 @@ the Villanova K2 eclipsing binary catalogue.
 \software{lightkurve \citep{Lightkurve2018}, astroquery \citep{Ginsburg2019}, astrocut \citep{Brasseur2019}}
 
 \section*{AI disclosure statement}
-The author used an AI assistant, Anthropic's Claude (a large language model), under his
-supervision. It wrote and ran the analysis code, including three blind re-analyses and three
-adversarial reviews performed by separate AI agents, and drafted and edited the text of this note.
-The author reviewed and edited the text, checked the numbers against the saved analysis outputs,
-and takes full responsibility for the content. Every reference was checked against ADS, arXiv,
+I used an AI assistant, Anthropic's Claude (a large language model), under my supervision. It
+wrote and ran the analysis code, including three blind re-analyses and three adversarial reviews
+performed by separate AI agents, and drafted and edited the text of this note. I reviewed and
+edited the text, checked the numbers against the saved analysis outputs, and take full
+responsibility for the content. Every reference was checked against ADS, arXiv,
 Crossref or VizieR records. The note contains no AI-generated figures.
 
 \begin{thebibliography}{}
