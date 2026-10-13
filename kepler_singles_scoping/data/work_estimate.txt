@@ -1,0 +1,3 @@
+planet-like singles SNR>=7: 11 stars, 100 target-sectors; with a SPOC/TESS-SPOC/QLP LC: 75; own TESScut needed: 25; stars with no pipeline LC at all: 0
+all singles SNR>=7 (incl. EB-like): 26 stars, 245 target-sectors; with a SPOC/TESS-SPOC/QLP LC: 140; own TESScut needed: 105; stars with no pipeline LC at all: 7
+all candidates SNR>=7: 35 stars, 331 target-sectors; with a SPOC/TESS-SPOC/QLP LC: 198; own TESScut needed: 133; stars with no pipeline LC at all: 10

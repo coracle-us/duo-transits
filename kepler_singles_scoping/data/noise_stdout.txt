@@ -1,0 +1,22 @@
+             n  stars
+author               
+            18     18
+CDIPS       98     19
+QLP        458     49
+SPOC       221     50
+TARS       129     13
+TASOC      201     57
+TESS-SPOC  263     53
+Traceback (most recent call last):
+  File "C:\git\duo-transits\kepler_singles_scoping\scripts\tess_products_and_noise.py", line 121, in <module>
+    main()
+  File "C:\git\duo-transits\kepler_singles_scoping\scripts\tess_products_and_noise.py", line 97, in main
+    g = nc[np.isfinite(nc.sigma_1h_ppm) & (nc.sigma_1h_ppm > 0)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git\duo-transits\.venv\Lib\site-packages\pandas\core\generic.py", line 2193, in __array_ufunc__
+    return arraylike.array_ufunc(self, ufunc, method, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git\duo-transits\.venv\Lib\site-packages\pandas\core\arraylike.py", line 399, in array_ufunc
+    result = getattr(ufunc, method)(*inputs, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''

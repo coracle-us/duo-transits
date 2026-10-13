@@ -1,0 +1,264 @@
+KEPLER SINGLE/DUO TRANSITS + TESS REPEATS: SCOPING REPORT
+Date: 2026-10-12. Everything lives in kepler_singles_scoping/. Nothing outside it was modified. Nothing is committed.
+
+VERDICT: NO-GO for a full run.
+- Expected yield: about 1 TESS repeat among planet-like Kepler singles in the data so far, and a repeat would
+  typically leave about 4 aliases, not a unique period.
+- Duplication risk is low; the problem is yield.
+- Kepler singles have P_min of about 600 d, because the Kepler data are near-continuous over 4 yr. TESS has
+  covered each Kepler-field star for only about 9 sectors.
+- Compare K2: 50 targets gave 15 repeats. Here about 28 SNR-capable singles give about 3 repeats, two-thirds of
+  them on eclipsing-binary-like objects.
+
+------------------------------------------------------------------------------------------------------------
+1. CATALOGUES OF KEPLER SINGLE / LONG-PERIOD TRANSIT CANDIDATES
+------------------------------------------------------------------------------------------------------------
+Parsed: scripts/parse_catalogs.py writes data/events_by_source.csv.
+Merged: scripts/build_targets.py writes data/kepler_singles_targets.csv.
+Raw arXiv LaTeX sources and VizieR tables are in data/raw/.
+
+[KM19] Kawahara & Masuda 2019, AJ 157, 218; arXiv:1904.04980.
+  - Size: the largest catalogue, 67 "clean" plus 23 "flagged" candidates (grazing, too large, or giant host),
+    on 89 stars. About 26 have two Kepler transits.
+  - Columns: KIC, KOI, Kp, M*, R*, Rp, t0 (BKJD), P posterior, b, e. No depth or duration column; we derive
+    depth = (Rp/R*)^2 and a circular-orbit T14.
+  - Data: VizieR J/AJ/157/218 (table2 is stellar parameters; table3 is the 67 clean candidates). The flagged
+    table is only in the arXiv source (table_rm.tex).
+  - Coverage: it largely subsumes W15, U16 and FM16 (the dagger marks in its table).
+
+[W15] Wang et al. 2015, ApJ 815, 127; Planet Hunters VIII; arXiv:1512.02559.
+  - Size: 41 candidates on 38 stars: 17 with one transit, 14 with two, 10 with three or more.
+  - Columns: KIC, KOI, P (mode and range), a/R*, i, Rp/R*, epoch (BKJD).
+  - Data: in the arXiv source (orbital_params_1/2/3.tex). Not in VizieR (J/ApJ/815/127 does not exist).
+
+[FM16] Foreman-Mackey et al. 2016, AJ 152, 206; arXiv:1607.08237.
+  - Size: 16 candidates (13 single, 3 double). Automated search of about 40,000 bright GK dwarfs.
+  - Columns: KIC, Teff, R*, Kp, P (years), t0 (KBJD), Rp, duration (h), b.
+  - Data: Table "catalog" in the arXiv source (ms.tex).
+
+[HZW19] Herman, Zhu & Wu 2019, AJ, doi:10.3847/1538-3881/ab1f70; arXiv:1901.01974.
+  - Size: 19 candidates, 15 deemed genuine. The FM16 pipeline was re-run on a larger sample with Gaia DR2
+    radii, which demoted several FM16 candidates.
+  - Data: in the arXiv source (param_tab.tex).
+  - Journal volume and page not verified; quoted as AJ 157, 248 elsewhere.
+
+[U16] Uehara et al. 2016, ApJ 822, 2; arXiv:1602.07848.
+  - Size: 28 single-transit events on 24 KOI stars, found by eye in 7,557 KOI light curves.
+  - Columns: KIC, KOI, Kp, Tc (KBJD), depth (ppm), Teff, logg, P_min. MCMC durations for 16 events.
+  - Data: in the arXiv source (main.tex, tables tab:list and tab:list_fit).
+
+[HC24] Hansen & Dittmann 2024, arXiv:2403.03427.
+  - Size: 1 machine-learning single, KOI 1271.02 (KIC 8631160), at about BKJD 679, Rp 5.3 Re.
+  - Data: values entered by hand from the text.
+
+Found but not parsed:
+  - Hansen & Dittmann 2026, arXiv:2608.23425: 4 new long-period candidates, 2 of them singles (Kepler 1897.02 and
+    1811.02). PDF only.
+  - Priyanshu 2026, "EXOVEIL", arXiv:2606.02778: 46 monotransit "transit-like anomalies". Single author, machine
+    learning, reframed in v3 as anomalies for follow-up. It recovers 32% of transits at 1000 ppm, so its
+    candidates are mostly far too shallow for TESS on Kp 13–15 stars.
+  - Ivashtenko & Zackay 2025, arXiv:2501.03019: a pipeline paper. About 50 high-probability long-period events
+    were promised for a later catalogue, which is not yet published.
+  - Schmitt et al. 2017, arXiv:1703.09229: Kepler-150 f. It is already in KM19 (KIC 5351250, a duo).
+  - Cui et al. 2021: a machine-learning single-transit search (not verified).
+  - Quinn et al. 2021, arXiv:2107.00027: KIC 4918810, a single-transit substellar object, P of about 10 yr from
+    RVs. It is in KM19.
+
+The Kepler KOI tables are not a source.
+  - Files: NASA Exoplanet Archive cumulative and q1_q17_dr25_koi tables, in data/raw/koi_*.csv.
+  - The KOI pipeline (TPS) needs at least 3 transits.
+  - koi_num_transits ≤ 2 matches 431 rows, but these are almost all false positives with junk num_transits = 0
+    (14 are CANDIDATE).
+  - KOIs with exactly 3 transits (181 rows) already have periods.
+  - The long-period singles enter the KOI list only through the papers above (for example, U16 "CS" rows such
+    as KOI-99.01 and 1096.01).
+
+Merged list:
+  - 186 source rows give 111 unique candidates on 102 stars: 81 singles and 30 duos.
+  - KIC → TIC matching used the TIC's KIC column: 111 of 111 matched.
+
+------------------------------------------------------------------------------------------------------------
+2. PRIOR TESS-ERA AND OTHER FOLLOW-UP (duplication risk)
+------------------------------------------------------------------------------------------------------------
+Literature search by a sub-agent, 2026-10-12, using arXiv and NASA Exoplanet Archive queries. No ADS full-text
+search was available.
+
+No paper systematically searches TESS for repeats of Kepler single or duo transits.
+
+Closest work, all on planets whose periods were already known:
+  - Christ, Montet & Fabrycky 2019 (AJ 157, 235; arXiv:1810.02826): predictions of which KOIs TESS will recover.
+  - Battley et al. 2021 (MNRAS 503, 4092; arXiv:2103.03259): ephemerides from S14/15/26.
+  - Jontof-Hutter, Dalba & Livingston 2022 (AJ 164, 42; arXiv:2207.08917): TTV systems in S14–S41.
+  - Kaye & Aigrain 2025 (MNRAS 538, 2283; doi:10.1093/mnras/staf334): 111 Kepler and K2 planets with known
+    periods, TESS to S82. The closest paper; it must be cited. arXiv ID not found.
+  - Yahalomi et al. 2023 (arXiv:2310.03802): Kepler-1513 b.
+  - Perrocheau et al. 2022 (arXiv:2211.01532): Kepler-167 e from the ground; TESS missed it.
+
+Explicit TESS check of a Kepler single:
+  - Hansen & Dittmann 2024 (arXiv:2403.03427), KOI 1271.02. Sectors 14, 15, 40, 41, 54, 55 and 74 inspected; no
+    transit found.
+  - Our predicted SNR for this candidate is below 7 anyway.
+
+Single-transit and long-period follow-up by other means (RV, Spitzer, ground):
+  - GOT 'EM survey: I (arXiv:2012.04676), II (Kepler-1704 b, arXiv:2107.06901), IV (arXiv:2401.03021), V
+    (arXiv:2405.11017).
+  - GOT 'EM IV: KIC 5951458 has an RV period of about 3378 d and is likely an M-dwarf companion.
+  - Dalba et al. 2020 (arXiv:2008.02811): KIC 5951458.
+  - Dalba & Muirhead 2016 (arXiv:1606.09246): Kepler-421 b.
+  - Dalba & Tamburo 2019: Spitzer, Kepler-167 e.
+  - Quinn et al. 2021: KIC 4918810.
+  - Santerne et al. 2016 (SOPHIE): a high false-positive rate among Kepler giant candidates. Use this as the
+    vetting prior.
+
+Operational risk, which is the real one:
+  - SPOC/QLP have been issuing single-transit TOIs on long-period Kepler hosts through 2026, for example
+    TOI 7068 (Kepler-1514 b), 7859 (PH-2 b), 7906 and 7909.
+  - TSTPC and Planet Hunters TESS post Kepler-field singles as CTOIs.
+  - None of our 102 stars has a TOI or CTOI in the repo's ExoFOP tables of 2026-10-11 (data/feasibility.csv,
+    TOI and CTOI columns).
+  - Re-check the live tables before any claim.
+
+Already solved or closed in our list (column lit_note):
+  - Duos with known periods: Kepler-167 e, 421 b, 1654 b, 1708 b, 1704 b and 150 f.
+  - KIC 5951458: RV result, see above.
+  - KIC 4918810: substellar.
+  - KOI 1271.02: already checked against TESS.
+  - 28 of 30 duos already have a unique period from Kepler coverage alone, so a TESS repeat would only refine
+    the ephemeris.
+
+------------------------------------------------------------------------------------------------------------
+3. FEASIBILITY
+------------------------------------------------------------------------------------------------------------
+Scripts: scripts/tess_products_and_noise.py, scripts/feasibility.py and scripts/work_estimate.py.
+Outputs: data/noise_model.txt, data/feasibility.csv, data/feasibility_summary.txt and data/work_estimate.txt.
+
+TESS coverage (tess-point 0.9, max_sector 134):
+  - All 102 stars are observed.
+  - Sectors per star: median 9, range 6–17. That is 976 target-sectors through S82, plus a few in S56, S73, S76
+    and S83.
+  - Sectors seen: S14, 15, 26, 40, 41, 53, 54, 55, 74, 75, 80, 81 and 82.
+  - No Kepler-field sectors fall in S84–S111.
+  - Future pointings in tess-point: S118–121, S125–127 and S132 (2027–28).
+
+Pipeline light curves, from the MAST search (data/tess_lc_inventory.csv):
+  - Stars covered: SPOC 2-min for 50, TESS-SPOC for 53, QLP for 49 and TASOC for 57.
+  - 18 of the 102 stars have no TESS light-curve product at all.
+
+Noise model (empirical) and SNR:
+  - Method: 132 TESS-SPOC/QLP/SPOC sector light curves of these stars, flattened over 1 d and binned to 1 h,
+    scatter measured as MAD.
+  - Fit: log10 sigma_1h[ppm] = 3.214 + 0.308 (Tmag − 13), i.e. 800 / 1600 / 3300 / 6800 ppm at Tmag 12 / 13 /
+    14 / 15. There is no difference between the S14–55 and S56+ eras.
+  - Comparison: the old model 220 ppm × 10^(0.2 (T − 9.1)) agrees at T = 12 and is too optimistic by 1.6× at
+    T = 14 and 2× at T = 15.
+  - SNR per transit = depth / sigma_1h × sqrt(duration), with duration capped at 30 h.
+  - SNR ≥ 7 holds for 37 of 111 candidates (52 with the old model). Of those, 15 are planet-like and 22 are
+    eclipsing-binary-like.
+  - "Planet-like" means not in the KM19 flagged table, depth ≤ 2.5%, and not tagged as an EB.
+
+Repeat probability:
+  - Kepler coverage: the quarters each star was actually observed (MAST), using approximate quarter windows.
+  - Singles: Monte Carlo over P with prior dN/dlnP ∝ P^(-2/3) on 50–7300 d. Periods that would put another
+    transit in Kepler data are rejected.
+  - p_repeat is the fraction of the remaining prior with a transit centre in TESS data, times 0.85 for usable
+    data. A version using the catalogues' own P values (factor-2 lognormal) gives the same totals within 5%.
+  - Duos: aliases dT/n surviving the Kepler coverage, weighted by P^(-2/3).
+
+Expected number of TESS repeats already in the data (through S83):
+  | Group                                        | N  | Expected repeats |
+  |----------------------------------------------|----|------------------|
+  | Planet-like singles, all                     | 56 | 7.0, but almost all have SNR < 7 |
+  | Planet-like singles, SNR ≥ 7                 | 11 | 1.1 (0.7 if duration is capped at 12 h for red noise; 1.6 including S118–S132) |
+  | All singles, SNR ≥ 7 (including EB-like)     | 28 | 3.3 (4.8 including future sectors) |
+  | Duos, planet-like, SNR ≥ 7                   | 4  | 0 (all 4 have unique periods; none predicted in TESS) |
+  | Duos with SNR ≥ 7 and an ambiguous period    | 0  | –   |
+
+  - Effective P_min for the singles: median 611 d.
+  - After a simulated repeat, the Kepler and TESS flat-data cuts leave a median of 4 aliases, range 2–9.
+  - So a repeat would narrow the period, not resolve it. Resolving it would need a third observed transit.
+
+The 11 planet-like singles with SNR ≥ 7:
+
+  | KIC (TIC)             | Source          | Depth (ppm) | Tmag | SNR | p_repeat | Note |
+  |-----------------------|-----------------|-------------|------|-----|----------|------|
+  | 10284575 (272078097)  | KM19, U16       | 5600        | 11.6 | 46  | 0.13     | KOI-3210.01 on the same star is a false positive |
+  | 6804821 (274119690)   | KM19            | 1500        | 10.3 | 32  | 0.11     | Kp 10.6, R* 3 Rsun |
+  | 11709124 (416282268)  | FM16, KM19, U16 | 7700        | 14.1 | 9.4 | 0.13     | Kepler-154; KOI-435.02 |
+  | 5942949 (399821807)   | KM19, U16       | 22000       | 15.0 | 7.3 | 0.13     | KOI-2525; V-shaped, 5 h |
+  | 9838291 (271253923)   | KM19, W15       | 1900        | 12.4 | 9.3 | 0.10     | |
+  | 10842718 (48031182)   | FM16, KM19, W15 | 4800        | 14.1 | 7.6 | 0.10     | |
+  | 4042088 (121020322)   | U16             | 4300        | 13.0 | 10  | 0.10     | Same star as a KM19-flagged deep event |
+  | 4918810 (122301267)   | KM19            | 2500        | 12.9 | 8.9 | 0.09     | Quinn+2021 substellar, P ~ 10 yr |
+  | 9419047 (273132914)   | KM19            | 2300        | 13.1 | 7.2 | 0.08     | |
+  | 2162635 (137347517)   | U16             | 4100        | 13.2 | 8.6 | 0.08     | KOI-1032.01 |
+  | 1717722 (122515768)   | U16             | 20000       | 15.0 | 12  | 0.06     | KOI-3145 |
+
+  For the three U16-only events, the 15 h duration is assumed.
+
+Work estimate for a full run:
+  - All SNR ≥ 7 singles: 26 stars, 245 target-sectors. 140 have a SPOC, TESS-SPOC or QLP light curve and 105
+    need our own TESScut photometry. 7 stars have no pipeline light curve at all.
+  - Planet-like subset: 11 stars, 100 target-sectors, 25 of them TESScut only.
+  - The k2singles pipeline (singles/scripts/pilot.py with the Kepler epoch as reference) would carry over
+    almost unchanged. Estimated cost: about 1 day of compute and checking, plus vetting.
+
+------------------------------------------------------------------------------------------------------------
+4. RECOMMENDATION
+------------------------------------------------------------------------------------------------------------
+NO-GO for a full run as a research product.
+
+Expected new periods:
+  - Planet-like: about 1 TESS repeat expected (Poisson chance of zero is about 33%).
+  - That repeat would leave about 4 aliases, and it still has to survive vetting. Kepler giant singles have a
+    high false-positive rate, and in K2, 15 repeats yielded 1 planet-like lead.
+  - Realistically: 0–1 "narrowed to a few aliases" planet candidate, and about 0.1–0.2 uniquely resolved.
+  - EB-like singles: 1–2 stellar-companion periods (2.2 repeats expected among 17), as in the K2 note, also
+    with several aliases each.
+
+Duplication risk: low in the literature. The main risks are operational (SPOC/QLP single-transit TOIs and
+TSTPC/PHT CTOIs in the Kepler field) and the long-period planets already solved by RV or duos (listed in §2).
+
+Work: small (26 stars, 245 target-sectors, 105 needing TESScut). Cost is not the obstacle; yield is.
+
+Best starting catalogue if pursued: Kawahara & Masuda 2019 (VizieR J/AJ/157/218 plus the flagged table).
+  - It is homogeneous, machine-readable and the largest.
+  - It holds 0.78 of the 1.1 expected planet-like repeats.
+  - Add the three U16-only events (KIC 2162635, 1717722 and 4042088).
+  - W15, FM16 and HZW19 add nothing new at SNR ≥ 7.
+
+If anything is done:
+  - A time-boxed quick look (at most half a day) at the 11 planet-like and 15 EB-like SNR ≥ 7 singles, using
+    existing pipeline light curves only.
+  - Or revisit after the 2027–28 Kepler-field sectors (S118–S132), which raise the expectation by about 50%.
+  - Neither is likely to justify an RNAAS on its own. At most it would make a paragraph or a combined note with
+    the K2 work.
+
+------------------------------------------------------------------------------------------------------------
+CAVEATS
+------------------------------------------------------------------------------------------------------------
+- Kepler coverage uses approximate quarter boundaries and ignores the monthly downlink gaps. For 6 duos every
+  alias was "rejected", so the catalogue period n = 1 was kept (column coverage_note).
+- Depths ignore limb darkening. Durations are partly computed from circular orbits.
+- The noise model was measured on stars that have pipeline light curves; fainter stars needing TESScut will
+  likely be worse.
+- Future sector times (S112+) are approximated as contiguous 27.4-d sectors.
+- The sub-agent's literature search had no ADS full-text access. Kaye & Aigrain 2025's tables were not read.
+- Housekeeping: data/lk_cache/ (about 82 MB of TESS FITS) and data/raw/ (about 51 MB of arXiv sources and KOI
+  tables) are not gitignored. Exclude them before any commit.
+
+FILES
+scripts/
+  parse_catalogs.py          parse the catalogues
+  build_targets.py           merge, TIC match, Kepler quarters, tess-point sectors
+  tess_products_and_noise.py product inventory and noise fit
+  feasibility.py             SNR, repeat probabilities, summary
+  work_estimate.py           target-sector counts
+data/
+  events_by_source.csv
+  kepler_singles_targets.csv
+  tess_lc_inventory.csv
+  noise_calibration.csv
+  noise_model.txt
+  feasibility.csv            per candidate: SNR, p_repeat, aliases, status, lit_note
+  feasibility_summary.txt
+  work_estimate.txt

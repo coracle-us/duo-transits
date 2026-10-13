@@ -1,0 +1,23 @@
+empirical fit (N=130 of 132): log10 sigma_1h[ppm] = 3.214 + 0.308 (Tmag - 13)
+Tmag  empirical  old_model  (ppm, 1 h)
+  10        195        333
+  11        396        528
+  12        804        836
+  13       1635       1326
+  14       3323       2101
+  15       6754       3330
+  16      13728       5277
+binned medians:
+      size  median
+Tbin              
+9.0      2   139.0
+10.0     4   243.0
+11.0    19   513.0
+12.0    33  1167.0
+13.0    47  2044.0
+14.0    25  5388.0
+15.0     2  6028.0
+median log residual by era:
+era
+S14-55         -0.029
+S56+ (200 s)   -0.019
