@@ -63,3 +63,9 @@ UAT keywords were checked in the official UAT.json:
 2. A Fable fact-check of the draft.
 3. Optional: an ASAS-SN g-band retry when Sky Patrol V2 is back.
 4. The "McBee 2026, submitted" citation refers to AAS82225. Update it when that note is accepted.
+
+## Status decision (2026-10-12, Jon)
+
+**Finish, then HOLD.** Bring the draft to submission-ready (blind check plus Fable fact-check), but do not submit
+until AAS82225 (the K2 note, which already mentions this star's deepening) has an editor decision. Then cite it
+properly and submit. Reason: avoid the appearance of salami-slicing with an overlapping note weeks later.
