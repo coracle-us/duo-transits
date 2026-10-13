@@ -1,0 +1,138 @@
+OPEN SINGLE / DUO TOIs x K2 (+ new TESS data): SCOPING AND LIGHT PILOT
+2026-10-12. Inputs: data/raw/exofop_toi.csv (2026-10-11), data/raw/tess_orbit_times.csv, MAST, VizieR,
+ExoFOP target JSON (fetched 2026-10-12). Nothing in data/raw was edited; nothing committed.
+
+VERDICT
+  K2 route: NO-GO. Only 3 of the 156 TOIs sit on stars that K2 observed, and all 3 are explained:
+    one is our own TOI-5560.01 (the control), one has its K2 events already assigned on ExoFOP,
+    and one shows nothing in K2.
+  New-TESS route: possible, but crowded. 88 TOIs have TESS sectors observed after their last TOI
+    update and no newer period on ExoFOP. However, community users (slee, mason, osborn, vincent,
+    lhill) posted 2025-26 periods for 15 others in the same list, so they are working this exact
+    seam. Go ahead only as a small pilot with a fresh ExoFOP check just before any claim.
+
+------------------------------------------------------------------------------------------------
+1. TARGET LIST  (scripts/s01_targets.py -> targets.csv)
+  Rule: TFOPWG disposition not CP/KP/FP/FA, AND (period blank/0, OR comment matches
+        single|duo|mono, OR comment matches a maximum-period phrase).
+  Result: 156 TOIs on 154 stars (reproduces the 156). The categories overlap:
+    77 have no period, 123 match single/duo/mono, 47 have a max-period comment.
+  Refinements (added as flags; no rows dropped):
+    - max_period_d parsed for 47 rows.
+    - n_named_transits and last_sector_in_comment parsed.
+    - comment_says_resolved = 1: TOI-7044.01, where the comment itself gives P = 15.97 d.
+    - Ecliptic coordinates added.
+  targets_merged.csv joins the ExoFOP and new-TESS columns (scripts/s08_summary.py).
+  18 TOIs are on hosts that already have a confirmed planet in pscomppars.
+
+2. K2 OVERLAP  (scripts/s02_k2_overlap.py -> k2_overlap.csv, derived/epic_matches.csv)
+  Method: 49 TOIs lie within 25 deg of the ecliptic. For each, an EPIC cone search (VizieR IV/34,
+  3") and a MAST query_region (3") were run. The MAST query looked for K2 target light curves,
+  HLSPs, and K2 FFI footprints.
+  - On a K2-observed star: 3 TOIs.
+      TOI-5523.01 = EPIC 201205469 = K2-43, a confirmed 2-planet host. C1 only
+                    (BTJD -189.6 to -109.7). No period.
+      TOI-5560.01 = EPIC 211924561. C5, C16, C18. P_max 702.47 d.
+                    All 140 aliases (P >= 5 d) put a transit in K2 data, because C16 sits at
+                    exactly 2 x P_max before S46.
+      TOI-5696.03 = EPIC 248618202. C14 (BTJD 905.8 to 985.4). No period.
+                    This is a multi-planet system: .02 = TOI-5696 b (32.43 d, validated by
+                    Collier et al. 2026, arXiv:2608.21560). .01 is a K2 + TESS duo
+                    (P_max 1637.27 d) from Planet Hunters TESS.
+  - In EPIC but never observed by K2: 2 TOIs (6929.01 = EPIC 201417046; 7869.01 = EPIC 245907996).
+  - No target falls in a K2 FFI footprint without also being a K2 target.
+  - "With K2 epochs covered":
+      - 1 TOI (5560.01) by aliases.
+      - 2 TOIs (5523.01, 5696.03) by a blind search over about 80 d of K2 data each.
+
+3. K2 EPOCH TEST  (scripts/s03_k2_search.py, s09_annotate_hits.py -> k2_hits.csv, plots/)
+  Search: k2lib v3 grid box test with the TOI depth and duration, then find_repeats.
+  Four reductions:
+    - K2 PDCSAP;
+    - raw SAP;
+    - EVEREST v2, with Kepler bits masked only. EVEREST's own outlier bit 2^24 flags real
+      transits, e.g. TOI-5560's C5 and C16 cadences;
+    - K2SFF.
+  Each candidate is re-tested in every reduction. Masked and thruster cadences within +/-D are counted.
+
+  Control, TOI-5560.01: both known K2 transits recovered.
+    C5  BTJD 179.89: PDC 1860 ppm (SNR 22), EVEREST 1671 ppm (SNR 39), K2SFF 1761 ppm (SNR 37).
+        SAP is ambiguous because of the roll sawtooth.
+    C16 BTJD 1163.34: PDC 1717 ppm (SNR 25), SAP 1704 ppm (SNR 21), EVEREST 1694 ppm (SNR 19).
+        K2SFF has a gap there.
+    The K2-only period test leaves 140.494 d and 70.247 d allowed (derived/k2_period_limits.csv).
+
+  Real K2 events found for TOI-5696.03 (box D = 8.09 h): all are catalogued signals, none new.
+    - BTJD 925.89, seen in all 4 reductions at 1035-1150 ppm.
+      This is TOI-5696.01's K2 transit, which ExoFOP already uses (TOI epoch 925.865).
+    - BTJD 948.48 (all 4 reductions) and 980.85 (EVEREST only at threshold).
+      Both match TOI-5696.02 = TOI-5696 b (predicted 948.453 and 980.883).
+    - Pairing check (scripts/s06_toi5696_durations.py; trapezoid supersampled for K2 long cadence;
+      plots/toi5696_events.png). The K2 event matches .01, not .03, so the ExoFOP pairing stands:
+        K2 C14 event:   T14 5.7-6.8 h, depth 1140-1320 ppm;
+        S46 (.01):      T14 5.8-6.3 h, depth 1385-1445 ppm;
+        S72 (.03):      T14 7.5-8.4 h, depth  900-1040 ppm.
+    - TOI-5696.03 has no K2 event of its own. K2 alone excludes 62-64% of log P (5-1500 d),
+      including essentially all P < 30 d.
+
+  TOI-5523.01 (28,200 ppm, 13.6 h, M dwarf; K2-43): no K2 event.
+    - 5 candidates were flagged, each in only one reduction (4 SAP, 1 EVEREST). Each is excluded
+      or near zero in PDC and K2SFF. The star varies by about 2% on day timescales
+      (plots/toi5523.01_*.png).
+    - K2 C1 is flat. It excludes P < ~39 d, and 63% of log P overall in both PDC and K2SFF.
+    - Separately: K2-43 has 2 TESS sectors (S63, S72) observed after this TOI's 2022 update.
+
+  Bottom line: zero new K2 hits.
+  Duplication check (ExoFOP JSON, pscomppars, arXiv):
+    - TOI-5560.01: our own k2singles result (RNAAS submitted).
+    - TOI-5696: the K2 events are already in the ExoFOP TOI ephemerides; .02 is validated
+      (Collier+2026).
+    - TOI-5523.01: no hit, so nothing to check.
+
+4. NEW TESS DATA  (scripts/s04_new_tess.py -> new_tess.csv; s05_exofop_check.py, s08_summary.py)
+  Sector timing: tess-point sectors, counted as observed if the sector ended before 2026-10-12.
+  - Sectors observed after "Date TOI Updated":
+      100/156 TOIs have at least one (464 sector-observations; median 3 among those).
+      56 have none.
+  - Sectors observed beyond the TOI's own "Sectors" list: 116 TOIs (615 sector-observations).
+  - Stale "single as of sector N" comments (later sectors observed): 24 of the 35 that name a sector.
+  - ExoFOP per-target JSON (156/156 fetched): a post-update community period exists for 15 TOIs,
+    plus TOI-7044.01 resolved in its comment (16 in total):
+      - by user: slee 5, mason 5, lafargamagro 2 (RAVEN), osborn, vincent, lhill;
+      - nearly all dated 2025-26 and using S86-S105;
+      - examples: 772.02 -> 32.36 d; 1894.01 -> 369.60 d; 4629.01 -> 51.05 d; 5990.01 -> 38.94 d;
+        2300.03 -> 1252.78 or 626.39 d; 4187.02 -> 283.11 or 141.55 d.
+  - Remaining open pool with new data and no newer period: 88 TOIs (416 new sector-observations).
+      52 are true no-period singles; 20 have a max period.
+      47 have >= 3 new sectors; 48 have Tmag < 10; 33 have >= 3 new sectors and Tmag < 11.
+      10 are on confirmed-planet hosts.
+  - Not searched (as instructed). Caveats:
+      - "Not updated" does not mean "not searched": SPOC multi-sector runs that find nothing do not
+        update the TOI row.
+      - S105-S108 products may not all be public yet.
+      - Uploads were matched on the exact "TOI x.xx" field, so uploads made under the old CTOI
+        name before promotion could be missed.
+
+5. RECOMMENDED NEXT STEPS
+  a. Drop the K2 angle for TOIs; the TOI-5560 overlap was a one-off.
+     Optional short write-up: TOI-5523.01 (K2-43) has its K2 C1 limit P > ~39 d, plus S63/S72
+     not yet used. Worth a cheap single-target look.
+  b. If continuing: a 15-20 TOI pilot from the 88-TOI pool.
+     - Rank by n_new_since_update and Tmag. Top of the list: 2270.01, 2296.01, 2098.01, 1301.02,
+       4585.01, 5975.01, 2102.02, 2298.01, 6075.01, 1893.01, 289.01, 4348.01, 4355.01, 6691.01.
+     - Run the singles pipeline (k2lib.robust_periods, not the old periods_from_repeats) with
+       TESScut for sectors that have no product yet.
+     - Re-fetch the ExoFOP JSON the day before any claim. slee and mason upload every few weeks.
+  c. Treat the 15 community-solved TOIs as a validation set for that pipeline.
+  d. Expect a low novelty yield: the 2026 upload cadence suggests others will pick off the easy
+     third transits first.
+
+FILES
+  targets.csv, targets_merged.csv, targets_status.csv, exofop_uploads.csv
+  k2_overlap.csv, k2_hits.csv (with attributed_to and vet columns), new_tess.csv
+  derived/: epic_matches.csv, k2_top_windows.csv, k2_alias_verdicts.csv, k2_period_limits.csv,
+            toi5696_durations.csv, s0x stdout logs
+  plots/: K2 windows for every K2 candidate event; toi5696_events.png
+  scripts/: s01-s09 (run in order; s03, s06 and s07 import k2singles/scripts/k2lib.py with its CACHE
+            redirected to toi_singles_k2/data/k2cache)
+  data/ (gitignored via toi_singles_k2/.gitignore): K2 FITS, HLSPs, TESS LCs, ExoFOP JSON
