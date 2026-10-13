@@ -255,3 +255,13 @@ Points near eclipse on the TESS 2021-2023 ephemeris (timing uncertain by ~1-2 h 
 
 Verdict: consistent with shallow primary eclipses in 2015-16, but too sparse to measure a depth. Next step: re-run
 Sky Patrol with the other photometry method (image subtraction) or the g-band option, to get 2018-2026 g-band data.
+
+ADDENDUM 4 (2026-10-12): ASAS-SN g-band attempt
+------------------------------------------------
+- The second Sky Patrol v1 download (image subtraction, data/AP24908321-1.xlsx) is identical to the first: the
+  stored Photometry Database entry AP24908321 (DR9; 114-118 V-band epochs, camera "ba", 2014-12 to 2018-04).
+  Sky Patrol v1 provides no g-band data for this star.
+- Sky Patrol V2 (http://asas-sn.ifa.hawaii.edu/skypatrol/, which holds the g-band 2018+ data): the page loads,
+  but cone searches fail ("Your search has failed"; "error loading the system message"). The backend
+  asassn-lb01.ifa.hawaii.edu:9006 also refused the pyasassn API.
+- TODO: retry V2 later (web or pyasassn), or ask the ASAS-SN team. Until then, 2018-2021 has no ground coverage.
