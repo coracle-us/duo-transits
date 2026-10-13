@@ -32,6 +32,18 @@ Borkovits+2026 northern CVZ results. It is separate from the duotransit work and
   HD 160861 has a known 24.5-yr visual tertiary. Only 441804888, the weakest, is unreported. Three extra rules written after vetting those false alarms
   (P3 ≥ 5 P1, A ≥ 3 × sector jitter, season jackknife) remove all 4. That is in-sample, so the 0% is optimistic. The rules
   keep 16/22 L1, 11/20 D1, and all 4 southern candidates.
+- **Out-of-sample false-alarm test (NCVZ FA set 2, 38 fresh stars, frozen v2 rules):**
+  - **0 pipeline false alarms among 38** (95% CI 0–9.3%). v1 had 1/38 (2.6%, CI 0.1–13.8%); pooled with set 1, v1 is 5/87 = 5.7% (CI 1.9–12.9%).
+  - The one v2 flag, **TIC 255921197 (BD+70 1123)**, is a clean LTTE orbit missing from Mitnyan+2024 and B26 and from the literature:
+    P3 = 1041 ± 1 d, A = 617 ± 2 s, e = 0.36, f(m3) = 0.23 M☉. It is confirmed by independent re-timing (corr 0.998), and
+    Gaia gives RUWE 4.5 with non_single_star = 1. SIMBAD has only catalogues, there is no MSC/WDS entry, and ADS full text finds 0 hits.
+  - A second real but unflagged signal, TIC 237290473 (P3 ~1350 d, A ~450 s, also not in the literature), is lost to the
+    amplitude-ratio rule. That rule also costs 5 of the 22 testable B26 L1 systems.
+  - So the B26 NCVZ catalogue misses at least 2 clean triples among 38 random footprint EBs.
+- **Southern run frozen** (`prereg/southern_run_v1.md`, `data/southern_run_targets.csv`, code freeze `f3af3ac`):
+  - Targets: **1,088 EBs** with Tmag ≤ 13.5 and ≥ 3 seasons, an estimated 3.5 GB and ~40 CPU-h.
+  - The detection rules, vetting, literature check, reporting and stopping rules are written down. The run is **not started**.
+  - A dry run on 3 pilot systems reproduces the committed results exactly.
 - **Pilot (top 20 by eclipse count, pre-registered):** 1 convincing new LTTE orbit, 3 large
   long-period ETVs with only about one cycle covered, 6 dominated by spots or anticorrelated signals, 7 flat, and
   3 too noisy. All 4 third-body signals were re-derived by an independent timing method
@@ -252,6 +264,60 @@ The 1,191 selected EBs are re-ranked by the expected LTTE amplitude error, σ_A 
   - Self-test on GZ Dra: our own times plus a 30 s offset and 20 s noise, treated as "external", give back the 30 s offset and
     20 s scatter (`results/minima_compare_selftest.csv`).
   - Usage: `python scripts/compare_minima.py --ext=b26_minima.csv --oc=results/oc_ncvz`.
+
+## Out-of-sample false-alarm test: NCVZ FA set 2 (`scripts/ncvz_fa2_set.py`, `scripts/score_fa2.py`)
+
+- **Sample** (`data/ncvz_fa2_list.csv`, committed before timing in 685ef7a; seed 20261013 was not needed):
+  - **Disclosed change:** only 16 stars with β > 78° were left after FA set 1. So the footprint is Mitnyan+2024's own input
+    criterion for the B26 sample: ≥ 8 sectors in Year 2 (S14–26).
+  - The cuts are identical to FA set 1 (Prša EB, 0.4 ≤ P ≤ 30 d, morph < 0.6, depth ≥ 1%, T ≤ 15).
+  - Excluded: FA set 1, the recall sets, `known_multiples.csv`, all 168 B26 systems, and every TIC-like number in the
+    B26 and Mitnyan LaTeX. This catches the 15 superscripted B26 TICs that `known_triples.py` misses, and 4 more Mitnyan/B26
+    TICs that are not in the known list.
+  - That leaves 38 stars, not 50. All 38 were used.
+- **Run:** `run_etv --max-sector=86 --tag=ncvz_fa2`, then `noise_fit --cal=1.0206` with the frozen v2 rules. Every flag and every
+  unflagged system with ΔBIC > 300 was inspected by eye (`data/ncvz_fa2_vetting.csv`).
+
+| rules | flagged | pipeline false alarms (95% CI) | real |
+|---|---|---|---|
+| v2 (frozen) | 1/38 | **0/38 = 0% (0–9.3%)** | 1: 255921197 |
+| v1 | 2/38 | 1/38 = 2.6% (0.1–13.8%): 392536805, an 88-d noise peak in an 8.4-d EB that fails the jackknife | 1 |
+| v1, sets 1+2 pooled | 8/87 | 5/87 = 5.7% (1.9–12.9%) | |
+
+- **TIC 255921197 = BD+70 1123** (P1 = 0.889 d, Tmag 9.0):
+  - Orbit: P3 = 1041 ± 1 d, A = 617 ± 2 s, e = 0.36 ± 0.01, f(m3) = 0.23 M☉. That gives m3,min ≈ 1.6 M☉ for m12 = 2.6 M☉,
+    taking the TIC mass of 1.31 M☉ as twin components, so the tertiary is probably luminous. The residual χ²_r is 1.0.
+  - Checks: independent re-timing corr 0.998 (`results/independent_check_fa2.csv`); Gaia DR3 RUWE 4.5, non_single_star = 1.
+  - Literature (`scripts/candidate_lit.py`, `notes/candidate_lit/255921197.json`): 5 SIMBAD refs, all catalogues; no
+    MSC or WDS entry; 0 ADS full-text hits; not in the Mitnyan+2024 or B26 LaTeX.
+  - **This is a clean, unreported NCVZ triple that both NCVZ ETV papers missed.**
+- **Other real signals seen, not flagged:**
+  - **TIC 237290473** (UCAC4 818-024624, Tmag 13.8): common ±8 min O−C, P3 ~1350 d, A ~450 s. Re-timing corr 0.99; RUWE 2.2, NSS = 1;
+    no literature. It is lost to the amplitude-ratio rule (its spotted secondaries give a sinusoid twice as large).
+  - **229476285:** a plausible ~420-d, ±4 min wave in a shallow EB.
+  - **160472514 = RS UMi:** apsidal or dynamical, with a long minima history, correctly not called an LTTE.
+- **Literature tool** (`scripts/candidate_lit.py`): SIMBAD (exact TIC cross-ID, else the nearest object) with its references
+  and identifiers; MSC J/ApJS/235/6; WDS; VSX; the known-multiples and B26 lists; ADS full text over all identifiers via
+  `ads_check.py` (the token is never printed). It flags "already timed" when an ADS hit or SIMBAD reference mentions O−C,
+  minima, timing, period analysis, LTTE or a third body. Positive controls: SX Dra (period studies found), HD 160861 (MSC
+  quadruple and tertiary paper found), and TIC 32000625 (both CATS 2023 abstracts flagged).
+
+## Southern run pre-registration (`prereg/southern_run_v1.md`)
+
+- **Frozen code:** `f3af3ac`, with blob hashes of every detection script and of the two shared modules. Calibration factor 1.0206.
+- **Targets** (`data/southern_run_targets.csv`, `scripts/make_southern_targets.py`):
+  - **1,088 of the 1,191** precision-ranked EBs, with **Tmag ≤ 13.5** and ≥ 3 observing seasons.
+  - The cut is justified by `data/lc_availability_bins.csv`: all 112 fetched Prša stars at T ≤ 13.5 have MAST light curves
+    for ≥ 96% of their sectors, against a median of 77% at T = 13.5–14.
+  - **Cost:** 11,602 sector files, ~3.5 GB, ~40 CPU-h.
+- **Detection rules:** v2 as frozen. **Vetting:** eye check, independent re-timing (corr ≥ 0.9), jackknife, per-product
+  offsets, Gaia. **Literature:** `candidate_lit.py` plus Kreiner/BAV/IBVS for named stars; prior O−C work is always cited.
+- **Reporting:** a fixed candidate-table schema. The false-alarm rate is quoted as the out-of-sample v2 rate, 0/38
+  (95% upper limit 9.3%); recall is quoted as 16/22 B26 L1.
+- **Stopping rules:** success means ≥ 5 vetted new "LTTE" candidates or ≥ 10 vetted flags. Marginal cases go in a separate table.
+  Abort if > 20% of targets fail.
+- **Dry run** (`scripts/dryrun_compare.py`, `results/dryrun_compare.csv`): for 32000625, 350622185 and 393491149, all 6,158
+  eclipse times and errors, and all noise-model outputs, are reproduced **exactly**.
 
 ## Pilot results (`results/pilot_summary.csv`, `results/noise_fit.csv`, figures `figs/<TIC>_oc.png`)
 
