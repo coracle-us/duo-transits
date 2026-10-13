@@ -186,3 +186,14 @@ raised on AAS82207. New or changed numbers:
 **Sent 2026-10-13:** updated ms.tex + ms.pdf emailed to the journals manager (reply to Alex, peer.review cc), text =
 commit 0028e81 (git tag `aas82225-correction-sent`). The cover email lists the two announced corrections, the six
 pre-emptive changes and the Sanders 617 update, and asks AAS to drop the "(Untitled)" title prefix.
+
+## Shortened to the AAS word count (2026-10-13, after AAS82207R1 bounced on length)
+
+AAS counts everything after the abstract except the references (body + table + acknowledgments + facilities/software +
+AI statement); the corrected text sent to the journals manager counted 1827 that way (`singles/rnaas/aas_wordcount.py`),
+about 520 over. Rewritten more tightly; table Notes trimmed in `scripts/build_table.py` (VSX, red giant, M dwarf and
+grazing remarks are in the text or dropped). Number diff against tag `aas82225-correction-sent`: no new or changed
+numbers; dropped only with their sentences (noise model 220 ppm/T = 9.1, TESS timing scatter 10-25 min, depth-window
+ratios 0.6/1.5/2.0, 0.045 d offset, e cos w 0.59, 2.5 R_J, the excluded 31.27-d TCE and 100-d placeholder, the 73.91-d
+BLS period, the 973.79/N alias spacing; the Armstrong 2016 reference is no longer cited). New count: abstract 136,
+AAS-counted text 1274 (about 1320 by AAS's count, using the AAS82207 calibration).
