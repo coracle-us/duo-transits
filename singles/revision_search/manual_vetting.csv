@@ -1,0 +1,52 @@
+TIC,T_min,T_max,min_depth_ppm,apply_to_d,verdict,final_category,note
+147035057,4313,4314,0,yes,real,b,S108 own-photometry eclipse: the note's own third eclipse (found in vetting; not in the frozen repeat list)
+147035057,1486,1487,0,no,real,a,41 ppt eclipse in TESS-SPOC and QLP (S6) at phase 0.239 of P = 37.31494 d; the catalogued 3.2 ppt event is the SECONDARY
+147035057,3688,3689,0,yes,real,a,57 ppt V-shaped eclipse in QLP S87 (only reduction) at phase 0.239: second deep eclipse; S6 + S87 + three 3.2 ppt eclipses fit one ephemeris
+147035057,0,9999,0,yes,systematic,d,S87/S108 shallow single-reduction dips (QLP/OWN only)
+188835620,0,9999,5000,yes,real,,EB with P = 22.217 d: 58 ppt eclipses (n=15) and 11.8 ppt eclipses (n=14; the catalogued event; CTOI depth 1085 ppm is ~11x too small) at phase 0.733
+188835620,0,9999,0,no,systematic,d,shallow broad dips on a deep-EB star
+258799245,0,9999,20000,no,real,a,deep 38 ppt eclipses at phase 0.753 of the note's P = 30.133 d (22 of them); the catalogued 2.4 ppt event is the secondary
+258799245,0,9999,0,no,systematic,d,shallow broad dips
+75577433,0,9999,0,no,real,,P = 3.2799 d: two near-equal 1.5 ppt eclipses at phase 0 and 0.496 (34 events incl. known repeats; TESS-SPOC/SPOC and QLP)
+83384234,0,9999,0,no,real,,periodic V-shaped dips: P ~ 4.331 d (or 8.66 d) fits all 22 events incl. known repeats (max O-C 4 h); deeper in QLP (possible blend)
+342004815,0,9999,0,no,real,,P = 39.311 d: 5.2 ppt primary (n=9) and 3.7 ppt secondary at phase 0.644 (n=4); deeper in QLP (note: off-target)
+230130556,0,9999,0,no,real,a,1.06 ppt secondary eclipse at phase 0.575 of P = 22.259 d (TESS-SPOC + QLP)
+270450687,0,9999,0,no,real,a,1.5 ppt shallow eclipse in 3 reductions on a 40 ppt EB: secondary-like
+162031311,0,9999,0,no,real,a,5 ppt flat-bottomed 8 h eclipse (TESS-SPOC + QLP); catalogued event is shallower (QLP-only S56)
+22642772,0,9999,0,no,real,,eclipse on the known 22.21 d ephemeris (missed by the matched search at S88)
+53847727,0,9999,0,no,real,,eclipse of the known 3.011 d EB (Prsa+2022)
+82550215,0,9999,0,no,real,,17 ppt eclipse of the known Gaia EB
+384882500,0,9999,0,no,real,,eclipse at a gap edge on the known 17.32 d ephemeris
+51079186,3818,3819,0,no,possible,,0.5 ppt dip on the note's candidate ephemeris (phase 0.0006 of 21.174 d); SNR 9.7
+51079186,0,9999,0,no,systematic,d,24 h depression next to a gap (S91)
+76804724,4092,4093,0,no,possible,,2 h 12 ppt dip in SPOC + QLP (S100) similar to the catalogued event; faint noisy star
+76804724,0,9999,0,no,systematic,d,broad noise (S39)
+149990098,0,9999,0,no,possible,,broad 0.5 ppt dip; QLP deeper
+115171750,0,9999,0,no,systematic,d,stellar variability
+235060821,0,9999,0,no,systematic,d,dip in SPOC/TESS-SPOC but a bump in QLP (background)
+264333501,0,9999,0,no,systematic,d,next to a data gap
+350274116,0,9999,0,no,systematic,d,post-gap ramp
+356868485,0,9999,0,no,systematic,d,one-cadence glitch (S58) and segment-end trend (S85)
+453029782,0,9999,0,no,systematic,d,broad variability
+5636329,0,9999,0,no,systematic,d,27 h smooth trough: stellar variability
+82223761,0,9999,0,no,systematic,d,weak and inconsistent between reductions
+110642204,0,9999,0,no,systematic,d,asymmetric 12 h dip with slow recovery; absent in QLP
+145601161,0,9999,0,no,systematic,d,ramp at a segment end
+197596346,0,9999,0,no,possible,,3 h 2-4 ppt dip in SPOC and TESS-SPOC (S1); QLP shows dip plus bump; unresolved
+229556468,0,9999,0,no,possible,,"1 ppt dip in SPOC 2-min (S25), weak in TESS-SPOC, no QLP; SNR 10.7"
+239142212,0,9999,0,no,systematic,d,QLP shows a bump at the same time
+246058802,0,9999,0,no,systematic,d,weak; catalogued event itself marginal
+250492521,0,9999,0,no,real,,V-shaped 1.3 ppt 10 h dip in SPOC/TESS-SPOC/QLP 18.8 d before the catalogued event (same sector; both deeper in QLP); no P = dT/n survives flat data in S6/S87: not a strict repeat -> eccentric EB (primary + secondary) or blend
+343870806,0,9999,0,no,systematic,d,broad shallow depression: variability
+434105091,0,9999,0,no,systematic,d,broad variability
+443994883,0,9999,0,no,systematic,d,broad variability
+38005437,0,9999,0,no,real,,~2.2 ppt V-shaped 8 h dips recurring every ~1.06 d with O-C up to 2 h: short-period variable or EB (catalogued event not recovered)
+63700569,0,9999,0,no,systematic,d,broad variability
+66013259,0,9999,0,no,possible,,short 7 ppt dip in SPOC and TESS-SPOC
+95768667,0,9999,0,no,possible,,two 0.7 ppt 8 h dips (S22 and S48) in 3 reductions
+169251938,0,9999,0,no,possible,,three 0.5-0.7 ppt 8 h dips (S46 and S62 twice)
+329064084,0,9999,0,no,systematic,d,noisy and gappy
+354032500,0,9999,0,no,real,,6 ppt 2 h eclipses: P = 1.6242 d (shared with neighbouring TIC 354032501)
+354032501,0,9999,0,no,real,,6 ppt 2 h eclipses: P = 1.6242 d (5 events)
+356240333,0,9999,0,no,systematic,d,seen in QLP only in shape
+359819459,0,9999,0,no,systematic,d,weak
