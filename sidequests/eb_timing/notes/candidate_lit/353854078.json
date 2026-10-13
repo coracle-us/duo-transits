@@ -1,0 +1,389 @@
+{
+ "tic": 353854078,
+ "ra": 271.1411728552,
+ "dec": 58.3984180327,
+ "simbad_id": "V* SX Dra",
+ "simbad_otype": "EB*",
+ "simbad_nbref": 55,
+ "simbad_refs": [
+  "1910AN....183...47W New variable 43.1909 Draconis.",
+  "1915ApJ....42..312R The orbital elements of the eclipsing variable SX Draconis.",
+  "1932VeBB....9e...1G Die Bedeckungsveraenderlichen.",
+  "1959AJ.....64..258W Minima and periods of eclipsing stars.",
+  "1961SvA.....5..709P Period variations of eclipsing variables.",
+  "1963AJ.....68..257W Ephemerides of eclipsing stars.",
+  "1963IBVS...35....1K Observed minima of eclipsing variables.",
+  "1971AcA....21..365K Investigation of changes in periods of eclipsing variables.",
+  "1973AJ.....78..410K The radiative interaction and evolution of medium-and low-mass binaries.",
+  "1974A&A....37..263H A photometric study of U Cephei. Part 1.",
+  "1975MmRAS..79..101H Stromgren four-colour observations of northern hemisphere binary systems.",
+  "1975MmRAS..79..131H MK classifications of some northern hemisphere binary systems.",
+  "1979IBVS.1709....1K Photoelectrically-neglected eclipsing binaries.",
+  "1980AcA....30..501B A catalogue of parameters for eclipsing binaries.",
+  "1983A&AS...54..211G Statistics of categorized eclipsing binary systems. Lightcurve shapes, periods, and spectral types.",
+  "1993AJ....106.1200E New rotational velocities for eclipsing binaries, and a comparison of spectroscopic and photometric ",
+  "1997CoKon.100..397D Interaction of eclipsing binaries with their environment.",
+  "2001A&A...367..521P Catalogue of Apparent Diameters and Absolute Radii of Stars (CADARS) - Third edition - Comments and ",
+  "2002Ap&SS.282..399S Period changes in four Algol-type binaries: SX Dra, AV Del, CU Peg and DK Peg.",
+  "2003IBVS.5438....1D 162-nd list of minima timings of eclipsing binaries by BBSAG observers.",
+  "2003RoAJ...13...83B Archive of photometric plates obtained at Cluj astronomical observatory.",
+  "2003NewA....8..457Q A period investigation of two chromospherically active binary stars: RT Coronae Borealis and PW Herc",
+  "2004A&A...417..263B Catalogue of Algol type binary stars.",
+  "2004AcA....54..207K Up-to-date linear elements of eclipsing binaries.",
+  "2004IBVS.5543....1D 163. List of minima timings of eclipsing binaries by BBSAG observers.",
+  "2005OEJV....3....1L Minima Kurt Locher 2004-2005",
+  "2006A&A...446..785M A catalogue of eclipsing variables.",
+  "2007IBVS.5802....1H Photoelectric minima of selected eclipsing binaries and maxima of pulsating stars.",
+  "2008AJ....136.1067H New {beta} Lyrae and Algol candidates from the Northern Sky Variability  Survey.",
+  "2010IBVS.5925....1D Short-period oscillations in the algol-type systems V: SX Draconis.",
+  "2011NewA...16...72S A comprehensive photometric study of the Algol-type eclipsing binary: BG Pegasi.",
+  "2011IBVS.5984....1H BAV-results of observations - photoelectric minima of selected eclipsing  binaries and maxima of pul",
+  "2005yCat.3244....0G Catalog of Stellar Rotational Velocities",
+  "2011BAVSM.215....1H BAV-Results of observations - Photoelectric minima of selected eclipsing binaries and maxima of puls",
+  "2009RAA.....9..307Z An orbital period investigation of the Algol-type eclipsing binary VW Hydrae.",
+  "2013AJ....145...87S Binarity and pulsation in Algol-type binary system SX Draconis.",
+  "2013ApJ...777...77Z On the pulsational-orbital-period relation of eclipsing binaries with  {delta}-Sct components.",
+  "2013AN....334..860A Eclipsing variables: Catalogue and classification.",
+  "1993yCat.3135....0C VizieR Online Data Catalog: Henry Draper Catalogue and Extension, published in Ann. Harvard Obs. 91-",
+  "2015IBVS.6149....1H BAV-Results of observations - Photoelectric Minima of Selected Eclipsing Binaries and Maxima of Puls",
+  "2014ASPC..485..223B The JMMC stellar diameters catalog v2 (JSDC): a new release based on SearchCal improvements",
+  "2017MNRAS.470..915K Eclipsing binary stars with a {delta} Scuti component.",
+  "2017MNRAS.465.1181L Catalogue and properties of {delta} Scuti stars in binaries.",
+  "2018ApJS..235....5Q Physical properties and evolutionary states of EA-type eclipsing binaries observed by LAMOST.",
+  "2018MNRAS.475.4745M The eclipsing binary star RZ Cas: accretion-driven variability of the multimode oscillation spectrum",
+  "2018PASJ...70...24Y The nature of EU Pegasi: An Algol-type binary with a {del} Scuti-type component.",
+  "2019ApJ...877...75P Magnetic activity and orbital period study for the short-period RS CVn-type eclipsing binary DV Psc.",
+  "2019MNRAS.490.3158C A catalogue of stellar diameters and fluxes for mid-infrared interferometry.",
+  "2022ApJS..258...16P TESS Eclipsing Binary stars. I. Short-cadence observations of 4584 eclipsing binaries in sectors 1-2",
+  "2022AJ....163..152S APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars.",
+  "2022ApJS..259...35A The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, an",
+  "2022ApJS..263...34C Detection of \u03b4 Scuti Pulsators in the Eclipsing Binaries Observed by TESS.",
+  "2023ApJS..264...17Z Stellar Parameters and Spectroscopic Properties of TESS Objects Observed in the LAMOST Low- and Medi",
+  "2023ApJS..266...14T A New Catalog of Am-type Chemically Peculiar Stars Based on LAMOST.",
+  "2023A&A...674A..16M {\\em Gaia} Data Release 3 The first {\\em Gaia} catalogue of eclipsing-binary candidates."
+ ],
+ "simbad_timing_refs": [
+  "1959AJ.....64..258W Minima and periods of eclipsing stars.",
+  "1961SvA.....5..709P Period variations of eclipsing variables.",
+  "1963IBVS...35....1K Observed minima of eclipsing variables.",
+  "2002Ap&SS.282..399S Period changes in four Algol-type binaries: SX Dra, AV Del, CU Peg and DK Peg.",
+  "2003IBVS.5438....1D 162-nd list of minima timings of eclipsing binaries by BBSAG observers.",
+  "2004IBVS.5543....1D 163. List of minima timings of eclipsing binaries by BBSAG observers.",
+  "2005OEJV....3....1L Minima Kurt Locher 2004-2005",
+  "2007IBVS.5802....1H Photoelectric minima of selected eclipsing binaries and maxima of pulsating stars.",
+  "2011IBVS.5984....1H BAV-results of observations - photoelectric minima of selected eclipsing  binaries and maxima of pul",
+  "2011BAVSM.215....1H BAV-Results of observations - Photoelectric minima of selected eclipsing binaries and maxima of puls",
+  "2015IBVS.6149....1H BAV-Results of observations - Photoelectric Minima of Selected Eclipsing Binaries and Maxima of Puls",
+  "2019ApJ...877...75P Magnetic activity and orbital period study for the short-period RS CVn-type eclipsing binary DV Psc."
+ ],
+ "simbad_ids": [
+  "TIC 353854078",
+  "LAMOST J180434.18+582354.3",
+  "Gaia DR3 2152084760564885376",
+  "AG+58 1108",
+  "AN   43.1909",
+  "BD+58  1785",
+  "HD 238811",
+  "PPM  36359",
+  "SAO  30734",
+  "V* SX Dra",
+  "YZ  58  9625",
+  "2MASS J18043387+5823542",
+  "NSVS   2932832",
+  "TYC 3915-1715-1",
+  "Gaia DR1 2152084760564885376",
+  "Gaia DR2 2152084760564885376",
+  "AP J18043387+5823542"
+ ],
+ "msc": [],
+ "wds": [],
+ "vsx": [
+  {
+   "_r": "0.02",
+   "recno": "7118677",
+   "OID": "13696",
+   "Name": "SX Dra",
+   "V": "0",
+   "RAJ2000": "271.14117",
+   "DEJ2000": "58.39842",
+   "Type": "EA/SD+DSCT",
+   "l_max": "",
+   "max": "9.8",
+   "u_max": "",
+   "n_max": "V",
+   "f_min": "",
+   "l_min": "",
+   "min": "11.6",
+   "u_min": "",
+   "n_min": "V",
+   "Epoch": "2444705.459",
+   "u_Epoch": "",
+   "l_Period": "",
+   "Period": "5.16952",
+   "u_Period": "",
+   "Sp": "A7V",
+   "n_OID": "B"
+  }
+ ],
+ "known_multiples": "",
+ "b26": [],
+ "ads_ids": [
+  "353854078",
+  "2152084760564885376",
+  "BD+58 1785",
+  "HD 238811",
+  "SX Dra",
+  "2MASS J18043387+5823542",
+  "NSVS 2932832",
+  "TYC 3915-1715-1"
+ ],
+ "ads_n": 27,
+ "ads_docs": [
+  {
+   "bibcode": "2026arXiv260908004C",
+   "year": "2026",
+   "pub": "arXiv e-prints",
+   "doctype": "eprint",
+   "title": "Investigating Potential Relationships Between Mass Transfer Indicators and $\u03b4$ Scuti Pulsations in oEA Systems",
+   "highlights": []
+  },
+  {
+   "bibcode": "2025PARep...3...75Y",
+   "year": "2025",
+   "pub": "Physics and Astronomy Reports",
+   "doctype": "article",
+   "title": "Photometric Study of Oscillating Algol-Type Binaries: EW Boo, WY Cet, and SX Dra",
+   "highlights": [
+    "n of its physical parameters. The photometric modeling of the other two systems, WY Cet and <em>SX Dra,</em> was carried out without available radial velocity measurements but still produced consisten"
+   ]
+  },
+  {
+   "bibcode": "2025arXiv250400482D",
+   "year": "2025",
+   "pub": "arXiv e-prints",
+   "doctype": "eprint",
+   "title": "Light Curve Modeling of Eclipsing Binary Systems with Delta Scuti Component",
+   "highlights": [
+    " (5450.0 $\\pm$ 1.0) K, q (0.5208 $\\pm$ 0.0002), and L1 (11.8043 $\\pm$ 0.0006)$L_\\odot$. For <em>SX Dra:</em> $T_{eff},1$ (7729.7 $\\pm$ 1.1) K , $T_{eff},2$ (4927.5 $\\pm$ 0.5) K, q (0.4772 $\\pm$ 0.0006"
+   ]
+  },
+  {
+   "bibcode": "2018PASJ...70...24Y",
+   "year": "2018",
+   "pub": "Publications of the Astronomical Society of Japan",
+   "doctype": "article",
+   "title": "The nature of EU Pegasi: An Algol-type binary with a \u03b4 Scuti-type component",
+   "highlights": []
+  },
+  {
+   "bibcode": "2016arXiv160608638L",
+   "year": "2016",
+   "pub": "arXiv e-prints",
+   "doctype": "eprint",
+   "title": "Poetry in Motion: Asteroseismology of Delta Scuti Stars in Binaries using Kepler Data",
+   "highlights": []
+  },
+  {
+   "bibcode": "2015ASPC..496..195L",
+   "year": "2015",
+   "pub": "Living Together: Planets, Host Stars and Binaries",
+   "doctype": "inproceedings",
+   "title": "Binaries with a \u03b4 Scuti Component: Results from a Long-Term Observational Survey, Updated Catalog, and Future Prospects",
+   "highlights": []
+  },
+  {
+   "bibcode": "2014ASPC..482..135Y",
+   "year": "2014",
+   "pub": "Tenth Pacific Rim Conference on Stellar Astrophysics",
+   "doctype": "inproceedings",
+   "title": "New Progress on the Short-Period Algol-type Binaries (SpABs)",
+   "highlights": []
+  },
+  {
+   "bibcode": "2013AJ....145...87S",
+   "year": "2013",
+   "pub": "The Astronomical Journal",
+   "doctype": "article",
+   "title": "Binarity and Pulsation in Algol-type Binary System SX Draconis",
+   "highlights": [
+    "Photometric observations of <em>SX Dra</em> were carried out to determine the properties of the components and pulsational characteristics of the more massive pulsational component. Physical parameter",
+    "ined by modeling B and V light curves using the Wilson-Devinney code. Results indicate that <em>SX Dra</em> is a semi-detached system with the secondary component filling its Roche lobe. The O-C data "
+   ]
+  },
+  {
+   "bibcode": "2012JAHH...15..246P",
+   "year": "2012",
+   "pub": "Journal of Astronomical History and Heritage",
+   "doctype": "article",
+   "title": "Sigurd Enebo and Variable Star Research: Nova Geminorum 1912 and the RV Tauri Stars",
+   "highlights": [
+    "EA EB Observing Interval 1907-1913 1910-1920 1907-1925 1907-1939 TT Aur \u03b5 Aur SS Cam SX Cas <em>SX Dra</em> UZ Dra RX Gem SV Gem SX Gem u Her EB EA EA EA EA EA EA EA EA EA 1907-1926 1903-6; 1928-30 19"
+   ]
+  },
+  {
+   "bibcode": "2010IBVS.5925....1D",
+   "year": "2010",
+   "pub": "Information Bulletin on Variable Stars",
+   "doctype": "article",
+   "title": "Short-period Oscillations in the Algol-type Systems V: SX Draconis",
+   "highlights": [
+    "Four Algol-type systems: <em>SX Dra,</em> RT UMi, V548 Cyg, and V728 Cyg were explored for short-period oscillations. Only in one of <em>them - SX Dra,</em> oscillations were detected with peak-to-pea"
+   ]
+  },
+  {
+   "bibcode": "2010arXiv1002.2729Z",
+   "year": "2010",
+   "pub": "arXiv e-prints",
+   "doctype": "eprint",
+   "title": "Pulsating Components in Binary and Multiple Stellar Systems --- A Catalog of Oscillating Binaries",
+   "highlights": []
+  },
+  {
+   "bibcode": "2003NewA....8..457Q",
+   "year": "2003",
+   "pub": "New Astronomy",
+   "doctype": "article",
+   "title": "A period investigation of two chromospherically active binary stars: <A href=\"10.1016/S1384-1076(03)00045-9&amp;RT Coronae Borealis\">RT Coronae Borealis</A> and <A href=\"10.1016/S1384-1076(03)00045-9&amp;PW Herculis\">PW Herculis</A>",
+   "highlights": [
+    " ), SW Cyg (4.71\u00d710 \u22126 days/year), RR Dra (4.24\u00d710 \u22126 days/year) ( Qian et al., 2002 ), and <em>SX Dra</em> (1.09\u00d710 \u22125 days/year) ( Qian, 2002 ). By considering the period increase caused by a mass t"
+   ]
+  },
+  {
+   "bibcode": "2002Ap&SS.282..399S",
+   "year": "2002",
+   "pub": "Astrophysics and Space Science",
+   "doctype": "article",
+   "title": "Period Changes in Four Algol-Type Binaries: SX Dra, AV Del, CU Peg and DK Peg",
+   "highlights": [
+    "For the other system, <em>SX Dra,</em> a possible periodic variation in the orbital period is discovered to superimpose on a very rapid period increase (dP /dt = +1.09 \u00d7 10\u22125 days/year). ",
+    "bital periods of <em>SX Dra</em> have been given by Whitney (1959) and Wood (1963), the system is neglected for period study. In order to analyze the period change of <em>SX Dra,</em> all published ti",
+    "llected PERIOD CHANGES IN FOUR ALGOL BINARIES 401 Figure 1. O\u2013C curve of the EA-type binary <em>SX Dra,</em> also given in solid line is its description by a quadratic fit. and are listed in Table I w",
+    "Orbital period changes of four neglected short-period semidetached Algols, <em>SX Dra,</em> AV Del, CU Peg and DK Peg, are presented based on the analysis of their O\u2500C observations. It is found that t",
+    " \u00d7 10<SUP>-6</SUP> and +4.88 \u00d7 10<SUP>-7</SUP>days/year respectively. For the other system, <em>SX Dra,</em> a possible periodic variation in the orbital period is discovered to superimpose on a very ",
+    "nce the period increases are rather rapid, the mass transfer should be on a dynamical time scale. The cyclic period change in <em>SX Dra</em> suggests that there may exist a third body in this system."
+   ]
+  },
+  {
+   "bibcode": "1973ApJS...26..365A",
+   "year": "1973",
+   "pub": "The Astrophysical Journal Supplement Series",
+   "doctype": "article",
+   "title": "Catalog of Individual Radial Velocities, 12^{h}-24^{h}, Measured by Astronomers of the Mount Wilson Observatory",
+   "highlights": []
+  },
+  {
+   "bibcode": "1973AJ.....78..410K",
+   "year": "1973",
+   "pub": "The Astronomical Journal",
+   "doctype": "article",
+   "title": "The radiative interaction and evolution of medium- and low-mass binaries.",
+   "highlights": []
+  },
+  {
+   "bibcode": "1973BBSAG..11....6L",
+   "year": "1973",
+   "pub": "Bulletin der Bedeckungsveraenderlichen-Beobachter der Schweizerischen Astronomischen Gesellschaft",
+   "doctype": "article",
+   "title": "Note on the O-C of SX Draconis.",
+   "highlights": []
+  },
+  {
+   "bibcode": "1963AJ.....68..257W",
+   "year": "1963",
+   "pub": "The Astronomical Journal",
+   "doctype": "article",
+   "title": "Ephemerides of eclipsing stars.",
+   "highlights": []
+  },
+  {
+   "bibcode": "1959AJ.....64..258W",
+   "year": "1959",
+   "pub": "The Astronomical Journal",
+   "doctype": "article",
+   "title": "Minima and periods of eclipsing stars.",
+   "highlights": []
+  },
+  {
+   "bibcode": "1941MNRAS.101..237H",
+   "year": "1941",
+   "pub": "Monthly Notices of the Royal Astronomical Society",
+   "doctype": "article",
+   "title": "Variations in the periods of certain eclipsing binaries",
+   "highlights": []
+  },
+  {
+   "bibcode": "1937MNRAS..97..711.",
+   "year": "1937",
+   "pub": "Monthly Notices of the Royal Astronomical Society",
+   "doctype": "article",
+   "title": "Society Business: List of additions to",
+   "highlights": [
+    "Berlin, 1936 Warner (William Peden) : The eclipsing variable <em>SX Draconis.</em> 8vo. Columbia, S.C., 1936 ( University of Pennsylvania.) Washington, Carnegie Institution : Exhibition representing r"
+   ]
+  },
+  {
+   "bibcode": "1936evsd.book.....W",
+   "year": "1936",
+   "pub": "Columbia",
+   "doctype": "book",
+   "title": "The eclipsing variable SX Draconis ...",
+   "highlights": []
+  },
+  {
+   "bibcode": "1934PhDT.........2W",
+   "year": "1934",
+   "pub": "Ph.D. Thesis",
+   "doctype": "phdthesis",
+   "title": "The Eclipsing Variable SX Draconis.",
+   "highlights": []
+  },
+  {
+   "bibcode": "1934PhDT........15W",
+   "year": "1934",
+   "pub": "Ph.D. Thesis",
+   "doctype": "phdthesis",
+   "title": "The eclipsing variable SX Draconis",
+   "highlights": []
+  },
+  {
+   "bibcode": "1932ApJ....75...69M",
+   "year": "1932",
+   "pub": "The Astrophysical Journal",
+   "doctype": "article",
+   "title": "The Evolution of Binary Stars",
+   "highlights": []
+  },
+  {
+   "bibcode": "1932KVeBB...3....3P",
+   "year": "1932",
+   "pub": "Kleine Veroeffentlichungen der Universitaetssternwarte zu Berlin Babelsberg",
+   "doctype": "article",
+   "title": "Katalog und Ephemeriden veraenderlicher Sterne fuer 1933",
+   "highlights": []
+  },
+  {
+   "bibcode": "1927AJ.....38...45M",
+   "year": "1927",
+   "pub": "The Astronomical Journal",
+   "doctype": "article",
+   "title": "Some statistics of the eclipsing binaries",
+   "highlights": [
+    "etype giants and three stars of doubtful spectrum excluded) SX Gas, SY Gen, SZ Gen, UZ Cyg, <em>SX Dra,</em> \u00df Lyr, 8 Ori, Z On, RY Per, RZ Sen, W UMi. The spectra of all these stars would doubtless s"
+   ]
+  },
+  {
+   "bibcode": "1915ApJ....42..312R",
+   "year": "1915",
+   "pub": "The Astrophysical Journal",
+   "doctype": "article",
+   "title": "The orbital elements of the eclipsing variable SX Draconis.",
+   "highlights": []
+  }
+ ],
+ "ads_timing_hits": [
+  "2013AJ....145...87S",
+  "2002Ap&SS.282..399S",
+  "1973BBSAG..11....6L",
+  "1959AJ.....64..258W"
+ ]
+}

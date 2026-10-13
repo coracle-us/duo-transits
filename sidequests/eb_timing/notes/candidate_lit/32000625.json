@@ -1,0 +1,110 @@
+{
+ "tic": 32000625,
+ "ra": 55.9879597069,
+ "dec": -71.4790488627,
+ "simbad_id": "TYC 9155-22-1",
+ "simbad_otype": "*",
+ "simbad_nbref": 8,
+ "simbad_refs": [
+  "2013AJ....146..134K The radial velocity experiment (RAVE): fourth data release.",
+  "2017AJ....153...75K The Radial Velocity Experiment (RAVE): fifth data release.",
+  "2020AJ....160...83S The sixth Data Release of the Radial Velocity Experiment (RAVE). II. Stellar atmospheric parameters,",
+  "2021ApJ...912..123J Temperature and distance dependence of tidal circularization in close binaries: a catalog of eclipsi",
+  "2022ApJS..258...16P TESS Eclipsing Binary stars. I. Short-cadence observations of 4584 eclipsing binaries in sectors 1-2",
+  "2022AJ....163..152S APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars.",
+  "2022ApJS..259...35A The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, an",
+  "2022ApJS..259...50S New Pulsating Stars Detected in EA-type Eclipsing-binary Systems Based on TESS Data."
+ ],
+ "simbad_ids": [
+  "TIC 32000625",
+  "Gaia DR3 4642053155197039104",
+  "AP J03435710-7128445",
+  "TYC 9155-22-1",
+  "RAVE J034357.1-712845",
+  "2MASS J03435710-7128445",
+  "Gaia DR2 4642053155197039104"
+ ],
+ "msc": [],
+ "wds": [],
+ "vsx": [
+  {
+   "_r": "0.34",
+   "recno": "535860",
+   "OID": "629527",
+   "Name": "WISE J034357.1-712844",
+   "V": "0",
+   "RAJ2000": "55.988",
+   "DEJ2000": "-71.47896",
+   "Type": "EA",
+   "l_max": "",
+   "max": "9.697",
+   "u_max": "",
+   "n_max": "W1",
+   "f_min": "Y",
+   "l_min": "",
+   "min": "0.141",
+   "u_min": "",
+   "n_min": "W1",
+   "Epoch": "nan",
+   "u_Epoch": "",
+   "l_Period": "",
+   "Period": "0.7017535",
+   "u_Period": "",
+   "Sp": "",
+   "n_OID": "B"
+  }
+ ],
+ "known_multiples": "",
+ "b26": [],
+ "ads_ids": [
+  "32000625",
+  "4642053155197039104",
+  "TYC 9155-22-1",
+  "2MASS J03435710-7128445"
+ ],
+ "ads_n": 4,
+ "ads_docs": [
+  {
+   "bibcode": "2023EcoEv..1310456K",
+   "year": "2023",
+   "pub": "Ecology and Evolution",
+   "doctype": "article",
+   "title": "The cycle of seagrass life: From flowers to new meadows",
+   "highlights": []
+  },
+  {
+   "bibcode": "2023JPhSt..2739982L",
+   "year": "2023",
+   "pub": "Journal of Physical Studies",
+   "doctype": "article",
+   "title": "Period Analysis of 3 Eclipsing Binary Stars Based on Tess Data",
+   "highlights": [
+    "c data from the TESS space telescope for three eclipsing binary systems: TIC 30313682, TIC <em>32000625,</em> and TIC 455153566. These star systems were chosen because their light curves promised cert"
+   ]
+  },
+  {
+   "bibcode": "2023JPhSt..2739982D",
+   "year": "2023",
+   "pub": "Journal of Physical Studies",
+   "doctype": "article",
+   "title": "Period Analysis of 6 Eclipsing Binary Stars of EA Type with Tess Data",
+   "highlights": [
+    "ing them from the Mikulski archive for space telescopes. The objects of our study are: TIC <em>32000625,</em> TIC 32150630, TIC 55524055, TIC 233006806, TIC 379628805, and TIC 396059992. We have de ne"
+   ]
+  },
+  {
+   "bibcode": "2019NatSR...919693K",
+   "year": "2019",
+   "pub": "Scientific Reports",
+   "doctype": "article",
+   "title": "A novel adaptation facilitates seed establishment under marine turbulent flows",
+   "highlights": [
+    "These collections were made between 2 and 5 m depths using SCUBA at Rottnest Island (S <em>32.000625\u00b0,</em> E 115.548531\u00b0), and Parmelia Bank (S 32.096408\u00b0, E 115.728296\u00b0), Western Australia. The frui"
+   ]
+  }
+ ],
+ "ads_timing_hits": [
+  "2023JPhSt..2739982L",
+  "2023JPhSt..2739982D"
+ ]
+}
