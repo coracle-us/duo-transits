@@ -82,3 +82,35 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
 converts BJD_TDB to UTC without removing the barycentric light-travel time. For TIC 159614322 this
 is 1.2 min: the 2026-12-28 transit is 06:40 geocentric UTC, not 06:42. That is negligible against
 the ±45 min uncertainty. Fix it in any revision: quote BJD_TDB, or apply the correction.
+
+## AAS82207 revision, after the Fable adversarial review (2026-10-13)
+
+Review: `singles/review_fable_revision/FINDINGS.txt`. New or changed numbers in `rnaas.tex`:
+
+- **Event test used pipeline light curves** (SPOC 2-min for 285 stars): `singles/revision/audit_34.csv`
+  (`pipeline_product`), from `singles/revision/audit_34.py`.
+- **18 of the 31 failures from one uploader batch** (ExoFOP user `amarino`, UAN), including all
+  six half-day slips: `audit_34.csv`, `uploader` column, after dropping the three truncated-TIC
+  duplicates (1461133, 3181884, 4689632).
+- **Three near-threshold cases** (TIC 38005437, 355095316, 425585592) that pass in another
+  pipeline product: `audit_34.csv`, `depth_snr_per_product`.
+- **Any-depth search, 14 stars with vetted extra eclipses** (9 binaries, 4 no-single-period, 1
+  single = TIC 250492521, SNR 10.0, three reductions); periods for 4 stars including TIC 188835620
+  (22.217 d) and TIC 83384234 (4.33 d): `singles/revision_search/manual_vetting.csv`,
+  `per_star_summary.csv`, `period_check.py`.
+- **234/272 re-detected; 21 of the 38 misses below SNR 8, 6 momentum dumps**:
+  `singles/revision_search/recovery_check.csv`, `REPORT.txt` §3.
+- **TIC 147035057 primary depth 5.3–5.6%**: 5.3% minimum in S6 and S87 from
+  `singles/revision_search/verify_147035057.py`; 5.6% PDCSAP/QLP point minimum. **Neighbour flux:**
+  target G = 8.83; Gaia DR3 sources within 60″ supply 3.5% of the target flux in total, the
+  brightest G = 13.50 at 16.5″ and G = 13.53 at 24.4″ (~1.3% each):
+  `singles/revision_search/neighbours_147035057.py` (Gaia DR3 cone search, run 2026-10-13).
+- **Photometry validation: ten usable stars, T = 8.5–14.1**; the 11th (T = 15.5) is 96%
+  contaminated and excluded from the 1.07 median; worst depth ratio 0.69 ("about 30% shallower"):
+  `singles/revision/REPORT.txt`.
+- **Period range 5–1500 d** for the repeat search: `singles/scripts` alias grid (as for the 52%
+  log-period exclusion in the abstract).
+- Sample rule wording: "794 open CTOIs with no period or tagged single, duo or mono", from
+  `singles/scripts/build_ctoi_singles.py` and `singles/revision/count_owner_exclusion.py`.
+- Removed: the HD 88986 b sentence and the Heidari et al. 2024 reference; "offsets on known
+  planets are 1–3″"; the backgrounds 1–9% clause (still in the letter). Body 1339 words, abstract 146.

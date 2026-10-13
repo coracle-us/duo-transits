@@ -1,0 +1,187 @@
+ADVERSARIAL REVIEW OF THE AAS82207 REVISION (rnaas.tex + response letter), 2026-10-13
+=====================================================================================
+Reviewer: Claude (Fable 5.1) subagent. Scripts in this folder: verify_numbers.py (recomputes the
+CSV-derived numbers), wordcount.py (word count + pronoun/duotransit checks). Nothing outside this
+folder was modified. Submitted version diffed from git d932e46.
+
+A. NUMBERS CHECKED (source -> result)
+-------------------------------------
+794 / 344 / 450 and 223 / 55 / 66 ... count_owner_exclusion.py run: 794, 344, 450; essack 141 +
+    dragomir 65 + skinner 17 = 223; hawthorn 55; salinas 66.                                 OK
+    BUT the pool is "period missing/<=0 OR notes/tag contain single|duo|mono", not "flagged as
+    single or duo transits" as the note says (build_ctoi_singles.py line 46).            WORDING
+303 unique / 31 not recovered; 9/13/6/3 .. audit_34.csv minus the 3 truncated TICs:
+    d=9, c=13, e=6, a+b+f(blend)=3 -> 31.                                                   OK
+    "six are 0.5 d early": 209217764, 6121688, 329064084, 354032501, 64254425, 88212067.   OK
+    "one is off by 100 d" (letter): 95768667.                                              OK
+Class counts after removing duplicates: all 3 duplicates were 'event-not-recovered', so
+    193/79/21/18/23/17 and 2/3/5/7 are unchanged; 193 + 79 = 272.                          OK
+Photometry (photometry_validation.csv): own/SAP 0.78-0.99 for T<11.5 (0.782-0.991); fainter
+    1.14-1.59x; SPOC 4-7 px for T=12.4-14.1; backgrounds 0.6-8.5% for 10 stars; depth/PDCSAP
+    0.97-1.02 uncrowded, 0.69-0.86 crowded ("up to 30%": 0.69 = 31%); mid-time means -2.0 to
+    +1.7 min; p2p own/SAP median 1.07 over 10 stars (1.10 over all 11).                   MOSTLY OK
+    -> the "11 stars" sentence is followed by numbers computed on 10: the T=15.5 star has a 29%
+       background mismatch and is excluded from the 1.07 median.                          WORDING
+False alarms: control passing filters 138 / 1623 star-sectors = 0.085; real dips with the same
+    filters (n_reductions>=2, not common-mode) 150 / 1623 = 0.092. SNR bins dips vs inverted:
+    8-10 51/46, 10-15 31/52, 15-20 7/21, 20-50 14/12, >=50 47/7.                            OK
+234 / 272 re-detected (recovery_check.csv). Misses: SNR<8 21, momentum-dump 6, 'ok' 4 (free fit
+    passes but the search did not return it), depth-vs-scatter 3, baseline 2, beta 1.       OK
+6/6 EB secondaries (eb_controls.csv). Caveat already in REPORT: 396720998's second family is
+    QLP-only and as deep as the primary (period may be 2x off).                           OK-ish
+193 singles: 61 with >=1 extra detection, 1 vetted real (250492521, SNR 10.0, 3 reductions),
+    2 possible (197596346, 229556468). No single gains a period.                            OK
+"new periods for four": 188835620 (22.217 d), 75577433 (3.2799 d), 342004815 (39.311 d),
+    83384234 (~4.331 d). "two secondaries": 147035057, 258799245.                          OK
+    BUT 188835620 and 83384234 were in the 'repeats-inconsistent' class (the 23), NOT "already
+    classed as binaries". See REQUIRED 2.
+147035057: S6 TESS-SPOC event at BTJD 1486.690 (QLP confirms, 40.7 ppt box depth), S87 QLP at
+    3688.265; (3688.265-1486.690)/37.31497 = 59.000 cycles; phase 0.2395; verify_147035057.py
+    gives minimum depths 52.7 ppt (S6) and 52.7 ppt (S87), V-shaped, ~8 h; manual vetting
+    quotes 41-57 ppt. e cos w = (pi/2)(0.761-0.5) = 0.41.                                   OK
+    "Both eclipses are on target": no difference image exists for the S6/S87 deep eclipses
+    (data/raw/tesscut/147035057 is empty; writeup diff images are S7/S33/S108 shallow events
+    only). The only support is the neighbour argument (brightest neighbours within 40" are
+    G=13.5 at 17" and 24", ~1.4% of the flux, cannot make a 5% dip).                  SEE REQUIRED 4
+159614322: zero extra detections, zero control detections (clean).                        OK
+229055790: one SPOC-only S68 dip, 415 ppm, SNR 8.3, auto-(d) single-reduction; no real extra. OK
+Event test vs code: pilot.EPOCH_ERR = 0.01 d, test_window scans +/-3 sigma = +/-0.03 d; supported
+    = depth > 0.5 delta and SNR > 5 (strict >, note says >=5: trivial). No upper depth limit in
+    the event test (correct as stated). Repeat search: SNR>=8, 0.5-2 delta, cover>=0.8, D/4 grid,
+    both-side baseline (DETECT_SIDE).                                                       OK
+Word count (wordcount.py, citations = 1 token): title 15, abstract 129, body 1307 (1244 before
+    the table + 63 conclusion), table 163, acknowledgments 55, AI statement 68. Author's counter:
+    146 / 1291. RNAAS page (journals.aas.org/research-notes/) says "1,500 words or fewer" and
+    does not say what counts. Abstract + body = ~1436; + AI statement + acknowledgments = ~1560.
+Pronouns: no "we"/"our" remain; the only "us" is in the GitHub URL "coracle-us". "The author ...
+    his" appears only in the AI disclosure (acceptable, but could be "I"). "duotransit" occurs
+    twice, both in the Hawthorn sense.                                                      OK
+
+B. REQUIRED FIXES (priority order)
+----------------------------------
+1. Results, first paragraph: "In none of them does any available pipeline light curve (SPOC SAP and
+   PDCSAP, TESS-SPOC, QLP, or five other reductions) show an event that my reductions miss."
+   Problems: (i) it never says which light curve the event test ran on. The decisive fact for the
+   editor's Q6 is in REPORT.txt but not in the note: the event test ALWAYS ran on pipeline
+   products at the catalogued epoch (SPOC 2-min 285 stars, TESS-SPOC 7, QLP 8, no data 6; own
+   photometry never, since every catalogued epoch precedes S100). (ii) As written it is false:
+   TIC 38005437 passes in SAP (3.3 ppt, SNR 7.2), TESS-SPOC (SNR 6.0) and own photometry while
+   PDCSAP (the product used) gives SNR 3.3; TIC 355095316 passes in QLP KSPSAP (SNR 8.5) vs PDCSAP
+   4.1; TIC 425585592 passes in TESS-SPOC (SNR 5.8) vs SPOC 2-min 3.9; TIC 66013259 is flagged in
+   SPOC/QLP but TARS shows it at SNR 6.7. (iii) "five other reductions" is six: TGLC, eleanor,
+   T16, CDIPS, TARS, TASOC (audit_34.csv).
+   Suggested text: "The event test used pipeline light curves at every catalogued epoch (SPOC
+   2-min for 285 stars), never my own photometry. I inspected the 31 failures in every available
+   light curve (SPOC SAP and PDCSAP, TESS-SPOC, QLP, six other reductions, and my own photometry).
+   None fails because of my photometry; in three near-threshold cases (TIC 38005437, 355095316,
+   425585592) a different pipeline product would pass the test."
+   Same fix in the letter, item 6 ("No pipeline light curve shows an event that my reductions
+   miss" and "rather than differences in photometry" overstate; 38005437 is a PDCSAP-specific
+   suppression, i.e. a detrending difference).
+
+2. Results, any-depth paragraph: "Almost all extra eclipses fall on stars already classed as
+   binaries: they give new periods for four of them, and for two the catalogued event is the
+   secondary of a deeper eclipse."
+   Evidence (extra_events.csv, vetted real): 92 events on 14 stars; by class EB-on-target 52
+   events/7 stars, off-target EB 5/2, repeats-inconsistent 34/4, single 1/1. So 34 of 92 events
+   and 4 of 14 stars are in the "no single period" class, not "classed as binaries". Two of the
+   four new periods (188835620, 22.217 d; 83384234, ~4.33 d) are for repeats-inconsistent stars,
+   and 162031311 (also repeats-inconsistent) shows a 5 ppt eclipse twice the catalogued depth.
+   This is exactly the editor's point in Q5 (the matched search hides EBs) and should be stated,
+   not hidden. Suggested: "The extra eclipses fall on 14 stars: 9 already classed as binaries,
+   4 of the 23 without a single period, and one single. They give periods to four (two of them
+   from the no-single-period class: TIC 188835620, 22.217 d, and TIC 83384234, 4.33 d), and for
+   two the catalogued event is the secondary of a deeper eclipse."
+
+3. Results bullet "23 show repeats that no single period explains" is literally false: the
+   candidate-period grid is 5-1500 d (pilot.P_GRID), and at least three of the 23 are short-period
+   EBs (53847727, the known 3.01-d Prsa EB used as a positive control; 83384234, ~4.33 d;
+   76804724, ~3.7 d spacing; period_recheck/README.md). Add "above 5 d": "23 show repeats that no
+   single period of 5-1500 d explains". Also say in Methods that candidate periods are searched
+   over 5-1500 d (currently only implied by the abstract's log-period range).
+
+4. "Both eclipses are on target." (147035057 paragraph) is asserted without evidence for the
+   deep eclipse: no difference image was made for S6 or S87 (no TESScut cutouts exist for this
+   star). Either run scripts/diff_image.py on S6/S87 at the deep-eclipse ephemeris, or replace
+   with the argument that holds: "The deep eclipse cannot come from a neighbour: the brightest
+   Gaia stars within 40 arcsec (G = 13.5 at 17 and 24 arcsec) supply about 1% of the flux." The
+   shallow eclipse's localisation is "mixed" in final_classification (S7 offset 6.3 +/- 1.1
+   arcsec, S33/S108 2-3 arcsec), so "on target" for it should read "on target in S33 and S108".
+
+5. "Only TIC 250492521 shows a convincing extra event" vs. the sentence two lines earlier that
+   "extra dips below SNR ~20 are consistent with noise". The 250492521 event has SNR 10.0
+   (extra_events.csv), inside the regime the note itself calls noise-like; 29 of the 92 vetted
+   "real" events are below SNR 20 (23 of them on the 3.28-d EB 75577433). Either drop
+   "convincing" ("one single star, TIC 250492521, shows a second event of different shape, seen
+   in three reductions, that makes it an EB or blend candidate") or qualify the noise statement
+   ("as a population, extra dips below SNR ~20 are no more common than inverted-light-curve
+   artefacts; individual ones were accepted only with multi-reduction confirmation").
+
+6. Sample: "Of 794 open CTOIs flagged as single or duo transits" -> the selection is "with no
+   period, or whose notes or tag mention single, duo or mono" (build_ctoi_singles.py). Since this
+   sentence is the direct answer to Q3, it must describe the actual rule. Also verify that
+   ExoFOP user "skinner" (17 CTOIs) is a TSTPC member; I could not check offline. The letter
+   makes the same "flagged as single or duo" claim.
+
+7. Word limit risk. RNAAS states "1,500 words or fewer" without defining the count. Abstract +
+   body is ~1436 (my count) / 1437 (author's), but with the AI disclosure (68) and the enlarged
+   acknowledgments (55) the manuscript text is ~1560. The submitted version was ~960 + extras.
+   Either confirm with the AAS submission form's counter or cut ~70 words (candidates: the
+   HD 88986 b example sentence, 28 words; "On known planets the offsets are 1-3''", 8; the
+   duplicated "1--3" sentence about partial-transit sweep, 25).
+
+C. SHOULD FIX (accuracy, cheap)
+-------------------------------
+8. Methods photometry: "11 stars (T=8.5-15.5)" but "backgrounds agree to 1-9%" and "median 1.07"
+   exclude the T=15.5 star (29%; median over 11 is 1.10). Say "11 stars (T = 8.5-15.5), ten of
+   them usable (the T = 15.5 star is 96% contaminated)" or quote 10 stars, T = 8.5-14.1.
+9. "up to 30% shallower": the worst case is 0.69, i.e. 31%. Write "about 30%" or "up to a third".
+10. Table comment: "classification of all 303 stars is available in the repository" but the
+    frozen CSV has 306 rows (34 event-not-recovered). Say "all 306 CTOIs (303 stars)".
+11. "The search re-detects 234 of the 272 catalogued events": say why 38 fail (21 are below the
+    SNR 8 cut, 6 straddle momentum dumps) so the reader does not read it as a 14% miss rate of
+    real eclipses. Also 4 failures are unexplained ('ok' in recovery_check.csv: free fit passes
+    at SNR 8.8-11.1 but the search returned nothing) -> worth one look.
+12. Letter item 5: "finds the secondary eclipses of all six known TESS EBs" -> "six of six, one
+    of them (TIC 396720998) seen in QLP only and as deep as the primary, so the catalogued
+    period may be twice too short". Also disclose that the momentum-dump rule was revised after
+    first results (v1 vetoed 37 genuine catalogued events); REPORT.txt discloses it, the note and
+    letter do not.
+13. Letter "Other changes" omits unrequested edits a moderator will notice: the new Sample
+    sentences (22 stars outside the cuts, the pilot target in the TESS EB catalogue), the removal
+    of the grazing-fit numbers (dBIC, k, R2, RUWE) from the 147035057 paragraph, and the new
+    title. List them.
+14. 147035057 depth: the note gives 5.6% three times. verify_147035057.py gives 5.3% minimum
+    depth in both S6 and S87; the box search gives 4.1%; the vetting note 4.1-5.7%. "about 5%" is
+    safer, or state it is the V-shaped minimum from S87 (QLP, 200 s).
+15. "17 were vetted by hand" etc. fine, but "repeats-inconsistent" star 53847727 is the pilot
+    target that is a known Prsa EB; the Sample says it was "later found in the TESS EB
+    catalogue" without naming it. Name it (TIC 53847727) so the table/CSV match.
+
+D. ANSWERS TO THE EDITOR: ASSESSMENT
+------------------------------------
+Q1 first person: done; "The author ... his" only in the AI statement.
+Q2 duotransit: done (two Hawthorn-sense uses; title changed).
+Q3 excluded groups: answered with counts; wording of the pool definition inaccurate (REQUIRED 6).
+Q4 photometry: answered well (absolute flux, background, depth, timing, scatter, steps); the
+   consequence (S107 repeats stay tentative) is stated. Minor 10-vs-11 star inconsistency.
+Q5 any-depth search: answered convincingly as to EBs (control, 6 EB positives, 147035057 and
+   258799245 secondaries), but the note under-reports what it found in its own "no single period"
+   class (REQUIRED 2, 3) and over-labels the one single-star hit (REQUIRED 5).
+Q6 verification: the audit is thorough and the categories close (9+13+6+3 = 31), but the note
+   omits the single most important sentence (the event test itself used pipeline light curves)
+   and makes a false universal claim (REQUIRED 1). Uploader concentration (18 of the 31 failures
+   are from one working-group account, with six half-day epoch slips) is a strong, cheap
+   sentence that answers "errors in the original submissions?" directly; consider adding it.
+
+E. THINGS THAT CHECKED OUT AND NEED NO CHANGE
+---------------------------------------------
+- 303/31 arithmetic; the 3 duplicates were all in the not-recovered set, so no class count moves.
+- 147035057 is in the "21 Gaia-flagged binaries", not in the 17 hand-vetted; no move needed.
+- 0.085 / 0.092 and the per-SNR table; below SNR 20 dips (89) < inverted (119).
+- 234/272; 6/6; 59 cycles; phase 0.239; e cos w 0.41; 50 km/s; the two leads have no extra
+  eclipses in the any-depth search.
+- Event-test definition matches the code (+/-0.03 d, 0.5 delta, SNR 5); repeat-search cuts match.
+- The robust period re-check (period_recheck/README.md) changes no number in the note.
+- 06:40 UTC correction applied; dataset DOIs present; references unchanged except Salinas 2025
+  (added; MNRAS 538, 2031 - not verified here against ADS).
