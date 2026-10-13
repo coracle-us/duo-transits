@@ -182,3 +182,7 @@ raised on AAS82207. New or changed numbers:
   support: C16 + S46 alone give 62.594786 d, and the blind analysis (`independent_table/REPORT.md`) found
   62.59479 +- 0.00005 d with the same C5 time. Sandquist+2021: 62.59484 +- 0.00003.
 - Word count after the changes: abstract 130, body 1346 (`scripts/rnaas_wordcount.py`).
+
+**Sent 2026-10-13:** updated ms.tex + ms.pdf emailed to the journals manager (reply to Alex, peer.review cc), text =
+commit 0028e81 (git tag `aas82225-correction-sent`). The cover email lists the two announced corrections, the six
+pre-emptive changes and the Sanders 617 update, and asks AAS to drop the "(Untitled)" title prefix.
