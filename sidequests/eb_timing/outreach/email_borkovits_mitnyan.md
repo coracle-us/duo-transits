@@ -11,7 +11,7 @@
 **Outcome:** the southern run is cancelled under the pre-agreed rule ("if they are doing the south, hand over and stop").
 The pre-registration (`prereg/southern_run_v1.md`) was never executed.
 
-**Answer drafted in Gmail (2026-10-15), not yet sent. It:**
+**Answer sent by Jon on 2026-10-15. It:**
 - says we will not pursue the SCVZ;
 - answers the workflow question (mostly autonomous agents, Jon directing and spot-checking, validation against their NCVZ results);
 - passes on the northern signals not in their 2026 tables (TIC 255921197 = BD+70 1123, TIC 237290473, and tentatively TIC 441804888);
