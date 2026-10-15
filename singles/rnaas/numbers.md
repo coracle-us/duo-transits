@@ -148,3 +148,7 @@ name ("I first check that each catalogued event is present: ..."), and Section 2
 event (Section 1) used pipeline light curves ...". No numbers changed. Count (`aas_wordcount.py`): abstract 147,
 text 1275 (about 1325 by AAS's count). Upload file: `private/McBee_AAS82207_R2.tex`; response:
 `private/aas82207_R2_response.txt`.
+
+**Resubmitted 2026-10-15 as AAS82207R2** (received 13:25): text = commit 7b8647e (tag `aas82207R2-submitted`). AAS merged
+PDF checked: 3 pages, both clarifications present, about 1323 words by the AAS count. Abstract field: plain text from
+`private/aas82207_R1_abstract_plaintext.txt`.
