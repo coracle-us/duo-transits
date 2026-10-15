@@ -140,3 +140,11 @@ AAS-counted text 1268 (about 1295 by AAS's count).
 **Resubmitted 2026-10-13 after the length bounce:** text = commit 9bfccae (tag `aas82207R1-length-fix`). The AAS
 merged PDF (3 pages) was checked: about 1316 words after the abstract excluding references, scaled from the
 pdftotext count with the ratio calibrated on the bounce (AAS 1706 vs pdftotext 1753).
+
+## Second revision request, 2026-10-15 (AAS82207R1 -> R2)
+
+Editor: the start of Section 2 ("The event test") reads as something new. Fix: Section 1 now introduces the check by
+name ("I first check that each catalogued event is present: ..."), and Section 2 opens "The check for the catalogued
+event (Section 1) used pipeline light curves ...". No numbers changed. Count (`aas_wordcount.py`): abstract 147,
+text 1275 (about 1325 by AAS's count). Upload file: `private/McBee_AAS82207_R2.tex`; response:
+`private/aas82207_R2_response.txt`.

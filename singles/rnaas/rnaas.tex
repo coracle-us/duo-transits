@@ -44,7 +44,7 @@ uses 4--7 pixels. Depths match PDCSAP to 3\% for uncrowded hosts (about 30\% sha
 ones, as I apply no crowding correction), mid-times agree to 2\,min, and the scatter is 1.07 times
 SPOC's. The main difference is flux steps of a few ppt between segments.
 
-A catalogued event is present if a dip deeper than $0.5\,\delta$ lies at SNR $\geq5$ within
+I first check that each catalogued event is present: a dip deeper than $0.5\,\delta$ at SNR $\geq5$ within
 $\pm0.03$\,d of the catalogued epoch ($\delta$, $D$: catalogued depth and duration). The repeat
 search slides a box of that depth and duration on a $D/4$ grid with local baselines; a detection
 needs SNR $\geq8$, a depth of 0.5--2$\,\delta$, 80\% coverage and baseline on both sides. The
@@ -68,8 +68,8 @@ of six known TESS EBs.
 
 \section{Results}
 
-The event test used pipeline light curves (SPOC 2-min for 285 stars), never my photometry; 31 stars
-fail it. Inspected in every light curve (SPOC SAP and PDCSAP, TESS-SPOC, QLP, six other reductions
+The check for the catalogued event (Section~1) used pipeline light curves (SPOC 2-min for 285
+stars), never my photometry; 31 stars fail it. Inspected in every light curve (SPOC SAP and PDCSAP, TESS-SPOC, QLP, six other reductions
 and mine), none fails because of my photometry, though in three marginal cases another pipeline
 product would pass. Nine CTOIs have wrong epochs (six are 0.5\,d early), 13 show only a dip below
 $0.5\,\delta$ or SNR 5, 6 show no dip, and 3 have flagged data, a blended neighboring CTOI or no data
