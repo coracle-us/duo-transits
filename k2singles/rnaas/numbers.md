@@ -197,3 +197,7 @@ numbers; dropped only with their sentences (noise model 220 ppm/T = 9.1, TESS ti
 ratios 0.6/1.5/2.0, 0.045 d offset, e cos w 0.59, 2.5 R_J, the excluded 31.27-d TCE and 100-d placeholder, the 73.91-d
 BLS period, the 973.79/N alias spacing; the Armstrong 2016 reference is no longer cited). New count: abstract 136,
 AAS-counted text 1274 (about 1320 by AAS's count, using the AAS82207 calibration).
+
+**Decision 2026-10-15:** the shortened text (commit 3a709d7) is held. Jon will wait for the AAS quality check; if it
+bounces on length, upload `private/AAS82225_correction/ms.tex` (= 3a709d7) plus a fresh ms.pdf from Overleaf
+(`k2_note_short.tex`). The cover email draft is `private/AAS82225_correction/reply_to_alex_length.txt`.
