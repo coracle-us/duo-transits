@@ -4,6 +4,12 @@ This is a scoping study, a 20-system southern pilot, a calibrated timing-error m
 Borkovits+2026 northern CVZ results. It is separate from the duotransit work and writes only inside
 `sidequests/eb_timing/`. Light curves are cached in `cache/lc/` (gitignored, 1.4 GB for 141 stars).
 
+> **Status (2026-10-15): concluded. Southern run cancelled.** The Borkovits/Mitnyan group replied that they are already
+> working on the SCVZ ETVs (more than 100 triple candidates), and **all four of our pilot candidates are already on their list**.
+> Under the pre-agreed rule the southern run (`prereg/southern_run_v1.md`) was not executed. The northern-CVZ signals not
+> in their 2026 tables (TIC 255921197 = BD+70 1123, TIC 237290473, tentatively 441804888) were offered to them. See
+> `outreach/email_borkovits_mitnyan.md`. The pipeline and its validation stay here for reuse.
+
 ## Bottom line
 
 - **The gap is real but narrow, and it is in the south.** The northern CVZ has been done twice by the

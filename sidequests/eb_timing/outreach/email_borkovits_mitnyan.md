@@ -1,6 +1,21 @@
 # Draft email: southern CVZ eclipse timing (Borkovits / Mitnyan)
 
-**Status:** sent by Jon on 2026-10-12, with the four `figs/*_oc.png` plots attached. Awaiting a reply.
+**Status:** sent by Jon on 2026-10-12, with the four `figs/*_oc.png` plots attached.
+
+**Reply from Tibor Mitnyan, 2026-10-15 (cc Borkovits), summarised:**
+- The group is "continuously working on the ETV study of the TESS SCVZ" and has found more than a hundred triple candidates.
+- **All four of our candidates are already on their list** as triple candidates.
+- He asked about the workflow: was it autonomous AI agents with manual review, or Claude writing scripts with the analysis done by Jon?
+- They can send the NCVZ times of minima at the end of October or in November.
+
+**Outcome:** the southern run is cancelled under the pre-agreed rule ("if they are doing the south, hand over and stop").
+The pre-registration (`prereg/southern_run_v1.md`) was never executed.
+
+**Answer drafted in Gmail (2026-10-15), not yet sent. It:**
+- says we will not pursue the SCVZ;
+- answers the workflow question (mostly autonomous agents, Jon directing and spot-checking, validation against their NCVZ results);
+- passes on the northern signals not in their 2026 tables (TIC 255921197 = BD+70 1123, TIC 237290473, and tentatively TIC 441804888);
+- tells them not to go to any trouble over the minima.
 
 **To:** borko@bajaobs.hu (Tamás Borkovits, corresponding author)
 **Cc:** mtibor@titan.physx.u-szeged.hu (Tibor Mitnyan)
