@@ -289,6 +289,35 @@ def passes(ev, args):
             and ev["snr"] >= args.anti_ratio * max(ev["anti_snr"], 1e-9))
 
 
+def alias_events(passing):
+    """One event per candidate for the alias step and the report.
+
+    The highest-SNR clean passing event (core.CLEAN_EDGE_D from a gap or edge,
+    core.CLEAN_FRAC of the window covered); the top-SNR event only if none is
+    clean. Adds n_clean_events and alias_event_reason.
+    """
+    p = passing.copy()
+    p["clean"] = (p["edge_dist_d"] >= core.CLEAN_EDGE_D) & (p["frac"] >= core.CLEAN_FRAC)
+    top = p.sort_values("snr", ascending=False).drop_duplicates("cand_id").set_index("cand_id")
+    hits = p.sort_values(["clean", "snr"], ascending=False).drop_duplicates("cand_id").copy()
+    n_clean = p.groupby("cand_id")["clean"].sum()
+    reasons = []
+    for h in hits.itertuples():
+        tp = top.loc[h.cand_id]
+        q = f"edge {h.edge_dist_d:.2f} d, {h.frac:.0%} covered"
+        if not h.clean:
+            reasons.append(f"no clean event; top-SNR event used ({q})")
+        elif abs(tp.t2 - h.t2) > 1e-6:
+            reasons.append(f"highest-SNR clean event ({q}); top-SNR event S{int(tp.sector)} "
+                           f"T={tp.t2:.4f} SNR {tp.snr:.1f} is not clean (edge "
+                           f"{tp.edge_dist_d:.2f} d, {tp.frac:.0%} covered)")
+        else:
+            reasons.append(f"top-SNR event, clean ({q})")
+    hits["n_clean_events"] = [int(n_clean[c]) for c in hits["cand_id"]]
+    hits["alias_event_reason"] = reasons
+    return hits.drop(columns="clean")
+
+
 def step_search(cands, work, args):
     (work / "lc").mkdir(parents=True, exist_ok=True)
     (work / "per_cand").mkdir(parents=True, exist_ok=True)
@@ -447,8 +476,7 @@ def all_lc_for_tic(tic, work, dur_d):
 
 def step_aliases(cands, work, args):
     ev = pd.read_csv(work / "events_all.csv")
-    hits = ev[ev["passes"] == True].sort_values("snr", ascending=False)
-    hits = hits.drop_duplicates("cand_id")  # best event per candidate
+    hits = alias_events(ev[ev["passes"] == True])
     cov = pd.read_csv(work / "coverage.csv").set_index("tic")
     (work / "aliases").mkdir(exist_ok=True)
     summ = []
@@ -465,7 +493,10 @@ def step_aliases(cands, work, args):
         at = pd.DataFrame(rows)
         at.to_csv(work / "aliases" / f"{h.cand_id}.csv", index=False)
         ok = at[at["status"].isin(["allowed", "supported"])]
-        summ.append(dict(cand_id=h.cand_id, tic=h.tic, dT_d=h.t2 - h.t1,
+        summ.append(dict(cand_id=h.cand_id, tic=h.tic, alias_event_t2=h.t2,
+                         alias_event_sector=int(h.sector), alias_event_author=h.author,
+                         alias_event_snr=h.snr, alias_event_reason=h.alias_event_reason,
+                         n_clean_events=h.n_clean_events, dT_d=h.t2 - h.t1,
                          pmin_circ_d=pmin, n_aliases=len(at),
                          n_allowed=int((at["status"] == "allowed").sum()),
                          n_supported=int((at["status"] == "supported").sum()),
@@ -540,9 +571,10 @@ def step_report(cands, work, args):
     (out / "plots").mkdir(parents=True, exist_ok=True)
     ev = pd.read_csv(work / "events_all.csv")
     passing = ev[ev["passes"] == True].sort_values("snr", ascending=False)
-    hits = passing.drop_duplicates("cand_id")
-    # the other passing events, so a lower-SNR but cleaner dip is not hidden
-    others = {cid: g.iloc[1:] for cid, g in passing.groupby("cand_id")}
+    hits = alias_events(passing)
+    # the other passing events, so no dip is hidden
+    chosen = dict(zip(hits["cand_id"], hits["t2"]))
+    others = {cid: g[(g["t2"] - chosen[cid]).abs() > 1e-6] for cid, g in passing.groupby("cand_id")}
     hits["n_passing_events"] = [len(others[c]) + 1 for c in hits["cand_id"]]
     hits["other_passing"] = [";".join(f"S{int(o.sector)}:{o.t2:.4f}:snr{o.snr:.1f}"
                                       for o in others[c].itertuples()) for c in hits["cand_id"]]
@@ -551,7 +583,8 @@ def step_report(cands, work, args):
     if toi is not None:
         hits = hits.merge(toi.drop(columns=["tic"]), on="cand_id", how="left")
     if al is not None and len(al):
-        hits = hits.merge(al.drop(columns=["tic"]), on="cand_id", how="left")
+        hits = hits.merge(al.drop(columns=["tic", "n_clean_events", "alias_event_reason"], errors="ignore"),
+                          on="cand_id", how="left")
     paper = cands.set_index("cand_id")[["depth_ppm", "duration_h"]].rename(
         columns={"depth_ppm": "paper_depth_ppm", "duration_h": "paper_dur_h"})
     hits = hits.merge(paper, left_on="cand_id", right_index=True, how="left")
@@ -583,6 +616,7 @@ def step_report(cands, work, args):
             notes.append(f"already CTOI {h.ctoi} (P={h.ctoi_period})")
         if h.tic in PAPER_NOTES:
             notes.append(PAPER_NOTES[h.tic])
+        notes.append(f"alias event: {h.alias_event_reason}")
         if h.edge_dist_d < 0.5:
             notes.append(f"event {h.edge_dist_d:.2f} d from a gap or sector edge, check systematics")
         if h.frac < 0.8:

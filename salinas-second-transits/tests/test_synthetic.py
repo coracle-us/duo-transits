@@ -40,7 +40,21 @@ def fake_lc(tic, sector):
     return t, f
 
 
+def check_alias_event_choice():
+    """A clean lower-SNR event beats a high-SNR edge dip; with no clean event, top SNR wins."""
+    ev = pd.DataFrame([
+        dict(cand_id="a", tic=1, sector=95, t2=3899.75, snr=12.0, edge_dist_d=0.15, frac=0.54),
+        dict(cand_id="a", tic=1, sector=68, t2=3171.99, snr=8.5, edge_dist_d=3.0, frac=1.0),
+        dict(cand_id="b", tic=2, sector=70, t2=3200.0, snr=9.0, edge_dist_d=0.2, frac=0.9),
+        dict(cand_id="b", tic=2, sector=71, t2=3230.0, snr=7.5, edge_dist_d=2.0, frac=0.6),
+    ])
+    h = pl.alias_events(ev).set_index("cand_id")
+    assert h.loc["a", "sector"] == 68 and "not clean" in h.loc["a", "alias_event_reason"]
+    assert h.loc["b", "sector"] == 70 and h.loc["b", "alias_event_reason"].startswith("no clean event")
+
+
 def main():
+    check_alias_event_choice()
     work = Path(tempfile.mkdtemp())
     out = work / "results"
     pd.DataFrame([

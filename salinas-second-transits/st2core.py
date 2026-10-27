@@ -8,6 +8,10 @@ G = 6.674e-11
 RSUN = 6.957e8
 MSUN = 1.989e30
 DAY = 86400.0
+# An event or predicted epoch is clean (conclusive) with at least this much of the
+# transit window covered and at least this far from a gap or sector edge.
+CLEAN_FRAC = 0.8
+CLEAN_EDGE_D = 0.5
 
 
 def robust_std(x):
