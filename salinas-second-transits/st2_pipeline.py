@@ -438,7 +438,7 @@ def all_lc_for_tic(tic, work, dur_d):
 
 
 def step_aliases(cands, work, args):
-    ev = pd.read_csv(work.resolve() / "events_all.csv")
+    ev = pd.read_csv(work / "events_all.csv")
     hits = ev[ev["passes"] == True].sort_values("snr", ascending=False)
     hits = hits.drop_duplicates("cand_id")  # best event per candidate
     cov = pd.read_csv(work / "coverage.csv").set_index("tic")
@@ -530,7 +530,7 @@ def plot_hit(h, work, outdir):
 def step_report(cands, work, args):
     out = Path(args.out)
     (out / "plots").mkdir(parents=True, exist_ok=True)
-    ev = pd.read_csv(work.resolve() / "events_all.csv")
+    ev = pd.read_csv(work / "events_all.csv")
     hits = ev[ev["passes"] == True].sort_values("snr", ascending=False).drop_duplicates("cand_id")
     toi = pd.read_csv(work / "toi_match.csv", dtype=str).fillna("") if (work / "toi_match.csv").exists() else None
     al = pd.read_csv(work / "aliases_summary.csv") if (work / "aliases_summary.csv").exists() else None
@@ -587,12 +587,13 @@ def step_report(cands, work, args):
 def step_cnn(cands, work, args):
     """Refit each new event with the Salinas CNN (their repo, any pipeline)."""
     repo = Path(args.cnn_repo).resolve()
+    work = work.resolve()  # before chdir, or a relative --work points into the CNN repo
     sys.path.insert(0, str(repo))
     import os
     os.chdir(repo)  # their config uses repo-relative paths
     import lightkurve as lk
     from computeparams.param_inference_core import pick_lightcurve, preprocess_lc, _run_inference_on_lc
-    ev = pd.read_csv(work.resolve() / "events_all.csv")
+    ev = pd.read_csv(work / "events_all.csv")
     hits = ev[ev["passes"] == True].sort_values("snr", ascending=False).drop_duplicates("cand_id")
     rows = []
     for h in hits.itertuples():
@@ -608,7 +609,7 @@ def step_cnn(cands, work, args):
                                                       "sigma_duration", "t_mid_pred_btjd")}))
             except Exception as e:
                 rows.append(dict(cand_id=h.cand_id, tic=h.tic, sector=s, which=label, error=str(e)))
-    pd.DataFrame(rows).to_csv(work.resolve() / "cnn_new_events.csv", index=False)
+    pd.DataFrame(rows).to_csv(work / "cnn_new_events.csv", index=False)
     print("wrote cnn_new_events.csv")
 
 
