@@ -30,6 +30,14 @@ import st2core as core
 warnings.filterwarnings("ignore")
 
 FIRST_NEW_SECTOR = 61
+# Pointings MAST and tess-point number outside the sector sequence. Their data
+# are real, so the alias step still uses them, but they are not searched as
+# new sectors.
+SPECIAL_SECTORS = {1751: "3I/ATLAS special pointing, 2026 Jan 15-22 (7.2 d)"}
+
+
+def is_new_sector(s):
+    return s >= FIRST_NEW_SECTOR and s not in SPECIAL_SECTORS
 AUTHOR_RANK = {"SPOC": 0, "TESS-SPOC": 1, "QLP": 2}
 # lightkurve's download() swaps sys.stdout for devnull and back, which is not
 # thread-safe (a thread can restore another's closed devnull and kill print).
@@ -192,13 +200,14 @@ def step_coverage(cands, work, workers):
         _, prods = lc_products(tic)
         best = best_per_sector(prods)
         pts = pointing_sectors(tic, info.get("ra", np.nan), info.get("dec", np.nan)) if info else []
-        new_lc = sorted(s for s in best if s >= FIRST_NEW_SECTOR)
-        new_pt = sorted(s for s in pts if s >= FIRST_NEW_SECTOR)
+        new_lc = sorted(s for s in best if is_new_sector(s))
+        new_pt = sorted(s for s in pts if is_new_sector(s))
         return dict(tic=tic, **info,
                     lc_sectors=" ".join(f"{s}:{best[s]['author']}" for s in sorted(best)),
                     lc_sectors_ge61=" ".join(map(str, new_lc)),
                     pointed_sectors_ge61=" ".join(map(str, new_pt)),
                     pointed_no_lc_ge61=" ".join(str(s) for s in new_pt if s not in best),
+                    special_sectors=" ".join(str(s) for s in sorted(best) if s in SPECIAL_SECTORS),
                     n_new_lc=len(new_lc))
 
     with ThreadPoolExecutor(workers) as ex:
@@ -257,7 +266,7 @@ def search_one(c, cov_row, work, args):
         derr_ref = (c.depth_err * 1e-6) if np.isfinite(c.depth_err) else 0.2 * depth0
     res.update(depth_ref=depth_ref, dur_ref_d=dur_ref, depth_ref_err=derr_ref)
 
-    for s in sorted(x for x in best if x >= FIRST_NEW_SECTOR):
+    for s in sorted(x for x in best if is_new_sector(x)):
         row = best[s]
         try:
             t, f = load_sector_lc(sr, row, cache)
@@ -354,6 +363,8 @@ def step_search(cands, work, args):
     for p in sorted((work / "per_cand").glob("*.json")):
         r = json.loads(p.read_text())
         for ev in r["events"]:
+            if ev["sector"] in SPECIAL_SECTORS:  # searched by an older version
+                continue
             if "error" in ev:
                 rows.append(dict(cand_id=r["cand_id"], tic=r["tic"], sector=ev["sector"], error=ev["error"]))
                 continue
