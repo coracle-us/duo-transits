@@ -53,8 +53,18 @@ def check_alias_event_choice():
     assert h.loc["b", "sector"] == 70 and h.loc["b", "alias_event_reason"].startswith("no clean event")
 
 
+def check_edge_epochs_inconclusive():
+    """A flat epoch 0.2 d from a gap is inconclusive; the same epoch mid-data excludes."""
+    t = np.concatenate([np.arange(0, 10, CAD), np.arange(12, 22, CAD)])
+    f = 1 + rng.normal(0, 300e-6, t.size)
+    v = pl.core.epoch_verdicts([9.8, 5.0, 11.0], t, f, DUR, DEPTH, 300e-6)
+    assert list(v["verdict"]) == ["inconclusive", "excludes", "no data"], v["verdict"]
+    assert v["verdict_any_coverage"][0] == "excludes"
+
+
 def main():
     check_alias_event_choice()
+    check_edge_epochs_inconclusive()
     work = Path(tempfile.mkdtemp())
     out = work / "results"
     pd.DataFrame([
@@ -71,9 +81,11 @@ def main():
     pd.DataFrame({"TIC ID": [2], "TOI": [9999.01], "TFOPWG Disposition": ["PC"],
                   "Period (days)": [50.0], "Epoch (BJD)": [2459200.0]}).to_csv(work / "exofop_toi.csv", index=False)
     pd.DataFrame({"TIC ID": [5], "CTOI": [5.01], "Period (days)": [3.0]}).to_csv(work / "exofop_ctoi.csv", index=False)
+    pd.DataFrame({"tic": [1], "period_d": [157.9]}).to_csv(work / "hyp.csv", index=False)
 
     args = SimpleNamespace(workers=1, snr_min=7.0, depth_lo=0.5, depth_hi=2.0, dur_lo=0.5, dur_hi=2.0,
-                           anti_ratio=1.5, p_floor=1.0, force=False, out=str(out))
+                           anti_ratio=1.5, p_floor=1.0, force=False, out=str(out),
+                           hypotheses=str(work / "hyp.csv"))
     cands = pl.load_candidates(work / "c.csv")
     pl.step_coverage(cands, work, 1)
     ev = pl.step_search(cands, work, args)
@@ -87,12 +99,17 @@ def main():
     h = hits.sort_values("snr").iloc[-1]
     assert abs(h.t2 - T2) < 0.05, h.t2
     assert 0.7 < h.depth_ratio < 1.4, h.depth_ratio
-    at = pd.read_csv(next((work / "aliases").glob("1_*.csv")))
+    at = pd.read_csv(next(p for p in (work / "aliases").glob("1_*.csv") if not p.name.endswith("_epochs.csv")))
     true = at.iloc[(at.period_d - P_TRUE).abs().argmin()]
     print(at.status.value_counts().to_string())
     print("true alias:", true.to_dict())
     assert true.status == "supported", "S50 holds a third transit at the true period"
     assert (at.status == "excluded").sum() > 0, "S45/S50 should exclude some aliases"
+    hy = pd.read_csv(work / "aliases" / "hypotheses_summary.csv").iloc[0]
+    print("hypothesis:", hy.to_dict())
+    assert abs(hy.period_used_d - P_TRUE) < 0.01 and hy.status_now == "supported"
+    ep = pd.read_csv(next((work / "aliases").glob("1_*_epochs.csv")))
+    assert {"paper event", "alias event (T2)", "supports"} <= set(ep.verdict)
     toi = pd.read_csv(work / "toi_match.csv", dtype=str).fillna("")
     assert toi.set_index("tic").loc["2", "toi"] != ""
     assert (out / "shortlist.md").exists() and any((out / "plots").glob("*.png"))

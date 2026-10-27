@@ -455,7 +455,7 @@ def all_lc_for_tic(tic, work, dur_d):
     """Every sector (old and new) for alias checks, detrended, cached as npz."""
     sr, prods = lc_products(tic)
     best = best_per_sector(prods)
-    T, F = [], []
+    T, F, spans = [], [], []
     for s, row in sorted(best.items()):
         p = work / "lc" / f"{tic}_s{s:03d}.npz"
         if p.exists():
@@ -471,12 +471,102 @@ def all_lc_for_tic(tic, work, dur_d):
                 continue
         T.append(t)
         F.append(f)
-    return np.concatenate(T), np.concatenate(F), sorted(best)
+        spans.append((s, row["author"], float(t.min()), float(t.max())))
+    return np.concatenate(T), np.concatenate(F), sorted(best), spans
+
+
+def load_hypotheses(path):
+    """{tic: [quoted periods]} from period_hypotheses.csv, if it exists."""
+    if not path or not Path(path).exists():
+        return {}
+    out = {}
+    for r in pd.read_csv(path, comment="#").itertuples():
+        out.setdefault(int(r.tic), []).append(float(r.period_d))
+    return out
+
+
+def epoch_rows(h, P, source, t, f, spans, dur_d, depth, depth_err, sig, edges):
+    """One row per predicted epoch of P (through the paper event) that has any data."""
+    k = np.arange(int(np.floor((t.min() - h.t1) / P)) - 1, int(np.ceil((t.max() - h.t1) / P)) + 2)
+    ep = h.t1 + k * P
+    v = core.epoch_verdicts(ep, t, f, dur_d, depth, depth_err, sig, edges)
+    rows = []
+    for i in np.where(v["frac"] > 0)[0]:
+        sec = [(s, a) for s, a, lo, hi in spans if lo - 0.5 <= ep[i] <= hi + 0.5]
+        verdict, old = v["verdict"][i], v["verdict_any_coverage"][i]
+        if abs(ep[i] - h.t1) < dur_d / 2:
+            verdict = old = "paper event"
+        elif abs(ep[i] - h.t2) < dur_d / 2:
+            verdict = old = "alias event (T2)"
+        rows.append(dict(cand_id=h.cand_id, period_d=P, period_source=source, k=int(k[i]),
+                         epoch_btjd=ep[i], sector=sec[0][0] if sec else np.nan,
+                         pipeline=sec[0][1] if sec else "", coverage=v["frac"][i],
+                         edge_dist_d=v["edge_d"][i], box_depth_ppm=v["depth"][i] * 1e6,
+                         box_depth_err_ppm=v["depth_err"][i] * 1e6, verdict=verdict,
+                         verdict_any_coverage=old))
+    return rows
+
+
+def epoch_status(rows):
+    """Alias status from epoch rows, under the clean-epoch rule and the old any-coverage rule."""
+    def st(col):
+        v = {r[col] for r in rows}
+        return "excluded" if "excludes" in v else "supported" if "supports" in v else "allowed"
+    return st("verdict"), st("verdict_any_coverage")
+
+
+def plot_epochs(h, P, rows, t, f, outdir):
+    """Paper event next to every epoch that excludes P under either rule."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    bad = [r for r in rows if "excludes" in (r["verdict"], r["verdict_any_coverage"])]
+    if not bad:
+        return ""
+    show = [None] + bad[:11]
+    nc = min(len(show), 4)
+    nr = int(np.ceil(len(show) / nc))
+    fig, axs = plt.subplots(nr, nc, figsize=(4 * nc, 3 * nr), squeeze=False, sharey=True)
+    dur = h.dur_ref_h / 24
+    w = max(3 * dur, 0.75)
+    for a, r in zip(axs.flat, show):
+        tc = h.t1 if r is None else r["epoch_btjd"]
+        m = np.abs(t - tc) < w
+        x, y = (t[m] - tc) * 24, (f[m] - 1) * 1e6
+        a.plot(x, y, ".", ms=2, color="0.6")
+        if m.sum():
+            edges = np.arange(-w, w + 1 / 48, 1 / 48) * 24
+            idx = np.digitize(x, edges)
+            xb = [x[idx == j].mean() for j in np.unique(idx)]
+            yb = [y[idx == j].mean() for j in np.unique(idx)]
+            a.plot(xb, yb, "o", ms=3, color="C0")
+        a.axhline(-h.depth_ref_ppm, color="C3", lw=0.8, ls="--")
+        a.axvspan(-dur * 12, dur * 12, color="C3", alpha=0.08)
+        if r is None:
+            a.set_title(f"paper event T={h.t1:.3f}", fontsize=8)
+        else:
+            a.set_title(f"S{r['sector']:.0f} {r['pipeline']} T={tc:.3f}\ncov {r['coverage']:.0%}, edge "
+                        f"{r['edge_dist_d']:.2f} d, {r['box_depth_ppm']:.0f}+/-{r['box_depth_err_ppm']:.0f} ppm"
+                        f"\nnow: {r['verdict']}", fontsize=8)
+        a.set_xlabel("hours")
+    for a in list(axs.flat)[len(show):]:
+        a.axis("off")
+    fig.suptitle(f"TIC {h.tic} P = {P:.5f} d: epochs that exclude it ({len(bad)}"
+                 + (", first 11 shown" if len(bad) > 11 else "") + ")", fontsize=10)
+    fig.tight_layout()
+    outdir.mkdir(parents=True, exist_ok=True)
+    name = f"TIC{h.tic}_{h.cand_id}_P{P:.4f}.png"
+    fig.savefig(outdir / name, dpi=100)
+    plt.close(fig)
+    return name
 
 
 def step_aliases(cands, work, args):
     ev = pd.read_csv(work / "events_all.csv")
-    hits = alias_events(ev[ev["passes"] == True])
+    passing = ev[ev["passes"] == True]
+    hits = alias_events(passing)
+    hyp = load_hypotheses(getattr(args, "hypotheses", None))
+    hyp_rows = []
     cov = pd.read_csv(work / "coverage.csv").set_index("tic")
     (work / "aliases").mkdir(exist_ok=True)
     summ = []
@@ -486,13 +576,43 @@ def step_aliases(cands, work, args):
         rstar = float(info.get("rstar", np.nan)) if len(info) else np.nan
         dur_d = h.dur_ref_h / 24
         depth = h.depth_ref_ppm * 1e-6
-        t, f, secs = all_lc_for_tic(h.tic, work, dur_d)
+        t, f, secs, spans = all_lc_for_tic(h.tic, work, dur_d)
         pmin = core.pmin_from_duration(dur_d, mstar, rstar, depth)
-        rows = core.alias_table(h.t1, h.t2, dur_d, depth, h.depth_err_ppm * 1e-6, t, f,
+        derr = h.depth_err_ppm * 1e-6
+        rows = core.alias_table(h.t1, h.t2, dur_d, depth, derr, t, f,
                                 p_floor=args.p_floor, pmin_density=pmin)
         at = pd.DataFrame(rows)
         at.to_csv(work / "aliases" / f"{h.cand_id}.csv", index=False)
         ok = at[at["status"].isin(["allowed", "supported"])]
+
+        # per-epoch table: period hypotheses, then every alias still allowed or supported
+        sig, edges = core.duration_scale_noise(t, f, dur_d), core.gap_edges(t)
+        times = passing.loc[passing["cand_id"] == h.cand_id, "t2"].to_numpy()
+        periods = []
+        for P0 in hyp.get(h.tic, []):
+            P, k, N = core.refine_period(h.t1, times, P0, dur_d)
+            periods.append((P, f"hypothesis {P0:g} d ({k}/{N} events match)", P0))
+        periods += [(r.period_d, f"alias n={r.n} ({r.status})", None)
+                    for r in ok.itertuples()]
+        erows = []
+        for P, source, P0 in periods:
+            er = epoch_rows(h, P, source, t, f, spans, dur_d, depth, derr, sig, edges)
+            erows += er
+            if P0 is None:
+                continue
+            now, old = epoch_status(er)
+            hyp_rows.append(dict(
+                cand_id=h.cand_id, tic=h.tic, period_quoted_d=P0, period_used_d=P, source=source,
+                status_old_rule=old, status_now=now,
+                n_epochs_with_data=sum(r["verdict"] not in ("no data", "paper event", "alias event (T2)") for r in er),
+                n_supporting=sum(r["verdict"] == "supports" for r in er),
+                n_inconclusive=sum(r["verdict"] == "inconclusive" for r in er),
+                excluding_old_rule=";".join(f"S{r['sector']:.0f}:{r['epoch_btjd']:.3f}" for r in er
+                                            if r["verdict_any_coverage"] == "excludes"),
+                excluding_now=";".join(f"S{r['sector']:.0f}:{r['epoch_btjd']:.3f}" for r in er
+                                       if r["verdict"] == "excludes"),
+                plot=plot_epochs(h, P, er, t, f, Path(args.out) / "epoch_plots")))
+        pd.DataFrame(erows).to_csv(work / "aliases" / f"{h.cand_id}_epochs.csv", index=False)
         summ.append(dict(cand_id=h.cand_id, tic=h.tic, alias_event_t2=h.t2,
                          alias_event_sector=int(h.sector), alias_event_author=h.author,
                          alias_event_snr=h.snr, alias_event_reason=h.alias_event_reason,
@@ -511,6 +631,7 @@ def step_aliases(cands, work, args):
               f"{summ[-1]['n_supported']} supported")
     df = pd.DataFrame(summ)
     df.to_csv(work / "aliases_summary.csv", index=False)
+    pd.DataFrame(hyp_rows).to_csv(work / "aliases" / "hypotheses_summary.csv", index=False)
     return df
 
 
@@ -688,6 +809,8 @@ def main():
     ap.add_argument("--anti-ratio", type=float, default=1.5,
                     help="event SNR must beat the strongest brightening by this factor")
     ap.add_argument("--p-floor", type=float, default=1.0, help="shortest alias period to list (d)")
+    ap.add_argument("--hypotheses", default="period_hypotheses.csv",
+                    help="tic,period_d list tabulated epoch by epoch in the alias step")
     ap.add_argument("--types", default="single,multiplanet",
                     help="comma list of candidate types to search (single, multi, multiplanet, all)")
     ap.add_argument("--cnn-repo", default="singletransiters")

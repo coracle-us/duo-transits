@@ -111,14 +111,25 @@ def refine_event(t, f, tc, dur0_d, sig_fn=duration_scale_noise):
     return best
 
 
+def gap_edges(t, gap_d=0.5):
+    """Sorted data edges: first and last point, and both sides of every gap longer than gap_d."""
+    ts = np.sort(t)
+    i = np.where(np.diff(ts) > gap_d)[0]
+    return np.sort(np.concatenate([[ts[0], ts[-1]], ts[i], ts[i + 1]]))
+
+
+def edge_distance(edges, tc):
+    """Distance (days) from each tc to the nearest of the sorted edges."""
+    tc = np.atleast_1d(np.asarray(tc, float))
+    j = np.searchsorted(edges, tc)
+    lo = edges[np.clip(j - 1, 0, edges.size - 1)]
+    hi = edges[np.clip(j, 0, edges.size - 1)]
+    return np.minimum(np.abs(tc - lo), np.abs(hi - tc))
+
+
 def gap_edge_distance(t, tc, gap_d=0.5):
     """Distance (days) from tc to the nearest data edge or gap longer than gap_d."""
-    ts = np.sort(t)
-    dt = np.diff(ts)
-    edges = [ts[0], ts[-1]]
-    for i in np.where(dt > gap_d)[0]:
-        edges += [ts[i], ts[i + 1]]
-    return float(np.min(np.abs(np.array(edges) - tc)))
+    return float(edge_distance(gap_edges(t, gap_d), tc)[0])
 
 
 def a_over_rstar(P_d, mstar, rstar):
@@ -152,19 +163,50 @@ def pmin_from_duration(dur_d, mstar, rstar, depth):
     return hi
 
 
+def epoch_verdicts(ep, t, f, dur_d, depth0, depth0_err, sig=None, edges=None, min_frac=0.5):
+    """Box depth, coverage, edge distance and verdict at each predicted epoch.
+
+    verdict is 'no data' (coverage < min_frac), 'inconclusive' (coverage below
+    CLEAN_FRAC or within CLEAN_EDGE_D of a gap or sector edge), or for clean
+    epochs 'excludes' (depth below max(depth0 - 3 sigma, 0.5 depth0)),
+    'supports' (depth within 3 sigma of depth0) or 'deeper' (neither).
+    """
+    ep = np.atleast_1d(np.asarray(ep, float))
+    if sig is None:
+        sig = duration_scale_noise(t, f, dur_d)
+    if edges is None:
+        edges = gap_edges(t)
+    depth, frac, _ = box_stats(t, f, ep, dur_d)
+    edge_d = edge_distance(edges, ep)
+    err = sig / np.sqrt(np.clip(frac, 1e-3, None))
+    tot = np.hypot(err, depth0_err)
+    excl = depth < np.maximum(depth0 - 3 * tot, 0.5 * depth0)
+    supp = np.abs(depth - depth0) < 3 * tot
+    verdict = np.where(excl, "excludes", np.where(supp, "supports", "deeper")).astype(object)
+    verdict[frac < min_frac] = "no data"
+    # what the epoch said before partly covered and near-edge epochs became inconclusive
+    verdict_any_coverage = verdict.copy()
+    verdict[(frac >= min_frac) & ((frac < CLEAN_FRAC) | (edge_d < CLEAN_EDGE_D))] = "inconclusive"
+    return dict(epoch=ep, depth=depth, depth_err=err, frac=frac, edge_d=edge_d, verdict=verdict,
+                verdict_any_coverage=verdict_any_coverage)
+
+
 def alias_table(t1, t2, dur_d, depth0, depth0_err, t, f, p_floor=1.0,
                 pmin_density=np.nan, n_max=3000, min_frac=0.5):
     """Status of every alias P_n = (t2 - t1)/n against all available data.
 
     For each alias, look at each predicted epoch (other than the two known
-    events) that falls in the data. An epoch with coverage >= min_frac whose
-    box depth is below max(depth0 - 3 sigma, 0.5 depth0) excludes the alias;
-    one whose depth agrees with depth0 counts as a supporting (third) transit.
+    events) that falls in the data (see epoch_verdicts). Only clean epochs
+    count: one whose box depth is below max(depth0 - 3 sigma, 0.5 depth0)
+    excludes the alias; one whose depth agrees with depth0 counts as a
+    supporting (third) transit. Partly covered or near-edge epochs are
+    inconclusive and neither exclude nor support.
     """
     dT = t2 - t1
     rows = []
     tmin, tmax = np.nanmin(t), np.nanmax(t)
     sig = duration_scale_noise(t, f, dur_d)
+    edges = gap_edges(t)
     for n in range(1, n_max + 1):
         P = dT / n
         if P < p_floor:
@@ -172,26 +214,53 @@ def alias_table(t1, t2, dur_d, depth0, depth0_err, t, f, p_floor=1.0,
         kmin = int(np.floor((tmin - t1) / P)) - 1
         kmax = int(np.ceil((tmax - t1) / P)) + 1
         ks = np.array([k for k in range(kmin, kmax + 1) if k not in (0, n)])
-        status, n_cov, n_supp, worst = "allowed", 0, 0, np.nan
+        status, n_cov, n_supp, n_excl, n_inc, worst = "allowed", 0, 0, 0, 0, np.nan
         if ks.size:
-            ep = t1 + ks * P
-            depth, frac, _ = box_stats(t, f, ep, dur_d)
-            cov = frac >= min_frac
-            n_cov = int(cov.sum())
-            if n_cov:
-                d = depth[cov]
-                err = sig / np.sqrt(frac[cov])
-                thresh = np.maximum(depth0 - 3 * np.hypot(err, depth0_err), 0.5 * depth0)
-                excl = d < thresh
-                supp = np.abs(d - depth0) < 3 * np.hypot(err, depth0_err)
-                n_supp = int(supp.sum())
-                worst = float(np.min(d))
-                if excl.any():
-                    status = "excluded"
-                elif n_supp:
-                    status = "supported"
+            v = epoch_verdicts(t1 + ks * P, t, f, dur_d, depth0, depth0_err, sig, edges, min_frac)
+            n_cov = int((v["frac"] >= min_frac).sum())
+            n_inc = int((v["verdict"] == "inconclusive").sum())
+            n_excl = int((v["verdict"] == "excludes").sum())
+            n_supp = int((v["verdict"] == "supports").sum())
+            clean = np.isin(v["verdict"], ["excludes", "supports", "deeper"])
+            if clean.any():
+                worst = float(np.min(v["depth"][clean]))
+            if n_excl:
+                status = "excluded"
+            elif n_supp:
+                status = "supported"
         if np.isfinite(pmin_density) and P < pmin_density and status != "excluded":
             status = "allowed_below_pmin" if status == "allowed" else status
         rows.append(dict(n=n, period_d=P, status=status, n_epochs_covered=n_cov,
-                         n_epochs_supporting=n_supp, min_depth_at_epochs=worst))
+                         n_epochs_supporting=n_supp, n_epochs_excluding=n_excl,
+                         n_epochs_inconclusive=n_inc, min_depth_at_epochs=worst))
     return rows
+
+
+def _matches(t1, x, P, dur_d):
+    ph = (x - t1) / P
+    return np.abs(ph - np.round(ph)) * P < dur_d / 2
+
+
+def refine_period(t1, times, P0, dur_d, tol=0.01):
+    """Sharpen a quoted period P0 to the exact (t_e - t1)/n that matches most events.
+
+    Among n near (t_e - t1)/P0 with |P - P0| < tol * P0, take the most matches,
+    then the longest baseline. Returns (P, k, N); P0 itself if nothing fits.
+    """
+    x = np.concatenate([[t1], np.asarray(times, float)])
+    best = None
+    for te in times:
+        dt = te - t1
+        n0 = int(round(dt / P0))
+        for n in (n0 - 1, n0, n0 + 1):
+            if n == 0:
+                continue
+            P = dt / n
+            if P <= 0 or abs(P - P0) > tol * P0:
+                continue
+            key = (int(_matches(t1, x, P, dur_d).sum()), abs(dt))
+            if best is None or key > best[0]:
+                best = (key, P)
+    if best is None:
+        return P0, int(_matches(t1, x, P0, dur_d).sum()), int(x.size)
+    return best[1], best[0][0], int(x.size)
