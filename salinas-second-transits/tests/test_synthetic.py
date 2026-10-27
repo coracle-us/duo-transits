@@ -72,8 +72,17 @@ def check_common_period():
     assert lp["k"] == 5 and lp["N"] == 6 and abs(lp["P"] - 23.7535) < 0.01, lp
 
 
+def check_mixed_cadence_coverage():
+    """A fully sampled 30-min stretch counts as covered next to 10-min data."""
+    t = np.concatenate([np.arange(0, 10, 30 / 1440), np.arange(20, 30, CAD)])
+    f = np.ones(t.size)
+    _, frac, _ = pl.core.box_stats(t, f, np.array([5.0, 25.0, 15.0]), DUR)
+    assert 0.9 < frac[0] < 1.1 and 0.9 < frac[1] < 1.1 and frac[2] == 0, frac
+
+
 def main():
     check_alias_event_choice()
+    check_mixed_cadence_coverage()
     check_common_period()
     check_edge_epochs_inconclusive()
     work = Path(tempfile.mkdtemp())

@@ -49,18 +49,32 @@ def duration_scale_noise(t, f, dur_d):
     return max(sig_bins, sig_white)
 
 
+def local_cadence(t):
+    """Sampling interval of each point of sorted t: the smaller gap to a neighbour."""
+    dt = np.diff(t)
+    dt = np.where(dt > 0, dt, np.inf)
+    c = np.minimum(np.concatenate([[np.inf], dt]), np.concatenate([dt, [np.inf]]))
+    return np.where(np.isfinite(c), c, cadence_days(t))
+
+
 def box_stats(t, f, centers, dur_d):
-    """Mean in-box depth and fill fraction for each trial centre."""
+    """Mean in-box depth and fill fraction for each trial centre.
+
+    The fill fraction adds up each in-box point's own sampling interval, so
+    sectors with different cadences (30-min early FFIs next to 10-min or
+    200-s ones) are each judged correctly.
+    """
     order = np.argsort(t)
     t, f = t[order], f[order]
     cs = np.concatenate([[0.0], np.cumsum(f)])
+    cc = np.concatenate([[0.0], np.cumsum(local_cadence(t))])
     lo = np.searchsorted(t, centers - dur_d / 2)
     hi = np.searchsorted(t, centers + dur_d / 2)
     n = hi - lo
     with np.errstate(invalid="ignore", divide="ignore"):
         mean = (cs[hi] - cs[lo]) / n
     depth = 1.0 - mean
-    frac = n / (dur_d / cadence_days(t))
+    frac = (cc[hi] - cc[lo]) / dur_d
     return depth, frac, n
 
 
