@@ -74,24 +74,42 @@ def tess_sectors():
     from astropy.coordinates import SkyCoord
     print(Tesscut.get_sectors(coordinates=SkyCoord(RA, DEC, unit="deg")))
 
+def mad(x):
+    return 1.4826 * np.median(np.abs(x - np.median(x)))
+
 def test_window(data, name, n, pmin, pmax):
+    """Per group, the core points are averaged into one mean and compared with the group's
+    baseline median. Its error is the scatter of the group's nightly means in the baseline
+    (nights = integer JD, which starts at noon UTC), divided by sqrt(nights in the core).
+    Points from one night share that night's zero-point error, so treating them as
+    independent (dchi2_per_point, the original statistic) overstates exclusions for
+    time-series observers. With fewer than 5 baseline nights the single-point scatter is used.
+    """
     tcs = np.arange(T0 + n * pmin, T0 + n * pmax + 1e-9, 0.01)
     res = []
     for tc in tcs:
-        pen, used = 0.0, []
+        pen, pen_pp, used = 0.0, 0.0, []
         for g, d in data.groupby("group"):
             near = d[np.abs(d.jd - tc) < 15]
             core = near[np.abs(near.jd - tc) < CORE]
             base = near[np.abs(near.jd - tc) > 0.6]
             if len(core) == 0 or len(base) < 10: continue
             zp = np.median(base.mag)
-            sig = np.sqrt(core.err.values ** 2 + (1.4826 * np.median(np.abs(base.mag - zp))) ** 2)
+            sig_pt = np.sqrt(core.err.values ** 2 + mad(base.mag.values) ** 2)
             r = core.mag.values - zp
-            pen += np.sum(((r - DEPTH_MAG) / sig) ** 2 - (r / sig) ** 2)
-            used.append(f"{g}({len(core)})")
+            pen_pp += np.sum(((r - DEPTH_MAG) / sig_pt) ** 2 - (r / sig_pt) ** 2)
+            nightly = base.groupby(np.floor(base.jd)).mag.mean()
+            n_core = np.floor(core.jd).nunique()
+            sig = (mad(nightly.values) if len(nightly) >= 5 else mad(base.mag.values)) / np.sqrt(n_core)
+            sig = max(sig, 1e-3)
+            rm = r.mean()
+            pen += ((rm - DEPTH_MAG) / sig) ** 2 - (rm / sig) ** 2
+            used.append(f"{g}({len(core)} pts, {n_core} night{'s' if n_core > 1 else ''})")
         st = "excluded" if pen > 25 else ("consistent" if pen < -25 else "untested")
-        res.append((name, tc, st, pen, ";".join(used)))
-    return pd.DataFrame(res, columns=["window", "tc_bjd", "status", "dchi2", "groups"])
+        st_pp = "excluded" if pen_pp > 25 else ("consistent" if pen_pp < -25 else "untested")
+        res.append((name, tc, st, pen, st_pp, pen_pp, ";".join(used)))
+    return pd.DataFrame(res, columns=["window", "tc_bjd", "status", "dchi2", "status_per_point",
+                                      "dchi2_per_point", "groups"])
 
 def plot_window(data, name, n, pmin, pmax, fn):
     import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
@@ -126,7 +144,9 @@ def main():
         r = test_window(data, *w); out.append(r)
         plot_window(data, *w, fn="win_" + w[0].split()[0] + "_n" + str(w[1]) + ".png")
         c = r.status.value_counts(normalize=True).to_dict()
-        print(f"{w[0]:24s} excluded {c.get('excluded',0):5.0%}  consistent {c.get('consistent',0):5.0%}  untested {c.get('untested',0):5.0%}")
+        p = r.status_per_point.value_counts(normalize=True).to_dict()
+        print(f"{w[0]:24s} excluded {c.get('excluded',0):5.0%}  consistent {c.get('consistent',0):5.0%}  untested {c.get('untested',0):5.0%}"
+              f"   | per-point statistic: excluded {p.get('excluded',0):4.0%} consistent {p.get('consistent',0):4.0%}")
     pd.concat(out).to_csv("epoch_coverage.csv", index=False)
 
 if __name__ == "__main__":
