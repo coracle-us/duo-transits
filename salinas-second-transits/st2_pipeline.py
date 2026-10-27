@@ -35,6 +35,9 @@ AUTHOR_RANK = {"SPOC": 0, "TESS-SPOC": 1, "QLP": 2}
 # thread-safe (a thread can restore another's closed devnull and kill print).
 # Holding this lock also stops two candidates on one star fetching the same file.
 DOWNLOAD_LOCK = threading.Lock()
+# wotan's numba code aborts the process when two threads enter it under numba's
+# workqueue threading layer, the only one a pip install gets on macOS.
+DETREND_LOCK = threading.Lock()
 
 COLUMN_ALIASES = {
     "tic": ["tic", "tic_id", "ticid", "tic id", "id"],
@@ -166,8 +169,9 @@ def load_sector_lc(sr, row, cache_dir):
 def detrend(t, f, dur_d):
     from wotan import flatten
     w = max(4.0 * dur_d, 1.0)  # wide enough to keep most of the transit depth
-    flat = flatten(t, f, method="biweight", window_length=w, edge_cutoff=0.0,
-                   break_tolerance=0.5)
+    with DETREND_LOCK:
+        flat = flatten(t, f, method="biweight", window_length=w, edge_cutoff=0.0,
+                       break_tolerance=0.5)
     m = np.isfinite(flat)
     # clip upward outliers only (flares), keep dips
     r = flat[m] - 1
