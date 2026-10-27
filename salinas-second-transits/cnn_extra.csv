@@ -1,0 +1,6 @@
+# Extra transits for the CNN step (round 2, sections 2 and 5): predicted 23.7535 d epochs of
+# TIC 230133616 in S47-S60 that hold a dip but are not passing events of the S>=61 search.
+cand_id,tic,sector,author,tc,which
+230133616_2396.131,230133616,49,TESS-SPOC,2657.4173,predicted P=23.7535 (alias step: excludes)
+230133616_2396.131,230133616,53,TESS-SPOC,2752.4306,predicted P=23.7535 (supports)
+230133616_2396.131,230133616,56,TESS-SPOC,2847.4439,predicted P=23.7535 (supports)
