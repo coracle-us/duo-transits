@@ -227,7 +227,11 @@ def search_one(c, cov_row, work, args):
     for s, row in old:
         if np.isfinite(row.get("tmin", np.nan)) and not (row["tmin"] - 1 <= c.t0 <= row["tmax"] + 1):
             continue
-        t, f = load_sector_lc(sr, row, cache)
+        try:
+            t, f = load_sector_lc(sr, row, cache)
+        except Exception as e:  # fall back to the paper's depth and duration
+            res["ref_error"] = f"S{s}: {e}"
+            continue
         if t.min() - 0.5 <= c.t0 <= t.max() + 0.5:
             t, f = detrend(t, f, dur_d)
             ref = core.refine_event(t, f, c.t0, dur_d)
@@ -545,13 +549,19 @@ def step_report(cands, work, args):
     hits.to_csv(out / "shortlist.csv", index=False)
 
     cov = pd.read_csv(work / "coverage.csv")
+    # tess-point lists scheduled sectors too; count only those up to the latest
+    # sector that has any light curve on MAST, i.e. already observed
+    lc_secs = [int(x.split(":")[0]) for v in cov["lc_sectors"].dropna() for x in str(v).split()]
+    last_sec = max([x for x in lc_secs if x < 1000], default=0)
+    missing = cov.get("pointed_no_lc_ge61", pd.Series(dtype=str)).fillna("").astype(str)
+    n_missing = int(missing.apply(lambda v: any(int(float(x)) <= last_sec for x in v.split())).sum())
     lines = ["# Second-transit shortlist", "",
              f"Candidates in: {len(cands)}. TICs with S>={FIRST_NEW_SECTOR} light curves: "
              f"{int((cov.get('n_new_lc', 0) > 0).sum())} of {len(cov)}. "
              f"Events passing cuts: {len(hits)}. TICs that tess-point says were observed in "
-             f"S>={FIRST_NEW_SECTOR} with no light curve on MAST yet: "
-             f"{int(cov.get('pointed_no_lc_ge61', pd.Series(dtype=str)).fillna('').astype(str).str.strip().ne('').sum())} "
-             f"(see coverage.csv; these need FFI extraction, e.g. TESSCut).", "",
+             f"S{FIRST_NEW_SECTOR}-S{last_sec} with no light curve on MAST yet: {n_missing} "
+             f"(see pointed_no_lc_ge61 in coverage.csv, which also lists scheduled sectors; "
+             f"these need FFI extraction, e.g. TESSCut).", "",
              f"Cuts: SNR >= {args.snr_min}, depth ratio {args.depth_lo}-{args.depth_hi}, "
              f"duration ratio {args.dur_lo}-{args.dur_hi}, SNR >= {args.anti_ratio} x strongest brightening.",
              ""]
