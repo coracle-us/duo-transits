@@ -1,0 +1,10 @@
+numpy
+pandas
+scipy
+astropy
+astroquery
+lightkurve>=2.4
+matplotlib
+wotan
+tess-point
+requests

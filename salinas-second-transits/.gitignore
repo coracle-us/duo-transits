@@ -1,0 +1,11 @@
+# Local environment and downloads (re-creatable)
+.venv/
+work/lc_cache/
+work/lc/
+work/per_cand/
+work/exofop_*.csv
+singletransiters/
+.venv-cnn/
+
+# Full paper text: no open licence stated, keep it local (re-fetch from arXiv 2610.24882)
+salinas_2610.24882_fulltext.txt
