@@ -627,8 +627,8 @@ def step_cnn(cands, work, args):
             sr = lk.search_lightcurve(f"TIC {h.tic}", sector=int(s), author=h.author)
             if len(sr) == 0:
                 continue
-            lc = preprocess_lc(pick_lightcurve(sr[0].download()))
-            try:
+            try:  # their preprocess_lc can fail in lc.bin() on some QLP files
+                lc = preprocess_lc(pick_lightcurve(sr[0].download()))
                 r = _run_inference_on_lc(lc, tc, plot=False)
                 rows.append(dict(cand_id=h.cand_id, tic=h.tic, sector=s, which=label,
                                  **{k: r[k] for k in ("depth_ppm", "sigma_depth", "duration_h",
