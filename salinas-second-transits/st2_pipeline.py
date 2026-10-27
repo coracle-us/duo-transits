@@ -539,7 +539,13 @@ def step_report(cands, work, args):
     out = Path(args.out)
     (out / "plots").mkdir(parents=True, exist_ok=True)
     ev = pd.read_csv(work / "events_all.csv")
-    hits = ev[ev["passes"] == True].sort_values("snr", ascending=False).drop_duplicates("cand_id")
+    passing = ev[ev["passes"] == True].sort_values("snr", ascending=False)
+    hits = passing.drop_duplicates("cand_id")
+    # the other passing events, so a lower-SNR but cleaner dip is not hidden
+    others = {cid: g.iloc[1:] for cid, g in passing.groupby("cand_id")}
+    hits["n_passing_events"] = [len(others[c]) + 1 for c in hits["cand_id"]]
+    hits["other_passing"] = [";".join(f"S{int(o.sector)}:{o.t2:.4f}:snr{o.snr:.1f}"
+                                      for o in others[c].itertuples()) for c in hits["cand_id"]]
     toi = pd.read_csv(work / "toi_match.csv", dtype=str).fillna("") if (work / "toi_match.csv").exists() else None
     al = pd.read_csv(work / "aliases_summary.csv") if (work / "aliases_summary.csv").exists() else None
     if toi is not None:
@@ -581,6 +587,12 @@ def step_report(cands, work, args):
             notes.append(f"event {h.edge_dist_d:.2f} d from a gap or sector edge, check systematics")
         if h.frac < 0.8:
             notes.append(f"only {h.frac:.0%} of the transit window has data")
+        for o in others[h.cand_id].itertuples():
+            flags = [x for x, bad in (("near edge", o.edge_dist_d < 0.5),
+                                      (f"{o.frac:.0%} covered", o.frac < 0.8)) if bad]
+            notes.append(f"also passes: S{int(o.sector)} T={o.t2:.4f} SNR {o.snr:.1f}, depth ratio "
+                         f"{o.depth_ratio:.2f}, duration ratio {o.dur_ratio:.2f}"
+                         + (f" ({', '.join(flags)})" if flags else ""))
         a = ""
         if al is not None and pd.notna(getattr(h, "n_allowed", np.nan)):
             a = (f" dT = {h.dT_d:.2f} d, so P <= {h.dT_d:.2f} d. Aliases: {int(h.n_allowed)} allowed, "
