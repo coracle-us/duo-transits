@@ -17,6 +17,7 @@ import argparse
 import json
 import re
 import sys
+import threading
 import warnings
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -30,6 +31,10 @@ warnings.filterwarnings("ignore")
 
 FIRST_NEW_SECTOR = 61
 AUTHOR_RANK = {"SPOC": 0, "TESS-SPOC": 1, "QLP": 2}
+# lightkurve's download() swaps sys.stdout for devnull and back, which is not
+# thread-safe (a thread can restore another's closed devnull and kill print).
+# Holding this lock also stops two candidates on one star fetching the same file.
+DOWNLOAD_LOCK = threading.Lock()
 
 COLUMN_ALIASES = {
     "tic": ["tic", "tic_id", "ticid", "tic id", "id"],
@@ -136,7 +141,8 @@ def pointing_sectors(tic, ra, dec):
 
 def load_sector_lc(sr, row, cache_dir):
     """Download one sector, return (t, f) normalised, quality-masked, NaN-free."""
-    lc = sr[row["idx"]].download(quality_bitmask="default", download_dir=str(cache_dir))
+    with DOWNLOAD_LOCK:
+        lc = sr[row["idx"]].download(quality_bitmask="default", download_dir=str(cache_dir))
     lc = lc.remove_nans().normalize()
     t = np.asarray(lc.time.value, float)
     f = np.asarray(lc.flux.value, float)
@@ -432,7 +438,7 @@ def all_lc_for_tic(tic, work, dur_d):
 
 
 def step_aliases(cands, work, args):
-    ev = pd.read_csv(work / "events_all.csv")
+    ev = pd.read_csv(work.resolve() / "events_all.csv")
     hits = ev[ev["passes"] == True].sort_values("snr", ascending=False)
     hits = hits.drop_duplicates("cand_id")  # best event per candidate
     cov = pd.read_csv(work / "coverage.csv").set_index("tic")
@@ -524,7 +530,7 @@ def plot_hit(h, work, outdir):
 def step_report(cands, work, args):
     out = Path(args.out)
     (out / "plots").mkdir(parents=True, exist_ok=True)
-    ev = pd.read_csv(work / "events_all.csv")
+    ev = pd.read_csv(work.resolve() / "events_all.csv")
     hits = ev[ev["passes"] == True].sort_values("snr", ascending=False).drop_duplicates("cand_id")
     toi = pd.read_csv(work / "toi_match.csv", dtype=str).fillna("") if (work / "toi_match.csv").exists() else None
     al = pd.read_csv(work / "aliases_summary.csv") if (work / "aliases_summary.csv").exists() else None
