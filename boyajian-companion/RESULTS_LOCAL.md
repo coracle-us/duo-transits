@@ -61,3 +61,16 @@ window 3.
 - ASAS-SN is down for maintenance (since 13 Oct) and IRSA ZTF queries are broken today, so
   there is no per-window summary yet. It needs the AAVSO CSV (window 3) plus a rerun when
   ASAS-SN is back (2021/2023 epochs).
+
+## Later on 2026-10-27 (round 2 session)
+- `ground_check.py` statistic fixed (0968e1f). Points in the transit core were treated as
+  independent, and AAVSO time-series observers share one nightly zero point across ~100 points
+  a night. On synthetic nightly noise the old statistic gave 37% "excluded" and 26%
+  "consistent" (false dips). Each group's core is now one mean, with the error taken from that
+  group's nightly-mean scatter. The old numbers are still printed for comparison.
+  `test_ground_check.py` checks this offline.
+- ZTF: IRSA works again, but **ZTF has no source at the star** (past saturation). Within 10"
+  there is only a G ~ 19-20 neighbour 8" away. ZTF can't test any window.
+- ASAS-SN Sky Patrol: still down (same 13 Oct maintenance banner, no block servers).
+- AAVSO: the Photometry (AID) search returned a server error ("An Error Occurred", AAVSO's side).
+  The window 3 test is still waiting on `aavso_kic8462852.csv`.
