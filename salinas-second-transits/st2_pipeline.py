@@ -143,6 +143,10 @@ def load_sector_lc(sr, row, cache_dir):
     """Download one sector, return (t, f) normalised, quality-masked, NaN-free."""
     with DOWNLOAD_LOCK:
         lc = sr[row["idx"]].download(quality_bitmask="default", download_dir=str(cache_dir))
+    if row["author"] == "QLP":
+        # QLP sets its own flags (bits 29-30) that lightkurve's TESS mask ignores;
+        # those cadences can sit at ~10% flux. QLP's advice is QUALITY == 0.
+        lc = lc[lc.quality == 0]
     lc = lc.remove_nans().normalize()
     t = np.asarray(lc.time.value, float)
     f = np.asarray(lc.flux.value, float)
