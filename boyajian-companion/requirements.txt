@@ -1,0 +1,7 @@
+numpy
+pandas
+astropy
+astroquery
+matplotlib
+requests
+skypatrol    # provides the pyasassn module; the old "pyasassn" 0.6.4 package no longer talks to the server
