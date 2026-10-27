@@ -5,9 +5,9 @@ Salinas et al., "Single-Transit Parameter Estimation with Calibrated Uncertainti
 (arXiv 2610.24882). Each hit becomes a new duotransit whose period aliases can be
 resolved the usual way, and a set of them could make a Research Note of the AAS.
 
-Nothing here has touched real TESS data yet. The cloud session that built it could
-not reach MAST or ExoFOP, so the pipeline was only checked end to end on fake light
-curves (`tests/test_synthetic.py`). Run it on your Mac.
+Round 1 ran on Windows (commit 73ff358); round 2 (FOLLOWUP_BRIEF_2026-10-27) ran on
+macOS and reproduced round 1 before the round 2 changes. `tests/test_synthetic.py`
+checks every step end to end on fake light curves.
 
 ## What's here
 
@@ -20,6 +20,10 @@ curves (`tests/test_synthetic.py`). Run it on your Mac.
 | `st2core.py` | Box search, alias and period-limit maths, no network. |
 | `tests/test_synthetic.py` | Injects transits into fake sectors, runs every step with MAST mocked, checks it finds them. |
 | `run_all.sh` | Makes a venv, installs, runs the test, then the full pipeline. |
+| `period_hypotheses.csv` | Periods to tabulate epoch by epoch in the alias step. |
+| `cnn_extra.csv` | Extra transits for the CNN step. |
+| `tesscut_phot.py` | TESScut cutouts: aperture photometry, difference images, centroids. |
+| `round2/` | One-off round 2 analyses (sections 4, 5, 6, 8 of the brief); outputs in `results/round2/`. |
 
 ## Run it
 
@@ -43,12 +47,19 @@ By default only `single` and `multiplanet` rows are searched; the multi-transit 
 already have a BLS period. Use `--types all` to include them. If MAST throttles you,
 use `--workers 1`.
 
+On macOS make the venv with Python 3.12 (`uv venv --python 3.12 .venv`, then
+`uv pip install -r requirements.txt`); `run_all.sh` uses an existing `.venv`. numba
+only has its non-thread-safe workqueue layer there, so wotan calls are serialised
+behind a lock; downloads still run in parallel.
+
 ## What each step does
 
 1. coverage: TIC lookup (coordinates, R*, M*), every TESS light curve MAST has
    (SPOC, then TESS-SPOC, then QLP per sector) and tess-point pointings. Writes
    `work/coverage.csv`, including `pointed_no_lc_ge61`: sectors 61+ where the star
    fell on silicon but no light curve exists yet (would need TESSCut or TGLC).
+   "Sector 1751" is the 7.2 d 3I/ATLAS special pointing (2026 Jan 15-22): real data,
+   listed under `special_sectors`, used by the alias step but not searched as new.
 2. search: remeasures the paper's event with the same detrending, then slides a box
    of that duration across each new sector (biweight detrend, window 4x duration).
    Noise is the scatter of duration-long bins, so red noise counts. An event passes
@@ -58,11 +69,19 @@ use `--workers 1`.
 3. toi: downloads the ExoFOP TOI and CTOI lists and flags any candidate that has
    since become a TOI or CTOI, and whether that TOI's ephemeris passes through the
    paper's event.
-4. aliases: for each hit, every P = (T2 - T1)/n down to 1 d, checked against all
-   TESS sectors of that star. An alias is `excluded` if a predicted transit falls in
-   data and isn't there, `supported` if one is there (a third transit, so worth a
-   look first), `allowed` otherwise, and `allowed_below_pmin` if shorter than the
-   shortest circular orbit that can give that duration for the TIC star.
+4. aliases: T2 is the highest-SNR *clean* passing event (at least 0.5 d from a gap
+   and 80% covered; top SNR only if none is clean). Every P = (T2 - T1)/n down to
+   1 d is checked against all TESS sectors of that star. Only clean predicted epochs
+   count: an alias is `excluded` if one has a box depth below
+   max(depth0 - 3 sigma, 0.5 depth0), `supported` if one matches depth0 (a third
+   transit), `allowed` otherwise, and `allowed_below_pmin` if shorter than the
+   shortest circular orbit that can give that duration for the TIC star. Partly
+   covered or near-edge epochs are `inconclusive`. Coverage counts each point's own
+   cadence, so 30-min early sectors are used. Also: a common-period test for
+   candidates with 2+ distinct events (`work/common_period.csv`, flags `periodic`
+   and `chance`), per-epoch tables `work/aliases/<cand>_epochs.csv` for the period
+   hypotheses and surviving aliases, `work/aliases/hypotheses_summary.csv`, and plots
+   of each excluding epoch in `results/epoch_plots/`.
    Writes `work/aliases/<cand>.csv` and `work/aliases_summary.csv`.
 5. report: `results/shortlist.csv`, `results/shortlist.md` and a plot per hit
    (paper event, new event, full new sector).
@@ -72,14 +91,14 @@ use `--workers 1`.
 
    ```bash
    git clone https://github.com/helemysm/singletransiters
-   python st2_pipeline.py cnn --candidates candidates.csv --cnn-repo singletransiters
+   uv venv --python 3.10 .venv-cnn && uv pip install --python .venv-cnn/bin/python -r singletransiters/requirements.txt
+   .venv-cnn/bin/python st2_pipeline.py cnn --candidates candidates.csv --cnn-repo singletransiters
    ```
 
-   Run it with the CNN environment's Python, not the pipeline's. On the first real run
-   (Windows, Python 3.10, torch 2.14 CPU, lightkurve 2.5.1, astropy 6.0.1) it reproduced
-   the repo's TOI-5542 b example but failed on 16 of 36 QLP events inside their
-   `preprocess_lc` (`LightCurve.bin()`: "output array is read-only"); those get an
-   `error` row in `work/cnn_new_events.csv`.
+   It fits every passing event, the paper event of each such candidate, and anything
+   in `cnn_extra.csv`. QLP files from S94 on carry a read-only column that broke
+   their `preprocess_lc` (`LightCurve.bin()`: "output array is read-only", 16 failures
+   in round 1); the wrapper now rebuilds the light curve from copied arrays first.
 
 ## Reading the results
 
@@ -96,8 +115,13 @@ use `--workers 1`.
   difference image (TESSCut or TGLC), nearby stars in Gaia, odd/even and secondary
   eclipse checks across the two events, and the paper's own notes on blends.
 
-## Untested here
+## Known limits
 
-MAST, ExoFOP and the CNN step could not be run in the cloud session. The light curve
-download, TIC query and ExoFOP column handling follow the libraries' documented
-interfaces but haven't seen real responses. If a step errors, it's most likely there.
+- The alias exclusion rule treats an epoch more than 3 sigma shallower than the
+  reference as "no transit". For high-SNR signals measured with different pipelines
+  (TESS-SPOC reference, QLP epochs) that excludes true periods whose epochs hold
+  transits at 60-80% of the reference depth. See the round 2 summary before
+  trusting an `excluded` status for a strong signal.
+- TESScut times are barycentre-corrected for another direction than the target (up
+  to ~25 s off); `round2/s6_qlp_times.py` shows how to correct them with the JPL
+  Horizons TESS ephemeris.
