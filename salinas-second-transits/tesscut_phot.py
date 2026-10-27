@@ -15,7 +15,8 @@ def cutout(ra, dec, sector, cache_dir, size=15):
     import lightkurve as lk
     cache_dir = Path(cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
-    hits = sorted(cache_dir.glob(f"*s{sector:04d}*{ra:.6f}*{dec:.6f}*{size}x{size}*.fits"))
+    # lightkurve saves cutouts under <download_dir>/tesscut/
+    hits = sorted(cache_dir.glob(f"**/tess-s{sector:04d}-*_{ra:.6f}_{dec:.6f}_{size}x{size}_astrocut.fits"))
     if hits:
         return lk.read(hits[0])
     sr = lk.search_tesscut(f"{ra} {dec}", sector=int(sector))
