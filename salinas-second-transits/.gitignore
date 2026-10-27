@@ -9,3 +9,7 @@ singletransiters/
 
 # Full paper text: no open licence stated, keep it local (re-fetch from arXiv 2610.24882)
 salinas_2610.24882_fulltext.txt
+work/lc_cache/
+work/cnn_cache/
+work/aliases/
+*.log

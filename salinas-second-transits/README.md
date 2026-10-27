@@ -75,6 +75,12 @@ use `--workers 1`.
    python st2_pipeline.py cnn --candidates candidates.csv --cnn-repo singletransiters
    ```
 
+   Run it with the CNN environment's Python, not the pipeline's. On the first real run
+   (Windows, Python 3.10, torch 2.14 CPU, lightkurve 2.5.1, astropy 6.0.1) it reproduced
+   the repo's TOI-5542 b example but failed on 16 of 36 QLP events inside their
+   `preprocess_lc` (`LightCurve.bin()`: "output array is read-only"); those get an
+   `error` row in `work/cnn_new_events.csv`.
+
 ## Reading the results
 
 - Box depths and durations are screening numbers. They run a little shallow and
