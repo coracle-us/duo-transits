@@ -561,11 +561,55 @@ def plot_epochs(h, P, rows, t, f, outdir):
     return name
 
 
+def distinct_events(g, merge_d=0.5):
+    """Passing event times with events within merge_d of a higher-SNR one dropped."""
+    kept = []
+    for t2 in g.sort_values("snr", ascending=False)["t2"]:
+        if all(abs(t2 - k) > merge_d for k in kept):
+            kept.append(t2)
+    return sorted(kept)
+
+
+def common_periods(passing, work, p_floor):
+    """Best common period for every candidate with 2+ distinct passing events.
+
+    flag: 'periodic' when k >= 4, k/N >= 0.8 and P >= 5 d; 'chance' when the
+    best P is under 3 d (dips that only line up at short periods). One stray
+    dip can let a short chance period beat the true one, so the best P >= 5 d
+    is recorded too (cp_long_*).
+    """
+    rows = []
+    for cid, g in passing.groupby("cand_id"):
+        times = distinct_events(g)
+        if len(times) < 2:
+            continue
+        h = g.iloc[0]
+        cp = core.common_period(h.t1, times, h.dur_ref_h / 24, p_floor)
+        lp = core.common_period(h.t1, times, h.dur_ref_h / 24, max(p_floor, 5.0))
+        flag = ""
+        if np.isfinite(cp["P"]):
+            if cp["k"] >= 4 and cp["k"] / cp["N"] >= 0.8 and cp["P"] >= 5:
+                flag = "periodic"
+            elif cp["P"] < 3:
+                flag = "chance"
+        rows.append(dict(cand_id=cid, tic=h.tic, cp_n_distinct_events=len(times), cp_N=cp["N"],
+                         cp_k=cp["k"], cp_period_d=cp["P"], cp_flag=flag,
+                         cp_matched=";".join(f"{x:.3f}" for x in cp.get("matched", [])),
+                         cp_long_period_d=lp["P"], cp_long_k=lp["k"]))
+    df = pd.DataFrame(rows, columns=["cand_id", "tic", "cp_n_distinct_events", "cp_N", "cp_k",
+                                     "cp_period_d", "cp_flag", "cp_matched", "cp_long_period_d", "cp_long_k"])
+    df.to_csv(work / "common_period.csv", index=False)
+    print(f"wrote {work/'common_period.csv'}: {len(df)} candidates with 2+ distinct events, "
+          f"{int((df['cp_flag'] == 'periodic').sum())} periodic, {int((df['cp_flag'] == 'chance').sum())} chance")
+    return df
+
+
 def step_aliases(cands, work, args):
     ev = pd.read_csv(work / "events_all.csv")
     passing = ev[ev["passes"] == True]
     hits = alias_events(passing)
     hyp = load_hypotheses(getattr(args, "hypotheses", None))
+    cps = common_periods(passing, work, args.p_floor).set_index("cand_id")
     hyp_rows = []
     cov = pd.read_csv(work / "coverage.csv").set_index("tic")
     (work / "aliases").mkdir(exist_ok=True)
@@ -592,6 +636,11 @@ def step_aliases(cands, work, args):
         for P0 in hyp.get(h.tic, []):
             P, k, N = core.refine_period(h.t1, times, P0, dur_d)
             periods.append((P, f"hypothesis {P0:g} d ({k}/{N} events match)", P0))
+        if h.cand_id in cps.index and np.isfinite(cps.loc[h.cand_id, "cp_period_d"]):
+            c = cps.loc[h.cand_id]
+            Pc, kc = (c.cp_period_d, c.cp_k) if c.cp_period_d >= 5 else (c.cp_long_period_d, c.cp_long_k)
+            if np.isfinite(Pc) and all(abs(Pc - q[0]) > 1e-4 for q in periods):
+                periods.append((Pc, f"common period ({kc}/{c.cp_N} events match)", Pc))
         periods += [(r.period_d, f"alias n={r.n} ({r.status})", None)
                     for r in ok.itertuples()]
         erows = []
@@ -701,11 +750,14 @@ def step_report(cands, work, args):
                                       for o in others[c].itertuples()) for c in hits["cand_id"]]
     toi = pd.read_csv(work / "toi_match.csv", dtype=str).fillna("") if (work / "toi_match.csv").exists() else None
     al = pd.read_csv(work / "aliases_summary.csv") if (work / "aliases_summary.csv").exists() else None
+    cp = pd.read_csv(work / "common_period.csv") if (work / "common_period.csv").exists() else None
     if toi is not None:
         hits = hits.merge(toi.drop(columns=["tic"]), on="cand_id", how="left")
     if al is not None and len(al):
         hits = hits.merge(al.drop(columns=["tic", "n_clean_events", "alias_event_reason"], errors="ignore"),
                           on="cand_id", how="left")
+    if cp is not None and len(cp):
+        hits = hits.merge(cp.drop(columns=["tic"]), on="cand_id", how="left")
     paper = cands.set_index("cand_id")[["depth_ppm", "duration_h"]].rename(
         columns={"depth_ppm": "paper_depth_ppm", "duration_h": "paper_dur_h"})
     hits = hits.merge(paper, left_on="cand_id", right_index=True, how="left")
@@ -738,6 +790,11 @@ def step_report(cands, work, args):
         if h.tic in PAPER_NOTES:
             notes.append(PAPER_NOTES[h.tic])
         notes.append(f"alias event: {h.alias_event_reason}")
+        if pd.notna(getattr(h, "cp_period_d", np.nan)):
+            notes.append(f"common period {h.cp_period_d:.4f} d matches {int(h.cp_k)} of {int(h.cp_N)} "
+                         f"events incl. the paper's" + (f" [{h.cp_flag}]" if h.cp_flag == h.cp_flag and h.cp_flag else "")
+                         + (f"; best P >= 5 d: {h.cp_long_period_d:.4f} d, {int(h.cp_long_k)} of {int(h.cp_N)}"
+                            if pd.notna(h.cp_long_period_d) and abs(h.cp_long_period_d - h.cp_period_d) > 1e-4 else ""))
         if h.edge_dist_d < 0.5:
             notes.append(f"event {h.edge_dist_d:.2f} d from a gap or sector edge, check systematics")
         if h.frac < 0.8:

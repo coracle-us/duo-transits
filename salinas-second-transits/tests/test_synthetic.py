@@ -62,8 +62,19 @@ def check_edge_epochs_inconclusive():
     assert v["verdict_any_coverage"][0] == "excludes"
 
 
+def check_common_period():
+    """Four later dips on a 23.75 d ephemeris through T1 give that period; a stray dip
+    lets a short chance period win overall, but not among P >= 5 d."""
+    times = [2396.13 + 23.7535 * k + d for k, d in ((30, 0.02), (31, -0.03), (33, 0.01), (40, 0.0))]
+    cp = pl.core.common_period(2396.13, times, 4 / 24)
+    assert cp["k"] == 5 and cp["N"] == 5 and abs(cp["P"] - 23.7535) < 0.01, cp
+    lp = pl.core.common_period(2396.13, times + [3000.4], 4 / 24, p_floor=5.0)
+    assert lp["k"] == 5 and lp["N"] == 6 and abs(lp["P"] - 23.7535) < 0.01, lp
+
+
 def main():
     check_alias_event_choice()
+    check_common_period()
     check_edge_epochs_inconclusive()
     work = Path(tempfile.mkdtemp())
     out = work / "results"

@@ -241,6 +241,33 @@ def _matches(t1, x, P, dur_d):
     return np.abs(ph - np.round(ph)) * P < dur_d / 2
 
 
+def common_period(t1, times, dur_d, p_floor=1.0):
+    """Period through t1 and the most events.
+
+    Tries every P = (t_e - t1)/n >= p_floor for each event t_e and counts how
+    many of t1 and the events fall within half a duration of the predicted
+    epochs. Returns the best P with k matched out of N; ties go to the longest
+    P (a period and its fractions match the same events).
+    """
+    x = np.concatenate([[t1], np.asarray(times, float)])
+    best = dict(P=np.nan, k=0, N=int(x.size))
+    for te in times:
+        dt = abs(te - t1)
+        if dt < dur_d:
+            continue
+        P = dt / np.arange(1, int(dt // p_floor) + 1)
+        if not P.size:
+            continue
+        ph = (x[None, :] - t1) / P[:, None]
+        k = (np.abs(ph - np.round(ph)) * P[:, None] < dur_d / 2).sum(1)
+        i = int(np.argmax(k))  # P falls with n, so the first maximum is the longest P
+        if k[i] > best["k"] or (k[i] == best["k"] and P[i] > best["P"]):
+            best.update(P=float(P[i]), k=int(k[i]))
+    if np.isfinite(best["P"]):
+        best["matched"] = x[_matches(t1, x, best["P"], dur_d)].tolist()
+    return best
+
+
 def refine_period(t1, times, P0, dur_d, tol=0.01):
     """Sharpen a quoted period P0 to the exact (t_e - t1)/n that matches most events.
 
