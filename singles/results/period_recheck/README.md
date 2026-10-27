@@ -104,6 +104,12 @@ describes what was done.
 > A re-check in which every repeat may anchor trial periods changes no classification; for 6 of the
 > 23 stars without a single period, a period explains all but one repeat.
 
-**Open follow-up.** Hand-vet the left-out repeats of 140215502, 162031311 and 76140400 (on-target or
-inconclusive, Gaia-clean, pipeline-product repeats). If one proves spurious, the 23 / 17 split
-would shift in a future version, not in AAS82207 as submitted.
+**Follow-up: hand vetting (2026-10-12).** Details are in `../vetting/hidden_periods/README.md`.
+
+| TIC | Verdict |
+|---|---|
+| 140215502 | Tentative lead, P = 297.32/m (297.3, 148.7, 99.1, 74.3 or 49.6 d). The S5 repeat is compromised; the third transit is in own S107 photometry only |
+| 162031311 | Duotransit: S83 is likely spurious; P = 1084.31/n (24 aliases) |
+| 76140400 | Rejected: the CTOI event is PDC-only, and the S40 dips are stray-light/blend systematics |
+
+Pipeline classes are unchanged (MANUAL notes only), so AAS82207 is unaffected as submitted.

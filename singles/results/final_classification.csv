@@ -68,7 +68,7 @@ TIC,run,CTOI,Tmag,depth_ppm,dur_h,n_repeats,n_candidate_periods,periods,frac_log
 136798415,full,136798415.01,11.0578,2350.0,5.8,0,0,,0.4,10.728689134043107,inconclusive,,False,0.93,,single,
 138707225,full,138707225.01,9.4964,590.15,9.4,0,0,,0.53,12.828505535316358,off-target (possible),0.133,False,1.05,,single,
 139726266,full,139726266.01,9.7244,1210.0,5.4,1,27,2108.9993 1054.4996 702.9998 527.2498 421.7999 351.4999,0.64,29.730309796487912,inconclusive,,False,1.19,106 107 108,duotransit / narrowed,"tentative: 2nd transit only in own S107 photometry (depth 1.07); Rp~2.8 Re on K dwarf; diff images inconclusive; G=16.1 star at 6.7"" -> recheck list"
-140215502,full,140215502.01,11.2322,3850.0,6.936,3,0,,0.69,46.4365581754692,on-target,,False,1.1,107 108,repeats-inconsistent,
+140215502,full,140215502.01,11.2322,3850.0,6.936,3,0,,0.69,46.4365581754692,on-target,,False,1.1,107 108,repeats-inconsistent,"tentative: S32+S87+S107(own) on one ephemeris (O-C 10 min, chance ~0.5%), depths/durations agree; P = 297.32/m, m=1,2,3,4,6; S5 dip 0.7x deep with a mid-transit dump, not on it; TFOP chased S5+S32 (146.78 d), inconclusive; Rp~6.7 Re"
 1461133,full,1461133.01,15.4872,1274.03,4.6,0,0,,0.02,4.999999999999999,inconclusive,,False,0.95,103,event-not-recovered,
 152406952,full,152406952.01,11.7338,5994.06,2.6,0,0,,0.6,29.61745554216687,off-target (possible),0.172,False,0.95,108,single,
 158209498,full,158209498.01,9.4343,420.0,18.53,3,0,,0.56,14.65497887406042,inconclusive,,False,1.01,105,repeats-inconsistent,
@@ -76,7 +76,7 @@ TIC,run,CTOI,Tmag,depth_ppm,dur_h,n_repeats,n_candidate_periods,periods,frac_log
 159614322,full,159614322.01,11.175,3130.0,8.773,1,5,719.6572 359.8286 179.9143 143.9314 89.9571,0.74,80.9878006374644,on-target,,False,1.51,,duotransit / narrowed,"LEAD: 2nd transit S14 (TESS-SPOC) of S41 event; depths 0.99/1.00, all products agree, on target, independent re-check agrees; Rp~0.96 RJ; 5 aliases 719.66/n, n=1,2,4,5,8; RUWE 1.51"
 160041500,full,160041500.01,10.1395,2460.0,8.544,6,0,,0.61,28.81197283927908,off-target (firm),0.051,False,0.97,,off-target-EB,
 160363,full,160363.01,11.1398,2923.33,3.144,0,0,,0.52,25.317193174210974,inconclusive,,False,1.23,,single,
-162031311,full,162031311.01,11.195,2619.0,6.34,2,0,,0.54,24.027291948406212,on-target,,False,1.2,,repeats-inconsistent,
+162031311,full,162031311.01,11.195,2619.0,6.34,2,0,,0.54,24.027291948406212,on-target,,False,1.2,,repeats-inconsistent,"duotransit: S16 matches the S56 event in 3 reductions (S16 stray-light flagged); S83 1.8x deep after a gap at a dump, likely systematic; P = 1084.31/n, 24 aliases 24.1-1084.3 d; Rp~9 Re"
 16326602,full,16326602.01,12.8855,14823.72,3.73,0,0,,0.64,20.383054074463622,inconclusive,,False,0.95,,single,
 167456277,full,167456277.01,11.4067,1790.0,6.456,0,0,,0.52,17.03048162443952,inconclusive,,False,3.84,108,single,
 167653919,full,167653919.01,10.5771,798.34,6.87,0,0,,0.83,119.82394629944474,on-target,,False,0.88,,single,
@@ -270,7 +270,7 @@ TIC,run,CTOI,Tmag,depth_ppm,dur_h,n_repeats,n_candidate_periods,periods,frac_log
 67884964,full,67884964.01,10.9795,1170.0,5.8,2,1,14.4203,0.41,8.70369656435677,on-target,,False,1.02,,periodic-on-target,"14.42 d rejected on vetting: no dips at predicted S20/S60 epochs, depth chi2 46/4, QLP 0.34x; submitter (PHT) notes the S47 dip at TJD~2589 is background -> S47 'repeats' likely systematics"
 69745398,full,69745398.01,9.82195,1090.0,17.136,1,19,1842.2343 921.1172 614.0781 460.5586 307.0390 263.1763,0.56,23.086712046605637,on-target,,False,0.98,,duotransit / narrowed,not confirmed: S96 repeat absent in independent re-check; S28 dip shorter than the 17 h catalogued duration
 75577433,full,75577433.01,10.935,1446.0,3.26,13,0,,0.34,5.695611628680867,off-target (possible),0.024,True,0.74,,EB-on-target (Gaia),
-76140400,full,76140400.01,10.6226,910.0,13.608,2,0,,0.6,28.028396217544284,inconclusive,,False,0.88,,repeats-inconsistent,
+76140400,full,76140400.01,10.6226,910.0,13.608,2,0,,0.6,28.028396217544284,inconclusive,,False,0.88,,repeats-inconsistent,"rejected: S26 event only in SPOC PDC (absent in SAP, TESS-SPOC, own); S40 dips stray-light flagged, V-shaped, centroid shifts 7-8 sigma, depth doubles in own photometry"
 76804724,full,76804724.01,12.9015,13853.0,2.07,13,0,,0.55,18.65810259865201,inconclusive,,False,2.31,,repeats-inconsistent,
 77560191,full,77560191.01,12.0941,4591.98,8.2,0,0,,0.51,21.456904300420593,inconclusive,,False,1.27,,single,
 7984988,full,7984988.01,11.9218,2809.31,5.8,0,0,,0.52,20.75461977563317,inconclusive,,False,1.12,,single,

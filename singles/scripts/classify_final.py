@@ -62,6 +62,15 @@ MANUAL = {
     337665591: "rejected: depths differ (chi2 12.5/1), crowded field, S66 diff image 8.4\" off at SNR 11",
     365250897: "rejected: depths differ (chi2 40/1), QLP shows no dip",
     51079186: "rejected: depths inconsistent across epochs and products (chi2 22/4)",
+    # hand vetting of hidden periods from the robust_periods re-check, 2026-10-12
+    # (singles/results/vetting/hidden_periods/README.md)
+    140215502: "tentative: S32+S87+S107(own) on one ephemeris (O-C 10 min, chance ~0.5%), depths/durations agree; "
+               "P = 297.32/m, m=1,2,3,4,6; S5 dip 0.7x deep with a mid-transit dump, not on it; TFOP chased S5+S32 "
+               "(146.78 d), inconclusive; Rp~6.7 Re",
+    162031311: "duotransit: S16 matches the S56 event in 3 reductions (S16 stray-light flagged); S83 1.8x deep after "
+               "a gap at a dump, likely systematic; P = 1084.31/n, 24 aliases 24.1-1084.3 d; Rp~9 Re",
+    76140400: "rejected: S26 event only in SPOC PDC (absent in SAP, TESS-SPOC, own); S40 dips stray-light flagged, "
+              "V-shaped, centroid shifts 7-8 sigma, depth doubles in own photometry",
 }
 
 
