@@ -15,3 +15,4 @@ work/aliases/*
 !work/aliases/*_epochs.csv
 !work/aliases/hypotheses_summary.csv
 *.log
+work/tesscut/
