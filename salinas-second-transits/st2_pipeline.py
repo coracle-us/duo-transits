@@ -826,33 +826,66 @@ def step_report(cands, work, args):
     print(f"wrote {out/'shortlist.csv'} and {out/'shortlist.md'} ({len(hits)} hits)")
 
 
+def fresh_lc(lc):
+    """The same light curve rebuilt from writable copies of time, flux, flux_err and quality.
+
+    QLP files from S94 on carry a read-only column that makes lightkurve's
+    bin() (inside the CNN's preprocess_lc) fail with "output array is read-only".
+    """
+    import lightkurve as lk
+    new = lk.LightCurve(time=lc.time.copy(), flux=np.array(lc.flux.value, copy=True) * lc.flux.unit,
+                        flux_err=np.array(lc.flux_err.value, copy=True) * lc.flux_err.unit)
+    q = getattr(lc, "quality", None)
+    if q is not None:
+        new["quality"] = np.array(getattr(q, "value", q), copy=True)
+    return new
+
+
+def cnn_targets(work, extra_path):
+    """Every passing event, the paper event of each such candidate, and extra transits."""
+    ev = pd.read_csv(work / "events_all.csv")
+    passing = ev[ev["passes"] == True]
+    rows = [dict(cand_id=h.cand_id, tic=h.tic, sector=int(h.sector), author=h.author, tc=h.t2, which="new")
+            for h in passing.itertuples()]
+    for cid, g in passing.groupby("cand_id"):
+        ref = json.loads((work / "per_cand" / f"{cid}.json").read_text()).get("ref") or {}
+        if ref.get("sector") is not None:
+            rows.append(dict(cand_id=cid, tic=int(g.tic.iloc[0]), sector=int(ref["sector"]),
+                             author=ref["author"], tc=float(g.t1.iloc[0]), which="paper"))
+    if extra_path and Path(extra_path).exists():
+        rows += pd.read_csv(Path(extra_path).resolve(), comment="#").to_dict("records")
+    return pd.DataFrame(rows).drop_duplicates(["tic", "sector", "author", "tc"])
+
+
 def step_cnn(cands, work, args):
-    """Refit each new event with the Salinas CNN (their repo, any pipeline)."""
+    """Refit events with the Salinas CNN (their repo, any pipeline)."""
     repo = Path(args.cnn_repo).resolve()
     work = work.resolve()  # before chdir, or a relative --work points into the CNN repo
+    todo = cnn_targets(work, getattr(args, "cnn_extra", None))
     sys.path.insert(0, str(repo))
     import os
     os.chdir(repo)  # their config uses repo-relative paths
     import lightkurve as lk
     from computeparams.param_inference_core import pick_lightcurve, preprocess_lc, _run_inference_on_lc
-    ev = pd.read_csv(work / "events_all.csv")
-    hits = ev[ev["passes"] == True].sort_values("snr", ascending=False).drop_duplicates("cand_id")
     rows = []
-    for h in hits.itertuples():
-        for label, s, tc in (("new", h.sector, h.t2),):
-            sr = lk.search_lightcurve(f"TIC {h.tic}", sector=int(s), author=h.author)
+    for k, h in enumerate(todo.itertuples(), 1):
+        base = dict(cand_id=h.cand_id, tic=h.tic, sector=h.sector, author=h.author, which=h.which, t_input=h.tc)
+        try:
+            sr = lk.search_lightcurve(f"TIC {h.tic}", sector=int(h.sector), author=h.author)
             if len(sr) == 0:
+                rows.append(dict(base, error="no light curve on MAST"))
                 continue
-            try:  # their preprocess_lc can fail in lc.bin() on some QLP files
-                lc = preprocess_lc(pick_lightcurve(sr[0].download()))
-                r = _run_inference_on_lc(lc, tc, plot=False)
-                rows.append(dict(cand_id=h.cand_id, tic=h.tic, sector=s, which=label,
-                                 **{k: r[k] for k in ("depth_ppm", "sigma_depth", "duration_h",
-                                                      "sigma_duration", "t_mid_pred_btjd")}))
-            except Exception as e:
-                rows.append(dict(cand_id=h.cand_id, tic=h.tic, sector=s, which=label, error=str(e)))
-    pd.DataFrame(rows).to_csv(work / "cnn_new_events.csv", index=False)
-    print("wrote cnn_new_events.csv")
+            lc = preprocess_lc(fresh_lc(pick_lightcurve(sr[0].download(download_dir=str(work / "cnn_cache")))))
+            r = _run_inference_on_lc(lc, h.tc, plot=False)
+            rows.append(dict(base, **{k_: r[k_] for k_ in ("depth_ppm", "sigma_depth", "duration_h",
+                                                           "sigma_duration", "t_mid_pred_btjd")}))
+        except Exception as e:
+            rows.append(dict(base, error=str(e)))
+        print(f"[cnn {k}/{len(todo)}] {h.cand_id} S{h.sector} {h.which}: {rows[-1].get('error', 'ok')}")
+    df = pd.DataFrame(rows)
+    df.to_csv(work / "cnn_new_events.csv", index=False)
+    n_err = int(df["error"].notna().sum()) if "error" in df else 0
+    print(f"wrote cnn_new_events.csv: {len(df) - n_err} fitted, {n_err} failed")
 
 
 def main():
@@ -875,6 +908,8 @@ def main():
     ap.add_argument("--types", default="single,multiplanet",
                     help="comma list of candidate types to search (single, multi, multiplanet, all)")
     ap.add_argument("--cnn-repo", default="singletransiters")
+    ap.add_argument("--cnn-extra", default="cnn_extra.csv",
+                    help="extra transits for the CNN step: cand_id,tic,sector,author,tc,which")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
 
