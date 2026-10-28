@@ -74,3 +74,15 @@ window 3.
 - ASAS-SN Sky Patrol: still down (same 13 Oct maintenance banner, no block servers).
 - AAVSO: the Photometry (AID) search returned a server error ("An Error Occurred", AAVSO's side).
   The window 3 test is still waiting on `aavso_kic8462852.csv`.
+
+## Rerun 2026-10-28 (brief steps 1 and 2; AAVSO export still down)
+- `kepler_alias_scan.py 770 845` (`kepler_alias_scan_2026-10-28.log`): survivors 776.17-776.60,
+  790.50-790.66, 792.08-792.92, 793.25-793.40 d, exactly the expected ranges.
+- `ground_check.py --asassn --tess --ztf` (`ground_check_2026-10-28.log`): ASAS-SN Sky Patrol
+  still in maintenance (banner of Oct 13; `asassn_status.py` says DOWN, no block servers), and
+  the client dies with ZeroDivisionError. Rerun with `--tess --ztf`: ZTF returns no rows
+  (no source at the star), so no photometry was loaded and every window is 100% untested
+  (`epoch_coverage.csv`). The window plots were empty and are not kept. ASAS-SN nights and
+  hours in window 3: unknown until Sky Patrol is back.
+- TESSCut: sectors 14, 15, 41, 54, 55, 75, 81, 82. Nothing after S82, so none covers window 3
+  (S109 misses the star, as above).
