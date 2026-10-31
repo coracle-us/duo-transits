@@ -50,7 +50,8 @@ Trial tcs total 1497, and only 35 of them were actually compared with data. All 
 | W3 n=+1 | 261 | 12 | one g:bD point; skipped, only 5 baseline points (needs 10) |
 | A776 n=+2 | 93 | 35 | one g:bt point, used; dchi2 between -1.27 and 0 |
 | A790 n=+1 | 21 | 21 | one g:bD point; skipped, only 7 baseline points (needs 10) |
-| A776 n=+1, A790 n=+2, A792 n=+1, A792 n=+2, W4, W5 | 661 | 0 | no point within 0.20 d of any tc |
+| A776 n=+1, A790 n=+2, A792 n=+1, A792 n=+2, W4, W5 | 601 | 0 | no point within 0.20 d of any tc |
+| W3 n=+2 | 521 | 0 | no data (see above) |
 
 - **Sampling is too sparse.** There is about one kept point every 4.6 days, and the transit core
   is only 0.4 d wide.
@@ -77,3 +78,8 @@ similar scatter. It comes from one group only.
 - **Not tested:** window 3 n=+2 and, in practice, every other window.
 - **AAVSO:** still the only source named so far that could test window 3. No CSV was available
   for this run.
+
+## Scheduled task
+`boyajian-asassn-recheck` could **not** be disabled from this run: the update needs a person's
+approval. It stays enabled until someone turns it off, and it will rerun this check on its next
+firing.
