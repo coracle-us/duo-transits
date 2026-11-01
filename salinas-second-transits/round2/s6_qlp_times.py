@@ -129,8 +129,11 @@ def main():
     cov = pd.read_csv(WORK / "coverage.csv").set_index("tic")
     ev = pd.read_csv(WORK / "events_all.csv")
     ev = ev[ev.passes == True]
+    # S100+ is where the QLP clock is off, so every passing event there gets a non-QLP time
+    late = ev[(ev.author == "QLP") & (ev.sector >= 100) & (ev.sector < 1000)]
+    targets = TARGETS + sorted({(int(r.tic), int(r.sector)) for r in late.itertuples()} - set(TARGETS))
     rows = []
-    for tic, sector in TARGETS:
+    for tic, sector in targets:
         try:
             rows += one_target(tic, sector, cov, ev)
         except Exception as e:

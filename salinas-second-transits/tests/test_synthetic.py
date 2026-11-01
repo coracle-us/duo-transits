@@ -65,6 +65,8 @@ def check_event_times():
         pd.DataFrame([
             dict(cand_id="a", t2_box=4000.0, tc_tesscut=4000.01, tc_tesscut_err_min=5.0),
             dict(cand_id="a", t2_box=3100.0, tc_tesscut=np.nan, tc_tesscut_err_min=np.nan),
+            dict(cand_id="a", t2_box=3100.0, tc_tesscut=3100.5, tc_tesscut_err_min=0.01),
+            dict(cand_id="a", t2_box=3100.0, tc_tesscut=3100.5, tc_tesscut_err_min=1134.0),
             dict(cand_id="a", t2_box=4050.0, tc_tesscut=4050.01, tc_tesscut_err_min=5.0),
         ]).to_csv(d / "times.csv", index=False)
         p = pl.load_passing(d, d / "times.csv").set_index("sector")

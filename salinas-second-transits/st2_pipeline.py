@@ -39,6 +39,8 @@ SPECIAL_SECTORS = {1751: "3I/ATLAS special pointing, 2026 Jan 15-22 (7.2 d)"}
 def is_new_sector(s):
     return s >= FIRST_NEW_SECTOR and s not in SPECIAL_SECTORS
 AUTHOR_RANK = {"SPOC": 0, "TESS-SPOC": 1, "QLP": 2}
+# a TESScut mid-time outside this error range (min) is a degenerate fit
+EVENT_TIME_ERR_MIN = (0.5, 30.0)
 # lightkurve's download() swaps sys.stdout for devnull and back, which is not
 # thread-safe (a thread can restore another's closed devnull and kill print).
 # Holding this lock also stops two candidates on one star fetching the same file.
@@ -320,6 +322,8 @@ def load_passing(work, times_path=None):
     if not times_path or not Path(times_path).exists():
         return p
     for r in pd.read_csv(times_path).dropna(subset=["tc_tesscut"]).itertuples():
+        if not EVENT_TIME_ERR_MIN[0] <= r.tc_tesscut_err_min <= EVENT_TIME_ERR_MIN[1]:
+            continue  # a degenerate fit: keep the box time
         m = (p["cand_id"] == r.cand_id) & ((p["t2_box"] - r.t2_box).abs() < 1e-4)
         if not m.any():
             print(f"[event times] no passing event for {r.cand_id} at {r.t2_box:.4f}; not applied")
