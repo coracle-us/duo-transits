@@ -1,0 +1,14 @@
+groups: {'ASASSN:V:bd': 211, 'ASASSN:g:bD': 321, 'ASASSN:g:bt': 283} last good point 2025-06-10 05:35:54.105
+W3 n=+2 (Oct 2026)     2026-10-18..2026-10-23 pts  0 nights  0 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {}
+W3 n=+1 (Mar 2023)     2023-03-27..2023-03-30 pts  1 nights  1 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bD': 5}
+A776 n=+1 (Oct 2021)   2021-10-18..2021-10-19 pts  0 nights  0 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bD': 8, 'ASASSN:g:bt': 7}
+A776 n=+2 (Dec 2023)   2023-12-03..2023-12-04 pts  1 nights  1 | tc with a usable group  38% | |dchi2| max    1.3 pp     1.3 | +-15 d: {'ASASSN:g:bt': 14}
+A790 n=+1 (Nov 2021)   2021-11-02..2021-11-02 pts  1 nights  1 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bD': 7, 'ASASSN:g:bt': 5}
+A790 n=+2 (Jan 2024)   2024-01-01..2024-01-02 pts  0 nights  0 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bt': 5}
+A792 n=+1 (Nov 2021)   2021-11-03..2021-11-05 pts  0 nights  0 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bD': 6, 'ASASSN:g:bt': 5}
+A792 n=+2 (Jan 2024)   2024-01-04..2024-01-07 pts  0 nights  0 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bt': 4}
+W4 n=+1 (May 2023)     2023-05-11..2023-05-11 pts  0 nights  0 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bD': 1}
+W5 n=+1 (Jun 2023)     2023-06-01..2023-06-02 pts  0 nights  0 | tc with a usable group   0% | |dchi2| max    0.0 pp     0.0 | +-15 d: {'ASASSN:g:bD': 1}
+ASASSN:V:bd nights 210 overall nightly MAD 0.0096 first-diff scatter/sqrt2 0.0068 5-sigma nights needed (from first-diff) 8.1
+ASASSN:g:bD nights 313 overall nightly MAD 0.0084 first-diff scatter/sqrt2 0.0077 5-sigma nights needed (from first-diff) 10.4
+ASASSN:g:bt nights 277 overall nightly MAD 0.0135 first-diff scatter/sqrt2 0.0129 5-sigma nights needed (from first-diff) 28.8

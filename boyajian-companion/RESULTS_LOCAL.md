@@ -86,3 +86,20 @@ window 3.
   hours in window 3: unknown until Sky Patrol is back.
 - TESSCut: sectors 14, 15, 41, 54, 55, 75, 81, 82. Nothing after S82, so none covers window 3
   (S109 misses the star, as above).
+
+## ASAS-SN back, 2026-11-01 (`ground_check.py --asassn --tess --ztf`, c6f9d01 fix)
+Sky Patrol serves light curves again (the Oct 13 banner is still shown). One source within 1″
+(id 60130747136): 939 points, 815 after the quality and error cuts. ZTF still returns no rows.
+- **Window 3: 0 ASAS-SN points, 0 nights, 0 hours.** The last point, good or bad, is
+  2025-06-10 (`asassn_raw_check_2026-11-01.log`), 16 months before the window. Whether later
+  data exist on their side and aren't served, I can't tell from here.
+- **Every window is 100% untested, under both statistics**, no tc consistent or excluded
+  (`ground_check_2026-11-01.log`, `epoch_coverage.csv`).
+- The past epochs are untested because ASAS-SN is too sparse, not because the star was quiet
+  (`asassn_window_diag_2026-11-01.log`). Those windows hold 0 or 1 points, and only A776 n=+2
+  has any tc with a group that passes the 10-point baseline cut (38% of its tcs; largest
+  |Δχ²| 1.3, against a threshold of 25).
+- Night-to-night scatter is 0.007-0.013 mag, so a 5σ test of 0.012 mag needs about 8-29 nights
+  in the core. A 0.4 d core holds one night at most, so **ASAS-SN alone can't reach the 5σ
+  threshold at any of these epochs**, even with data.
+- AAVSO remains the only source that can test window 3. Its export was last seen failing on Oct 28.

@@ -1,0 +1,29 @@
+Welcome to ASAS-SN Skypatrol!
+
+Current Deployment Version: 0.6.20 (11 SEPTEMBER 2025)
+Please upgrade your client if not up to date.
+
+The light curve service will be down for several days while we run mainanence on our cluster.
+Kyle Hart 
+13 October 2026
+
+Downloading Curves...
+Pulled 1 of 1
+['asas_sn_id', 'jd', 'flux', 'flux_err', 'mag', 'mag_err', 'limit', 'fwhm', 'image_id', 'camera', 'quality', 'phot_filter'] 939
+                            count           min           max
+phot_filter camera quality                                   
+V           bd     B           31  2.457085e+06  2.458402e+06
+                   G          211  2.457078e+06  2.458436e+06
+g           bD     B           23  2.458601e+06  2.460379e+06
+                   G          321  2.458571e+06  2.460606e+06
+            bt     B           70  2.458230e+06  2.460547e+06
+                   G          283  2.458224e+06  2.460837e+06
+               jd        mag   mag_err quality phot_filter camera
+932  2.460624e+06  12.111098  0.001160       G           g     bt
+930  2.460625e+06  12.141838  0.001239       G           g     bt
+936  2.460626e+06  12.117634  0.001236       G           g     bt
+937  2.460642e+06  12.128664  0.000788       G           g     bt
+938  2.460837e+06  12.126367  0.001835       G           g     bt
+Oct 18-24 UTC is JD 2461331.5 2461338.5 raw points in it: 0
+last raw point: 2025-06-10 05:35:54.105
+raw_exit=0
