@@ -135,7 +135,7 @@ def main():
     P = hyp.period_d.iloc[0]
     k_all = np.arange(int(np.floor((1950 - t1) / P)), int(np.ceil((3300 - t1) / P)) + 1)
     pred = pd.DataFrame(dict(k=k_all, epoch_btjd=t1 + k_all * P))
-    old = pred[(pred.epoch_btjd > 2600) & (pred.epoch_btjd < 3100)].merge(
+    old = pred[(pred.epoch_btjd > 2578) & (pred.epoch_btjd < 3100)].merge(
         hyp[["k", "sector", "pipeline", "coverage", "edge_dist_d", "box_depth_ppm", "box_depth_err_ppm",
              "verdict", "verdict_any_coverage"]], on="k", how="left")
     old["verdict"] = old["verdict"].fillna("in a gap (no data)")
