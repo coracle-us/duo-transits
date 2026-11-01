@@ -6,6 +6,12 @@ No AAVSO file was found, so this is ASAS-SN only. Nothing was posted, submitted 
 **Result: every trial tc in all 10 windows is "untested". This run excludes nothing and finds no dip.
 Window 3 n=+2 (Oct 2026) has no data at all.**
 
+## Rerun 2026-11-01
+The scheduled task fired again and repeated the same command, still without an AAVSO file. The
+log, `epoch_coverage.csv`, `ground_photometry_merged.csv` and all `win_*.png` came out byte-identical
+to the 2026-10-31 run, so everything below still holds: 939 points loaded, last point 2025-06-10,
+0 "consistent" tcs and 0 points in W3 n=+2. The banner still shows the 13 Oct maintenance message.
+
 ## Service state
 `asassn_status.py` exits 0 and lists 6 block servers, and the download worked. The server banner
 still shows the 13 Oct 2026 maintenance message. The light curve stops at 2025-06-10. I can't tell
@@ -80,6 +86,6 @@ similar scatter. It comes from one group only.
   for this run.
 
 ## Scheduled task
-`boyajian-asassn-recheck` could **not** be disabled from this run: the update needs a person's
-approval. It stays enabled until someone turns it off, and it will rerun this check on its next
-firing.
+`boyajian-asassn-recheck` could **not** be disabled from the 2026-10-31 or 2026-11-01 runs: the
+update needs a person's approval. It stays enabled until someone turns it off, and it will rerun
+this check on its next firing (next: 2026-11-02).
