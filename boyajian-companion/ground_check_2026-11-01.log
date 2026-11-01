@@ -9,11 +9,7 @@ Kyle Hart
 
 Downloading Curves...
 Pulled 1 of 1
-/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:128: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
-  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
-/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:128: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
-  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
-/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:128: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
   ax.set_title(name); ax.legend(fontsize=6, ncol=3)
 ASAS-SN id 60130747136: 939 points
   sectorName   sector camera ccd
@@ -29,10 +25,16 @@ tess-s0082-3-1     82      3   1
 W3 n=+2 (Oct 2026)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
 W3 n=+1 (Mar 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
 A776 n=+1 (Oct 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
-A776 n=+2 (Dec 2023)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
-A790 n=+1 (Nov 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
-A790 n=+2 (Jan 2024)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
-A792 n=+1 (Nov 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
-A792 n=+2 (Jan 2024)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
-W4 n=+1 (May 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
-W5 n=+1 (Jun 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+AttributeError: 'float' object has no attribute 'sqrt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py", line 153, in <module>
+    main()
+    ~~~~^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py", line 144, in main
+    r = test_window(data, *w); out.append(r)
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py", line 98, in test_window
+    sig_pt = np.sqrt(core.err.values ** 2 + mad(base.mag.values) ** 2)
+TypeError: loop of ufunc does not support argument 0 of type float which has no callable sqrt method
