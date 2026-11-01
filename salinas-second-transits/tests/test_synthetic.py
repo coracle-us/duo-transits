@@ -111,6 +111,21 @@ def check_edge_epochs_inconclusive():
     assert v["verdict_any_coverage"][0] == "excludes"
 
 
+def check_exclusion_rule():
+    """Clean epochs by depth with a known sigma: only a depth well under half depth0 excludes."""
+    t = np.arange(0, 40, CAD)
+    centers = np.array([5.0, 12.0, 19.0, 26.0, 33.0])
+    d0, sig = 5000e-6, 300e-6  # depth0 - 3 sigma = 4100 ppm, 0.5 depth0 - 3 sigma = 1600 ppm
+    f = np.ones(t.size)
+    for c, d in zip(centers, [0.0, 1500e-6, 2000e-6, 3500e-6, 5000e-6]):
+        f[np.abs(t - c) < DUR / 2] -= d
+    v = pl.core.epoch_verdicts(centers, t, f, DUR, d0, 0.0, sig=sig)
+    assert list(v["verdict"]) == ["excludes", "excludes", "shallow", "shallow", "supports"], v["verdict"]
+    # the same flat epoch can't exclude a weak signal: at 5 sigma, half depth0 - 3 sigma is under zero
+    v = pl.core.epoch_verdicts([5.0], t, np.ones(t.size), DUR, 5 * sig, 0.0, sig=sig)
+    assert v["verdict"][0] != "excludes", v["verdict"]
+
+
 def check_common_period():
     """Four later dips on a 23.75 d ephemeris through T1 give that period; a stray dip
     lets a short chance period win overall, but not among P >= 5 d."""
@@ -137,6 +152,7 @@ def main():
     check_mixed_cadence_coverage()
     check_common_period()
     check_edge_epochs_inconclusive()
+    check_exclusion_rule()
     work = Path(tempfile.mkdtemp())
     out = work / "results"
     pd.DataFrame([
