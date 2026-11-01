@@ -103,3 +103,5 @@ Sky Patrol serves light curves again (the Oct 13 banner is still shown). One sou
   in the core. A 0.4 d core holds one night at most, so **ASAS-SN alone can't reach the 5σ
   threshold at any of these epochs**, even with data.
 - AAVSO remains the only source that can test window 3. Its export was last seen failing on Oct 28.
+
+Later results: `RESULTS_ASASSN.md` (ASAS-SN back, 2026-10-31) and `RESULTS_AAVSO.md` (AAVSO, 2026-11-01).

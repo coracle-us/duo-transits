@@ -74,8 +74,8 @@ Oct 19 at +17 mmag against 7.4 mmag scatter. It's a single point, with no other 
 
 - `load_aavso` reads AAVSO's newer export (`jd`, `mag`, `uncertainty`, `band`, `observer`, `fainterthan`)
   as well as the old column names. `test_ground_check.py` still passes, but it only exercises the old names.
-- `main` forces the time and magnitude columns to floats. The scheduled 15:18 run on 2026-11-01 crashed
-  in A776 n=+2 because the error column came back as objects (`ground_check_2026-11-01.log`). That run
-  changed no results.
+- `main` forces the time and magnitude columns to floats. A manual `--asassn --tess --ztf` run on 2026-11-01
+  (not the scheduled task) crashed in A776 n=+2 because ZTF's empty result made the error column objects
+  (`ground_check_2026-11-01.log`). That run changed no results. `main` now also drops empty sources (c6f9d01).
 - `ground_photometry_merged.csv`, `epoch_coverage.csv` and the `win_*.png` plots now include AAVSO.
 - The scheduled recheck needed no change: it finds `aavso_kic8462852.csv` in this folder and passes `--aavso`.
