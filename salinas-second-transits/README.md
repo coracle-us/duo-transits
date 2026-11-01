@@ -23,7 +23,7 @@ checks every step end to end on fake light curves.
 | `period_hypotheses.csv` | Periods to tabulate epoch by epoch in the alias step. |
 | `cnn_extra.csv` | Extra transits for the CNN step. |
 | `tesscut_phot.py` | TESScut cutouts: aperture photometry, difference images, centroids. |
-| `round2/` | One-off round 2 analyses (sections 4, 5, 6, 8 of the brief); outputs in `results/round2/`. |
+| `round2/` | One-off round 2 analyses (sections 4, 5, 6, 8 of the brief, plus the sector-wide dip check); outputs in `results/round2/`. |
 
 ## Run it
 
@@ -119,10 +119,16 @@ behind a lock; downloads still run in parallel.
 
 ## Known limits
 
+- Sector-wide dips are masked only in the windows listed in `st2core.COMMON_MODE_WINDOWS`
+  (FFI-based light curves). They come from the scan in `round2/s9_common_mode.py`, which
+  needs at least 8 stars with data, so sectors with fewer stars and most orbit edges
+  aren't covered. After a new data release, rerun the scan on unmasked light curves.
+- A passing event less than 0.5 d from an edge is not clean. Candidates with no clean event
+  (`n_clean_events` = 0) should not be trusted until checked.
 - The alias exclusion rule treats an epoch more than 3 sigma shallower than the
   reference as "no transit". For high-SNR signals measured with different pipelines
   (TESS-SPOC reference, QLP epochs) that excludes true periods whose epochs hold
-  transits at 60-80% of the reference depth. See the round 2 summary before
+  transits at 60-90% of the reference depth. See the round 2 summary before
   trusting an `excluded` status for a strong signal.
 - TESScut times are barycentre-corrected for another direction than the target (up
   to ~25 s off); `round2/s6_qlp_times.py` shows how to correct them with the JPL
