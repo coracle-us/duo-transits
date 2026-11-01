@@ -70,7 +70,9 @@ behind a lock; downloads still run in parallel.
    since become a TOI or CTOI, and whether that TOI's ephemeris passes through the
    paper's event.
 4. aliases: T2 is the highest-SNR *clean* passing event (at least 0.5 d from a gap
-   and 80% covered; top SNR only if none is clean). Every P = (T2 - T1)/n down to
+   and 80% covered; top SNR only if none is clean). Events with a measured non-QLP
+   mid-time (`--event-times`, default `results/round2/qlp_s94_timing.csv`) use it; the
+   search's own time stays in `t2_box`. Every P = (T2 - T1)/n down to
    1 d is checked against all TESS sectors of that star. Only clean predicted epochs
    count: an alias is `excluded` if one has a box depth below
    max(depth0 - 3 sigma, 0.5 depth0), `supported` if one matches depth0 (a third

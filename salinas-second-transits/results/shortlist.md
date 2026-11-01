@@ -9,9 +9,9 @@ Depth 3654 +/- 101 ppm vs 4232 ppm; duration 12.99 h vs 10.31 h (box fits; paper
 Notes: alias event: top-SNR event, clean (edge 4.96 d, 100% covered)
 ![](plots/TIC373876456_3593.50.png)
 
-## TIC 275647095 (paper T1 2315.5171, new T2 4124.2963, S101 QLP)
+## TIC 275647095 (paper T1 2315.5171, new T2 4124.2960, S101 QLP)
 Depth 8551 +/- 244 ppm vs 9272 ppm; duration 6.75 h vs 7.57 h (box fits; paper CNN: 10298 ppm, 8.50 h); SNR 35.1. dT = 1808.78 d, so P <= 1808.78 d. Aliases: 18 allowed, 1790 excluded by data, 0 below the circular-orbit minimum (34.9 d). Longest allowed 1808.78 d.
-Notes: alias event: top-SNR event, clean (edge 0.64 d, 97% covered); common period 17.0644 d matches 8 of 8 events incl. the paper's [periodic]; also passes: S100 T=4090.1616 SNR 30.9, depth ratio 0.84, duration ratio 0.89; also passes: S64 T=3049.2589 SNR 26.5, depth ratio 1.05, duration ratio 0.89; also passes: S90 T=3748.8909 SNR 22.4, depth ratio 0.89, duration ratio 1.00; also passes: S101 T=4107.2795 SNR 20.6, depth ratio 0.79, duration ratio 0.79 (53% covered); also passes: S90 T=3765.9550 SNR 20.3, depth ratio 0.80, duration ratio 1.00; also passes: S64 T=3066.3309 SNR 18.2, depth ratio 0.72, duration ratio 0.89
+Notes: alias event: top-SNR event, clean (edge 0.64 d, 97% covered); T2 is the TESScut fit (+/- 5.6 min), not the QLP box time 4124.2963; common period 17.0643 d matches 8 of 8 events incl. the paper's [periodic]; also passes: S100 T=4090.1667 SNR 30.9, depth ratio 0.84, duration ratio 0.89; also passes: S64 T=3049.2589 SNR 26.5, depth ratio 1.05, duration ratio 0.89; also passes: S90 T=3748.8909 SNR 22.4, depth ratio 0.89, duration ratio 1.00; also passes: S101 T=4107.2649 SNR 20.6, depth ratio 0.79, duration ratio 0.79 (53% covered); also passes: S90 T=3765.9550 SNR 20.3, depth ratio 0.80, duration ratio 1.00; also passes: S64 T=3066.3309 SNR 18.2, depth ratio 0.72, duration ratio 0.89
 ![](plots/TIC275647095_4124.30.png)
 
 ## TIC 317132251 (paper T1 2221.7784, new T2 4289.0194, S107 SPOC)
@@ -19,19 +19,19 @@ Depth 2555 +/- 74 ppm vs 3641 ppm; duration 13.51 h vs 6.76 h (box fits; paper C
 Notes: already TOI 7717.01 (P=25.2087, same signal: yes, disp PC); already CTOI 317132251.01 (P=); alias event: top-SNR event, clean (edge 1.75 d, 86% covered); common period 25.2103 d matches 4 of 4 events incl. the paper's [periodic]; also passes: S98 T=4036.7964 SNR 31.0, depth ratio 1.29, duration ratio 0.89; also passes: S98 T=4011.5892 SNR 30.1, depth ratio 1.25, duration ratio 0.89
 ![](plots/TIC317132251_4289.02.png)
 
-## TIC 152464302 (paper T1 2284.8407, new T2 4066.3473, S99 QLP)
-Depth 6878 +/- 208 ppm vs 5819 ppm; duration 5.86 h vs 10.44 h (box fits; paper CNN: 9136 ppm, 8.29 h); SNR 33.0. dT = 1781.51 d, so P <= 1781.51 d. Aliases: 19 allowed, 1755 excluded by data, 4 below the circular-orbit minimum (59.8 d). Longest allowed 1781.51 d. Possible third transit at P = 296.9178;59.3836;26.9925 d.
-Notes: alias event: top-SNR event, clean (edge 3.32 d, 102% covered); common period 296.9178 d matches 3 of 3 events incl. the paper's; also passes: S90 T=3769.4219 SNR 25.6, depth ratio 1.44, duration ratio 0.50
-![](plots/TIC152464302_4066.35.png)
+## TIC 152464302 (paper T1 2284.8407, new T2 4066.3347, S99 QLP)
+Depth 6878 +/- 208 ppm vs 5819 ppm; duration 5.86 h vs 10.44 h (box fits; paper CNN: 9136 ppm, 8.29 h); SNR 33.0. dT = 1781.49 d, so P <= 1781.49 d. Aliases: 19 allowed, 1755 excluded by data, 4 below the circular-orbit minimum (59.8 d). Longest allowed 1781.49 d. Possible third transit at P = 296.9157;59.3831;26.9923 d.
+Notes: alias event: top-SNR event, clean (edge 3.32 d, 102% covered); T2 is the TESScut fit (+/- 4.4 min), not the QLP box time 4066.3473; common period 296.9162 d matches 3 of 3 events incl. the paper's; also passes: S90 T=3769.4219 SNR 25.6, depth ratio 1.44, duration ratio 0.50
+![](plots/TIC152464302_4066.33.png)
 
-## TIC 241550976 (paper T1 2339.4447, new T2 4077.5872, S100 QLP)
+## TIC 241550976 (paper T1 2339.4447, new T2 4077.5879, S100 QLP)
 Depth 13613 +/- 421 ppm vs 16550 ppm; duration 4.11 h vs 4.61 h (box fits; paper CNN: 18366 ppm, 5.81 h); SNR 32.3. dT = 1738.14 d, so P <= 1738.14 d. Aliases: 17 allowed, 1721 excluded by data, 0 below the circular-orbit minimum (14.6 d). Longest allowed 1738.14 d.
-Notes: alias event: highest-SNR clean event (edge 3.11 d, 101% covered); top-SNR event S102 T=4141.1858 SNR 37.1 is not clean (edge 0.43 d, 102% covered); common period 21.1971 d matches 6 of 6 events incl. the paper's [periodic]; also passes: S102 T=4141.1858 SNR 37.1, depth ratio 0.84, duration ratio 0.71 (near edge); also passes: S101 T=4119.9780 SNR 29.5, depth ratio 0.76, duration ratio 0.63; also passes: S65 T=3081.3349 SNR 29.1, depth ratio 1.06, duration ratio 0.71; also passes: S64 T=3060.1451 SNR 28.6, depth ratio 0.86, duration ratio 0.89
+Notes: alias event: highest-SNR clean event (edge 3.11 d, 101% covered); top-SNR event S102 T=4141.1753 SNR 37.1 is not clean (edge 0.43 d, 102% covered); T2 is the TESScut fit (+/- 3.7 min), not the QLP box time 4077.5872; common period 21.1971 d matches 6 of 6 events incl. the paper's [periodic]; also passes: S102 T=4141.1753 SNR 37.1, depth ratio 0.84, duration ratio 0.71 (near edge); also passes: S101 T=4119.9831 SNR 29.5, depth ratio 0.76, duration ratio 0.63; also passes: S65 T=3081.3349 SNR 29.1, depth ratio 1.06, duration ratio 0.71; also passes: S64 T=3060.1451 SNR 28.6, depth ratio 0.86, duration ratio 0.89
 ![](plots/TIC241550976_4077.59.png)
 
-## TIC 438588300 (paper T1 2309.1656, new T2 4104.7834, S101 QLP)
-Depth 2499 +/- 93 ppm vs 2521 ppm; duration 8.26 h vs 7.36 h (box fits; paper CNN: 3039 ppm, 9.27 h); SNR 26.8. dT = 1795.62 d, so P <= 1795.62 d. Aliases: 26 allowed, 1769 excluded by data, 0 below the circular-orbit minimum (26.9 d). Longest allowed 1795.62 d.
-Notes: alias event: top-SNR event, clean (edge 3.13 d, 99% covered)
+## TIC 438588300 (paper T1 2309.1656, new T2 4104.7783, S101 QLP)
+Depth 2499 +/- 93 ppm vs 2521 ppm; duration 8.26 h vs 7.36 h (box fits; paper CNN: 3039 ppm, 9.27 h); SNR 26.8. dT = 1795.61 d, so P <= 1795.61 d. Aliases: 26 allowed, 1769 excluded by data, 0 below the circular-orbit minimum (26.9 d). Longest allowed 1795.61 d.
+Notes: alias event: top-SNR event, clean (edge 3.13 d, 99% covered); T2 is the TESScut fit (+/- 5.5 min), not the QLP box time 4104.7834
 ![](plots/TIC438588300_4104.78.png)
 
 ## TIC 230133616 (paper T1 2396.1307, new T2 3607.5333, S84 TESS-SPOC)
@@ -71,7 +71,7 @@ Notes: alias event: top-SNR event, clean (edge 2.18 d, 98% covered)
 
 ## TIC 107113048 (paper T1 2312.9442, new T2 3754.2911, S90 QLP)
 Depth 6734 +/- 378 ppm vs 6688 ppm; duration 6.69 h vs 6.69 h (box fits; paper CNN: 8227 ppm, 7.51 h); SNR 17.8. dT = 1441.35 d, so P <= 1441.35 d. Aliases: 12 allowed, 1428 excluded by data, 0 below the circular-orbit minimum (36.1 d). Longest allowed 1441.35 d. Possible third transit at P = 49.7016 d.
-Notes: alias event: highest-SNR clean event (edge 5.91 d, 100% covered); top-SNR event S101 T=4102.1982 SNR 20.1 is not clean (edge 0.40 d, 98% covered); common period 49.7018 d matches 4 of 4 events incl. the paper's [periodic]; also passes: S101 T=4102.1982 SNR 20.1, depth ratio 0.85, duration ratio 0.89 (near edge); also passes: S64 T=3058.4708 SNR 14.3, depth ratio 0.97, duration ratio 0.89
+Notes: alias event: highest-SNR clean event (edge 5.91 d, 100% covered); top-SNR event S101 T=4102.1947 SNR 20.1 is not clean (edge 0.40 d, 98% covered); common period 49.7018 d matches 4 of 4 events incl. the paper's [periodic]; also passes: S101 T=4102.1947 SNR 20.1, depth ratio 0.85, duration ratio 0.89 (near edge); also passes: S64 T=3058.4708 SNR 14.3, depth ratio 0.97, duration ratio 0.89
 ![](plots/TIC107113048_3754.29.png)
 
 ## TIC 234605163 (paper T1 2209.5170, new T2 3672.5065, S87 QLP)
@@ -144,10 +144,10 @@ Depth 1866 +/- 182 ppm vs 1978 ppm; duration 9.89 h vs 11.11 h (box fits; paper 
 Notes: alias event: highest-SNR clean event (edge 3.52 d, 99% covered); top-SNR event S98 T=3995.4430 SNR 20.0 is not clean (edge 0.30 d, 53% covered); common period 1.1276 d matches 17 of 20 events incl. the paper's [chance]; best P >= 5 d: 6.2068 d, 11 of 20; also passes: S98 T=3995.4430 SNR 20.0, depth ratio 1.47, duration ratio 1.78 (near edge, 53% covered); also passes: S89 T=3732.8218 SNR 14.4, depth ratio 1.22, duration ratio 1.59 (64% covered); also passes: S94 T=3874.9737 SNR 13.0, depth ratio 0.77, duration ratio 1.78 (67% covered); also passes: S96 T=3932.9774 SNR 12.3, depth ratio 0.76, duration ratio 2.00 (near edge, 52% covered); also passes: S87 T=3676.2412 SNR 10.3, depth ratio 1.32, duration ratio 0.63 (near edge); also passes: S87 T=3666.1880 SNR 9.5, depth ratio 1.21, duration ratio 0.63; also passes: S63 T=3021.0774 SNR 9.2, depth ratio 0.87, duration ratio 1.12 (71% covered); also passes: S94 T=3864.7238 SNR 9.0, depth ratio 1.06, duration ratio 0.50; also passes: S65 T=3070.7056 SNR 8.9, depth ratio 0.89, duration ratio 1.00; also passes: S87 T=3664.1057 SNR 8.7, depth ratio 1.16, duration ratio 0.63 (near edge); also passes: S68 T=3170.0478 SNR 8.6, depth ratio 0.96, duration ratio 0.63; also passes: S62 T=2989.8739 SNR 8.5, depth ratio 1.09, duration ratio 0.56; also passes: S88 T=3715.8754 SNR 8.1, depth ratio 0.79, duration ratio 0.89; also passes: S94 T=3875.5406 SNR 8.0, depth ratio 0.51, duration ratio 1.78 (57% covered); also passes: S63 T=3014.4948 SNR 7.9, depth ratio 0.77, duration ratio 1.12 (near edge, 68% covered); also passes: S90 T=3765.5055 SNR 7.3, depth ratio 0.95, duration ratio 0.79; also passes: S88 T=3703.8439 SNR 7.3, depth ratio 0.94, duration ratio 0.89 (57% covered); also passes: S96 T=3914.1436 SNR 7.2, depth ratio 0.64, duration ratio 0.89 (57% covered)
 ![](plots/TIC300164137_2971.42.png)
 
-## TIC 302377820 (paper T1 2064.7829, new T2 3890.1694, S95 QLP)
-Depth 946 +/- 93 ppm vs 1107 ppm; duration 5.47 h vs 5.47 h (box fits; paper CNN: 1419 ppm, 6.14 h); SNR 10.2. dT = 1825.39 d, so P <= 1825.39 d. Aliases: 31 allowed, 1790 excluded by data, 2 below the circular-orbit minimum (28.8 d). Longest allowed 1825.39 d. Possible third transit at P = 29.9244;29.4417 d.
-Notes: already CTOI 302377820.01 (P=6.7537); paper already reports a transit in S68 matching candidate b; alias event: highest-SNR clean event (edge 3.80 d, 100% covered); top-SNR event S95 T=3899.7784 SNR 13.6 is not clean (edge 0.15 d, 63% covered); common period 3.4173 d matches 4 of 5 events incl. the paper's; best P >= 5 d: 31.6379 d, 3 of 5; also passes: S95 T=3899.7784 SNR 13.6, depth ratio 1.14, duration ratio 1.59 (near edge, 63% covered); also passes: S68 T=3171.9994 SNR 9.0, depth ratio 1.05, duration ratio 0.79; also passes: S95 T=3893.1519 SNR 8.4, depth ratio 0.79, duration ratio 0.79
-![](plots/TIC302377820_3890.17.png)
+## TIC 302377820 (paper T1 2064.7829, new T2 3890.1631, S95 QLP)
+Depth 946 +/- 93 ppm vs 1107 ppm; duration 5.47 h vs 5.47 h (box fits; paper CNN: 1419 ppm, 6.14 h); SNR 10.2. dT = 1825.38 d, so P <= 1825.38 d. Aliases: 31 allowed, 1790 excluded by data, 2 below the circular-orbit minimum (28.8 d). Longest allowed 1825.38 d. Possible third transit at P = 29.9243;29.4416 d.
+Notes: already CTOI 302377820.01 (P=6.7537); paper already reports a transit in S68 matching candidate b; alias event: highest-SNR clean event (edge 3.80 d, 100% covered); top-SNR event S95 T=3899.7778 SNR 13.6 is not clean (edge 0.15 d, 63% covered); T2 is the TESScut fit (+/- 8.3 min), not the QLP box time 3890.1694; common period 3.4173 d matches 4 of 5 events incl. the paper's; best P >= 5 d: 31.6378 d, 3 of 5; also passes: S95 T=3899.7778 SNR 13.6, depth ratio 1.14, duration ratio 1.59 (near edge, 63% covered); also passes: S68 T=3171.9994 SNR 9.0, depth ratio 1.05, duration ratio 0.79; also passes: S95 T=3893.1507 SNR 8.4, depth ratio 0.79, duration ratio 0.79
+![](plots/TIC302377820_3890.16.png)
 
 ## TIC 141682338 (paper T1 2247.9532, new T2 3891.0973, S95 QLP)
 Depth 1931 +/- 190 ppm vs 2757 ppm; duration 5.95 h vs 4.72 h (box fits; paper CNN: 3437 ppm, 5.95 h); SNR 10.2. dT = 1643.14 d, so P <= 1643.14 d. Aliases: 2 allowed, 1641 excluded by data, 0 below the circular-orbit minimum (5.1 d). Longest allowed 1643.14 d.
