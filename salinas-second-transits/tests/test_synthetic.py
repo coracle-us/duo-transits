@@ -90,6 +90,16 @@ def check_cutout_mask():
     assert seen["quality_bitmask"] == "default", seen
 
 
+def check_common_mode_mask():
+    """FFI light curves lose a sector's common-mode window; SPOC and other sectors don't."""
+    t = np.arange(3870, 3880, CAD)
+    f = np.ones_like(t)
+    t2, f2 = pl.core.drop_common_mode(t, f, 94, "QLP")
+    assert t2.size == f2.size < t.size and not np.any((t2 >= 3873.5) & (t2 <= 3876.25))
+    assert pl.core.drop_common_mode(t, f, 94, "SPOC")[0].size == t.size
+    assert pl.core.drop_common_mode(t, f, 93, "QLP")[0].size == t.size
+
+
 def check_edge_epochs_inconclusive():
     """A flat epoch 0.2 d from a gap is inconclusive; the same epoch mid-data excludes."""
     t = np.concatenate([np.arange(0, 10, CAD), np.arange(12, 22, CAD)])
@@ -121,6 +131,7 @@ def main():
     check_alias_event_choice()
     check_event_times()
     check_cutout_mask()
+    check_common_mode_mask()
     check_mixed_cadence_coverage()
     check_common_period()
     check_edge_epochs_inconclusive()

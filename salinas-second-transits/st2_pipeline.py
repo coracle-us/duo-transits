@@ -171,7 +171,7 @@ def load_sector_lc(sr, row, cache_dir):
         fb = np.bincount(idx, f) / np.bincount(idx)
         ok = np.bincount(idx) > 0
         t, f = tb[ok], fb[ok]
-    return t, f
+    return core.drop_common_mode(t, f, row["sector"], row["author"])
 
 
 def detrend(t, f, dur_d):
@@ -267,30 +267,35 @@ def search_one(c, cov_row, work, args):
     res.update(depth_ref=depth_ref, dur_ref_d=dur_ref, depth_ref_err=derr_ref)
 
     for s in sorted(x for x in best if is_new_sector(x)):
-        row = best[s]
-        try:
-            t, f = load_sector_lc(sr, row, cache)
-            t, f = detrend(t, f, dur_ref)
-        except Exception as e:
-            res["events"].append(dict(sector=s, error=str(e)))
-            continue
-        np.savez_compressed(work / "lc" / f"{tic}_s{s:03d}.npz", t=t, f=f)
-        cen, dep, snr, frac, sig = core.box_search(t, f, dur_ref)
-        if not np.any(np.isfinite(snr)):
-            continue
-        anti = -np.nanmin(snr)
-        for i in core.pick_events(cen, snr, dur_ref, n_max=3):
-            ev = core.refine_event(t, f, cen[i], dur_ref)
-            if not ev:
-                continue
-            ev.update(sector=s, author=row["author"], noise_ppm=sig * 1e6,
-                      anti_snr=float(anti),
-                      depth_ratio=ev["depth"] / depth_ref,
-                      dur_ratio=ev["dur_d"] / dur_ref,
-                      edge_dist_d=core.gap_edge_distance(t, ev["tc"]),
-                      n_sector_points=int(t.size))
-            res["events"].append(ev)
+        res["events"] += search_sector(tic, s, best[s], sr, cache, work, dur_ref, depth_ref)
     return res
+
+
+def search_sector(tic, s, row, sr, cache, work, dur_ref, depth_ref):
+    """Top events of one new sector; also saves its detrended light curve."""
+    try:
+        t, f = load_sector_lc(sr, row, cache)
+        t, f = detrend(t, f, dur_ref)
+    except Exception as e:
+        return [dict(sector=s, error=str(e))]
+    np.savez_compressed(work / "lc" / f"{tic}_s{s:03d}.npz", t=t, f=f)
+    cen, dep, snr, frac, sig = core.box_search(t, f, dur_ref)
+    if not np.any(np.isfinite(snr)):
+        return []
+    anti = -np.nanmin(snr)
+    events = []
+    for i in core.pick_events(cen, snr, dur_ref, n_max=3):
+        ev = core.refine_event(t, f, cen[i], dur_ref)
+        if not ev:
+            continue
+        ev.update(sector=s, author=row["author"], noise_ppm=sig * 1e6,
+                  anti_snr=float(anti),
+                  depth_ratio=ev["depth"] / depth_ref,
+                  dur_ratio=ev["dur_d"] / dur_ref,
+                  edge_dist_d=core.gap_edge_distance(t, ev["tc"]),
+                  n_sector_points=int(t.size))
+        events.append(ev)
+    return events
 
 
 def passes(ev, args):

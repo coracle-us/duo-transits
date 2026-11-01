@@ -12,6 +12,19 @@ DAY = 86400.0
 # transit window covered and at least this far from a gap or sector edge.
 CLEAN_FRAC = 0.8
 CLEAN_EDGE_D = 0.5
+# BTJD windows where most stars in a sector dip together in FFI photometry: a
+# spacecraft-wide systematic, not transits (round2/s9_common_mode.py).
+COMMON_MODE_WINDOWS = {94: [(3873.5, 3876.25)], 95: [(3899.5, 3900.0), (3906.25, 3906.75)], 97: [(3979.75, 3980.5)]}
+
+
+def drop_common_mode(t, f, sector, author):
+    """Remove a sector's common-mode window; SPOC 2-min light curves are flat there."""
+    if author == "SPOC":
+        return t, f
+    keep = np.ones(t.size, bool)
+    for lo, hi in COMMON_MODE_WINDOWS.get(sector, []):
+        keep &= (t < lo) | (t > hi)
+    return t[keep], f[keep]
 
 
 def robust_std(x):
