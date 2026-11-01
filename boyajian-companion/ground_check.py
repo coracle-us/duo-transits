@@ -41,8 +41,10 @@ WINDOWS = [  # name, n, Pmin, Pmax  (P ranges: Madurga-Favieres Table 1; 776-794
 def load_aavso(path):
     d = pd.read_csv(path, low_memory=False)
     d = d.rename(columns={c: c.strip() for c in d.columns})
+    d = d.rename(columns={"jd": "JD", "mag": "Magnitude", "uncertainty": "Uncertainty", "band": "Band",   # newer AAVSO export
+                          "observer": "Observer Code", "fainterthan": "Fainter Than"})
     d = d[pd.to_numeric(d["Magnitude"], errors="coerce").notna()]
-    if "Fainter Than" in d: d = d[d["Fainter Than"].astype(str).str.strip() != "1"]
+    if "Fainter Than" in d: d = d[~d["Fainter Than"].astype(str).str.strip().str.lower().isin(["1", "true"])]
     out = pd.DataFrame({"jd": d["JD"].astype(float), "mag": d["Magnitude"].astype(float),
                         "err": pd.to_numeric(d.get("Uncertainty"), errors="coerce").fillna(0.01),
                         "group": "AAVSO:" + d["Observer Code"].astype(str) + ":" + d["Band"].astype(str)})
@@ -138,6 +140,8 @@ def main():
     if a.tess: tess_sectors()
     if not parts: sys.exit("no photometry loaded")
     data = pd.concat(parts, ignore_index=True)
+    data[["jd", "mag", "err"]] = data[["jd", "mag", "err"]].apply(pd.to_numeric, errors="coerce").astype(float)
+    data = data.dropna(subset=["jd", "mag", "err"])
     data.to_csv("ground_photometry_merged.csv", index=False)
     out = []
     for w in WINDOWS:

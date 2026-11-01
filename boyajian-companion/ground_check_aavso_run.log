@@ -1,0 +1,23 @@
+Welcome to ASAS-SN Skypatrol!
+
+Current Deployment Version: 0.6.20 (11 SEPTEMBER 2025)
+Please upgrade your client if not up to date.
+
+The light curve service will be down for several days while we run mainanence on our cluster.
+Kyle Hart 
+13 October 2026
+
+Downloading Curves...
+Pulled 1 of 1
+ASAS-SN id 60130747136: 939 points
+W3 n=+2 (Oct 2026)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+W3 n=+1 (Mar 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A776 n=+1 (Oct 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A776 n=+2 (Dec 2023)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A790 n=+1 (Nov 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A790 n=+2 (Jan 2024)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A792 n=+1 (Nov 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded  30% consistent   1%
+A792 n=+2 (Jan 2024)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+W4 n=+1 (May 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+W5 n=+1 (Jun 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+.venv/bin/python ground_check.py --aavso aavso_kic8462852.csv --asassn  25.25s user 0.35s system 88% cpu 28.854 total
