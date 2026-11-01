@@ -1,0 +1,8 @@
+# Period hypotheses tabulated epoch by epoch in the alias step (FOLLOWUP_BRIEF_2026-10-27, section 2).
+# period_d is the quoted value; the alias step sharpens it to the exact (t_e - T1)/n through the events.
+tic,period_d,note
+230133616,23.7535,12 new transits S73-S86
+275647095,17.064,7 new transits
+241550976,21.197,5 new transits
+40001645,11.99,2 clean transits in S92
+274858362,10.59,2 clean transits in S82

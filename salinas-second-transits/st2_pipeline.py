@@ -30,11 +30,22 @@ import st2core as core
 warnings.filterwarnings("ignore")
 
 FIRST_NEW_SECTOR = 61
+# Pointings MAST and tess-point number outside the sector sequence. Their data
+# are real, so the alias step still uses them, but they are not searched as
+# new sectors.
+SPECIAL_SECTORS = {1751: "3I/ATLAS special pointing, 2026 Jan 15-22 (7.2 d)"}
+
+
+def is_new_sector(s):
+    return s >= FIRST_NEW_SECTOR and s not in SPECIAL_SECTORS
 AUTHOR_RANK = {"SPOC": 0, "TESS-SPOC": 1, "QLP": 2}
 # lightkurve's download() swaps sys.stdout for devnull and back, which is not
 # thread-safe (a thread can restore another's closed devnull and kill print).
 # Holding this lock also stops two candidates on one star fetching the same file.
 DOWNLOAD_LOCK = threading.Lock()
+# wotan's numba code aborts the process when two threads enter it under numba's
+# workqueue threading layer, the only one a pip install gets on macOS.
+DETREND_LOCK = threading.Lock()
 
 COLUMN_ALIASES = {
     "tic": ["tic", "tic_id", "ticid", "tic id", "id"],
@@ -166,8 +177,9 @@ def load_sector_lc(sr, row, cache_dir):
 def detrend(t, f, dur_d):
     from wotan import flatten
     w = max(4.0 * dur_d, 1.0)  # wide enough to keep most of the transit depth
-    flat = flatten(t, f, method="biweight", window_length=w, edge_cutoff=0.0,
-                   break_tolerance=0.5)
+    with DETREND_LOCK:
+        flat = flatten(t, f, method="biweight", window_length=w, edge_cutoff=0.0,
+                       break_tolerance=0.5)
     m = np.isfinite(flat)
     # clip upward outliers only (flares), keep dips
     r = flat[m] - 1
@@ -188,13 +200,14 @@ def step_coverage(cands, work, workers):
         _, prods = lc_products(tic)
         best = best_per_sector(prods)
         pts = pointing_sectors(tic, info.get("ra", np.nan), info.get("dec", np.nan)) if info else []
-        new_lc = sorted(s for s in best if s >= FIRST_NEW_SECTOR)
-        new_pt = sorted(s for s in pts if s >= FIRST_NEW_SECTOR)
+        new_lc = sorted(s for s in best if is_new_sector(s))
+        new_pt = sorted(s for s in pts if is_new_sector(s))
         return dict(tic=tic, **info,
                     lc_sectors=" ".join(f"{s}:{best[s]['author']}" for s in sorted(best)),
                     lc_sectors_ge61=" ".join(map(str, new_lc)),
                     pointed_sectors_ge61=" ".join(map(str, new_pt)),
                     pointed_no_lc_ge61=" ".join(str(s) for s in new_pt if s not in best),
+                    special_sectors=" ".join(str(s) for s in sorted(best) if s in SPECIAL_SECTORS),
                     n_new_lc=len(new_lc))
 
     with ThreadPoolExecutor(workers) as ex:
@@ -253,7 +266,7 @@ def search_one(c, cov_row, work, args):
         derr_ref = (c.depth_err * 1e-6) if np.isfinite(c.depth_err) else 0.2 * depth0
     res.update(depth_ref=depth_ref, dur_ref_d=dur_ref, depth_ref_err=derr_ref)
 
-    for s in sorted(x for x in best if x >= FIRST_NEW_SECTOR):
+    for s in sorted(x for x in best if is_new_sector(x)):
         row = best[s]
         try:
             t, f = load_sector_lc(sr, row, cache)
@@ -289,6 +302,58 @@ def passes(ev, args):
             and ev["snr"] >= args.anti_ratio * max(ev["anti_snr"], 1e-9))
 
 
+def load_passing(work, times_path=None):
+    """Passing events, with a non-QLP mid-time where one has been measured.
+
+    QLP S100+ files apply one barycentric correction per sector, so for the events
+    in round2/s6_qlp_times.py's table t2 becomes the TESScut fit. The search's own
+    time stays in t2_box and t2_source says which one t2 is.
+    """
+    ev = pd.read_csv(work / "events_all.csv")
+    p = ev[ev["passes"] == True].copy()
+    p["t2_box"], p["t2_source"], p["t2_err_min"] = p["t2"], "box search", np.nan
+    if not times_path or not Path(times_path).exists():
+        return p
+    for r in pd.read_csv(times_path).dropna(subset=["tc_tesscut"]).itertuples():
+        m = (p["cand_id"] == r.cand_id) & ((p["t2_box"] - r.t2_box).abs() < 1e-4)
+        if not m.any():
+            print(f"[event times] no passing event for {r.cand_id} at {r.t2_box:.4f}; not applied")
+            continue
+        p.loc[m, "t2"] = r.tc_tesscut
+        p.loc[m, "t2_source"] = "TESScut fit"
+        p.loc[m, "t2_err_min"] = r.tc_tesscut_err_min
+    return p
+
+
+def alias_events(passing):
+    """One event per candidate for the alias step and the report.
+
+    The highest-SNR clean passing event (core.CLEAN_EDGE_D from a gap or edge,
+    core.CLEAN_FRAC of the window covered); the top-SNR event only if none is
+    clean. Adds n_clean_events and alias_event_reason.
+    """
+    p = passing.copy()
+    p["clean"] = (p["edge_dist_d"] >= core.CLEAN_EDGE_D) & (p["frac"] >= core.CLEAN_FRAC)
+    top = p.sort_values("snr", ascending=False).drop_duplicates("cand_id").set_index("cand_id")
+    hits = p.sort_values(["clean", "snr"], ascending=False).drop_duplicates("cand_id").copy()
+    n_clean = p.groupby("cand_id")["clean"].sum()
+    reasons = []
+    for h in hits.itertuples():
+        tp = top.loc[h.cand_id]
+        q = f"edge {h.edge_dist_d:.2f} d, {h.frac:.0%} covered"
+        if not h.clean:
+            reasons.append(f"no clean event; top-SNR event used ({q})")
+        elif abs(tp.t2 - h.t2) > 1e-6:
+            reasons.append(f"highest-SNR clean event ({q}); top-SNR event S{int(tp.sector)} "
+                           f"T={tp.t2:.4f} SNR {tp.snr:.1f} is not clean (edge "
+                           f"{tp.edge_dist_d:.2f} d, {tp.frac:.0%} covered)")
+        else:
+            reasons.append(f"top-SNR event, clean ({q})")
+    hits["n_clean_events"] = [int(n_clean[c]) for c in hits["cand_id"]]
+    hits["alias_event_reason"] = reasons
+    return hits.drop(columns="clean")
+
+
 def step_search(cands, work, args):
     (work / "lc").mkdir(parents=True, exist_ok=True)
     (work / "per_cand").mkdir(parents=True, exist_ok=True)
@@ -321,6 +386,8 @@ def step_search(cands, work, args):
     for p in sorted((work / "per_cand").glob("*.json")):
         r = json.loads(p.read_text())
         for ev in r["events"]:
+            if ev["sector"] in SPECIAL_SECTORS:  # searched by an older version
+                continue
             if "error" in ev:
                 rows.append(dict(cand_id=r["cand_id"], tic=r["tic"], sector=ev["sector"], error=ev["error"]))
                 continue
@@ -426,7 +493,7 @@ def all_lc_for_tic(tic, work, dur_d):
     """Every sector (old and new) for alias checks, detrended, cached as npz."""
     sr, prods = lc_products(tic)
     best = best_per_sector(prods)
-    T, F = [], []
+    T, F, spans = [], [], []
     for s, row in sorted(best.items()):
         p = work / "lc" / f"{tic}_s{s:03d}.npz"
         if p.exists():
@@ -442,13 +509,145 @@ def all_lc_for_tic(tic, work, dur_d):
                 continue
         T.append(t)
         F.append(f)
-    return np.concatenate(T), np.concatenate(F), sorted(best)
+        spans.append((s, row["author"], float(t.min()), float(t.max())))
+    return np.concatenate(T), np.concatenate(F), sorted(best), spans
+
+
+def load_hypotheses(path):
+    """{tic: [quoted periods]} from period_hypotheses.csv, if it exists."""
+    if not path or not Path(path).exists():
+        return {}
+    out = {}
+    for r in pd.read_csv(path, comment="#").itertuples():
+        out.setdefault(int(r.tic), []).append(float(r.period_d))
+    return out
+
+
+def epoch_rows(h, P, source, t, f, spans, dur_d, depth, depth_err, sig, edges):
+    """One row per predicted epoch of P (through the paper event) that has any data."""
+    k = np.arange(int(np.floor((t.min() - h.t1) / P)) - 1, int(np.ceil((t.max() - h.t1) / P)) + 2)
+    ep = h.t1 + k * P
+    v = core.epoch_verdicts(ep, t, f, dur_d, depth, depth_err, sig, edges)
+    rows = []
+    for i in np.where(v["frac"] > 0)[0]:
+        sec = [(s, a) for s, a, lo, hi in spans if lo - 0.5 <= ep[i] <= hi + 0.5]
+        verdict, old = v["verdict"][i], v["verdict_any_coverage"][i]
+        if abs(ep[i] - h.t1) < dur_d / 2:
+            verdict = old = "paper event"
+        elif abs(ep[i] - h.t2) < dur_d / 2:
+            verdict = old = "alias event (T2)"
+        rows.append(dict(cand_id=h.cand_id, period_d=P, period_source=source, k=int(k[i]),
+                         epoch_btjd=ep[i], sector=sec[0][0] if sec else np.nan,
+                         pipeline=sec[0][1] if sec else "", coverage=v["frac"][i],
+                         edge_dist_d=v["edge_d"][i], box_depth_ppm=v["depth"][i] * 1e6,
+                         box_depth_err_ppm=v["depth_err"][i] * 1e6, verdict=verdict,
+                         verdict_any_coverage=old))
+    return rows
+
+
+def epoch_status(rows):
+    """Alias status from epoch rows, under the clean-epoch rule and the old any-coverage rule."""
+    def st(col):
+        v = {r[col] for r in rows}
+        return "excluded" if "excludes" in v else "supported" if "supports" in v else "allowed"
+    return st("verdict"), st("verdict_any_coverage")
+
+
+def plot_epochs(h, P, rows, t, f, outdir):
+    """Paper event next to every epoch that excludes P under either rule."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    bad = [r for r in rows if "excludes" in (r["verdict"], r["verdict_any_coverage"])]
+    if not bad:
+        return ""
+    show = [None] + bad[:11]
+    nc = min(len(show), 4)
+    nr = int(np.ceil(len(show) / nc))
+    fig, axs = plt.subplots(nr, nc, figsize=(4 * nc, 3 * nr), squeeze=False, sharey=True)
+    dur = h.dur_ref_h / 24
+    w = max(3 * dur, 0.75)
+    for a, r in zip(axs.flat, show):
+        tc = h.t1 if r is None else r["epoch_btjd"]
+        m = np.abs(t - tc) < w
+        x, y = (t[m] - tc) * 24, (f[m] - 1) * 1e6
+        a.plot(x, y, ".", ms=2, color="0.6")
+        if m.sum():
+            edges = np.arange(-w, w + 1 / 48, 1 / 48) * 24
+            idx = np.digitize(x, edges)
+            xb = [x[idx == j].mean() for j in np.unique(idx)]
+            yb = [y[idx == j].mean() for j in np.unique(idx)]
+            a.plot(xb, yb, "o", ms=3, color="C0")
+        a.axhline(-h.depth_ref_ppm, color="C3", lw=0.8, ls="--")
+        a.axvspan(-dur * 12, dur * 12, color="C3", alpha=0.08)
+        if r is None:
+            a.set_title(f"paper event T={h.t1:.3f}", fontsize=8)
+        else:
+            a.set_title(f"S{r['sector']:.0f} {r['pipeline']} T={tc:.3f}\ncov {r['coverage']:.0%}, edge "
+                        f"{r['edge_dist_d']:.2f} d, {r['box_depth_ppm']:.0f}+/-{r['box_depth_err_ppm']:.0f} ppm"
+                        f"\nnow: {r['verdict']}", fontsize=8)
+        a.set_xlabel("hours")
+    for a in list(axs.flat)[len(show):]:
+        a.axis("off")
+    fig.suptitle(f"TIC {h.tic} P = {P:.5f} d: epochs that exclude it ({len(bad)}"
+                 + (", first 11 shown" if len(bad) > 11 else "") + ")", fontsize=10)
+    fig.tight_layout()
+    outdir.mkdir(parents=True, exist_ok=True)
+    name = f"TIC{h.tic}_{h.cand_id}_P{P:.4f}.png"
+    fig.savefig(outdir / name, dpi=100)
+    plt.close(fig)
+    return name
+
+
+def distinct_events(g, merge_d=0.5):
+    """Passing event times with events within merge_d of a higher-SNR one dropped."""
+    kept = []
+    for t2 in g.sort_values("snr", ascending=False)["t2"]:
+        if all(abs(t2 - k) > merge_d for k in kept):
+            kept.append(t2)
+    return sorted(kept)
+
+
+def common_periods(passing, work, p_floor):
+    """Best common period for every candidate with 2+ distinct passing events.
+
+    flag: 'periodic' when k >= 4, k/N >= 0.8 and P >= 5 d; 'chance' when the
+    best P is under 3 d (dips that only line up at short periods). One stray
+    dip can let a short chance period beat the true one, so the best P >= 5 d
+    is recorded too (cp_long_*).
+    """
+    rows = []
+    for cid, g in passing.groupby("cand_id"):
+        times = distinct_events(g)
+        if len(times) < 2:
+            continue
+        h = g.iloc[0]
+        cp = core.common_period(h.t1, times, h.dur_ref_h / 24, p_floor)
+        lp = core.common_period(h.t1, times, h.dur_ref_h / 24, max(p_floor, 5.0))
+        flag = ""
+        if np.isfinite(cp["P"]):
+            if cp["k"] >= 4 and cp["k"] / cp["N"] >= 0.8 and cp["P"] >= 5:
+                flag = "periodic"
+            elif cp["P"] < 3:
+                flag = "chance"
+        rows.append(dict(cand_id=cid, tic=h.tic, cp_n_distinct_events=len(times), cp_N=cp["N"],
+                         cp_k=cp["k"], cp_period_d=cp["P"], cp_flag=flag,
+                         cp_matched=";".join(f"{x:.3f}" for x in cp.get("matched", [])),
+                         cp_long_period_d=lp["P"], cp_long_k=lp["k"]))
+    df = pd.DataFrame(rows, columns=["cand_id", "tic", "cp_n_distinct_events", "cp_N", "cp_k",
+                                     "cp_period_d", "cp_flag", "cp_matched", "cp_long_period_d", "cp_long_k"])
+    df.to_csv(work / "common_period.csv", index=False)
+    print(f"wrote {work/'common_period.csv'}: {len(df)} candidates with 2+ distinct events, "
+          f"{int((df['cp_flag'] == 'periodic').sum())} periodic, {int((df['cp_flag'] == 'chance').sum())} chance")
+    return df
 
 
 def step_aliases(cands, work, args):
-    ev = pd.read_csv(work / "events_all.csv")
-    hits = ev[ev["passes"] == True].sort_values("snr", ascending=False)
-    hits = hits.drop_duplicates("cand_id")  # best event per candidate
+    passing = load_passing(work, getattr(args, "event_times", None))
+    hits = alias_events(passing)
+    hyp = load_hypotheses(getattr(args, "hypotheses", None))
+    cps = common_periods(passing, work, args.p_floor).set_index("cand_id")
+    hyp_rows = []
     cov = pd.read_csv(work / "coverage.csv").set_index("tic")
     (work / "aliases").mkdir(exist_ok=True)
     summ = []
@@ -458,14 +657,53 @@ def step_aliases(cands, work, args):
         rstar = float(info.get("rstar", np.nan)) if len(info) else np.nan
         dur_d = h.dur_ref_h / 24
         depth = h.depth_ref_ppm * 1e-6
-        t, f, secs = all_lc_for_tic(h.tic, work, dur_d)
+        t, f, secs, spans = all_lc_for_tic(h.tic, work, dur_d)
         pmin = core.pmin_from_duration(dur_d, mstar, rstar, depth)
-        rows = core.alias_table(h.t1, h.t2, dur_d, depth, h.depth_err_ppm * 1e-6, t, f,
+        derr = h.depth_err_ppm * 1e-6
+        rows = core.alias_table(h.t1, h.t2, dur_d, depth, derr, t, f,
                                 p_floor=args.p_floor, pmin_density=pmin)
         at = pd.DataFrame(rows)
         at.to_csv(work / "aliases" / f"{h.cand_id}.csv", index=False)
         ok = at[at["status"].isin(["allowed", "supported"])]
-        summ.append(dict(cand_id=h.cand_id, tic=h.tic, dT_d=h.t2 - h.t1,
+
+        # per-epoch table: period hypotheses, then every alias still allowed or supported
+        sig, edges = core.duration_scale_noise(t, f, dur_d), core.gap_edges(t)
+        times = passing.loc[passing["cand_id"] == h.cand_id, "t2"].to_numpy()
+        periods = []
+        for P0 in hyp.get(h.tic, []):
+            P, k, N = core.refine_period(h.t1, times, P0, dur_d)
+            periods.append((P, f"hypothesis {P0:g} d ({k}/{N} events match)", P0))
+        if h.cand_id in cps.index and np.isfinite(cps.loc[h.cand_id, "cp_period_d"]):
+            c = cps.loc[h.cand_id]
+            Pc, kc = (c.cp_period_d, c.cp_k) if c.cp_period_d >= 5 else (c.cp_long_period_d, c.cp_long_k)
+            if np.isfinite(Pc) and all(abs(Pc - q[0]) > 1e-4 for q in periods):
+                periods.append((Pc, f"common period ({kc}/{c.cp_N} events match)", Pc))
+        periods += [(r.period_d, f"alias n={r.n} ({r.status})", None)
+                    for r in ok.itertuples()]
+        erows = []
+        for P, source, P0 in periods:
+            er = epoch_rows(h, P, source, t, f, spans, dur_d, depth, derr, sig, edges)
+            erows += er
+            if P0 is None:
+                continue
+            now, old = epoch_status(er)
+            hyp_rows.append(dict(
+                cand_id=h.cand_id, tic=h.tic, period_quoted_d=P0, period_used_d=P, source=source,
+                status_old_rule=old, status_now=now,
+                n_epochs_with_data=sum(r["verdict"] not in ("no data", "paper event", "alias event (T2)") for r in er),
+                n_supporting=sum(r["verdict"] == "supports" for r in er),
+                n_inconclusive=sum(r["verdict"] == "inconclusive" for r in er),
+                excluding_old_rule=";".join(f"S{r['sector']:.0f}:{r['epoch_btjd']:.3f}" for r in er
+                                            if r["verdict_any_coverage"] == "excludes"),
+                excluding_now=";".join(f"S{r['sector']:.0f}:{r['epoch_btjd']:.3f}" for r in er
+                                       if r["verdict"] == "excludes"),
+                plot=plot_epochs(h, P, er, t, f, Path(args.out) / "epoch_plots")))
+        pd.DataFrame(erows).to_csv(work / "aliases" / f"{h.cand_id}_epochs.csv", index=False)
+        summ.append(dict(cand_id=h.cand_id, tic=h.tic, alias_event_t2=h.t2,
+                         alias_event_t2_source=h.t2_source,
+                         alias_event_sector=int(h.sector), alias_event_author=h.author,
+                         alias_event_snr=h.snr, alias_event_reason=h.alias_event_reason,
+                         n_clean_events=h.n_clean_events, dT_d=h.t2 - h.t1,
                          pmin_circ_d=pmin, n_aliases=len(at),
                          n_allowed=int((at["status"] == "allowed").sum()),
                          n_supported=int((at["status"] == "supported").sum()),
@@ -480,6 +718,7 @@ def step_aliases(cands, work, args):
               f"{summ[-1]['n_supported']} supported")
     df = pd.DataFrame(summ)
     df.to_csv(work / "aliases_summary.csv", index=False)
+    pd.DataFrame(hyp_rows).to_csv(work / "aliases" / "hypotheses_summary.csv", index=False)
     return df
 
 
@@ -538,20 +777,24 @@ def plot_hit(h, work, outdir):
 def step_report(cands, work, args):
     out = Path(args.out)
     (out / "plots").mkdir(parents=True, exist_ok=True)
-    ev = pd.read_csv(work / "events_all.csv")
-    passing = ev[ev["passes"] == True].sort_values("snr", ascending=False)
-    hits = passing.drop_duplicates("cand_id")
-    # the other passing events, so a lower-SNR but cleaner dip is not hidden
-    others = {cid: g.iloc[1:] for cid, g in passing.groupby("cand_id")}
+    passing = load_passing(work, getattr(args, "event_times", None)).sort_values("snr", ascending=False)
+    hits = alias_events(passing)
+    # the other passing events, so no dip is hidden
+    chosen = dict(zip(hits["cand_id"], hits["t2"]))
+    others = {cid: g[(g["t2"] - chosen[cid]).abs() > 1e-6] for cid, g in passing.groupby("cand_id")}
     hits["n_passing_events"] = [len(others[c]) + 1 for c in hits["cand_id"]]
     hits["other_passing"] = [";".join(f"S{int(o.sector)}:{o.t2:.4f}:snr{o.snr:.1f}"
                                       for o in others[c].itertuples()) for c in hits["cand_id"]]
     toi = pd.read_csv(work / "toi_match.csv", dtype=str).fillna("") if (work / "toi_match.csv").exists() else None
     al = pd.read_csv(work / "aliases_summary.csv") if (work / "aliases_summary.csv").exists() else None
+    cp = pd.read_csv(work / "common_period.csv") if (work / "common_period.csv").exists() else None
     if toi is not None:
         hits = hits.merge(toi.drop(columns=["tic"]), on="cand_id", how="left")
     if al is not None and len(al):
-        hits = hits.merge(al.drop(columns=["tic"]), on="cand_id", how="left")
+        hits = hits.merge(al.drop(columns=["tic", "n_clean_events", "alias_event_reason"], errors="ignore"),
+                          on="cand_id", how="left")
+    if cp is not None and len(cp):
+        hits = hits.merge(cp.drop(columns=["tic"]), on="cand_id", how="left")
     paper = cands.set_index("cand_id")[["depth_ppm", "duration_h"]].rename(
         columns={"depth_ppm": "paper_depth_ppm", "duration_h": "paper_dur_h"})
     hits = hits.merge(paper, left_on="cand_id", right_index=True, how="left")
@@ -583,6 +826,15 @@ def step_report(cands, work, args):
             notes.append(f"already CTOI {h.ctoi} (P={h.ctoi_period})")
         if h.tic in PAPER_NOTES:
             notes.append(PAPER_NOTES[h.tic])
+        notes.append(f"alias event: {h.alias_event_reason}")
+        if h.t2_source != "box search":
+            notes.append(f"T2 is the {h.t2_source} (+/- {h.t2_err_min:.1f} min), not the "
+                         f"QLP box time {h.t2_box:.4f}")
+        if pd.notna(getattr(h, "cp_period_d", np.nan)):
+            notes.append(f"common period {h.cp_period_d:.4f} d matches {int(h.cp_k)} of {int(h.cp_N)} "
+                         f"events incl. the paper's" + (f" [{h.cp_flag}]" if h.cp_flag == h.cp_flag and h.cp_flag else "")
+                         + (f"; best P >= 5 d: {h.cp_long_period_d:.4f} d, {int(h.cp_long_k)} of {int(h.cp_N)}"
+                            if pd.notna(h.cp_long_period_d) and abs(h.cp_long_period_d - h.cp_period_d) > 1e-4 else ""))
         if h.edge_dist_d < 0.5:
             notes.append(f"event {h.edge_dist_d:.2f} d from a gap or sector edge, check systematics")
         if h.frac < 0.8:
@@ -610,33 +862,66 @@ def step_report(cands, work, args):
     print(f"wrote {out/'shortlist.csv'} and {out/'shortlist.md'} ({len(hits)} hits)")
 
 
+def fresh_lc(lc):
+    """The same light curve rebuilt from writable copies of time, flux, flux_err and quality.
+
+    QLP files from S94 on carry a read-only column that makes lightkurve's
+    bin() (inside the CNN's preprocess_lc) fail with "output array is read-only".
+    """
+    import lightkurve as lk
+    new = lk.LightCurve(time=lc.time.copy(), flux=np.array(lc.flux.value, copy=True) * lc.flux.unit,
+                        flux_err=np.array(lc.flux_err.value, copy=True) * lc.flux_err.unit)
+    q = getattr(lc, "quality", None)
+    if q is not None:
+        new["quality"] = np.array(getattr(q, "value", q), copy=True)
+    return new
+
+
+def cnn_targets(work, extra_path):
+    """Every passing event, the paper event of each such candidate, and extra transits."""
+    ev = pd.read_csv(work / "events_all.csv")
+    passing = ev[ev["passes"] == True]
+    rows = [dict(cand_id=h.cand_id, tic=h.tic, sector=int(h.sector), author=h.author, tc=h.t2, which="new")
+            for h in passing.itertuples()]
+    for cid, g in passing.groupby("cand_id"):
+        ref = json.loads((work / "per_cand" / f"{cid}.json").read_text()).get("ref") or {}
+        if ref.get("sector") is not None:
+            rows.append(dict(cand_id=cid, tic=int(g.tic.iloc[0]), sector=int(ref["sector"]),
+                             author=ref["author"], tc=float(g.t1.iloc[0]), which="paper"))
+    if extra_path and Path(extra_path).exists():
+        rows += pd.read_csv(Path(extra_path).resolve(), comment="#").to_dict("records")
+    return pd.DataFrame(rows).drop_duplicates(["tic", "sector", "author", "tc"])
+
+
 def step_cnn(cands, work, args):
-    """Refit each new event with the Salinas CNN (their repo, any pipeline)."""
+    """Refit events with the Salinas CNN (their repo, any pipeline)."""
     repo = Path(args.cnn_repo).resolve()
     work = work.resolve()  # before chdir, or a relative --work points into the CNN repo
+    todo = cnn_targets(work, getattr(args, "cnn_extra", None))
     sys.path.insert(0, str(repo))
     import os
     os.chdir(repo)  # their config uses repo-relative paths
     import lightkurve as lk
     from computeparams.param_inference_core import pick_lightcurve, preprocess_lc, _run_inference_on_lc
-    ev = pd.read_csv(work / "events_all.csv")
-    hits = ev[ev["passes"] == True].sort_values("snr", ascending=False).drop_duplicates("cand_id")
     rows = []
-    for h in hits.itertuples():
-        for label, s, tc in (("new", h.sector, h.t2),):
-            sr = lk.search_lightcurve(f"TIC {h.tic}", sector=int(s), author=h.author)
+    for k, h in enumerate(todo.itertuples(), 1):
+        base = dict(cand_id=h.cand_id, tic=h.tic, sector=h.sector, author=h.author, which=h.which, t_input=h.tc)
+        try:
+            sr = lk.search_lightcurve(f"TIC {h.tic}", sector=int(h.sector), author=h.author)
             if len(sr) == 0:
+                rows.append(dict(base, error="no light curve on MAST"))
                 continue
-            try:  # their preprocess_lc can fail in lc.bin() on some QLP files
-                lc = preprocess_lc(pick_lightcurve(sr[0].download()))
-                r = _run_inference_on_lc(lc, tc, plot=False)
-                rows.append(dict(cand_id=h.cand_id, tic=h.tic, sector=s, which=label,
-                                 **{k: r[k] for k in ("depth_ppm", "sigma_depth", "duration_h",
-                                                      "sigma_duration", "t_mid_pred_btjd")}))
-            except Exception as e:
-                rows.append(dict(cand_id=h.cand_id, tic=h.tic, sector=s, which=label, error=str(e)))
-    pd.DataFrame(rows).to_csv(work / "cnn_new_events.csv", index=False)
-    print("wrote cnn_new_events.csv")
+            lc = preprocess_lc(fresh_lc(pick_lightcurve(sr[0].download(download_dir=str(work / "cnn_cache")))))
+            r = _run_inference_on_lc(lc, h.tc, plot=False)
+            rows.append(dict(base, **{k_: r[k_] for k_ in ("depth_ppm", "sigma_depth", "duration_h",
+                                                           "sigma_duration", "t_mid_pred_btjd")}))
+        except Exception as e:
+            rows.append(dict(base, error=str(e)))
+        print(f"[cnn {k}/{len(todo)}] {h.cand_id} S{h.sector} {h.which}: {rows[-1].get('error', 'ok')}")
+    df = pd.DataFrame(rows)
+    df.to_csv(work / "cnn_new_events.csv", index=False)
+    n_err = int(df["error"].notna().sum()) if "error" in df else 0
+    print(f"wrote cnn_new_events.csv: {len(df) - n_err} fitted, {n_err} failed")
 
 
 def main():
@@ -654,9 +939,15 @@ def main():
     ap.add_argument("--anti-ratio", type=float, default=1.5,
                     help="event SNR must beat the strongest brightening by this factor")
     ap.add_argument("--p-floor", type=float, default=1.0, help="shortest alias period to list (d)")
+    ap.add_argument("--hypotheses", default="period_hypotheses.csv",
+                    help="tic,period_d list tabulated epoch by epoch in the alias step")
+    ap.add_argument("--event-times", default="results/round2/qlp_s94_timing.csv",
+                    help="non-QLP mid-times (cand_id,t2_box,tc_tesscut,tc_tesscut_err_min) used in place of box times")
     ap.add_argument("--types", default="single,multiplanet",
                     help="comma list of candidate types to search (single, multi, multiplanet, all)")
     ap.add_argument("--cnn-repo", default="singletransiters")
+    ap.add_argument("--cnn-extra", default="cnn_extra.csv",
+                    help="extra transits for the CNN step: cand_id,tic,sector,author,tc,which")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
 

@@ -40,7 +40,90 @@ def fake_lc(tic, sector):
     return t, f
 
 
+def check_alias_event_choice():
+    """A clean lower-SNR event beats a high-SNR edge dip; with no clean event, top SNR wins."""
+    ev = pd.DataFrame([
+        dict(cand_id="a", tic=1, sector=95, t2=3899.75, snr=12.0, edge_dist_d=0.15, frac=0.54),
+        dict(cand_id="a", tic=1, sector=68, t2=3171.99, snr=8.5, edge_dist_d=3.0, frac=1.0),
+        dict(cand_id="b", tic=2, sector=70, t2=3200.0, snr=9.0, edge_dist_d=0.2, frac=0.9),
+        dict(cand_id="b", tic=2, sector=71, t2=3230.0, snr=7.5, edge_dist_d=2.0, frac=0.6),
+    ])
+    h = pl.alias_events(ev).set_index("cand_id")
+    assert h.loc["a", "sector"] == 68 and "not clean" in h.loc["a", "alias_event_reason"]
+    assert h.loc["b", "sector"] == 70 and h.loc["b", "alias_event_reason"].startswith("no clean event")
+
+
+def check_event_times():
+    """Measured non-QLP times replace t2, keep the box time, and a stray row is not applied."""
+    with tempfile.TemporaryDirectory() as d:
+        d = Path(d)
+        pd.DataFrame([
+            dict(cand_id="a", tic=1, sector=100, t2=4000.0, passes=True),
+            dict(cand_id="a", tic=1, sector=65, t2=3100.0, passes=True),
+            dict(cand_id="b", tic=2, sector=101, t2=4100.0, passes=False),
+        ]).to_csv(d / "events_all.csv", index=False)
+        pd.DataFrame([
+            dict(cand_id="a", t2_box=4000.0, tc_tesscut=4000.01, tc_tesscut_err_min=5.0),
+            dict(cand_id="a", t2_box=3100.0, tc_tesscut=np.nan, tc_tesscut_err_min=np.nan),
+            dict(cand_id="a", t2_box=4050.0, tc_tesscut=4050.01, tc_tesscut_err_min=5.0),
+        ]).to_csv(d / "times.csv", index=False)
+        p = pl.load_passing(d, d / "times.csv").set_index("sector")
+        assert len(p) == 2
+        assert p.loc[100, "t2"] == 4000.01 and p.loc[100, "t2_box"] == 4000.0
+        assert p.loc[100, "t2_source"] == "TESScut fit" and p.loc[100, "t2_err_min"] == 5.0
+        assert p.loc[65, "t2"] == 3100.0 and p.loc[65, "t2_source"] == "box search"
+        assert pl.load_passing(d, d / "missing.csv")["t2_source"].eq("box search").all()
+
+
+def check_cutout_mask():
+    """A first TESScut download uses the same quality mask as reading the cached file."""
+    import lightkurve as lk
+    import tesscut_phot as tp
+    seen = {}
+    res = SimpleNamespace(download=lambda **kw: seen.update(kw))
+    search, lk.search_tesscut = lk.search_tesscut, lambda *a, **k: [res]
+    try:
+        with tempfile.TemporaryDirectory() as d:
+            tp.cutout(1.0, 2.0, 50, d)
+    finally:
+        lk.search_tesscut = search
+    assert seen["quality_bitmask"] == "default", seen
+
+
+def check_edge_epochs_inconclusive():
+    """A flat epoch 0.2 d from a gap is inconclusive; the same epoch mid-data excludes."""
+    t = np.concatenate([np.arange(0, 10, CAD), np.arange(12, 22, CAD)])
+    f = 1 + rng.normal(0, 300e-6, t.size)
+    v = pl.core.epoch_verdicts([9.8, 5.0, 11.0], t, f, DUR, DEPTH, 300e-6)
+    assert list(v["verdict"]) == ["inconclusive", "excludes", "no data"], v["verdict"]
+    assert v["verdict_any_coverage"][0] == "excludes"
+
+
+def check_common_period():
+    """Four later dips on a 23.75 d ephemeris through T1 give that period; a stray dip
+    lets a short chance period win overall, but not among P >= 5 d."""
+    times = [2396.13 + 23.7535 * k + d for k, d in ((30, 0.02), (31, -0.03), (33, 0.01), (40, 0.0))]
+    cp = pl.core.common_period(2396.13, times, 4 / 24)
+    assert cp["k"] == 5 and cp["N"] == 5 and abs(cp["P"] - 23.7535) < 0.01, cp
+    lp = pl.core.common_period(2396.13, times + [3000.4], 4 / 24, p_floor=5.0)
+    assert lp["k"] == 5 and lp["N"] == 6 and abs(lp["P"] - 23.7535) < 0.01, lp
+
+
+def check_mixed_cadence_coverage():
+    """A fully sampled 30-min stretch counts as covered next to 10-min data."""
+    t = np.concatenate([np.arange(0, 10, 30 / 1440), np.arange(20, 30, CAD)])
+    f = np.ones(t.size)
+    _, frac, _ = pl.core.box_stats(t, f, np.array([5.0, 25.0, 15.0]), DUR)
+    assert 0.9 < frac[0] < 1.1 and 0.9 < frac[1] < 1.1 and frac[2] == 0, frac
+
+
 def main():
+    check_alias_event_choice()
+    check_event_times()
+    check_cutout_mask()
+    check_mixed_cadence_coverage()
+    check_common_period()
+    check_edge_epochs_inconclusive()
     work = Path(tempfile.mkdtemp())
     out = work / "results"
     pd.DataFrame([
@@ -57,9 +140,11 @@ def main():
     pd.DataFrame({"TIC ID": [2], "TOI": [9999.01], "TFOPWG Disposition": ["PC"],
                   "Period (days)": [50.0], "Epoch (BJD)": [2459200.0]}).to_csv(work / "exofop_toi.csv", index=False)
     pd.DataFrame({"TIC ID": [5], "CTOI": [5.01], "Period (days)": [3.0]}).to_csv(work / "exofop_ctoi.csv", index=False)
+    pd.DataFrame({"tic": [1], "period_d": [157.9]}).to_csv(work / "hyp.csv", index=False)
 
     args = SimpleNamespace(workers=1, snr_min=7.0, depth_lo=0.5, depth_hi=2.0, dur_lo=0.5, dur_hi=2.0,
-                           anti_ratio=1.5, p_floor=1.0, force=False, out=str(out))
+                           anti_ratio=1.5, p_floor=1.0, force=False, out=str(out),
+                           hypotheses=str(work / "hyp.csv"))
     cands = pl.load_candidates(work / "c.csv")
     pl.step_coverage(cands, work, 1)
     ev = pl.step_search(cands, work, args)
@@ -73,12 +158,17 @@ def main():
     h = hits.sort_values("snr").iloc[-1]
     assert abs(h.t2 - T2) < 0.05, h.t2
     assert 0.7 < h.depth_ratio < 1.4, h.depth_ratio
-    at = pd.read_csv(next((work / "aliases").glob("1_*.csv")))
+    at = pd.read_csv(next(p for p in (work / "aliases").glob("1_*.csv") if not p.name.endswith("_epochs.csv")))
     true = at.iloc[(at.period_d - P_TRUE).abs().argmin()]
     print(at.status.value_counts().to_string())
     print("true alias:", true.to_dict())
     assert true.status == "supported", "S50 holds a third transit at the true period"
     assert (at.status == "excluded").sum() > 0, "S45/S50 should exclude some aliases"
+    hy = pd.read_csv(work / "aliases" / "hypotheses_summary.csv").iloc[0]
+    print("hypothesis:", hy.to_dict())
+    assert abs(hy.period_used_d - P_TRUE) < 0.01 and hy.status_now == "supported"
+    ep = pd.read_csv(next((work / "aliases").glob("1_*_epochs.csv")))
+    assert {"paper event", "alias event (T2)", "supports"} <= set(ep.verdict)
     toi = pd.read_csv(work / "toi_match.csv", dtype=str).fillna("")
     assert toi.set_index("tic").loc["2", "toi"] != ""
     assert (out / "shortlist.md").exists() and any((out / "plots").glob("*.png"))

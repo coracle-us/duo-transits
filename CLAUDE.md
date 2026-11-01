@@ -160,7 +160,8 @@ Lessons that change the plan:
   reportable, but cite the upload and don't claim discovery.
 - 104 of 276 new target-sectors are QLP-only (TESS-SPOC stops at S72, TGLC has no recent
   sectors) → independent-reduction vetting needs our own TESSCut photometry.
-- Sectors 97 and 98 are ~55 d long (genuine). MAST has a mislabelled "Sector 1751" product.
+- Sectors 97 and 98 are ~55 d long (genuine). "Sector 1751" on MAST is not a mislabel: it is the
+  7.2 d 3I/ATLAS special pointing (2026 Jan 15-22; tess-point 0.9.5 numbers it 1751).
 - Open conflict: TIC 13072758 thesis 23.794 d (n=31) vs ExoFOP 49.17 d (n=15).
 
 Later the same day (steps 3–6 done, project wound down):
