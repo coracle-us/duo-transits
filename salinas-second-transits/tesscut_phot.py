@@ -22,8 +22,8 @@ def cutout(ra, dec, sector, cache_dir, size=15):
     sr = lk.search_tesscut(f"{ra} {dec}", sector=int(sector))
     if len(sr) == 0:
         raise RuntimeError(f"no TESScut data for sector {sector}")
-    tpf = sr[0].download(cutout_size=size, download_dir=str(cache_dir), quality_bitmask="none")
-    return tpf
+    # same mask as lk.read above, or a first download measures differently from a cached rerun
+    return sr[0].download(cutout_size=size, download_dir=str(cache_dir), quality_bitmask="default")
 
 
 def target_pixel(tpf, ra, dec):

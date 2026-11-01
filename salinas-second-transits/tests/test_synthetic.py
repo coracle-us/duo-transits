@@ -75,6 +75,21 @@ def check_event_times():
         assert pl.load_passing(d, d / "missing.csv")["t2_source"].eq("box search").all()
 
 
+def check_cutout_mask():
+    """A first TESScut download uses the same quality mask as reading the cached file."""
+    import lightkurve as lk
+    import tesscut_phot as tp
+    seen = {}
+    res = SimpleNamespace(download=lambda **kw: seen.update(kw))
+    search, lk.search_tesscut = lk.search_tesscut, lambda *a, **k: [res]
+    try:
+        with tempfile.TemporaryDirectory() as d:
+            tp.cutout(1.0, 2.0, 50, d)
+    finally:
+        lk.search_tesscut = search
+    assert seen["quality_bitmask"] == "default", seen
+
+
 def check_edge_epochs_inconclusive():
     """A flat epoch 0.2 d from a gap is inconclusive; the same epoch mid-data excludes."""
     t = np.concatenate([np.arange(0, 10, CAD), np.arange(12, 22, CAD)])
@@ -105,6 +120,7 @@ def check_mixed_cadence_coverage():
 def main():
     check_alias_event_choice()
     check_event_times()
+    check_cutout_mask()
     check_mixed_cadence_coverage()
     check_common_period()
     check_edge_epochs_inconclusive()
