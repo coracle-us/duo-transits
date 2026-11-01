@@ -138,6 +138,7 @@ def main():
     if a.asassn: parts.append(load_asassn())
     if a.ztf: parts.append(load_ztf())
     if a.tess: tess_sectors()
+    parts = [p for p in parts if len(p)]  # an empty source (ZTF here) would turn the concat's columns to object dtype
     if not parts: sys.exit("no photometry loaded")
     data = pd.concat(parts, ignore_index=True)
     data[["jd", "mag", "err"]] = data[["jd", "mag", "err"]].apply(pd.to_numeric, errors="coerce").astype(float)
