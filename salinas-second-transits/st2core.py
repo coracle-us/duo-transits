@@ -12,6 +12,19 @@ DAY = 86400.0
 # transit window covered and at least this far from a gap or sector edge.
 CLEAN_FRAC = 0.8
 CLEAN_EDGE_D = 0.5
+# BTJD windows where most stars in a sector dip together in FFI photometry: a
+# spacecraft-wide systematic, not transits (round2/s9_common_mode.py).
+COMMON_MODE_WINDOWS = {94: [(3873.5, 3876.25)], 95: [(3899.5, 3900.0), (3906.25, 3906.75)], 97: [(3979.75, 3980.5)]}
+
+
+def drop_common_mode(t, f, sector, author):
+    """Remove a sector's common-mode window; SPOC 2-min light curves are flat there."""
+    if author == "SPOC":
+        return t, f
+    keep = np.ones(t.size, bool)
+    for lo, hi in COMMON_MODE_WINDOWS.get(sector, []):
+        keep &= (t < lo) | (t > hi)
+    return t[keep], f[keep]
 
 
 def robust_std(x):
@@ -182,8 +195,10 @@ def epoch_verdicts(ep, t, f, dur_d, depth0, depth0_err, sig=None, edges=None, mi
 
     verdict is 'no data' (coverage < min_frac), 'inconclusive' (coverage below
     CLEAN_FRAC or within CLEAN_EDGE_D of a gap or sector edge), or for clean
-    epochs 'excludes' (depth below max(depth0 - 3 sigma, 0.5 depth0)),
-    'supports' (depth within 3 sigma of depth0) or 'deeper' (neither).
+    epochs 'excludes' (depth below 0.5 depth0 - 3 sigma), 'supports' (depth
+    within 3 sigma of depth0), 'shallow' (between those, which excludes nothing)
+    or 'deeper' (above them). A box mean over the full duration runs shallower
+    than a fitted depth0 (round2/s10_epoch_rule_test.py).
     """
     ep = np.atleast_1d(np.asarray(ep, float))
     if sig is None:
@@ -194,9 +209,10 @@ def epoch_verdicts(ep, t, f, dur_d, depth0, depth0_err, sig=None, edges=None, mi
     edge_d = edge_distance(edges, ep)
     err = sig / np.sqrt(np.clip(frac, 1e-3, None))
     tot = np.hypot(err, depth0_err)
-    excl = depth < np.maximum(depth0 - 3 * tot, 0.5 * depth0)
+    excl = depth < 0.5 * depth0 - 3 * tot
     supp = np.abs(depth - depth0) < 3 * tot
-    verdict = np.where(excl, "excludes", np.where(supp, "supports", "deeper")).astype(object)
+    verdict = np.where(excl, "excludes", np.where(supp, "supports",
+                                                  np.where(depth < depth0, "shallow", "deeper"))).astype(object)
     verdict[frac < min_frac] = "no data"
     # what the epoch said before partly covered and near-edge epochs became inconclusive
     verdict_any_coverage = verdict.copy()
@@ -211,10 +227,10 @@ def alias_table(t1, t2, dur_d, depth0, depth0_err, t, f, p_floor=1.0,
 
     For each alias, look at each predicted epoch (other than the two known
     events) that falls in the data (see epoch_verdicts). Only clean epochs
-    count: one whose box depth is below max(depth0 - 3 sigma, 0.5 depth0)
-    excludes the alias; one whose depth agrees with depth0 counts as a
-    supporting (third) transit. Partly covered or near-edge epochs are
-    inconclusive and neither exclude nor support.
+    count: one whose box depth is below 0.5 depth0 - 3 sigma excludes the
+    alias; one whose depth agrees with depth0 counts as a supporting (third)
+    transit. Partly covered or near-edge epochs are inconclusive and neither
+    exclude nor support.
     """
     dT = t2 - t1
     rows = []
@@ -235,7 +251,7 @@ def alias_table(t1, t2, dur_d, depth0, depth0_err, t, f, p_floor=1.0,
             n_inc = int((v["verdict"] == "inconclusive").sum())
             n_excl = int((v["verdict"] == "excludes").sum())
             n_supp = int((v["verdict"] == "supports").sum())
-            clean = np.isin(v["verdict"], ["excludes", "supports", "deeper"])
+            clean = np.isin(v["verdict"], ["excludes", "supports", "shallow", "deeper"])
             if clean.any():
                 worst = float(np.min(v["depth"][clean]))
             if n_excl:

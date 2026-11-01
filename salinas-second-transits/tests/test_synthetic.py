@@ -65,6 +65,8 @@ def check_event_times():
         pd.DataFrame([
             dict(cand_id="a", t2_box=4000.0, tc_tesscut=4000.01, tc_tesscut_err_min=5.0),
             dict(cand_id="a", t2_box=3100.0, tc_tesscut=np.nan, tc_tesscut_err_min=np.nan),
+            dict(cand_id="a", t2_box=3100.0, tc_tesscut=3100.5, tc_tesscut_err_min=0.01),
+            dict(cand_id="a", t2_box=3100.0, tc_tesscut=3100.5, tc_tesscut_err_min=1134.0),
             dict(cand_id="a", t2_box=4050.0, tc_tesscut=4050.01, tc_tesscut_err_min=5.0),
         ]).to_csv(d / "times.csv", index=False)
         p = pl.load_passing(d, d / "times.csv").set_index("sector")
@@ -90,6 +92,16 @@ def check_cutout_mask():
     assert seen["quality_bitmask"] == "default", seen
 
 
+def check_common_mode_mask():
+    """FFI light curves lose a sector's common-mode window; SPOC and other sectors don't."""
+    t = np.arange(3870, 3880, CAD)
+    f = np.ones_like(t)
+    t2, f2 = pl.core.drop_common_mode(t, f, 94, "QLP")
+    assert t2.size == f2.size < t.size and not np.any((t2 >= 3873.5) & (t2 <= 3876.25))
+    assert pl.core.drop_common_mode(t, f, 94, "SPOC")[0].size == t.size
+    assert pl.core.drop_common_mode(t, f, 93, "QLP")[0].size == t.size
+
+
 def check_edge_epochs_inconclusive():
     """A flat epoch 0.2 d from a gap is inconclusive; the same epoch mid-data excludes."""
     t = np.concatenate([np.arange(0, 10, CAD), np.arange(12, 22, CAD)])
@@ -97,6 +109,21 @@ def check_edge_epochs_inconclusive():
     v = pl.core.epoch_verdicts([9.8, 5.0, 11.0], t, f, DUR, DEPTH, 300e-6)
     assert list(v["verdict"]) == ["inconclusive", "excludes", "no data"], v["verdict"]
     assert v["verdict_any_coverage"][0] == "excludes"
+
+
+def check_exclusion_rule():
+    """Clean epochs by depth with a known sigma: only a depth well under half depth0 excludes."""
+    t = np.arange(0, 40, CAD)
+    centers = np.array([5.0, 12.0, 19.0, 26.0, 33.0])
+    d0, sig = 5000e-6, 300e-6  # depth0 - 3 sigma = 4100 ppm, 0.5 depth0 - 3 sigma = 1600 ppm
+    f = np.ones(t.size)
+    for c, d in zip(centers, [0.0, 1500e-6, 2000e-6, 3500e-6, 5000e-6]):
+        f[np.abs(t - c) < DUR / 2] -= d
+    v = pl.core.epoch_verdicts(centers, t, f, DUR, d0, 0.0, sig=sig)
+    assert list(v["verdict"]) == ["excludes", "excludes", "shallow", "shallow", "supports"], v["verdict"]
+    # the same flat epoch can't exclude a weak signal: at 5 sigma, half depth0 - 3 sigma is under zero
+    v = pl.core.epoch_verdicts([5.0], t, np.ones(t.size), DUR, 5 * sig, 0.0, sig=sig)
+    assert v["verdict"][0] != "excludes", v["verdict"]
 
 
 def check_common_period():
@@ -121,9 +148,11 @@ def main():
     check_alias_event_choice()
     check_event_times()
     check_cutout_mask()
+    check_common_mode_mask()
     check_mixed_cadence_coverage()
     check_common_period()
     check_edge_epochs_inconclusive()
+    check_exclusion_rule()
     work = Path(tempfile.mkdtemp())
     out = work / "results"
     pd.DataFrame([

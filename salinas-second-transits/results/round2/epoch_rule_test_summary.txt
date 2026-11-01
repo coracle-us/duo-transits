@@ -1,0 +1,139 @@
+KNOWN STARS, set toi: 90 total, 83 used
+skipped
+under 3 clean transits or under 300 d apart    7
+median epoch SNR quartiles [4.7, 9.1, 22.7]
+current  true period {'excluded': 68, 'supported': 15}  false survivors median 16 mean 20.1 max 85.0  of median 1853 aliases
+both     true period {'supported': 50, 'excluded': 18, 'allowed': 15}  false survivors median 20 mean 41.0 max 1112.0  of median 1853 aliases
+half3s   true period {'supported': 63, 'allowed': 16, 'excluded': 4}  false survivors median 30 mean 103.8 max 2553.0  of median 1853 aliases
+epoch rates on real data (fraction of clean epochs that exclude)
+                              current_excludes  both_excludes  half3s_excludes     n  n_stars  ratio_p05  ratio_p50
+kind    snr_bin                                                                                                    
+flat    (0.0, 4.0]                      0.9244         0.4576           0.0639   767       19      -0.71      -0.01
+        (4.0, 6.0]                      0.9822         0.9530           0.2690   617       13      -0.35       0.01
+        (6.0, 8.0]                      0.9980         0.9980           0.6996   506       12      -0.23      -0.00
+        (8.0, 10.0]                     1.0000         1.0000           0.9810   211        8      -0.13      -0.01
+        (10.0, 15.0]                    1.0000         1.0000           0.9970   330        8      -0.10       0.01
+        (15.0, 20.0]                    1.0000         1.0000           1.0000   127        6      -0.07      -0.00
+        (20.0, 30.0]                    1.0000         1.0000           1.0000   644       11      -0.06      -0.00
+        (30.0, 1000000000.0]            1.0000         1.0000           1.0000  1030       16      -0.03       0.00
+transit (0.0, 4.0]                      0.2471         0.0086           0.0000   348       19       0.06       0.73
+        (4.0, 6.0]                      0.1030         0.0399           0.0066   301       13       0.40       0.78
+        (6.0, 8.0]                      0.0336         0.0126           0.0000   238       12       0.61       0.84
+        (8.0, 10.0]                     0.1959         0.0722           0.0103    97        7       0.45       0.81
+        (10.0, 15.0]                    0.1268         0.0070           0.0070   142        8       0.68       0.93
+        (15.0, 20.0]                    0.4531         0.0000           0.0000    64        5       0.69       0.84
+        (20.0, 30.0]                    0.6266         0.0000           0.0000   308       11       0.76       0.86
+        (30.0, 1000000000.0]            0.9563         0.0119           0.0079   504       16       0.69       0.81
+median across stars, so stars with many epochs don't dominate
+         current_excludes  both_excludes  half3s_excludes
+kind                                                     
+flat               1.0000            1.0           0.9841
+transit            0.2222            0.0           0.0000
+
+KNOWN STARS, set multi: 57 total, 35 used
+skipped
+period at edge of refinement grid               9
+stacked depth under half the catalogue depth    7
+under 3 clean transits or under 300 d apart     6
+median epoch SNR quartiles [5.6, 8.1, 14.4]
+current  true period {'excluded': 24, 'supported': 11}  false survivors median 32 mean 33.3 max 70.0  of median 1839 aliases
+both     true period {'supported': 20, 'excluded': 11, 'allowed': 4}  false survivors median 32 mean 35.1 max 70.0  of median 1839 aliases
+half3s   true period {'supported': 23, 'excluded': 7, 'allowed': 5}  false survivors median 46 mean 103.2 max 999.0  of median 1839 aliases
+epoch rates on real data (fraction of clean epochs that exclude)
+                      current_excludes  both_excludes  half3s_excludes    n  n_stars  ratio_p05  ratio_p50
+kind    snr_bin                                                                                           
+flat    (0.0, 4.0]              0.9820         0.8108           0.0631  111        3      -0.39      -0.04
+        (4.0, 6.0]              1.0000         0.9948           0.3212  386        7      -0.26      -0.03
+        (6.0, 8.0]              1.0000         1.0000           0.8640  125        7      -0.16      -0.02
+        (8.0, 10.0]             1.0000         1.0000           0.9683   63        4      -0.14      -0.01
+        (10.0, 15.0]            0.9938         0.9938           0.9938  162        5      -0.09      -0.00
+        (15.0, 20.0]            1.0000         1.0000           1.0000  172        6      -0.05       0.00
+        (20.0, 30.0]            1.0000         1.0000           1.0000   44        3      -0.03       0.00
+transit (0.0, 4.0]              0.1176         0.0000           0.0000   51        3       0.44       0.87
+        (4.0, 6.0]              0.1337         0.0988           0.0174  172        7       0.05       0.86
+        (6.0, 8.0]              0.0833         0.0000           0.0000   48        7       0.54       0.67
+        (8.0, 10.0]             0.7037         0.3333           0.2593   27        4      -0.07       0.58
+        (10.0, 15.0]            0.2615         0.0154           0.0154   65        5       0.60       0.86
+        (15.0, 20.0]            0.8889         0.2063           0.0000   63        6       0.38       0.70
+        (20.0, 30.0]            1.0000         0.0000           0.0000   12        3       0.68       0.74
+median across stars, so stars with many epochs don't dominate
+         current_excludes  both_excludes  half3s_excludes
+kind                                                     
+flat               1.0000            1.0           0.9524
+transit            0.3103            0.0           0.0000
+
+
+INJECTIONS
+other transits at 0.7 x reference depth:
+ snr   n  true_excl_current  true_excl_both  true_excl_half3s  false_surv_current  false_surv_both  false_surv_half3s
+   4 141              0.674           0.319             0.057                21.0             25.0              147.0
+   5 141              0.596           0.383             0.050                21.0             21.0               77.0
+   6 141              0.525           0.489             0.043                20.0             20.0               47.0
+   7 141              0.582           0.468             0.043                20.0             20.0               32.0
+   8 141              0.660           0.411             0.035                19.0             20.0               27.0
+  10 141              0.801           0.312             0.035                19.0             20.0               22.0
+  12 141              0.894           0.234             0.035                19.0             20.0               21.0
+  15 141              0.957           0.121             0.035                19.0             20.0               21.0
+  20 141              0.993           0.064             0.014                19.0             20.0               20.0
+  30 141              0.993           0.035             0.007                19.0             20.0               20.0
+  50 141              1.000           0.014             0.000                19.0             20.0               20.0
+other transits at 1.0 x reference depth:
+ snr   n  true_excl_current  true_excl_both  true_excl_half3s  false_surv_current  false_surv_both  false_surv_half3s
+   4 141              0.291           0.085             0.035                21.0             25.0              147.0
+   5 141              0.191           0.085             0.035                21.0             21.0               77.0
+   6 141              0.106           0.085             0.035                21.0             21.0               47.0
+   7 141              0.085           0.071             0.035                21.0             21.0               32.0
+   8 141              0.085           0.057             0.014                20.0             21.0               27.0
+  10 141              0.078           0.035             0.014                20.0             20.0               22.0
+  12 141              0.085           0.035             0.014                20.0             20.0               21.0
+  15 141              0.085           0.014             0.007                20.0             20.0               21.0
+  20 141              0.064           0.014             0.000                20.0             20.0               20.0
+  30 141              0.064           0.000             0.000                20.0             20.0               20.0
+  50 141              0.043           0.000             0.000                20.0             20.0               20.0
+
+CANDIDATES: 53 alias events, 0 differ from the pipeline's stored table under half3s
+current  allowed+supported median 17 mean 19.4; events with none left 0; with exactly 1 2
+both     allowed+supported median 17 mean 19.6; events with none left 0; with exactly 1 2
+half3s   allowed+supported median 21 mean 27.0; events with none left 0; with exactly 1 1
+
+QUOTED PERIODS: 0 of 39 differ from the pipeline's status under half3s
+            cand_id       tic  period_used_d   current      both    half3s pipeline_status  n_excl_current  n_excl_both  n_excl_half3s
+ 275647095_2315.517 275647095      17.063952  excluded supported supported       supported               4            0              0
+ 275647095_2315.517 275647095      17.064264  excluded supported supported       supported               4            0              0
+ 317132251_2221.778 317132251      25.210256  excluded   allowed   allowed         allowed               2            0              0
+ 152464302_2284.841 152464302     296.916241 supported supported supported       supported               0            0              0
+ 241550976_2339.445 241550976      21.196830  excluded supported supported       supported               1            0              0
+ 241550976_2339.445 241550976      21.197071  excluded supported supported       supported               1            0              0
+ 230133616_2396.131 230133616      23.753329  excluded supported supported       supported               5            0              0
+ 230133616_2396.131 230133616      23.753453  excluded supported supported       supported               5            0              0
+ 156068960_2062.638 156068960      12.907331  excluded  excluded  excluded        excluded               5            5              5
+ 402324434_2097.403 402324434       6.848772  excluded  excluded  excluded        excluded              11           11             11
+ 325017283_2045.905 325017283      21.174406 supported supported supported       supported               0            0              0
+ 143355733_2053.837 143355733       6.579194  excluded  excluded  excluded        excluded               8            8              8
+ 107113048_2312.944 107113048      49.701772 supported supported supported       supported               0            0              0
+  40001645_2465.728  40001645      11.989830 supported supported supported       supported               0            0              0
+ 265466589_2037.867 265466589      32.634259 supported supported supported       supported               0            0              0
+  56815340_2569.384  56815340       8.422522  excluded  excluded  excluded        excluded               2            2              2
+ 274858362_2798.399 274858362      10.591439 supported supported supported       supported               0            0              0
+ 150324787_2260.777 150324787      12.982227  excluded  excluded  excluded        excluded              60           60             46
+ 198009543_2162.336 198009543      11.714151  excluded  excluded  excluded        excluded              20           20             19
+ 269130683_2436.556 269130683      11.656321  excluded  excluded  excluded        excluded              16           16             16
+ 300164137_2077.468 300164137       6.206842  excluded  excluded  excluded        excluded             141          133            125
+ 278991817_2079.981 278991817      12.481048  excluded  excluded  excluded        excluded              60           59             57
+ 229155120_2105.818 229155120      29.538089 supported supported supported       supported               0            0              0
+ 271796731_2220.344 271796731       6.611335  excluded  excluded  excluded        excluded             130          130             64
+ 141682338_2247.953 141682338       5.725018  excluded  excluded  excluded        excluded             144          144            126
+302377820a_2064.783 302377820      29.924772 supported supported supported       supported               0            0              0
+302377820b_2071.059 302377820       7.753574  excluded  excluded  excluded        excluded               8            8              4
+ 365208001_2465.411 365208001      18.136966 supported supported supported       supported               0            0              0
+ 454039549_2310.678 454039549      10.965447 supported supported supported       supported               0            0              0
+404736082b_2492.046 404736082       8.921226  excluded  excluded supported       supported               1            1              0
+404736082a_2491.607 404736082     740.886617 supported supported supported       supported               0            0              0
+  44926986_2303.905  44926986      24.115015 supported supported supported       supported               0            0              0
+ 382302456_2234.374 382302456       7.101284  excluded  excluded  excluded        excluded             102          101             90
+  38584656_2287.471  38584656       7.555277  excluded  excluded  excluded        excluded             110          110             74
+ 284188366_2435.603 284188366       8.172034  excluded  excluded  excluded        excluded              30           29              5
+ 141423461_2277.441 141423461       5.209967  excluded  excluded  excluded        excluded             167          167            167
+ 290596728_2044.210 290596728      24.166289  excluded  excluded  excluded        excluded               1            1              1
+ 299746836_2043.388 299746836      13.138302  excluded  excluded  excluded        excluded               4            4              3
+ 291009367_2039.803 291009367      13.165340  excluded  excluded  excluded        excluded               3            3              2
