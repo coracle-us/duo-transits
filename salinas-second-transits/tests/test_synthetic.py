@@ -53,6 +53,28 @@ def check_alias_event_choice():
     assert h.loc["b", "sector"] == 70 and h.loc["b", "alias_event_reason"].startswith("no clean event")
 
 
+def check_event_times():
+    """Measured non-QLP times replace t2, keep the box time, and a stray row is not applied."""
+    with tempfile.TemporaryDirectory() as d:
+        d = Path(d)
+        pd.DataFrame([
+            dict(cand_id="a", tic=1, sector=100, t2=4000.0, passes=True),
+            dict(cand_id="a", tic=1, sector=65, t2=3100.0, passes=True),
+            dict(cand_id="b", tic=2, sector=101, t2=4100.0, passes=False),
+        ]).to_csv(d / "events_all.csv", index=False)
+        pd.DataFrame([
+            dict(cand_id="a", t2_box=4000.0, tc_tesscut=4000.01, tc_tesscut_err_min=5.0),
+            dict(cand_id="a", t2_box=3100.0, tc_tesscut=np.nan, tc_tesscut_err_min=np.nan),
+            dict(cand_id="a", t2_box=4050.0, tc_tesscut=4050.01, tc_tesscut_err_min=5.0),
+        ]).to_csv(d / "times.csv", index=False)
+        p = pl.load_passing(d, d / "times.csv").set_index("sector")
+        assert len(p) == 2
+        assert p.loc[100, "t2"] == 4000.01 and p.loc[100, "t2_box"] == 4000.0
+        assert p.loc[100, "t2_source"] == "TESScut fit" and p.loc[100, "t2_err_min"] == 5.0
+        assert p.loc[65, "t2"] == 3100.0 and p.loc[65, "t2_source"] == "box search"
+        assert pl.load_passing(d, d / "missing.csv")["t2_source"].eq("box search").all()
+
+
 def check_edge_epochs_inconclusive():
     """A flat epoch 0.2 d from a gap is inconclusive; the same epoch mid-data excludes."""
     t = np.concatenate([np.arange(0, 10, CAD), np.arange(12, 22, CAD)])
@@ -82,6 +104,7 @@ def check_mixed_cadence_coverage():
 
 def main():
     check_alias_event_choice()
+    check_event_times()
     check_mixed_cadence_coverage()
     check_common_period()
     check_edge_epochs_inconclusive()

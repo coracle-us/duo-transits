@@ -302,6 +302,29 @@ def passes(ev, args):
             and ev["snr"] >= args.anti_ratio * max(ev["anti_snr"], 1e-9))
 
 
+def load_passing(work, times_path=None):
+    """Passing events, with a non-QLP mid-time where one has been measured.
+
+    QLP S100+ files apply one barycentric correction per sector, so for the events
+    in round2/s6_qlp_times.py's table t2 becomes the TESScut fit. The search's own
+    time stays in t2_box and t2_source says which one t2 is.
+    """
+    ev = pd.read_csv(work / "events_all.csv")
+    p = ev[ev["passes"] == True].copy()
+    p["t2_box"], p["t2_source"], p["t2_err_min"] = p["t2"], "box search", np.nan
+    if not times_path or not Path(times_path).exists():
+        return p
+    for r in pd.read_csv(times_path).dropna(subset=["tc_tesscut"]).itertuples():
+        m = (p["cand_id"] == r.cand_id) & ((p["t2_box"] - r.t2_box).abs() < 1e-4)
+        if not m.any():
+            print(f"[event times] no passing event for {r.cand_id} at {r.t2_box:.4f}; not applied")
+            continue
+        p.loc[m, "t2"] = r.tc_tesscut
+        p.loc[m, "t2_source"] = "TESScut fit"
+        p.loc[m, "t2_err_min"] = r.tc_tesscut_err_min
+    return p
+
+
 def alias_events(passing):
     """One event per candidate for the alias step and the report.
 
@@ -620,8 +643,7 @@ def common_periods(passing, work, p_floor):
 
 
 def step_aliases(cands, work, args):
-    ev = pd.read_csv(work / "events_all.csv")
-    passing = ev[ev["passes"] == True]
+    passing = load_passing(work, getattr(args, "event_times", None))
     hits = alias_events(passing)
     hyp = load_hypotheses(getattr(args, "hypotheses", None))
     cps = common_periods(passing, work, args.p_floor).set_index("cand_id")
@@ -678,6 +700,7 @@ def step_aliases(cands, work, args):
                 plot=plot_epochs(h, P, er, t, f, Path(args.out) / "epoch_plots")))
         pd.DataFrame(erows).to_csv(work / "aliases" / f"{h.cand_id}_epochs.csv", index=False)
         summ.append(dict(cand_id=h.cand_id, tic=h.tic, alias_event_t2=h.t2,
+                         alias_event_t2_source=h.t2_source,
                          alias_event_sector=int(h.sector), alias_event_author=h.author,
                          alias_event_snr=h.snr, alias_event_reason=h.alias_event_reason,
                          n_clean_events=h.n_clean_events, dT_d=h.t2 - h.t1,
@@ -754,8 +777,7 @@ def plot_hit(h, work, outdir):
 def step_report(cands, work, args):
     out = Path(args.out)
     (out / "plots").mkdir(parents=True, exist_ok=True)
-    ev = pd.read_csv(work / "events_all.csv")
-    passing = ev[ev["passes"] == True].sort_values("snr", ascending=False)
+    passing = load_passing(work, getattr(args, "event_times", None)).sort_values("snr", ascending=False)
     hits = alias_events(passing)
     # the other passing events, so no dip is hidden
     chosen = dict(zip(hits["cand_id"], hits["t2"]))
@@ -805,6 +827,9 @@ def step_report(cands, work, args):
         if h.tic in PAPER_NOTES:
             notes.append(PAPER_NOTES[h.tic])
         notes.append(f"alias event: {h.alias_event_reason}")
+        if h.t2_source != "box search":
+            notes.append(f"T2 is the {h.t2_source} (+/- {h.t2_err_min:.1f} min), not the "
+                         f"QLP box time {h.t2_box:.4f}")
         if pd.notna(getattr(h, "cp_period_d", np.nan)):
             notes.append(f"common period {h.cp_period_d:.4f} d matches {int(h.cp_k)} of {int(h.cp_N)} "
                          f"events incl. the paper's" + (f" [{h.cp_flag}]" if h.cp_flag == h.cp_flag and h.cp_flag else "")
@@ -916,6 +941,8 @@ def main():
     ap.add_argument("--p-floor", type=float, default=1.0, help="shortest alias period to list (d)")
     ap.add_argument("--hypotheses", default="period_hypotheses.csv",
                     help="tic,period_d list tabulated epoch by epoch in the alias step")
+    ap.add_argument("--event-times", default="results/round2/qlp_s94_timing.csv",
+                    help="non-QLP mid-times (cand_id,t2_box,tc_tesscut,tc_tesscut_err_min) used in place of box times")
     ap.add_argument("--types", default="single,multiplanet",
                     help="comma list of candidate types to search (single, multi, multiplanet, all)")
     ap.add_argument("--cnn-repo", default="singletransiters")
