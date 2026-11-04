@@ -1,0 +1,86 @@
+Welcome to ASAS-SN Skypatrol!
+
+Current Deployment Version: 0.6.20 (11 SEPTEMBER 2025)
+Please upgrade your client if not up to date.
+
+The light curve service will be down for several days while we run mainanence on our cluster.
+Kyle Hart 
+13 October 2026
+
+Downloading Curves...
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/mcbee/.local/share/uv/python/cpython-3.13.14-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/.venv/lib/python3.13/site-packages/pyasassn/client.py", line 610, in _get_lightcurve_chunk
+    server_idx = block_idx % n_servers
+                 ~~~~~~~~~~^~~~~~~~~~~
+ZeroDivisionError: integer modulo by zero
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py", line 153, in <module>
+    main()
+    ~~~~^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py", line 136, in main
+    if a.asassn: parts.append(load_asassn())
+                              ~~~~~~~~~~~^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py", line 54, in load_asassn
+    lcs = SkyPatrolClient().cone_search(RA, DEC, radius=1, units="arcsec", download=True)
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/.venv/lib/python3.13/site-packages/pyasassn/client.py", line 338, in cone_search
+    return self._get_curves(
+           ~~~~~~~~~~~~~~~~^
+        query_hash, tar_ids, catalog, save_dir, file_format, threads
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/.venv/lib/python3.13/site-packages/pyasassn/client.py", line 582, in _get_curves
+    data, n = r.get()
+              ~~~~~^^
+  File "/Users/mcbee/.local/share/uv/python/cpython-3.13.14-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 774, in get
+    raise self._value
+ZeroDivisionError: integer modulo by zero
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+/Users/mcbee/Documents/GitHub/coracle/duo-transits-boyajian/boyajian-companion/ground_check.py:126: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.set_title(name); ax.legend(fontsize=6, ncol=3)
+  sectorName   sector camera ccd
+-------------- ------ ------ ---
+tess-s0014-2-4     14      2   4
+tess-s0015-2-3     15      2   3
+tess-s0041-2-4     41      2   4
+tess-s0054-3-2     54      3   2
+tess-s0055-3-1     55      3   1
+tess-s0075-4-2     75      4   2
+tess-s0081-3-2     81      3   2
+tess-s0082-3-1     82      3   1
+W3 n=+2 (Oct 2026)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+W3 n=+1 (Mar 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A776 n=+1 (Oct 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A776 n=+2 (Dec 2023)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A790 n=+1 (Nov 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A790 n=+2 (Jan 2024)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A792 n=+1 (Nov 2021)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+A792 n=+2 (Jan 2024)     excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+W4 n=+1 (May 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
+W5 n=+1 (Jun 2023)       excluded    0%  consistent    0%  untested  100%   | per-point statistic: excluded   0% consistent   0%
