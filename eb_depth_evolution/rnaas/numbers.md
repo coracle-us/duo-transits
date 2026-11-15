@@ -149,7 +149,7 @@ own. A K2 revision should cite this note for EPIC 202126877. Changes:
 - Title: as in `rnaas.tex`.
 - Abstract: `rnaas/abstract_plaintext.txt`.
 - UAT: Eclipsing binary stars 444, Trinary stars 1714, Orbital evolution 1178.
-- Corridor: Stars and Stellar Physics.
+- Corridor: Stellar Physics and Stellar Types (pick the closest stellar corridor in the dropdown).
 - Funding: none.
 - MAST DOIs:
   - 10.17909/t9ws3r (K2);
