@@ -152,3 +152,11 @@ text 1275 (about 1325 by AAS's count). Upload file: `private/McBee_AAS82207_R2.t
 **Resubmitted 2026-10-15 as AAS82207R2** (received 13:25): text = commit 7b8647e (tag `aas82207R2-submitted`). AAS merged
 PDF checked: 3 pages, both clarifications present, about 1323 words by the AAS count. Abstract field: plain text from
 `private/aas82207_R1_abstract_plaintext.txt`.
+
+## Accepted 2026-11-14
+
+- AAS82207R2 was accepted for publication in Research Notes of the AAS. Decision letter from Chris Lintott,
+  14-Nov-2026; logistics go through journals.manager@aas.org.
+- The accepted text is tag `aas82207R2-submitted` (7b8647e). The arXiv package and form fields are in
+  `singles/rnaas/arxiv/`.
+
