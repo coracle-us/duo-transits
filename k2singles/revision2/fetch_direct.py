@@ -83,7 +83,7 @@ def spoc_filename(sector, tic):
     return None
 
 
-def sectors(ra, dec):
+def sectors(ra, dec, tesscut_only=False):
     from astropy.coordinates import SkyCoord
     import astropy.units as u
     from astroquery.mast import Tesscut
@@ -96,8 +96,9 @@ def sectors(ra, dec):
             break
         except Exception:  # noqa: BLE001
             time.sleep(15)
-    r = t2p(0, ra, dec)
-    secs |= {int(s) for s in r[3] if int(s) > 0}
+    if not tesscut_only:
+        r = t2p(0, ra, dec)
+        secs |= {int(s) for s in r[3] if int(s) > 0}
     return sorted(s for s in secs if s <= 200)
 
 
@@ -162,7 +163,9 @@ def own_photometry(tic, ra, dec):
         if m and m.group(2) in ("SPOC", "TESS-SPOC", "QLP", "OWN"):
             have.add(int(m.group(1)))
     added = []
-    for sec in sectors(ra, dec):
+    # only sectors TESScut lists: tess-point also predicts sectors TESScut does not (yet) hold, and each of those
+    # cost two minutes of retries before failing (seen on 2026-11-15)
+    for sec in sectors(ra, dec, tesscut_only=True):
         if not (80 <= sec <= 200) or sec in have:
             continue
         d = di.RAW / str(tic)
