@@ -78,6 +78,8 @@ def ads(q, tok):
             hl = d.get("highlighting", {})
             return docs, hl, int(d["response"]["numFound"])
         except Exception as e:  # noqa: BLE001
+            if "400" in str(e):
+                raise RuntimeError(f"ADS rejected the query: {q[:300]}") from e
             if "429" in str(e):
                 time.sleep(60)
             time.sleep(5 * (k + 1))
@@ -94,6 +96,14 @@ def ads_meta(bibcodes, tok):
         docs, _, _ = ads(q, tok)
         out.update({d["bibcode"]: d for d in docs})
     return out
+
+
+def ads_phrase(name):
+    """SIMBAD name -> ADS-safe phrase: drop SIMBAD's object-type prefixes (V*, **, SV*, *, EM*, NAME), brackets,
+    asterisks and quotes, which the ADS parser rejects (HTTP 400), and collapse spaces."""
+    n = re.sub(r"^(V\*|\*\*|SV\*|\*|EM\*|NAME)\s+", "", name.strip())
+    n = re.sub(r"[\[\]\*\"():{}^~\\]", " ", n)
+    return re.sub(r"\s+", " ", n).strip()
 
 
 def clean_snip(s):
@@ -115,7 +125,7 @@ def star(row, tok):
         m = re.fullmatch(r"Gaia DR[23] (\d{15,20})", i)
         if m:
             phrases.add(m.group(1))
-    phrases = sorted(p for p in phrases if len(p) >= 6)
+    phrases = sorted({c for c in (ads_phrase(p) for p in phrases) if len(c) >= 6})
     q = "full:(" + " OR ".join('"' + p.replace('"', "") + '"' for p in phrases) + ")"
     docs, hl, nfound = ads(q, tok)
     dropped = []
