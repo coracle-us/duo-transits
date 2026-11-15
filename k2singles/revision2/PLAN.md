@@ -115,3 +115,23 @@ Any change goes below with its date and reason.
   non-common-mode events enter the period linking (Search 2a).
 - **Reporting:** events with SNR ≥ 8 that fail this test are listed as low-significance and not used.
 - **Unchanged:** SNR ≥ 8 and the other search_any rules stay as the first-stage cut; nothing about them changes.
+
+**2026-11-15, AFTER the full pre-registered run: a post-hoc linked-period test (`link_calibrated.py`).**
+
+- **What the full run showed:**
+  - S* came out at SNR 53.3 for K2 and 60.0 for TESS.
+  - 162 of 163 stars had at least one catalogued event recovered blindly; the miss, EPIC 211939692, has
+    two catalogued events and one was found. Of these, 79 had it at a significant level.
+  - 22 stars had a linked family and 35 a BLS detection. 11 of the 15 Table 1 stars got their table period
+    among the blind allowed periods.
+- **What set the high threshold:** the control events above SNR 45 are large brightenings, such as bad
+  cadences, glints and scattered light, up to 150 times the stellar flux. Inverted, they become "dips". They
+  have no dimming counterpart in real data, so the inverted control overstates single false dips.
+- **What the blind first stage still found:** all four TOI-5560.01 transits (SNR 9–32), all three events of
+  EPIC 211503363 and of Sanders 617, and the primaries of EPIC 211489484. Only the single-event threshold
+  dropped them. For EPIC 211489484, the greedy family rule also merged primaries and secondaries.
+- **Post-hoc test:** link all eligible, non-common-mode first-stage events pairwise. Calibrate the number of
+  events on one ephemeris, `max_support`, against the same linking of the control events. N* is the smallest
+  support reached by at most 0.05 control stars per star. This N* rule was fixed before the test ran.
+- **How it is reported:** as post-hoc and secondary. The pre-registered result stays the primary one, and
+  both go in the revision.
