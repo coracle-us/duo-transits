@@ -69,15 +69,27 @@ def thresholds(reps):
     return out
 
 
-def common_mode(reps):
-    """(EPIC, T) of events within CM_WINDOW of first-stage events on >= 2 other stars in the same sector/campaign."""
-    rows = [(r["EPIC"], e["sector"], e["T"]) for r in reps for e in r["events"]]
+CM_P = 1e-3
+
+
+def common_mode(reps, key="events"):
+    """(EPIC, T) of common-mode events (PLAN.md, 2026-11-15 replacement rule): k = number of OTHER stars with an
+    event within CM_WINDOW in the same sector/campaign; expected lambda = sum over other stars of
+    n_events * 2 CM_WINDOW / span (span = the sector's event time range); flagged if k >= 2 and
+    P(K >= k | lambda) < CM_P."""
+    from scipy.stats import poisson
+    rows = [(r["EPIC"], e["sector"], e["T"]) for r in reps for e in r[key]]
     df = pd.DataFrame(rows, columns=["EPIC", "sector", "T"])
     flag = set()
-    for sec, g in df.groupby("sector"):
+    for _, g in df.groupby("sector"):
+        span = max(g["T"].max() - g["T"].min(), 1.0)
+        n_by = g.groupby("EPIC").size()
         for epic, T in zip(g.EPIC, g["T"]):
-            near = g[(g.EPIC != epic) & (np.abs(g["T"] - T) < CM_WINDOW)]
-            if near.EPIC.nunique() >= 2:
+            k = g[(g.EPIC != epic) & (np.abs(g["T"] - T) < CM_WINDOW)].EPIC.nunique()
+            if k < 2:
+                continue
+            lam = float(n_by.drop(epic, errors="ignore").sum()) * 2 * CM_WINDOW / span
+            if poisson.sf(k - 1, lam) < CM_P:
                 flag.add((epic, round(T, 5)))
     return flag
 

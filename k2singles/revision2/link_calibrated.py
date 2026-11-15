@@ -36,15 +36,7 @@ FA_PER_STAR = 0.05
 
 
 def cm_flags(reps, key):
-    rows = [(r["EPIC"], e["sector"], e["T"]) for r in reps for e in r[key]]
-    df = pd.DataFrame(rows, columns=["EPIC", "sector", "T"])
-    flag = set()
-    for _, g in df.groupby("sector"):
-        for epic, T in zip(g.EPIC, g["T"]):
-            near = g[(g.EPIC != epic) & (np.abs(g["T"] - T) < sp.CM_WINDOW)]
-            if near.EPIC.nunique() >= 2:
-                flag.add((epic, round(T, 5)))
-    return flag
+    return sp.common_mode(reps, key)
 
 
 def usable(r, key, cm):

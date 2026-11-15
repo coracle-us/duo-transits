@@ -135,3 +135,20 @@ Any change goes below with its date and reason.
   support reached by at most 0.05 control stars per star. This N* rule was fixed before the test ran.
 - **How it is reported:** as post-hoc and secondary. The pre-registered result stays the primary one, and
   both go in the revision.
+
+**2026-11-15, after the full run: the common-mode rule is replaced by a coincidence test.**
+
+- **The problem:** the rule as written flags an event if ≥ 2 other stars have any first-stage event within
+  0.5 d in the same campaign or sector. It came from the AAS82207 search, where events were sparse. Here a K2
+  star has about 15 first-stage events per campaign, most of them shallow systematics, so chance coincidences
+  are common. The rule flagged 39% of K2 events, 18% of TESS events, and 46 of the 163 recovered catalogued
+  events. Those are real astrophysical events, including the C5 eclipse of Sanders 617 at SNR 277.
+- **New rule:** count k, the number of other stars with an event within 0.5 d. The expected count is
+  λ = Σ over other stars in the campaign or sector of n_events × 1 d / span, where span is that campaign's or
+  sector's event time range. The event is common-mode if k ≥ 2 and the Poisson probability P(K ≥ k | λ) is
+  below 0.001.
+- **What it applies to:** both the pre-registered stage (significance) and the post-hoc linking.
+- **Test before use:** the share of catalogued events flagged must be small. If more than 5% are flagged, the
+  rule is reported as failed and not used.
+- **Test result (2026-11-15):** the rule flags 1 of 163 recovered catalogued events, 0.2% of K2 events, 0% of TESS
+  events and 36 control events. It passes.
