@@ -70,9 +70,9 @@ def ads(q, tok):
                   **{"hl.snippets": 3})
     url = ADS + "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {tok}"})
-    for k in range(4):
+    for k in range(3):
         try:
-            with urllib.request.urlopen(req, timeout=120) as r:
+            with urllib.request.urlopen(req, timeout=90) as r:
                 d = json.loads(r.read())
             docs = d["response"]["docs"]
             hl = d.get("highlighting", {})
@@ -127,7 +127,22 @@ def star(row, tok):
             phrases.add(m.group(1))
     phrases = sorted({c for c in (ads_phrase(p) for p in phrases) if len(c) >= 6})
     q = "full:(" + " OR ".join('"' + p.replace('"', "") + '"' for p in phrases) + ")"
-    docs, hl, nfound = ads(q, tok)
+    try:
+        docs, hl, nfound = ads(q, tok)
+    except RuntimeError as e:
+        if "rejected" in str(e):
+            raise
+        # the combined query timed out (HTTP 504 on 2026-11-15 for EPIC 201207683): one query per identifier, merged
+        docs, hl, seen = [], {}, set()
+        for p in phrases:
+            d1, h1, _ = ads(f'full:"{p}"', tok)
+            for d in d1:
+                if d["bibcode"] not in seen:
+                    seen.add(d["bibcode"])
+                    docs.append(d)
+            hl.update(h1)
+        nfound = len(docs)
+        q = q + "  [split into one query per identifier after a timeout]"
     dropped = []
     if nfound > AMBIGUOUS:
         # some identifier is too generic as a phrase (e.g. "K2-3" tokenises to K2 3): count each one alone and drop
