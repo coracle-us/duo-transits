@@ -74,6 +74,10 @@ Stars without data outside the event campaign are reported as such.
 - **Detection:** SDE ≥ the 99th percentile of the maximum SDE from the same BLS on the inverted light curves
   of all 163 stars. The threshold is fixed from the control before the real peaks are looked at.
 - **Iterations:** up to three signals per star, masking each in turn.
+- **Changed 2026-11-15, before any real BLS result:** BLS runs per data block (data separated by gaps over
+  60 d), with periods from 1 d to min(100 d, block span / 2). A single BLS over the combined 12-year baseline
+  would need about 4e8 trial periods. Linking across blocks is left to Search 2a. The threshold is unchanged:
+  the 99th percentile of the inverted blocks' maximum SDE.
 
 ## Comparison (`compare.py`)
 
