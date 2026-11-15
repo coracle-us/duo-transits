@@ -9,8 +9,8 @@ Per star (written in the same format as scripts/fetch_data.py, so alias_pipeline
   sectors  TESScut sector list (API) union tess-point 0.9.5; sectors > 200 are skipped, as in the note's pipeline
   SPOC     2-min light curves, filename from the per-sector MAST bulk script (cached in data/bulk/)
   TESS-SPOC, QLP   HLSP file URLs (a 404 means no product)
-  OWN      our TESScut photometry for sectors >= 80 without a pipeline product (pilot.add_own_photometry), as in
-           the submitted note
+  OWN      our TESScut photometry for sectors >= 80 without a pipeline product (as pilot.add_own_photometry in
+           the submitted note; cutouts from the TESScut API, see own_photometry)
   K2       mission PDCSAP for every campaign (k2lib.k2_lightcurves, direct URLs), and EVEREST v2 and K2SFF HLSPs,
            saved as npz in k2singles/revision2/data/hlsp/<EPIC>/
 Resumable; one process per star. Status: k2singles/revision2/data/fetch_status.csv.
@@ -146,6 +146,44 @@ def tess(tic, ra, dec):
     return " ".join(r["author"] + ":" + r["mission"].split()[-1] for r in rows)
 
 
+def own_photometry(tic, ra, dec):
+    """Our TESScut photometry (singles/scripts/tesscut_photometry.py) for sectors >= 80 without a pipeline product,
+    as pilot.add_own_photometry, but the cutout comes from the TESScut API directly: pilot uses
+    lightkurve.search_tesscut, which goes through the failing portal service and returns nothing."""
+    import astropy.units as u
+    import diff_image as di
+    import fetch_data as fd
+    import tesscut_photometry as tp
+    from astropy.coordinates import SkyCoord
+    from astroquery.mast import Tesscut
+    have = set()
+    for f in (fd.LC_DIR / str(tic)).glob("s*.csv.gz"):
+        m = re.fullmatch(r"s(\d+)_(.+)_(\d+)s\.csv\.gz", f.name)
+        if m and m.group(2) in ("SPOC", "TESS-SPOC", "QLP", "OWN"):
+            have.add(int(m.group(1)))
+    added = []
+    for sec in sectors(ra, dec):
+        if not (80 <= sec <= 200) or sec in have:
+            continue
+        d = di.RAW / str(tic)
+        d.mkdir(parents=True, exist_ok=True)
+        if not list(d.glob(f"*s{sec:04d}*.fits")):
+            for k in range(3):
+                try:
+                    Tesscut.download_cutouts(coordinates=SkyCoord(ra * u.deg, dec * u.deg), size=di.SIZE, sector=sec,
+                                             path=str(d))
+                    break
+                except Exception:  # noqa: BLE001
+                    time.sleep(20 * (k + 1))
+        if list(d.glob(f"*s{sec:04d}*.fits")):
+            try:
+                tp.photometry(tic, sec, ra, dec)
+                added.append(sec)
+            except BaseException as e:  # noqa: BLE001  (tesscut_photometry raises SystemExit)
+                print(f"  own photometry TIC {tic} S{sec} failed: {e}")
+    return added
+
+
 def hlsp(epic, campaigns):
     from astropy.io import fits
     out = HLSP / str(epic)
@@ -183,13 +221,11 @@ def hlsp(epic, campaigns):
 def work(row):
     warnings.filterwarnings("ignore")
     import k2lib
-    import pilot
-    pilot.OWN_MIN_SECTOR = 80
     epic, tic = int(row["EPIC"]), int(row["TIC"])
     rec = dict(EPIC=epic, TIC=tic)
     try:
         rec["tess"] = tess(tic, row["ra"], row["dec"])
-        rec["own_sectors"] = " ".join(map(str, pilot.add_own_photometry(tic, row["ra"], row["dec"])))
+        rec["own_sectors"] = " ".join(map(str, own_photometry(tic, row["ra"], row["dec"])))
         k2lib.k2_lightcurves(epic)
         camps = sorted(int(f.stem.split("-c")[1].split("_")[0]) for f in (k2lib.CACHE / str(epic) / "dl").glob("ktwo*_llc.fits"))
         rec["k2pdc_campaigns"] = " ".join(map(str, camps))
@@ -202,6 +238,15 @@ def work(row):
 
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "--own-pass":
+        # second pass for stars fetched before own_photometry existed
+        warnings.filterwarnings("ignore")
+        st = stars()
+        for r in st.to_dict("records"):
+            added = own_photometry(int(r["TIC"]), r["ra"], r["dec"])
+            if added:
+                print(f"EPIC {r['EPIC']} TIC {r['TIC']}: OWN sectors {added}", flush=True)
+        return
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 6
     only = {int(x) for x in sys.argv[2:]}
     DATA.mkdir(parents=True, exist_ok=True)
