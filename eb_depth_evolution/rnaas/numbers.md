@@ -118,4 +118,46 @@ properly and submit. Reason: avoid the appearance of salami-slicing with an over
 - the exact DASCH NSF-grant acknowledgment sentence (check the DASCH site before submission);
 - the NASA Exoplanet Archive acknowledgment wording.
 
-**STATUS: content-final draft, HELD until the AAS82225 decision.**
+**STATUS (superseded 2026-11-15, see below): content-final draft, HELD until the AAS82225 decision.**
+
+## Standalone version, 2026-11-15 (hold lifted)
+
+On 2026-11-15 the editor declined AAS82225 (the K2 note) and invited a revision with a literature search and a
+blind transit search. The hold existed only to avoid overlap with AAS82225, so this note now goes first on its
+own. A K2 revision should cite this note for EPIC 202126877. Changes:
+
+- The "companion note (J. McBee 2026, submitted)" sentence and "The depths repeat those of the companion note" are
+  removed. The intro now says the note shows the deepening itself. No numbers changed.
+- **Predictions:** 2026 Dec 8 11:46, Dec 30 06:21, 2027 Jan 21 00:58 and Feb 11 19:35 UTC, from
+  `scripts/28_predictions.py` with the start date set to 2026-11-20 (`predictions_2026_27.csv`, 8 epochs to 2027 May 9).
+  Same ephemeris as before.
+- **DASCH:** the acknowledgment sentence and the principal citation, Grindlay et al. 2012 (IAU Symp. 285, 29;
+  2012IAUS..285...29G; doi:10.1017/S1743921312000166), are those asked for on https://dasch.cfa.harvard.edu/citing/
+  (read 2026-11-15). This replaces Grindlay et al. 2009. The four authors come from arXiv:1211.1051. The bibcode
+  comes from the DASCH page; this Mac has no ADS token, so `27_verify_refs.py` was not rerun.
+- **NASA Exoplanet Archive:** the standard Archive acknowledgment, covering the KELT-North light curves.
+- **AI statement:** now first person, matching the wording accepted in AAS82207.
+- **No new TESS data:** TESScut and tess-point list only S43-45, S71-72 and S1751 (checked 2026-11-15), so the
+  depths and the inclination history are current.
+- **Novelty recheck:** an arXiv API search (2026-11-15) for 202126877, 86491361 and "TYC 1883-1721-1" found nothing.
+  The ADS full-text search dates from 2026-10-12.
+- **Word count** (`singles/rnaas/aas_wordcount.py`): abstract 142, AAS-counted text 1217 (limit 1350).
+  `rnaas/wordcount.py`: abstract 136, body 907.
+- **Build:** tectonic 0.17.0 with aastex701.cls 7.0.1 gives 4 pages with the figure and no undefined references.
+
+**Submission form fields:**
+- Title: as in `rnaas.tex`.
+- Abstract: `rnaas/abstract_plaintext.txt`.
+- UAT: Eclipsing binary stars 444, Trinary stars 1714, Orbital evolution 1178.
+- Corridor: Stellar Physics and Stellar Types (pick the closest stellar corridor in the dropdown).
+- Funding: none.
+- MAST DOIs:
+  - 10.17909/t9ws3r (K2);
+  - 10.17909/t9-wpz1-8s54 (TESS-SPOC);
+  - 10.17909/t9-r086-e880 (QLP);
+  - 10.17909/0cp4-2j79 (FFIs).
+- IPAC: yes. The note uses NASA Exoplanet Archive data (KELT).
+- Upload: `rnaas.tex`, `eb_history.png` and aastex701.cls.
+
+**STATUS: ready to submit (Jon).**
+

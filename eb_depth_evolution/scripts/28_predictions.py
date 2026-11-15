@@ -18,10 +18,10 @@ GEO = EarthLocation.from_geocentric(0 * u.m, 0 * u.m, 0 * u.m)
 
 
 def main():
-    start = Time("2026-10-13").tdb.jd - 2457000
+    start = Time("2026-11-20").tdb.jd - 2457000  # after submission (2026-11-15); was 2026-10-13
     n0 = int(np.ceil((start - T0) / P))
     rows = []
-    for n in range(n0, n0 + 7):
+    for n in range(n0, n0 + 8):
         t = T0 + n * P
         tb = Time(t + 2457000, format="jd", scale="tdb", location=GEO)
         lt = tb.light_travel_time(COORD, kind="barycentric")
