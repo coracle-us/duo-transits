@@ -95,4 +95,19 @@ Stars without data outside the event campaign are reported as such.
 
 ## Things decided after first results
 
-None yet. Any change goes below with its date and reason, and detection thresholds are not changed.
+Any change goes below with its date and reason.
+
+**2026-11-15, after a one-star test (EPIC 248811085) and before the full run: significance from the control.**
+
+- **What the test showed:** in K2 the search found 12 events at SNR 8–37 besides the catalogued eclipse (SNR 529).
+  The inverted control found 17 events at SNR 8–70. Most were 200–900 ppm and 15–30 h long, or sharp PDCSAP
+  features. A fixed SNR ≥ 8 is therefore not a meaningful detection threshold in K2. The TESS events (SNR 222
+  and 399) had no control counterpart.
+- **Eligible events:** events and control events are eligible if they are confirmed in a second product of the
+  same campaign or sector (`n_reductions ≥ 2`), or if no second product covers them (`n_alt_tested = 0`).
+- **Threshold:** for each mission separately (K2, TESS), S* is the smallest SNR at which eligible control events
+  number at most 0.05 per searched star, pooled over all stars.
+- **Significant events:** an event is significant if it is eligible and has SNR ≥ S*. Only significant,
+  non-common-mode events enter the period linking (Search 2a).
+- **Reporting:** events with SNR ≥ 8 that fail this test are listed as low-significance and not used.
+- **Unchanged:** SNR ≥ 8 and the other search_any rules stay as the first-stage cut; nothing about them changes.
