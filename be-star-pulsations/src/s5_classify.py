@@ -61,61 +61,70 @@ def main():
     clm = multi.cluster.values
     obs = chi2(table(clm, lab, K, labels))
     rng = np.random.default_rng(SEED)
-    groups = [np.where(multi.tic.values == t)[0] for t in multi.tic.unique()]
-    null = np.empty(10000)
-    for i in range(len(null)):
-        lp = lab.copy()
-        for g in groups:
-            lp[g] = lab[rng.permutation(g)]
-        null[i] = chi2(table(clm, lp, K, labels))
+    import stats4
+    from wise import DiskCurve
+    from common import WISE_DIR
+    lc = stats4.code(lab)
+    mt = multi.tic.values
+    ustars, gid = np.unique(mt, return_inverse=True)
+    P = np.argsort(gid, kind="stable")
+
+    def within_perm():
+        Q = np.lexsort((rng.random(len(gid)), gid))
+        out = np.empty_like(lc)
+        out[P] = lc[Q]
+        return out
+
+    def chi2c(cl_, lc_, use_=None):
+        m = (lc_ >= 0) if use_ is None else (use_ & (lc_ >= 0))
+        t = np.bincount(cl_[m] * 4 + lc_[m], minlength=4 * K).reshape(K, 4).astype(float)
+        return chi2(t[:, t.sum(0) > 0])
+
+    null = np.array([chi2c(clm, within_perm()) for _ in range(10000)])
     p = (1 + np.sum(null >= obs)) / (1 + len(null))
     # Pair statistic (purely within-star): over pairs of sectors of the same star,
     # P(cluster differs | phase differs) - P(cluster differs | phase same).
-    def pair_stat(cl_, lab_, use_):
-        dc, dl = [], []
-        for g in groups:
-            g = g[use_[g]]
-            for i_ in range(len(g)):
-                for j_ in range(i_ + 1, len(g)):
-                    dc.append(cl_[g[i_]] != cl_[g[j_]]); dl.append(lab_[g[i_]] != lab_[g[j_]])
-        dc, dl = np.array(dc), np.array(dl)
-        if dl.sum() == 0 or (~dl).sum() == 0:
+    pi, pj = [], []
+    for g in range(len(ustars)):
+        r = np.where(gid == g)[0]
+        a_, b_ = np.triu_indices(len(r), 1)
+        pi.append(r[a_]); pj.append(r[b_])
+    pi, pj = np.concatenate(pi), np.concatenate(pj)
+    dcl = clm[pi] != clm[pj]
+
+    def pair_stat(lc_, use_):
+        v = use_[pi] & use_[pj]
+        dl = lc_[pi] != lc_[pj]
+        a_, b_ = v & dl, v & ~dl
+        if not a_.any() or not b_.any():
             return np.nan
-        return dc[dl].mean() - dc[~dl].mean()
-    allu = np.ones(len(lab), bool)
-    obs_pair = pair_stat(clm, lab, allu)
-    pn = np.empty(2000)
-    for i in range(len(pn)):
-        lp = lab.copy()
-        for g in groups:
-            lp[g] = lab[rng.permutation(g)]
-        pn[i] = pair_stat(clm, lp, allu)
+        return dcl[a_].mean() - dcl[b_].mean()
+
+    allu = np.ones(len(lc), bool)
+    obs_pair = pair_stat(lc, allu)
+    pn = np.array([pair_stat(within_perm(), allu) for _ in range(2000)])
     # cross-star null: labels from another star's WISE curve at this star's sector times
     # (keeps sector-era systematics, e.g. the QLP 1800/600/200 s cadence eras)
-    from wise import DiskCurve
-    from common import WISE_DIR
     tics = sorted(sm.tic.unique())
     disks = []
     for t in tics:
         v = pd.read_csv(WISE_DIR / "visits" / f"{t}.csv")
         disks.append(DiskCurve(v.mjd.values, v.w1mpro_ep.values))
-    own = {t: j for j, t in enumerate(tics)}
-    mt = multi.tic.values
-    tab_ = {}
-    for t in np.unique(mt):
-        r = np.where(mt == t)[0]
-        for j, d in enumerate(disks):
-            o = d.at(multi.mid_mjd.values[r])
-            tab_[(t, j)] = (r, o["phase_label"].astype(object), o["wise_usable"])
+    own = np.array([tics.index(t) for t in ustars])
+
+    def ev(d, tt):
+        o = d.at(tt)
+        return o["disk_excess"], o["phase_label"], o["wise_usable"]
+
+    _, Lm, Um = stats4.build_swap_table(multi.mid_mjd.values, disks, ev)
+    rows_ = np.arange(len(mt))
     sn = np.full(2000, np.nan)
     for i in range(len(sn)):
-        L = np.empty(len(mt), dtype=object); U = np.zeros(len(mt), bool)
-        for t in np.unique(mt):
-            j = rng.integers(0, len(disks) - 1)
-            j += j >= own[t]
-            r, ll, uu = tab_[(t, j)]
-            L[r], U[r] = ll, uu
-        sn[i] = pair_stat(clm, L, U)
+        donors = rng.integers(0, len(disks) - 1, size=len(ustars))
+        donors += donors >= own
+        dj = donors[gid]
+        sn[i] = pair_stat(Lm[rows_, dj], Um[rows_, dj])
+
     def p2(o, n):
         n = n[np.isfinite(n)]; c = n.mean()
         return (1 + np.sum(np.abs(n - c) >= abs(o - c))) / (1 + len(n))
