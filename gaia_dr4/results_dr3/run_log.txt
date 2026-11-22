@@ -1,0 +1,5 @@
+hosts 906; with a source_id 905; methods {'dr2_neighbourhood': 902, 'positional': 3, 'no Gaia source within 5.4 arcsec': 1}
+schema gaiadr3: sources 905, NSS rows 54 on 50 stars
+hosts flagged: any 229, RUWE 164, NSS 69, RV-variable 125
+phase_verdict {'match': 4, 'no_match': 2}
+period_verdict {'match': 4, 'no_match': 4}
