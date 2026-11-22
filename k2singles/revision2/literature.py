@@ -66,7 +66,7 @@ def simbad(name):
 
 
 def ads(q, tok):
-    params = dict(q=q, fl="bibcode,title,year,first_author,doctype", rows=200, hl="true", **{"hl.fl": "body,abstract"},
+    params = dict(q=q, fl="id,bibcode,title,year,first_author,doctype", rows=200, hl="true", **{"hl.fl": "body,abstract"},
                   **{"hl.snippets": 3})
     url = ADS + "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {tok}"})
@@ -156,7 +156,8 @@ def star(row, tok):
         docs, hl, nfound = ads(q, tok)
     hits = {}
     for d in docs:
-        sn = [clean_snip(x) for v in hl.get(d["bibcode"], {}).values() for x in v]
+        # ADS keys highlighting by its internal document id, not the bibcode (keyed by bibcode, every snippet was empty)
+        sn = [clean_snip(x) for v in hl.get(str(d.get("id")), {}).values() for x in v]
         hits[d["bibcode"]] = dict(bibcode=d["bibcode"], year=d.get("year"), title=(d.get("title") or [""])[0],
                                   first_author=d.get("first_author"), doctype=d.get("doctype"), found_by="ads",
                                   snippets=" || ".join(sn))

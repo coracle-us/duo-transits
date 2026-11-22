@@ -22,6 +22,7 @@ ROOT = HERE.parents[1]
 OUT = HERE / "data" / "literature"
 CACHE = OUT / "vizier_cache"
 SKIP = ("I/", "II/246", "II/328", "II/336", "II/349", "II/363", "IV/38", "IV/39", "V/154", "J/AJ/156/58")
+KEEP = ("I/358",)  # Gaia DR3 variability (eclipsing binaries with periods), inside the skipped "I/" astrometric section
 PCOLS = ("per", "period", "p", "porb", "plc", "pdays", "p_orb", "p1", "pbls", "ptess")
 
 
@@ -42,7 +43,7 @@ def one(epic, tic, ra, dec):
         raise RuntimeError(f"VizieR failed for EPIC {epic}")
     rows = []
     for name in res.keys():
-        if name.startswith(SKIP):
+        if name.startswith(SKIP) and not name.startswith(KEEP):
             continue
         t = res[name]
         pc = [c for c in t.colnames if c.lower() in PCOLS or c.lower().startswith("per")]
