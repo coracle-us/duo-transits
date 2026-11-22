@@ -173,6 +173,18 @@ alias catalogue was found. The niche is partly occupied.
    exclusion and in the 2611.03019 rule, not only in ours?
 5. Pagés Navarrete is a possible collaborator as well as a competitor. Whether to write is Jon's call.
 
+## 6b. First phase 3 result (2026-11-22)
+
+`calibration/README.md`. Hawthorn et al.'s published alias limits kept all 26 periods that were later
+solved (22 certainly in the list; 4 need the full online list). The exclusion weakness found on
+2026-11-01 was therefore this project's own, not a property of published catalogues.
+
+**Consequence, by the shrink criterion in section 6:** the paper carries no claim that published alias
+lists are unreliable. What remains for the methods part is the single-transit calibration nobody has
+done (`calibration/mono/prereg_mono_calibration.yaml`, a draft), and an empirical check of the period
+prior: on the 26 solved candidates a flat prior is rejected and P^-5/3 fits best, with a selection
+caveat.
+
 ## 7. Stretch bet (not approved by this document)
 
 A blind single-transit search of the continuous viewing zones with measured completeness, aimed at
