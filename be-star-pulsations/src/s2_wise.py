@@ -25,14 +25,16 @@ VIS_DIR = WISE_DIR / "visits"
 VIS_DIR.mkdir(exist_ok=True)
 
 
-def fetch_irsa(stars):
+def fetch_irsa(stars, chunk=25):
     path = WISE_DIR / "neowise_irsa.parquet"
     have = pd.read_parquet(path) if path.exists() else pd.DataFrame(columns=["tic"])
     done = set(pd.read_csv(WISE_DIR / "irsa_done.csv").tic) if (WISE_DIR / "irsa_done.csv").exists() else set()
     todo = stars[~stars.tic.isin(done)]
     svc = pyvo.dal.TAPService(TAP)
-    for i in range(0, len(todo), 25):
-        ch = todo.iloc[i:i + 25]
+    import time
+    for i in range(0, len(todo), chunk):
+        t0 = time.time()
+        ch = todo.iloc[i:i + chunk]
         up = Table({"tic": ch.tic.values.astype("int64"), "ra0": ch.ra.values, "dec0": ch.dec.values})
         r = svc.run_async(Q, uploads={"pos": up}).to_table().to_pandas()
         for c in ("cc_flags", "moon_masked"):
@@ -41,7 +43,8 @@ def fetch_irsa(stars):
         have.to_parquet(path, index=False)
         done |= set(ch.tic)
         pd.DataFrame({"tic": sorted(done)}).to_csv(WISE_DIR / "irsa_done.csv", index=False)
-        print(f"IRSA chunk {i//25+1}: {len(r)} rows", flush=True)
+        print(f"IRSA chunk {i//chunk+1}/{-(-len(todo)//chunk)}: {len(ch)} stars, {len(r)} rows, "
+              f"{time.time()-t0:.0f} s", flush=True)
     return have
 
 
