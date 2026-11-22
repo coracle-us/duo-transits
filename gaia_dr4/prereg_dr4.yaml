@@ -53,8 +53,8 @@ outcomes:
 human_review:
   - Any period_from_gaia with phase_window > 0.1.
   - Any host whose DR3 and DR4 source differ, or with id_method = positional.
-  - The 11 T16 stars whose published Gaia DR3 ID differs from ours
-    (gaia_dr4/data_t16/t16_gaia_id_disagreements.csv): query both sources.
+  - "The 11 T16 stars whose published Gaia DR3 ID differs from ours
+    (gaia_dr4/data_t16/t16_gaia_id_disagreements.csv). Query both sources."
   - Whether a flagged host changes what a note or an email says. Nothing is sent by an agent.
 
 open_items:   # to settle from the DR4 documentation before approval or on release day
