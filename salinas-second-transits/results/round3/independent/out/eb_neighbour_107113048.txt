@@ -1,0 +1,8 @@
+Eclipsing-binary neighbour Gaia DR3 3463196954429755904: G=12.74, 97.0" from TIC 107113048
+S101: broad dip near 4112.99 (FWHM 26 h) seen in both stars' pixels (target -1.8%) - scattered-light systematic, not an eclipse
+S101: binary eclipse centre 4118.8292 BTJD, depth 7.3% in its 3x3, FWHM 9.9 h; target 3x3 flux at binary mid-eclipse +1165 ppm (1-h scatter 1468 ppm); nearest target transit E36 is +399.18 h away
+S101: broad dip near 4125.92 (FWHM 25 h) seen in both stars' pixels (target -2.1%) - scattered-light systematic, not an eclipse
+S37: binary eclipse centre 2332.4708 BTJD, depth 15.7% in its 3x3, FWHM 4.8 h; target 3x3 flux at binary mid-eclipse -25 ppm (1-h scatter 219 ppm); nearest target transit E0 is +468.66 h away
+S64: binary eclipse centre 3043.4042 BTJD, depth 17.5% in its 3x3, FWHM 7.7 h; target 3x3 flux at binary mid-eclipse +2576 ppm (1-h scatter 564 ppm); nearest target transit E15 is -361.47 h away
+S90: binary eclipse centre 3754.2581 BTJD, depth 18.0% in its 3x3, FWHM 7.8 h; target 3x3 flux at binary mid-eclipse -7863 ppm (1-h scatter 526 ppm); nearest target transit E29 is -0.68 h away
+E29 predicted from E15, E0, E36: 3754.28665 ± 4.8 min (P = 49.701496 ± 0.000151 d); observed 3754.28588 ± 4.7 min -> O-C -1.1 min (-0.2 sigma)

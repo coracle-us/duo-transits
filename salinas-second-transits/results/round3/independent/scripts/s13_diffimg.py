@@ -1,6 +1,6 @@
-"""Difference imaging for TIC 275647095 from TESScut cutouts.
+"""Difference imaging from TESScut cutouts.  Usage: s13_diffimg.py TIC
 
-For each fully covered transit (ephemeris from out/ephem_275647095.json):
+For each fully covered transit (ephemeris from out/ephem_<tic>.json):
   * per pixel, a linear-in-time baseline is fitted to out-of-transit frames
     (0.65-1.6 durations from mid-transit, both sides) and evaluated at the in-transit frames
     (|t-tc| < 0.3 duration). D = baseline - in-transit mean (positive = flux lost in transit);
@@ -12,7 +12,10 @@ For each fully covered transit (ephemeris from out/ephem_275647095.json):
     (with the O-fitted shift/width) times a free amplitude plus a constant. chi2_k is reported.
   * D is also fitted with a free-position PSF: the offset of the transit source from the target's
     (shifted) WCS position, in arcsec, with a covariance-based error.
-Outputs: out/diffimg_275647095.txt, out/diffimg_275647095.png
+Outputs: out/diffimg_<tic>.txt, out/diffimg_<tic>.png
+Option --exclude E[,E...]: epochs reported but left out of the combined offset, the chi2 sum and the
+own-pixel test (e.g. a transit overlapped by a neighbouring eclipsing binary's eclipse).
+"Key neighbour" = the nearest Gaia star that could mimic the dip (needed eclipse < 100%).
 """
 import sys, os, glob, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -25,12 +28,13 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from common import TARGETS, OUT, DATA
 
-TIC = 275647095
-SID = 5377927940883353216
-NB_SID = 5377927945181990016  # G=14.31 neighbour at 19.6"
+TIC = int(sys.argv[1])
+EXCL = {int(x) for x in sys.argv[sys.argv.index("--exclude") + 1].split(",")} if "--exclude" in sys.argv else set()
 dur = TARGETS[TIC]["dur"]
 eph = json.load(open(os.path.join(OUT, f"ephem_{TIC}.json")))
 gaia = json.load(open(os.path.join(OUT, f"gaia_{TIC}.json")))
+SID = int(gaia["source_id"])
+NB_SID = min((n for n in gaia["neighbours"] if n["need"] < 1.0), key=lambda n: n["sep"])["source_id"]
 P, T0 = eph["P"], eph["T0_E0"]
 stars = [dict(source_id=SID, ra=TARGETS[TIC]["ra"], dec=TARGETS[TIC]["dec"], G=gaia["target"]["G"], sep=0.0)]
 stars += [n for n in gaia["neighbours"] if np.isfinite(n["G"]) and n["G"] < 18.5]
@@ -108,15 +112,26 @@ def fit_scene(O, xy, flux, box):
 
 
 def run():
-    files = sorted(glob.glob(os.path.join(DATA, "tesscut_diff", "**", "*.fits"), recursive=True) +
-                   glob.glob(os.path.join(DATA, "tesscut", "**", "*179.337620*.fits"), recursive=True))
+    files = sorted(glob.glob(os.path.join(DATA, "tesscut_diff", "**", f"*{TARGETS[TIC]['ra']:.6f}*.fits"), recursive=True) +
+                   glob.glob(os.path.join(DATA, "tesscut", "**", f"*{TARGETS[TIC]['ra']:.6f}*.fits"), recursive=True))
     gflux = np.array([10 ** (-0.4 * (s["G"] - stars[0]["G"])) for s in stars])
     lines, panels, comb, own = [], [], [], {}
     nb_idx = [i for i, s in enumerate(stars) if s["source_id"] == NB_SID][0]
+    NBL = f"G{stars[nb_idx]['G']:.1f}@{stars[nb_idx]['sep']:.1f}\""
     for fn in files:
         sec, t, cube, w = load(fn)
+        if len(t) < 100:  # same rule as s03
+            print(f"S{sec}: only {len(t)} good cadences - skipped")
+            continue
         ny, nx = cube.shape[1:]
         xy = star_pix(w)
+        # same off-silicon rule as s03: skip if the target's 3x3 peak is < 50 e/s above background
+        ix, iy = int(round(xy[0, 0])), int(round(xy[0, 1]))
+        med = np.nanmedian(cube, axis=0)
+        peak = med[max(0, iy - 1):iy + 2, max(0, ix - 1):ix + 2].max() if (0 <= ix < nx and 0 <= iy < ny) else 0
+        if peak < 50:
+            print(f"S{sec}: target not on science pixels (peak {peak:.1f} e/s) - skipped")
+            continue
         yy, xx = np.mgrid[:ny, :nx]
         box = np.hypot(xx - xy[0, 0], yy - xy[0, 1]) < 4.5
         n = np.arange(np.ceil((t.min() - T0) / P), np.floor((t.max() - T0) / P) + 1)
@@ -147,6 +162,7 @@ def run():
             q = least_squares(rr, [xy[0, 0] + dx, xy[0, 1] + dy, chi_t[2], 0])
             J = q.jac
             cov = np.linalg.pinv(J.T @ J) * max(1.0, 2 * q.cost / (box.sum() - 4))
+            ep = int(round((tc - T0) / P))
             # offsets on sky (arcsec) via WCS from the shifted target position
             ra_d, de_d = w.all_pix2world(q.x[0] - dx, q.x[1] - dy, 0)
             dra = (float(ra_d) - stars[0]["ra"]) * np.cos(np.radians(stars[0]["dec"])) * 3600
@@ -160,9 +176,12 @@ def run():
             lines.append(
                 f"S{sec:3d} E{int(round((tc - T0) / P)):4d} tc={tc:.3f} n_in={nin} n_oot={noot} psf_sigma={s:.2f}px "
                 f"shift=({dx:+.2f},{dy:+.2f})px | D source offset from target: dRA={dra:+.1f}\" dDec={dde:+.1f}\" "
-                f"(|off|={off_t:.1f}\" ±{np.hypot(*pos_err):.1f}\"), from G14.3 neighbour: {off_n:.1f}\" | "
-                f"chi2 target={chi_t[0]:.1f} neighbour19.6\"={chi_n[0]:.1f} (dof {box.sum()-2}); best-fitting star: "
-                f"{'TARGET' if chis[0][1] == 0 else best['source_id']} (sep {best['sep']:.0f}\")")
+                f"(|off|={off_t:.1f}\" ±{np.hypot(*pos_err):.1f}\"), from {NBL} neighbour: {off_n:.1f}\" | "
+                f"chi2 target={chi_t[0]:.1f} neighbour {NBL}={chi_n[0]:.1f} (dof {box.sum()-2}); best-fitting star: "
+                f"{'TARGET' if chis[0][1] == 0 else best['source_id']} (sep {best['sep']:.0f}\")" + ("  [EXCLUDED from combined]" if ep in EXCL else ""))
+            if ep in EXCL:
+                panels.append((sec, tc, O, D, eD, xy + [dx, dy], q.x[:2]))
+                continue
             comb.append((sec, int(round((tc - T0) / P)), chi_t[0], chi_n[0], off_t, np.hypot(*pos_err),
                          dra, dde, np.max(pos_err), np.max(pos_err)))
             panels.append((sec, tc, O, D, eD, xy + [dx, dy], q.x[:2]))
@@ -192,9 +211,9 @@ def run():
     nb = stars[nb_idx]
     nra = (nb["ra"] - stars[0]["ra"]) * np.cos(np.radians(stars[0]["dec"])) * 3600
     nde = (nb["dec"] - stars[0]["dec"]) * 3600
-    lines.append(f"Combined over {len(comb)} full transits: transit-source offset from target "
+    lines.append(f"Combined over {len(comb)} full transits{' (excluded epochs: ' + ','.join(map(str, sorted(EXCL))) + ')' if EXCL else ''}: transit-source offset from target "
                  f"dRA = {mx:+.1f} ± {ex:.1f}\", dDec = {my:+.1f} ± {ey:.1f}\" "
-                 f"(|offset| = {np.hypot(mx, my):.1f}\"). The G=14.3 neighbour is at dRA = {nra:+.1f}\", "
+                 f"(|offset| = {np.hypot(mx, my):.1f}\"). The key neighbour {NBL} is at dRA = {nra:+.1f}\", "
                  f"dDec = {nde:+.1f}\" ({nbsep:.1f}\"), i.e. {np.hypot(mx-nra, my-nde)/np.hypot(ex, ey):.0f} sigma "
                  f"from the measured source position.")
     lines.append("Per-transit errors are least-squares position errors (residual-scaled); systematic PSF/WCS "
@@ -223,8 +242,9 @@ def run():
         for ax, img, ttl in zip(row, [O, D, D / eD], ["out-of-transit", "difference (OOT - in)", "difference S/N"]):
             im = ax.imshow(img, origin="lower", cmap="viridis")
             plt.colorbar(im, ax=ax, fraction=0.046)
+            NBL = f"G{stars[nb_idx]['G']:.1f} @{stars[nb_idx]['sep']:.1f}\""
             ax.plot(xy[0, 0], xy[0, 1], "r+", ms=14, mew=2, label="target")
-            ax.plot(xy[nb_idx, 0], xy[nb_idx, 1], "wx", ms=10, mew=2, label="G14.3 @19.6\"")
+            ax.plot(xy[nb_idx, 0], xy[nb_idx, 1], "wx", ms=10, mew=2, label=NBL)
             others = [i for i in range(1, len(stars)) if i != nb_idx and stars[i]["G"] < 16.5]
             ax.plot(xy[others, 0], xy[others, 1], "o", mfc="none", mec="orange", ms=6)
             if "difference" in ttl:

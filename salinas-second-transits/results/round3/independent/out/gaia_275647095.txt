@@ -14,6 +14,7 @@ Target astrophysical parameters (Gaia DR3):
   evolstage_flame        --
   distance_gspphot       --
 
+TIC 275647095  Gaia DR3 5377927940883353216  depth used 9600 ppm
 Target: G=12.742 BP-RP=0.975 plx=2.5542±0.0146 RUWE=1.033 ipd_multi_peak=0 ipd_gof_harm=0.0102 non_single_star=0 variable=NOT_AVAILABLE
 
 Neighbours within 200" (329); depth needed if the neighbour were the eclipsing source:

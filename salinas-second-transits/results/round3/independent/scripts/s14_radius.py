@@ -1,14 +1,19 @@
-"""Stellar radius/density for TIC 275647095 from Gaia DR3 parallax + G, since DR3 gives no
+"""Stellar radius/density for a target (usage: s14_radius.py TIC) from Gaia DR3 parallax + G, since DR3 gives no
 FLAME/GSP-Phot parameters for it. L from M_G with the DR3 BC_G(Teff) polynomial (Creevey+2022,
 4000-8000 K); extinction A_G = 2.74 E(B-V) with E(B-V) from the TIC; Teff from the TIC.
 Mass for the density from the TIC (and a +-10% range). Compared with the transit-implied
 circular-orbit density from out/shape_<tic>.json."""
-import os, json, numpy as np
+import sys, os, json, numpy as np
 from astroquery.mast import Catalogs
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-g = json.load(open(os.path.join(ROOT, "out", "gaia_275647095.json")))["target"]
-sh = json.load(open(os.path.join(ROOT, "out", "shape_275647095.json")))
-r = Catalogs.query_criteria(catalog="TIC", ID=275647095)[0]
+TIC = int(sys.argv[1])
+_lines = []
+_print = print
+def print(*a):
+    _lines.append(" ".join(str(x) for x in a)); _print(*a)
+g = json.load(open(os.path.join(ROOT, "out", f"gaia_{TIC}.json")))["target"]
+sh = json.load(open(os.path.join(ROOT, "out", f"shape_{TIC}.json")))
+r = Catalogs.query_criteria(catalog="TIC", ID=TIC)[0]
 teff, eteff = float(r["Teff"]), float(r["e_Teff"])
 ebv = float(r["ebv"]) if str(r["ebv"]) != "--" else 0.0
 eebv = float(r["e_ebv"]) if str(r["e_ebv"]) != "--" else 0.5 * ebv
@@ -46,5 +51,10 @@ print(f"Radius needed for the circular-orbit density: {Rneed:.2f} Rsun")
 # eccentricity needed: duration ratio = (rho_star/rho_tr)^(1/3) = (1+e sin w)/sqrt(1-e^2); minimum e at w=90
 ratio = (np.median(rho) / rho_tr) ** (1 / 3)
 es = np.linspace(0, 0.95, 9501)
-emin = es[np.argmax((1 + es) / np.sqrt(1 - es**2) >= ratio)]
-print(f"Duration / circular-expectation = {ratio:.2f} -> minimum eccentricity (transit at apoapsis) e >= {emin:.2f}")
+if ratio > 1:
+    emin = es[np.argmax((1 + es) / np.sqrt(1 - es**2) >= ratio)]
+    print(f"Duration / circular-expectation = {ratio:.2f} -> minimum eccentricity (transit at apoapsis) e >= {emin:.2f}")
+else:
+    print(f"Duration / circular-expectation = {ratio:.2f} (<= 1: a circular orbit with b > fitted b, or e > 0 "
+          f"near periapsis, fits; no eccentricity needed)")
+open(os.path.join(ROOT, "out", f"radius_{TIC}.txt"), "w").write("\n".join(_lines) + "\n")
