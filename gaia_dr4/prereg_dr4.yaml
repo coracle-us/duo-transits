@@ -1,18 +1,26 @@
 # Pre-registration: Gaia DR4 sweep of long-period TESS candidate hosts
 #
-# STATUS: DRAFT - not approved. Jon approves before 2026-12-02; approval freezes this file and its
-# hash is recorded in the commit that marks it approved. A later change needs a new version, a dated
+# STATUS: APPROVED by Jon McBee on 2026-11-22, as drafted. This file is frozen; its SHA-256 is in
+# gaia_dr4/APPROVALS.md and tests/test_prereg.py checks it. A change needs a new version, a dated
 # reason and Jon's approval; results under a changed version are labelled post-hoc.
-version: 0.1-draft
+# The open_items at the end were open at approval. Settling one from the DR4 documentation is a
+# version change like any other.
+version: 1.0
+status: approved
+approved_by: Jon McBee
+approved_on: 2026-11-22
 written: 2026-11-22
 release: Gaia DR4, archive opens 2026-12-02 12:00 CET
 spec: docs/STRATEGY_living_alias_catalogue.md (sections 5.4 and 6a)
 
 inputs:
-  # sha256 is filled in by `shasum -a 256` at approval; the files are built by build_hosts.py
+  # the files are built by build_hosts.py; SHA-256 of each as approved
   candidates: gaia_dr4/candidates_frozen.csv   # 1368 rows (T16 singles added 2026-11-22)
   hosts: gaia_dr4/hosts_frozen.csv             # 1301 stars
   dr3_baseline: gaia_dr4/results_dr3/report.csv
+  candidates_sha256: 112831ad813d27cf3bc5489987e7309f0d7dda13b5dc76918ca3f01d8b3ee93f
+  hosts_sha256: fbdab65f2b7ef7302e21c69877b70f99e669a164216643a7f88b30a79619df84
+  dr3_baseline_sha256: a53f339a57b3b0116bc3a1545b37b6c55ba061fa7039058856e5825dbd825a6f
   not_included:
     - TSTPC and Planet Hunters TESS lists: owned by active groups; not in this repo
 

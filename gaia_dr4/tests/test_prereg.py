@@ -24,3 +24,19 @@ def test_prereg_row_counts_match_the_frozen_files():
     n_host = int(re.search(r"hosts_frozen\.csv\s+# (\d+) stars", text).group(1))
     assert n_cand == len(pd.read_csv(HERE / "candidates_frozen.csv"))
     assert n_host == len(pd.read_csv(HERE / "hosts_frozen.csv"))
+
+
+def _sha(p):
+    import hashlib
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+
+def test_approved_prereg_is_frozen():
+    """The approved file and its inputs must not change without a new entry in APPROVALS.md."""
+    cfg = yaml.safe_load(open(HERE / "prereg_dr4.yaml"))
+    assert cfg["status"] == "approved"
+    last = [ln for ln in (HERE / "APPROVALS.md").read_text().splitlines() if ln.startswith("| ")][-1]
+    assert f"| {cfg['version']} |" in last
+    assert _sha(HERE / "prereg_dr4.yaml") in last
+    for key in ("candidates", "hosts", "dr3_baseline"):
+        assert _sha(ROOT / cfg["inputs"][key]) == cfg["inputs"][key + "_sha256"]
