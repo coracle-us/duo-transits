@@ -20,6 +20,15 @@ def test_every_source_row_is_kept_or_dropped():
     assert n["salinas"] == 173
     assert n["k2"] == 164
     assert n["toi_single"] == 156
+    assert n["t16"] == 411
+
+
+def test_t16_rows_with_a_toi_or_confirmed_planet_are_dropped_with_the_reason():
+    kept, dropped = bh.split(bh.load_all())
+    d = dropped[dropped.catalogue == "t16"]
+    assert len(d) == 10 and (kept.catalogue == "t16").sum() == 401
+    assert set(d.reason) == {"star has a TOI", "host has a confirmed planet (pscomppars)"}
+    assert "pre_reason" not in kept.columns
 
 
 def test_kept_rows_are_clean():
