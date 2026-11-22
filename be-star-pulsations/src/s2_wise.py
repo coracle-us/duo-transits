@@ -105,7 +105,7 @@ def main():
         ss["mid_btjd"] = [sector_mid(p) for p in ss.file]
         ss["mid_mjd"] = ss.mid_btjd + BTJD_TO_MJD
         o = d.at(ss.mid_mjd.values)
-        for k in ("w1_fit", "disk_excess", "dw1dt", "w1w2", "wise_gap", "phase_label", "wise_usable"):
+        for k in ("w1_fit", "disk_excess", "dw1dt", "w1w2", "wise_gap", "spline_overshoot", "phase_label", "wise_usable"):
             ss[k] = o[k]
         ss["bright_w1lt8"] = w1med < 8.0
         rows.append(ss)
@@ -123,7 +123,8 @@ def main():
     print("unusable reasons: outside baseline",
           int(((out.mid_mjd < out.tic.map(si.set_index('tic').wise_first_mjd)) |
                (out.mid_mjd > out.tic.map(si.set_index('tic').wise_last_mjd))).sum()),
-          "gap>250", int(((out.wise_gap > 250) & np.isfinite(out.wise_gap)).sum()))
+          "gap>250", int(((out.wise_gap > 250) & np.isfinite(out.wise_gap)).sum()),
+          "overshoot>0.1", int((out.spline_overshoot > 0.1).sum()))
     spline_check(stars.tic.values[:10], disks, out)
 
 

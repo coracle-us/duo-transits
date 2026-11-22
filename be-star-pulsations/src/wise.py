@@ -7,6 +7,7 @@ BUILD_SLOPE = -0.02   # mag / 100 d; below -> building (W1 brightening)
 DISS_SLOPE = 0.02     # above -> dissipating
 QUIET_EXCESS = 0.05   # mag
 MAX_GAP = 250.0       # days between bracketing WISE visits
+MAX_OVERSHOOT = 0.1   # mag the spline may stray outside its two bracketing visits (full run)
 
 
 # ---------------------------------------------------------------- IRSA single exposures
@@ -62,7 +63,9 @@ class DiskCurve:
         # faintest spline value, only within 100 d of a real visit: the spline swings
         # freely across the 2011-2013 WISE hibernation gap (figures/spline_check.png)
         near = np.abs(grid[:, None] - self.mjd[None, :]).min(axis=1) <= 100.0
-        self.w1_quiet = float(np.max(splev(grid[near], self.tck)))
+        # and never fainter than the faintest real visit (full run: unclipped, the spline
+        # reached W1 = 30-5600 mag between sparse late visits in a few dozen stars)
+        self.w1_quiet = float(min(np.max(splev(grid[near], self.tck)), np.max(self.w1)))
         self.t0, self.t1 = self.mjd[0], self.mjd[-1]
 
     def at(self, t_mjd):
@@ -73,12 +76,17 @@ class DiskCurve:
         j = np.clip(np.searchsorted(self.mjd, t), 1, len(self.mjd) - 1)
         gap = self.mjd[j] - self.mjd[j - 1]
         gap = np.where(inside, gap, np.inf)
+        # spline overshoot: how far w1_fit lies outside the two bracketing visits' W1 range
+        lo = np.minimum(self.w1[j - 1], self.w1[j])
+        hi = np.maximum(self.w1[j - 1], self.w1[j])
+        over = np.maximum(np.maximum(lo - w1_fit, w1_fit - hi), 0.0)
         excess = self.w1_quiet - w1_fit
         lab = np.where(d < BUILD_SLOPE, "building",
               np.where(d > DISS_SLOPE, "dissipating",
               np.where(excess < QUIET_EXCESS, "quiescent", "plateau")))
         out = dict(w1_fit=w1_fit, disk_excess=excess, dw1dt=d, wise_gap=gap,
-                   phase_label=lab, wise_usable=inside & (gap <= MAX_GAP))
+                   spline_overshoot=over, phase_label=lab,
+                   wise_usable=inside & (gap <= MAX_GAP) & (over <= MAX_OVERSHOOT))
         if self.w1w2 is not None:
             near = np.abs(self.mjd[None, :] - t[:, None]).argmin(axis=1)
             out["w1w2"] = self.w1w2[near]

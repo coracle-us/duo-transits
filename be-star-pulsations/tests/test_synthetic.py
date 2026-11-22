@@ -134,9 +134,38 @@ def test_stage4():
     check("case C cross-star null not significant", rs <= 0.15, f"rate {rs:.2f}")
 
 
+def test_overshoot():
+    """Spline-overshoot guard: smooth curves keep their sectors; a curve whose spline swings
+    between sparse visits loses the sectors on the swing; w1_quiet stays <= faintest visit."""
+    rng = np.random.default_rng(3)
+    lost, n_in, quiet_ok = 0, 0, True
+    for _ in range(50):
+        d = fake_disk(rng)
+        o = d.at(SECTOR_MID)
+        inside = (SECTOR_MID >= d.t0) & (SECTOR_MID <= d.t1)
+        lost += int(np.sum(inside & (o["spline_overshoot"] > 0.1)))
+        n_in += int(inside.sum())
+        quiet_ok &= d.w1_quiet <= d.w1.max() + 1e-9
+    # a real bump peaking between two visits can exceed both by > 0.1 mag, so allow <= 1%
+    check("overshoot guard keeps smooth curves", lost <= 0.01 * n_in,
+          f"{lost} of {n_in} sectors flagged")
+    check("w1_quiet <= faintest visit", bool(quiet_ok))
+    # sparse late visits with one bright point: FITPACK swings far between them
+    mjd = np.r_[np.arange(56660.0, 59900.0, 182.6), 60080.0, 60400.0]
+    w1 = np.full(len(mjd), 9.0) + rng.normal(0, 0.01, len(mjd))
+    w1[-2] = 7.0
+    d = DiskCurve(mjd, w1)
+    tt = np.linspace(60081.0, 60399.0, 50)
+    o = d.at(tt)
+    check("overshoot guard flags a wild swing", (not o["wise_usable"].all())
+          and d.w1_quiet <= w1.max() + 1e-9,
+          f"max overshoot {o['spline_overshoot'].max():.2f} mag, w1_quiet {d.w1_quiet:.2f}")
+
+
 if __name__ == "__main__":
     test_metrics()
     test_stage4()
+    test_overshoot()
     if FAIL:
         print("FAILED:", FAIL)
         sys.exit(1)
