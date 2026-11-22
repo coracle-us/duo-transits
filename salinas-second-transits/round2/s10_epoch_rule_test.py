@@ -14,7 +14,9 @@ test uses TOIs dispositioned CP or KP on ExoFOP, chosen before looking at their 
 
 Modes (run from salinas-second-transits/):
   download    fetch and detrend every sector of a star set (--set toi or multi)
-  known       real transits of that set: does the true period survive, how many false aliases do
+  known       real transits of that set: does the true period survive, how many false aliases do.
+              --ref catalog (default) takes depth0 from the catalogue's fitted depth; --ref box re-measures
+              it as a box depth at T1, the way the pipeline does for the candidates (outputs *_boxref.csv)
   inject      box transits added to the cached light curves of the other stars, by epoch SNR
   candidates  the same rules on the current alias events of the real candidates
   summary     print and write results/round2/epoch_rule_test_summary.csv
@@ -212,6 +214,20 @@ def step_known(args):
         i1, i2 = np.where(clean)[0][[0, -1]]
         t1, t2 = ep[i1] + rng.normal(0, TIMING_SIG_D), ep[i2] + rng.normal(0, TIMING_SIG_D)
         n_true = int(round((ep[i2] - ep[i1]) / P))
+        if args.ref == "box":
+            # as st2_pipeline.search_one: box depth, error and duration re-measured on the first event,
+            # kept only if solid, then used for every epoch and alias of this star
+            ref = core.refine_event(t, f, t1, dur_d)
+            ok = bool(ref) and ref["snr"] >= 5 and 0.33 < ref["depth"] / d0 < 3
+            row.update(ref_box_depth_ppm=ref["depth"] * 1e6 if ref else np.nan,
+                       ref_box_depth_err_ppm=ref["depth_err"] * 1e6 if ref else np.nan,
+                       ref_box_dur_h=ref["dur_d"] * 24 if ref else np.nan,
+                       ref_box_snr=ref["snr"] if ref else np.nan, ref_box_used=ok)
+            if ok:
+                dur_d, d0, d0_err = ref["dur_d"], ref["depth"], ref["depth_err"]
+                sig = core.duration_scale_noise(t, f, dur_d)
+                depth, frac, _ = core.box_stats(t, f, ep, dur_d)
+                clean, tot, v = verdicts(depth, frac, core.edge_distance(edges, ep), sig, d0, d0_err)
         at = aliases(t1, t2, dur_d, d0, d0_err, t, f, sig, edges)
         for name, rows in (("transit", np.where(clean)[0]),):
             for i in rows:
@@ -237,8 +253,9 @@ def step_known(args):
             row[f"multiples_excluded_{u}"] = int(((at[u] == "excluded") & multiple & ~truth).sum())
         stars.append(row)
         print(row["tic"], {u: (row[f"true_{u}"], row[f"false_survivors_{u}"]) for u in RULES}, flush=True)
-    pd.DataFrame(stars).to_csv(OUT / f"epoch_rule_known_stars_{args.set}.csv", index=False)
-    pd.DataFrame(epochs).to_csv(OUT / f"epoch_rule_known_epochs_{args.set}.csv", index=False)
+    tag = args.set + ("_boxref" if args.ref == "box" else "")
+    pd.DataFrame(stars).to_csv(OUT / f"epoch_rule_known_stars_{tag}.csv", index=False)
+    pd.DataFrame(epochs).to_csv(OUT / f"epoch_rule_known_epochs_{tag}.csv", index=False)
 
 
 def step_inject(args):
@@ -335,10 +352,16 @@ def step_candidates(args):
 
 def step_summary(args):
     lines = []
-    for name in ("toi", "multi"):
+    for name in ("toi", "toi_boxref", "multi"):
+        if not (OUT / f"epoch_rule_known_stars_{name}.csv").exists():
+            continue
         s = pd.read_csv(OUT / f"epoch_rule_known_stars_{name}.csv")
         used = s[s["skipped"].isna()]
         lines.append(f"KNOWN STARS, set {name}: {len(s)} total, {len(used)} used")
+        if "ref_box_used" in used:
+            r = used["ref_box_depth_ppm"] / used["depth_ppm"]
+            lines.append(f"box reference used for {int(used['ref_box_used'].sum())} of {len(used)}; box/catalogue "
+                         f"depth quartiles {r.quantile([.25, .5, .75]).round(2).tolist()}")
         lines.append(s["skipped"].value_counts().to_string())
         lines.append(f"median epoch SNR quartiles {used['epoch_snr_median'].quantile([.25, .5, .75]).round(1).tolist()}")
         for u in RULES:
@@ -394,6 +417,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("mode", choices=["download", "known", "inject", "candidates", "summary"])
     ap.add_argument("--set", choices=["toi", "multi"], default="toi", help="star set for download and known")
+    ap.add_argument("--ref", choices=["catalog", "box"], default="catalog", help="reference depth for known")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--draws", type=int, default=2)
     ap.add_argument("--event-times", default="results/round2/qlp_s94_timing.csv")
