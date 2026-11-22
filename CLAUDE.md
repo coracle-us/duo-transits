@@ -207,3 +207,47 @@ It is now the current scope (see the box at the top of this file).
   `singles/rnaas/numbers.md`, "After submission"). **Accepted 2026-11-14.** The arXiv package is in `singles/rnaas/arxiv/`; add the journal reference and DOI to arXiv once the note is published.
 - ExoFOP-ready ephemerides are in `singles/writeups/exofop_ephemeris_updates.md`, for
   someone with an account to submit.
+
+### Salinas second transits (status 2026-11-22)
+
+This is a search for a second transit, in S61 or later, of each single-transit candidate in Salinas et al.
+(arXiv 2610.24882).
+- Method and known limits: `salinas-second-transits/README.md`.
+- Round 2 summary: `salinas-second-transits/results/round2/SUMMARY_2026-10-27.md`.
+- Rounds 2 and 3 ran from briefs in the Claude relay Drive folder (`briefs/`, reports in `results/`).
+- Merged as PRs #2, #3 and #7.
+
+**Epoch rule.** Since 2026-11-01, an epoch excludes a period only if its box depth is below
+0.5 depth0 − 3σ (half3s). Test on 83 confirmed planets, with a box reference depth as the pipeline uses
+(`results/round2/EPOCH_RULE_TEST_2026-11-01.md`):
+- The true period is excluded for 3 planets, against 46 under the old rule.
+- An epoch below SNR ~6 can barely exclude anything, so long alias lists at low SNR mean little.
+
+**Round 3: odd/even, secondary eclipse, shape.** Script `round3/s11_oddeven.py`; outputs in
+`results/round3/`, summary in `oddeven_summary.csv`. It covers the four stars round 2 flagged as
+periodic. None of them is a TOI or CTOI; none is in the TESS EB catalog or VSX within 30″; none shows an
+odd/even difference or a secondary eclipse.
+
+| TIC | P (d) | Odd − even | Phase 0.5 (3σ) | Rp (R_J) | ρ/ρ_TIC | Verdict |
+|---|---|---|---|---|---|---|
+| 275647095 | 17.06402 ± 0.00003 | 1.3σ (7 transits) | < 44 ppm | 1.07 | 0.22 | unclear |
+| 241550976 | 21.19694 ± 0.00004 | 0.7σ (1 odd) | < 479 ppm | 1.19 | 0.70 | no EB signs |
+| 107113048 | 49.70152 ± 0.00017 | 1.0σ (3 transits) | < 705 ppm | 0.91 | 0.66 | no EB signs |
+| 230133616 | 23.75297 ± 0.00002 | 0.6σ (31 transits) | < 50 ppm | 1.89 | 1.65 | unclear |
+
+- **275647095:** the duration is too long for P around this star. The fix could be an eccentric orbit, a
+  star of about 1.9 R☉ (giving Rp ≈ 1.8 R_J), or a blend.
+- **230133616:**
+  - Rp ≈ 1.9 R_J is very large for a 23.75 d planet, and Gaia RUWE is 3.79.
+  - It transits in the old data too (34 epochs), so it was never really a single.
+  - Its period is the n = 51 alias, about 24σ from the 23.7535 d hypothesis.
+- **Lessons:**
+  - Our TESScut aperture photometry is diluted: depths 10–40% under QLP's for the same events. Use it for
+    S94+ mid-times only, and QLP for depths.
+  - QLP's S100+ clock is off by up to ~6 min (`round2/s6_qlp_times.py`).
+
+**Not done yet:**
+- Pixel-level vetting exists only for 230133616 (round 2 §5). The other three have no difference
+  images or Gaia neighbour/RUWE check; 275647095 has TIC contratio 0.21.
+- No period has been re-derived independently (§5).
+- Nothing has been reported to anyone.
