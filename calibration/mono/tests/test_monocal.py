@@ -100,3 +100,23 @@ def test_limb_darkening_comes_from_the_claret_grid():
     assert "below the grid" in cool[2]
     assert "assumed" in mc.limb_dark(float("nan"), float("nan"), 1.0)[2]
     assert mc.limb_dark(4000.0, 0.6, 0.6)[0] > u1      # cooler stars are more limb darkened
+
+
+def test_scoring_counts_rates_and_judges_the_thresholds():
+    import pandas as pd
+    import score
+    n = 100
+    t = pd.DataFrame(dict(status="ok", ref_snr=[10.0] * n, truth_excluded_single=[True] * 4 + [False] * 96,
+                          truth_n_clean_epochs=[1] * 50 + [0] * 50, n_clean_repeats=[1] * 40 + [0] * 60,
+                          repeat_detected=[True] * 30 + [False] * 70, call=["narrowed"] * 20 + ["no repeat"] * 80,
+                          truth_in_alias_set=[False] * 1 + [True] * 19 + [None] * 80, frac_lnP_excluded=0.5))
+    r = score.score(t)
+    g = lambda m, b="all": r[(r.metric == m) & (r.snr_bin == b)].iloc[0]
+    assert (g("false_exclusion").k, g("false_exclusion").n) == (4, 100)
+    assert g("false_exclusion", "8-12").n == 100 and g("false_exclusion", ">20").n == 0
+    assert (g("false_exclusion_given_a_clean_epoch").k, g("false_exclusion_given_a_clean_epoch").n) == (4, 50)
+    assert (g("repeat_recovery").k, g("repeat_recovery").n) == (30, 40)
+    assert (g("wrong_period").k, g("wrong_period").n) == (1, 20)
+    lines, ok = score.verdict(r, "B", True)
+    assert not ok and any("wrong period" in x and "FAIL" in x for x in lines)   # 1 of 20 = 5% > 3%
+    assert score.upper95(0, 59) == pytest.approx(0.0495, abs=1e-3)
