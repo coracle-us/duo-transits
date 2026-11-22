@@ -117,7 +117,8 @@ def main():
     reps = [r for r in reps if r.get("status") == "ok"]
     cm_real, cm_ctl = cm_flags(reps, "events"), cm_flags(reps, "control_events")
     res = []
-    with ProcessPoolExecutor(args.workers, max_tasks_per_child=4) as ex:
+    # no max_tasks_per_child: with it, retired workers were never replaced and the pool hung after workers x 4 stars
+    with ProcessPoolExecutor(args.workers) as ex:
         futs = [ex.submit(run, r, cm_real, cm_ctl) for r in reps]
         for k, fu in enumerate(as_completed(futs), 1):
             x = fu.result()
