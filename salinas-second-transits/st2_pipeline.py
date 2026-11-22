@@ -281,6 +281,12 @@ def search_sector(tic, s, row, sr, cache, work, dur_ref, depth_ref):
     except Exception as e:
         return [dict(sector=s, error=str(e))]
     np.savez_compressed(work / "lc" / f"{tic}_s{s:03d}.npz", t=t, f=f)
+    return sector_events(t, f, s, row["author"], dur_ref, depth_ref)
+
+
+def sector_events(t, f, s, author, dur_ref, depth_ref):
+    """Top events of one detrended sector. Split from search_sector so that the calibration
+    (calibration/mono) can change the flux between load_sector_lc and detrend."""
     cen, dep, snr, frac, sig = core.box_search(t, f, dur_ref)
     if not np.any(np.isfinite(snr)):
         return []
@@ -290,7 +296,7 @@ def search_sector(tic, s, row, sr, cache, work, dur_ref, depth_ref):
         ev = core.refine_event(t, f, cen[i], dur_ref)
         if not ev:
             continue
-        ev.update(sector=s, author=row["author"], noise_ppm=sig * 1e6,
+        ev.update(sector=s, author=author, noise_ppm=sig * 1e6,
                   anti_snr=float(anti),
                   depth_ratio=ev["depth"] / depth_ref,
                   dur_ratio=ev["dur_d"] / dur_ref,

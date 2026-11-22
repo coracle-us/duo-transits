@@ -3,7 +3,7 @@
 | Folder | What | State |
 |---|---|---|
 | `published_lists/` | Do published alias lists keep the periods that were later solved? | Done for Hawthorn et al. 2024 (exploratory) |
-| `mono/` | Injection and confirmed-planet calibration for single transits | Pre-registration drafted; **not approved, nothing run** |
+| `mono/` | Injection and confirmed-planet calibration for single transits | Pre-registration **approved 2026-11-22 (version 1.0), frozen**. Harness built, timing pilot run. **No outcome produced.** Version 1.1 proposed, not approved. |
 
 ## Published lists: result (2026-11-22)
 
@@ -39,3 +39,28 @@ for MonoTools is from memory; check Osborn et al. 2022 before quoting it.
 
 **Not done.** The same test on the 12 published periods used in arXiv 2611.03019, and on the full online
 alias lists for the 4 gapped candidates.
+
+## Single-transit calibration: state (2026-11-22)
+
+| File | What |
+|---|---|
+| `mono/prereg_mono_calibration.yaml`, `mono/APPROVALS.md` | Version 1.0, approved by Jon and frozen (hash checked by `mono/tests/test_prereg_mono.py`). |
+| `mono/PROPOSED_v1.1.md` | Six gaps in 1.0 found while building the harness, with a proposed fix for each. **Needs Jon's approval before any trial is scored.** |
+| `mono/monocal.py` | One trial: detrend and search as `st2_pipeline` does, then score against the truth. Defines the single-transit excluded set. |
+| `mono/run_arm_b.py` | Arm B driver: injects a batman planet into the raw sectors before detrending. `--timing-only` discards outcomes. |
+| `mono/tests/` | `pytest calibration/mono/tests`: synthetic light curves only. |
+| `mono/results/pilot/arm_b_timing.csv` | The timing pilot. Seconds only. |
+
+The pipeline change is in `salinas-second-transits/st2_pipeline.py`: `search_sector` now calls a new
+`sector_events`, so the harness can change the flux between loading and detrending. No threshold moved.
+
+**Timing pilot** (allowed by the pre-registration before the sample is fixed). 10 frozen hosts
+whose raw light curves were already cached, 40 injected trials, outcomes discarded in memory:
+10 s to load a star and 3.2 s per trial on average (longest 11 s, for stars with
+about 40 sectors). The full run (600 arm-B trials and up to 240 arm-A trials) is therefore about an
+hour of computing on one core. The pilot did not time downloads: all ten stars were cached. Most
+of the 150 arm-B hosts and all arm-A stars are not, so MAST downloads will dominate. No cut to the
+sample is needed.
+
+**Not done.** The arm-A driver (confirmed planets as fake singles), the draw of the 150 hosts (needs
+a TESS magnitude for all 1301 frozen hosts), and any scored trial.
