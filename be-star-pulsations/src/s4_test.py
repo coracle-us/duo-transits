@@ -3,7 +3,7 @@ import numpy as np, pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from common import PILOT, FIGURES, WISE_DIR, SEED, figpath
+from common import PILOT, FIGURES, WISE_DIR, SEED, RUN, figpath
 from wise import DiskCurve
 import stats4
 
@@ -121,7 +121,7 @@ def pooled_fig(r):
             f"[{r['beta_lo']:.2f}, {r['beta_hi']:.2f}] per mag")
     ax.set_xlabel("disk_excess - star mean (mag)")
     ax.set_ylabel("ln A1 - star mean")
-    ax.set_title(f"Pilot, main sample: {r['n_stars']} stars, {r['n_sectors']} sectors")
+    ax.set_title(f"{RUN.capitalize()}, main sample: {r['n_stars']} stars, {r['n_sectors']} sectors")
     ax.legend(loc="upper left", fontsize=9)
     ins = ax.inset_axes([0.62, 0.08, 0.35, 0.3])
     ins.hist(r["_perm_null"], bins=60, histtype="step", density=True, label="within-star")
