@@ -63,12 +63,20 @@ is P/2 for 107113048, which rests on two clean flat epochs (S10 1592.27 and S100
 The blind run also asks why 230133616 was listed as a single transit at all, with 37 transits in
 S16–S86.
 
-## Later follow-up on 275647095 (blind run only)
+## Later follow-up (blind run only)
 
 After this comparison was written, the blind run checked the long transit of 275647095 with Gaia DR3 and its
-own difference images (scripts `s11`–`s14`, section "Follow-up" in `RESULTS.md`):
+own difference images (scripts `s11`–`s14`, section "Follow-up" in `RESULTS.md`). For 275647095:
 - R★ = 1.14 ± 0.06 R☉ from the parallax, as in the TIC. A bigger star does not explain the duration.
 - The dip comes from within about 2″ of the target in 5 of 7 transits. Every Gaia neighbour, including
   the G = 14.3 star at 19.6″ behind the TIC contamination ratio of 0.21, is ruled out.
 - What is left: an eccentric orbit (e ≳ 0.34), or an eclipsing system blended within ~2″ that Gaia does
   not resolve. Round 3's pixel check also found the signal on target.
+
+It then ran the same checks on the other three stars (scripts `s11`–`s16`, one "Follow-up" section each):
+- **241550976, 107113048:** on target, with Gaia radii of 0.96 and 1.0 R☉, and circular orbits fit both.
+- **107113048:** E29 (S90) overlaps an eclipse of a G = 12.74 eclipsing binary 97″ away. Round 3 had put
+  that transit down to a pointing excursion; the round 3 and blind readings of the same image disagree on
+  the cause, but both leave E29 out of the source stack. E29 still fits the ephemeris (O−C −1.1 min).
+- **230133616:** on target to ~1″. Its Gaia radius of 2.45 R☉ fits a circular orbit badly, and RUWE 3.79
+  points to an unresolved companion.

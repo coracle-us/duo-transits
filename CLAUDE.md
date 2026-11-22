@@ -215,7 +215,7 @@ This is a search for a second transit, in S61 or later, of each single-transit c
 - Method and known limits: `salinas-second-transits/README.md`.
 - Round 2 summary: `salinas-second-transits/results/round2/SUMMARY_2026-10-27.md`.
 - Rounds 2 and 3 ran from briefs in the Claude relay Drive folder (`briefs/`, reports in `results/`).
-- Merged as PRs #2, #3, #7, #9, #10 and #11, plus the 275647095 follow-up.
+- Merged as PRs #2, #3, #7, #9, #10, #11 and #12, plus the blind follow-ups on all four stars.
 
 **Epoch rule.** Since 2026-11-01, an epoch excludes a period only if its box depth is below
 0.5 depth0 − 3σ (half3s). Test on 83 confirmed planets, with a box reference depth as the pipeline uses
@@ -241,9 +241,21 @@ odd/even difference or a secondary eclipse.
     contratio 0.21.
   - Left: an eccentric orbit (e ≳ 0.34, Rp ≈ 11 R⊕), or an eclipsing system blended within ~2″ that Gaia
     does not resolve. RVs or high-resolution imaging would tell them apart.
-  - Details: `results/round3/independent/RESULTS.md`, section "Follow-up".
+  - Details: `results/round3/independent/RESULTS.md`, the "Follow-up" section for each star.
+- **241550976 and 107113048:** the blind follow-up finds Gaia radii of 0.96 and 1.0 R☉, and circular orbits
+  fit both. The leading reading is a giant planet (~13 and ~9.5 R⊕). The fallback for both is an
+  eclipsing pair within ~2″ that Gaia does not see.
+- **107113048 E29 (S90)** lands within 0.7 h of an eclipse of a G = 12.74 eclipsing binary 97″ away
+  (Gaia DR3 3463196954429755904).
+  - Round 3 had called this a pointing excursion; the bright star ~5 px east in its difference image is that
+    binary.
+  - E29 still fits the ephemeris (O−C −1.1 min), and the binary's other eclipses don't dim the target's pixels.
+  - E29 is the only transit that rules out 74.55 and 149.10 d. The next transit, E42 on 2026-12-25
+    21:43 UTC, would settle this without S90.
 - **230133616:**
   - Rp ≈ 1.9 R_J is very large for a 23.75 d planet, and Gaia RUWE is 3.79.
+  - The Gaia radius is 2.45 R☉ (a subgiant). A circular orbit around it fits worse by Δχ² ≈ 49. A companion
+    diluting the light, e ≥ 0.33, or a blend hidden in the unresolved companion could explain that.
   - It transits in the old data too (34 epochs), so it was never really a single.
   - Its period is the n = 51 alias, about 24σ from the 23.7535 d hypothesis.
 - **Lessons:**
@@ -256,14 +268,20 @@ odd/even difference or a secondary eclipse.
 - 275647095, 241550976 and 107113048 are all on target: the difference centroids are 2.2–3.7″ from the
   star, and every neighbour that could make the dip is ≥ 15σ away.
 - Their Gaia RUWE is 1.02–1.09, with no binarity flags.
-- One 107113048 transit (S90) is a pointing excursion and is left out of the stack.
+- One 107113048 transit (S90, E29) is left out of the stack. It overlaps an eclipse of the 97″ binary
+  (see above), not a pointing excursion.
 
 **Independent re-derivation (§5)** (`results/round3/independent/`, `COMPARISON.md`):
 - A blind session that never saw round 2 or 3 found the same four periods, all within 1.6σ:
   17.064042, 21.196873, 49.70148 and 23.752987 d.
 - It raised the same concerns on its own: the long 275647095 transit, and that 230133616 is not a single.
+- It then ran Gaia radius, neighbour and difference-image checks on all four stars
+  (`scripts/s11`–`s16`). All four dips come from within ~2″ of the target, and no period changed.
 
 **Not done yet:**
 - Nothing has been reported to anyone. The natural recipient is the Salinas et al. team (draft only;
   check first that no one has published these periods since October 2026).
 - Not decided: whether this becomes a third RNAAS note (four stars fit one table).
+- Still open (from the blind run):
+  - whether 230133616's companion is a star;
+  - new TESS data for 107113048 (E42, 2026-12-25).

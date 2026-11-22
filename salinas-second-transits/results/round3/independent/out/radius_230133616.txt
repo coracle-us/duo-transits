@@ -1,0 +1,6 @@
+TIC: Teff=6162±134  E(B-V)=0.034±0.008  M=1.17  R_TIC=2.527  logg=3.70
+Gaia-based: L = 7.76 (+0.30/-0.28) Lsun, R = 2.446 (+0.122/-0.113) Rsun, rho = 0.08 (+0.01/-0.01) rho_sun
+Transit-implied (circular, b=0.00, a/R*=21.04): rho = 0.22 rho_sun
+Fraction of Gaia-based posterior with rho <= transit value: 1.0000
+Radius needed for the circular-orbit density: 1.74 Rsun
+Duration / circular-expectation = 0.71 (<= 1: a circular orbit with b > fitted b, or e > 0 near periapsis, fits; no eccentricity needed)
