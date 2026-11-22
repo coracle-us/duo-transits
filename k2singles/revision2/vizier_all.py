@@ -5,6 +5,7 @@ column. Catalogue papers often name a star only in a machine-readable table, whi
 SIMBAD's bibliography finds (e.g. IJspeert et al. 2024, Kovalev et al. 2024 for our C0 binaries).
 Server: the CfA mirror (vizier.cfa.harvard.edu); the CDS host returned 404 on 2026-11-15.
 Output: k2singles/revision2/data/literature/vizier.csv (one row per star and catalogue). Resumable.
+A response without Gaia DR3 (I/355) counts as a failure and is not cached.
 Usage:  python k2singles/revision2/vizier_all.py [n_threads]
 """
 import json
@@ -36,9 +37,14 @@ def one(epic, tic, ra, dec):
     for k in range(4):
         try:
             res = v.query_region(SkyCoord(ra, dec, unit="deg"), radius=3 * u.arcsec)
-            break
         except Exception:  # noqa: BLE001
             time.sleep(20 * (k + 1))
+            continue
+        # every one of these stars is in Gaia DR3 (I/355): a result without it is a failed or truncated response,
+        # not an empty sky (on 2026-11-22 the CfA mirror returned 66 such empty results, which were cached as real)
+        if any(name.startswith("I/355") for name in res.keys()):
+            break
+        time.sleep(20 * (k + 1))
     else:
         raise RuntimeError(f"VizieR failed for EPIC {epic}")
     rows = []
