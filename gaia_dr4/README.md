@@ -10,7 +10,8 @@ Phase 1 of `docs/STRATEGY_living_alias_catalogue.md`: have everything ready befo
 | `hosts_frozen.csv` | One row per star. |
 | `core.py` | The decision functions (flags, phase test, period test). No network. |
 | `xmatch.py` | TIC to Gaia source, `gaia_source` flags, every NSS orbit, and the report. |
-| `prereg_dr4.yaml` | Pre-registration. **Draft; not approved.** Thresholds are read from it. |
+| `prereg_dr4.yaml` | Pre-registration, **approved 2026-11-22 (version 1.0) and frozen**. Thresholds are read from it. |
+| `APPROVALS.md` | Who approved which version, with the file's SHA-256. |
 | `results_dr3/` | The DR3 baseline run. |
 | `t16_overlap.py`, `data_t16/` | T16 Planet Hunt singles: source table, overlap check, ID disagreements. |
 | `tests/` | `pytest gaia_dr4/tests` (offline); `pytest -m network gaia_dr4/tests` checks the DR3 run. |
