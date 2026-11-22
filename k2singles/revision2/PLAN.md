@@ -173,3 +173,62 @@ Any change goes below with its date and reason.
   for all 919 hits, which needs checking); vetting the new leads (`results/new_leads.csv`, 41 stars; post-hoc
   detections not in Table 1: 202085278, 204776782, 247795097, 215067200, 205966706, 247756662, 211598816, 212805678).
   Several have control support close to their real support (204776782 12 vs 11; 205966706 6 vs 10).
+
+## Literature classification: rules (written 2026-11-22, before reading the rerun's snippets or the VizieR census)
+
+**Fixes before the rerun:**
+- `literature.py` looked up ADS highlights by bibcode, but ADS keys them by document id, so every snippet was empty (798e8b5).
+- `vizier_all.py` had not been run. It now keeps Gaia DR3 variability (I/358), which the `I/` skip had dropped.
+- The 2026-11-15 outputs are kept as `data/literature/*_2026-11-15_nosnippets*`.
+
+**Recall check.** Before any classification, count how many of these known (star, paper) pairs each source finds. All of
+them come from the submitted note:
+
+| Pair | Paper |
+|---|---|
+| all 163 stars | LaCourse & Jacobs 2018 |
+| 211411112 | Sandquist+2021 |
+| 202126877, 202072917 | IJspeert+2024 |
+| 202072917, 211489484 | Valizadegan+2025 |
+| 202071902 | Kovalev+2024, Guo+2025 |
+| 211503363 | Kovács 2020 |
+| 211892898 | Libralato+2016 |
+
+Report recall per source (ADS full text, SIMBAD, VizieR). The revised note states the search's known gaps; nothing is
+tuned to raise the recall.
+
+**Classes, one per (star, paper or catalogue):**
+
+| Class | Meaning |
+|---|---|
+| PERIOD | Gives an orbital period, ephemeris or alias set for this object |
+| ESTIMATE | A period estimate or limit without repeats, e.g. from transit shape and stellar density |
+| ANALYSIS | Studies this object (spectra, RVs, characterisation) without a period |
+| LISTED | Only a row in a survey or catalogue, with no period |
+| NOMATCH | The identifier matched a different object |
+
+**How a class is decided:**
+- Title, abstract and ADS snippets first.
+- Read the paper, or its table, if any of these hold:
+  - the abstract or snippets mention a period, ephemeris, orbit, eclipse or transit for this object;
+  - the title is about binaries, variables, planet candidates or periods;
+  - a VizieR row has a period column.
+
+  Then record the period value and its source.
+- Large stellar-parameter and astrometric surveys go to LISTED without being read: APOGEE, GALAH, LAMOST, SDSS data
+  releases, 2MASS, EPIC (Huber+2016), JSDC, HD, Tycho, UCAC and the Gaia main-catalogue papers. Gaia DR3 non-single-star
+  and variability papers are NOT on this list: they can carry periods, so they are read.
+
+**Per star:**
+
+| Verdict | Meaning |
+|---|---|
+| published, agrees | A PERIOD source agrees with ours within 3σ, or our period is one of its aliases |
+| published, differs | A PERIOD source gives a different period |
+| estimate only | Only ESTIMATE sources |
+| no prior period | No PERIOD or ESTIMATE source |
+
+In the revised note a period is called new only if its star is "no prior period" or "estimate only".
+
+**Independent check (Table 1 stars).** A second agent classifies the same hits from the same inputs. It does not see
+these rules' outcomes or my classes. Disagreements are settled by reading the paper, and both classes are recorded.
