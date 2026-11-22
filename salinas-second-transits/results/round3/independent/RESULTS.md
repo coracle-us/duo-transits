@@ -364,6 +364,18 @@ there could make it. The star's size agrees with the TIC. What remains:
 Radial velocities, or a ground-based transit with high-resolution imaging, would separate the two.
 The period result is unchanged.
 
+**How the follow-up changes the first-pass concerns.**
+
+| First pass | Follow-up finding | Status |
+|---|---|---|
+| **Transit too long:** circular fit needs ρ★ = 0.22 ρ☉; TIC gives 0.63 ρ☉. Possible causes: bigger star, blend or eccentric orbit. | Gaia radius is 1.14 ± 0.06 R☉ (ρ★ = 0.64 ρ☉). A circular orbit would need 1.63 R☉, reached by 0 of 20,000 Monte Carlo draws. | **Bigger star ruled out.** The duration is 1.42× circular, so e ≥ 0.34. b = 0 is the most favourable case; a larger b raises the minimum. |
+| **Contamination 0.21**, highest of the four; source unknown. | It comes from the G = 14.3 star at 19.6″ (flux ratio 0.24). That star is disfavoured as the source in all 7 transits (Δχ² = 2989) and lies 42σ from the measured dip position. | **Explained; not the source.** |
+| **Blend** (nearby eclipsing pair): not tested. | The dip is within about 2″ of the target. All 41 Gaia stars within 200″ bright enough to mimic it fail the own-pixel test, including G = 11.4 and G = 12.1. Gaia has no other source within 10″, and RUWE is 1.03. | **Narrowed** to an eclipsing pair within about 2″ that Gaia does not detect. |
+| **TESScut depths about 7% shallower** than QLP and SPOC, attributed to aperture dilution. | The 19.6″ star sits in the TESScut aperture and the TESScut photometry has no crowding correction (SPOC has one). Fully in the aperture it would make transits about 20% shallower; partly in, about 7%. | **Likely cause found.** Direction and rough size agree; not computed exactly. |
+| **Odd/even depths differ by 1.9σ;** no phase-0.5 eclipse (−29 ± 153 ppm). | Not tested by the follow-up. | **Open but weak.** At 1.9σ this is not evidence of an eclipsing binary. |
+| **Depth scatter exceeds the errors** (QLP χ² 16.8/4). | Not tested by the follow-up. | **Open.** Most likely detrending or partial-coverage systematics. |
+| **Period:** P = 17.064042 ± 0.000028 d, aliases ruled out at ≥ 24.7σ. | Unchanged. | — |
+
 ## Things that would change the answer
 
 - For TIC 107113048, an unseen transit at a P/2 epoch would need both S10 1592.27 and S100 4077.35 to be
