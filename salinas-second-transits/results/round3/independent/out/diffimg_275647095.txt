@@ -1,0 +1,54 @@
+S100 E 104 tc=4090.173 n_in=91 n_oot=290 psf_sigma=0.72px shift=(-0.13,+0.12)px | D source offset from target: dRA=-0.1" dDec=+0.1" (|off|=0.1" ±1.0"), from G14.3 neighbour: 20.0" | chi2 target=60.6 neighbour19.6"=505.4 (dof 61); best-fitting star: TARGET (sep 0")
+S101 E 106 tc=4124.301 n_in=92 n_oot=291 psf_sigma=0.67px shift=(+0.08,+0.06)px | D source offset from target: dRA=-0.0" dDec=-0.6" (|off|=0.6" ±0.9"), from G14.3 neighbour: 21.2" | chi2 target=68.7 neighbour19.6"=682.0 (dof 62); best-fitting star: TARGET (sep 0")
+S 37 E   0 tc=2315.513 n_in=30 n_oot=98 psf_sigma=0.55px shift=(+0.08,+0.01)px | D source offset from target: dRA=+0.2" dDec=-0.2" (|off|=0.3" ±1.0"), from G14.3 neighbour: 19.2" | chi2 target=84.5 neighbour19.6"=578.6 (dof 60); best-fitting star: TARGET (sep 0")
+S 64 E  43 tc=3049.266 n_in=92 n_oot=291 psf_sigma=0.65px shift=(+0.01,-0.02)px | D source offset from target: dRA=+1.5" dDec=-3.6" (|off|=4.0" ±0.9"), from G14.3 neighbour: 16.9" | chi2 target=109.7 neighbour19.6"=547.5 (dof 61); best-fitting star: TARGET (sep 0")
+S 64 E  44 tc=3066.330 n_in=92 n_oot=291 psf_sigma=0.65px shift=(+0.04,-0.02)px | D source offset from target: dRA=-3.2" dDec=-4.1" (|off|=5.2" ±2.3"), from G14.3 neighbour: 21.1" | chi2 target=143.2 neighbour19.6"=285.2 (dof 61); best-fitting star: TARGET (sep 0")
+S 90 E  84 tc=3748.892 n_in=92 n_oot=290 psf_sigma=0.97px shift=(+0.27,+0.03)px | D source offset from target: dRA=+0.4" dDec=-1.5" (|off|=1.6" ±1.5"), from G14.3 neighbour: 19.5" | chi2 target=105.7 neighbour19.6"=585.5 (dof 61); best-fitting star: TARGET (sep 0")
+S 90 E  85 tc=3765.956 n_in=92 n_oot=291 psf_sigma=0.97px shift=(+0.25,+0.04)px | D source offset from target: dRA=+0.8" dDec=-0.3" (|off|=0.9" ±1.8"), from G14.3 neighbour: 19.8" | chi2 target=103.7 neighbour19.6"=480.8 (dof 61); best-fitting star: TARGET (sep 0")
+
+Combined over 7 full transits: transit-source offset from target dRA = +0.3 ± 0.3", dDec = -1.3 ± 0.3" (|offset| = 1.3"). The G=14.3 neighbour is at dRA = +16.7", dDec = -10.3" (19.6"), i.e. 42 sigma from the measured source position.
+Per-transit errors are least-squares position errors (residual-scaled); systematic PSF/WCS errors of a few arcsec are not included.
+Sum over transits chi2(neighbour) - chi2(target) = 2989.0  (positive favours the target)
+Unweighted mean offset dRA = -0.0 ± 0.6", dDec = -1.5 ± 0.6" (error from the scatter between transits)
+
+Own-pixel test for resolved Gaia stars (sep 30-200") that could mimic the dip (needed eclipse < 50%):
+  ratio = flux lost in the star's own 3x3 pixels / flux it would lose if it were the source (1 = source)
+  Gaia 5377928701096237696 G=15.80 sep=52" needed eclipse 17.0%: ratio = +0.137 ± 0.008 over 7 transits -> 107 sigma from being the source
+  Gaia 5377928563657269376 G=16.08 sep=66" needed eclipse 21.6%: ratio = +0.056 ± 0.008 over 7 transits -> 120 sigma from being the source
+  Gaia 5377927910822242560 G=15.70 sep=74" needed eclipse 15.6%: ratio = +0.006 ± 0.010 over 7 transits -> 104 sigma from being the source
+  Gaia 5377928632376746752 G=14.57 sep=95" needed eclipse 6.1%: ratio = +0.016 ± 0.008 over 7 transits -> 117 sigma from being the source
+  Gaia 5377927807743019264 G=14.37 sep=98" needed eclipse 5.3%: ratio = +0.005 ± 0.010 over 7 transits -> 102 sigma from being the source
+  Gaia 5377929487073279232 G=16.52 sep=101" needed eclipse 32.1%: ratio = -0.020 ± 0.011 over 7 transits -> 94 sigma from being the source
+  Gaia 5377927842102764160 G=14.78 sep=108" needed eclipse 7.2%: ratio = -0.076 ± 0.018 over 7 transits -> 59 sigma from being the source
+  Gaia 5377929383994050688 G=15.83 sep=111" needed eclipse 17.5%: ratio = -0.030 ± 0.011 over 7 transits -> 93 sigma from being the source
+  Gaia 5377928529297519744 G=16.09 sep=116" needed eclipse 22.0%: ratio = +0.003 ± 0.008 over 7 transits -> 130 sigma from being the source
+  Gaia 5377928769815715456 G=13.75 sep=121" needed eclipse 3.4%: ratio = +0.000 ± 0.009 over 7 transits -> 108 sigma from being the source
+  Gaia 5377928834238231424 G=14.59 sep=125" needed eclipse 6.2%: ratio = +0.017 ± 0.009 over 7 transits -> 104 sigma from being the source
+  Gaia 5377929491370235520 G=15.62 sep=128" needed eclipse 14.5%: ratio = -0.049 ± 0.018 over 6 transits -> 57 sigma from being the source
+  Gaia 5377928834236550016 G=14.55 sep=129" needed eclipse 6.0%: ratio = +0.022 ± 0.009 over 7 transits -> 104 sigma from being the source
+  Gaia 5377930212924739456 G=16.85 sep=130" needed eclipse 43.3%: ratio = +0.016 ± 0.008 over 6 transits -> 117 sigma from being the source
+  Gaia 5377928735455973504 G=15.58 sep=132" needed eclipse 14.0%: ratio = -0.001 ± 0.009 over 7 transits -> 107 sigma from being the source
+  Gaia 5377927734724924800 G=11.37 sep=132" needed eclipse 1.2%: ratio = -0.011 ± 0.022 over 6 transits -> 45 sigma from being the source
+  Gaia 5377929491370402688 G=16.05 sep=135" needed eclipse 21.2%: ratio = -0.053 ± 0.019 over 6 transits -> 56 sigma from being the source
+  Gaia 5377930247284474624 G=16.92 sep=137" needed eclipse 46.1%: ratio = +0.008 ± 0.008 over 6 transits -> 119 sigma from being the source
+  Gaia 5377928838535179520 G=15.99 sep=137" needed eclipse 20.1%: ratio = +0.032 ± 0.011 over 6 transits -> 90 sigma from being the source
+  Gaia 5377929182132577664 G=16.65 sep=145" needed eclipse 36.2%: ratio = -0.010 ± 0.007 over 7 transits -> 138 sigma from being the source
+  Gaia 5377928151340596352 G=16.47 sep=153" needed eclipse 30.7%: ratio = +0.037 ± 0.010 over 6 transits -> 100 sigma from being the source
+  Gaia 5377929560089719808 G=14.72 sep=156" needed eclipse 6.9%: ratio = +0.002 ± 0.011 over 5 transits -> 94 sigma from being the source
+  Gaia 5377929560089719680 G=14.30 sep=157" needed eclipse 5.0%: ratio = -0.002 ± 0.010 over 5 transits -> 96 sigma from being the source
+  Gaia 5377927739023540096 G=15.19 sep=160" needed eclipse 10.1%: ratio = -0.006 ± 0.021 over 5 transits -> 48 sigma from being the source
+  Gaia 5377928769815722368 G=16.90 sep=162" needed eclipse 45.2%: ratio = -0.004 ± 0.008 over 6 transits -> 123 sigma from being the source
+  Gaia 5377928804175432064 G=16.04 sep=163" needed eclipse 21.0%: ratio = +0.013 ± 0.015 over 5 transits -> 64 sigma from being the source
+  Gaia 5377928112683657472 G=14.18 sep=164" needed eclipse 4.6%: ratio = +0.027 ± 0.010 over 6 transits -> 95 sigma from being the source
+  Gaia 5377929319571550592 G=16.24 sep=168" needed eclipse 25.0%: ratio = -0.059 ± 0.018 over 5 transits -> 57 sigma from being the source
+  Gaia 5377927670304074752 G=14.34 sep=172" needed eclipse 5.1%: ratio = -0.014 ± 0.010 over 5 transits -> 103 sigma from being the source
+  Gaia 5377928838535179776 G=14.21 sep=177" needed eclipse 4.7%: ratio = +0.023 ± 0.015 over 4 transits -> 63 sigma from being the source
+  Gaia 5377929903687109888 G=16.57 sep=178" needed eclipse 33.7%: ratio = -0.006 ± 0.011 over 6 transits -> 92 sigma from being the source
+  Gaia 5377928391858556160 G=13.93 sep=179" needed eclipse 3.8%: ratio = +0.022 ± 0.012 over 5 transits -> 84 sigma from being the source
+  Gaia 5377928185700121984 G=14.70 sep=180" needed eclipse 6.8%: ratio = +0.008 ± 0.010 over 5 transits -> 101 sigma from being the source
+  Gaia 5377928426218305920 G=13.39 sep=181" needed eclipse 2.7%: ratio = +0.026 ± 0.014 over 5 transits -> 69 sigma from being the source
+  Gaia 5377928116980644736 G=15.36 sep=183" needed eclipse 11.6%: ratio = +0.020 ± 0.010 over 6 transits -> 96 sigma from being the source
+  Gaia 5377929903687110912 G=13.34 sep=183" needed eclipse 2.6%: ratio = -0.000 ± 0.011 over 6 transits -> 90 sigma from being the source
+  Gaia 5377928872894910080 G=12.08 sep=190" needed eclipse 1.5%: ratio = -0.037 ± 0.025 over 3 transits -> 42 sigma from being the source
+  Gaia 5377928185700117632 G=14.61 sep=195" needed eclipse 6.3%: ratio = +0.022 ± 0.017 over 2 transits -> 58 sigma from being the source
+  Gaia 5377929903687112576 G=16.86 sep=195" needed eclipse 43.7%: ratio = -0.012 ± 0.011 over 6 transits -> 91 sigma from being the source

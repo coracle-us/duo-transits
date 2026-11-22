@@ -62,3 +62,13 @@ is P/2 for 107113048, which rests on two clean flat epochs (S10 1592.27 and S100
 
 The blind run also asks why 230133616 was listed as a single transit at all, with 37 transits in
 S16–S86.
+
+## Later follow-up on 275647095 (blind run only)
+
+After this comparison was written, the blind run checked the long transit of 275647095 with Gaia DR3 and its
+own difference images (scripts `s11`–`s14`, section "Follow-up" in `RESULTS.md`):
+- R★ = 1.14 ± 0.06 R☉ from the parallax, as in the TIC. A bigger star does not explain the duration.
+- The dip comes from within about 2″ of the target in 5 of 7 transits. Every Gaia neighbour, including
+  the G = 14.3 star at 19.6″ behind the TIC contamination ratio of 0.21, is ruled out.
+- What is left: an eccentric orbit (e ≳ 0.34), or an eclipsing system blended within ~2″ that Gaia does
+  not resolve. Round 3's pixel check also found the signal on target.
