@@ -1,0 +1,920 @@
+EPIC,TIC,bibcode,year,title,first_author,doctype,found_by,snippets,period_words
+248847494,392876254,2022PASP..134g4401K,2022,The Visual Survey Group: A Decade of Hunting Exoplanets and Unusual Stellar Events with Space-based Telescopes,"Kristiansen, Martti H. K.",article,ads,,False
+248847494,392876254,2019MNRAS.488..536H,2019,Two temperate sub-Neptunes transiting the star EPIC 212737443,"Herath, Mahesh",article,both,,False
+248847494,392876254,2019MNRAS.489.3149S,2019,Estimation of singly transiting K2 planet periods with Gaia parallaxes,"Sandford, Emily",article,both,,False
+248847494,392876254,2026ApJ...997L..38V,2026,A Cool Earth-sized Planet Candidate Transiting a Tenth Magnitude K-dwarf From K2,"Venner, Alexander",article,both,,False
+248847494,392876254,2026AJ....171...64Z,2026,Segmented-Polynomial-fitting Least Squares (SPLS): An Optimized Algorithm to Find Earth Twins,"Zheng, Shuyue",article,ads,,False
+248847494,392876254,2021ApJ...909..115C,2021,Planets Across Space and Time (PAST). I. Characterizing the Memberships of Galactic Components and Stellar Ages: Revisiting the Kinematic Methods and Applying to Planet Host Stars,"Chen, Di-Chang",article,simbad,,False
+248847494,392876254,2020ApJS..251...15Z,2020,Phase II of the LAMOST-Kepler/K2 Survey. I. Time Series of Medium-resolution Spectroscopic Observations,"Zong, Weikai",article,simbad,,False
+248847494,392876254,2022ApJS..261...26S,2022,"Magnetic Activity and Physical Parameters of Exoplanet Host Stars Based on LAMOST DR7, TESS, Kepler, and K2 Surveys","Su, Tianhao",article,simbad,,False
+248847494,392876254,2018A&A...615L..13G,2018,Transiting planet candidate from K2 with the longest period,"Giles, H. A. C.",article,simbad,,False
+248847494,392876254,2024A&A...691A..53S,2024,SWEET-Cat: A view on the planetary mass-radius relation,"Sousa, S. G.",article,simbad,,False
+248847494,392876254,2025A&A...699A.100D,2025,The Gaia spectroscopic catalogue of exoplanets and host stars,"de Laverny, Patrick",article,simbad,,False
+248847494,392876254,2025ApJS..276...29L,2025,Ultraviolet Photometry and Habitable Zones of over 2700 Planet-hosting Stars,"Li, Xue",article,simbad,,False
+201854636,365006877,2023A&A...677A..21K,2023,"Investigating Gaia EDR3 parallax systematics using asteroseismology of Cool Giant Stars observed by Kepler, K2, and TESS. I. Asteroseismic distances to 12 500 red-giant stars","Khan, S.",article,simbad,,False
+201854636,365006877,2023A&A...678A.158A,2023,Spectroscopic age estimates for APOGEE red-giant stars: Precise spatial and kinematic trends with age in the Galactic disc,"Anders, F.",article,simbad,,False
+201854636,365006877,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+201854636,365006877,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+247692298,69150798,1998A&A...337..125G,1998,The overlapping open clusters NGC 1750 and NGC 1758. III. Cluster-field segregation and clusters physical parameters,"Galadi-Enriquez, D.",article,ads,,False
+247692298,69150798,2019AJ....157...78J,2019,A Catalog of Wide Binary and Multiple Systems of Bright Stars from Gaia-DR2 and the Virtual Observatory,"Jiménez-Esteban, F. M.",article,simbad,,False
+247692298,69150798,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+247692298,69150798,1998A&A...333..471G,1998,The overlapping open clusters NGC 1750 and NGC 1758. I. UBVRI-CCD photometry,"Galadi-Enriquez, D.",article,simbad,,False
+247692298,69150798,2020A&A...633A..99C,2020,Clusters and mirages: cataloguing stellar aggregates in the Milky Way,"Cantat-Gaudin, T.",article,simbad,,False
+247692298,69150798,2021MNRAS.503.3279S,2021,The GALAH survey: tracing the Galactic disc with open clusters,"Spina, L.",article,simbad,,False
+247692298,69150798,2022A&A...659A..59T,2022,Structural parameters of 389 local open clusters,"Tarricq, Y.",article,simbad,,False
+247692298,69150798,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+247692298,69150798,2022ApJS..262....7H,2022,A Blind All-sky Search for Star Clusters in Gaia EDR3: 886 Clusters within 1.2 kpc of the Sun,"He, Zhihong",article,simbad,,False
+247692298,69150798,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+247692298,69150798,1937AnHar.105..403C,1937,Red indices in galactic clusters,"Cuffey, James",article,simbad,,False
+247692298,69150798,2003BaltA..12..323S,2003,Overlapping Open Clusters NGC 1750 and NGC 1758 Behind the Taurus Dark Clouds.  II.  CCD Photometry in the Vilnius System,"Straižys, V.",article,simbad,,False
+247692298,69150798,1998A&AS..131...89T,1998,Determination of proper motions and membership of the open clusters NGC 1750 and NGC 1758,"Tian, K.-P.",article,simbad,,False
+247692298,69150798,1998A&AS..131..239G,1998,The overlapping open clusters NGC 1750 and NGC 1758. II. $\vec BVR photographic photometry and proper motions,"Galadi-Enriquez, D.",article,simbad,,False
+247692298,69150798,1995A&AS..110..367N,1995,"The Henry Draper Extension Charts: A catalogue of accurate positions, proper motions, magnitudes and spectral types of 86933 stars","Nesterov, V. V.",article,simbad,,False
+247692298,69150798,1992BaltA...1..125S,1992,Probable open clusters NGC 1750 and NGC 1758 behind the Taurus Dark Clouds.,"Straizys, V.",article,simbad,,False
+247692298,69150798,2012AstL...38..694G,2012,Spatial distribution and kinematics of OB stars,"Gontcharov, G. A.",article,simbad,,False
+247692298,69150798,2018A&A...618A..93C,2018,A Gaia DR2 view of the open cluster population in the Milky Way,"Cantat-Gaudin, T.",article,simbad,,False
+247692298,69150798,2020A&A...640A...1C,2020,Painting a portrait of the Galactic disc with its stellar clusters,"Cantat-Gaudin, T.",article,simbad,,False
+247692298,69150798,2018A&A...615A..49C,2018,Characterising open clusters in the solar neighbourhood with the Tycho-Gaia Astrometric Solution,"Cantat-Gaudin, T.",article,simbad,,False
+247692298,69150798,2024A&A...691A..28K,2024,Tidal tails of open clusters,"Kos, Janez",article,simbad,,False
+247692298,69150798,2019AJ....158..122K,2019,Untangling the Galaxy. I. Local Structure and Star Formation History of the Milky Way,"Kounkel, Marina",article,simbad,,False
+247692298,69150798,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+246732631,303761538,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+246732631,303761538,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+247762843,349071164,2020ApJS..251...15Z,2020,Phase II of the LAMOST-Kepler/K2 Survey. I. Time Series of Medium-resolution Spectroscopic Observations,"Zong, Weikai",article,simbad,,False
+247762843,349071164,2020ApJ...904..196T,2020,Discovery of a Young Stellar Snake with Two Dissolving Cores in the Solar Neighborhood,"Tian, Hai-Jun",article,simbad,,False
+247762843,349071164,2023A&A...678A..75Z,2023,Young nearby open clusters and their luminosity functions,"Žerjal, M.",article,simbad,,False
+247762843,349071164,1998A&AS..131...89T,1998,Determination of proper motions and membership of the open clusters NGC 1750 and NGC 1758,"Tian, K.-P.",article,simbad,,False
+247762843,349071164,2018A&A...615A..49C,2018,Characterising open clusters in the solar neighbourhood with the Tycho-Gaia Astrometric Solution,"Cantat-Gaudin, T.",article,simbad,,False
+246849982,411749174,2020AJ....159...96S,2020,"Variability in the Massive Open Cluster NGC 1817 from K2: A Rich Population of Asteroseismic Red Clump, Eclipsing Binary, and Main-sequence Pulsating Stars","Sandquist, Eric L.",article,both,,False
+246849982,411749174,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+246849982,411749174,2004A&A...426..819B,2004,New membership determination and proper motions of NGC 1817. Parametric and non-parametric approach,"Balaguer-Núñez, L.",article,simbad,,False
+246849982,411749174,2004A&A...426..827B,2004,uvby-H<SUB>β</SUB> CCD photometry of NGC 1817 and NGC 1807,"Balaguer-Núñez, L.",article,simbad,,False
+246849982,411749174,1998A&AS..133..387B,1998,Determination of proper motions and membership of the open clusters NGC 1817 and NGC 1807,"Balaguer-Núnez, L.",article,simbad,,False
+246849982,411749174,2015A&A...580A..23P,2015,A new catalogue of Strömgren-Crawford uvbyβ photometry,"Paunzen, E.",article,simbad,,False
+247865067,268281800,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+247865067,268281800,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+247865067,268281800,1983PZ.....21..777N,1983,Multicolour UBVRi Photographic and Photoelectric Photometry of Members and Possible Members of T-Association T1 and T3 Tauri,"Nurmanova, U. A.",article,simbad,,False
+247865067,268281800,1973IBVS..834....1K,1973,59th Name-List of Variable Stars,"Kukarkin, B. V.",article,simbad,,False
+247865067,268281800,1971PZP.....1..151D,1971,Photographic estimates of variables SVS 1564 and SVS 1730 in Taurus.,"Deynichenko, O. N.",article,simbad,,False
+247795097,268324580,2020AJ....160..285V,2020,An Asymmetric Eclipse Seen toward the Pre-main-sequence Binary System V928 Tau,"van Dam, Dirk M.",article,both,,False
+247795097,268324580,2023ApJ...955...18K,2023,TESS Photometric Variability of Young Brown Dwarfs in the Taurus Star-forming Region,"Kumbhakar, Rajib",article,both,,False
+247795097,268324580,2019ESS.....432210V,2019,Deep Asymmetric Eclipse of V928 Tau,"Van Dam, Dirk",abstract,ads,,False
+247795097,268324580,2022A&A...658A..38V,2022,K2 discovery of a circumsecondary disk transiting EPIC 220208795,"van der Kamp, L.",article,both,,False
+247795097,268324580,2023jpl..data.2481M,2023,An Asymmetric Eclipse Seen Towards the Pre-Main Sequence Binary System V928 Tau,"Mamajek, Eric",dataset,ads,,False
+247795097,268324580,1996ApJ...469..890S,1996,Measurement of T Tauri Binaries Using the Hubble Space Telescope Fine Guidance Sensors,"Simon, M.",article,both,,False
+247795097,268324580,2015ECM...105..393Y,2015,Evaluation of the thermal efficiency and a cost analysis of different types of ground heat exchangers in energy piles,"Yoon, Seok",article,ads,,False
+247795097,268324580,1993AJ....106.2005G,1993,The Multiplicity of T Tauri Stars in the Star Forming Regions Taurus-Auriga and Ophiuchus-Scorpius: A 2.2 Micron Speckle Imaging Survey,"Ghez, A. M.",article,both,,False
+247795097,268324580,2024MNRAS.530.3606M,2024,The formation of transiting circumplanetary debris discs from the disruption of satellite systems during planet-planet scattering,"Mustill, Alexander J.",article,both,,False
+247795097,268324580,2014AJ....147..157S,2014,Orbital Motion in Pre-main Sequence Binaries,"Schaefer, G. H.",article,both,,False
+247795097,268324580,1995ApJS..101..117K,1995,Pre-Main-Sequence Evolution in the Taurus-Auriga Molecular Cloud,"Kenyon, Scott J.",article,both,,False
+247795097,268324580,2007A&A...468..353G,2007,The XMM-Newton extended survey of the Taurus molecular cloud (XEST),"Güdel, M.",article,both,,False
+247795097,268324580,2007A&A...473L..21B,2007,The evolution of stars in the Taurus-Auriga T association,"Bertout, C.",article,both,,False
+247795097,268324580,2003xmm..prop..185G,2003,XMM-Newton Proposal 02035419,"Guedel, Manuel",proposal,ads,,False
+247795097,268324580,1995AJ....110..753G,1995,Speckle Imaging Measurements of the Relative Tangential Velocities of the Components of T Tauri Binary Stars,"Ghez, A. M.",article,both,,False
+247795097,268324580,2024A&A...688A..58B,2024,ZTF J185259.31+124955.2: A new evolved disc-eclipsing binary system,"Bernhard, Klaus",article,both,,False
+247795097,268324580,2012ApJ...757..141K,2012,Multiple Star Formation to the Bottom of the Initial Mass Function,"Kraus, Adam L.",article,both,,False
+247795097,268324580,2022ApJ...928..134S,2022,Optical and Near-infrared Excesses are Correlated in T Tauri Stars,"Sullivan, Kendall",article,both,,False
+247795097,268324580,2006A&A...460..499B,2006,A kinematic study of the Taurus-Auriga T association,"Bertout, C.",article,both,,False
+247795097,268324580,2006ARA&A..44..269W,2006,First Fruits of the Spitzer Space Telescope: Galactic and Solar System Studies,"Werner, Michael",article,both,,False
+247795097,268324580,1990ApJ...349..197K,1990,On the Apparent Positions of T Tauri Stars in the H-R Diagram,"Kenyon, Scott J.",article,ads,,False
+247795097,268324580,2001A&A...369..971K,2001,X-ray emission of multiple T Tauri stars in Taurus,"König, B.",article,both,,False
+247795097,268324580,2022AJ....163..212C,2022,The Many-faceted Light Curves of Young Disk-bearing Stars in Taurus as Seen by K2,"Cody, Ann Marie",article,both,,False
+247795097,268324580,2024A&A...687A..11V,2024,Beyond Circular Eclipsers (BeyonCE) light curve modelling. I. Shallot Explorer,"van Dam, Dirk M.",article,both,,False
+247795097,268324580,2008hsf1.book..405K,2008,Low Mass Star Formation in the Taurus-Auriga Clouds,"Kenyon, S. J.",inbook,ads,,False
+247795097,268324580,1991AJ....101.1050H,1991,A Proper-Motion Survey for Pre-Main-Sequence Stars in Taurus-Auriga,"Hartmann, L.",article,both,,False
+247795097,268324580,2006A&A...446..485G,2006,Seventeen new very low-mass members in Taurus. The brown dwarf deficit revisited,"Guieu, S.",article,both,,False
+247795097,268324580,2009REne...34..127T,2009,Analysis of ground source heat pumps with horizontal ground heat exchangers for northern Japan,"Tarnawski, V. R.",article,ads,,False
+247795097,268324580,2025ApJ...995...87D,2025,"""X-Raying"" a Be Star Disk: Fundamental Parameters of the Eclipsing Binary Be Star V658 Car","de Amorim, Tajan H.",article,both,,False
+247795097,268324580,2000MNRAS.319..457C,2000,A comparison of the rotational properties of T Tauri stars in Orion and Taurus,"Clarke, C. J.",article,both,,False
+247795097,268324580,1996AJ....111..355C,1996,"A Lambda3.6 CM Radio Survey of Low-Mass, weak-Line T Tauri Stars in Taurus- Auriga","Chiang, Eugene",article,both,,False
+247795097,268324580,2007A&A...468..379A,2007,The XMM-Newton Optical Monitor survey of the Taurus molecular cloud,"Audard, M.",article,both,,False
+247795097,268324580,2007A&A...473..589S,2007,Coronal abundances of X-ray bright pre-main sequence stars in the Taurus molecular cloud,"Scelsi, L.",article,both,,False
+247795097,268324580,2026MNRAS.552g1802M,2026,NGTS clusters survey - VII. An enigmatic short-period circumsecondary disc candidate in Orion,"Mallaghan, Niamh",article,ads,,False
+247795097,268324580,2007A&A...468..391G,2007,X-ray emission from the young brown dwarfs of the Taurus molecular cloud,"Grosso, N.",article,both,,False
+247795097,268324580,2008A&A...487..965S,2008,An assessment of Li abundances in weak-lined and classical T Tauri stars of the Taurus-Auriga association,"Sestito, P.",article,both,,False
+247795097,268324580,2012ApJ...745..119N,2012,Close Companions to Young Stars. I. A Large Spectroscopic Survey in Chamaeleon I and Taurus-Auriga,"Nguyen, Duy Cuong",article,both,,False
+247795097,268324580,2007A&A...468..463S,2007,A statistical analysis of X-ray variability in pre-main sequence objects of the Taurus molecular cloud,"Stelzer, B.",article,both,,False
+247795097,268324580,2016Geoth..60..134K,2016,Thermal performance evaluation and parametric study of a horizontal ground heat exchanger,"Kim, Min-Jun",article,ads,,False
+247795097,268324580,1990AJ....100.1610O,1990,A Radio Survey of Weak T Tauri Stars in Taurus-Auriga,"O'Neal, Douglas",article,both,,False
+247795097,268324580,2017AppTE.111.1366Z,2017,Heating and cooling performance of a minitype ground source heat pump system,"Zhai, X. Q.",article,ads,,False
+247795097,268324580,2024JCAP...10..022H,2024,Generalized flow-composed symplectic methods for post-Newtonian Hamiltonian systems,"Huang, Shixiang",article,ads,,False
+247795097,268324580,2022ascl.soft05016Z,2022,Pryngles: PlanetaRY spaNGLES,"Zuluaga, Jorge I.",software,ads,,False
+247795097,268324580,2014EneBu..70..237S,2014,Performance evaluation and optimization of a novel solar-ground source heat pump system,"Si, Qiang",article,ads,,False
+247795097,268324580,2006CIBu..165...14W,2006,The spitzer telescope: The first two years,"Werner, Michael",article,ads,,False
+247795097,268324580,2016EneBu.129...81C,2016,Heat transfer analysis of a vertical ground heat exchanger using numerical simulation and multiple regression model,"Chen, Shangyuan",article,ads,,False
+247795097,268324580,2023Heliy...916666D,2023,Investigating the muti-scaling properties and connectedness of the sovereign bond yields: Hurst exponent and network analysis approach,"Das, Santanu",article,ads,,False
+247795097,268324580,2008JAP...103i3713M,2008,Enhanced Hall effect in Fe<SUB>x</SUB>Ge<SUB>1-x</SUB> nanocomposite films,"Mi, W. B.",article,ads,,False
+247795097,268324580,2020AppTE.17015023X,2020,Structure optimization design of ground heat exchanger by topology method to mitigate the geothermal imbalance,"Xu, Lingling",article,ads,,False
+247795097,268324580,2017EneBu.136...63B,2017,Effects of the geothermal load on the ground temperature recovery in a ground heat exchanger,"Baek, Seung Hyo",article,ads,,False
+247795097,268324580,2023TSEP...3701609M,2023,Thermal performance analysis of hybrid-nanofluid based flat plate collector using Grey relational analysis (GRA): An approach for sustainable energy harvesting,"Mausam, Kuwar",article,ads,,False
+247795097,268324580,2008Ene....33.1671F,2008,Theoretical study on the performance of an integrated ground-source heat pump system in a whole year,"Fan, Rui",article,ads,,False
+247795097,268324580,2019JPhCo...3c5026K,2019,The massive Dirac equation in the Kerr-Newman-de Sitter and Kerr-Newman black hole spacetimes,"Kraniotis, G. V.",article,ads,,False
+247795097,268324580,2022JPSE..21811049M,2022,A new method for characterizing dynamic reservoir quality: Implications for quality maps in reservoir simulation and rock type classification,"Mirzaei-Paiaman, Abouzar",article,ads,,False
+247795097,268324580,2017AppTE.121..908D,2017,Experimental and computational investigation of the spiral ground heat exchangers for ground source heat pump applications,"Dehghan B., Babak",article,ads,,False
+247795097,268324580,2023JSR...19302382D,2023,"Community structure of tintinnids (Protozoa: Ciliophora) in the eutrophic environment (the Golden Horn Estuary, Turkey)","Durmus, Turgay",article,ads,,False
+247795097,268324580,2017Resou...6...56A,2017,Performance Analysis of Slinky Horizontal Ground Heat Exchangers for a Ground Source Heat Pump System,"Ali, Md. Hasan",article,ads,,False
+247795097,268324580,2018AppTE.144.1030H,2018,Study on design error of ground source heat pump system and its influencing factors,"Han, Zongwei",article,ads,,False
+247795097,268324580,2024rtuc.conf....8R,2024,Heat Pump Coupling with Rooftop Solar Microgeneration Array,"Rusovs, Dmitrijs",inproceedings,ads,,False
+247795097,268324580,2017JMMM..438..185W,2017,Electrical transport properties in Fe-Cr nanocluster-assembled granular films,"Wang, Xiong-Zhi",article,ads,,False
+247795097,268324580,2025ITIM...7497140L,2025,FFENet: Learning Frequency Features for Low-Light Enhancement,"Liu, Zhenbing",article,ads,,False
+247795097,268324580,2022ITSMC..52.2275S,2022,Spatial Entropy Quartiles-Based Texture-Aware Fractional-Order Unsharp Masking for Visibility Enhancement of Remotely Sensed Images,"Singh, Himanshu",article,ads,,False
+247795097,268324580,2017PECS...63..119Z,2017,"Microbial electrolysis cell platform for simultaneous waste biorefinery and clean electrofuels generation: Current situation, challenges and future perspectives","Zhen, Guangyin",article,ads,,False
+247795097,268324580,2020Geoth..8701819N,2020,In pursuit of a replacement for conventional high-density polyethylene tubes in ground source heat pumps from their composites - A comparative study,"Narei, Hamid",article,ads,,False
+247795097,268324580,2020SETA...4000782Z,2020,"Performance assessment and techno-economic optimization of ground source heat pump for residential heating and cooling: A case study of Nanjing, China","Zhou, Kun",article,ads,,False
+247795097,268324580,2025Geoth.13103360M,2025,Reliability and variability in thermal conductivity measurements: A comparison of CIT-TRT and conventional TRT in Japan,"Mohammadzadeh Bina, Saeid",article,ads,,False
+247795097,268324580,2025IJEAC.105.7372H,2025,Extraction of some heavy metal ions from aqueous solutions with new eco-friendly solvents,"Hegazy, Ibrahim",article,ads,,False
+247795097,268324580,2021REne..170..341S,2021,Research on the passive double effect tower based on time misplaced exergy,"Song, Yanli",article,ads,,False
+247795097,268324580,2025Geoth.13103389M,2025,"Review of simulation methods for co-axial ground heat exchangers: Simplified models, predictions, and comparisons","Ma, Z. D.",article,ads,,False
+247795097,268324580,2022AppTE.20017620N,2022,Development of g-functions for large diameter shallow bore helical ground heat exchangers,"Najib, Antash",article,ads,,False
+247795097,268324580,2021REne..173..953D,2021,Usage of the net present value-at-risk to design ground-coupled heat pump systems under uncertain scenarios,"Dusseault, Bernard",article,ads,,False
+247795097,268324580,2026JPetG..49.1412A,2026,"Sedimentological Control on Reservoir Properties in a Miocene Isolated Carbonate Build-Up in Central Luconia, Malaysia","Azudin, Ahmad Nazmi Mohd Noor",article,ads,,False
+247795097,268324580,2025arXiv251212930C,2025,SeVeDo: A Heterogeneous Transformer Accelerator for Low-Bit Inference via Hierarchical Group Quantization and SVD-Guided Mixed Precision,"Choi, Yuseon",eprint,ads,,False
+247795097,268324580,2025REne..24022255D,2025,Analytical-experimental based inversion algorithm of stratum thermal properties for medium-depth coaxial borehole,"Dong, Shihao",article,ads,,False
+247795097,268324580,2026Ene...35941307M,2026,Research on seasonal soil thermal energy storage strategies of a photovoltaic/thermal - coupled ground source heat pump system in severe cold regions,"Ma, Zhongjiao",article,ads,,False
+247795097,268324580,1988JThBi.131..137M,1988,The binding of an indefinitely associating ligand to acceptor: Consideration of monovalent ligand species binding to a multivalent acceptor,"Mark, Alan E.",article,ads,,False
+247795097,268324580,2020IJHMT.14618864L,2020,"Review of channel flow boiling enhancement by surface modification, and instability suppression schemes","Liang, Gangtao",article,ads,,False
+247795097,268324580,2022LSA....11..250T,2022,Fundamentals and comprehensive insights on pulsed laser synthesis of advanced materials for diverse photo- and electrocatalytic applications,"Theerthagiri, Jayaraman",article,ads,,False
+247795097,268324580,2016arXiv160103131H,2016,The almost product structure of Newton strata in the Deformation space of a Barsotti-Tate group with crystalline Tate tensors,"Hamacher, Paul",eprint,ads,,False
+247795097,268324580,2020arXiv201010596V,2020,Counterfactual Explanations and Algorithmic Recourses for Machine Learning: A Review,"Verma, Sahil",eprint,ads,,False
+247795097,268324580,2023IJHMT.21724639C,2023,Review of the dynamic Leidenfrost point temperature for droplet impact on a heated solid surface,"Cai, Chang",article,ads,,False
+247795097,268324580,2014arXiv1406.2776H,2014,Existence of Neumann and singular solutions of the fast diffusion equation,"Hui, Kin Ming",eprint,ads,,False
+247795097,268324580,2026JEnSt.18224826A,2026,High-entropy alloys in energy storage systems: From electrochemical and hydrogen storage to thermal energy applications,"Aigbedion, Nosakhare Jeremiah",article,ads,,False
+247795097,268324580,2016EPJP..131..408P,2016,Power-law entropy-corrected holographic dark energy in Hořava-Lifshitz cosmology with Granda-Oliveros cut-off,"Pasqua, Antonio",article,ads,,False
+247795097,268324580,2026arXiv260406765W,2026,TeamLLM: A Human-Like Team-Oriented Collaboration Framework for Multi-Step Contextualized Tasks,"Wang, Xiangyu",eprint,ads,,False
+247795097,268324580,2019ApPRv...6d1309H,2019,Atomic layer deposition of metals: Precursors and film growth,"Hagen, D. J.",article,ads,,False
+247795097,268324580,2022arXiv220601038W,2022,"A Survey on Video Action Recognition in Sports: Datasets, Methods and Applications","Wu, Fei",eprint,ads,,False
+247795097,268324580,2018arXiv180202522R,2018,Joint Attention in Driver-Pedestrian Interaction: from Theory to Practice,"Rasouli, Amir",eprint,ads,,False
+247795097,268324580,2011PhDT.......287M,2011,"A multiwavelength study of near- and mid-infrared selected galaxies at high redshift: ERGs, AGN-identification and the contribution from dust","Messias, Hugo",phdthesis,ads,,False
+247795097,268324580,1972PhLB...39...25.,1972,Data card listings,,article,ads,,False
+247795097,268324580,2019A&A...630A.137G,2019,Structure and kinematics of the Taurus star-forming region from Gaia-DR2 and VLBI astrometry,"Galli, P. A. B.",article,simbad,,False
+247795097,268324580,2019AJ....157..196K,2019,Close Companions around Young Stars,"Kounkel, Marina",article,simbad,,False
+247795097,268324580,2020AJ....159..273R,2020,Rotation of Low-mass Stars in Taurus with K2,"Rebull, L. M.",article,simbad,,False
+247795097,268324580,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+247795097,268324580,2018AJ....156..241H,2018,A First Catalog of Variable Stars Measured by the Asteroid Terrestrial-impact Last Alert System (ATLAS),"Heinze, A. N.",article,simbad,,False
+247795097,268324580,2019AJ....158...54E,2019,A Survey for New Members of Taurus from Stellar to Planetary Masses,"Esplin, T. L.",article,simbad,,False
+247795097,268324580,2021ApJ...911..138N,2021,Projected Rotational Velocities and Fundamental Properties of Low-mass Pre-main-sequence Stars in the Taurus-Auriga Star-forming Region,"Nofi, Larissa A.",article,simbad,,False
+247795097,268324580,2021ApJ...922...27K,2021,The IGRINS YSO Survey II: Veiling Spectra of Pre-main-sequence Stars in Taurus-Auriga,"Kidder, Benjamin",article,simbad,,False
+247795097,268324580,2023ApJ...943...49L,2023,The IGRINS YSO Survey. III. Stellar Parameters of Pre-main-sequence Stars in Ophiuchus and Upper Scorpius,"López-Valdivia, Ricardo",article,simbad,,False
+247795097,268324580,2021AJ....162..110K,2021,Gaia EDR3 Reveals the Substructure and Complicated Star Formation History of the Greater Taurus-Auriga Star-forming Complex,"Krolikowski, Daniel M.",article,simbad,,False
+247795097,268324580,2021ApJ...921...53L,2021,The IGRINS YSO Survey. I. Stellar Parameters of Pre-main-sequence Stars in Taurus-Auriga,"López-Valdivia, Ricardo",article,simbad,,False
+247795097,268324580,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+247795097,268324580,2023A&A...674A..21M,2023,Gaia Data Release 3. Validating the classification of variable young stellar object candidates,"Marton, Gábor",article,simbad,,False
+247795097,268324580,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+247795097,268324580,2002ApJ...581.1194P,2002,Star Formation in Space and Time: Taurus-Auriga,"Palla, Francesco",article,simbad,,False
+247795097,268324580,2006ApJS..165..568F,2006,A Survey and Analysis of Spitzer Infrared Spectrograph Spectra of T Tauri Stars in Taurus,"Furlan, E.",article,simbad,,False
+247795097,268324580,2006A&G....47f..11W,2006,Spitzer: the first 30 months,"Werner, Michael",article,simbad,,False
+247795097,268324580,2006ApJ...647.1180L,2006,A Survey for New Members of Taurus with the Spitzer Space Telescope,"Luhman, K. L.",article,simbad,,False
+247795097,268324580,2005A&A...431..773R,2005,CHARM2: An updated Catalog of High Angular Resolution Measurements,"Richichi, A.",article,simbad,,False
+247795097,268324580,2005A&A...438..769D,2005,Pre-main sequence star Proper Motion Catalogue,"Ducourant, C.",article,simbad,,False
+247795097,268324580,2005ApJ...631.1134A,2005,Circumstellar Dust Disks in Taurus-Auriga: The Submillimeter Perspective,"Andrews, Sean M.",article,simbad,,False
+247795097,268324580,2005ApJ...635..422C,2005,Evidence for J- and H-Band Excess in Classical T Tauri Stars and the Implications for Disk Structure and Estimated Ages,"Cieza, Lucas A.",article,simbad,,False
+247795097,268324580,2002A&A...386..492R,2002,CHARM: A Catalog of High Angular Resolution Measurements,"Richichi, A.",article,simbad,,False
+247795097,268324580,2002ApJ...578..914H,2002,"Flows, Fragmentation, and Star Formation. I. Low-Mass Stars in Taurus","Hartmann, Lee",article,simbad,,False
+247795097,268324580,2002ApJ...580..317B,2002,The Initial Mass Function in the Taurus Star-forming Region,"Briceño, César",article,simbad,,False
+247795097,268324580,2001ApJ...556..265W,2001,Observational Constraints on the Formation and Evolution of Binary Stars,"White, R. J.",article,simbad,,False
+247795097,268324580,2000ApJ...544.1044L,2000,The Initial Mass Function of Low-Mass Stars and Brown Dwarfs in Taurus,"Luhman, K. L.",article,simbad,,False
+247795097,268324580,1998AJ....115.2491K,1998,Optical Spectroscopy of Embedded Young Stars in the Taurus-Auriga Molecular Cloud,"Kenyon, Scott J.",article,simbad,,False
+247795097,268324580,1995A&A...297..391N,1995,ROSAT survey observation of T Tauri stars in Taurus.,"Neuhaeuser, R.",article,simbad,,False
+247795097,268324580,1995A&AS..109..177W,1995,Radio continuum emission from stars: a catalogue update.,"Wendker, H. J.",article,simbad,,False
+247795097,268324580,1995ApJ...439..288O,1995,Millimeter-Wave Continuum Measurements of Young Stars,"Osterloh, M.",article,simbad,,False
+247795097,268324580,1995ApJ...443..625S,1995,A Lunar Occultation and Direct Imaging Survey of Multiplicity in the Ophiuchus and Taurus Star-forming Regions,"Simon, M.",article,simbad,,False
+247795097,268324580,1994A&A...282..503M,1994,Pre-main sequence lithium burning. I. Weak T Tauri stars.,"Martin, E. L.",article,simbad,,False
+247795097,268324580,1994ARA&A..32..465M,1994,Pre-Main-Sequence Binary Stars,"Mathieu, Robert D.",article,simbad,,False
+247795097,268324580,1993A&A...278..129L,1993,A systematic search for young binaries in Taurus.,"Leinert, Ch.",article,simbad,,False
+247795097,268324580,1992ApJS...78..239W,1992,A Catalog of Co-added IRAS Fluxes of Orion Population Stars,"Weaver, Wm. B.",article,simbad,,False
+247795097,268324580,1989AJ.....97.1451S,1989,Circumstellar Material Associated with Solar-Type Pre-Main-Sequence Stars: A Possible Constraint on the Timescale for Planet Building,"Strom, Karen M.",article,simbad,,False
+247795097,268324580,1988LicOB1111....1H,,,,,simbad,,False
+247795097,268324580,1987ATsir1476....1V,1987,An analysis of the Large Telescope Optics.,"Vitrichenko, E. A.",circular,simbad,,False
+247795097,268324580,1987IBVS.3058....1K,1987,The 68th Name-List of Variable Stars,"Kholopov, P. N.",article,simbad,,False
+247795097,268324580,1985Afz....22..425K,1985,New Trapezium type systems in Taurus dark cloud (TDC).,"Khodjaev, A. S.",article,simbad,,False
+247795097,268324580,1983AJ.....88..431F,1983,A search for weak H-alpha emission line pre-main-sequence stars.,"Feigelson, E. D.",article,simbad,,False
+247795097,268324580,1979AJ.....84.1872J,1979,Proper motions of T Tauri variables and other stars associated with the Taurus-Auriga dark clouds.,"Jones, B. F.",article,simbad,,False
+247795097,268324580,2018ApJ...856...23G,2018,BANYAN. XI. The BANYAN Σ Multivariate Bayesian Algorithm to Identify Members of Young Associations with 150 pc,"Gagné, Jonathan",article,simbad,,False
+247795097,268324580,2007ApJ...662..413K,2007,The Role of Mass and Environment in Multiple-Star Formation: A 2MASS Survey of Wide Multiplicity in Three Young Associations,"Kraus, Adam L.",article,simbad,,False
+247795097,268324580,2010RMxAA..46..109K,2010,Age Estimation And Mass Functions of TTauri Stars in The Taurus Auriga Molecular Cloud,"Küçük, I.",article,simbad,,False
+247795097,268324580,2009ApJ...703.1511K,2009,Unusually Wide Binaries: Are They Wide or Unusual?,"Kraus, Adam L.",article,simbad,,False
+247795097,268324580,2010ApJ...724..835W,2010,The Spitzer c2d Survey of Weak-line T Tauri Stars. III. The Transition from Primordial Disks to Debris Disks,"Wahhaj, Zahed",article,simbad,,False
+247795097,268324580,2009ApJ...696L..84C,2009,Primordial Circumstellar Disks in Binary Systems: Evidence for Reduced Lifetimes,"Cieza, Lucas A.",article,simbad,,False
+247795097,268324580,2011ApJ...731....8K,2011,Mapping the Shores of the Brown Dwarf Desert. II. Multiple Star Formation in Taurus-Auriga,"Kraus, Adam L.",article,simbad,,False
+247795097,268324580,2011ApJS..195....3F,2011,The Spitzer Infrared Spectrograph Survey of T Tauri Stars in Taurus,"Furlan, E.",article,simbad,,False
+247795097,268324580,2010ApJ...709L.114D,2010,Planet Formation in Binary Systems: A Separation-Dependent Mechanism?,"Duchêne, G.",article,simbad,,False
+247795097,268324580,2013PASP..125..477D,2013,GASPS—A Herschel Survey of Gas and Dust in Protoplanetary Disks: Summary and Initial Statistics,"Dent, W. R. F.",article,simbad,,False
+247795097,268324580,2012ApJ...745...19K,2012,The Role of Multiplicity in Disk Evolution and Planet Formation,"Kraus, Adam L.",article,simbad,,False
+247795097,268324580,2011ApJ...727...64K,2011,Young Stellar Groups and Their Most Massive Stars,"Kirk, Helen",article,simbad,,False
+247795097,268324580,2013ApJ...776...21H,2013,"Herschel/PACS Survey of Protoplanetary Disks in Taurus/Auriga—Observations of [O I] and [C II], and Far-infrared Continuum","Howard, Christian D.",article,simbad,,False
+247795097,268324580,2010ApJS..186..259R,2010,The Taurus Spitzer Survey: New Candidate Taurus Members Selected Using Sensitive Mid-Infrared Photometry,"Rebull, L. M.",article,simbad,,False
+247795097,268324580,2017ApJ...848...97R,2017,Identification of Young Stellar Variables with KELT for K2. I. Taurus Dippers and Rotators,"Rodriguez, Joseph E.",article,simbad,,False
+247795097,268324580,2014ApJ...786...97H,2014,An Optical Spectroscopic Study of T Tauri Stars. I. Photospheric Properties,"Herczeg, Gregory J.",article,simbad,,False
+247795097,268324580,2015ApJ...805...57T,2015,Testing Model Atmospheres for Young Very-low-mass Stars and Brown Dwarfs in the Infrared: Evidence for Significantly Underestimated Dust Opacities,"Tottle, Jonathan",article,simbad,,False
+247795097,268324580,2010ApJS..186..111L,2010,The Disk Population of the Taurus Star-Forming Region,"Luhman, K. L.",article,simbad,,False
+247795097,268324580,2014ApJ...784..126E,2014,A WISE Survey of Circumstellar Disks in Taurus,"Esplin, T. L.",article,simbad,,False
+247795097,268324580,2018A&A...620A..27J,2018,Multiplicity and clustering in Taurus star forming region. II. From ultra-wide pairs to dense NESTs,"Joncour, Isabelle",article,simbad,,False
+247795097,268324580,2017A&A...599A..14J,2017,Multiplicity and clustering in Taurus star-forming region. I. Unexpected ultra-wide pairs of high-order multiplicity in Taurus,"Joncour, Isabelle",article,simbad,,False
+247795097,268324580,2018AJ....156..271L,2018,The Stellar Membership of the Taurus Star-forming Region,"Luhman, K. L.",article,simbad,,False
+247795097,268324580,2017ApJ...838..150K,2017,The Greater Taurus-Auriga Ecosystem. I. There is a Distributed Older Population,"Kraus, Adam L.",article,simbad,,False
+247795097,268324580,2001A&A...369..249W,2001,Orbital motion in T Tauri binary systems,"Woitas, J.",article,simbad,,False
+247795097,268324580,2001A&A...376..982W,2001,Mass ratios of the components in T Tauri binary systems and implications for multiple star formation,"Woitas, J.",article,simbad,,False
+247795097,268324580,1990MmKyo..38....1K,1990,Pre-main sequence objects and star formation efficiency in dark clouds within Taurus complex.,"Kim, C. Y.",article,simbad,,False
+247795097,268324580,1979ApJS...41..743C,1979,Observational studies of pre-main-sequence evolution.,"Cohen, M.",article,simbad,,False
+247795097,268324580,2017AJ....153...46L,2017,A Survey for New Members of the Taurus Star-forming Region with the Sloan Digital Sky Survey,"Luhman, K. L.",article,simbad,,False
+247795097,268324580,2017AJ....154..134E,2017,A Survey For Planetary-mass Brown Dwarfs in the Taurus and Perseus Star-forming Regions,"Esplin, T. L.",article,simbad,,False
+247795097,268324580,2021ApJ...920..132P,2021,Quantifying Variability of Young Stellar Objects in the Mid-infrared Over 6 Years with the Near-Earth Object Wide-field Infrared Survey Explorer,"Park, Wooseok",article,simbad,,False
+247795097,268324580,2024A&A...686A.164W,2024,Magnetic activity of radio stars based on TESS and LAMOST surveys,"Wang, Yinpeng",article,simbad,,False
+247795097,268324580,2026ApJ..1001...53T,2026,Interaction between Winds from Weak-lined T Tauri Stars with Exoplanetary Magnetospheres,"Tamburus, Yasmmin F.",article,simbad,,False
+247795097,268324580,2026A&A...708A.218B,2026,Multiplicity of young brown dwarfs and isolated planetary mass objects in Taurus and Upper Scorpius,"Bouy, H.",article,simbad,,False
+247594337,26976418,2018A&A...620A.172Z,2018,3D mapping of young stars in the solar neighbourhood with Gaia DR2,"Zari, E.",article,simbad,,False
+247594337,26976418,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+247594337,26976418,2019ApJ...879...69T,2019,The Payne: Self-consistent ab initio Fitting of Stellar Spectra,"Ting, Yuan-Sen",article,simbad,,False
+247594337,26976418,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+247594337,26976418,2023A&A...678A..75Z,2023,Young nearby open clusters and their luminosity functions,"Žerjal, M.",article,simbad,,False
+247594337,26976418,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+247594337,26976418,2019AJ....158..122K,2019,Untangling the Galaxy. I. Local Structure and Star Formation History of the Milky Way,"Kounkel, Marina",article,simbad,,False
+247594337,26976418,2021AJ....162..184K,2021,Double-lined Spectroscopic Binaries in the APOGEE DR16 and DR17 Data,"Kounkel, Marina",article,simbad,,False
+246906371,245831332,2016arXiv160707217M,2016,Improved Numerical Generalization of Bethe- Weizsacker Mass Formula,"Mavrodiev, Strachimir",eprint,ads,,False
+246194159,301328232,2012JPCM...24u5405B,2012,Atomistic models to investigate thorium dioxide (ThO<SUB>2</SUB>),"Behera, Rakesh K.",article,ads,,False
+246194159,301328232,1993yCat.3135....0C,1993,VizieR Online Data Catalog: Henry Draper Catalogue and Extension (Cannon+ 1918-1924; ADC 1989),"Cannon, A. J.",dataset,simbad,,False
+246194159,301328232,2020AJ....160...83S,2020,"The Sixth Data Release of the Radial Velocity Experiment (RAVE). II. Stellar Atmospheric Parameters, Chemical Abundances, and Distances","Steinmetz, Matthias",article,simbad,,False
+246194159,301328232,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+246194159,301328232,2013AJ....146..134K,2013,The Radial Velocity Experiment (RAVE): Fourth Data Release,"Kordopatis, G.",article,simbad,,False
+246194159,301328232,2017AJ....153...75K,2017,The Radial Velocity Experiment (RAVE): Fifth Data Release,"Kunder, Andrea",article,simbad,,False
+246194159,301328232,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+246194159,301328232,1999MSS...C05....0H,1999,"Michigan catalogue of two-dimensional spectral types for the HD Stars, Vol. 5","Houk, N.",article,simbad,,False
+246194159,301328232,2014AJ....148...81M,2014,"APASS Landolt-Sloan BVgri Photometry of RAVE Stars. I. Data, Effective Temperatures, and Reddenings","Munari, U.",article,simbad,,False
+246359551,279009745,2020AJ....160...83S,2020,"The Sixth Data Release of the Radial Velocity Experiment (RAVE). II. Stellar Atmospheric Parameters, Chemical Abundances, and Distances","Steinmetz, Matthias",article,simbad,,False
+246359551,279009745,2013AJ....146..134K,2013,The Radial Velocity Experiment (RAVE): Fourth Data Release,"Kordopatis, G.",article,simbad,,False
+246359551,279009745,2017AJ....153...75K,2017,The Radial Velocity Experiment (RAVE): Fifth Data Release,"Kunder, Andrea",article,simbad,,False
+246359551,279009745,2022ApJ...926...26S,2022,Dynamically Tagged Groups of Metal-poor Stars from the Best and Brightest Survey,"Shank, Derek",article,simbad,,False
+246359551,279009745,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+246359551,279009745,2014ApJ...797...13S,2014,The Best and Brightest Metal-poor Stars,"Schlaufman, Kevin C.",article,simbad,,False
+230887315,198977103,1993yCat.3135....0C,1993,VizieR Online Data Catalog: Henry Draper Catalogue and Extension (Cannon+ 1918-1924; ADC 1989),"Cannon, A. J.",dataset,simbad,,False
+230887315,198977103,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+230887315,198977103,2020ApJS..247...11R,2020,Radial Velocity Photon Limits for the Dwarf Stars of Spectral Classes F-M,"Reiners, Ansgar",article,simbad,,False
+230887315,198977103,2021ApJS..254...42B,2021,The Hipparcos-Gaia Catalog of Accelerations: Gaia EDR3 Edition,"Brandt, Timothy D.",article,simbad,,False
+230887315,198977103,2019A&A...623A..72K,2019,Stellar and substellar companions of nearby stars from Gaia DR2. Binarity from proper motion anomaly,"Kervella, Pierre",article,simbad,,False
+230887315,198977103,1997A&A...323L..49P,1997,The HIPPARCOS Catalogue,"Perryman, M. A. C.",article,simbad,,False
+230887315,198977103,2007A&A...474..653V,2007,Validation of the new Hipparcos reduction,"van Leeuwen, F.",article,simbad,,False
+230887315,198977103,2005yCat.3244....0G,2005,VizieR Online Data Catalog: Catalog of Stellar Rotational Velocities (Glebocki+ 2005),"Glebocki, R.",dataset,simbad,,False
+230887315,198977103,2023A&A...674A..34G,2023,"Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure",Gaia Collaboration,article,simbad,,False
+230887315,198977103,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+230887315,198977103,2006A&A...450..735M,2006,Effective temperature scale and bolometric corrections from 2MASS photometry,"Masana, E.",article,simbad,,False
+230887315,198977103,2006AstL...32..759G,2006,Pulkovo Compilation of Radial Velocities for 35 495 Hipparcos stars in a common system,"Gontcharov, G. A.",article,simbad,,False
+230887315,198977103,2004A&A...418..989N,2004,"The Geneva-Copenhagen survey of the Solar neighbourhood. Ages, metallicities, and kinematic properties of ∼14 000 F and G dwarfs","Nordström, B.",article,simbad,,False
+230887315,198977103,1987A&AS...69..505M,1987,"UVBY observations of A, F, G and K field stars.","Manfroid, J.",article,simbad,,False
+230887315,198977103,1980AJ.....85..478E,1980,Photoelectric observations of lunar occultations. XI.,"Edwards, D. A.",article,simbad,,False
+230887315,198977103,1979A&AS...37..367O,1979,Estimation of spectral classifications for bright southern stars with interesting Strömgren indices.,"Olsen, E. H.",article,simbad,,False
+230887315,198977103,2009A&A...501..941H,2009,"The Geneva-Copenhagen survey of the solar neighbourhood. III. Improved distances, ages, and kinematics","Holmberg, J.",article,simbad,,False
+230887315,198977103,2010A&A...515A.111S,2010,The PASTEL catalogue of stellar parameters,"Soubiran, C.",article,simbad,,False
+230887315,198977103,2011A&A...530A.138C,2011,New constraints on the chemical evolution of the solar neighbourhood and Galactic disc(s). Improved astrophysical parameters for the Geneva-Copenhagen Survey,"Casagrande, L.",article,simbad,,False
+230887315,198977103,2012A&A...546A..61D,2012,Radial velocities for the HIPPARCOS-Gaia Hundred-Thousand-Proper-Motion project,"de Bruijne, J. H. J.",article,simbad,,False
+230887315,198977103,2012MNRAS.427..343M,2012,Fundamental parameters and infrared excesses of Hipparcos stars,"McDonald, I.",article,simbad,,False
+230887315,198977103,1988MSS...C04....0H,,,,,simbad,,False
+230887315,198977103,2015A&A...580A..23P,2015,A new catalogue of Strömgren-Crawford uvbyβ photometry,"Paunzen, E.",article,simbad,,False
+230887315,198977103,1983A&AS...54...55O,1983,Four-colour UVBY and Hβ photometry of A5 to G0 stars brighter than 8.3.,"Olsen, E. H.",article,simbad,,False
+230887315,198977103,1998A&AS..129..431H,1998,Uvbybeta photoelectric photometric catalogue,"Hauck, B.",article,simbad,,False
+230887315,198977103,2016A&A...591A.118S,2016,The PASTEL catalogue: 2016 version,"Soubiran, Caroline",article,simbad,,False
+230887315,198977103,2016ApJ...826..171G,2016,The Correlation between Metallicity and Debris Disk Mass,"Gáspár, András",article,simbad,,False
+224937601,231218638,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+224937601,231218638,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+224937601,231218638,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+224937601,231218638,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+224937601,231218638,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+224937601,231218638,1939AnBos...5E...1W,1939,A study of the distribution of the stars in the Sagittarius and Ophiuchius regions of the Milky Way,"Wallenquist, Åke",article,simbad,,False
+224937601,231218638,2016ApJS..225...19E,2016,A Catalog of 1.5273 um Diffuse Interstellar Bands Based on APOGEE Hot Telluric Calibrators,"Elyajouri, M.",article,simbad,,False
+224937601,231218638,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+232334247,325322065,2016EnPro..94..173E,2016,Coordinated Converter Control Strategy in Hybrid AC/DC Power Systems for System Frequency Support,"Endegnanew, Atsede G.",article,ads,,False
+232334247,325322065,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+232334247,325322065,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+232334247,325322065,1939AnBos...5E...1W,1939,A study of the distribution of the stars in the Sagittarius and Ophiuchius regions of the Milky Way,"Wallenquist, Åke",article,simbad,,False
+240410914,201980990,2023A&A...674A..15L,2023,Gaia Data Release 3. The second Gaia catalogue of long-period variable candidates,"Lebzelter, T.",article,simbad,,False
+240410914,201980990,2000A&A...362..215S,2000,DENIS and ISOGAL properties of variable star candidates in the Galactic Bulge,"Schultheis, M.",article,simbad,,False
+229021605,51759568,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+229021605,51759568,2023A&A...674A..34G,2023,"Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure",Gaia Collaboration,article,simbad,,False
+229021605,51759568,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+229021605,51759568,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+229021605,51759568,2023A&A...678A.158A,2023,Spectroscopic age estimates for APOGEE red-giant stars: Precise spatial and kinematic trends with age in the Galactic disc,"Anders, F.",article,simbad,,False
+229021605,51759568,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+229021605,51759568,2023A&A...674A..10H,2023,"Gaia Data Release 3. Astrometric orbit determination with Markov chain Monte Carlo and genetic algorithms: Systems with stellar, sub-stellar, and planetary mass companions","Holl, B.",article,simbad,,False
+201132684,35021200,2013IBiBi..84....8A,2013,"Effect of <mml:math altimg=""si1.gif"" display=""inline"" overflow=""scroll""><mml:mrow><mml:mrow><mml:mrow>COD</mml:mrow><mml:mo>/</mml:mo><mml:mrow><mml:msubsup><mml:mrow>NO</mml:mrow><mml:mn>3</mml:mn><mml:mo>−</mml:mo></mml:msubsup><mml:mi mathvariant=""normal"">─</mml:mi>N</mml:mrow></mml:mrow></mml:mrow></mml:math> ratio and seed sludge on simultaneous methanogenesis and denitrification in intermittent organic solid waste treatment","Akizuki, S.",article,ads,,False
+201132684,35021200,2011RCR....57...61T,2011,An estimation of the effectiveness of waste prevention by using point-of-sales (POS) data—The case of refills for shampoo and hair conditioner in Japan,"Tasaki, T.",article,ads,,False
+201132684,35021200,2018WaMan..74..168A,2018,An anaerobic-aerobic sequential batch process with simultaneous methanogenesis and short-cut denitrification for the treatment of marine biofoulings,"Akizuki, S.",article,ads,,False
+201132684,35021200,2015BioEJ..99...16A,2015,Effects of substrate COD/NO<SUB>2</SUB><SUP>-</SUP>-N ratio on simultaneous methanogenesis and short-cut denitrification in the treatment of blue mussel using acclimated sludge,"Akizuki, Shinichi",article,ads,,False
+201132684,35021200,2018IBiBi.127..201A,2018,A multifunctional single-stage process for the effective methane recovery and denitrification of intermittently discharged wastes,"Akizuki, S.",article,ads,,False
+201132684,35021200,2024PWEnv..22..685R,2024,Analysis of organic pollution impact on purification capacity at the Tanjero River in Sulaimani City,"Rasheed, Farouk Abdullah",article,ads,,False
+201132684,35021200,2013JInEc..17..290T,2013,Assessing the Replacement of Electrical Home Appliances for the Environment,"Tasaki, Tomohiro",article,ads,,False
+201132684,35021200,1989PhRvB..40.6175M,1989,Electron-optical-phonon interaction in single and double heterostructures,"Mori, N.",article,ads,,False
+201132684,35021200,1967PhRv..158.1541O,1967,K<SUB>2</SUB><SUP>0</SUP>--&gt;π<SUP>0</SUP>+2γ Decay,"Oneda, S.",article,ads,,False
+201132684,35021200,2024JEWA...38..327G,2024,Single-wideband and dual-band bandpass filters based on compact quadruple-mode resonator,"Görür, Ali Kürșad",article,ads,,False
+201132684,35021200,1995MNRAS.275..649W,1995,A study of the absorption lines from the donor star in the exotic cataclysmic variable AE Aquarii,"Welsh, William F.",article,ads,,False
+201132684,35021200,2011aims.conf...46D,2011,Notice of Retraction: Study on geochemistry characteristic of heavy metal in soils and effects on fruit quality in Yanbian area,DongYan Wang,inproceedings,ads,,False
+201132684,35021200,1989EcMod..46..147O,1989,Multiple nutrient limitations in ecological models,"O'Neill, R. V.",article,ads,,False
+201132684,35021200,1989ApGC....4..151P,1989,The secondary oxidation of organic material and its influence on Kupferschiefer mineralization of southwest Poland,"Püttmann, W.",article,ads,,False
+201132684,35021200,1964PhRv..136...62B,1964,Rotational Magnetic Moments of the Alkali Molecules,"Brooks, R. A.",article,ads,,False
+201132684,35021200,2024SPIE12989E..09C,2024,Discussion on station layout design of intercity/metropolitan railway CTCS2+ATO system,"Cheng, Jianfeng",inproceedings,ads,,False
+201132684,35021200,1988JMoSt.175...25I,1988,Self-association of caffeine in aqueous solution. Study of dilute solutions by normal and second derivative UV absorption spectroscopy.,"Iza, N.",article,ads,,False
+201132684,35021200,2014LeaEd..33..400B,2014,Predrill prediction of subsalt pore pressure from seismic impedance,"Banik, Niranjan",article,ads,,False
+201132684,35021200,2018MS&E..292a2001C,2018,The application of waste fly ash and construction-waste in cement filling material in goaf,"Chen, W. X.",inproceedings,ads,,False
+201132684,35021200,2020FrEaS...8..366H,2020,Effective Vertical Transport of Particulate Organic Carbon in the Western North Pacific Subarctic Region,"Honda, Makio C.",article,ads,,False
+201132684,35021200,1997PhRvD..55.4723M,1997,Exact solution for the metric and the motion of two bodies in (1+1)-dimensional gravity,"Mann, R. B.",article,ads,,False
+201132684,35021200,2020MS&E..793a2050Z,2020,Safety performance optimization of front bumper system based on pedestrian lower leg protection,"Zhong, Jiabin",inproceedings,ads,,False
+201132684,35021200,1982JSV....82..383W,1982,Transient longitudinal vibrations of a finite cylindrical rod connected to an elastic half-space,"Wada, H.",article,ads,,False
+201132684,35021200,2021arXiv210914208S,2021,A Communication Security Game on Switched Systems for Autonomous Vehicle Platoons,"Sun, Guoxin",eprint,ads,,False
+201132684,35021200,2003PhRvB..68m4418C,2003,Critical equation of state of randomly dilute Ising systems,"Calabrese, Pasquale",article,ads,,False
+201132684,35021200,2021E&ES..637a2053R,2021,Effect of Benzilaminopurine and Kinetin for shoot multiplication of Indigofera (Indigofera zollingeriana Miq.) by in vitro culture,"Royani, J. I.",inproceedings,ads,,False
+201132684,35021200,2024SJSC...46A2557A,2024,A Levenberg-Marquardt Method for Nonsmooth Regularized Least Squares,"Aravkin, Aleksandr Y.",article,ads,,False
+201132684,35021200,1975AnPhy..95..229J,1975,The quantum mechanical extension of the Boltzmann transport equation and optical absorption in semiconductors,"Jensen, B.",article,ads,,False
+201132684,35021200,1994CompM..14..154K,1994,Non-linear analysis of plates by the Analog Equation Method,"Katsikadelis, J. T.",article,ads,,False
+201132684,35021200,2002EPJB...29..399A,2002,The 1D Hubbard model within the Composite Operator Method,"Avella, A.",article,ads,,False
+201132684,35021200,1991PhyA..178..149T,1991,The XY model and Kadanoff's variational real space renormalization group,"Thorleifsson, G.",article,ads,,False
+201132684,35021200,1981JThBi..93...63F,1981,A quantitative study of timing in plant photoperiodism,"Fukshansky, Leonid",article,ads,,False
+201132684,35021200,2024NatCo..15.3747M,2024,The DEAD-box RNA helicase PfDOZI imposes opposing actions on RNA metabolism in Plasmodium falciparum,"Min, Hui",article,ads,,False
+201132684,35021200,2026arXiv260911055N,2026,A Tale of Two Gauges: Effective Field Theory for Relativistic Behavior of Cosmological Axions,"Nhan Luu, Hoang",eprint,ads,,False
+201132684,35021200,2021arXiv211210803I,2021,Noncommutative polynomial optimization under symmetry,"Ioannou, Marie",eprint,ads,,False
+201132684,35021200,1936phae.proj.2366M,1936,"Magnitudes of Nebulae, D'.","Mussells, Muriel E.",misc,ads,,False
+201132684,35021200,2020arXiv200700895N,2020,Black holes as clouded mirrors: the Hayden-Preskill protocol with symmetry,"Nakata, Yoshifumi",eprint,ads,,False
+201132684,35021200,2021arXiv210508023Y,2021,Removing Data Heterogeneity Influence Enhances Network Topology Dependence of Decentralized SGD,"Yuan, Kun",eprint,ads,,False
+201132684,35021200,2020arXiv200613900G,2020,Quantifying Differences in Reward Functions,"Gleave, Adam",eprint,ads,,False
+201132684,35021200,2018arXiv180610974A,2018,Analysis and Performance of the Barzilai-Borwein Step-Size Rules for Optimization Problems in Hilbert Spaces,"Azmi, Behzad",eprint,ads,,False
+201132684,35021200,2020arXiv200403758G,2020,Doubly Debiased Lasso: High-Dimensional Inference under Hidden Confounding,"Guo, Zijian",eprint,ads,,False
+201132684,35021200,2019arXiv191107363G,2019,Optimal Decentralized Distributed Algorithms for Stochastic Convex Optimization,"Gorbunov, Eduard",eprint,ads,,False
+201132684,35021200,1921phae.proj.2226C,1921,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201132684,35021200,1916phae.proj.2215C,1916,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201132684,35021200,1912phae.proj.2125C,1912,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201132684,35021200,1925phae.proj.2237C,1925,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201132684,35021200,1913phae.proj.2147C,1913,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201132684,35021200,1913phae.proj.2145C,1913,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201132684,35021200,1914phae.proj.2167C,1914,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201132684,35021200,2018AJ....155..136M,2018,275 Candidates and 149 Validated Planets Orbiting Bright Stars in K2 Campaigns 0-10,"Mayo, Andrew W.",article,simbad,,False
+201132684,35021200,2019AJ....157..124K,2019,Discovery and Vetting of Exoplanets. I. Benchmarking K2 Vetting Tools,"Kostov, Veselin B.",article,simbad,,False
+201132684,35021200,2020ApJ...890...23L,2020,Current Population Statistics Do Not Favor Photoevaporation over Core-powered Mass Loss as the Dominant Cause of the Exoplanet Radius Gap,"Loyd, R. O. Parke",article,simbad,,False
+201132684,35021200,2021ApJ...909..115C,2021,Planets Across Space and Time (PAST). I. Characterizing the Memberships of Galactic Components and Stellar Ages: Revisiting the Kinematic Methods and Applying to Planet Host Stars,"Chen, Di-Chang",article,simbad,,False
+201132684,35021200,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+201132684,35021200,2024AJ....168..154V,2024,Modeling Multiple Radius Valley Emergence Mechanisms with Multitransiting Systems,"VanWyngarden, Madison",article,simbad,,False
+201132684,35021200,2022MNRAS.510.2041C,2022,The GALAH Survey: improving our understanding of confirmed and candidate planetary systems with large stellar surveys,"Clark, Jake T.",article,simbad,,False
+201132684,35021200,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+201132684,35021200,2020MNRAS.496..851W,2020,K2-HERMES II. Planet-candidate properties from K2 Campaigns 1-13,"Wittenmyer, Robert A.",article,simbad,,False
+201132684,35021200,2018AJ....156...78L,2018,44 Validated Planets from K2 Campaign 10,"Livingston, John H.",article,simbad,,False
+201132684,35021200,2024A&A...691A..53S,2024,SWEET-Cat: A view on the planetary mass-radius relation,"Sousa, S. G.",article,simbad,,False
+201132684,35021200,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+201132684,35021200,2025ApJS..281...61L,2025,"Stellar Characterization, Magnesium Abundances, and Chromospheric Activity Analysis of Stars with Confirmed Exoplanets from the K2 Mission","Loaiza-Tacuri, V.",article,simbad,,False
+201132684,35021200,2025A&A...699A.100D,2025,The Gaia spectroscopic catalogue of exoplanets and host stars,"de Laverny, Patrick",article,simbad,,False
+201132684,35021200,2022MNRAS.517.5325H,2022,The GALAH survey: chemical clocks,"Hayden, Michael R.",article,simbad,,False
+201132684,35021200,2025ApJS..276...29L,2025,Ultraviolet Photometry and Habitable Zones of over 2700 Planet-hosting Stars,"Li, Xue",article,simbad,,False
+201092629,152805642,2021JRNC..330..985P,2021,Standardisation of <SUP>241</SUP>Am activity for a key comparison,"Pommé, S.",article,ads,,False
+201092629,152805642,2017Metro..54.6010M,2017,"Update of the BIPM comparison BIPM.RI(II)-K1.Am-241 of activity measurements of the radionuclide <SUP>241</SUP>Am to include the 2009 results of the POLATOM (Poland), MKEH (Hungary) and the 2011 results of the LNE-LNHB (France)","Michotte, C.",article,ads,,False
+201092629,152805642,2022iedm.conf...22S,2022,Scaling Surface Acoustic Wave Filters on LNOI platform for 5G communication,"Su, Rongxuan",inproceedings,ads,,False
+201092629,152805642,2007Metro..44.6007R,2007,"Update of the BIPM comparison BIPM.RI(II)-K1.Am-241 of activity measurements of the radionuclide 241Am to include the 2006 VNIIM result, links for the 2003 international comparison CCRI(II)-K2.Am-241 and links for the 2006 regional comparison COOMET.RI(II)-K2.Am-241","Ratel, G.",article,ads,,False
+201092629,152805642,2021Fuel..28519128A,2021,A novel technique for heavy oil recovery using poly vinyl alcohol (PVA) and PVA-NaOH with ethanol additive,"Alade, Olalekan S.",article,ads,,False
+201092629,152805642,2016JPSE..138...66A,2016,Bitumen emulsification using a hydrophilic polymeric surfactant: Performance evaluation in the presence of salinity,"Alade, O. S.",article,ads,,False
+201092629,152805642,2023Mate...16.3331W,2023,The Effect of Cutting Fluid on Machined Surface Integrity of Ultra-High-Strength Steel 45CrNiMoVA,"Wang, Yubin",article,ads,,False
+201092629,152805642,2019arXiv191201651M,2019,Lorentzian polynomials from polytope projections,"Mészáros, Karola",eprint,ads,,False
+201092629,152805642,1980PhRvD..22..814R,1980,Suppression of ultraviolet infinities in gravity-modified field theories,"Ram, M. S.",article,ads,,False
+201092629,152805642,1973PhRvL..30.1125C,1973,Low-Temperature Specific-Heat Anomaly of bcc <SUP>3</SUP>He,"Castles, S. H.",article,ads,,False
+201092629,152805642,1990PhRvD..41.2374P,1990,Pair production of helicity-flipped neutrinos in supernovae,"Pérez, Armando",article,ads,,False
+201092629,152805642,1969PhRv..188..130B,1969,Stark Effect in Hydrogenic Atoms: Comparison of Fourth-Order Perturbation Theory with WKB Approximation,"Bekenstein, J. D.",article,ads,,False
+201092629,152805642,1977PhRvA..15.1900B,1977,Double-electron capture by protons from helium,"Biswas, S.",article,ads,,False
+201092629,152805642,2016AppRI.109...44G,2016,Radioactive Standards Laboratory ININ as a reference laboratory in Mexico,"García Díaz, O.",article,ads,,False
+201092629,152805642,2008SbMat.199.1263K,2008,Maximally symmetric cell decompositions of surfaces and their coverings,"Kudryavtseva, E. A.",article,ads,,False
+201092629,152805642,2014isic.conf...41A,2014,Optimization of indoor FES-cycling exercise assisted by a flywheel mechanism using genetic algorithm,"Abdulla, S. C.",inproceedings,ads,,False
+201092629,152805642,2017pepq.conf...32A,2017,Co-simulation strategy of PV hosting capacity applying a stochastic analysis,"Africano, Yessica",inproceedings,ads,,False
+201092629,152805642,1999NuPhB.553..250K,1999,Born-Infeld-Goldstone superfield actions for gauge-fixed D5- and D3-branes in 6d,"Ketov, Sergei V.",article,ads,,False
+201092629,152805642,2016arXiv160505063Z,2016,Simultaneous Identification of Damping Coefficient and Initial Value in PDEs from boundary measurement,"Zhao, Zhi-Xue",eprint,ads,,False
+201092629,152805642,2016arXiv160800769E,2016,On distances in generalized Sierpinski graphs,"Estrada-Moreno, Alejandro",eprint,ads,,False
+201092629,152805642,2012JHEP...10..049A,2012,Resumming soft and collinear contributions in deeply virtual Compton scattering,"Altinoluk, T.",article,ads,,False
+201092629,152805642,2018JHEP...03..060P,2018,T-duality transformations for the NS5-brane along angular directions,"Plauschinn, Erik",article,ads,,False
+201092629,152805642,2011arXiv1111.3654S,2011,Singularities of ordinary deformation rings,"Snowden, Andrew",eprint,ads,,False
+201092629,152805642,1990InvPr...6..267W,1990,Multidimensional inverse scattering: the reconstruction problem,"Weder, R.",article,ads,,False
+201092629,152805642,2003nlin......3048X,2003,Global well-posedness and multi-tone solutions of a class of nonlinear nonlocal cochlear models in hearing,"Xin, Jack",eprint,ads,,False
+201092629,152805642,2003CQGra..20..665G,2003,Conifold transitions and five-brane condensation in M-theory on Spin(7) manifolds,"Gukov, Sergei",article,ads,,False
+201092629,152805642,2013arXiv1312.6031Z,2013,Gevrey Smoothing Effect for Solutions of the Non-Cutoff Boltzmann Equation in Maxwellian Molecules Case,"Zhang, Teng-Fei",eprint,ads,,False
+201092629,152805642,2024arXiv241015750L,2024,Normalized solutions for a class of Sobolev critical Schrodinger systems,"Li, Houwang",eprint,ads,,False
+201092629,152805642,1985PhR...127...99S,1985,Magnetohydrodynamic theories of magnetic field reconnection,"Shivamoggi, Bhimsen K.",article,ads,,False
+201092629,152805642,2017arXiv170207402R,2017,Weak Faddeev-Takhtajan-Volkov algebras; Lattice $W_n$ algebras,"Razavinia, Farrokh",eprint,ads,,False
+201092629,152805642,2024arXiv240800017L,2024,Stationary solution to Stochastically Forced Euler-Poisson Equations in Bounded Domain: Part 1. 3-D Insulating Boundary,"Li, Yachun",eprint,ads,,False
+201092629,152805642,2026arXiv260901454M,2026,Lagrangian varieties from $q$-matrix models,"Mishnyakov, Victor",eprint,ads,,False
+201092629,152805642,1934phae.proj.2277C,1934,Annie Cannon Notebooks,"Cannon, Annie Jump",misc,ads,,False
+201092629,152805642,1981PhR....69...85D,1981,Nodal expansions for strongly coupled classical plasmas,"Deutsch, C.",article,ads,,False
+201092629,152805642,2021JHEP...08..142B,2021,n-point correlators of twist-2 operators in SU(N) Yang-Mills theory to the lowest perturbative order,"Bochicchio, Marco",article,ads,,False
+201092629,152805642,2015arXiv150603720B,2015,Dynamics near the subcritical transition of the 3D Couette flow I: Below threshold case,"Bedrossian, Jacob",eprint,ads,,False
+201092629,152805642,2005PhDT.......247M,2005,Multi-Scale Physics from Multi-Braneworlds,"Mouslopoulos, S.",phdthesis,ads,,False
+201092629,152805642,2026arXiv260606624B,2026,Principles and Practice of Deep Representation Learning: or a Mathematical Theory of Memory,"Buchanan, Sam",eprint,ads,,False
+201092629,152805642,2019AJ....157..124K,2019,Discovery and Vetting of Exoplanets. I. Benchmarking K2 Vetting Tools,"Kostov, Veselin B.",article,simbad,,False
+201092629,152805642,2020ApJ...890...23L,2020,Current Population Statistics Do Not Favor Photoevaporation over Core-powered Mass Loss as the Dominant Cause of the Exoplanet Radius Gap,"Loyd, R. O. Parke",article,simbad,,False
+201092629,152805642,2021ApJ...909..115C,2021,Planets Across Space and Time (PAST). I. Characterizing the Memberships of Galactic Components and Stellar Ages: Revisiting the Kinematic Methods and Applying to Planet Host Stars,"Chen, Di-Chang",article,simbad,,False
+201092629,152805642,2018AJ....155..149B,2018,Fundamental Properties of Co-moving Stars Observed by Gaia,"Bochanski, John J.",article,simbad,,False
+201092629,152805642,2017AJ....153..257O,2017,Comoving Stars in Gaia DR1: An Abundance of Very Wide Separation Comoving Pairs,"Oh, Semyeong",article,simbad,,False
+201092629,152805642,2018AJ....156...78L,2018,44 Validated Planets from K2 Campaign 10,"Livingston, John H.",article,simbad,,False
+201092629,152805642,2024A&A...691A..53S,2024,SWEET-Cat: A view on the planetary mass-radius relation,"Sousa, S. G.",article,simbad,,False
+201092629,152805642,2025A&A...699A.100D,2025,The Gaia spectroscopic catalogue of exoplanets and host stars,"de Laverny, Patrick",article,simbad,,False
+201092629,152805642,2025ApJS..276...29L,2025,Ultraviolet Photometry and Habitable Zones of over 2700 Planet-hosting Stars,"Li, Xue",article,simbad,,False
+201479221,376812471,2023A&A...674A..34G,2023,"Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure",Gaia Collaboration,article,simbad,,False
+201479221,376812471,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+201479221,376812471,2003MNRAS.344..307L,2003,The Millennium Galaxy Catalogue: 16 &lt;=B<SUB>MGC</SUB> &lt; 24 galaxy counts and the calibration of the local galaxy luminosity function,"Liske, J.",article,simbad,,False
+201479221,376812471,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+201496916,149952263,2019AJ....157..231K,2019,Exploring the Age-dependent Properties of M and L Dwarfs Using Gaia and SDSS,"Kiman, Rocio",article,simbad,,False
+201496916,149952263,2011AJ....141...97W,2011,The Sloan Digital Sky Survey Data Release 7 Spectroscopic M Dwarf Catalog. I. Data,"West, Andrew A.",article,simbad,,False
+220315458,344773428,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+220315458,344773428,2020ApJS..251...15Z,2020,Phase II of the LAMOST-Kepler/K2 Survey. I. Time Series of Medium-resolution Spectroscopic Observations,"Zong, Weikai",article,simbad,,False
+220315458,344773428,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+220315458,344773428,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+220315458,344773428,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+220562610,376906028,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+220606084,429052510,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+220606084,429052510,2020ApJS..251...15Z,2020,Phase II of the LAMOST-Kepler/K2 Survey. I. Time Series of Medium-resolution Spectroscopic Observations,"Zong, Weikai",article,simbad,,False
+220605820,369478173,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+220605820,369478173,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+220605820,369478173,2025RNAAS...9..275M,2025,An In-depth Study of Brown Dwarfs with TESS,"Marcadon, Frédéric",article,simbad,,False
+220208795,336889445,2022A&A...658A..38V,2022,K2 discovery of a circumsecondary disk transiting EPIC 220208795,"van der Kamp, L.",article,both,,False
+220208795,336889445,2013ApJ...766...42H,2013,A New Timescale for Period Change in the Pulsating DA White Dwarf WD 0111+0018,"Hermes, J. J.",article,both,,False
+220208795,336889445,2024MNRAS.530.3606M,2024,The formation of transiting circumplanetary debris discs from the disruption of satellite systems during planet-planet scattering,"Mustill, Alexander J.",article,both,,False
+220208795,336889445,2024A&A...687A..11V,2024,Beyond Circular Eclipsers (BeyonCE) light curve modelling. I. Shallot Explorer,"van Dam, Dirk M.",article,both,,False
+220208795,336889445,2023slft.confE.315E,2023,Progress on the exploratory calculation of the rare Hyperon decay \Sigma(+)  -&gt; p ℓ(+)  ℓ(-),"Erben, F.",inproceedings,ads,,False
+220208795,336889445,2025arXiv250118358H,2025,Split-even approach to the rare kaon decay $K \to \pi \ell^+ \ell^-$,"Hodgson, Raoul",eprint,ads,,False
+220208795,336889445,2022arXiv220310998B,2022,Discovering new physics in rare kaon decays,"Blum, Thomas",eprint,ads,,False
+220208795,336889445,2024JHEP...12..097L,2024,Light quark loops in K±→π±νν̄ from vector meson dominance and update on the Kaon Unitarity Triangle,"Lunghi, Enrico",article,ads,,False
+220208795,336889445,2026JHEP...02..186B,2026,A dispersive approach to the CP conserving K → πℓ<SUP>+</SUP>ℓ<SUP>−</SUP> radiative decays,"Bernard, Véronique",article,ads,,False
+220208795,336889445,2025arXiv250615390A,2025,"ECFA Higgs, electroweak, and top Factory Study","Abidi, H.",eprint,ads,,False
+220208795,336889445,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+215067200,155157963,2020AN....341...79H,2020,A new approach to generate a catalogue of potential historical novae,"Hoffmann, Susanne M.",article,ads,,False
+215067200,155157963,2021AN....342..675N,2021,Critical comments on publications by S. Hoffmann and N. Vogt on historical novae/supernovae and their candidates,"Neuhäuser, Ralph",article,ads,,False
+215067200,155157963,1985AJ.....90.2360E,1985,Photoelectric observations of lunar occultations. XV.,"Evans, D. S.",article,both,,False
+215067200,155157963,1991MNRAS.252..403P,1991,Atlas of extinction curves derived from ultraviolet spectra of the TD-1 satellite.,"Papaj, J.",article,both,,False
+215067200,155157963,2020arXiv200611913S,2020,Finding Patient Zero: Learning Contagion Source with Graph Neural Networks,"Shah, Chintan",eprint,ads,,False
+215067200,155157963,2012ApEn...98..368J,2012,"Comparison of the effects of Na<SUB>2</SUB>CO<SUB>3</SUB>, Ca<SUB>3</SUB>(PO<SUB>4</SUB>)<SUB>2</SUB>, and NiO catalysts on the thermochemical liquefaction of microalga Spirulina platensis","Jena, Umakanta",article,ads,,False
+215067200,155157963,1995ApJS...96..605S,1995,Far-Ultraviolet Stellar Photometry: Fields in Sagittarius and Scorpius,"Schmidt, Edward G.",article,both,,False
+215067200,155157963,1987AJ.....93..688M,1987,ICCD Speckle Observations of Binary Stars. II. Measurements During 1982 -1985 from the Kitt Peak 4 CM Telescope,"McAlister, Harold A.",article,both,,False
+215067200,155157963,2023AQAH...16.1257Z,2023,"Investigation of PM<SUB>2.5</SUB>-bound Polycyclic aromatic hydrocarbons (PAHs) and their derivatives (nitrated-PAHs and oxygenated-PAHs) in the roadside environment at the eastern coastal region of China: characterization, source identification, and toxicity evaluation","Zhao, Tong",article,ads,,False
+215067200,155157963,2016arXiv160200566K,2016,Information-Centric Connectivity,"Katsaros, Konstantinos V.",eprint,ads,,False
+215067200,155157963,2016IComM..54i..50K,2016,Information-Centric Connectivity,"Katsaros, Konstantinos V.",article,ads,,False
+215067200,155157963,2024arXiv240708959J,2024,Domain-Hierarchy Adaptation via Chain of Iterative Reasoning for Few-shot Hierarchical Text Classification,"Ji, Ke",eprint,ads,,False
+215067200,155157963,1991CG.....17..227S,1991,TEEPLOT—A microsoft quick-basic program for the analysis of clast morphology,"Swenson, Michael J.",article,ads,,False
+215067200,155157963,1993yCat.3135....0C,1993,VizieR Online Data Catalog: Henry Draper Catalogue and Extension (Cannon+ 1918-1924; ADC 1989),"Cannon, A. J.",dataset,simbad,,False
+215067200,155157963,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+215067200,155157963,2021ApJS..254...42B,2021,The Hipparcos-Gaia Catalog of Accelerations: Gaia EDR3 Edition,"Brandt, Timothy D.",article,simbad,,False
+215067200,155157963,2020AJ....160....7T,2020,Speckle Interferometry at SOAR in 2019,"Tokovinin, Andrei",article,simbad,,False
+215067200,155157963,2018A&A...620A.172Z,2018,3D mapping of young stars in the solar neighbourhood with Gaia DR2,"Zari, E.",article,simbad,,False
+215067200,155157963,2019A&A...623A..72K,2019,Stellar and substellar companions of nearby stars from Gaia DR2. Binarity from proper motion anomaly,"Kervella, Pierre",article,simbad,,False
+215067200,155157963,1997A&A...323L..49P,1997,The HIPPARCOS Catalogue,"Perryman, M. A. C.",article,simbad,,False
+215067200,155157963,2007A&A...474..653V,2007,Validation of the new Hipparcos reduction,"van Leeuwen, F.",article,simbad,,False
+215067200,155157963,2005yCat.3244....0G,2005,VizieR Online Data Catalog: Catalog of Stellar Rotational Velocities (Glebocki+ 2005),"Glebocki, R.",dataset,simbad,,False
+215067200,155157963,2021MNRAS.504.2968P,2021,The Alma catalogue of OB stars - II. A cross-match with Gaia DR2 and an updated map of the solar neighbourhood,"Pantaleoni González, M.",article,simbad,,False
+215067200,155157963,2023MNRAS.519.3958I,2023,X-shooter survey of young intermediate-mass stars - I. Stellar characterization and disc evolution,"Iglesias, Daniela P.",article,simbad,,False
+215067200,155157963,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+215067200,155157963,2005AJ....129..809S,2005,B Star Rotational Velocities in h and χ Persei: A Probe of Initial Conditions during the Star Formation Epoch?,"Strom, Stephen E.",article,simbad,,False
+215067200,155157963,2002ApJ...573..359A,2002,Rotational Velocities of B Stars,"Abt, Helmut A.",article,simbad,,False
+215067200,155157963,2001A&A...367..521P,2001,Catalogue of Apparent Diameters and Absolute Radii of Stars (CADARS) - Third edition - Comments and statistics,"Pasinetti Fracassini, L. E.",article,simbad,,False
+215067200,155157963,1996A&AS..118..481B,1996,The ROSAT all-sky survey catalogue of optically bright OB-type stars.,"Berghoefer, T. W.",article,simbad,,False
+215067200,155157963,1996ApJS..104..101S,1996,Far-Ultraviolet Stellar Photometry: Fields Centered on rho Ophiuchi and the Galactic Center,"Schmidt, Edward G.",article,simbad,,False
+215067200,155157963,1995A&AS..109..501C,1995,"SANTIAGO 91, a right ascension catalogue of 3387 stars (equinox J2000).","Carrasco, G.",article,simbad,,False
+215067200,155157963,1993PASP..105.1127G,1993,The Distribution of Interstellar Dust in the Solar Neighborhood,"Gaustad, John E.",article,simbad,,False
+215067200,155157963,1989A&AS...80...73G,1989,Empirical temperature calibrations for early-type stars.,"Gulati, R. K.",article,simbad,,False
+215067200,155157963,1985A&AS...60...99W,1985,The local system of early type stars. Spatial extent and kinematics.,"Westin, T. N. G.",article,simbad,,False
+215067200,155157963,1984ApJ...285..190A,1984,Be stars in binaries.,"Abt, H. A.",article,simbad,,False
+215067200,155157963,1984ApJS...55..101C,1984,The S201 far-ultraviolet imaging survey. III. A field in Sagttarius.,"Carruthers, G. R.",article,simbad,,False
+215067200,155157963,1980A&AS...40..207C,1980,Spectral classification from the ultraviolet line features of S2/68 spectra.,"Cucchiaro, A.",article,simbad,,False
+215067200,155157963,1969ApJ...157..313H,1969,MK Spectral Types for Bright Southern OB Stars,"Hiltner, W. A.",article,simbad,,False
+215067200,155157963,1963ApJ...137..530C,1963,"U, b, v, and Hβ Photometry for the Bright B8- and B9-TYPE Stars.","Crawford, D. L.",article,simbad,,False
+215067200,155157963,1960MNRAS.121..263B,1960,The Scorpio-Centaurus association: I. Radial velocities of 120 bright stars,"Buscombe, W.",article,simbad,,False
+215067200,155157963,1958MNRAS.118..609B,1958,Radial velocities of fundamental southern stars,"Buscombe, William",article,simbad,,False
+215067200,155157963,1957MNRAS.117..449D,1957,"Spectral types and luminosities of B, A and F southern stars","de Vaucouleurs, A.",article,simbad,,False
+215067200,155157963,2005AJ....130.1652R,2005,New Estimates of the Solar-Neighborhood Massive Star Birthrate and the Galactic Supernova Rate,"Reed, B. Cameron",article,simbad,,False
+215067200,155157963,2008MNRAS.389..869E,2008,A catalogue of multiplicity among bright stellar systems,"Eggleton, P. P.",article,simbad,,False
+215067200,155157963,2003AJ....125.2531R,2003,Catalog of Galactic OB Stars,"Reed, B. Cameron",article,simbad,,False
+215067200,155157963,2010PASJ...62.1239T,2010,Oxygen and Neon Abundances of B-Type Stars in Comparison with the Sun,"Takeda, Yoichi",article,simbad,,False
+215067200,155157963,1970MmRAS..72..233H,1970,The radial velocities of 335 late B-type stars,"Hube, Douglas P.",article,simbad,,False
+215067200,155157963,2011MNRAS.410..190T,2011,A catalogue of young runaway Hipparcos stars within 3 kpc from the Sun,"Tetzlaff, N.",article,simbad,,False
+215067200,155157963,1993Ap&SS.203...53H,1993,A Catalogue of Spectral Classification and Photometric Data of B-Type Stars,"Hamdy, M. A.",article,simbad,,False
+215067200,155157963,2012MNRAS.427..343M,2012,Fundamental parameters and infrared excesses of Hipparcos stars,"McDonald, I.",article,simbad,,False
+215067200,155157963,2015A&A...580A..23P,2015,A new catalogue of Strömgren-Crawford uvbyβ photometry,"Paunzen, E.",article,simbad,,False
+215067200,155157963,1988MSS...C04....0H,,,,,simbad,,False
+215067200,155157963,2012AstL...38..694G,2012,Spatial distribution and kinematics of OB stars,"Gontcharov, G. A.",article,simbad,,False
+215067200,155157963,1977A&AS...27..443G,1977,Photoelectric Hbeta photometry for bright O to G0 type stars south of declination +10 .,"Grønbech, B.",article,simbad,,False
+215067200,155157963,1977PASP...89..205E,1977,Intermediate-band photometry of early-type stars.,"Eggen, O. J.",article,simbad,,False
+215067200,155157963,1998A&AS..129..431H,1998,Uvbybeta photoelectric photometric catalogue,"Hauck, B.",article,simbad,,False
+215067200,155157963,1995A&AS..114..269D,1995,Vitesses radiales. Catalogue WEB: Wilson Evans Batten. Subtittle: Radial velocities: The Wilson-Evans-Batten catalogue.,"Duflot, M.",article,simbad,,False
+215067200,155157963,2018A&A...618A.110B,2018,Infrared nebulae around bright massive stars as indicators for binary interactions,"Bodensteiner, J.",article,simbad,,False
+215067200,155157963,2021ApJ...917...23K,2021,Stars with Photometrically Young Gaia Luminosities Around the Solar System (SPYGLASS). I. Mapping Young Stellar Structures and Their Star Formation Histories,"Kerr, Ronan M. P.",article,simbad,,False
+215067200,155157963,2024AcA....74...43T,2024,Phosphorus Abundances of B-Type Stars in the Solar Neighborhood,"Takeda, Y.",article,simbad,,False
+216831785,11882885,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+213832800,108274842,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+213832800,108274842,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+218751675,225490302,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+215307988,154409095,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+215894766,3881465,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212549089,178942976,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212549089,178942976,2023A&A...674A..34G,2023,"Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure",Gaia Collaboration,article,simbad,,False
+212542155,179017141,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+212542155,179017141,1997KFNT...13e..70R,1997,GPM - compiled catalogue of absolute proper motions of stars in selected areas of sky with galaxies.,"Rybka, S. P.",article,simbad,,False
+212542155,179017141,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+212542155,179017141,2022MNRAS.517.5325H,2022,The GALAH survey: chemical clocks,"Hayden, Michael R.",article,simbad,,False
+212685467,2539506,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212805678,61070575,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212805678,61070575,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+212805678,61070575,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+212343520,345984388,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212477236,392492898,2019AJ....158..227G,2019,Giant Planet Occurrence within 0.2 au of Low-luminosity Red Giant Branch Stars with K2,"Grunblatt, Samuel K.",article,simbad,,False
+212554009,771930,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212332380,287335140,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212732378,178942052,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+212152316,175263062,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+212152316,175263062,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+212152316,175263062,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211633458,386621229,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+211633458,386621229,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+211633458,386621229,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+211633458,386621229,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211633458,386621229,2020AJ....159...93D,2020,Constraining Orbital Periods from Nonconsecutive Observations: Period Estimates for Long-period Planets in Six Systems Observed by K2 During Multiple Campaigns,"Dholakia, S.",article,simbad,,False
+211633458,386621229,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211598816,257217497,1993yCat.3135....0C,1993,VizieR Online Data Catalog: Henry Draper Catalogue and Extension (Cannon+ 1918-1924; ADC 1989),"Cannon, A. J.",dataset,simbad,,False
+211598816,257217497,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+211598816,257217497,2018A&A...620A.172Z,2018,3D mapping of young stars in the solar neighbourhood with Gaia DR2,"Zari, E.",article,simbad,,False
+211598816,257217497,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+211598816,257217497,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+211598816,257217497,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211598816,257217497,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211924561,238606535,2019A&A...624A..19B,2019,"The GALAH survey: An abundance, age, and kinematic inventory of the solar neighbourhood made with TGAS","Buder, S.",article,simbad,,False
+211924561,238606535,2019ApJS..244...43Z,2019,Unbiased Distribution of Binary Parameters from LAMOST and Kepler Observations,"Zhang, Jia",article,simbad,,False
+211924561,238606535,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+211924561,238606535,2023A&A...672A.176P,2023,Mass-ratio distribution of contact binary stars,"Pešta, Milan",article,simbad,,False
+211924561,238606535,1997KFNT...13e..70R,1997,GPM - compiled catalogue of absolute proper motions of stars in selected areas of sky with galaxies.,"Rybka, S. P.",article,simbad,,False
+211924561,238606535,1996AN....317..127A,1996,"Photometric survey near the main Galactic meridian: 2.1. Finding charts and photoelectric U,B,V,R stellar magnitudes in 26 fields. Photometric properties of the night sky at Mount Terskol observatory","Andruk, V.",article,simbad,,False
+211924561,238606535,1995AN....316..225A,1995,Photometric survey near the Main Galactic Meridian : 1. Photoelectric stellar magnitudes and colours in the UBVR system.,"Andruk, V.",article,simbad,,False
+211924561,238606535,2004A&A...418..357K,2004,The Pul-3 catalogue of 58483 stars in the Tycho-2 system,"Khrutskaya, E. V.",article,simbad,,False
+211924561,238606535,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211924561,238606535,2024A&A...692A.243C,2024,New stellar age estimates using SPInS based on Gaia DR3 photometry and LAMOST DR8 abundances,"Casamiquela, L.",article,simbad,,False
+212026444,203254318,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211953574,175265677,2020AJ....159...93D,2020,Constraining Orbital Periods from Nonconsecutive Observations: Period Estimates for Long-period Planets in Six Systems Observed by K2 During Multiple Campaigns,"Dholakia, S.",article,both,,False
+211953574,175265677,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+211953574,175265677,1995A&AS..113..419W,1995,High-precision study of proper motions and membership of 924 stars in the central region of Praesepe.,"Wang, J. J.",article,simbad,,False
+211953574,175265677,1971AJ.....76..470J,1971,Internal Motions in Praesepe,"Jones, Burton F.",article,simbad,,False
+211953574,175265677,1971SoSht.172....3A,1971,Faint members of the Praesepe cluster.,"Artiukhina, N. M.",article,simbad,,False
+211953574,175265677,1934AN....253..173S,1934,Visuelle und photographische Helligkeiten von 218 Präsepe Sternen,"Strobel, W.",article,simbad,,False
+211953574,175265677,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211953574,175265677,2022MNRAS.517.5325H,2022,The GALAH survey: chemical clocks,"Hayden, Michael R.",article,simbad,,False
+211351543,458655311,2020AJ....159...93D,2020,Constraining Orbital Periods from Nonconsecutive Observations: Period Estimates for Long-period Planets in Six Systems Observed by K2 During Multiple Campaigns,"Dholakia, S.",article,both,,False
+211351543,458655311,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211351543,458655311,2024A&A...692A.243C,2024,New stellar age estimates using SPInS based on Gaia DR3 photometry and LAMOST DR8 abundances,"Casamiquela, L.",article,simbad,,False
+211939692,178278676,2020AJ....159...93D,2020,Constraining Orbital Periods from Nonconsecutive Observations: Period Estimates for Long-period Planets in Six Systems Observed by K2 During Multiple Campaigns,"Dholakia, S.",article,both,,False
+211939692,178278676,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,both,,False
+211939692,178278676,2020A&A...643A.169K,2020,More planetary candidates from K2 Campaign 5 using TRAN_K2,"Kovacs, Geza",article,both,,False
+211939692,178278676,2021MNRAS.508..195D,2021,37 new validated planets in overlapping K2 campaigns,"de Leon, J. P.",article,simbad,,False
+211939692,178278676,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211939692,178278676,2024A&A...691A..53S,2024,SWEET-Cat: A view on the planetary mass-radius relation,"Sousa, S. G.",article,simbad,,False
+211892898,184895645,2017ApJ...842...83D,2017,Poking the Beehive from Space: K2 Rotation Periods for Praesepe,"Douglas, S. T.",article,both,,False
+211892898,184895645,2016MNRAS.463.1780L,2016,A PSF-based approach to Kepler/K2 data - II. Exoplanet candidates in Praesepe (M 44),"Libralato, M.",article,both,,False
+211892898,184895645,2019A&A...622A.133I,2019,"Flares in open clusters with K2 . I. M 45 (Pleiades), M 44 (Praesepe), and M 67","Ilin, Ekaterina",article,simbad,,False
+211892898,184895645,2021A&A...645A..42I,2021,"Flares in open clusters with K2. II. Pleiades, Hyades, Praesepe, Ruprecht 147, and M 67","Ilin, Ekaterina",article,simbad,,False
+211892898,184895645,2014ApJ...795..161D,2014,The Factory and the Beehive. II. Activity and Rotation in Praesepe and the Hyades,"Douglas, S. T.",article,simbad,,False
+211892898,184895645,2023A&A...674A..34G,2023,"Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure",Gaia Collaboration,article,simbad,,False
+211892898,184895645,2023A&A...677A..21K,2023,"Investigating Gaia EDR3 parallax systematics using asteroseismology of Cool Giant Stars observed by Kepler, K2, and TESS. I. Asteroseismic distances to 12 500 red-giant stars","Khan, S.",article,simbad,,False
+211892898,184895645,2022ApJ...931...45N,2022,The Factory and the Beehive. IV. A Comprehensive Study of the Rotation X-Ray Activity Relation in Praesepe and the Hyades,"Núñez, Alejandro",article,simbad,,False
+211892898,184895645,2023A&A...678A.158A,2023,Spectroscopic age estimates for APOGEE red-giant stars: Precise spatial and kinematic trends with age in the Galactic disc,"Anders, F.",article,simbad,,False
+211892898,184895645,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+211892898,184895645,2007AJ....134.2340K,2007,The Stellar Populations of Praesepe and Coma Berenices,"Kraus, Adam L.",article,simbad,,False
+211892898,184895645,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211892898,184895645,2017AJ....154..224R,2017,Zodiacal Exoplanets in Time (ZEIT). V. A Uniform Search for Transiting Planets in Young Clusters Observed by K2,"Rizzuto, Aaron C.",article,simbad,,False
+211892898,184895645,2017ApJ...839...92R,2017,Rotation of Late-type Stars in Praesepe with K2,"Rebull, L. M.",article,simbad,,False
+211892898,184895645,2024AJ....167..208W,2024,The APO-K2 Catalog. II. Accurate Stellar Ages for Red Giant Branch Stars across the Milky Way,"Warfield, Jack T.",article,simbad,,False
+211892898,184895645,2024AJ....167...50S,2024,The APO-K2 Catalog. I. 7500 Red Giants with Fundamental Stellar Parameters from APOGEE DR17 Spectroscopy and K2-GAP Asteroseismology,"Schonhut-Stasik, Jessica",article,simbad,,False
+211892898,184895645,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211498244,27654301,2024A&A...687A.180R,2024,Long-term stellar activity of M dwarfs. A combined K2 and TESS study of two early M-type stars,"Raetz, St.",article,both,,False
+211498244,27654301,2016JHyd..540..196G,2016,"Hydrological modeling of a watershed affected by acid mine drainage (Odiel River, SW Spain). Assessment of the pollutant contributing areas","Galván, L.",article,ads,,False
+211498244,27654301,2014BiTec.159..280B,2014,Characterization of agarophytic seaweeds from the biorefinery context,"Baghel, Ravi S.",article,ads,,False
+211498244,27654301,2021MS&E.1126a2078S,2021,CBR Characteristics of Cementitious Graded Gravel Soils by Curing Methods,"Sekar Chandra, Ganja",inproceedings,ads,,False
+211498244,27654301,2020AN....341..519R,2020,The rotation-activity relation of M dwarfs: From K2 to TESS and PLATO,"Raetz, Stefanie",article,ads,,False
+211498244,27654301,2017mxar.conf...29C,2017,Recent Developments and Future Challenges in Medical Mixed Reality,"Chen, Long",inproceedings,ads,,False
+211498244,27654301,2014AAAR...46..308D,2014,"Plant Species Richness, Evenness, and Composition along Environmental Gradients in an Alpine Meadow Grazing Ecosystem in Central Tibet, China","Dorji, Tsechoe",article,ads,,False
+211498244,27654301,2020AstL...46..331R,2020,Evolutionary Status of the Ap Stars HD 110066 and HD 153882,"Romanovskaya, A. M.",article,ads,,False
+211498244,27654301,2004BiTec..92...31S,2004,Decolorization of molasses wastewater by a strain No.BP103 of acetogenic bacteria,"Sirianuntapiboon, Suntud",article,ads,,False
+211498244,27654301,2025JSSPN..25.4813S,2025,Synergistic Application of Biochar and Bio-Organic Phosphate Enhances Drought Tolerance in Maize by Modulating Antioxidant Defense and Reducing Oxidative Stress,"Sarwar, Ghulam",article,ads,,False
+211498244,27654301,2023arXiv231118439R,2023,Results of numeric integrations of orbits of (5026) Martes and 2005 WW113 asteroid pair,"Rosaev, Alexey",eprint,ads,,False
+211498244,27654301,2006PlJ....45..384G,2006,A universal algorithm for genome-wide in silicio identification of biologically significant gene promoter putative cis -regulatory-elements; identification of new elements for reactive oxygen species and sucrose signaling in Arabidopsis,"Geisler, Matt",article,ads,,False
+211498244,27654301,2026RJPCA.100..755V,2026,Directing Mesophase Behavior and Thermochromic Response in Hydrogen Bond Liquid Crystal Complexes via Supramolecular Interactions,"Valarmathi, P.",article,ads,,False
+211498244,27654301,2009ArECT..56..747M,2009,Purification and cDNA Cloning of a Cadmium-Binding Metallothionein from the Freshwater Crab Sinopotamon henanense,"Ma, Wen-Li",article,ads,,False
+211498244,27654301,2008BiTec..99.1806S,2008,Treatment of molasses wastewater by acetogenic bacteria BP103 in sequencing batch reactor (SBR) system,"Sirianuntapiboon, Suntud",article,ads,,False
+211498244,27654301,2023ESPR...3018410S,2023,Adsorption of perfluorooctanoic carboxylic and heptadecafluorooctane sulfonic acids via magnetic chitosan: isotherms and modeling,"Sellaoui, Lotfi",article,ads,,False
+211498244,27654301,2020Icar..33613415P,2020,Surface slopes of asteroid pairs as indicators of mechanical properties and cohesion,"Polishook, David",article,ads,,False
+211498244,27654301,2014EnTox..29..407M,2014,"Tissue-specific copper accumulation, zinc levels, induction, and purification of metallothionein in freshwater crab Sinopotamon henanense exposed to subacute waterborne copper","Ma, Wenli",article,ads,,False
+211498244,27654301,2003SSASJ..67.1309L,2003,Secondary Mineral Genesis from Chlorite and Serpentine in an Ultramafic Soil Toposequence,"Lee, B. D.",article,ads,,False
+211498244,27654301,2022PhFl...34h7106B,2022,"Transport properties for neutral C, H, N, O, and Si-containing species and mixtures from the Gordon and McBride thermodynamic database","Bellas Chatzigeorgis, Georgios",article,ads,,False
+211498244,27654301,2026WatRe.28824688W,2026,Lanthanum-quaternized chitosan-modified zeolite for long-lasting operation of constructed wetland: A bifunctional strategy for simultaneous phosphorus removal and microbial clogging mitigation,"Wang, Ling",article,ads,,False
+211498244,27654301,2008BiTec..99.6258T,2008,Decolorization of molasses wastewater by Lactobacillus plantarum No. PV71-1861,"Tondee, Tusanee",article,ads,,False
+211498244,27654301,2022MNRAS.516.1193K,2022,The Zwicky Transient Facility phase I sample of hydrogen-rich superluminous supernovae without strong narrow emission lines,"Kangas, T.",article,ads,,False
+211498244,27654301,2021JSG...15304463S,2021,"Microstructure and fluid flow in the vicinity of basin bounding faults in rifts - The Dombjerg Fault, NE Greenland rift system","Salomon, Eric",article,ads,,False
+211498244,27654301,2008BiTec..99.5511T,2008,"Decolorization of molasses wastewater by yeast strain, Issatchenkia orientalis No. SF9-246","Tondee, Tusanee",article,ads,,False
+211498244,27654301,2021JStCh..62..928Y,2021,"Synthesis, Crystal Structure, and DFT Study of 1-(2-BROMOBENZYL)-4-(4,4,5,5-TETRAMETHYL-1,3,2-DIOXABOROLAN-2-YL)-1H-PYRAZOLE","Yang, Z.",article,ads,,False
+211498244,27654301,1977FEBSL..84...57R,1977,Phenylalanyl-tRNA synthetase from baker's yeast Repeated sequences in the two subunits,"Robbe-Saul, Sylviane",article,ads,,False
+211498244,27654301,2012JPlaN..35.1303S,2012,Effect of Boron and Calcium on Growth and Quality of 'easy Lover' Cut Rose,"Shams, Mahboobeh",article,ads,,False
+211498244,27654301,2011ArTox..85..941E,2011,Purification and characterization of a cytotoxic neurotoxin-like protein from Naja haje haje venom that induces mitochondrial apoptosis pathway,"El Hakim, Amr E.",article,ads,,False
+211498244,27654301,2020arXiv200310151S,2020,GeoGraph: Learning graph-based multi-view object detection with geometric cues end-to-end,"Samy Nassar, Ahmed",eprint,ads,,False
+211498244,27654301,2015NatSR...510846C,2015,A Novel Direct Factor Xa Inhibitory Peptide with Anti-Platelet Aggregation Activity from Agkistrodon acutus Venom Hydrolysates,"Chen, Meimei",article,ads,,False
+211498244,27654301,1997eds..proc..137T,1997,Focusing in on $H_0$,"Tammann, G. A.",inproceedings,ads,,False
+211498244,27654301,2017arXiv170502698D,2017,Operator learning approach for the limited view problem in photoacoustic tomography,"Dreier, Florian",eprint,ads,,False
+211498244,27654301,2017arXiv170801225C,2017,Recent Developments and Future Challenges in Medical Mixed Reality,"Chen, Long",eprint,ads,,False
+211498244,27654301,2018JHEP...07..035B,2018,Renormalization of gauge theories in the background-field approach,"Barvinsky, Andrei O.",article,ads,,False
+211498244,27654301,2021arXiv211011256S,2021,Multi-Category Mesh Reconstruction From Image Collections,"Simoni, Alessandro",eprint,ads,,False
+211498244,27654301,2025arXiv250514318H,2025,RADAR: Enhancing Radiology Report Generation with Supplementary Knowledge Injection,"Hou, Wenjun",eprint,ads,,False
+211498244,27654301,2022PhFl...34j5131L,2022,Direct numerical simulation of supersonic bump flow with shock impingement,"Lai, Jiang",article,ads,,False
+211498244,27654301,2026BioEJ.22710042C,2026,High-throughput microdroplet screening reveals chaperone- and time-dependent enhancement of recombinant papain folding and activity in Escherichia coli,"Chen, Shimiao",article,ads,,False
+211498244,27654301,2025arXiv251018099F,2025,Staying on Track: Efficient Trajectory Discovery with Adaptive Batch Sampling,"Fadikar, Arindam",eprint,ads,,False
+211498244,27654301,2020arXiv200705010S,2020,ALPS: A Unified Framework for Modeling Time Series of Land Ice Changes,"Shekhar, Prashant",eprint,ads,,False
+211498244,27654301,2013JPhA...46m3001B,2013,Introduction to sporadic groups for physicists,"Boya, Luis J.",article,ads,,False
+211498244,27654301,2007arXiv0711.0951D,2007,Left-invariant Stochastic Evolution Equations on SE(2) and its Applications to Contour Enhancement and Contour Completion via Invertible Orientation Scores,"Duits, Remco",eprint,ads,,False
+211498244,27654301,2020arXiv200906274F,2020,The Picard group of the universal moduli stack of principal bundles on pointed smooth curves II,"Fringuelli, Roberto",eprint,ads,,False
+211498244,27654301,2015arXiv151206290P,2015,On the Non-Asymptotic Properties of Regularized M-estimators,"Pouzo, Demian",eprint,ads,,False
+211498244,27654301,2007NDS...108.2035B,2007,Nuclear Data Sheets for A = 104,"Blachot, Jean",article,ads,,False
+211498244,27654301,2026arXiv261010341C,2026,Uniqueness and stability of planar shock wave to 2D compressible Euler equations in the vanishing viscosity limit of compressible Navier-Stokes equations,"Chen, Geng",eprint,ads,,False
+211498244,27654301,2014EPJC...74.3026B,2014,The Physics of the B Factories,"Bevan, A. J.",article,ads,,False
+211498244,27654301,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+211498244,27654301,2021A&A...649A...6G,2021,Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars,Gaia Collaboration,article,simbad,,False
+211498244,27654301,2023AJ....165..267H,2023,Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O<SUB>2</SUB> Levels in Nearby Transiting Habitable-zone Exoplanets,"Hardegree-Ullman, Kevin K.",article,simbad,,False
+211498244,27654301,2005AJ....129.1483L,2005,"A Catalog of Northern Stars with Annual Proper Motions Larger than 0.15"" (LSPM-NORTH Catalog)","Lépine, Sébastien",article,simbad,,False
+211498244,27654301,2003ApJ...582.1011S,2003,Improved Astrometry and Photometry for the Luyten Catalog. II. Faint Stars and the Revised Catalog,"Salim, Samir",article,simbad,,False
+211498244,27654301,1986AJ.....91..626W,1986,Photometric parallaxes for selected stars of color class M from the NLTT catalog. II. The declination zone 0 to +20.,"Weis, E. W.",article,simbad,,False
+211498244,27654301,1961LowOB...5...61G,1961,Lowell proper motions III : proper motion survey of the Northern Hemisphere with the 13-inch photographic telescope of the Lowell Observatory,"Giclas, Henry L.",article,simbad,,False
+211498244,27654301,1959LowOB...4..136G,1959,Lowell proper motions II : proper motion survey of the Northern Hemisphere with the 13-inch photographic telescope of the Lowell Observatory,"Giclas, Henry L.",article,simbad,,False
+211498244,27654301,2013MNRAS.435.2161F,2013,A catalogue of bright (K &lt; 9) M dwarfs,"Frith, J.",article,simbad,,False
+211498244,27654301,2011AJ....142..138L,2011,An All-sky Catalog of Bright M Dwarfs,"Lépine, Sébastien",article,simbad,,False
+211498244,27654301,2016ApJS..224...36K,2016,"The AllWISE Motion Survey, Part 2","Kirkpatrick, J. Davy",article,simbad,,False
+211498244,27654301,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211498244,27654301,2020AJ....159..139L,2020,Robo-AO M-dwarf Multiplicity Survey: Catalog,"Lamman, Claire",article,simbad,,False
+211498244,27654301,2024AJ....167..139T,2024,HPIC: The Habitable Worlds Observatory Preliminary Input Catalog,"Tuchow, Noah W.",article,simbad,,False
+211498244,27654301,2025PASP..137j4402T,2025,HWO Target Stars and Systems: A Prioritized Community List of Potential Stellar Targets for the Habitable Worlds Observatory's ExoEarth Survey,"Tuchow, Noah W.",article,simbad,,False
+211498244,27654301,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211498244,27654301,1995yCat.1098....0L,1995,"VizieR Online Data Catalog: NLTT Catalogue (Luyten, 1979)","Luyten, W. J.",dataset,simbad,,False
+212070574,14676599,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+212070574,14676599,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+212070574,14676599,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211351097,437030979,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+211351097,437030979,2021RAA....21..292W,2021,LAMOST Time-Domain survey: first results of four K2 plates,"Wang, Song",article,simbad,,False
+211351097,437030979,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211351097,437030979,2020AJ....159...93D,2020,Constraining Orbital Periods from Nonconsecutive Observations: Period Estimates for Long-period Planets in Six Systems Observed by K2 During Multiple Campaigns,"Dholakia, S.",article,simbad,,False
+211351097,437030979,2022MNRAS.517.5325H,2022,The GALAH survey: chemical clocks,"Hayden, Michael R.",article,simbad,,False
+211351097,437030979,2024A&A...692A.243C,2024,New stellar age estimates using SPInS based on Gaia DR3 photometry and LAMOST DR8 abundances,"Casamiquela, L.",article,simbad,,False
+211821192,7058839,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+211821192,7058839,2020AJ....159...93D,2020,Constraining Orbital Periods from Nonconsecutive Observations: Period Estimates for Long-period Planets in Six Systems Observed by K2 During Multiple Campaigns,"Dholakia, S.",article,simbad,,False
+211894612,14678155,2019ApJS..244...43Z,2019,Unbiased Distribution of Binary Parameters from LAMOST and Kepler Observations,"Zhang, Jia",article,simbad,,False
+211894612,14678155,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+211894612,14678155,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+211894612,14678155,2020ApJS..251...15Z,2020,Phase II of the LAMOST-Kepler/K2 Survey. I. Time Series of Medium-resolution Spectroscopic Observations,"Zong, Weikai",article,simbad,,False
+211894612,14678155,2019ApJ...879...69T,2019,The Payne: Self-consistent ab initio Fitting of Stellar Spectra,"Ting, Yuan-Sen",article,simbad,,False
+211894612,14678155,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211894612,14678155,2023A&A...672A.176P,2023,Mass-ratio distribution of contact binary stars,"Pešta, Milan",article,simbad,,False
+211894612,14678155,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+211490542,20423102,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+211490542,20423102,2023A&A...672A.176P,2023,Mass-ratio distribution of contact binary stars,"Pešta, Milan",article,simbad,,False
+211995462,175265898,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+211995462,175265898,2023A&A...672A.176P,2023,Mass-ratio distribution of contact binary stars,"Pešta, Milan",article,simbad,,False
+211995462,175265898,1995A&AS..113..419W,1995,High-precision study of proper motions and membership of 924 stars in the central region of Praesepe.,"Wang, J. J.",article,simbad,,False
+211995462,175265898,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211503363,20444116,2020A&A...643A.169K,2020,More planetary candidates from K2 Campaign 5 using TRAN_K2,"Kovacs, Geza",article,both,,False
+211503363,20444116,2020MNRAS.495.1252Z,2020,Magnetic activity based on LAMOST medium-resolution spectra and the Kepler survey,"Zhang, Li-Yun",article,simbad,,False
+211390677,366568535,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+211390677,366568535,2023ApJS..264...17Z,2023,Stellar Parameters and Spectroscopic Properties of TESS Objects Observed in the LAMOST Low- and Medium-resolution Spectral Survey,"Zhang, Li-yun",article,simbad,,False
+211390677,366568535,2023A&A...677A..21K,2023,"Investigating Gaia EDR3 parallax systematics using asteroseismology of Cool Giant Stars observed by Kepler, K2, and TESS. I. Asteroseismic distances to 12 500 red-giant stars","Khan, S.",article,simbad,,False
+211390677,366568535,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+211390677,366568535,2024AJ....167..208W,2024,The APO-K2 Catalog. II. Accurate Stellar Ages for Red Giant Branch Stars across the Milky Way,"Warfield, Jack T.",article,simbad,,False
+211390677,366568535,2024AJ....167...50S,2024,The APO-K2 Catalog. I. 7500 Red Giants with Fundamental Stellar Parameters from APOGEE DR17 Spectroscopy and K2-GAP Asteroseismology,"Schonhut-Stasik, Jessica",article,simbad,,False
+211390677,366568535,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211390677,366568535,2024A&A...690A.323V,2024,Stellar model tests and age determination for RGB stars from the APO-K2 catalogue,"Valle, G.",article,simbad,,False
+211411112,437034781,2021AJ....161...59S,2021,The K2 M67 Study: Precise Mass for a Turnoff Star in the Old Open Cluster M67,"Sandquist, Eric L.",article,both,,False
+211411112,437034781,2018A&A...616A..10G,2018,Gaia Data Release 2. Observational Hertzsprung-Russell diagrams,Gaia Collaboration,article,simbad,,False
+211411112,437034781,2019A&A...624A...8A,2019,Investigating dynamical properties of evolved Galactic open clusters,"Angelo, M. S.",article,simbad,,False
+211411112,437034781,2018ApJ...869....9G,2018,A Machine-learning-based Investigation of the Open Cluster M67,"Gao, Xinhua",article,simbad,,False
+211411112,437034781,2020A&A...640A...1C,2020,Painting a portrait of the Galactic disc with its stellar clusters,"Cantat-Gaudin, T.",article,simbad,,False
+211411112,437034781,2019A&A...627A.119C,2019,Extended halo of NGC 2682 (M 67) from Gaia DR2,"Carrera, R.",article,simbad,,False
+211411112,437034781,2021AJ....161..190G,2021,Stellar Radial Velocities in the Old Open Cluster M67 (NGC 2682). II. The Spectroscopic Binary Population,"Geller, Aaron M.",article,simbad,,False
+211411112,437034781,2021A&A...647A..19T,2021,3D kinematics and age distribution of the open cluster population,"Tarricq, Y.",article,simbad,,False
+211411112,437034781,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+211411112,437034781,2020A&A...633A..99C,2020,Clusters and mirages: cataloguing stellar aggregates in the Milky Way,"Cantat-Gaudin, T.",article,simbad,,False
+211411112,437034781,2021A&A...645A..42I,2021,"Flares in open clusters with K2. II. Pleiades, Hyades, Praesepe, Ruprecht 147, and M 67","Ilin, Ekaterina",article,simbad,,False
+211411112,437034781,2022A&A...665A.126N,2022,PARSEC V2.0: Stellar tracks and isochrones of low- and intermediate-mass stars with rotation,"Nguyen, C. T.",article,simbad,,False
+211411112,437034781,2021MNRAS.503..236J,2021,UOCS - III. UVIT catalogue of open clusters with machine learning-based membership using Gaia EDR3 astrometry,"Jadhav, Vikrant V.",article,simbad,,False
+211411112,437034781,2021MNRAS.503.3279S,2021,The GALAH survey: tracing the Galactic disc with open clusters,"Spina, L.",article,simbad,,False
+211411112,437034781,2020ApJ...903...55P,2020,Open Cluster Chemical Homogeneity throughout the Milky Way,"Poovelil, Vijith Jacob",article,simbad,,False
+211411112,437034781,2021RAA....21..292W,2021,LAMOST Time-Domain survey: first results of four K2 plates,"Wang, Song",article,simbad,,False
+211411112,437034781,2022A&A...659A..59T,2022,Structural parameters of 389 local open clusters,"Tarricq, Y.",article,simbad,,False
+211411112,437034781,2019ApJ...879...69T,2019,The Payne: Self-consistent ab initio Fitting of Stellar Spectra,"Ting, Yuan-Sen",article,simbad,,False
+211411112,437034781,2022A&A...668A...4F,2022,LAMOST meets Gaia: The Galactic open clusters,"Fu, Xiaoting",article,simbad,,False
+211411112,437034781,2024MNRAS.532.2860R,2024,Isochrone fitting of the open cluster M67 in the era of Gaia and improved model physics,"Reyes, Claudia",article,simbad,,False
+211411112,437034781,2024RNAAS...8..201B,2024,Identifying Uncertainties in Stellar Evolution Models Using the Open Cluster M67,"Byrom, Susan",article,simbad,,False
+211411112,437034781,2022ApJS..262....7H,2022,A Blind All-sky Search for Star Clusters in Gaia EDR3: 886 Clusters within 1.2 kpc of the Sun,"He, Zhihong",article,simbad,,False
+211411112,437034781,2022ApJ...938..118D,2022,A 4 Gyr M-dwarf Gyrochrone from CFHT/MegaPrime Monitoring of the Open Cluster M67,"Dungee, Ryan",article,simbad,,False
+211411112,437034781,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+211411112,437034781,1996AJ....112..628F,1996,Deep Wide-Field Spectrophotometry of the Open Cluster M67,"Fan, X.",article,simbad,,False
+211411112,437034781,1993A&AS..100..243Z,1993,Study of proper motions in the region of the open cluster M67 and membership of stars.,"Zhao, J. L.",article,simbad,,False
+211411112,437034781,1989AJ.....98..227G,1989,Relative Proper Motions and the Stellar Velocity Dispersion of the Open Cluster M67,"Girard, Terrence M.",article,simbad,,False
+211411112,437034781,1977A&AS...27...89S,1977,Membership of the open cluster M67.,"Sanders, W. L.",article,simbad,,False
+211411112,437034781,2010A&A...516A...3K,2010,Kinematic parameters and membership probabilities of open clusters in the Bordeaux PM2000 catalogue,"Krone-Martins, A.",article,simbad,,False
+211411112,437034781,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211411112,437034781,2015AJ....150...97G,2015,"Stellar Radial Velocities in the Old Open Cluster M67 (NGC 2682). I. Memberships, Binaries, and Kinematics","Geller, Aaron M.",article,simbad,,False
+211411112,437034781,2018AJ....156..142D,2018,The Open Cluster Chemical Abundances and Mapping Survey. II. Precision Cluster Abundances for APOGEE Using SDSS DR14,"Donor, John",article,simbad,,False
+211411112,437034781,2016MNRAS.459.1060G,2016,Variability among stars in the M 67 field from Kepler/K2-Campaign-5 light curves,"Gonzalez, Guillermo",article,simbad,,False
+211411112,437034781,2025MNRAS.538.1720R,2025,Asteroseismic study of subgiants and giants of the open cluster M67 using Kepler/K2: expanded sample and precise masses,"Reyes, Claudia",article,simbad,,False
+211411112,437034781,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211411112,437034781,2025A&A...703A.116L,2025,Asteroseismology of the young open cluster NGC 2516: II. Constraining cluster age using gravity-mode pulsators,"Li, Gang",article,simbad,,False
+211411112,437034781,2022MNRAS.517.2165C,2022,Star-spots and magnetism: testing the activity paradigm in the Pleiades and M67,"Cao, Lyra",article,simbad,,False
+211411112,437034781,2021AJ....162..184K,2021,Double-lined Spectroscopic Binaries in the APOGEE DR16 and DR17 Data,"Kounkel, Marina",article,simbad,,False
+211411112,437034781,2026MNRAS.551g1398M,2026,Evidence for elemental diffusion in the eclipsing binary star AI Phoenicis,"Maxted, Pierre F. L.",article,simbad,,False
+211411112,437034781,2025A&A...704A.167S,2025,"Tidal tails in open clusters: Morphology, binary fraction, dynamics, and rotation","Sharma, Ira",article,simbad,,False
+211411112,437034781,2024A&A...691A..28K,2024,Tidal tails of open clusters,"Kos, Janez",article,simbad,,False
+211489484,6951741,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+211489484,6951741,2023A&A...672A.176P,2023,Mass-ratio distribution of contact binary stars,"Pešta, Milan",article,simbad,,False
+210725198,17291350,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+210725198,17291350,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+210725198,17291350,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+210725198,17291350,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+210725198,17291350,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+210725198,17291350,1995A&AS..110..367N,1995,"The Henry Draper Extension Charts: A catalogue of accurate positions, proper motions, magnitudes and spectral types of 86933 stars","Nesterov, V. V.",article,simbad,,False
+210725198,17291350,2012AstL...38..694G,2012,Spatial distribution and kinematics of OB stars,"Gontcharov, G. A.",article,simbad,,False
+210725198,17291350,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+210725198,17291350,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+211087003,149923858,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,both,,False
+211087003,149923858,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+211087003,149923858,2021RAA....21..292W,2021,LAMOST Time-Domain survey: first results of four K2 plates,"Wang, Song",article,simbad,,False
+211087003,149923858,2020MNRAS.496..851W,2020,K2-HERMES II. Planet-candidate properties from K2 Campaigns 1-13,"Wittenmyer, Robert A.",article,simbad,,False
+211087003,149923858,2023ApJS..264...12H,2023,Stellar Chromospheric Activities Revealed from the LAMOST-K2 Time-domain Survey,"Han, Henggeng",article,simbad,,False
+211087003,149923858,2022MNRAS.510.2041C,2022,The GALAH Survey: improving our understanding of confirmed and candidate planetary systems with large stellar surveys,"Clark, Jake T.",article,simbad,,False
+211087003,149923858,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+211087003,149923858,2022MNRAS.517.5325H,2022,The GALAH survey: chemical clocks,"Hayden, Michael R.",article,simbad,,False
+210857749,440687603,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+210857749,440687603,2019AJ....158..122K,2019,Untangling the Galaxy. I. Local Structure and Star Formation History of the Milky Way,"Kounkel, Marina",article,simbad,,False
+211064647,56621708,2022MNRAS.510.2041C,2022,The GALAH Survey: improving our understanding of confirmed and candidate planetary systems with large stellar surveys,"Clark, Jake T.",article,both,,False
+211064647,56621708,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+211064647,56621708,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+210823406,114086684,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+210760314,17388893,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+210760314,17388893,2005AJ....129.1483L,2005,"A Catalog of Northern Stars with Annual Proper Motions Larger than 0.15"" (LSPM-NORTH Catalog)","Lépine, Sébastien",article,simbad,,False
+210760314,17388893,2003ApJ...582.1011S,2003,Improved Astrometry and Photometry for the Luyten Catalog. II. Faint Stars and the Revised Catalog,"Salim, Samir",article,simbad,,False
+210760314,17388893,2016ApJ...817..112S,2016,A Proper Motion Survey Using the First Sky Pass of NEOWISE-reactivation Data,"Schneider, Adam C.",article,simbad,,False
+210760314,17388893,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+210760314,17388893,1995yCat.1098....0L,1995,"VizieR Online Data Catalog: NLTT Catalogue (Luyten, 1979)","Luyten, W. J.",dataset,simbad,,False
+205966706,240663587,1993yCat.3135....0C,1993,VizieR Online Data Catalog: Henry Draper Catalogue and Extension (Cannon+ 1918-1924; ADC 1989),"Cannon, A. J.",dataset,simbad,,False
+205966706,240663587,2020AJ....160...83S,2020,"The Sixth Data Release of the Radial Velocity Experiment (RAVE). II. Stellar Atmospheric Parameters, Chemical Abundances, and Distances","Steinmetz, Matthias",article,simbad,,False
+205966706,240663587,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+205966706,240663587,2013AJ....146..134K,2013,The Radial Velocity Experiment (RAVE): Fourth Data Release,"Kordopatis, G.",article,simbad,,False
+205966706,240663587,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+205966706,240663587,2017AJ....153...75K,2017,The Radial Velocity Experiment (RAVE): Fifth Data Release,"Kunder, Andrea",article,simbad,,False
+205966706,240663587,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+205966706,240663587,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+205966706,240663587,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+205966706,240663587,1988MSS...C04....0H,,,,,simbad,,False
+205966706,240663587,2014AJ....148...81M,2014,"APASS Landolt-Sloan BVgri Photometry of RAVE Stars. I. Data, Effective Temperatures, and Reddenings","Munari, U.",article,simbad,,False
+205966706,240663587,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+205966706,240663587,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+206253908,38352398,2018A&A...616A..38M,2018,"Discovery and characterisation of long-period eclipsing binary stars from Kepler K2 campaigns 1, 2, and 3","Maxted, P. F. L.",article,both,,False
+206253908,38352398,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+206253908,38352398,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+206253908,38352398,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+206253908,38352398,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+206253908,38352398,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+206253908,38352398,2021AJ....162..184K,2021,Double-lined Spectroscopic Binaries in the APOGEE DR16 and DR17 Data,"Kounkel, Marina",article,simbad,,False
+205936222,240810327,2013AJ....146..134K,2013,The Radial Velocity Experiment (RAVE): Fourth Data Release,"Kordopatis, G.",article,simbad,,False
+205936222,240810327,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+205936222,240810327,2017AJ....153...75K,2017,The Radial Velocity Experiment (RAVE): Fifth Data Release,"Kunder, Andrea",article,simbad,,False
+205936222,240810327,2023A&A...672A.176P,2023,Mass-ratio distribution of contact binary stars,"Pešta, Milan",article,simbad,,False
+205936222,240810327,2014AJ....148...81M,2014,"APASS Landolt-Sloan BVgri Photometry of RAVE Stars. I. Data, Effective Temperatures, and Reddenings","Munari, U.",article,simbad,,False
+205936222,240810327,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+205936222,240810327,2020AJ....160...83S,2020,"The Sixth Data Release of the Radial Velocity Experiment (RAVE). II. Stellar Atmospheric Parameters, Chemical Abundances, and Distances","Steinmetz, Matthias",article,simbad,,False
+206008070,206241017,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+206008070,206241017,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+206008070,206241017,2023A&A...677A..21K,2023,"Investigating Gaia EDR3 parallax systematics using asteroseismology of Cool Giant Stars observed by Kepler, K2, and TESS. I. Asteroseismic distances to 12 500 red-giant stars","Khan, S.",article,simbad,,False
+206008070,206241017,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+206008070,206241017,2024AJ....167...50S,2024,The APO-K2 Catalog. I. 7500 Red Giants with Fundamental Stellar Parameters from APOGEE DR17 Spectroscopy and K2-GAP Asteroseismology,"Schonhut-Stasik, Jessica",article,simbad,,False
+203914123,98233820,1993yCat.3135....0C,1993,VizieR Online Data Catalog: Henry Draper Catalogue and Extension (Cannon+ 1918-1924; ADC 1989),"Cannon, A. J.",dataset,simbad,,False
+203914123,98233820,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+203914123,98233820,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+203914123,98233820,1988MSS...C04....0H,,,,,simbad,,False
+203914123,98233820,2016MNRAS.457.2273O,2016,Single transit candidates from K2: detection and period estimation,"Osborn, H. P.",article,simbad,,False
+204546592,12629920,2022MNRAS.510.2041C,2022,The GALAH Survey: improving our understanding of confirmed and candidate planetary systems with large stellar surveys,"Clark, Jake T.",article,both,,False
+204546592,12629920,2023arXiv231012380T,2023,Refutation of K2-256b and Rejection of 130 Unconfirmed Transiting Planet Candidates with Gaia DR3 NSS,"Tarrants, Thomas",eprint,ads,,False
+204546592,12629920,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+204546592,12629920,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+204546592,12629920,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+204546592,12629920,2021MNRAS.508.4202Z,2021,The GALAH+ survey: a new library of observed stellar spectra improves radial velocities and hints at motions within M67,"Zwitter, Tomaž",article,simbad,,False
+204546592,12629920,2023A&A...674A..34G,2023,"Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure",Gaia Collaboration,article,simbad,,False
+204546592,12629920,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+204546592,12629920,2023A&A...678A.158A,2023,Spectroscopic age estimates for APOGEE red-giant stars: Precise spatial and kinematic trends with age in the Galactic disc,"Anders, F.",article,simbad,,False
+204546592,12629920,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+204546592,12629920,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+203865172,15977832,2019A&A...624A..19B,2019,"The GALAH survey: An abundance, age, and kinematic inventory of the solar neighbourhood made with TGAS","Buder, S.",article,simbad,,False
+203865172,15977832,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+203865172,15977832,2022ApJ...929..124C,2022,Ages of Main-sequence Turnoff Stars from the GALAH Survey,"Chen, Xunzhou",article,simbad,,False
+203865172,15977832,2021MNRAS.508.4202Z,2021,The GALAH+ survey: a new library of observed stellar spectra improves radial velocities and hints at motions within M67,"Zwitter, Tomaž",article,simbad,,False
+203865172,15977832,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+204918110,162786753,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+204918110,162786753,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+204918110,162786753,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+204918110,162786753,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+203311200,67235717,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,both,,False
+203311200,67235717,2016MNRAS.457.2273O,2016,Single transit candidates from K2: detection and period estimation,"Osborn, H. P.",article,simbad,,False
+204634789,13310825,2019AJ....157..124K,2019,Discovery and Vetting of Exoplanets. I. Benchmarking K2 Vetting Tools,"Kostov, Veselin B.",article,simbad,,False
+204634789,13310825,2016MNRAS.457.2273O,2016,Single transit candidates from K2: detection and period estimation,"Osborn, H. P.",article,simbad,,False
+203011840,68164464,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+203011840,68164464,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+203011840,68164464,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+203011840,68164464,2023A&A...674A..34G,2023,"Gaia Data Release 3. Stellar multiplicity, a teaser for the hidden treasure",Gaia Collaboration,article,simbad,,False
+203011840,68164464,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+204952800,49077102,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+204952800,49077102,2018AJ....155..196R,2018,Rotation of Low-mass Stars in Upper Scorpius and ρ Ophiuchus with K2,"Rebull, L. M.",article,simbad,,False
+204952800,49077102,2017AJ....154..224R,2017,Zodiacal Exoplanets in Time (ZEIT). V. A Uniform Search for Transiting Planets in Young Clusters Observed by K2,"Rizzuto, Aaron C.",article,simbad,,False
+204952800,49077102,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+204100531,48967526,2020AJ....160...44L,2020,Refining the Census of the Upper Scorpius Association with Gaia,"Luhman, K. L.",article,simbad,,False
+204100531,48967526,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+204100531,48967526,2022A&A...667A.163M,2022,"The star formation history of Upper Scorpius and Ophiuchus. A 7D picture: positions, kinematics, and dynamical traceback ages","Miret-Roig, N.",article,simbad,,False
+204100531,48967526,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+204100531,48967526,2023A&A...674A..21M,2023,Gaia Data Release 3. Validating the classification of variable young stellar object candidates,"Marton, Gábor",article,simbad,,False
+204100531,48967526,2022ApJS..262....7H,2022,A Blind All-sky Search for Star Clusters in Gaia EDR3: 886 Clusters within 1.2 kpc of the Sun,"He, Zhihong",article,simbad,,False
+204100531,48967526,2023ApJS..265...12Q,2023,Hunting for Neighboring Open Clusters with Gaia DR3: 101 New Open Clusters within 500 pc,"Qin, Songmei",article,simbad,,False
+204100531,48967526,2022ApJ...931..156P,2022,3D Morphology of Open Clusters in the Solar Neighborhood with Gaia EDR 3. II. Hierarchical Star Formation Revealed by Spatial and Kinematic Substructures,"Pang, Xiaoying",article,simbad,,False
+204100531,48967526,2023A&A...677A..59R,2023,Significance mode analysis (SigMA) for hierarchical structures. An application to the Sco-Cen OB association,"Ratzenböck, Sebastian",article,simbad,,False
+204100531,48967526,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+204100531,48967526,2007MNRAS.374..372L,2007,New brown dwarfs in Upper Sco using UKIDSS Galactic Cluster Survey science verification data,"Lodieu, N.",article,simbad,,False
+204100531,48967526,2018MNRAS.477L..50G,2018,Three-dimensional structure of the Upper Scorpius association with the Gaia first data release,"Galli, Phillip A. B.",article,simbad,,False
+204100531,48967526,2008ApJ...688..377S,2008,A Large-Area Search for Low-Mass Objects in Upper Scorpius. II. Age and Mass Distributions,"Slesnick, Catherine L.",article,simbad,,False
+204100531,48967526,2011A&A...527A..24L,2011,Multi-fibre optical spectroscopy of low-mass stars and brown dwarfs in Upper Scorpius,"Lodieu, N.",article,simbad,,False
+204100531,48967526,2012ApJ...758...31L,2012,The Disk Population of the Upper Scorpius Association,"Luhman, K. L.",article,simbad,,False
+204100531,48967526,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+204100531,48967526,2017ApJ...837...95B,2017,A Search for L/T Transition Dwarfs with Pan-STARRS1 and WISE. III. Young L Dwarf Discoveries and Proper Motion Catalogs in Taurus and Scorpius-Centaurus,"Best, William M. J.",article,simbad,,False
+204100531,48967526,2018AJ....155..196R,2018,Rotation of Low-mass Stars in Upper Scorpius and ρ Ophiuchus with K2,"Rebull, L. M.",article,simbad,,False
+204100531,48967526,2017AJ....154..224R,2017,Zodiacal Exoplanets in Time (ZEIT). V. A Uniform Search for Transiting Planets in Young Clusters Observed by K2,"Rizzuto, Aaron C.",article,simbad,,False
+204100531,48967526,2018AJ....156..275S,2018,"The Rotational Evolution of Young, Binary M Dwarfs","Stauffer, John",article,simbad,,False
+204100531,48967526,2018AJ....156...76L,2018,New Young Stars and Brown Dwarfs in the Upper Scorpius Association,"Luhman, K. L.",article,simbad,,False
+204100531,48967526,2022AJ....163...26L,2022,Spectroscopy of Candidate Members of the Sco-Cen Complex,"Luhman, K. L.",article,simbad,,False
+204100531,48967526,2019AJ....158..122K,2019,Untangling the Galaxy. I. Local Structure and Star Formation History of the Milky Way,"Kounkel, Marina",article,simbad,,False
+204100531,48967526,2023MNRAS.522.1288B,2023,"Substructure, supernovae, and a time-resolved star formation history for Upper Scorpius","Briceño-Morales, Geovanny",article,simbad,,False
+204100531,48967526,2025A&A...699A.145D,2025,Star formation and accretion rates within 500 pc as traced by Gaia DR3 XP spectra,"Delfini, L.",article,simbad,,False
+204776782,49580574,2018A&A...620A.172Z,2018,3D mapping of young stars in the solar neighbourhood with Gaia DR2,"Zari, E.",article,simbad,,False
+204776782,49580574,2020AJ....160...44L,2020,Refining the Census of the Upper Scorpius Association with Gaia,"Luhman, K. L.",article,simbad,,False
+204776782,49580574,2022A&A...667A.163M,2022,"The star formation history of Upper Scorpius and Ophiuchus. A 7D picture: positions, kinematics, and dynamical traceback ages","Miret-Roig, N.",article,simbad,,False
+204776782,49580574,2023A&A...674A..21M,2023,Gaia Data Release 3. Validating the classification of variable young stellar object candidates,"Marton, Gábor",article,simbad,,False
+204776782,49580574,2022ApJS..262....7H,2022,A Blind All-sky Search for Star Clusters in Gaia EDR3: 886 Clusters within 1.2 kpc of the Sun,"He, Zhihong",article,simbad,,False
+204776782,49580574,2022ApJ...931..156P,2022,3D Morphology of Open Clusters in the Solar Neighborhood with Gaia EDR 3. II. Hierarchical Star Formation Revealed by Spatial and Kinematic Substructures,"Pang, Xiaoying",article,simbad,,False
+204776782,49580574,2023A&A...677A..59R,2023,Significance mode analysis (SigMA) for hierarchical structures. An application to the Sco-Cen OB association,"Ratzenböck, Sebastian",article,simbad,,False
+204776782,49580574,2018AJ....156...71C,2018,The Many-faceted Light Curves of Young Disk-bearing Stars in Upper Sco -- Oph Observed by K2 Campaign 2,"Cody, Ann Marie",article,simbad,,False
+204776782,49580574,2018AJ....155..196R,2018,Rotation of Low-mass Stars in Upper Scorpius and ρ Ophiuchus with K2,"Rebull, L. M.",article,simbad,,False
+204776782,49580574,2018AJ....156...75E,2018,A WISE Survey of Circumstellar Disks in the Upper Scorpius Association,"Esplin, T. L.",article,simbad,,False
+204776782,49580574,2017AJ....154..224R,2017,Zodiacal Exoplanets in Time (ZEIT). V. A Uniform Search for Transiting Planets in Young Clusters Observed by K2,"Rizzuto, Aaron C.",article,simbad,,False
+204776782,49580574,2018AJ....156...76L,2018,New Young Stars and Brown Dwarfs in the Upper Scorpius Association,"Luhman, K. L.",article,simbad,,False
+204776782,49580574,2022AJ....163...26L,2022,Spectroscopy of Candidate Members of the Sco-Cen Complex,"Luhman, K. L.",article,simbad,,False
+204776782,49580574,2023MNRAS.522.1288B,2023,"Substructure, supernovae, and a time-resolved star formation history for Upper Scorpius","Briceño-Morales, Geovanny",article,simbad,,False
+204776782,49580574,2025A&A...699A.145D,2025,Star formation and accretion rates within 500 pc as traced by Gaia DR3 XP spectra,"Delfini, L.",article,simbad,,False
+201207683,49419483,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+201207683,49419483,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+201207683,49419483,2023ApJS..264...17Z,2023,Stellar Parameters and Spectroscopic Properties of TESS Objects Observed in the LAMOST Low- and Medium-resolution Spectral Survey,"Zhang, Li-yun",article,simbad,,False
+201207683,49419483,2016AJ....151..159S,2016,Planet Hunters. X. Searching for Nearby Neighbors of 75 Planet and Eclipsing Binary Candidates from the K2 Kepler extended mission,"Schmitt, Joseph R.",article,simbad,,False
+201207683,49419483,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+201207683,49419483,2022MNRAS.517.5325H,2022,The GALAH survey: chemical clocks,"Hayden, Michael R.",article,simbad,,False
+201775904,425280270,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+201775904,425280270,2021MNRAS.506..150B,2021,The GALAH+ survey: Third data release,"Buder, Sven",article,simbad,,False
+201775904,425280270,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+201775904,425280270,2022MNRAS.510.2041C,2022,The GALAH Survey: improving our understanding of confirmed and candidate planetary systems with large stellar surveys,"Clark, Jake T.",article,simbad,,False
+201775904,425280270,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+201775904,425280270,2016ApJS..224....2H,2016,"The K2 Ecliptic Plane Input Catalog (EPIC) and Stellar Classifications of 138,600 Targets in Campaigns 1-8","Huber, Daniel",article,simbad,,False
+201775904,425280270,2022MNRAS.517.5325H,2022,The GALAH survey: chemical clocks,"Hayden, Michael R.",article,simbad,,False
+201631267,380544493,2016MNRAS.457.2273O,2016,Single transit candidates from K2: detection and period estimation,"Osborn, H. P.",article,simbad,,False
+201176672,443616789,2019AJ....157..124K,2019,Discovery and Vetting of Exoplanets. I. Benchmarking K2 Vetting Tools,"Kostov, Veselin B.",article,simbad,,False
+201176672,443616789,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+201176672,443616789,2016ApJS..226....7C,2016,197 Candidates and 104 Validated Planets in K2’s First Five Fields,"Crossfield, Ian J. M.",article,simbad,,False
+201176672,443616789,2017MNRAS.465.2634A,2017,Transit shapes and self-organizing maps as a tool for ranking planetary candidates: application to Kepler and K2,"Armstrong, D. J.",article,simbad,,False
+201720401,376757872,2016MNRAS.457.2273O,2016,Single transit candidates from K2: detection and period estimation,"Osborn, H. P.",article,simbad,,False
+201663371,281884907,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+201635132,363478545,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,both,,False
+201635132,363478545,2019AJ....157..124K,2019,Discovery and Vetting of Exoplanets. I. Benchmarking K2 Vetting Tools,"Kostov, Veselin B.",article,simbad,,False
+201635132,363478545,2020AJ....160..120J,2020,APOGEE Data and Spectral Analysis from SDSS Data Release 16: Seven Years of Observations Including First Results from APOGEE-South,"Jönsson, Henrik",article,simbad,,False
+201635132,363478545,2022ApJS..259...35A,2022,"The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data",Abdurro'uf,article,simbad,,False
+201635132,363478545,2022AJ....163..152S,2022,APOGEE Net: An Expanded Spectral Model of Both Low-mass and High-mass Stars,"Sprague, Dani",article,simbad,,False
+201635132,363478545,2016MNRAS.457.2273O,2016,Single transit candidates from K2: detection and period estimation,"Osborn, H. P.",article,simbad,,False
+201635132,363478545,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+202071902,57051340,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,both,,False
+202071902,57051340,2021RAA....21..292W,2021,LAMOST Time-Domain survey: first results of four K2 plates,"Wang, Song",article,simbad,,False
+202071902,57051340,2023ApJS..264...12H,2023,Stellar Chromospheric Activities Revealed from the LAMOST-K2 Time-domain Survey,"Han, Henggeng",article,simbad,,False
+202071902,57051340,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+202126877,86491361,2022ApJS..259...63S,2022,Objective Separation between CP1 and CP2 Based on Feature Extraction with Machine Learning,"Shang, Lun-Hua",article,simbad,,False
+202126877,86491361,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,simbad,,False
+202072917,308255000,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,both,,False
+202072917,308255000,2023ApJS..264...17Z,2023,Stellar Parameters and Spectroscopic Properties of TESS Objects Observed in the LAMOST Low- and Medium-resolution Spectral Survey,"Zhang, Li-yun",article,simbad,,False
+202060921,45376175,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,both,,False
+202060921,45376175,2019MNRAS.490.3158C,2019,A catalogue of stellar diameters and fluxes for mid-infrared interferometry,"Cruzalèbes, P.",article,simbad,,False
+202060921,45376175,2019ApJS..244...11K,2019,Detection of Hundreds of New Planet Candidates and Eclipsing Binaries in K2 Campaigns 0-8,"Kruse, Ethan",article,simbad,,False
+202060921,45376175,2014ASPC..485..223B,2014,The JMMC Stellar Diameters Catalog v2 (JSDC): A New Release Based on SearchCal Improvements,"Bourgés, L.",inproceedings,simbad,,False
+202060921,45376175,1967AJ.....72.1199M,1967,The stellar distribution in the galactic anticenter.,"McCuskey, S. W.",article,simbad,,False
+202060921,45376175,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+202060921,45376175,2018A&A...615A..49C,2018,Characterising open clusters in the solar neighbourhood with the Tycho-Gaia Astrometric Solution,"Cantat-Gaudin, T.",article,simbad,,False
+202137580,238479066,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,both,,False
+202137580,238479066,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+202067195,284401476,2023ApJS..266...14T,2023,A New Catalog of Am-type Chemically Peculiar Stars Based on LAMOST,"Tian, Xiao-man",article,simbad,,False
+202067195,284401476,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+202135247,59549623,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,both,,False
+202135247,59549623,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+202073476,80792346,2024arXiv241208619B,2024,Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models,"Balazadeh, Vahid",eprint,ads,,False
+202073476,80792346,2020ApJS..246...15S,2020,A Catalog of Periodic Variables in Open Clusters M35 and NGC 2158,"Soares-Furtado, M.",article,both,,False
+202073476,80792346,1999IBVS.4721....1S,1999,Coordinates and Identifications for Sonneberg variables - III,"Skiff, Brian A.",article,both,,False
+202073476,80792346,2006A&A...446..785M,2006,A catalogue of eclipsing variables,"Malkov, O. Yu.",article,simbad,,False
+202073476,80792346,1985AbaOB..58..313Z,1985,Eclipsing variables in open clusters. I. Preliminary study.,"Zakirov, M. M.",article,simbad,,False
+202073476,80792346,1984AISAO..18...64P,1984,Catalogue of eclipsing and spectroscopic binary stars in the region of open clusters.,"Popova, M.",article,simbad,,False
+202073476,80792346,1964AN....288...49H,1964,Mitteilungen über neuentdeckte Veränderliche Sterne,"Hoffmeister, Cuno",article,simbad,,False
+202073476,80792346,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,simbad,,False
+202073476,80792346,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False
+202073476,80792346,2013AN....334..860A,2013,Eclipsing variables: Catalogue and classification,"Avvakumova, E. A.",article,simbad,,False
+202085278,429907655,2015MNRAS.452.3561L,2015,Kepler eclipsing binary stars - VI. Identification of eclipsing binaries in the K2 Campaign 0 data set,"LaCourse, Daryll M.",article,both,,False
+202085278,429907655,2015A&A...579A..19A,2015,K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0,"Armstrong, D. J.",article,simbad,,False

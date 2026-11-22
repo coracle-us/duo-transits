@@ -152,3 +152,24 @@ Any change goes below with its date and reason.
   rule is reported as failed and not used.
 - **Test result (2026-11-15):** the rule flags 1 of 163 recovered catalogued events, 0.2% of K2 events, 0% of TESS
   events and 36 control events. It passes.
+
+## Run record, 2026-11-22
+
+- **Saved stage-2 outputs are current.** `check_outputs_current.py` recomputes thresholds, common-mode flags and
+  significant events from `data/per_star/`. All 163 stars match `data/periodic/` under the Poisson rule (3 common-mode
+  events). The old rule would have flagged 522. Under it, 79 catalogued events were significant, the figure in the
+  2026-11-15 entry above. Under the current rule it is 112, the figure in `compare_run.log`. `compare.py` reran with
+  byte-identical output.
+- **Post-hoc linked-period test, completed.** The 2026-11-15 run hung at 56 of 163 stars: the pool never replaced
+  workers retired by `max_tasks_per_child`. That setting is removed (cc98328) and the test reran in 46 s.
+  - N* = 4. 7 control stars reach it, against 8 allowed.
+  - 11 stars are detected (`results/link_calibrated.csv`).
+- **Table 1 (15 stars), primary and post-hoc together:**
+  - The pre-registered search recovers 11.
+  - The post-hoc test adds 211489484 (82.258 d, support 4, control 0) and 211924561 (TOI-5560.01, 140.49/70.25 d,
+    support 4). For 211924561 the star's own control reaches 6, so treat it as weak.
+  - Neither recovers 211503363 (support 3) or 246194159 (support 2).
+- **Not yet done:** classifying the literature hits (`results/literature/hits.csv`; its `period_words` column is False
+  for all 919 hits, which needs checking); vetting the new leads (`results/new_leads.csv`, 41 stars; post-hoc
+  detections not in Table 1: 202085278, 204776782, 247795097, 215067200, 205966706, 247756662, 211598816, 212805678).
+  Several have control support close to their real support (204776782 12 vs 11; 205966706 6 vs 10).

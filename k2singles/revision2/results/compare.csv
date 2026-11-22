@@ -1,0 +1,164 @@
+EPIC,TIC,comment,k2_campaigns,n_tess_sectors,n_events,n_significant,catalogued_recovered,catalogued_significant,n_linked_families,max_family,min_allowed,n_bls,bls_periods,in_table1
+201092629,152805642,nan,102,2,6,0,True,False,0,1,,0,,False
+201093731,176876826,Deep,102,2,5,1,True,True,0,1,,0,,False
+201132684,35021200,Apparent multi-planet system,102,2,9,0,True,False,0,1,,1,10.0619(SDE 9.7),False
+201176672,443616789,nan,1,5,7,1,True,True,0,1,,2,27.1723(SDE 9.7) 27.3076(SDE 10.0),False
+201207683,49419483,"Deep; Noted in Schmitt, et al. (2016)",1,4,7,3,True,True,1,2,4.0,0,,False
+201479221,376812471,Deep,102,0,2,1,True,True,0,1,,0,,False
+201496916,149952263,Deep,102,1,5,1,True,True,0,1,,0,,False
+201510813,376796913,Deep,102,0,12,0,True,False,0,1,,0,,False
+201631267,380544493,"Noted in Osborn, et al. (2016)",1,2,1,0,True,False,0,1,,0,,False
+201635132,363478545,"Noted in Osborn, et al. (2016)",1,3,12,1,True,True,0,1,,2,40.0362(SDE 8.3) 34.0541(SDE 7.9),False
+201663371,281884907,nan,1,0,3,1,True,True,0,1,,1,36.1408(SDE 8.1),False
+201720401,376757872,"Noted in Osborn, et al. (2016)",1,0,3,1,True,True,0,1,,0,,False
+201775904,425280270,nan,1,3,5,2,True,True,0,1,,1,32.1862(SDE 8.1),False
+201792207,281778781,Deep; secondary eclipse,14,0,3,1,True,True,0,1,,1,33.0788(SDE 9.9),False
+201854636,365006877,nan,14,2,2,1,True,True,0,1,,0,,False
+202060921,45376175,Deep,0,5,11,1,True,True,0,1,,0,,False
+202067195,284401476,nan,0,0,4,0,True,False,0,1,,0,,False
+202071902,57051340,nan,0,4,4,3,True,True,1,2,40.0,0,,True
+202072917,308255000,Deep,0,6,11,4,True,True,2,2,1.0,1,34.7427(SDE 9.4),True
+202073476,80792346,nan,0,0,4,1,True,True,0,1,,0,,False
+202085278,429907655,nan,0,0,20,0,True,False,0,1,,0,,False
+202126877,86491361,nan,0,5,14,8,True,True,2,5,0.0,2,21.7836(SDE 9.9) 21.7700(SDE 9.7),True
+202135247,59549623,Flat-bottom,0,0,3,1,True,True,0,1,,0,,False
+202137580,238479066,Deep; secondary eclipse,0,5,5,1,True,True,0,1,,0,,False
+203011840,68164464,Deep,2,2,8,1,True,True,0,1,,0,,False
+203311200,67235717,"Noted in Osborn, et al. (2016)",2,1,4,1,True,True,0,1,,0,,False
+203746451,190905689,nan,2,1,9,0,True,False,0,1,,0,,False
+203865172,15977832,nan,2 111 112,1,25,0,True,False,0,1,,0,,False
+203914123,98233820,"Noted in Osborn, et al. (2016)",2,1,8,2,True,True,0,1,,0,,False
+204086428,9911506,nan,2,1,2,0,True,False,0,1,,0,,False
+204100531,48967526,Deep,2,1,16,0,True,False,0,1,,0,,False
+204533587,220604007,nan,2 15,0,10,0,True,False,0,1,,0,,False
+204546592,12629920,nan,2 15,1,18,3,True,True,0,1,,0,,False
+204634789,13310825,"Noted in Osborn, et al. (2016)",2,1,9,0,True,False,0,1,,0,,False
+204776782,49580574,Deep,2,1,19,0,True,False,0,1,,0,,False
+204918110,162786753,Deep; flat-bottom,2,1,9,1,True,True,0,1,,0,,False
+204952800,49077102,Deep,2,1,1,0,True,False,0,1,,0,,False
+205272592,437442497,Deep,2,1,7,1,True,True,0,1,,0,,False
+205936222,240810327,Deep,3,6,8,1,True,True,0,1,,0,,False
+205966706,240663587,Deep,3,4,32,2,True,True,0,1,,0,,False
+206008070,206241017,Flat-bottom,3,2,5,0,True,False,0,1,,0,,False
+206253908,38352398,nan,3,2,2,1,True,True,0,1,,0,,False
+210725198,17291350,Deep; secondary eclipse,4,4,2,1,True,True,0,1,,2,23.2729(SDE 7.9) 1.2275(SDE 8.0),False
+210760314,17388893,nan,4 13,0,9,1,True,True,0,1,,0,,False
+210823406,114086684,Deep,4,2,3,1,True,True,0,1,,0,,False
+210825751,440705068,nan,4,3,1,0,True,False,0,1,,0,,False
+210843533,15817581,nan,4,0,1,0,True,False,0,1,,0,,False
+210857749,440687603,Deep,4,2,4,2,True,True,0,1,,0,,False
+211064647,56621708,nan,4,4,8,1,True,True,0,1,,1,27.3848(SDE 7.8),False
+211075893,35205501,nan,4,0,1,1,True,True,0,1,,0,,False
+211087003,149923858,Apparent multi-planet system,4,5,15,1,True,True,0,1,,0,,False
+211351097,437030979,nan,5 18,5,6,0,True,False,0,1,,0,,False
+211351543,458655311,nan,5 18,6,10,0,True,False,0,1,,0,,False
+211390677,366568535,Higher SnR in Ames aperture,5 18,5,11,2,True,True,1,2,12.0,0,,True
+211411112,437034781,nan,5 16 18,4,21,2,True,True,1,2,7.0,1,39.7549(SDE 8.6),True
+211489484,6951741,Deep; secondary eclipse,5 18,4,14,4,True,True,1,4,0.0,1,16.5814(SDE 8.8),True
+211490542,20423102,Deep; secondary eclipse,5 18,4,10,2,True,True,0,1,,0,,False
+211498244,27654301,nan,5 18,7,14,5,True,True,1,3,0.0,0,,False
+211503363,20444116,nan,5 18,4,6,1,True,True,0,1,,0,,True
+211598816,257217497,nan,5 16 18,4,37,2,True,True,1,2,6.0,0,,False
+211633458,386621229,nan,5 18,5,8,0,True,False,0,1,,0,,False
+211821192,7058839,nan,5 18,5,6,0,True,False,0,1,,1,37.3640(SDE 9.0),False
+211840710,82508797,nan,5 18,5,9,0,True,False,0,1,,0,,False
+211892898,184895645,nan,5 16 18,1,13,3,True,True,1,3,2.0,0,,True
+211894612,14678155,nan,5 18,3,7,3,True,True,1,3,6.0,1,27.8466(SDE 8.4),False
+211924561,238606535,nan,5 16 18,4,23,0,True,False,0,1,,0,,True
+211939692,178278676,Apparent multi-planet system,5 18,2,16,1,False,False,0,1,,0,,False
+211953574,175265677,nan,5 16 18,4,24,0,True,False,0,1,,0,,False
+211995462,175265898,Deep,5 18,4,18,3,True,True,0,1,,1,35.0483(SDE 7.8),False
+212011230,203287329,nan,5 16,4,8,1,True,True,0,1,,0,,False
+212012030,14394716,Deep,5 18,2,10,3,True,True,1,2,19.0,0,,True
+212026444,203254318,Flat-bottom,5 16,4,5,0,True,False,0,1,,0,,False
+212070574,14676599,nan,5 16 18,5,25,0,True,False,0,1,,0,,False
+212152316,175263062,nan,5 18,4,5,1,True,True,0,1,,1,33.9865(SDE 8.9),False
+212325089,357446579,Flat-bottom,6,3,8,3,True,True,1,2,44.0,2,28.1793(SDE 8.6) 22.9679(SDE 9.2),False
+212332380,287335140,Deep; secondary eclipse,6,1,7,2,True,True,1,2,1.0,1,35.9022(SDE 7.9),False
+212343520,345984388,Secondary eclipse,6,1,7,1,True,True,0,1,,2,28.3094(SDE 9.3) 19.9645(SDE 9.4),False
+212477236,392492898,nan,6 17,1,5,0,True,False,0,1,,0,,False
+212542155,179017141,nan,6,1,1,0,True,False,0,1,,0,,False
+212549089,178942976,nan,6,2,6,1,True,True,0,1,,1,27.4252(SDE 9.3),False
+212554009,771930,Deep,6 17,1,5,1,True,True,0,1,,0,,False
+212555615,2556951,nan,6,1,2,0,True,False,0,1,,0,,False
+212685467,2539506,nan,6 17,1,7,1,True,True,0,1,,2,27.3225(SDE 9.3) 27.4936(SDE 9.2),False
+212694013,178941241,nan,6 17,2,5,2,True,True,1,2,19.0,0,,False
+212715204,743413,nan,6 17,1,4,0,True,False,0,1,,0,,False
+212732378,178942052,nan,6 17,1,14,2,True,True,0,1,,1,29.7797(SDE 8.4),False
+212775521,2627834,nan,6 17,1,15,0,True,False,0,1,,0,,False
+212805678,61070575,Secondary eclipse,6 17,1,8,5,True,True,1,5,0.0,2,26.7750(SDE 9.1) 25.9737(SDE 9.0),False
+212820423,61099940,nan,6 17,1,14,1,True,False,0,1,,0,,False
+213332545,1848185,nan,7,3,8,1,True,True,0,1,,0,,False
+213832800,108274842,Deep,7,1,8,3,True,True,1,2,83.0,0,,False
+213867148,168552444,nan,7,1,6,0,True,False,0,1,,0,,False
+214783208,155154226,nan,7,1,18,0,True,False,0,1,,0,,False
+215067200,155157963,Flat-bottom,7,1,21,1,True,True,0,1,,0,,False
+215307988,154409095,Deep; secondary eclipse,7,1,5,2,True,True,1,2,0.0,0,,False
+215894766,3881465,nan,7,1,16,1,True,True,0,1,,1,26.1542(SDE 9.7),False
+216831785,11882885,nan,7,0,3,0,True,False,0,1,,0,,False
+218187050,442025616,nan,7,1,2,0,True,False,0,1,,0,,False
+218751675,225490302,Deep; secondary eclipse,7,1,6,0,True,False,0,1,,0,,False
+219240689,130543843,Flat-bottom,7,1,3,1,True,True,0,1,,0,,False
+220152847,248354054,nan,8,6,3,1,True,True,0,1,,1,36.5087(SDE 8.5),False
+220186865,248380832,nan,8,6,6,0,True,False,0,1,,0,,False
+220208795,336889445,Deep,8,1,5,0,True,False,0,1,,0,,False
+220315458,344773428,nan,8,3,18,0,True,False,0,1,,0,,False
+220515668,369477336,Deep,8,0,4,1,True,True,0,1,,0,,False
+220562610,376906028,nan,8,2,4,1,True,True,0,1,,0,,False
+220605820,369478173,nan,8,3,8,1,True,True,0,1,,0,,False
+220606084,429052510,nan,8,3,4,1,True,True,0,1,,1,22.8062(SDE 8.8),False
+223332021,1441644348,Deep; secondary eclipse,111 112,2,2,1,True,True,0,1,,1,35.2091(SDE 8.7),False
+224703312,231109720,Deep; secondary eclipse,111 112,2,6,2,True,True,0,1,,0,,False
+224937601,231218638,Deep,111 112,2,7,1,True,True,0,1,,0,,False
+226600397,230758412,Deep; secondary eclipse,111 112,2,4,2,True,True,0,1,,0,,False
+228786343,156599401,nan,102,2,9,1,True,True,0,1,,0,,False
+228804202,98720785,nan,102,2,3,0,True,False,0,1,,0,,False
+228891397,175371233,Deep,102,0,16,1,True,True,0,1,,0,,False
+229021605,51759568,nan,102,2,5,2,True,True,1,2,48.0,0,,False
+229022237,53258631,nan,102,1,3,1,True,True,0,1,,0,,False
+230887315,198977103,nan,111 112,1,3,0,True,False,0,1,,0,,False
+231312005,101383114,nan,111 112,1,5,1,True,True,0,1,,0,,False
+231674968,24395505,nan,111 112,2,11,3,True,True,0,1,,0,,False
+232334247,325322065,nan,111 112,1,9,1,True,True,0,1,,0,,False
+235099239,87238725,nan,111 112,2,4,0,True,False,0,1,,0,,False
+236157481,78806505,Deep,111 112,1,8,2,True,True,1,2,67.0,0,,False
+240323152,200629962,nan,111 112,1,6,1,True,False,0,1,,0,,False
+240410914,201980990,Deep,111 112,2,4,1,True,True,0,1,,0,,False
+242209485,106574776,nan,111 112,2,9,1,True,True,0,1,,0,,False
+245929407,49733422,nan,12,7,13,2,True,True,1,2,17.0,0,,False
+245964933,49711069,nan,12,5,10,2,True,True,0,1,,0,,False
+246020606,49646961,nan,12 19,1,6,1,True,True,0,1,,0,,False
+246089124,49603732,Deep; secondary eclipse,12,3,6,4,True,True,1,3,2.0,1,36.3690(SDE 10.0),True
+246163364,38315113,Deep; secondary eclipse; flat-bottom,12 19,1,10,2,True,True,0,1,,0,,False
+246194159,301328232,Deep; secondary eclipse,12 19,3,9,4,True,True,1,4,0.0,0,,True
+246279882,398574033,Deep; secondary eclipse; flat-bottom,12,1,3,2,True,True,0,1,,0,,False
+246301164,301132018,Deep,12,1,9,1,True,True,0,1,,0,,False
+246302531,301287939,nan,12,1,14,1,True,True,0,1,,0,,False
+246331715,301081587,nan,12 19,1,2,1,True,True,0,1,,1,28.3411(SDE 9.3),False
+246359551,279009745,Deep; secondary eclipse,12,3,18,3,True,True,1,2,42.0,0,,False
+246361128,311055966,nan,12 19,2,13,1,True,True,0,1,,0,,False
+246394998,301133696,Deep; secondary eclipse,12,2,8,2,True,True,0,1,,0,,False
+246425172,38333631,Deep; secondary eclipse; flat-bottom,12 19,1,4,2,True,True,1,2,0.0,1,32.2466(SDE 9.3),False
+246696483,436612436,nan,13,7,13,2,True,False,1,2,6.0,0,,True
+246732631,303761538,Deep; secondary eclipse,13,6,17,4,True,True,1,3,6.0,1,37.6825(SDE 12.2),False
+246849982,411749174,Deep,13,5,17,2,True,True,1,2,18.0,0,,False
+246906371,245831332,Deep,13,0,9,1,True,True,0,1,,0,,False
+247015294,436704339,nan,13,0,4,1,True,True,0,1,,0,,False
+247450113,18872848,nan,13,2,4,1,True,True,0,1,,0,,False
+247594337,26976418,Deep,13,2,9,1,True,True,0,1,,0,,False
+247692298,69150798,Deep,13,1,9,1,True,True,0,1,,0,,False
+247756662,59683523,Flat-bottom,13,4,33,0,True,False,0,1,,0,,False
+247762843,349071164,nan,13,3,10,0,True,False,0,1,,0,,False
+247795097,268324580,Deep,13,4,27,1,True,True,0,1,,0,,False
+247814074,268511445,Deep; secondary eclipse,13,0,10,1,True,True,0,1,,0,,False
+247865067,268281800,nan,13,4,2,0,True,False,0,1,,0,,False
+247967714,268396693,Deep,13,4,10,3,True,True,1,3,7.0,0,,True
+248555345,277748041,Deep,14,3,24,2,True,True,1,2,27.0,1,32.8130(SDE 10.0),False
+248607265,393627584,nan,14,0,5,1,True,True,0,1,,0,,False
+248657359,364961529,nan,14,3,7,1,True,True,0,1,,1,25.2379(SDE 8.1),False
+248749087,364955683,nan,14,3,3,0,True,False,0,1,,1,13.2328(SDE 9.3),False
+248811085,349987241,nan,14,2,14,3,True,True,1,2,31.0,0,,True
+248847494,392876254,nan,14,3,1,1,True,True,0,1,,0,,False
+248854690,61312264,nan,14,3,6,1,True,True,0,1,,0,,False
+248873506,233167372,nan,14,0,6,0,True,False,0,1,,0,,False
+248912804,155579971,nan,14,0,5,1,True,True,0,1,,2,27.2175(SDE 9.4) 26.9477(SDE 9.5),False

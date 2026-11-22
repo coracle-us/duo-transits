@@ -1,0 +1,26 @@
+EPIC,table_period,blind_allowed,blind_bls,n_allowed_total,families
+202071902,22.9041282,True,False,40,2ev 71301ppm 4.52h: 40 allowed
+202072917,34.7455865,True,True,13,2ev 128935ppm 10.84h: 12 allowed | 2ev 221810ppm 4.52h: 1 allowed
+202126877,21.775,False,True,0,5ev 154440ppm 7.93h: 0 allowed | 3ev 34020ppm 7.93h: 0 allowed
+211390677,184.3109,True,False,12,2ev 6454ppm 30.0h: 12 allowed
+211390677,92.15543,True,False,12,2ev 6454ppm 30.0h: 12 allowed
+211411112,62.594821,True,False,7,2ev 19388ppm 3.72h: 7 allowed
+211489484,82.258438,False,False,0,4ev 65719ppm 3.43h: 0 allowed
+211503363,122.90522,False,False,0,
+211503363,61.45261,False,False,0,
+211892898,72.5089,True,False,2,3ev 5765ppm 30.0h: 2 allowed
+211924561,140.49392,False,False,0,
+211924561,70.246961,False,False,0,
+212012030,220.321779,True,False,19,2ev 163345ppm 3.72h: 19 allowed
+212012030,110.16089,True,False,19,2ev 163345ppm 3.72h: 19 allowed
+212012030,73.440593,True,False,19,2ev 163345ppm 3.72h: 19 allowed
+212012030,55.080445,True,False,19,2ev 163345ppm 3.72h: 19 allowed
+212012030,44.064356,True,False,19,2ev 163345ppm 3.72h: 19 allowed
+246089124,73.962413,True,False,2,3ev 109555ppm 7.16h: 2 allowed
+246194159,73.2451778,False,False,0,4ev 229218ppm 10.84h: 0 allowed
+246696483,182.24526,True,False,6,2ev 52246ppm 18.08h: 6 allowed
+246696483,91.12263,True,False,6,2ev 52246ppm 18.08h: 6 allowed
+247967714,185.626676,True,False,7,3ev 192155ppm 4.29h: 7 allowed
+247967714,92.813338,True,False,7,3ev 192155ppm 4.29h: 7 allowed
+247967714,61.875559,True,False,7,3ev 192155ppm 4.29h: 7 allowed
+248811085,49.250131,True,False,31,2ev 76091ppm 4.49h: 31 allowed
