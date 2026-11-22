@@ -59,7 +59,10 @@ class DiskCurve:
         self.w1w2 = None if w1w2 is None else np.asarray(w1w2, float)[o]
         self.tck = fit_spline(self.mjd, self.w1, s=s)
         grid = np.linspace(self.mjd[0], self.mjd[-1], 4000)
-        self.w1_quiet = float(np.max(splev(grid, self.tck)))  # faintest point
+        # faintest spline value, only within 100 d of a real visit: the spline swings
+        # freely across the 2011-2013 WISE hibernation gap (figures/spline_check.png)
+        near = np.abs(grid[:, None] - self.mjd[None, :]).min(axis=1) <= 100.0
+        self.w1_quiet = float(np.max(splev(grid[near], self.tck)))
         self.t0, self.t1 = self.mjd[0], self.mjd[-1]
 
     def at(self, t_mjd):
