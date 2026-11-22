@@ -29,6 +29,27 @@ least 3 clean transits over at least 300 d. T1 and T2 are the first and last cle
 | over 12 | 38 | 35 | 2 | 1 | 21 | 21 | 21 |
 | all | 83 | 68 (82%) | 18 (22%) | 4 (5%) | 16 | 20 | 30 |
 
+The table above uses the TOI table's fitted depth as the reference, which runs deeper than a box mean, so
+it overstates how often the current rule excludes the true period in the pipeline. The pipeline compares
+box depth with box depth, as below.
+
+Same test with the reference depth measured the way the pipeline does (box depth at T1):
+
+| Epoch SNR | Stars | True period excluded: current | both | half3s | Median false aliases left: current | both | half3s |
+|---|---|---|---|---|---|---|---|
+| under 6 | 35 | 24 | 8 | 1 | 9 | 18 | 102 |
+| 6 to 12 | 16 | 5 | 3 | 1 | 23 | 24 | 28 |
+| over 12 | 32 | 17 | 2 | 1 | 20.5 | 21 | 21 |
+| all | 83 | 46 (55%) | 13 (16%) | 3 (4%) | 16 | 20 | 32 |
+
+`round2/s10_epoch_rule_test.py known --set toi --ref box`, outputs `epoch_rule_known_*_toi_boxref.csv`.
+Same stars, seed and T1/T2 as above. As in `st2_pipeline.search_one`, `core.refine_event` at T1 gives the
+reference depth, its error and the duration, kept only if its SNR is at least 5 and it is 0.33-3 times the
+catalogue depth. That held for 63 of 83 stars (median box/TOI depth 0.94, quartiles 0.86-0.99); the other
+20, all with a T1 box SNR under 5, keep the TOI values, as the pipeline would. On the 63 alone the true
+period is excluded for 30 / 7 / 2 under current / both / half3s. Epoch SNR bins use each run's own
+reference, so stars move between bins.
+
 Each star has a median of 1853 aliases. False aliases exclude multiples of the true period, which the
 data can't rule out.
 
@@ -106,6 +127,10 @@ Quoted periods that change under half3s (`epoch_rule_candidate_periods.csv`):
   set are in the summary but carry no weight here (35 of 57 stars usable; true period excluded under
   current / both / half3s: 24 / 11 / 7).
 - The planets have shorter periods than the single-transit candidates and aren't a random sample of them.
-- The reference depth comes from the TOI table here and from Salinas et al. for the candidates. Their
-  offset from box depth may differ.
+- For the candidates, the pipeline's reference depth is the box depth re-measured on the paper event
+  (median 0.83 of the paper's depth), not the paper's fitted depth. The box-reference table is the
+  like-for-like comparison.
+- Under half3s an epoch with SNR under about 6 can barely exclude anything (0.5 depth0 - 3 sigma is near
+  zero), so a period marked supported or allowed at low epoch SNR carries little weight. 302377820b, at
+  alias-event SNR 4.8, goes from 29 to 141 allowed periods.
 - The common-period test doesn't use this rule, so its flags are unaffected.
