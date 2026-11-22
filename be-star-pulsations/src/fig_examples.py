@@ -7,7 +7,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import cm, colors
 from scipy.interpolate import splev
-from common import PILOT, FIGURES, WISE_DIR, SPEC_DIR
+from common import PILOT, FIGURES, WISE_DIR, SPEC_DIR, figpath
 from wise import DiskCurve
 from metrics import LOG_GRID
 
@@ -48,7 +48,7 @@ def main():
     axs[-1, 1].set_xlabel("frequency (c/d)")
     sm_ = cm.ScalarMappable(norm=norm, cmap=cmap)
     fig.colorbar(sm_, ax=axs[:, 1], label="disk_excess (mag)", shrink=0.4)
-    fig.savefig(FIGURES / "pilot_examples.png", dpi=100, bbox_inches="tight")
+    fig.savefig(figpath("examples"), dpi=100, bbox_inches="tight")
 
 
 if __name__ == "__main__":

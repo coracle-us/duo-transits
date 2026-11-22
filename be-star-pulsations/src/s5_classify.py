@@ -5,7 +5,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.mixture import GaussianMixture
-from common import PILOT, FIGURES, SPEC_DIR, SEED
+from common import PILOT, FIGURES, SPEC_DIR, SEED, figpath
 from metrics import LOG_GRID
 
 
@@ -146,7 +146,7 @@ def main():
         ax.set_xlabel("frequency (c/d)")
     np.atleast_1d(axs)[0].set_ylabel("log10 A / A_max")
     fig.tight_layout()
-    fig.savefig(FIGURES / "pilot_clusters.png", dpi=110)
+    fig.savefig(figpath("clusters"), dpi=110)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@ import numpy as np, pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from common import PILOT, FIGURES, WISE_DIR, SEED
+from common import PILOT, FIGURES, WISE_DIR, SEED, figpath
 from wise import DiskCurve
 import stats4
 
@@ -71,6 +71,7 @@ def main():
     lab = sm.phase_label.values.astype(object)
     wu = sm.wise_usable.values.astype(bool)
     rows, keep = [], {}
+    table = stats4.build_swap_table(t, disks, evaluate)   # every sector under every disk
     for vname, sel in variants(sm).items():
         for metric in METRICS:
             y0 = np.where(sel, np.log(sm[metric].values), np.nan)
@@ -78,7 +79,7 @@ def main():
             for k in KS:
                 y = y0 + 0.921 * k * x
                 r = stats4.run_test(sid, x, y, lab, wu, t, disks, dos, evaluate,
-                                    n_null=N_NULL, n_boot=N_BOOT, seed=SEED,
+                                    n_null=N_NULL, n_boot=N_BOOT, seed=SEED, swap_table=table,
                                     keep_nulls=(vname.startswith("main") and metric == "A1" and k == 0))
                 if "_perm_null" in r:
                     keep = r
@@ -131,7 +132,7 @@ def pooled_fig(r):
     ins.tick_params(labelsize=6)
     ins.legend(fontsize=5)
     fig.tight_layout()
-    fig.savefig(FIGURES / "pilot_pooled.png", dpi=120)
+    fig.savefig(figpath("pooled"), dpi=120)
 
 
 if __name__ == "__main__":

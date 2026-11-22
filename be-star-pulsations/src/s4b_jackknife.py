@@ -10,12 +10,13 @@ for vn, sel in list(T.variants(sm).items())[:2]:
         y = np.where(sel & sm.wise_usable.values.astype(bool), np.log(sm[m].values), np.nan)
         ids, gid = stats4.compact(sm.tic.values, np.isfinite(y))
         x, yy, tic = sm.disk_excess.values[ids], y[ids], sm.tic.values[ids]
-        full, _, _, _ = stats4.stats(gid, x, yy, sm.phase_label.values[ids])
+        lc = stats4.code(sm.phase_label.values[ids])
+        full, _, _, _ = stats4._stats(gid, x, yy, lc)
         jk = {}
         for t in np.unique(tic):
             k = tic != t
             _, g2 = np.unique(gid[k], return_inverse=True)
-            jk[t] = stats4.stats(g2, x[k], yy[k], sm.phase_label.values[ids][k])[0]
+            jk[t] = stats4._stats(g2, x[k], yy[k], lc[k])[0]
         s = pd.Series(jk)
         # median-of-star slopes (each star's own LS slope), a leverage-robust alternative
         sl = []

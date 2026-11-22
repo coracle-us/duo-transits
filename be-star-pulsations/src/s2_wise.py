@@ -13,7 +13,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.interpolate import splev
-from common import CAT_DIR, WISE_DIR, TESS_DIR, PILOT, RESULTS, FIGURES, BTJD_TO_MJD
+from common import CAT_DIR, WISE_DIR, TESS_DIR, PILOT, RESULTS, FIGURES, BTJD_TO_MJD, figpath
 from wise import irsa_cuts, bin_visits, DiskCurve
 
 TAP = "https://irsa.ipac.caltech.edu/TAP"
@@ -26,7 +26,7 @@ VIS_DIR.mkdir(exist_ok=True)
 
 
 def fetch_irsa(stars):
-    path = WISE_DIR / "neowise_irsa_pilot.parquet"
+    path = WISE_DIR / "neowise_irsa.parquet"
     have = pd.read_parquet(path) if path.exists() else pd.DataFrame(columns=["tic"])
     done = set(pd.read_csv(WISE_DIR / "irsa_done.csv").tic) if (WISE_DIR / "irsa_done.csv").exists() else set()
     todo = stars[~stars.tic.isin(done)]
@@ -146,7 +146,7 @@ def spline_check(tics, disks, sec):
     for ax in axs[-1]:
         ax.set_xlabel("MJD (red: TESS sector mid-times)")
     fig.tight_layout()
-    fig.savefig(FIGURES / "spline_check.png", dpi=110)
+    fig.savefig(figpath("spline_check"), dpi=110)
 
 
 if __name__ == "__main__":

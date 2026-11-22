@@ -224,3 +224,13 @@ significant for A1, B1, B2, red_noise and flicker_rms.
 - Synthetic case C: the within-star null fires in 85% of repeats; the cross-star null fires
   in 0%. This shows why the cross-star null matters.
 - A white_noise control metric was added to stage 4.
+
+## Note (added after the go decision)
+
+`test_results.csv` and `figures/pilot_pooled.png` were regenerated with the vectorised stage-4
+code used for the full run (`src/stats4.py`: precomputed swap table, weight bootstrap).
+
+- β, the phase contrast and p_perm are identical.
+- Bootstrap intervals and p_swap differ at the Monte Carlo level. For example, main-sample A1
+  is now [0.72, 1.41] with p_swap < 0.001.
+- The tables above quote the first run.
