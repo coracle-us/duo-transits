@@ -1,0 +1,11 @@
+K=4 BIC={3: 14675.942661684345, 4: 14669.906464594427, 5: 15036.757845357153, 6: 15075.783333560135}
+sizes=[45, 87, 124, 103]
+stars_multi=93 changes=26
+chi2=31.392 p_perm=0.0030
+pair_stat=0.0404 p_perm=0.3573 p_swap=0.4308
+         building  dissipating  plateau  quiescent
+cluster                                           
+0              14            3       22          6
+1              12           17       33         24
+2              30           27       33         34
+3              16           15       25         46
