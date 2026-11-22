@@ -1,0 +1,13 @@
+solved Hawthorn duotransits: 26
+claimed period is an alias of dT to within 0.05 d: 26 (largest residual 0.033 d, TIC 118339710)
+true period not below the paper's Pmin (kept): 26 of 26
+paper's list contiguous (N_alias = n_max or n_max + 1): 22 of 26
+kept and contiguous, so the true alias is in the published list: 22 of 26
+not contiguous (full online list needed): TIC [77437543, 118339710, 188620407, 404518509]
+true period inside P_marg's quoted errors: 17 of 26
+true period is the shortest allowed (rank 1): 2; rank <= 3: 8; median rank 5 of a median 31 aliases
+period prior exponent a (w ~ P^-a): sum of ln p(true alias), mean mid-PIT, KS p against uniform
+  a =  8/3: sum ln p =  -77.31; mean PIT = 0.57; KS p = 0.191
+  a =  5/3: sum ln p =  -75.55; mean PIT = 0.50; KS p = 0.766
+  a =  2/3: sum ln p =  -77.55; mean PIT = 0.39; KS p = 0.096
+  a = flat: sum ln p =  -83.39; mean PIT = 0.29; KS p = 0.003

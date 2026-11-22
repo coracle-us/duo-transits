@@ -1,0 +1,77 @@
+# Pre-registration: how reliable are period exclusions from a single transit?
+#
+# STATUS: DRAFT - not approved. Nothing has been run. Jon approves before any light curve is touched;
+# approval freezes this file (hash in calibration/mono/APPROVALS.md), as for gaia_dr4/prereg_dr4.yaml.
+version: 0.1-draft
+written: 2026-11-22
+spec: docs/STRATEGY_living_alias_catalogue.md (section 5.2; section 6a item 1)
+
+why: >
+  arXiv 2611.03019 calibrated duotransit period resolution with 300 injections and left single
+  transits "for future work". For a single transit the output is a set of excluded periods. Nobody,
+  including this project, has measured how often that set wrongly contains the true period. Our own
+  injections (2026-11-01) were added after detrending, so they miss depth lost to detrending.
+
+questions:
+  Q1: How often is the true period excluded (false exclusion), by reference-event SNR?
+  Q2: When a repeat exists in the data, how often is it found, and how often is the period then wrong?
+  Q3: How much of log-period space is correctly excluded, by SNR and number of sectors?
+
+pipeline:
+  code: salinas-second-transits/st2core.py and st2_pipeline.py at the commit recorded at approval
+  epoch_rule: half3s (exclude only if box depth < 0.5 * depth0 - 3 sigma)
+  clean_epoch: coverage >= 0.8 and >= 0.5 d from a gap
+  light_curves: QLP where available, else TESS-SPOC, else own TESScut; one product per sector
+  no_tuning: no threshold in the pipeline changes during or after this run
+
+arm_A_confirmed_planets:
+  sample: >
+    ExoFOP TOIs dispositioned CP or KP, period 10 to 100 d, at least 3 transits in TESS data, not among
+    the 83 stars of EPOCH_RULE_TEST_2026-11-01 (those tuned the rule), not in gaia_dr4/hosts_frozen.csv.
+    Up to 120, drawn with numpy seed 20261122 after sorting by TOI, 40 per depth bin
+    (500-2000, 2000-5000, 5000-25000 ppm); a bin with fewer than 40 uses all it has.
+  A1_hidden: >
+    One transit is the reference (the first clean one). Every other transit window of the planet is
+    removed from the light curve (+-1.5 durations). The true period then falls only in gaps, so any
+    exclusion of it is a false exclusion.
+  A2_visible: >
+    Same reference, nothing removed. The pipeline should find repeats and return the true period.
+
+arm_B_injections:
+  hosts: 150 stars from gaia_dr4/hosts_frozen.csv, seed 20261123, stratified by Tmag (<10, 10-12, >12)
+  catalogued_events: masked (+-1.5 durations) before injection
+  model: batman, quadratic limb darkening from the TIC Teff and logg, injected BEFORE detrending
+  draws_per_host: 4
+  period: log-uniform 20 to 1000 d
+  depth: log-uniform 500 to 20000 ppm
+  impact_parameter: uniform 0 to 0.9
+  duration: from the period, the TIC stellar density and the impact parameter (circular orbit)
+  phase: uniform, redrawn until at least one transit falls in clean data; that transit is the reference
+  all_transits_injected: every transit the period implies, not only the reference
+
+metrics:
+  false_exclusion_rate: share of trials where the true period is in the excluded set
+  repeat_recovery_rate: share of trials with a second transit in clean data where it is detected
+  wrong_period_rate: among trials the pipeline calls resolved or narrowed, share whose set lacks the truth
+  log_period_excluded: fraction of ln P between 1 d and 1000 d excluded, truth excluded or not
+  bins: reference SNR (<6, 6-8, 8-12, 12-20, >20); arm B also by depth and by cadence of the reference
+
+pass_criteria:   # stated before the run; a failure is reported as a failure, not re-thresholded
+  false_exclusion_rate: "<= 5% overall, and <= 5% in every SNR bin at or above 6 (95% upper bound reported)"
+  wrong_period_rate: "<= 3% (arXiv 2611.03019 reports 2 of 76 for duotransits)"
+  repeat_recovery_rate: reported, no threshold
+
+outcomes:
+  pass: both thresholds met in arms A1 and B
+  fail: either threshold missed; the failing bin, its rate and its count are reported
+  incomplete: fewer than 60 arm-A stars or 400 arm-B trials finish; the reason is recorded
+
+human_review:
+  - Any arm-A star where the true period is excluded: is the catalogued ephemeris wrong, or the rule?
+  - Whether a failure changes what the catalogue publishes below a given SNR.
+
+open_items:
+  - Runtime. A timing pilot on 10 stars (outcomes not inspected) is allowed before approval of a final
+    sample size; if the full run would exceed about 24 h on the Mac, the sample is cut and the cut recorded.
+  - Whether the cached light curves from the 2026-11-01 test exist on this Mac or must be refetched.
+  - st2_pipeline detrends inside its search step; injecting before detrending needs a hook there.
