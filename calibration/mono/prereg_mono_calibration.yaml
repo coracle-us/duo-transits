@@ -1,14 +1,18 @@
 # Pre-registration: how reliable are period exclusions from a single transit?
 #
-# STATUS: APPROVED by Jon McBee on 2026-11-22, as drafted, before any light curve was touched.
+# STATUS: version 1.1 APPROVED by Jon McBee on 2026-11-22, before any trial was scored.
+# Version 1.0 (approved the same day, git commit 1cf764f) had six gaps found while the harness was
+# built; changes_from_1_0 below lists them. The only real-data run before this approval was a timing
+# pilot whose outcomes were discarded in memory.
 # This file is frozen; its SHA-256 is in calibration/mono/APPROVALS.md and tests/test_prereg_mono.py
 # checks it. A change needs a new version, a dated reason and Jon's approval; results under a
-# changed version are labelled post-hoc. The open_items at the end were open at approval.
-version: 1.0
+# changed version are labelled post-hoc.
+version: 1.1
 status: approved
 approved_by: Jon McBee
 approved_on: 2026-11-22
-pipeline_commit: 7929f57   # last commit to st2core.py and st2_pipeline.py; main was 565d428 at approval
+pipeline_commit: 7929f57 plus the split of search_sector into search_sector and sector_events
+  (this branch; no threshold changed)
 written: 2026-11-22
 spec: docs/STRATEGY_living_alias_catalogue.md (section 5.2; section 6a item 1)
 
@@ -45,8 +49,10 @@ arm_A_confirmed_planets:
 
 arm_B_injections:
   hosts: 150 stars from gaia_dr4/hosts_frozen.csv, seed 20261123, stratified by Tmag (<10, 10-12, >12)
-  catalogued_events: masked (+-1.5 durations) before injection
-  model: batman, quadratic limb darkening from the TIC Teff and logg, injected BEFORE detrending
+  catalogued_events: masked (+-0.75 d around each catalogued time) before injection
+  model: batman, quadratic limb darkening from Claret (2017) table 25 (ATLAS, solar metallicity,
+    xi = 2 km/s, LSM) at the nearest grid point to the TIC Teff and to log g from the TIC mass and
+    radius; injected BEFORE detrending
   draws_per_host: 4
   period: log-uniform 20 to 1000 d
   depth: log-uniform 500 to 20000 ppm
@@ -63,12 +69,13 @@ metrics:
   bins: reference SNR (<6, 6-8, 8-12, 12-20, >20); arm B also by depth and by cadence of the reference
 
 pass_criteria:   # stated before the run; a failure is reported as a failure, not re-thresholded
-  false_exclusion_rate: "<= 5% overall, and <= 5% in every SNR bin at or above 6 (95% upper bound reported)"
+  false_exclusion_rate: "<= 5% overall, and <= 5% in every SNR bin at or above 6 (95% upper bound reported);
+    judged in arms A2 and B"
   wrong_period_rate: "<= 3% (arXiv 2611.03019 reports 2 of 76 for duotransits)"
   repeat_recovery_rate: reported, no threshold
 
 outcomes:
-  pass: both thresholds met in arms A1 and B
+  pass: false exclusion met in arms A2 and B; wrong period met in arms A1, A2 and B
   fail: either threshold missed; the failing bin, its rate and its count are reported
   incomplete: fewer than 60 arm-A stars or 400 arm-B trials finish; the reason is recorded
 
@@ -76,8 +83,40 @@ human_review:
   - Any arm-A star where the true period is excluded: is the catalogued ephemeris wrong, or the rule?
   - Whether a failure changes what the catalogue publishes below a given SNR.
 
+definitions:   # added in 1.1
+  excluded_set: >
+    A period P is excluded if any epoch t_cat + k P (k != 0) is a clean epoch whose verdict from
+    st2core.epoch_verdicts is 'excludes'. The true period is tested at its exact value. For
+    log_period_excluded, periods are log-spaced from 1 to 1000 d with a step that moves the farthest
+    epoch by a quarter duration, and epochs are looked up on a time grid of one eighth of a duration.
+  resolved: a passing event exists and the alias table through t_cat and that event has exactly one
+    alias 'allowed' or 'supported'
+  narrowed: the same with more than one
+  truth_in_set: abs(dt - n P_true) < half a duration for some n, and alias n is not 'excluded'
+  t_cat: the true time of the reference transit plus Gaussian scatter of 15 min
+  stars_without_tic_mass_or_radius: solar values, flagged
+  reference_sector: also searched for repeats, except within one duration of the reference
+
+changes_from_1_0:   # proposed in PROPOSED_v1.1.md, approved by Jon 2026-11-22 with the Claret table
+  - 1. The single-transit excluded set is defined (st2core has no such function).
+  - 2. False exclusion is judged in A2 and B. In A1 the true period has no data and cannot be excluded.
+  - 3. 'resolved' and 'narrowed' are defined.
+  - 4. Catalogued events are masked by +-0.75 d (the frozen list carries no durations).
+  - 5. Limb darkening from the Claret (2017) table, downloaded 2026-11-22 from the Harvard VizieR
+       mirror (the Strasbourg server did not answer); calibration/mono/data/.
+  - 6. The catalogued time has a 15 min Gaussian error.
+
+implementation_notes:   # decided by Claude while writing the drivers, before any trial was scored;
+                        # not individually approved by Jon. Each is reported with the results.
+  - Arm B 'stratified by Tmag' is read as 50 hosts per bin; arm A as 40 per depth bin (samples.py).
+  - Arm A's true ephemeris is the TOI ephemeris refined on the star's own detrended data, as in the
+    2026-11-01 test (s10_epoch_rule_test.refine_ephemeris).
+  - Arm A's 'at least 3 transits in TESS data' is read as at least 3 transits in clean data.
+  - Arm A stars with more than one TOI (35 of 120) are kept and flagged; rates are reported with and
+    without them, because another planet's transits can pass as a repeat.
+  - Stars cooler than 3500 K use the 3500 K coefficients, flagged.
+
 open_items:
-  - Runtime. A timing pilot on 10 stars (outcomes not inspected) is allowed before approval of a final
-    sample size; if the full run would exceed about 24 h on the Mac, the sample is cut and the cut recorded.
-  - Whether the cached light curves from the 2026-11-01 test exist on this Mac or must be refetched.
-  - st2_pipeline detrends inside its search step; injecting before detrending needs a hook there.
+  - Settled. Runtime - the pilot gave about 10 s per star and 3 s per trial; no cut to the sample.
+  - Settled. Light curves - cached for part of arm B only; the rest are fetched from MAST.
+  - Settled. The hook - st2_pipeline.sector_events.

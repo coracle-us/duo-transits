@@ -52,6 +52,30 @@ def transit_flux(t, t0, P_d, k, ar, b, u, cad_d):
                                exp_time=cad_d).light_curve(pm)
 
 
+_LD = None
+
+
+def limb_dark(teff, mstar, rstar):
+    """Quadratic TESS coefficients (Claret 2017, ATLAS, solar metallicity, LSM) at the nearest grid
+    point in Teff and log g. log g comes from the TIC mass and radius. Returns (u1, u2, how)."""
+    global _LD
+    if _LD is None:
+        import pandas as pd
+        _LD = pd.read_csv(Path(__file__).resolve().parent / "data/claret2017_table25_Z0_xi2.csv")
+    how = "claret"
+    if not (np.isfinite(teff) and teff > 0):
+        teff, how = 5750.0, "claret, solar Teff assumed"
+    if np.isfinite(mstar) and np.isfinite(rstar) and mstar > 0 and rstar > 0:
+        logg = 4.438 + np.log10(mstar / rstar ** 2)
+    else:
+        logg, how = 4.5, how + ", log g 4.5 assumed"
+    if teff < _LD.Teff.min():
+        how += ", below the grid (3500 K)"
+    d = ((_LD.Teff - teff) / 250.0) ** 2 + ((_LD.logg - logg) / 0.5) ** 2
+    r = _LD.loc[d.idxmin()]
+    return float(r.aLSM), float(r.bLSM), how
+
+
 def mask_windows(t, f, centers, half_d):
     keep = np.ones(t.size, bool)
     for c in np.atleast_1d(centers):

@@ -91,3 +91,12 @@ def test_a_shallow_reference_excludes_little():
     sec = with_box_transits(raw_sectors(noise=2000e-6), only=[T0], depth=600e-6)
     r = mc.run_trial(sec, T0, DUR, 600e-6, truth_P=500.0)
     assert not r["truth_excluded_single"] and r["frac_lnP_excluded"] < 0.1
+
+
+def test_limb_darkening_comes_from_the_claret_grid():
+    u1, u2, how = mc.limb_dark(5750.0, 1.0, 1.0)      # log g 4.44 -> grid point 4.5
+    assert (u1, u2) == (0.3075, 0.2743) and how == "claret"
+    cool = mc.limb_dark(3000.0, 0.3, 0.3)
+    assert "below the grid" in cool[2]
+    assert "assumed" in mc.limb_dark(float("nan"), float("nan"), 1.0)[2]
+    assert mc.limb_dark(4000.0, 0.6, 0.6)[0] > u1      # cooler stars are more limb darkened

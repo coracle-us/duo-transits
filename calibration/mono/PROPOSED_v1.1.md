@@ -1,6 +1,6 @@
 # Proposed version 1.1 of the single-transit pre-registration
 
-**Status: proposal, not approved.** Version 1.0 (`prereg_mono_calibration.yaml`) stays frozen. Written
+**Status: approved by Jon on 2026-11-22 with option (b) of item 5 (the Claret table). It is now version 1.1 of the pre-registration.** Version 1.0 (`prereg_mono_calibration.yaml`) stays frozen. Written
 2026-11-22, after approval of 1.0 and before any trial outcome was produced or looked at. The only
 real-data run so far is the timing pilot, which discards outcomes in memory.
 
