@@ -1,7 +1,8 @@
 """Stage 1: sample of non-EB BeT stars and TESS light-curve download.
 
 Pilot (BE_RUN=pilot): draw in seed order until 100 stars pass (serial, as first run).
-Full (BE_RUN=full): every non-EB star, in the same seed order, with a thread pool; resumable
+Full (BE_RUN=full): every non-EB star, in the same seed order, with 6 processes (threads
+ hung in astroquery downloads); resumable
 (re-running skips stars already in sample.csv unless their draw ended in an error).
 
 Product rule (one per star): rank SPOC 120 s > TESS-SPOC > QLP > GSFC-ELEANOR-LITE.
@@ -11,7 +12,7 @@ available product and is flagged mixed_pipeline. Qualifying = sector mid-time be
 last NEOWISE epoch (read from the China-VO WISE curves). Skips CDIPS/PATHOS/TASOC/TGLC.
 """
 import glob, time, warnings, threading
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import numpy as np, pandas as pd
 from astropy.io import fits
 import lightkurve as lk
@@ -48,10 +49,16 @@ def contratio(tic):
 
 
 def retry(fn, n=3):
+    """Retry fn; if lightkurve cannot read a cached product (a partial download), delete
+    that file first so the next attempt downloads it again."""
+    import os, re
     for attempt in range(n):
         try:
             return fn()
-        except Exception:
+        except Exception as e:
+            m = re.search(r"Error in reading Data product (\S+\.fits)", str(e))
+            if m and os.path.exists(m.group(1)):
+                os.remove(m.group(1))
             if attempt == n - 1:
                 raise
             time.sleep(5 * (attempt + 1))
@@ -147,7 +154,7 @@ def main():
             draws.append(rec); sectors += sec
             save()
     else:
-        with ThreadPoolExecutor(N_WORKERS) as ex:
+        with ProcessPoolExecutor(N_WORKERS) as ex:
             futs = [ex.submit(process, k, s, cutoff) for k, s in todo]
             for n, f in enumerate(as_completed(futs)):
                 rec, sec = f.result()

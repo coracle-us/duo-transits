@@ -30,12 +30,21 @@ def proxy(tic, ra, dec):
 def main():
     sec = pd.read_csv(PILOT / "sectors.csv")
     cat = pd.read_parquet(RESULTS / "catalogue.parquet").set_index("tic")
-    rows = []
-    for tic in sec.tic.unique():
+    from concurrent.futures import ThreadPoolExecutor
+    import time
+
+    def one(tic):
         c = cat.loc[tic]
-        p, tm = proxy(tic, c.ra, c.dec)
-        rows.append(dict(tic=tic, contratio_proxy=p, tmag=tm))
-        print(tic, p, tm, flush=True)
+        for attempt in range(3):
+            try:
+                p, tm = proxy(tic, c.ra, c.dec)
+                return dict(tic=tic, contratio_proxy=p, tmag=tm)
+            except Exception:
+                time.sleep(5 * (attempt + 1))
+        return dict(tic=tic, contratio_proxy=np.nan, tmag=np.nan)
+
+    with ThreadPoolExecutor(4) as ex:
+        rows = list(ex.map(one, sec.tic.unique()))
     pr = pd.DataFrame(rows)
     pr.to_csv(PILOT / "crowding_proxy.csv", index=False)
     print(pr.describe())
