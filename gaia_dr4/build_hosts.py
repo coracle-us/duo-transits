@@ -14,6 +14,9 @@ Catalogues:
   toi_single   toi_singles_k2/targets.csv                  open single/duo TOIs
   own_ctoi     singles/results/final_classification.csv    rows where we found exactly one period
   own_salinas  salinas-second-transits/results/round3/oddeven_summary.csv
+  t16          gaia_dr4/data_t16/t16_overlap.csv           T16 Planet Hunt singles (arXiv 2604.18579),
+                                                           after t16_overlap.py; rows with a
+                                                           drop_reason there go to candidates_dropped.csv
 
 Outputs (gaia_dr4/): candidates_frozen.csv, hosts_frozen.csv, candidates_dropped.csv
 Usage: python gaia_dr4/build_hosts.py
@@ -68,16 +71,24 @@ def load_all(root=ROOT):
     o = pd.read_csv(root / "salinas-second-transits/results/round3/oddeven_summary.csv")
     parts.append(_frame("own_salinas", o.tic, "own" + o.cand_id.astype(str), o.T0_btjd, period=o.P_d))
 
-    return pd.concat(parts, ignore_index=True)[COLS]
+    x = pd.read_csv(root / "gaia_dr4/data_t16/t16_overlap.csv")
+    t16 = _frame("t16", x.tic, "T16_" + x.tic.astype(str), x.tc_btjd)
+    t16["pre_reason"] = x.drop_reason.fillna("").to_numpy()
+    parts.append(t16)
+
+    out = pd.concat(parts, ignore_index=True)
+    out["pre_reason"] = out.pre_reason.fillna("")
+    return out[COLS + ["pre_reason"]]
 
 
 def split(df):
     """Return (kept, dropped). A row is dropped, with a reason, if it has no usable TIC, or
     duplicates an earlier (catalogue, cand_id)."""
-    reason = pd.Series("", index=df.index)
+    reason = (df.pre_reason.fillna("") if "pre_reason" in df else pd.Series("", index=df.index)).copy()
     reason[df.tic.isna() | (df.tic <= 0)] = "no TIC"
     dup = df.duplicated(["catalogue", "cand_id"]) & (reason == "")
     reason[dup] = "duplicate (catalogue, cand_id)"
+    df = df.drop(columns="pre_reason", errors="ignore")
     kept = df[reason == ""].copy()
     kept["tic"] = kept.tic.astype("int64")
     dropped = df[reason != ""].assign(reason=reason[reason != ""])

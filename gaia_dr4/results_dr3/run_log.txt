@@ -1,5 +1,32 @@
-hosts 906; with a source_id 905; methods {'dr2_neighbourhood': 902, 'positional': 3, 'no Gaia source within 5.4 arcsec': 1}
-schema gaiadr3: sources 905, NSS rows 54 on 50 stars
-hosts flagged: any 229, RUWE 164, NSS 69, RV-variable 125
+  TIC 50/1301
+  TIC 100/1301
+  TIC 150/1301
+  TIC 200/1301
+  TIC 250/1301
+  TIC 300/1301
+  TIC 350/1301
+  TIC 400/1301
+  TIC 450/1301
+  TIC 500/1301
+  TIC 550/1301
+  TIC 600/1301
+  TIC 650/1301
+  TIC 700/1301
+  TIC 750/1301
+  TIC 800/1301
+  TIC 850/1301
+  TIC 900/1301
+  TIC 950/1301
+  TIC 1000/1301
+  TIC 1050/1301
+  TIC 1100/1301
+  TIC 1150/1301
+  TIC 1200/1301
+  TIC 1250/1301
+  TIC 1300/1301
+  TIC 1301/1301
+hosts 1301; with a source_id 1300; methods {'dr2_neighbourhood': 1297, 'positional': 3, 'no Gaia source within 5.4 arcsec': 1}
+schema gaiadr3: sources 1300, NSS rows 59 on 55 stars
+hosts flagged: any 277, RUWE 202, NSS 78, RV-variable 141
 phase_verdict {'match': 4, 'no_match': 2}
 period_verdict {'match': 4, 'no_match': 4}

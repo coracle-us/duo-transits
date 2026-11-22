@@ -10,11 +10,10 @@ spec: docs/STRATEGY_living_alias_catalogue.md (sections 5.4 and 6a)
 
 inputs:
   # sha256 is filled in by `shasum -a 256` at approval; the files are built by build_hosts.py
-  candidates: gaia_dr4/candidates_frozen.csv   # 967 rows
-  hosts: gaia_dr4/hosts_frozen.csv             # 906 stars
+  candidates: gaia_dr4/candidates_frozen.csv   # 1368 rows (T16 singles added 2026-11-22)
+  hosts: gaia_dr4/hosts_frozen.csv             # 1301 stars
   dr3_baseline: gaia_dr4/results_dr3/report.csv
   not_included:
-    - T16 Planet Hunt single transits (arXiv 2604.18579): overlap and prior work not yet checked
     - TSTPC and Planet Hunters TESS lists: owned by active groups; not in this repo
 
 questions:
@@ -54,6 +53,8 @@ outcomes:
 human_review:
   - Any period_from_gaia with phase_window > 0.1.
   - Any host whose DR3 and DR4 source differ, or with id_method = positional.
+  - The 11 T16 stars whose published Gaia DR3 ID differs from ours
+    (gaia_dr4/data_t16/t16_gaia_id_disagreements.csv): query both sources.
   - Whether a flagged host changes what a note or an email says. Nothing is sent by an agent.
 
 open_items:   # to settle from the DR4 documentation before approval or on release day
