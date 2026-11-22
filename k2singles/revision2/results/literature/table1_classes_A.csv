@@ -1,0 +1,98 @@
+EPIC,bibcode,class,period_d,period_err_d,period_kind,read,where,notes
+211924561,1995AN....316..225A,LISTED,,,,title (survey list),,
+211924561,1996AN....317..127A,LISTED,,,,title (survey list),,
+211924561,1997KFNT...13e..70R,LISTED,,,,title (survey list),,
+211924561,2004A&A...418..357K,LISTED,,,,title (survey list),,
+211924561,2016ApJS..224....2H,LISTED,,,,title (survey list),,
+211924561,2019A&A...624A..19B,LISTED,,,,title (survey list),,
+211924561,2019ApJS..244...43Z,LISTED,,,,table (VizieR J/ApJS/244/43),table1,"Per=100.0 d is the Villanova K2 EB catalogue placeholder (period 100, error -1, single eclipse); not a measurement"
+211924561,2021MNRAS.506..150B,LISTED,,,,title (survey list),,
+211924561,2023A&A...672A.176P,LISTED,,,,table (VizieR J/A+A/672/A176),table1,Kepler/K2 EB catalogue contact-binary screening; ProbLate=ProbEarly=0; no period
+211924561,2024A&A...692A.243C,LISTED,,,,title,,ages for LAMOST/Gaia survey stars
+211503363,2020A&A...643A.169K,ESTIMATE,58,,transit (lower limit),yes,"Table 1, Sect. 4 footnote 13",single transit; Porb=73.91 d is the formal BLS period ~ data span; minimum P ~58 d from duration
+211503363,2020MNRAS.495.1252Z,LISTED,,,,title,,LAMOST activity survey
+211411112,1977A&AS...27...89S,LISTED,,,,title,,membership / cluster or survey sample
+211411112,1989AJ.....98..227G,LISTED,,,,title,,membership / cluster or survey sample
+211411112,1993A&AS..100..243Z,LISTED,,,,title,,membership / cluster or survey sample
+211411112,1996AJ....112..628F,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2010A&A...516A...3K,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2015AJ....150...97G,ANALYSIS,,,,abstract-only,,"RV membership and binary flags; no row within 5"" in VizieR J/AJ/150/97"
+211411112,2016ApJS..224....2H,LISTED,,,,title (survey list),,
+211411112,2016MNRAS.459.1060G,ANALYSIS,21.175186,,"other (periodogram, category 'mult')",yes,table2 (VizieR J/MNRAS/459/1060),"variability periodogram period, not orbital; class BM (binary member)"
+211411112,2018A&A...616A..10G,LISTED,,,,title (survey list),,
+211411112,2018ApJ...869....9G,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2018AJ....156..142D,LISTED,,,,title (survey list),,
+211411112,2019A&A...624A...8A,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2019A&A...627A.119C,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2019ApJ...879...69T,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2020A&A...640A...1C,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2020AJ....160..120J,LISTED,,,,title (survey list),,
+211411112,2020A&A...633A..99C,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2020ApJ...903...55P,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2021AJ....161...59S,PERIOD,62.59484,0.00003,eclipsing+spectroscopic,yes,abstract; Table,the note's validation reference
+211411112,2021AJ....161..190G,PERIOD,62.593,0.003,spectroscopic (SB2),yes,table3 (VizieR J/AJ/161/190),"WOCS 11028 SB2 orbit, e=0.625"
+211411112,2021A&A...647A..19T,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2021A&A...645A..42I,LISTED,,,,title,,flare survey sample
+211411112,2021MNRAS.503..236J,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2021MNRAS.503.3279S,LISTED,,,,title (survey list),,
+211411112,2021RAA....21..292W,LISTED,,,,abstract-only,,LAMOST time-domain first results; star not in text
+211411112,2021AJ....162..184K,ANALYSIS,,,,yes,table1 (VizieR J/AJ/162/184),"APOGEE SB2 identification, q=0.778; no orbit fitted"
+211411112,2022A&A...665A.126N,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2022A&A...659A..59T,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2022A&A...668A...4F,LISTED,,,,title (survey list),,
+211411112,2022ApJS..262....7H,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2022ApJ...938..118D,LISTED,,,,title,,M-dwarf gyrochrone sample field
+211411112,2022AJ....163..152S,LISTED,,,,title (survey list),,
+211411112,2022ApJS..259...35A,LISTED,,,,title (survey list),,
+211411112,2022MNRAS.517.2165C,LISTED,,,,title,,starspot sample
+211411112,2024MNRAS.532.2860R,LISTED,,,,title,,M67 isochrone sample
+211411112,2024RNAAS...8..201B,LISTED,,,,title,,M67 model test sample
+211411112,2024A&A...691A..28K,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2025MNRAS.538.1720R,ANALYSIS,,,,yes,"Sect. 5, Fig.",uses WOCS 11028 (Sandquist+2021 masses) as a comparison
+211411112,2025A&A...703A.116L,LISTED,,,,title,,NGC 2516 asteroseismology; M67 comparison
+211411112,2025A&A...704A.167S,LISTED,,,,title,,membership / cluster or survey sample
+211411112,2026MNRAS.551g1398M,PERIOD,62.6,,eclipsing (quoted),yes,Sect. 5,quotes the 62.6 d period of Sandquist+2021; no new measurement
+246194159,1993yCat.3135....0C,LISTED,,,,title (survey list),,
+246194159,1999MSS...C05....0H,LISTED,,,,title (survey list),,
+246194159,2012JPCM...24u5405B,NOMATCH,,,,title,,thorium dioxide physics paper; identifier collision
+246194159,2013AJ....146..134K,LISTED,,,,title (survey list),,
+246194159,2014ASPC..485..223B,LISTED,,,,title (survey list),,
+246194159,2014AJ....148...81M,LISTED,,,,title (survey list),,
+246194159,2017AJ....153...75K,LISTED,,,,title (survey list),,
+246194159,2019MNRAS.490.3158C,LISTED,,,,title,,stellar diameter catalogue
+246194159,2020AJ....160...83S,LISTED,,,,title (survey list),,
+211489484,2019ApJS..244...11K,LISTED,,,,yes,Table 9,"EB with two single eclipses (BKJD 2192.619, 106720 ppm; 2208.606, 55140 ppm), no period"
+211489484,2023A&A...672A.176P,LISTED,,,,table (VizieR J/A+A/672/A176),table1,Kepler/K2 EB catalogue contact-binary screening; ProbLate=ProbEarly=0; no period
+211892898,2007AJ....134.2340K,LISTED,,,,title,,cluster membership
+211892898,2014ApJ...795..161D,LISTED,,,,title,,activity/rotation sample
+211892898,2016MNRAS.463.1780L,ESTIMATE,50,,eclipsing (lower limit),yes,Sect. 4.3.1,one primary + one secondary eclipse in C5; P > 50 d
+211892898,2016ApJS..224....2H,LISTED,,,,title (survey list),,
+211892898,2017ApJ...842...83D,ANALYSIS,,,,yes,table2/3 (VizieR J/ApJ/842/83),"photometric binary, Bin?=cand, note 'eclipse'; no rotation or orbital period"
+211892898,2017AJ....154..224R,LISTED,,,,yes,,ZEIT transit search target list; not named in text
+211892898,2017ApJ...839...92R,LISTED,,,,title,,rotation sample
+211892898,2019A&A...622A.133I,LISTED,,,,title,,flare survey sample
+211892898,2021A&A...645A..42I,LISTED,,,,title,,flare survey sample
+211892898,2022ApJ...931...45N,LISTED,,,,title,,rotation/X-ray sample
+211892898,2022AJ....163..152S,LISTED,,,,title (survey list),,
+211892898,2022ApJS..259...35A,LISTED,,,,title (survey list),,
+211892898,2023A&A...674A..34G,PERIOD,72.533578,0.028819,spectroscopic (SB1),yes,Gaia DR3 nss_two_body_orbit (gaia_nss.csv),"the multiplicity paper presents the NSS catalogue; SB1 solution for this source_id, e=0.48; not named in the paper text"
+211892898,2023A&A...677A..21K,LISTED,,,,title,,asteroseismic giants sample
+211892898,2023A&A...678A.158A,LISTED,,,,title,,APOGEE ages
+211892898,2024AJ....167..208W,LISTED,,,,title,,APO-K2 catalogue
+211892898,2024AJ....167...50S,LISTED,,,,title,,APO-K2 catalogue
+211390677,2021MNRAS.506..150B,LISTED,,,,title (survey list),,
+211390677,2022AJ....163..152S,LISTED,,,,title (survey list),,
+211390677,2022ApJS..259...35A,LISTED,,,,title (survey list),,
+211390677,2023ApJS..264...17Z,LISTED,,,,title (survey list),,
+211390677,2023A&A...677A..21K,LISTED,,,,title,,asteroseismic giants sample
+211390677,2024AJ....167..208W,LISTED,,,,title,,APO-K2 catalogue
+211390677,2024AJ....167...50S,LISTED,,,,title,,APO-K2 catalogue
+211390677,2024A&A...690A.323V,LISTED,,,,title,,APO-K2 model tests
+202126877,2015MNRAS.452.3561L,LISTED,,,,yes,"Table 1, flag 1","previously known EB, single eclipse in C0 (BJD-2454833 = 1955.44), no period"
+202126877,2022ApJS..259...63S,LISTED,,,,title,,chemically peculiar star classification
+202072917,2015MNRAS.452.3561L,LISTED,,,,yes,"Sect. 4; Table 2, flag 1","single eclipse in C0, 'no period yet determined'"
+202072917,2023ApJS..264...17Z,LISTED,,,,title (survey list),,
+202071902,2015MNRAS.452.3561L,LISTED,,,,yes,"Sect. 4; Table 2, flag 1","single eclipse in C0, 'no period yet determined'"
+202071902,2015A&A...579A..19A,LISTED,,,,table (VizieR J/A+A/579/A19),table3,"classified EB, no period"
+202071902,2021RAA....21..292W,LISTED,,,,abstract-only,,LAMOST time-domain first results; star not in text
+202071902,2023ApJS..264...12H,LISTED,,,,title,,LAMOST-K2 activity survey

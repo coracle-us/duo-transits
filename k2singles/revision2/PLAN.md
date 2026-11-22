@@ -232,3 +232,52 @@ In the revised note a period is called new only if its star is "no prior period"
 
 **Independent check (Table 1 stars).** A second agent classifies the same hits from the same inputs. It does not see
 these rules' outcomes or my classes. Disagreements are settled by reading the paper, and both classes are recorded.
+
+## Literature search: run record, 2026-11-22
+
+**ADS + SIMBAD rerun** (`literature.py`, snippets fixed): 922 (star, paper) rows on 97 of 163 stars (635 SIMBAD only,
+219 ADS only, 68 both); 181 rows carry ADS snippets, 32 with period words. 66 stars have no paper at all.
+
+**Recall check** (`recall_check.py` -> `data/literature/recall.csv`), ADS and SIMBAD:
+- LaCourse & Jacobs 2018: 0 of 163 by either source. Its star list is not in ADS full text and SIMBAD does not link it.
+- Other known pairs: 3 of 9 (Sandquist+2021, Kovács 2020, Libralato+2016, each found by both sources). Missed: IJspeert+2024
+  (2), Valizadegan+2025 (2), Kovalev+2024, Guo+2025. All six name the star only in a machine-readable table.
+- VizieR: pending (below).
+
+**Fix: Gaia DR3 orbits were not covered.** `vizier_all.py` skips the `I/` section and keeps only I/358, so it never saw
+I/357 (Gaia DR3 non-single stars), which the rules above say must be read. `gaia_nss.py` queries the Gaia archive directly
+for all 163 stars (source_id from SIMBAD for 96, else the brightest Gaia DR3 source within 2" for 67). Orbits found:
+211892898 SB1 72.534(29) d; 247756662 SB1 610.7(5.6) d; 229021605 SB1 114.838(66) d (plus a weaker 115.35 d validated
+targeted-search orbit); 212026444 an acceleration solution (no period). No star has a `vari_eclipsing_binary` entry.
+
+**Fix: the VizieR census cached failures as empty results.** The first run (4 threads, CfA mirror) failed outright for
+42 of 112 stars (HTTP 504 at the mirror's 60 s gateway limit), and 66 of the 70 it cached were empty although each star is
+in Gaia DR3 and 2MASS there (a targeted query finds them). That run is kept as `*_2026-11-22_emptyfail`. A response
+without I/355 now counts as a failure; rerunning with 2 threads. The CDS host and the China, IUCAA, NAOJ and INASAN
+mirrors did not answer; IDIA answered but timed out on the same query.
+
+**Table 1 classification, two independent passes** (A = me; B = an agent that saw only `table1_hits.csv` and the class
+definitions). 97 rows on the 10 Table 1 stars with any hit. `compare_classes.py`: 89 agree, 7 differ only LISTED vs
+ANALYSIS (no period either way), 1 differs in class: Wang+2021 (RAA 21, 292) for 202071902. B was right: the online
+Table 3 lists it as EA with P = 8.6973 d from AAVSO VSX; A had searched the PDF, which prints only a sample of the table
+(`settle_classes.py`). Final: 84 LISTED, 5 ANALYSIS, 5 PERIOD, 2 ESTIMATE, 1 NOMATCH.
+
+Also checked by reading: the Villanova K2 EB catalogue gives 211924561 and 211489484 "period 100, error -1", its
+placeholder for single eclipses; Zhang+2019 copies the 100.0 d. Not a measurement (both passes agree).
+
+**Per-star verdicts, Table 1, from what the search found** (VizieR still pending):
+
+| EPIC | Verdict | Sources |
+|---|---|---|
+| 211411112 | published, agrees | Sandquist+2021 62.59484(3) (ours 62.594821(27), 0.5σ); Geller+2021 SB2 62.593(3) (0.6σ) |
+| 211892898 | published, agrees | Gaia DR3 SB1 72.534(29) (ours 72.5089(14), 0.9σ); Libralato+2016 P > 50 d |
+| 211503363 | estimate only | Kovács 2020: single transit, P ≳ 58 d (ours 122.905 or 61.453 d) |
+| 202071902 | published, differs | Wang+2021 / VSX 8.6973 d, which the note already rules out. Guo+2025 and Kovalev+2024 (agree) were missed by the search |
+| 202126877, 202072917 | no prior period found | IJspeert+2024 and Valizadegan+2025 (agree) were missed by the search |
+| 211489484 | no prior period found | Kruse+2019 lists two eclipses, no period. The SPOC TCE (Valizadegan+2025, 106.94 d, which the note excludes) was missed |
+| 211924561 | no prior period found | TOI-5560; the ExoFOP limit ≤ 702 d is not from the search |
+| 246194159, 211390677 | no prior period | only survey rows (one NOMATCH) |
+| 248811085, 246089124, 246696483, 247967714, 212012030 | no paper found | |
+
+So the search alone recovers the prior period of 2 of the 5 Table 1 stars known to have one (211411112, 211892898), and
+misses the 3 C0 binaries' catalogue periods. VizieR is the source that should find those.
