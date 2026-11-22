@@ -215,7 +215,7 @@ This is a search for a second transit, in S61 or later, of each single-transit c
 - Method and known limits: `salinas-second-transits/README.md`.
 - Round 2 summary: `salinas-second-transits/results/round2/SUMMARY_2026-10-27.md`.
 - Rounds 2 and 3 ran from briefs in the Claude relay Drive folder (`briefs/`, reports in `results/`).
-- Merged as PRs #2, #3 and #7.
+- Merged as PRs #2, #3, #7, #9, #10 and #11, plus the 275647095 follow-up.
 
 **Epoch rule.** Since 2026-11-01, an epoch excludes a period only if its box depth is below
 0.5 depth0 − 3σ (half3s). Test on 83 confirmed planets, with a box reference depth as the pipeline uses
@@ -235,8 +235,13 @@ odd/even difference or a secondary eclipse.
 | 107113048 | 49.70152 ± 0.00017 | 1.0σ (3 transits) | < 705 ppm | 0.91 | 0.66 | no EB signs |
 | 230133616 | 23.75297 ± 0.00002 | 0.6σ (31 transits) | < 50 ppm | 1.89 | 1.65 | unclear |
 
-- **275647095:** the duration is too long for P around this star. The fix could be an eccentric orbit, a
-  star of about 1.9 R☉ (giving Rp ≈ 1.8 R_J), or a blend.
+- **275647095:** the duration is too long for P around this star (1.42× the circular value).
+  - The blind follow-up rules out a larger star: R★ = 1.14 ± 0.06 R☉ from the Gaia parallax, as in the TIC.
+  - It also rules out every Gaia neighbour, including the G = 14.3 star at 19.6″ that causes TIC
+    contratio 0.21.
+  - Left: an eccentric orbit (e ≳ 0.34, Rp ≈ 11 R⊕), or an eclipsing system blended within ~2″ that Gaia
+    does not resolve. RVs or high-resolution imaging would tell them apart.
+  - Details: `results/round3/independent/RESULTS.md`, section "Follow-up".
 - **230133616:**
   - Rp ≈ 1.9 R_J is very large for a 23.75 d planet, and Gaia RUWE is 3.79.
   - It transits in the old data too (34 epochs), so it was never really a single.
@@ -246,8 +251,19 @@ odd/even difference or a secondary eclipse.
     S94+ mid-times only, and QLP for depths.
   - QLP's S100+ clock is off by up to ~6 min (`round2/s6_qlp_times.py`).
 
+**Pixel-level and Gaia vetting** (`round3/s12_pixels.py`, `results/round3/PIXELS_2026-11-22.md`;
+230133616 was done in round 2 §5):
+- 275647095, 241550976 and 107113048 are all on target: the difference centroids are 2.2–3.7″ from the
+  star, and every neighbour that could make the dip is ≥ 15σ away.
+- Their Gaia RUWE is 1.02–1.09, with no binarity flags.
+- One 107113048 transit (S90) is a pointing excursion and is left out of the stack.
+
+**Independent re-derivation (§5)** (`results/round3/independent/`, `COMPARISON.md`):
+- A blind session that never saw round 2 or 3 found the same four periods, all within 1.6σ:
+  17.064042, 21.196873, 49.70148 and 23.752987 d.
+- It raised the same concerns on its own: the long 275647095 transit, and that 230133616 is not a single.
+
 **Not done yet:**
-- Pixel-level vetting exists only for 230133616 (round 2 §5). The other three have no difference
-  images or Gaia neighbour/RUWE check; 275647095 has TIC contratio 0.21.
-- No period has been re-derived independently (§5).
-- Nothing has been reported to anyone.
+- Nothing has been reported to anyone. The natural recipient is the Salinas et al. team (draft only;
+  check first that no one has published these periods since October 2026).
+- Not decided: whether this becomes a third RNAAS note (four stars fit one table).
