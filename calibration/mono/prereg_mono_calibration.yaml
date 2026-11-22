@@ -1,8 +1,14 @@
 # Pre-registration: how reliable are period exclusions from a single transit?
 #
-# STATUS: DRAFT - not approved. Nothing has been run. Jon approves before any light curve is touched;
-# approval freezes this file (hash in calibration/mono/APPROVALS.md), as for gaia_dr4/prereg_dr4.yaml.
-version: 0.1-draft
+# STATUS: APPROVED by Jon McBee on 2026-11-22, as drafted, before any light curve was touched.
+# This file is frozen; its SHA-256 is in calibration/mono/APPROVALS.md and tests/test_prereg_mono.py
+# checks it. A change needs a new version, a dated reason and Jon's approval; results under a
+# changed version are labelled post-hoc. The open_items at the end were open at approval.
+version: 1.0
+status: approved
+approved_by: Jon McBee
+approved_on: 2026-11-22
+pipeline_commit: 7929f57   # last commit to st2core.py and st2_pipeline.py; main was 565d428 at approval
 written: 2026-11-22
 spec: docs/STRATEGY_living_alias_catalogue.md (section 5.2; section 6a item 1)
 
