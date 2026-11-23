@@ -359,14 +359,26 @@ misses the 3 C0 binaries' catalogue periods. VizieR is the source that should fi
 | 246194159, 211390677 | | no prior period | survey rows only |
 | 248811085, 246089124, 246696483, 247967714 | | no paper or catalogue found | |
 
-**211924561 (TOI-5560) TCEs.**
-- 31.269 d: numbers.md and review_fable3 already note it as excluded by the ephemeris. The sentence was cut for length.
-- 58.290 d: the earlier census kept only the first row per table, so it was never seen.
-- Neither TCE is an alias of ours: ratios 2.41 and 4.49.
-- Both match events that `independent_211924561/` rejected:
-  - 2568.30 − 58.29 = 2510.01, the S44 2509.8 scattered-light step;
-  - 2509.8 + 31.27 = 2541.07, the S45 2541.05 event.
-- So both TCEs plausibly pair rejected events, not transits. This is not proven without the TCE epochs (SPOC DV report).
+**211924561 (TOI-5560) TCEs.** Checked 2026-11-23 against the SPOC DV reports (XML, from MAST with Jon's OK:
+`tess2021233042500-s0042-s0046-…-00550_dvr.xml`, `tess2023315161428-s0072-s0072-…-00827_dvr.xml`,
+`tess2018235142541-s0002-s0072-…-00829_dvr.xml`; `dv_tce_check.py`, output `results/literature/dv_tce_check.txt`).
+SPOC has four TCEs on this star, not two. The S2–S72 and S72 runs were not in the literature search: they are MAST
+data products, not papers or catalogues.
+
+| SPOC run | P (d) | MES | Its transit times in the run's data |
+|---|---|---|---|
+| S42–46 | 58.283 | 11.5 | S44 2510.01 (rejected scattered-light step); S46 2568.30 (our transit) |
+| S42–46 | 31.253 | 7.4 | S44 2509.80 (the same step); S45 2541.06 (vetted, < 0.5 ppt on a background ramp); S46 2572.31 (nothing in our search) |
+| S2–S72 | 58.537 | 14.6 | S44 2509.77 (the step); our S46 and S72 transits. 58.54 ≈ 702.47/12, the S46–S72 gap |
+| S72 | 10.285 | 7.8 | 3260.48 (0.3 d after the first S72 cadence; nothing in our search); our S72 transit; 3281.05 (not seen by SPOC either) |
+
+- None of the four periods fits all four of our transits (C5, C16, S46, S72). The C5 transit falls 1.2–14.1 d from
+  each TCE's ephemeris.
+- Every TCE leans on the rejected S44 step or on a time where our search found nothing. Three of the four also use
+  one or both of our real TESS transits.
+- Correction to the 2026-11-23 note above: the 58.29 d TCE does not pair two rejected events. It pairs the rejected
+  S44 step with our real S46 transit. The 31.25 d TCE uses no transit of ours.
+- 211489484's TCEs were not checked against its DV report.
 
 **Decided 2026-11-23 (Jon): TCE periods do block "new".** The rules call a period new only if its star is "no prior
 period" or "estimate only", and both classification passes class the TCEs as PERIOD. So the rule stays as
@@ -374,5 +386,5 @@ pre-registered, and the note does not call the periods of 211489484 and 21192456
 - The note presents each as a resolved period that conflicts with the SPOC TCEs, and says why each TCE is excluded.
 - 211489484, 106.936 d: already excluded in the note.
 - 211489484, 0.2405 d: a short-period signal, not a competing transit period. One line saying so.
-- 211924561, 31.269 d and 58.290 d: "plausibly arise from the rejected S44/S45 events", unless the SPOC DV report's
-  TCE epochs are checked. Downloading that report needs Jon's permission. Not done.
+- 211924561: all four SPOC TCEs (58.28, 31.25, 58.54, 10.28 d) are checked against the DV epochs (table above).
+  Each combines our TESS transits with a rejected event or an empty time, and none fits the K2 transits.

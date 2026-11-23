@@ -1,0 +1,25 @@
+
+SPOC run s0002-s0072, TCE 1: P = 58.536507 d, epoch 2509.7740, MES 14.6, transits observed 3 of 14 expected
+    2509.774  S44 rejected (scattered-light step) (-0.04 d)
+    2568.311  S46 transit (+0.01 d)
+    3270.749  S72 transit (-0.02 d)
+   our transits, offset from the TCE ephemeris (d): C5 +11.58, C16 -0.08, S46 -0.01, S72 +0.02  -> does not fit all four
+
+SPOC run s0042-s0046, TCE 1: P = 58.283306 d, epoch 2510.0133, MES 11.5, transits observed 2 of 2 expected
+    2510.013  S44 rejected (scattered-light step) (+0.20 d)
+    2568.297  S46 transit (-0.00 d)
+   our transits, offset from the TCE ephemeris (d): C5 +1.22, C16 -6.14, S46 +0.00, S72 +3.07  -> does not fit all four
+
+SPOC run s0042-s0046, TCE 2: P = 31.252764 d, epoch 2509.8021, MES 7.4, transits observed 3 of 3 expected
+    2509.802  S44 rejected (scattered-light step) (-0.01 d)
+    2541.055  S45 vetted, not a transit (< 0.5 ppt, on a steep background ramp) (+0.00 d)
+    2572.308  not an event in our search
+    3259.868  -0.31 d from the first S72 cadence; not an event in our search
+   our transits, offset from the TCE ephemeris (d): C5 +14.05, C16 -2.58, S46 -4.01, S72 +10.90  -> does not fit all four
+
+SPOC run s0072-s0072, TCE 1: P = 10.284718 d, epoch 3260.4754, MES 7.8, transits observed 2 of 3 expected
+    2509.691  S44 rejected (scattered-light step) (-0.12 d)
+    3260.475  +0.30 d from the first S72 cadence; not an event in our search
+    3270.760  S72 transit (-0.00 d)
+    3281.045  not an event in our search
+   our transits, offset from the TCE ephemeris (d): C5 +4.84, C16 +0.96, S46 -3.10, S72 +0.00  -> does not fit all four
