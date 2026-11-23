@@ -1,0 +1,106 @@
+metric,n,k,rate,upper95,snr_bin,arm
+false_exclusion,109,0.0,0.0,0.027109539554339916,all,A1
+false_exclusion,23,0.0,0.0,0.12212338890652302,<6,A1
+false_exclusion,13,0.0,0.0,0.20581666518655062,6-8,A1
+false_exclusion,17,0.0,0.0,0.16156611126074005,8-12,A1
+false_exclusion,18,0.0,0.0,0.1533175539572782,12-20,A1
+false_exclusion,38,0.0,0.0,0.07580765168296455,>20,A1
+false_exclusion_given_a_clean_epoch,0,0.0,,,all,A1
+repeat_recovery,0,0.0,,,all,A1
+repeat_recovery,0,0.0,,,<6,A1
+repeat_recovery,0,0.0,,,6-8,A1
+repeat_recovery,0,0.0,,,8-12,A1
+repeat_recovery,0,0.0,,,12-20,A1
+repeat_recovery,0,0.0,,,>20,A1
+wrong_period,48,48.0,1.0,1.0,all,A1
+wrong_period_resolved_only,2,2.0,1.0,1.0,all,A1
+median_frac_lnP_excluded,109,,0.7031707134105174,,all,A1
+median_frac_lnP_excluded,23,,0.4973659879157976,,<6,A1
+median_frac_lnP_excluded,13,,0.59823532360756,,6-8,A1
+median_frac_lnP_excluded,17,,0.642082232532397,,8-12,A1
+median_frac_lnP_excluded,18,,0.7305577159366644,,12-20,A1
+median_frac_lnP_excluded,38,,0.7371604280447586,,>20,A1
+false_exclusion,109,7.0,0.06422018348623854,0.11723748866356735,all,A2
+false_exclusion,23,3.0,0.13043478260869565,0.30363770155746167,<6,A2
+false_exclusion,14,0.0,0.0,0.19263617565013527,6-8,A2
+false_exclusion,17,2.0,0.11764705882352941,0.3261930630834782,8-12,A2
+false_exclusion,17,0.0,0.0,0.16156611126074005,12-20,A2
+false_exclusion,38,2.0,0.05263157894736842,0.15655730158942688,>20,A2
+false_exclusion_given_a_clean_epoch,109,7.0,0.06422018348623854,0.11723748866356735,all,A2
+repeat_recovery,109,88.0,0.8073394495412844,0.8671180482066126,all,A2
+repeat_recovery,23,6.0,0.2608695652173913,0.45097539622157223,<6,A2
+repeat_recovery,14,11.0,0.7857142857142857,0.9388970711410224,6-8,A2
+repeat_recovery,17,16.0,0.9411764705882353,0.9969872947209941,8-12,A2
+repeat_recovery,17,17.0,1.0,1.0,12-20,A2
+repeat_recovery,38,38.0,1.0,1.0,>20,A2
+wrong_period,74,15.0,0.20270270270270271,0.2948273619130067,all,A2
+wrong_period_resolved_only,0,0.0,,,all,A2
+median_frac_lnP_excluded,109,,0.7110253807106599,,all,A2
+median_frac_lnP_excluded,23,,0.4923129851420216,,<6,A2
+median_frac_lnP_excluded,14,,0.5789182609197261,,6-8,A2
+median_frac_lnP_excluded,17,,0.675933117583603,,8-12,A2
+median_frac_lnP_excluded,17,,0.734314708436061,,12-20,A2
+median_frac_lnP_excluded,38,,0.7473951411266304,,>20,A2
+false_exclusion,515,4.0,0.007766990291262136,0.017685039407404568,all,B
+false_exclusion,145,3.0,0.020689655172413793,0.052602600348407164,<6,B
+false_exclusion,26,0.0,0.0,0.1088303557607848,6-8,B
+false_exclusion,47,0.0,0.0,0.06175013471082449,8-12,B
+false_exclusion,46,1.0,0.021739130434782608,0.099024316819898,12-20,B
+false_exclusion,248,0.0,0.0,0.012006900548183206,>20,B
+false_exclusion_given_a_clean_epoch,189,4.0,0.021164021164021163,0.047773959896977664,all,B
+repeat_recovery,188,131.0,0.6968085106382979,0.7519769469042747,all,B
+repeat_recovery,49,6.0,0.12244897959183673,0.22744277094562745,<6,B
+repeat_recovery,10,4.0,0.4,0.6964627874359576,6-8,B
+repeat_recovery,17,12.0,0.7058823529411765,0.876229085230453,8-12,B
+repeat_recovery,11,10.0,0.9090909090909091,0.9953478282678027,12-20,B
+repeat_recovery,100,98.0,0.98,0.9964348473967433,>20,B
+wrong_period,201,84.0,0.417910447761194,0.47824987815205067,all,B
+wrong_period_resolved_only,8,3.0,0.375,0.7107591834981906,all,B
+median_frac_lnP_excluded,515,,0.6123117223313687,,all,B
+median_frac_lnP_excluded,145,,0.2025286362653987,,<6,B
+median_frac_lnP_excluded,26,,0.4539104934459671,,6-8,B
+median_frac_lnP_excluded,47,,0.6368078736363949,,8-12,B
+median_frac_lnP_excluded,46,,0.6537523045751465,,12-20,B
+median_frac_lnP_excluded,248,,0.6795904605361963,,>20,B
+false_exclusion,76,0.0,0.0,0.0386507667257255,all,A1 single-TOI stars
+false_exclusion,15,0.0,0.0,0.18103627252208462,<6,A1 single-TOI stars
+false_exclusion,10,0.0,0.0,0.2588655508930522,6-8,A1 single-TOI stars
+false_exclusion,8,0.0,0.0,0.3123439780663678,8-12,A1 single-TOI stars
+false_exclusion,14,0.0,0.0,0.19263617565013527,12-20,A1 single-TOI stars
+false_exclusion,29,0.0,0.0,0.0981446276772957,>20,A1 single-TOI stars
+false_exclusion_given_a_clean_epoch,0,0.0,,,all,A1 single-TOI stars
+repeat_recovery,0,0.0,,,all,A1 single-TOI stars
+repeat_recovery,0,0.0,,,<6,A1 single-TOI stars
+repeat_recovery,0,0.0,,,6-8,A1 single-TOI stars
+repeat_recovery,0,0.0,,,8-12,A1 single-TOI stars
+repeat_recovery,0,0.0,,,12-20,A1 single-TOI stars
+repeat_recovery,0,0.0,,,>20,A1 single-TOI stars
+wrong_period,25,25.0,1.0,1.0,all,A1 single-TOI stars
+wrong_period_resolved_only,0,0.0,,,all,A1 single-TOI stars
+median_frac_lnP_excluded,76,,0.6998085944411272,,all,A1 single-TOI stars
+median_frac_lnP_excluded,15,,0.5406378903948144,,<6,A1 single-TOI stars
+median_frac_lnP_excluded,10,,0.6211471541943652,,6-8,A1 single-TOI stars
+median_frac_lnP_excluded,8,,0.6275618021444762,,8-12,A1 single-TOI stars
+median_frac_lnP_excluded,14,,0.7311594075565351,,12-20,A1 single-TOI stars
+median_frac_lnP_excluded,29,,0.7339721753211489,,>20,A1 single-TOI stars
+false_exclusion,76,2.0,0.02631578947368421,0.08052895143025196,all,A2 single-TOI stars
+false_exclusion,15,2.0,0.13333333333333333,0.36344176554140206,<6,A2 single-TOI stars
+false_exclusion,10,0.0,0.0,0.2588655508930522,6-8,A2 single-TOI stars
+false_exclusion,9,0.0,0.0,0.28312883556311347,8-12,A2 single-TOI stars
+false_exclusion,13,0.0,0.0,0.20581666518655062,12-20,A2 single-TOI stars
+false_exclusion,29,0.0,0.0,0.0981446276772957,>20,A2 single-TOI stars
+false_exclusion_given_a_clean_epoch,76,2.0,0.02631578947368421,0.08052895143025196,all,A2 single-TOI stars
+repeat_recovery,76,63.0,0.8289473684210527,0.895748789397372,all,A2 single-TOI stars
+repeat_recovery,15,4.0,0.26666666666666666,0.510751889594463,<6,A2 single-TOI stars
+repeat_recovery,10,8.0,0.8,0.9632285621125349,6-8,A2 single-TOI stars
+repeat_recovery,9,9.0,1.0,1.0,8-12,A2 single-TOI stars
+repeat_recovery,13,13.0,1.0,1.0,12-20,A2 single-TOI stars
+repeat_recovery,29,29.0,1.0,1.0,>20,A2 single-TOI stars
+wrong_period,53,6.0,0.11320754716981132,0.21126065515709064,all,A2 single-TOI stars
+wrong_period_resolved_only,0,0.0,,,all,A2 single-TOI stars
+median_frac_lnP_excluded,76,,0.7138312982005486,,all,A2 single-TOI stars
+median_frac_lnP_excluded,15,,0.5423394225103123,,<6,A2 single-TOI stars
+median_frac_lnP_excluded,10,,0.6225460699103562,,6-8,A2 single-TOI stars
+median_frac_lnP_excluded,9,,0.675933117583603,,8-12,A2 single-TOI stars
+median_frac_lnP_excluded,13,,0.726878851624452,,12-20,A2 single-TOI stars
+median_frac_lnP_excluded,29,,0.7470242544285821,,>20,A2 single-TOI stars

@@ -12,7 +12,9 @@ import numpy as np
 import pandas as pd
 from scipy.stats import beta
 
-RES = Path(__file__).resolve().parent / "results"
+import sys
+
+RES = Path(__file__).resolve().parent / (sys.argv[1] if len(sys.argv) > 1 else "results")
 SNR_EDGES = [0, 6, 8, 12, 20, np.inf]
 SNR_LABELS = ["<6", "6-8", "8-12", "12-20", ">20"]
 MAX_FALSE_EXCL, MAX_WRONG = 0.05, 0.03

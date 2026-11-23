@@ -3,7 +3,7 @@
 | Folder | What | State |
 |---|---|---|
 | `published_lists/` | Do published alias lists keep the periods that were later solved? | Done for Hawthorn et al. 2024 (exploratory) |
-| `mono/` | Injection and confirmed-planet calibration for single transits | **Run 2026-11-22 under pre-registration 1.1. Outcome: fail.** Exclusion is reliable overall; automatic second-transit calls are not. See `mono/RESULTS.md`. |
+| `mono/` | Injection and confirmed-planet calibration for single transits | **Run 2026-11-22 under pre-registration 1.1. Outcome: fail, confirmed by an independent re-derivation.** See `mono/RESULTS.md` and `mono/INDEPENDENT_CHECK.md`. |
 
 ## Published lists: result (2026-11-22)
 

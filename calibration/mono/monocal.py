@@ -134,7 +134,7 @@ def excluded_periods(t_ref, periods, c0, step, excl, tmin, tmax, max_elems=4_000
 # ------------------------------------------------------------------ one trial
 
 def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, truth_P=None,
-              truth_t0=None, with_grid=True):
+              truth_t0=None, with_grid=True, depth_cat_err=np.nan):
     """sectors: [(sector, author, t, f)] raw, normalised (as pl.load_sector_lc returns them).
 
     t_cat, dur_cat_d, depth_cat play the catalogue's time, duration and depth of the single transit.
@@ -152,7 +152,9 @@ def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, 
     if ref and ref["snr"] >= 5 and 0.33 < ref["depth"] / depth_cat < 3:
         depth_ref, dur_ref, derr_ref = ref["depth"], ref["dur_d"], ref["depth_err"]
     else:
-        depth_ref, dur_ref, derr_ref = depth_cat, dur_cat_d, 0.2 * depth_cat
+        # search_one: the catalogue's depth error if it has one, else 20% (corrected 2026-11-22)
+        derr_ref = depth_cat_err if np.isfinite(depth_cat_err) and depth_cat_err > 0 else 0.2 * depth_cat
+        depth_ref, dur_ref = depth_cat, dur_cat_d
     out.update(ref_snr=ref["snr"] if ref else np.nan, ref_measured=bool(ref and depth_ref == ref["depth"]),
                depth_ref=depth_ref, dur_ref_d=dur_ref, ref_sector=s, ref_author=a)
 
@@ -183,7 +185,10 @@ def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, 
     if passing:  # as st2_pipeline.alias_events: best clean event, else best event
         key = lambda e: (e["edge_dist_d"] >= core.CLEAN_EDGE_D and e["frac"] >= core.CLEAN_FRAC, e["snr"])
         best = max(passing, key=key)
-        rows = core.alias_table(t_cat, best["tc"], dur_ref, depth_ref, derr_ref, T, F,
+        # corrected 2026-11-22: times in order (the event can precede the reference, and alias_table
+        # returns nothing for a negative gap); the event's depth error, as st2_pipeline.step_aliases
+        ta, tb = sorted([t_cat, best["tc"]])
+        rows = core.alias_table(ta, tb, dur_ref, depth_ref, best["depth_err"], T, F,
                                 p_floor=P_FLOOR, pmin_density=pmin)
         ok = [r for r in rows if r["status"] in ("allowed", "supported")]
         out.update(t2=best["tc"], n_aliases=len(rows), n_alias_ok=len(ok),
@@ -206,7 +211,7 @@ def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, 
         out["truth_excluded_single"] = bool((v["verdict"] == "excludes").any())
         out["truth_n_clean_epochs"] = int(np.isin(v["verdict"], ["excludes", "supports", "shallow", "deeper"]).sum())
         if rows:
-            dT = out["t2"] - t_cat
+            dT = abs(out["t2"] - t_cat)
             n = int(round(dT / truth_P))
             on_grid = n >= 1 and n <= len(rows) and abs(dT - n * truth_P) < dur_ref / 2
             out["truth_alias_status"] = rows[n - 1]["status"] if on_grid else "not an alias"
