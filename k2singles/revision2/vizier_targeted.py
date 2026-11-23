@@ -14,7 +14,7 @@ Because the list holds the recall papers' own catalogues, VizieR recall on the k
 works, not how well a blind search would do.
 
 Each catalogue is first checked to exist (a query without a position must return a table). A reply counts only if it has
-no database error, ends in </VOTABLE> and (per star) contains the star's Gaia DR3 row, queried alongside as a control;
+no database error, ends in </VOTABLE> and (per star) contains the star's Gaia DR3 or 2MASS row, queried alongside as controls;
 otherwise it is retried (up to 30 times, 1-5 min apart). A catalogue counts as absent only if the mirror says "not found"; one whose reply lists no tables is recorded as "no
 tables in a cone search" and not queried.
 Server: vizier.cfa.harvard.edu (the CDS host and the other mirrors were unreachable on 2026-11-22).
@@ -38,6 +38,8 @@ OUT = HERE / "data" / "literature"
 CACHE = OUT / "vizier_targeted_cache"
 URL = "https://vizier.cfa.harvard.edu/viz-bin/votable"
 GAIA = "I/355/gaiadr3"
+TMASS = "II/246/out"  # 2MASS (epoch ~2000), the control for high proper-motion stars: EPIC 211498244 moves 346 mas/yr and
+                      # its Gaia DR3 (epoch 2016) position is 5.2" from the catalogue's J2000 position
 PCOLS = ("per", "period", "p", "porb", "plc", "pdays", "p_orb", "p1", "pbls", "ptess", "prot", "freq")
 
 CATALOGUES = {
@@ -149,12 +151,12 @@ def one(epic, tic, ra, dec, cats):
     f = CACHE / f"{epic}.json"
     if f.exists():
         return json.loads(f.read_text())
-    # Gaia DR3 rides along as a control: every star is in it, so a reply without its row is a failed one
-    v = patient({"-source": " ".join(sorted(cats | {GAIA})), "-c": f"{ra:.6f} {dec:+.6f}", "-c.rs": 3, "-out.max": 5,
-                 "-out.all": 1, "-out.add": "_r"}, f"EPIC {epic}", ok=lambda v: has_rows(v, GAIA))
+    # Gaia DR3 and 2MASS ride along as controls: every star is in them, so a reply with neither row is a failed one
+    v = patient({"-source": " ".join(sorted(cats | {GAIA, TMASS})), "-c": f"{ra:.6f} {dec:+.6f}", "-c.rs": 3, "-out.max": 5,
+                 "-out.all": 1, "-out.add": "_r"}, f"EPIC {epic}", ok=lambda v: has_rows(v, GAIA) or has_rows(v, TMASS))
     rows = []
     for t, desc in tables(v):
-        if t.name == GAIA:
+        if t.name in (GAIA, TMASS):
             continue
         tab = t.to_table(use_names_over_ids=True)
         if not len(tab):
