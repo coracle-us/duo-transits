@@ -6,6 +6,12 @@ pre-registration (`../prereg_round3.yaml`, 1.0) names no outcome for that combin
 said to Jon before the freeze. It is not "pass" and, by the letter, not "calls after vetting"
 either, because that outcome also requires the recovery guard.
 
+**Decision (Jon McBee, 2026-11-23, after this write-up and the independent re-derivation were put
+to him): report round 3 as it stands; no round 4.** The paper states that the calls were correct
+when made, that the recovery guard was missed (54% and 56% against 60%), and the limits below. The
+recovery rate is reported as a completeness number. The outcome stays "not defined by the
+pre-registration"; it is not relabelled. The rule, the criteria and the test set are unchanged.
+
 Rule: `FROZEN_RULE3.md`, frozen 2026-11-23 (`../APPROVALS.md`, `FREEZE3.json`) before any round-3
 test-set light curve was loaded. Run: `run_test3.py` at commit 97ffd3c. Score: `score3.py`, written
 before the freeze. Numbers are from `test/score_summary.md`; rows in `test/arm_a_rows.csv` and
