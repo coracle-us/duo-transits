@@ -368,5 +368,11 @@ misses the 3 C0 binaries' catalogue periods. VizieR is the source that should fi
   - 2509.8 + 31.27 = 2541.07, the S45 2541.05 event.
 - So both TCEs plausibly pair rejected events, not transits. This is not proven without the TCE epochs (SPOC DV report).
 
-**Open: do TCE periods block "new"?** The rules call a period new only if its star is "no prior period" or "estimate
-only". With TCEs classed PERIOD, 211489484 and 211924561 are "published, differs". Jon decides how the note words them.
+**Decided 2026-11-23 (Jon): TCE periods do block "new".** The rules call a period new only if its star is "no prior
+period" or "estimate only", and both classification passes class the TCEs as PERIOD. So the rule stays as
+pre-registered, and the note does not call the periods of 211489484 and 211924561 new.
+- The note presents each as a resolved period that conflicts with the SPOC TCEs, and says why each TCE is excluded.
+- 211489484, 106.936 d: already excluded in the note.
+- 211489484, 0.2405 d: a short-period signal, not a competing transit period. One line saying so.
+- 211924561, 31.269 d and 58.290 d: "plausibly arise from the rejected S44/S45 events", unless the SPOC DV report's
+  TCE epochs are checked. Downloading that report needs Jon's permission. Not done.
