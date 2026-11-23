@@ -97,3 +97,22 @@ def test_vetting():
     assert not rule2.vet(ev, Rule(depth_ratio_max=1.5))
     assert not rule2.vet(ev, Rule(local_anti_max=4))
     assert rule2.best_event([ev, dict(ev, snr=20.0, frac=0.6)], ROUND1)["snr"] == 9.0
+
+
+def test_harness_boxes_and_alias_table_match_st2core_under_round1_rule():
+    import harness
+    t, f = _lc(seed=3)
+    dur, d0, e0 = 0.2, 2e-3, 2e-4
+    for tc in (10.0, 710.0):
+        f[np.abs(t - tc) < dur / 2] -= d0
+    box = harness.Boxes(t, f)
+    c = np.linspace(1, 720, 500)
+    d, fr, ed = box(c, dur)
+    d2, fr2, _ = core.box_stats(t, f, c, dur)
+    assert np.allclose(d, d2, equal_nan=True) and np.allclose(fr, fr2)
+    assert np.allclose(ed, core.edge_distance(core.gap_edges(t), c))
+    sig = core.duration_scale_noise(t, f, dur)
+    mine = harness.alias_table(10.0, 710.0, box, t.min(), t.max(), dur, d0, e0, sig, ROUND1, True, False, 5.0)
+    ref = core.alias_table(10.0, 710.0, dur, d0, e0, t, f, p_floor=1.0, pmin_density=5.0)
+    assert [m[2] for m in mine] == [r["status"] for r in ref]
+    assert {"excluded", "allowed"} <= {m[2] for m in mine}

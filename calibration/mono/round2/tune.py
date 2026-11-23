@@ -76,7 +76,18 @@ def alias_lookup(s, t1, t2, ex, su):
     return n, dT / n, exc, sup
 
 
-def score_trial(s, rule, want_grid, want_call):
+def drop_own(s, events):
+    """Pre-registration 1.1 (b): remove the host's own events, found with nothing injected. An event
+    is the host's own if a null-run event lies within one reference duration of it, unless it sits
+    on an injected transit."""
+    null = np.array([e["tc"] for e in s.get("null_events", [])])
+    if not null.size:
+        return events
+    return [e for e in events
+            if e.get("at_truth", False) or np.min(np.abs(null - e["tc"])) >= s["dur_ref_d"]]
+
+
+def score_trial(s, rule, want_grid, want_call, remove_own=False):
     multi = s["n_toi_on_star"] > 1
     r = dict(arm=s["arm"], tic=s["tic"], multi=multi, ref_snr=s["ref_snr"], ref_measured=s["ref_measured"],
              ref_cadence_min=s["ref_cadence_min"], n_clean_repeats=s.get("n_clean_repeats", 0))
@@ -84,6 +95,8 @@ def score_trial(s, rule, want_grid, want_call):
                               s["derr_ref"], rule, s["ref_measured"], multi) if s["tr_depth"].size else np.zeros(0, bool)
     r["truth_excluded"] = bool(te.any())
     ev = [e for e in s["events"] if "error" not in e]
+    if remove_own:
+        ev = drop_own(s, ev)
     ok = [e for e in ev if rule2.vet(e, rule)]
     r["n_vetted"] = len(ok)
     r["n_false_vetted"] = sum(not e.get("at_truth", False) for e in ok)
@@ -122,6 +135,8 @@ def _frac(df, col):
 def metrics(rule, want_grid=True, want_call=False):
     t = pd.DataFrame([score_trial(s, rule, want_grid, want_call) for s in load()])
     t["snr_bin"] = pd.cut(t.ref_snr, SNR_EDGES, labels=SNR_LABELS, right=False).astype(str)
+    own = pd.DataFrame([score_trial(s, rule, False, want_call, remove_own=True)
+                        for s in load() if s["arm"] in ("B", "Bx")])
     m = dict(asdict(rule))
     sets = {"A2one": t[(t.arm == "A2") & ~t.multi], "A2multi": t[(t.arm == "A2") & t.multi],
             "B": t[t.arm == "B"], "Ball": t[t.arm.isin(["B", "Bx"])], "A1one": t[(t.arm == "A1") & ~t.multi]}
@@ -145,13 +160,18 @@ def metrics(rule, want_grid=True, want_call=False):
         m[f"null_event_{name}"] = f"{int(d.null_event.sum())}/{len(d)}"
         m[f"null_event_{name}_rate"] = float(d.null_event.astype(bool).mean())
         m[f"null_event_{name}_hosts"] = f"{int(d.groupby('tic').null_event.any().sum())}/{d.tic.nunique()}"
-    for name in ("A2one", "B", "Ball"):
+    sets["Bown"], sets["Ballown"] = own[own.arm == "B"], own
+    for name in ("Bown", "Ballown"):
+        d = sets[name]
+        m[f"false_event_{name}"] = f"{int((d.n_false_vetted > 0).sum())}/{len(d)}"
+        m[f"false_event_{name}_rate"] = float((d.n_false_vetted > 0).mean())
+    for name in ("A2one", "B", "Ball", "Bown", "Ballown"):
         d = sets[name][sets[name].n_clean_repeats > 0]
         k, n = _frac(d, "repeat_detected")
         m[f"recovery_{name}"] = f"{k}/{n}"
         m[f"recovery_{name}_rate"] = k / n if n else np.nan
     if want_call:
-        for name in ("A2one", "B", "Ball"):
+        for name in ("A2one", "B", "Ball", "Bown", "Ballown"):
             d = sets[name][sets[name].call.isin(["resolved", "narrowed"])]
             k = int((~d.truth_in_set.astype(bool)).sum())
             m[f"wrong_{name}"] = f"{k}/{len(d)}"
