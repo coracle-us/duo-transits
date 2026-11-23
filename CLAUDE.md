@@ -215,7 +215,7 @@ This is a search for a second transit, in S61 or later, of each single-transit c
 - Method and known limits: `salinas-second-transits/README.md`.
 - Round 2 summary: `salinas-second-transits/results/round2/SUMMARY_2026-10-27.md`.
 - Rounds 2 and 3 ran from briefs in the Claude relay Drive folder (`briefs/`, reports in `results/`).
-- Merged as PRs #2, #3, #7, #9, #10, #11 and #12, plus the blind follow-ups on all four stars.
+- Merged as PRs #2, #3, #7, #9, #10, #11, #12 and #18.
 
 **Epoch rule.** Since 2026-11-01, an epoch excludes a period only if its box depth is below
 0.5 depth0 − 3σ (half3s). Test on 83 confirmed planets, with a box reference depth as the pipeline uses
@@ -242,6 +242,9 @@ odd/even difference or a secondary eclipse.
   - Left: an eccentric orbit (e ≳ 0.34, Rp ≈ 11 R⊕), or an eclipsing system blended within ~2″ that Gaia
     does not resolve. RVs or high-resolution imaging would tell them apart.
   - Details: `results/round3/independent/RESULTS.md`, the "Follow-up" section for each star.
+  - **Possible false positive.** The blind `s17` finds a marginal dip at phase 0.872: 694 ± 147 ppm, in
+    8 of 9 orbits, with no background or centroid change. The transiting object can't make it. If it is
+    real, this is a blended eccentric EB. S111–S114 hold six of these dips.
 - **241550976 and 107113048:** the blind follow-up finds Gaia radii of 0.96 and 1.0 R☉, and circular orbits
   fit both. The leading reading is a giant planet (~13 and ~9.5 R⊕). The fallback for both is an
   eclipsing pair within ~2″ that Gaia does not see.
@@ -250,12 +253,17 @@ odd/even difference or a secondary eclipse.
   - Round 3 had called this a pointing excursion; the bright star ~5 px east in its difference image is that
     binary.
   - E29 still fits the ephemeris (O−C −1.1 min), and the binary's other eclipses don't dim the target's pixels.
-  - E29 is the only transit that rules out 74.55 and 149.10 d. The next transit, E42 on 2026-12-25
-    21:43 UTC, would settle this without S90.
+  - E29 is the only transit that rules out 74.55 and 149.10 d.
+  - E42 (2026-12-25 21:43 UTC) is outside TESS coverage, so only a ground-based observation would catch
+    it. The first TESS test is S114 (Feb–Mar 2027): flat data at BTJD 4474.96 and 4460.05 rule out 74.55
+    and 29.82 d, and an E43 transit (4450.11) would rule out 149.10 d.
 - **230133616:**
   - Rp ≈ 1.9 R_J is very large for a 23.75 d planet, and Gaia RUWE is 3.79.
   - The Gaia radius is 2.45 R☉ (a subgiant). A circular orbit around it fits worse by Δχ² ≈ 49. A companion
     diluting the light, e ≥ 0.33, or a blend hidden in the unresolved companion could explain that.
+  - There is no secondary eclipse at any phase (blind `s17`). A 3100 K M dwarf is ruled out at > 2σ on
+    218 of the 228 orbits the transit shape allows, so the companion is more likely substellar.
+    Radial velocities would settle it.
   - It transits in the old data too (34 epochs), so it was never really a single.
   - Its period is the n = 51 alias, about 24σ from the 23.7535 d hypothesis.
 - **Lessons:**
@@ -278,10 +286,30 @@ odd/even difference or a secondary eclipse.
 - It then ran Gaia radius, neighbour and difference-image checks on all four stars
   (`scripts/s11`–`s16`). All four dips come from within ~2″ of the target, and no period changed.
 
+**Novelty (2026-11-22)** (`results/round3/NOVELTY_2026-11-22.md`, `round3/s13_novelty.py`):
+- None of the four is a TOI or CTOI. ExoFOP has no files for them, they are not in the NASA Exoplanet
+  Archive, and a web search finds no paper.
+- Of the other four round 2 "periodic" stars:
+  - 317132251 and 454039549 are already TOI-7717 and TOI-7743;
+  - 141423461 has no clean event;
+  - 198009543's 11.71 d is below its 42.8 d circular minimum.
+- The 107113048 neighbour, TIC 107116357, is an uncatalogued EB: not in Gaia DR3 EBs, the TESS EB
+  catalogue or VSX (`round3/s14_eb_neighbour_catalogs.py`).
+
+**Drafts, nothing sent or submitted:**
+- Email to the Salinas team: `outreach/2026-11-22-salinas-team-email-draft.md`. They follow up their own
+  singles, so they should hear first.
+- RNAAS note: `rnaas/rnaas.tex`. Abstract 149 words, text 1,109 counted words, one table. Numbers are
+  traced in `rnaas/numbers.md`, which also has the pre-submission checklist.
+- Next transits: `results/round3/predictions_2026-11-22.csv` (`round3/s15_predictions.py`).
+  107113048 E42 is 2026-12-25 21:44 UTC ± 11 min.
+
 **Not done yet:**
-- Nothing has been reported to anyone. The natural recipient is the Salinas et al. team (draft only;
-  check first that no one has published these periods since October 2026).
-- Not decided: whether this becomes a third RNAAS note (four stars fit one table).
-- Still open (from the blind run):
-  - whether 230133616's companion is a star;
-  - new TESS data for 107113048 (E42, 2026-12-25).
+- Jon to review and send the email. Nothing has been reported to anyone.
+- RNAAS: wait for the Salinas reply, then the checklist in `rnaas/numbers.md`.
+- MAST on 2026-11-23: there is no TESS data after S102 for any of the four. The next sectors are S111–S114
+  for 275647095, 241550976 and 107113048, and S117+ for 230133616. When they are public, test:
+  - the 275647095 phase-0.872 dip;
+  - 107113048 in S114.
+
+  Predictions are in `independent/RESULTS.md`, "Predictions".
