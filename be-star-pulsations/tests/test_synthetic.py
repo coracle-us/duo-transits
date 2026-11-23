@@ -186,11 +186,42 @@ def test_followup():
     check("6b group-difference false-positive rate ~5%", hits / 60 <= 0.12, f"rate {hits/60:.2f}")
 
 
+def test_checks():
+    """checks/: LinearDiskCurve interpolates and drops sectors > 200 d from a visit;
+    phasefit recovers injected disk and phase coefficients; its swap-null false-positive
+    rate for the phase terms is ~5% when the outcome ignores the disk."""
+    from wise import LinearDiskCurve
+    import phasefit
+    d = LinearDiskCurve([0.0, 100.0, 500.0, 600.0], [10.0, 9.0, 9.0, 10.0])
+    o = d.at([50.0, 290.0, 550.0, 700.0])
+    check("linear interp values", np.allclose(o["w1_fit"][[0, 2]], [9.5, 9.5])
+          and np.isclose(d.w1_quiet, 10.0) and np.allclose(o["disk_excess"][[0, 2]], 0.5))
+    check("linear interp drops far / outside", list(o["wise_usable"]) == [True, False, True, False]
+          and o["phase_label"][0] == "building" and o["phase_label"][2] == "dissipating")
+    rng = np.random.default_rng(5)
+    sid, x, y, lab, use, t, disks, dos = fake_sample(rng, beta=0.5)
+    lc = stats4.code(lab)
+    yy = y + 0.2 * (lc == phasefit.B) - 0.1 * (lc == phasefit.D)
+    ids, gid = stats4.compact(sid, use)
+    c = phasefit.fit(gid, phasefit.design(x[ids], lc[ids]), yy[ids][:, None])
+    check("phasefit recovers [0.5, 0.2, -0.1]", np.allclose(c[:, 0], [0.5, 0.2, -0.1], atol=0.07),
+          f"{np.round(c[:, 0], 3)}")
+    hits = np.zeros(3)
+    for k in range(20):
+        sid, x, y, lab, use, t, disks, dos = fake_sample(rng)
+        table = stats4.build_swap_table(t, disks, evaluate)
+        r = phasefit.run(sid, x, lab, use, y[:, None], table, dos, n_null=200, n_boot=10, seed=k)
+        hits += r["p_swap"][:, 0] < 0.05
+    check("phasefit swap-null false-positive rate ~5%", np.all(hits / 20 <= 0.2),
+          f"rates {np.round(hits / 20, 2)}")
+
+
 if __name__ == "__main__":
     test_metrics()
     test_stage4()
     test_overshoot()
     test_followup()
+    test_checks()
     if FAIL:
         print("FAILED:", FAIL)
         sys.exit(1)
