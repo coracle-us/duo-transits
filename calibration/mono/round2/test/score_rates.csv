@@ -1,0 +1,25 @@
+criterion,k,n,rate,upper95,limit,verdict
+"false exclusion, A2 one-TOI, all",0.0,123,0.0,0.02406134393764123,0.05,pass
+"false exclusion, A2 one-TOI, SNR 6-8",0.0,17,0.0,0.16156611126074005,0.05,"reported, not judged"
+"false exclusion, A2 one-TOI, SNR 8-12",0.0,15,0.0,0.18103627252208462,0.05,"reported, not judged"
+"false exclusion, A2 one-TOI, SNR 12-20",0.0,15,0.0,0.18103627252208462,0.05,"reported, not judged"
+"false exclusion, A2 one-TOI, SNR >20",0.0,41,0.0,0.07046111727016405,0.05,"reported, not judged"
+"false exclusion, B, all",0.0,600,0.0,0.004980443380361347,0.05,pass
+"false exclusion, B, SNR 6-8",0.0,46,0.0,0.06304930167405447,0.05,"reported, not judged"
+"false exclusion, B, SNR 8-12",0.0,52,0.0,0.05598218012623554,0.05,"reported, not judged"
+"false exclusion, B, SNR 12-20",0.0,71,0.0,0.041315658706909474,0.05,pass
+"false exclusion, B, SNR >20",0.0,254,0.0,0.011724942350669808,0.05,pass
+"false exclusion, A2 multi-TOI",0.0,23,0.0,0.12212338890652302,0.05,"reported, not judged"
+"median ln P excluded, A1 one-TOI, SNR >= 8",,71,0.6541068821123004,,0.5,pass
+"median ln P excluded, B, SNR >= 8",,377,0.6701657256186584,,0.5,pass
+"false event, A1 one-TOI",7.0,123,0.056910569105691054,0.10423382482154532,0.05,FAIL
+"false event, B, own events removed",11.0,600,0.018333333333333333,0.03016356021374543,0.05,pass
+"false event, B, all events",84.0,600,0.14,0.16545374204695648,0.05,"reported, not judged"
+passing event in B null runs,85.0,600,0.14166666666666666,0.16722901558748324,0.05,"reported, not judged"
+"wrong period, A2 one-TOI",6.0,76,0.07894736842105263,0.14987835941745878,0.03,FAIL
+"repeat recovery, A2 one-TOI",81.0,123,0.6585365853658537,0.7294410680222422,0.6,pass
+"wrong period, B, own events removed",6.0,151,0.039735099337748346,0.07691532951095097,0.03,FAIL
+"repeat recovery, B, own events removed",150.0,230,0.6521739130434783,0.7043076294054023,0.6,pass
+"wrong period, B, all events",46.0,178,0.25842696629213485,0.3180093933000571,0.03,"reported, not judged"
+"repeat recovery, B, all events",150.0,230,0.6521739130434783,0.7043076294054023,0.6,"reported, not judged"
+"probability calibration: observed 0, predicted 1.63, 95% interval 0-5",0.0,723,1.6281999999999999,,,pass
