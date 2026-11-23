@@ -1,6 +1,7 @@
-# Round 2: the rule proposed for the freeze
+# Round 2: the frozen rule
 
-**Status: proposed. Not frozen until Jon approves step 2 in `../APPROVALS.md`.** Chosen on the
+**Status: FROZEN. Jon approved step 2 on 2026-11-23 (`../APPROVALS.md`), before any test-set star
+was loaded. Nothing in this file, the code or the samples listed in `FREEZE.json` may change.** Chosen on the
 tuning set only (`TUNING_LOG.md`). In code: `harness.FROZEN` (a `rule2.Rule`; the name is what it
 will be once approved).
 
