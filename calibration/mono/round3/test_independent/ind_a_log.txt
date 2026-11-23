@@ -1,0 +1,144 @@
+0 trials from checkpoint, 116 stars to run
+Warning: 23% (4186/18307) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5871/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5871/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5871/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5872/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 22% (4099/18307) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5872/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5872/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5875/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[1/116] TIC 118327550: 2 trials (19 s)
+[2/116] TIC 169765334: 2 trials (19 s)
+Warning: 30% (5871/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[3/116] TIC 266980320: 2 trials (20 s)
+[4/116] TIC 166836920: 2 trials (20 s)
+[5/116] TIC 158623531: 2 trials (21 s)
+[6/116] TIC 425997655: 2 trials (22 s)
+[7/116] TIC 159951311: 2 trials (22 s)
+[8/116] TIC 279741379: 2 trials (23 s)
+[9/116] TIC 150030205: 2 trials (24 s)
+[10/116] TIC 309792357: 2 trials (25 s)
+[11/116] TIC 29781292: 2 trials (28 s)
+[12/116] TIC 307210830: 2 trials (28 s)
+[13/116] TIC 387690507: 2 trials (11 s)
+[14/116] TIC 209459275: 2 trials (12 s)
+[15/116] TIC 453211454: 2 trials (14 s)
+Warning: 30% (5871/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[16/116] TIC 101011575: 2 trials (14 s)
+[17/116] TIC 61538902: 2 trials (13 s)
+[18/116] TIC 120896927: 2 trials (17 s)
+[19/116] TIC 451645081: 2 trials (10 s)
+[20/116] TIC 178819686: 2 trials (11 s)
+[21/116] TIC 54962195: 2 trials (14 s)
+[22/116] TIC 130924120: 2 trials (14 s)
+Warning: 32% (408/1288) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5872/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[23/116] TIC 243200602: 2 trials (14 s)
+[24/116] TIC 219344917: 2 trials (12 s)
+[25/116] TIC 237920046: 2 trials (13 s)
+[26/116] TIC 366989877: 2 trials (13 s)
+Warning: 32% (409/1288) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[27/116] TIC 306472057: 2 trials (20 s)
+[28/116] TIC 360156606: 2 trials (12 s)
+[29/116] TIC 287156968: 2 trials (12 s)
+[30/116] TIC 290348383: 2 trials (14 s)
+[31/116] TIC 154872375: 2 trials (14 s)
+[32/116] TIC 364395234: 2 trials (15 s)
+[33/116] TIC 230127302: 2 trials (15 s)
+Warning: 24% (4651/19050) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[34/116] TIC 224297258: 2 trials (11 s)
+[35/116] TIC 233087860: 2 trials (22 s)
+[36/116] TIC 411608801: 2 trials (10 s)
+[37/116] TIC 240968774: 2 trials (11 s)
+[38/116] TIC 321857016: 2 trials (14 s)
+[39/116] TIC 293954617: 2 trials (13 s)
+Warning: 25% (4782/19050) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[40/116] TIC 286916251: 2 trials (8 s)
+Warning: 25% (4828/19050) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 28% (3576/12904) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[41/116] TIC 198153540: 2 trials (8 s)
+[42/116] TIC 264678534: 2 trials (13 s)
+[43/116] TIC 269701147: 2 trials (19 s)
+[44/116] TIC 237232044: 2 trials (15 s)
+[45/116] TIC 287139872: 2 trials (13 s)
+[46/116] TIC 165987272: 2 trials (9 s)
+[47/116] TIC 229650439: 2 trials (19 s)
+Warning: 34% (5753/16999) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 27% (3459/12904) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[48/116] TIC 357501308: 2 trials (9 s)
+[49/116] TIC 50712784: 2 trials (11 s)
+[50/116] TIC 394050135: 2 trials (14 s)
+[51/116] TIC 258510872: 2 trials (15 s)
+[52/116] TIC 115524421: 2 trials (13 s)
+[53/116] TIC 417931300: 2 trials (13 s)
+[54/116] TIC 320798691: 2 trials (11 s)
+[55/116] TIC 142748283: 2 trials (12 s)
+[56/116] TIC 402898317: 2 trials (15 s)
+[57/116] TIC 342642208: 2 trials (11 s)
+[58/116] TIC 321669174: 2 trials (16 s)
+[59/116] TIC 441765914: 2 trials (18 s)
+[60/116] TIC 298663873: 2 trials (14 s)
+Warning: 32% (408/1288) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[61/116] TIC 91555165: 2 trials (10 s)
+[62/116] TIC 176220787: 2 trials (10 s)
+[63/116] TIC 71347873: 2 trials (11 s)
+[64/116] TIC 176956893: 2 trials (15 s)
+Warning: 32% (408/1288) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[65/116] TIC 401125028: 2 trials (13 s)
+[66/116] TIC 152852327: 2 trials (8 s)
+[67/116] TIC 237922465: 2 trials (10 s)
+[68/116] TIC 192790476: 2 trials (10 s)
+[69/116] TIC 350293646: 2 trials (10 s)
+[70/116] TIC 169249234: 2 trials (12 s)
+[71/116] TIC 4070275: 2 trials (6 s)
+[72/116] TIC 408416746: 2 trials (10 s)
+[73/116] TIC 354944123: 2 trials (9 s)
+[74/116] TIC 268604331: 2 trials (11 s)
+[75/116] TIC 120826158: 2 trials (10 s)
+[76/116] TIC 376939759: 2 trials (10 s)
+Warning: 32% (409/1288) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[77/116] TIC 193336820: 2 trials (13 s)
+[78/116] TIC 68577662: 2 trials (7 s)
+[79/116] TIC 204650483: 2 trials (11 s)
+Warning: 30% (5872/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[80/116] TIC 122785299: 2 trials (9 s)
+[81/116] TIC 437856897: 2 trials (9 s)
+[82/116] TIC 441763252: 2 trials (16 s)
+[83/116] TIC 58824746: 2 trials (7 s)
+[84/116] TIC 303432813: 2 trials (7 s)
+[85/116] TIC 219854519: 2 trials (14 s)
+[86/116] TIC 349576261: 2 trials (17 s)
+[87/116] TIC 179582003: 2 trials (19 s)
+[88/116] TIC 330687113: 2 trials (10 s)
+[89/116] TIC 388811663: 2 trials (9 s)
+Warning: 22% (4003/18126) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[90/116] TIC 397058826: 2 trials (9 s)
+[91/116] TIC 374180079: 2 trials (9 s)
+[92/116] TIC 366568760: 2 trials (11 s)
+[93/116] TIC 27064468: 2 trials (12 s)
+[94/116] TIC 466382581: 2 trials (9 s)
+[95/116] TIC 298074836: 2 trials (13 s)
+[96/116] TIC 42883782: 2 trials (9 s)
+[97/116] TIC 9989136: 2 trials (11 s)
+[98/116] TIC 232941965: 2 trials (11 s)
+[99/116] TIC 331691841: 2 trials (10 s)
+[100/116] TIC 91051152: 2 trials (9 s)
+[101/116] TIC 174328045: 2 trials (6 s)
+[102/116] TIC 352011875: 2 trials (10 s)
+[103/116] TIC 158657354: 2 trials (11 s)
+[104/116] TIC 49043968: 2 trials (9 s)
+[105/116] TIC 120317234: 2 trials (11 s)
+[106/116] TIC 320411045: 2 trials (10 s)
+[107/116] TIC 150096001: 2 trials (10 s)
+[108/116] TIC 436575927: 2 trials (8 s)
+[109/116] TIC 435339558: 2 trials (10 s)
+[110/116] TIC 56658270: 2 trials (10 s)
+Warning: 23% (4135/18307) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[111/116] TIC 201175570: 2 trials (8 s)
+[112/116] TIC 26078330: 2 trials (10 s)
+[113/116] TIC 130633912: 2 trials (9 s)
+[114/116] TIC 27846348: 2 trials (10 s)
+[115/116] TIC 271052158: 2 trials (10 s)
+[116/116] TIC 121865656: 2 trials (10 s)
+wrote 232 rows to ind_a_rows.csv
