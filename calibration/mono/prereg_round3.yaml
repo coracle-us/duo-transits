@@ -1,12 +1,13 @@
 # Pre-registration, round 3: second-transit calls and alias tables, tested on stars not yet used
 #
-# STATUS: DRAFT. Not approved. Nothing here may be tuned or run until Jon approves step 1.
+# STATUS: step 1 APPROVED by Jon on 2026-11-23, as drafted (no planet-candidate arm). This file is
+# frozen; see APPROVALS.md.
 # Approval is in two steps, both by Jon, as in round 2:
 #   step 1 (this file): the tuning plan, the test design and the pass criteria.
 #   step 2 (the freeze): the tuned rule, its parameter values and the code commit, recorded in
 #           APPROVALS.md BEFORE any test-set star is loaded. Nothing changes after the freeze.
-version: 0.1
-status: draft, not approved
+version: 1.0
+status: approved (step 1); step 2 (the freeze) not yet approved
 written: 2026-11-23
 spec: docs/STRATEGY_living_alias_catalogue.md (section 5.2)
 follows: calibration/mono/round2/RESULTS.md (round 2, outcome partial)
@@ -134,7 +135,7 @@ human_review:
 
 independent_rederivation: required after the test run, by a fresh agent, as in round 2.
 
-open_items:   # for Jon, before approval
+open_items:   # open at approval
   - This uses up the confirmed planets. After round 3 no unused CP or KP star with period above 5 d
     is left; a round 4 would rest on injections alone, or on planet candidates (PC), whose periods
     are not certain. 227 one-TOI PC stars with period above 20 d are unused and could be added now
