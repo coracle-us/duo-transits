@@ -1,0 +1,220 @@
+# Pre-registration: the catalogue run (phase 4 of docs/STRATEGY_living_alias_catalogue.md)
+#
+# STATUS: DRAFT 0.1 for Jon's approval. Nothing here has been run and no candidate has been scored.
+# Approval is in two steps, both by Jon, as in the calibration rounds:
+#   step 1 (this file): scope, what is computed, what each row reports, the vetting, the validation
+#           arms and their criteria, what may be claimed.
+#   step 2 (the freeze): the driver code, the trial definitions built from catalogues only, and the
+#           vetting sheet, recorded in catalogue/APPROVALS.md BEFORE any candidate is scored.
+# Any change after step 1 is a new version and needs Jon's approval.
+version: 0.1
+status: draft, not approved
+written: 2026-11-23
+spec: docs/STRATEGY_living_alias_catalogue.md (sections 5.1 to 5.3, phase 4)
+follows:
+  - calibration/mono/round2/RESULTS.md (single-transit exclusion; outcome partial)
+  - calibration/mono/round3/RESULTS.md (second-transit calls; outcome not defined, reported as it
+    stands by Jon's decision of 2026-11-23)
+
+why: >
+  The rule is frozen and measured. This run applies it, unchanged, to every published candidate in
+  the frozen list and writes one table. The rules for what is computed, vetted, reported and
+  claimed are fixed here, before any candidate's result is seen, so that the table cannot bend
+  toward a tidy answer.
+
+rule:   # nothing in the rule changes
+  single_transit_exclusion: calibration/mono/round2/FROZEN_RULE.md (R1-R3), with its probability
+    table R5
+  second_events: round 2's R4 plus round 3's T5 (calibration/mono/round3/FROZEN_RULE3.md)
+  alias_table: round 3's T1
+  code: round3/harness3.FROZEN3 and round2/harness.FROZEN, at the hashes in round3/FREEZE3.json
+  light_curves: as the calibration (SPOC, TESS-SPOC or QLP, one product per sector, the pipeline's
+    choice). All sectors on MAST on the day of the run; the sectors used are recorded per row.
+
+scope:
+  list: gaia_dr4/candidates_frozen.csv (frozen 2026-11-22), unchanged
+  scored:   # 1,183 rows on 1,139 stars
+    hawthorn: 85 rows, 85 stars (two catalogued transits each)
+    ctoi: 368 rows, 359 stars
+    salinas: 173 rows, 169 stars (108 single, 57 multi, 8 multiplanet)
+    toi_single: 156 rows, 154 stars
+    t16: 401 rows, 401 stars
+  not_scored:
+    k2: >
+      164 rows. The reference transit is in K2 data, not TESS. The frozen rule excludes nothing
+      when the reference is not measured in the light curve, and the calibration never tested a
+      reference from another instrument. These rows stay with k2singles/ and are listed in the
+      table as "not scored".
+    own_ctoi_and_own_salinas: >
+      21 rows. These are periods this project derived, not candidates. They are used only in the
+      comparison with earlier workstreams.
+  inputs_per_row: >
+    Catalogued transit time, depth and duration from the source catalogue (T16 depth converted from
+    magnitudes, 1 - 10^(-0.4 dm)); stellar mass and radius from the TIC; "multi" is true if the star
+    has more than one scored row or more than one TOI or CTOI in the ExoFOP tables of 2026-11-22.
+    A period stated by the catalogue is never an input. It is compared with the result afterwards.
+  owner_groups: >
+    Hawthorn, Salinas and some CTOI rows belong to groups still working them. This run computes
+    their rows. Whether and how they are released is a separate decision by Jon (strategy
+    section 11, question 1).
+
+what_is_computed:   # in this order
+  step_1_single_transit:
+    for: every scored row, with the first catalogued transit as the reference
+    gives: >
+      The periods excluded by the one transit and the data (R1-R3), the fraction of ln P between
+      1 d and the longest period the data can test that is excluded, and the R5 probability that
+      an excluded period is in fact the true one. This result does not depend on any second event.
+  step_2_event_search:
+    for: every scored row
+    gives: every event that passes R4 and T5, with its sector, product, time, depth, duration, SNR
+  step_3_vetting: see vetting. Done before step 4, by vetters who do not see any alias table.
+  step_4_alias_table:
+    singles: >
+      Through the catalogued reference time and the accepted event with the highest SNR (T1).
+      If no event is accepted the row reports step 1 only.
+    hawthorn_duotransits: >
+      Through the two catalogued times, Tc1 and Tc2. The depth error of the second transit is
+      the pipeline's own measurement at Tc2. If the pipeline does not find a passing event within
+      half a duration of Tc2, the table is still computed and the row is flagged "second transit
+      not recovered by this pipeline". A further accepted event, if any, is reported beside it
+      as a possible third transit and the table is recomputed with it; both tables are kept.
+      Round 3 tested T1 only with second events the pipeline found itself, so the duotransit
+      tables are an extension. The validation arm V2 is the check on it.
+  not_computed: >
+    Probabilities per allowed alias (period prior weights). The prior exponent is not settled
+    (calibration/README.md) and no calibration has tested the weights. Version 1 gives sets,
+    not weights.
+
+vetting:
+  why: >
+    Round 3 found that with a host's own signals left in, 22% of called injection trials had a
+    wrong period. On a real candidate there is no null run to remove them.
+  who: >
+    Two fresh agents, working apart, neither having seen the other's verdict, any alias table, any
+    stated period or any earlier result for the star. They see one sheet per event.
+  sheet:   # generated by frozen code; the same for every event
+    - the event and the reference, detrended and raw, same scale
+    - the same times in every other available product for that sector
+    - SAP beside PDCSAP where both exist
+    - quality flags, momentum dumps and sector edges within two durations
+    - the same times on the nearest five stars of similar brightness on the same CCD (sector-wide
+      dips)
+    - a difference image where a target pixel file or FFI cut-out is already cached; otherwise
+      "no difference image", said on the sheet
+    - event depth, duration and SNR against the reference
+  verdicts: accept, reject (with the reason from a fixed list), cannot tell
+  rule: >
+    An event is accepted only if both vetters accept it. Any other pair of verdicts is "not
+    accepted" and the row reports step 1 only, with the event listed and both verdicts shown.
+  what_acceptance_means: >
+    The dip is on the target's light curve, is not an instrumental or sector-wide feature, and
+    matches the reference in depth and duration. It does not show that the same body caused it.
+    Every alias table is therefore conditional on that, and the table says so in a column.
+  jon: >
+    Jon reviews the sheet of every row that would be described anywhere as resolved, or as
+    narrowed to five or fewer periods, before it is described so. His verdict is recorded.
+
+validation:   # run in the same pass; the truth files are frozen by hash at step 2
+  V1_vetter_check:
+    what: >
+      Before any candidate sheet is vetted, the two vetters are given, unlabelled and shuffled,
+      sheets for round 3's test trials - every arm-A and arm-B event that passed and was not at a
+      true transit (false events), and an equal number of passing events at a true transit, drawn
+      with numpy seed 20261205.
+    criterion: each vetter accepts at least 90% of the true events
+    reported_not_judged: >
+      The share of false events each vetter rejects, and the share both accept. Many arm-B false
+      events are real signals of the host, which this vetting cannot tell from a repeat.
+    if_missed: the sheet or the instructions are revised (a new version) before any candidate is vetted
+  V2_solved_candidates:
+    what: >
+      The Hawthorn candidates with a solved period in data/catalog/status.csv (26; tiers recorded
+      there), scored as every other row. These were seen in calibration/published_lists/, but not
+      by this rule.
+    criteria:
+      - "the solved period is not excluded by step 1 in at least 25 of 26"
+      - "the solved period is not excluded by the duotransit alias table in at least 25 of 26"
+    if_missed: >
+      Step-1 miss - reported at the top of the results; the exclusion result is in doubt and is
+      said to be. Alias-table miss - duotransit alias tables are not released from this run.
+  V3_published_resolutions:
+    what: >
+      Pages Navarrete (arXiv:2611.03019, version 2) - 187 TOIs, 28 periods resolved, 12 of them
+      with a period published elsewhere. Their table is taken from the arXiv source and frozen by
+      hash before the run. For every TOI in both lists - is their period excluded by our step 1,
+      and by our alias table where we have one?
+    criterion: >
+      Of the periods published elsewhere that are on a star in our list, at most 5% excluded by
+      step 1 (none, if there are fewer than 20).
+    reported_not_judged: >
+      Agreement on their other resolved periods. A disagreement there is looked into star by star
+      and reported; it is not counted as an error of either analysis.
+    if_missed: as V2's step-1 miss
+  V4_earlier_workstreams:
+    what: >
+      Every period this project stated before (the 21 own_ctoi and own_salinas rows, the Hawthorn
+      vetting log, TIC 147035057 and TIC 159614322) against this run's result for the same star.
+    criterion: none. Every difference is explained in writing, or listed as unexplained.
+
+output:
+  file: catalogue/results/v0/catalogue.csv, one row per scored row, plus one file of alias
+    tables and one of events
+  columns_fixed_at_step_2: >
+    Identifiers and source catalogue; the inputs used; sectors and products used; reference
+    measured or not, and its SNR; step-1 excluded fraction and R5 probability; events found, with
+    both vetting verdicts; the call (no repeat, narrowed, resolved, all excluded) and the periods
+    allowed, supported and excluded; "conditional on the second event being the same body";
+    the catalogue's stated period and its status in our table; flags (multi, T16 coincident time,
+    T16 Gaia ID disagreement, no light curve, QLP-only, second transit not recovered).
+  completeness_statement: >
+    Printed with the table - in round 3 the rule found 54% and 56% of clean repeats, almost none
+    below a reference SNR of 6. "No repeat" therefore does not mean that no repeat exists.
+  no_light_curve: such rows are listed with that status. TESScut photometry is not part of this run.
+  release: the table is not public until Jon releases it (strategy section 5.3).
+
+claims:
+  - No row is described as new, in the table or anywhere else, until a separate agent has checked
+    the ExoFOP target page, the TOI and CTOI tables and the literature for that star, and the
+    check is recorded with the row. A period that someone else has stated is cited as theirs.
+  - '"Resolved" and "narrowed to five or fewer" rows need a blind re-derivation by a fresh agent
+    from the light curves (CLAUDE.md section 5) and Jon''s review of the sheet, before any
+    outreach or text.'
+  - A step-1 exclusion is stated with its R5 probability, never as certain.
+  - Counts of resolved or narrowed rows are reported with the validation results beside them.
+
+independent_rederivation: >
+  After the run, a fresh agent re-derives every column of the table from the frozen rule files and
+  the same trial definitions, as in rounds 2 and 3. It shares the pipeline functions and the
+  cached light curves, which is said in the results.
+
+driver_check:   # before the freeze
+  rule: >
+    The catalogue driver, given round 3's arm-A2 trial definitions, must reproduce the rule
+    columns of round3/test/arm_a_rows.csv exactly. For duotransits, where no earlier output
+    exists, a fresh agent re-implements the duotransit table from this file and both are run on
+    20 round-3 arm-A stars with a second transit taken from the truth; every status must agree.
+
+limits:   # known now
+  - 610 of the 1,139 stars were injection hosts in the calibration, so their light curves have
+    been loaded before. No candidate's exclusion or alias result was computed or looked at there,
+    but aggregate counts of their own events were seen.
+  - The calibration's confirmed planets have periods mostly 5 to 20 d; these candidates are
+    mostly longer.
+  - Per-candidate timing errors are not used; T1 gives every transit time 15 min.
+  - T16 hosts are faint (median G 14.4). Many will have no SPOC, TESS-SPOC or QLP light curve.
+  - QLP times in sectors 100 and later are off by up to about 6 minutes; within T1's 15 min.
+
+needs_from_jon:   # beyond approval of this file
+  - Permission to download from MAST the light curves of the scored stars that are not yet
+    cached, and the arXiv source of 2611.03019 (one file).
+  - Agreement that two agents, not a person, do the first vetting, with Jon reviewing only the
+    rows that carry a claim.
+
+open_items:
+  - Whether the K2 rows should get their own run later, with a rule calibrated for a reference in
+    another instrument.
+  - Whether rows with a period stated by the catalogue (5 CTOI, 57 Salinas, 79 TOI) belong in the
+    table as candidates or as a comparison set. This draft keeps them as candidates and never uses
+    the period as an input.
+  - Planet Hunters and TSTPC lists are still not in the frozen list.
