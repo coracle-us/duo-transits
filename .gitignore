@@ -31,3 +31,6 @@ k2singles/revision/audit21/data/
 calibration/mono/work/
 calibration/mono/results/arm_a/
 calibration/mono/results/arm_b/
+calibration/mono/independent/work/
+calibration/mono/results_corrected/arm_a/
+calibration/mono/results_corrected/arm_b/

@@ -5,6 +5,12 @@ every rate is in `results/score_rates.csv`, from `score.py` (committed before th
 
 The two halves of the result point in opposite directions.
 
+> **Corrected 2026-11-22 after the independent check (`INDEPENDENT_CHECK.md`).** The tables below are
+> the first run. With three harness errors fixed (`results_corrected/`): A2 false exclusion is
+> **7 of 109 (6.4%), which fails the overall limit too**; A2 wrong period 15 of 74; B wrong period
+> 84 of 201; B false exclusion unchanged at 4 of 515. The independent run gives 7 of 109, 16 of 74,
+> 83 of 200 and 4 of 516. "No independent re-derivation has been run" under Limits no longer holds.
+
 ## 1. Period exclusion from one transit: reliable overall, but two bins miss
 
 | Arm | True period wrongly excluded | 95% upper bound | Criterion (≤ 5%) |

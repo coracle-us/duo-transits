@@ -120,3 +120,9 @@ def test_scoring_counts_rates_and_judges_the_thresholds():
     lines, ok = score.verdict(r, "B", True)
     assert not ok and any("wrong period" in x and "FAIL" in x for x in lines)   # 1 of 20 = 5% > 3%
     assert score.upper95(0, 59) == pytest.approx(0.0495, abs=1e-3)
+
+
+def test_an_event_before_the_reference_still_gives_an_alias_table():
+    """Reference = the last visible transit; the repeats are earlier. (Found by the independent check.)"""
+    r = mc.run_trial(with_box_transits(raw_sectors()), 825.0, DUR, DEPTH, truth_P=P_TRUE, truth_t0=T0)
+    assert r["t2"] < 825.0 and r["n_aliases"] > 0 and r["truth_in_alias_set"]

@@ -79,7 +79,9 @@ def run_star(item, cache):
     mstar, rstar = info.get("mstar", np.nan), info.get("rstar", np.nan)
     rows = []
     for arm, sec in (("A1", hidden), ("A2", sectors)):
-        r = mc.run_trial(sec, t_cat, dur, depth, mstar, rstar, truth_P=P, truth_t0=t0)
+        derr = item.get("depth_err")
+        r = mc.run_trial(sec, t_cat, dur, depth, mstar, rstar, truth_P=P, truth_t0=t0,
+                         depth_cat_err=derr * 1e-6 if derr is not None and np.isfinite(derr) else np.nan)
         rows.append(dict(arm=arm, tic=tic, toi=item["toi"], depth_bin=item["depth_bin"],
                          n_toi_on_star=item["n_toi_on_star"], tmag=item["tmag"], truth_P=P, truth_t0=t0,
                          t_cat=t_cat, depth_cat=depth, dur_cat_d=dur, at_grid_edge=bool(eph["at_grid_edge"]),
