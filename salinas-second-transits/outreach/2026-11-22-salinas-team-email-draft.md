@@ -5,8 +5,9 @@ Status: draft for Jon to review. Nothing has been sent.
 - **To:** H. Salinas, corresponding author of arXiv 2610.24882 (address on the paper).
 - **Cc:** R. Brahm.
 - **Before sending:**
-  - Check that the TESS-sector update the blind session is running (`results/round3/independent/RESULTS.md`)
-    doesn't change anything below.
+  - Done 2026-11-23: no TESS data after S102 exists for any of the four stars, and none is on
+    silicon in S103–S110 (`results/round3/independent/RESULTS.md`, "Predictions").
+  - If S111 data are public by the time you send this, check the 275647095 phase-0.872 dip first.
   - Re-run `round3/s13_novelty.py` if more than a few days have passed.
 
 Every number traces to a file:
@@ -41,7 +42,7 @@ Since your group is following up its own candidates, I wanted you to have them f
 
 **What I checked for each star:**
 - odd/even depths: all agree within 1.3σ (2.2σ in the second analysis for 107113048, which has only 2 + 2 transits);
-- secondary eclipse at phase 0.5: none;
+- secondary eclipse at phase 0.5: none (but see TIC 275647095 below);
 - transit shape and the stellar density it implies;
 - TESScut difference images against Gaia DR3 neighbours;
 - Gaia binarity indicators;
@@ -60,9 +61,15 @@ within 1.6σ.
   - Only 4 transits so far. One of them (Sector 90) overlaps an eclipse of an uncatalogued eclipsing
     binary 97″ away (TIC 107116357).
   - That transit is on time to about 1 minute, but it is the only one that rules out 74.55 and 149.10 d.
-  - The 25 December transit would settle this.
+  - TESS will not observe the 25 December transit (S112 does not cover the star), so a ground-based
+    observation then would settle it.
+  - Otherwise the first TESS test is Sector 114 (Feb–Mar 2027).
 - **TIC 275647095:** on target, but the transit is about 1.4 times longer than a circular orbit allows
   for the Gaia radius (1.14 R☉). This suggests e ≳ 0.34, or a blend within ~2″.
+  - There is a marginal dip at phase 0.872 (about 690 ± 150 ppm, 3–5σ depending on the data). The
+    transiting object can't make it.
+  - If it is real, the signal is more likely the primary eclipse of a blended eccentric eclipsing binary.
+  - TESS Sectors 111–114 cover six of these dips and should decide it.
 - **TIC 230133616:** this is not really a single.
   - It sits in the northern continuous viewing zone and transits in Sectors 16–86 (37 transits).
   - The host looks like a 2.45 R☉ subgiant with Gaia RUWE 3.8, so it probably has an unresolved

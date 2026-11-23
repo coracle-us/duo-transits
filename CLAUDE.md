@@ -242,6 +242,9 @@ odd/even difference or a secondary eclipse.
   - Left: an eccentric orbit (e ≳ 0.34, Rp ≈ 11 R⊕), or an eclipsing system blended within ~2″ that Gaia
     does not resolve. RVs or high-resolution imaging would tell them apart.
   - Details: `results/round3/independent/RESULTS.md`, the "Follow-up" section for each star.
+  - **Possible false positive.** The blind `s17` finds a marginal dip at phase 0.872: 694 ± 147 ppm, in
+    8 of 9 orbits, with no background or centroid change. The transiting object can't make it. If it is
+    real, this is a blended eccentric EB. S111–S114 hold six of these dips.
 - **241550976 and 107113048:** the blind follow-up finds Gaia radii of 0.96 and 1.0 R☉, and circular orbits
   fit both. The leading reading is a giant planet (~13 and ~9.5 R⊕). The fallback for both is an
   eclipsing pair within ~2″ that Gaia does not see.
@@ -250,8 +253,10 @@ odd/even difference or a secondary eclipse.
   - Round 3 had called this a pointing excursion; the bright star ~5 px east in its difference image is that
     binary.
   - E29 still fits the ephemeris (O−C −1.1 min), and the binary's other eclipses don't dim the target's pixels.
-  - E29 is the only transit that rules out 74.55 and 149.10 d. The next transit, E42 on 2026-12-25
-    21:43 UTC, would settle this without S90.
+  - E29 is the only transit that rules out 74.55 and 149.10 d.
+  - E42 (2026-12-25 21:43 UTC) is outside TESS coverage, so only a ground-based observation would catch
+    it. The first TESS test is S114 (Feb–Mar 2027): flat data at BTJD 4474.96 and 4460.05 rule out 74.55
+    and 29.82 d, and an E43 transit (4450.11) would rule out 149.10 d.
 - **230133616:**
   - Rp ≈ 1.9 R_J is very large for a 23.75 d planet, and Gaia RUWE is 3.79.
   - The Gaia radius is 2.45 R☉ (a subgiant). A circular orbit around it fits worse by Δχ² ≈ 49. A companion
@@ -294,7 +299,7 @@ odd/even difference or a secondary eclipse.
 **Drafts, nothing sent or submitted:**
 - Email to the Salinas team: `outreach/2026-11-22-salinas-team-email-draft.md`. They follow up their own
   singles, so they should hear first.
-- RNAAS note: `rnaas/rnaas.tex`. Abstract 143 words, text 1,014 counted words, one table. Numbers are
+- RNAAS note: `rnaas/rnaas.tex`. Abstract 149 words, text 1,109 counted words, one table. Numbers are
   traced in `rnaas/numbers.md`, which also has the pre-submission checklist.
 - Next transits: `results/round3/predictions_2026-11-22.csv` (`round3/s15_predictions.py`).
   107113048 E42 is 2026-12-25 21:44 UTC ± 11 min.
@@ -302,5 +307,9 @@ odd/even difference or a secondary eclipse.
 **Not done yet:**
 - Jon to review and send the email. Nothing has been reported to anyone.
 - RNAAS: wait for the Salinas reply, then the checklist in `rnaas/numbers.md`.
-- The blind session's check of TESS sectors after S107 (if in, see `independent/RESULTS.md`).
-- 107113048 E42 (2026-12-25): look for it once the data are public.
+- MAST on 2026-11-23: there is no TESS data after S102 for any of the four. The next sectors are S111–S114
+  for 275647095, 241550976 and 107113048, and S117+ for 230133616. When they are public, test:
+  - the 275647095 phase-0.872 dip;
+  - 107113048 in S114.
+
+  Predictions are in `independent/RESULTS.md`, "Predictions".

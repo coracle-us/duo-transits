@@ -45,6 +45,9 @@ file and a script. Paths below are relative to `salinas-second-transits/`.
 | 107113048: next transit | 2026-12-25 21:44 UTC ± 11 min | `results/round3/predictions_2026-11-22.csv` | `round3/s15_predictions.py` |
 | 275647095: 1.42× circular duration; R★ 1.14 ± 0.06 R☉; e ≳ 0.34 | | `independent/out/radius_275647095.txt`; `independent/RESULTS.md` | `independent/scripts/s14_radius.py` |
 | 275647095: G = 14.3 star at 19.6″, 42σ from the dip | | `independent/out/diffimg_275647095.txt` | `independent/scripts/s13_diffimg.py` |
+| 275647095: dip at phase 0.872, 694 ± 147 ppm, 8 of 9 orbits, no background or centroid change; six events in S111–S114 | | `independent/out/secondary_275647095.txt`, `phasedip_275647095.txt`; `independent/RESULTS.md` | `independent/scripts/s17_secondary_search.py`, `s20_phase_dip.py` |
+| 107113048: E42 outside TESS coverage; S114 tests 74.55 and 29.82 d | | `independent/out/predictions.txt`; `independent/RESULTS.md`, "Predictions" | `independent/scripts/s19_predictions.py` (tess-point) |
+| No TESS data after S102 for any of the four (MAST, 2026-11-23) | | `independent/RESULTS.md`, "Predictions" | same |
 | 230133616: ecliptic latitude | +82.7° | `work/round3_novelty/exofop_target_230133616.json` (not committed); `NOVELTY_2026-11-22.md` | `round3/s13_novelty.py` |
 | 230133616: 37 transits in S16–S86 | | `independent/out/ephem_230133616.txt` | `independent/scripts/s06_ephemeris.py` |
 | 230133616: R★ 2.45 R☉, RUWE 3.79, Δχ² ≈ 49, Rp 1.7–1.9 R_J | | `independent/out/radius_230133616.txt`, `gaia_230133616.txt`, `rhofixed_230133616.txt`; `oddeven_summary.csv` | `s14_radius.py`, `s12_gaia.py`, `s15_rho_fixed.py` |
@@ -55,14 +58,18 @@ file and a script. Paths below are relative to `salinas-second-transits/`.
 
 - [ ] **The Salinas team has replied, or had a fair chance to.** They are following up their own singles
   (`outreach/2026-11-22-salinas-team-email-draft.md`, not sent).
-- [ ] **New sectors.** Fold in the blind session's check of sectors after S107, and the 2026-12-25 transit
-  of 107113048 if it was observed.
+- [x] **New sectors (2026-11-23).** There is no TESS data after S102, and none of the four is on silicon in
+  S103–S110.
+- [ ] **S111–S114.** Fold these in when public:
+  - the 275647095 phase-0.872 dip (six events);
+  - 107113048 E43 and the 74.55 / 29.82 d tests in S114;
+  - a ground-based 107113048 E42 (2026-12-25), if anyone observes it.
 - [ ] **References.** Check every entry against ADS and arXiv (not done yet). Salinas et al. 2026 is
   arXiv-only so far; check for a journal reference.
 - [ ] **AAS AI policy.** Re-check the current AAS journals policy; the disclosure text is copied from
   AAS82207.
-- [ ] **Word count.** `python ../singles/rnaas/aas_wordcount.py rnaas.tex` gives an abstract of 143
-  (limit 150) and 1,014 counted words (limit 1,350), as of this draft.
+- [ ] **Word count.** `python ../singles/rnaas/aas_wordcount.py rnaas.tex` gives an abstract of 149
+  (limit 150) and 1,109 counted words (limit 1,350), as of this draft.
 - [ ] **Compile.** Compile on Overleaf and read the PDF. `rnaas_draft_reading_copy.pdf` is a check build with
   the older aastex631 class (tectonic), because aastex701.cls only ships with the Overleaf template. It
   compiles with no errors or undefined citations.

@@ -1,0 +1,30 @@
+TIC 275647095: QLP sectors [10, 37, 64, 90, 99, 100, 101]; dip at phase 0.8719, 5.89 h; transit 8.41 h
+depth by quantity (fluxes in ppm; background in e/s; centroids in milli-pixels), error x noise scale:
+quantity                transit (phase 0)                          dip  noise scale
+SAP_FLUX          +8816.4 +-    182.3 ( +48.4)       +635.1 +-    204.1 (  +3.1)  1.20
+DET_FLUX_SML      +3021.9 +-    168.9 ( +17.9)       +331.1 +-    160.9 (  +2.1)  1.32
+DET_FLUX          +4307.6 +-    217.0 ( +19.9)       +555.8 +-    211.3 (  +2.6)  1.24
+DET_FLUX_LAG      +4473.4 +-    258.2 ( +17.3)       +700.7 +-    251.9 (  +2.8)  1.19
+SAP_BKG              +7.9 +-      5.7 (  +1.4)         -1.8 +-      7.4 (  -0.2)  1.94
+SAP_X                +0.6 +-      0.2 (  +4.1)         +0.1 +-      0.2 (  +0.7)  1.23
+SAP_Y                -1.2 +-      0.4 (  -2.9)         +0.0 +-      0.2 (  +0.1)  1.39
+ratio DET_FLUX_SML/DET_FLUX: transit 0.702, dip 0.60 +- 0.29 (errors correlated; indicative)
+ratio DET_FLUX_LAG/DET_FLUX: transit 1.038, dip 1.26 +- 0.54 (errors correlated; indicative)
+SAP_FLUX at phase 0.3719 (P/2, P/3 tests): +5 +- 241 ppm
+SAP_FLUX at phase 0.2052 (P/2, P/3 tests): -226 +- 250 ppm
+SAP_FLUX at phase 0.5386 (P/2, P/3 tests): -174 +- 179 ppm
+each orbit (SAP_FLUX), with the distance from the dip centre to the nearest gap > 0.3 d or sector edge:
+  E -44 S 10 BTJD 1579.57:   -960 +-  837 ppm; nearest gap/edge 2.15 d
+  E -43 S 10 BTJD 1596.64: not enough data; nearest gap/edge 1.00 d
+  E  -1 S 37 BTJD 2313.33:   +220 +-  747 ppm; nearest gap/edge 4.43 d
+  E   0 S 37 BTJD 2330.39:   +463 +-  742 ppm; nearest gap/edge 1.93 d
+  E  42 S 64 BTJD 3047.08:  +1232 +-  532 ppm; nearest gap/edge 5.93 d
+  E  43 S 64 BTJD 3064.14:   +833 +-  649 ppm; nearest gap/edge 3.64 d
+  E  83 S 90 BTJD 3746.71: not enough data; nearest gap/edge 0.69 d
+  E  84 S 90 BTJD 3763.77:   +400 +-  662 ppm; nearest gap/edge 2.58 d
+  E  85 S 90 BTJD 3780.83: not enough data; nearest gap/edge 5.85 d
+  E 101 S 99 BTJD 4053.86:   +914 +-  406 ppm; nearest gap/edge 1.86 d
+  E 102 S 99 BTJD 4070.92: not enough data; nearest gap/edge 0.06 d
+  E 103 S100 BTJD 4087.99: not enough data; nearest gap/edge 0.04 d
+  E 104 S101 BTJD 4105.05:   +724 +-  442 ppm; nearest gap/edge 3.44 d
+  E 105 S101 BTJD 4122.12:   +537 +-  405 ppm; nearest gap/edge 2.83 d

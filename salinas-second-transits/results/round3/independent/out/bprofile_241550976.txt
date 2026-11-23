@@ -1,0 +1,10 @@
+TIC 241550976: b profile, 6 full transits, 1663 points, chi2/dof at best = 1.65
+  b = 0.00: Rp/R* = 0.1214  a/R* =  35.35  chi2 = 2730.4  scaled dchi2 =    2.2
+  b = 0.10: Rp/R* = 0.1215  a/R* =  35.16  chi2 = 2730.1  scaled dchi2 =    2.0
+  b = 0.20: Rp/R* = 0.1219  a/R* =  34.62  chi2 = 2729.3  scaled dchi2 =    1.5
+  b = 0.30: Rp/R* = 0.1227  a/R* =  33.69  chi2 = 2728.0  scaled dchi2 =    0.7
+  b = 0.40: Rp/R* = 0.1239  a/R* =  32.41  chi2 = 2726.8  scaled dchi2 =    0.0
+  b = 0.50: Rp/R* = 0.1256  a/R* =  30.68  chi2 = 2727.0  scaled dchi2 =    0.1
+  b = 0.60: Rp/R* = 0.1281  a/R* =  28.41  chi2 = 2734.0  scaled dchi2 =    4.4
+  b = 0.70: Rp/R* = 0.1320  a/R* =  25.46  chi2 = 2760.3  scaled dchi2 =   20.2
+  b < 0.59 at 2 sigma (scaled dchi2 = 4)

@@ -1,0 +1,57 @@
+today BTJD 4367.65 (2026-11-23); tess-point schedule ends with S134 at BTJD 5027.2 (2028-09-12)
+
+TIC 275647095: sectors >= S95 with the star on silicon: [99, 100, 101, 111, 112, 113, 114]
+TIC 275647095: P = 17.064042 d; future sectors with the star on silicon: S111 (cam 4, 2026-11-26 to 2026-12-22), S112 (cam 4, 2026-12-22 to 2027-01-17), S113 (cam 3, 2027-01-17 to 2027-02-13), S114 (cam 2, 2027-02-13 to 2027-03-14)
+  next transits (38 before the schedule ends; 6 inside a TESS sector on silicon):
+    E 121: BTJD 4380.2616 +-   3.2 min  (2026-12-05 18:16 UTC)  TESS S111
+    E 122: BTJD 4397.3257 +-   3.2 min  (2026-12-22 19:48 UTC)  TESS S112
+    E 123: BTJD 4414.3897 +-   3.2 min  (2027-01-08 21:21 UTC)  TESS S112
+    E 124: BTJD 4431.4537 +-   3.3 min  (2027-01-25 22:53 UTC)  TESS S113
+    E 125: BTJD 4448.5178 +-   3.3 min  (2027-02-12 00:25 UTC)  TESS S113
+    E 126: BTJD 4465.5818 +-   3.3 min  (2027-03-01 01:57 UTC)  TESS S114
+
+TIC 241550976: sectors >= S95 with the star on silicon: [99, 100, 101, 102, 112, 114]
+TIC 241550976: P = 21.196873 d; future sectors with the star on silicon: S112 (cam 4, 2026-12-22 to 2027-01-17), S114 (cam 3, 2027-02-13 to 2027-03-14)
+  next transits (31 before the schedule ends; 2 inside a TESS sector on silicon):
+    E  96: BTJD 4374.3449 +-   1.6 min  (2026-11-29 20:16 UTC)  
+    E  97: BTJD 4395.5418 +-   1.6 min  (2026-12-21 01:00 UTC)  
+    E  98: BTJD 4416.7386 +-   1.6 min  (2027-01-11 05:43 UTC)  TESS S112
+    E  99: BTJD 4437.9355 +-   1.6 min  (2027-02-01 10:27 UTC)  
+    E 100: BTJD 4459.1324 +-   1.7 min  (2027-02-22 15:10 UTC)  TESS S114
+
+TIC 107113048: sectors >= S95 with the star on silicon: [100, 101, 114]
+TIC 107113048: P = 49.701483 d; future sectors with the star on silicon: S114 (cam 2, 2027-02-13 to 2027-03-14)
+  next transits (13 before the schedule ends; 1 inside a TESS sector on silicon):
+    E  42: BTJD 4400.4055 +-   5.2 min  (2026-12-25 21:43 UTC)  
+    E  43: BTJD 4450.1070 +-   5.4 min  (2027-02-13 14:34 UTC)  TESS S114
+    E  44: BTJD 4499.8085 +-   5.5 min  (2027-04-04 07:24 UTC)  
+    E  45: BTJD 4549.5100 +-   5.7 min  (2027-05-24 00:14 UTC)  
+  alternative periods allowed by E0/E15/E36 if E29 were not a transit:
+    3P = 149.104 d: TESS transits none
+    3P/2 = 74.552 d: TESS transits S114 BTJD 4474.96 (not a P epoch)
+    3P/5 = 29.821 d: TESS transits S114 BTJD 4460.05 (not a P epoch)
+    P transit in S114 at BTJD 4450.11: also predicted by none of them
+
+TIC 230133616: sectors >= S95 with the star on silicon: [117, 118, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132]
+TIC 230133616: P = 23.752987 d; future sectors with the star on silicon: S117 (cam 4, 2027-05-10 to 2027-06-06), S118 (cam 4, 2027-06-06 to 2027-07-03), S119 (cam 3, 2027-07-03 to 2027-07-28), S122 (cam 3, 2027-09-19 to 2027-10-17), S123 (cam 3, 2027-10-17 to 2027-11-15), S124 (cam 3, 2027-11-15 to 2027-12-13), S125 (cam 3, 2027-12-13 to 2028-01-10), S126 (cam 2, 2028-01-10 to 2028-02-06), S127 (cam 2, 2028-02-06 to 2028-03-04), S128 (cam 2, 2028-03-04 to 2028-03-30), S129 (cam 3, 2028-03-30 to 2028-04-25), S130 (cam 4, 2028-04-25 to 2028-05-22), S131 (cam 4, 2028-05-22 to 2028-06-19), S132 (cam 4, 2028-06-19 to 2028-07-18)
+  next transits (27 before the schedule ends; 16 inside a TESS sector on silicon):
+    E  84: BTJD 4391.3784 +-   2.5 min  (2026-12-16 21:04 UTC)  
+    E  85: BTJD 4415.1313 +-   2.5 min  (2027-01-09 15:09 UTC)  
+    E  86: BTJD 4438.8843 +-   2.6 min  (2027-02-02 09:13 UTC)  
+    E  87: BTJD 4462.6373 +-   2.6 min  (2027-02-26 03:17 UTC)  
+    E  91: BTJD 4557.6493 +-   2.7 min  (2027-06-01 03:34 UTC)  TESS S117
+    E  92: BTJD 4581.4022 +-   2.7 min  (2027-06-24 21:39 UTC)  TESS S118
+    E  93: BTJD 4605.1552 +-   2.8 min  (2027-07-18 15:43 UTC)  TESS S119
+    E  96: BTJD 4676.4142 +-   2.9 min  (2027-09-27 21:56 UTC)  TESS S122
+    E  97: BTJD 4700.1672 +-   2.9 min  (2027-10-21 16:00 UTC)  TESS S123
+    E  98: BTJD 4723.9202 +-   2.9 min  (2027-11-14 10:05 UTC)  TESS S123
+    E  99: BTJD 4747.6731 +-   3.0 min  (2027-12-08 04:09 UTC)  TESS S124
+    E 100: BTJD 4771.4261 +-   3.0 min  (2027-12-31 22:13 UTC)  TESS S125
+    E 101: BTJD 4795.1791 +-   3.0 min  (2028-01-24 16:17 UTC)  TESS S126
+    E 102: BTJD 4818.9321 +-   3.1 min  (2028-02-17 10:22 UTC)  TESS S127
+    E 103: BTJD 4842.6851 +-   3.1 min  (2028-03-12 04:26 UTC)  TESS S128
+    E 104: BTJD 4866.4381 +-   3.1 min  (2028-04-04 22:30 UTC)  TESS S129
+    E 105: BTJD 4890.1911 +-   3.2 min  (2028-04-28 16:35 UTC)  TESS S130
+    E 106: BTJD 4913.9441 +-   3.2 min  (2028-05-22 10:39 UTC)  TESS S131
+    E 107: BTJD 4937.6970 +-   3.2 min  (2028-06-15 04:43 UTC)  TESS S131
+    E 108: BTJD 4961.4500 +-   3.2 min  (2028-07-08 22:48 UTC)  TESS S132
