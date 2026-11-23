@@ -1,7 +1,8 @@
 # Round 2: the rule proposed for the freeze
 
 **Status: proposed. Not frozen until Jon approves step 2 in `../APPROVALS.md`.** Chosen on the
-tuning set only (`TUNING_LOG.md`). In code: `harness.FROZEN` (a `rule2.Rule`).
+tuning set only (`TUNING_LOG.md`). In code: `harness.FROZEN` (a `rule2.Rule`; the name is what it
+will be once approved).
 
 Everything not listed here is as in round 1 (pre-registration 1.1 of round 1, with its three
 harness corrections): light-curve choice, 10-min binning, detrending, the reference-depth rule, the
@@ -11,7 +12,7 @@ event search, the clean-epoch rule, the period grid.
 
 - `dur`, `depth0`, `depth0_err`: the reference duration, depth and depth error of the trial.
   The reference is *measured* if `core.refine_event` at the catalogued time gives SNR >= 5 and a
-  depth between 0.33 and 3 times the catalogued depth; then they are its duration, depth and depth
+  depth strictly between 0.33 and 3 times the catalogued depth; then they are its duration, depth and depth
   error. Otherwise they are the catalogued duration and depth, with the catalogued depth error or,
   if there is none, 20% of the depth.
 - `T, F`: all detrended data of the star, sorted. `sig = core.duration_scale_noise(T, F, dur)`.
@@ -32,7 +33,7 @@ A predicted epoch at time c **excludes** if all of these hold:
 
 Uses: (i) the true period is falsely excluded if any epoch t_cat + k P_true (k != 0) inside the data
 span excludes; (ii) ln P excluded: periods log-spaced from 1 to 1000 d with step
-dur / (4 max(baseline, dur)) in ln P, baseline = max(T) - min(T); a period is excluded if any
+dur / (4 max(baseline, dur)) in ln P, baseline = max(T) - min(T) (as round 1's code); a period is excluded if any
 epoch t_cat + kP (k != 0), rounded to a time grid of step dur/8 starting at min(T), is an excluding
 grid point; (iii) alias tables, below.
 
@@ -60,6 +61,9 @@ The alias is `excluded` if any epoch excludes; else `supported` if any epoch's b
 `core.pmin_from_duration(dur, mstar, rstar, depth0)`; else `allowed`.
 Call: `resolved` if exactly one alias is allowed or supported, `narrowed` if more than one,
 `all excluded` if none; `no repeat` without an alias event.
+In the alias table only, `depth0_err` is the alias event's own depth error, not the reference's
+(as `st2_pipeline.step_aliases`; round 1's third harness correction). The independent check of
+2026-11-22 found this sentence missing.
 The truth is in the alias set if, for n = round(dT / P_true), 1 <= n <= number of aliases,
 `|dT - n P_true| < dur / 2`, and alias n is not `excluded`.
 
@@ -67,6 +71,8 @@ An event is *at a true transit* if it is within dur/2 of an epoch truth_t0 + k P
 the reference epoch (epochs further than dur/2 from the catalogued time). A trial has a *false
 event* if any passing event is not at a true transit; a *repeat is detected* if any passing event
 is at one. `n_clean_repeats` counts true epochs, other than the reference, that are clean in T.
+
+A false event is judged on A1 stars and on arm-B trials only, as the pre-registration says.
 
 ## Arm B: the host's own events (pre-registration 1.1 (b), (c))
 
@@ -76,6 +82,8 @@ duration and depth. Its events, of any SNR, other than those within one catalogu
 catalogued time, are the host's own. In the injected trial an event is the host's own if a null-run
 event lies within one `dur` of it and it is not at a true transit. The event criteria are judged
 with those events removed before vetting; the numbers without removal are reported beside them.
+The null run is a scoring device only. It is not a veto in the rule: a real candidate has no
+null run, so the R4 candidate "the same event appears with nothing injected" was not adopted.
 
 ## Probability (R5)
 
@@ -89,6 +97,10 @@ from the tuning set under this rule (one-TOI A2, B and Bx trials), p = (k + 0.5)
 | 8-12 | 0 | 202 | 0.0025 | 0.0147 |
 | 12-20 | 0 | 192 | 0.0026 | 0.0155 |
 | over 20 | 1 | 511 | 0.0029 | 0.0092 |
+
+The pre-registration allowed bins of reference SNR and cadence. Only SNR is used: with one false
+exclusion in 1,623 tuning trials there is nothing to split by cadence. These bins are not the bins
+of the pass criteria (6-8, 8-12, 12-20, over 20), which stay as approved.
 
 Calibration test: the predicted count is the sum of p over the scored A2 one-TOI and B trials; the
 observed count of false exclusions must lie in the central 95% Poisson interval of that mean.

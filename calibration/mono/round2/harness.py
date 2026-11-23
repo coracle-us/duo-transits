@@ -97,7 +97,9 @@ def call_from(events, t_cat, rule, ctx, truth_P):
     best = rule2.best_event(events, rule)
     if best:
         t1, t2 = sorted([t_cat, best["tc"]])
-        rows = alias_table(t1, t2, **ctx)
+        # as st2_pipeline.step_aliases (round 1, correction 3): the alias table uses the second
+        # event's depth error, not the reference's
+        rows = alias_table(t1, t2, **dict(ctx, derr=best["depth_err"]))
         n_ok = sum(r[2] in ("allowed", "supported") for r in rows)
         dT = t2 - t1
         n = int(round(dT / truth_P))
