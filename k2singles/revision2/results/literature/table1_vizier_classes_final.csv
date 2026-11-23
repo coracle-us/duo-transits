@@ -1,0 +1,107 @@
+EPIC,catalog,class,period_d,period_kind,note,class_B,note_B,compare
+202071902,J/A+A/579/A19/table3,LISTED,,,"Armstrong+2015 K2 variable catalogue, Type=EB, no period",LISTED,"K2 variable catalogue; Type=EB, no period column",agree
+202071902,J/ApJS/264/12/param,LISTED,,,LAMOST activity survey,LISTED,"LAMOST chromospheric-activity survey (2 rows, MRS+LRS); stellar params only",agree
+202071902,J/ApJS/278/46/table1,PERIOD,22.89,orbital,"SB2 orbit, e_Per 0.395",PERIOD,"SB2 RV orbit, P=22.89+-0.395 d, e=0.41, q=0.856 (FitFlag=3); _r=1.06 from rounded coords, LAMOST/Gaia ids match",agree
+202071902,J/MNRAS/452/3561/table2,LISTED,,,"LaCourse+2015 single-eclipse list, no period",LISTED,"LaCourse K2 C0 EB table; only eclipse epoch BJD0=1958.5707, Morph=0.01, no period field",agree
+202071902,J/MNRAS/527/521/tableb1,LISTED,,,SB2 candidate list,LISTED,SB2 list; identifier only,agree
+202071902,J/MNRAS/527/521/tablec1,ANALYSIS,,,dynamical mass ratio,ANALYSIS,"SB2 RV fit: systemic velocity and mass ratio Q=1.218, no period",agree
+202071902,J/MNRAS/527/521/tablec2,PERIOD,22.85881;1.207985,orbital,Pkep 22.85881(153) Keplerian fit; Psin 1.208 sinusoid fit,PERIOD,SB2 RV orbit: Keplerian Pkep=22.85881+-0.0153 d (ecc 0.37); Psin=1.207985 d is the circular-fit alternative; Pkep agrees with Guo+2025,agree
+202071902,J/other/RAA/21.292/table2,LISTED,,,,LISTED,LAMOST time-domain survey: masses/distance only,agree
+202071902,J/other/RAA/21.292/table3,PERIOD,8.6973,eclipsing,"Type EA, Plc from VSX (settled 2026-11-22)",PERIOD,"Type=EA, light-curve period Plc=8.6973 d from external survey (RS/AAVSO); Pbin=0.96 not a period; conflicts with 22.86 d SB2 orbit",agree
+202071902,J/other/RAA/21.292/tablea2,LISTED,,,,LISTED,LAMOST Teff/logg/RV survey row,agree
+202071902,J/other/RAA/21.292/tablea4,LISTED,,,,LISTED,LAMOST Teff/logg/RV survey row,agree
+202072917,B/vsx/vsx,PERIOD,3.842372,eclipsing,VSX Type E,PERIOD,"VSX Type=E, Period=3.842372 d (no error)",agree
+202072917,J/A+A/691/A242/obaf-eb1,PERIOD,23.25528;34.74438,eclipsing,EB subset; SPOC y4 and QLP y4 periods,PERIOD,"TESS OBAF EB candidate (score=2): SPOC yr4 23.2553 d, QLP yr4 34.7444 d; yr1 values -1 are placeholders; conflicts with VSX 3.84 d",agree
+202072917,J/A+A/691/A242/tessobaf,PERIOD,23.25528;34.74438,eclipsing,same row as obaf-eb1,PERIOD,same values as obaf-eb1 row (full OBAF sample table); yr1 -1 placeholders,agree
+202072917,J/AJ/170/287/table13,PERIOD,34.74574;34.74165;1007.648;15.17308;14.19501,TCE,"SPOC TCEs, ExoMiner FP",PERIOD,"5 SPOC TCEs for TIC 308255000, all ExoMiner FP; 34.74 d repeats in S1-46 and S42-46 and matches QLP 34.744 d",agree
+202072917,J/AJ/170/287/table5,PERIOD,5.578824,TCE,labelled TCE,PERIOD,"SPOC S6 TCE, label NTP (non-transiting phenomenon)",agree
+202072917,J/ApJS/264/17/table1,LISTED,,,LAMOST spectra of TESS objects,LISTED,"LAMOST spectrum of TESS target: SpT A2V, RV",agree
+202072917,J/ApJS/264/17/table3,LISTED,,,LAMOST; VarRV=Y,LISTED,"LAMOST multi-epoch RVs (3 rows), VarRV=Y; no period",agree
+202072917,J/MNRAS/452/3561/table2,LISTED,,,"LaCourse+2015, no period",LISTED,"LaCourse K2 C0 EB table; only BJD0=1953.6261, no period field",agree
+202126877,B/vsx/vsx,PERIOD,3.877092,eclipsing,VSX Type E,PERIOD,"VSX Type=E, Period=3.877092 d (no error)",agree
+202126877,J/A+A/691/A242/obaf-eb1,PERIOD,21.78076;21.77555,eclipsing,"EB subset; SPOC y4, QLP y4",PERIOD,TESS OBAF EB candidate (score=2): SPOC and QLP yr4 agree at 21.78 d; conflicts with VSX 3.877 d,agree
+202126877,J/A+A/691/A242/tessobaf,PERIOD,21.78076;21.77555,eclipsing,same row as obaf-eb1,PERIOD,same values as obaf-eb1 row,agree
+202126877,J/ApJS/259/63/table1,LISTED,,,LAMOST CP-star list,LISTED,"LAMOST CP1 star catalogue; _r=1.0 from rounded coords, LAMOST name matches",agree
+202126877,J/MNRAS/452/3561/table1,LISTED,,,"LaCourse+2015, no period",LISTED,"LaCourse K2 C0 EB table1; only BJD0=1955.44, no period field present",agree
+211390677,J/A+A/677/A21/k2_apo,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/A+A/677/A21/k2_gal,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/A+A/690/A323/table2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/AJ/163/152/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/AJ/167/208/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/AJ/167/50/catalog,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/ApJS/264/17/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/MNRAS/506/150/spect,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211390677,J/MNRAS/506/150/stars,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"red-giant / spectroscopic survey row (stellar params, seismic numax/deltanu); no period",agree
+211411112,III/284/allstars,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,III/284/allvis,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"APOGEE visit RVs (5 rows, RV -18.6 to +75 km/s); survey, no period",agree
+211411112,J/A+A/516/A3/table5,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/616/A10/tablea1b,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/624/A8/clusters,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/627/A119/table,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/633/A99/members,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/640/A1/nodup,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/645/A42/stars,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"flare-study cluster star table: Teff, R, Lbol; no period",agree
+211411112,J/A+A/659/A59/table2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/668/A4/memberl,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/A+A/691/A28/members,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,tidal-tail membership; projPerp*/pbint are not periods,agree
+211411112,J/A+A/704/A167/members,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/AJ/112/628/cat2000,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/AJ/150/97/table2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"M67 RV survey: Com=SB2, Mm=BM, mean RV; no period",agree
+211411112,J/AJ/161/190/table1,ANALYSIS,,,RVs,ANALYSIS,individual SB2 RVs with orbital phases (orbit itself is in table3),agree
+211411112,J/AJ/161/190/table3,PERIOD,62.593,orbital,"SB2 orbit, Geller+2021",PERIOD,"SB2 orbit WOCS 11028/S617: P=62.593+-0.003 d, e=0.625, 41 cycles",agree
+211411112,J/AJ/162/184/table1,ANALYSIS,,,"APOGEE SB2, RV amplitudes, no period",ANALYSIS,"APOGEE SB2 (SBn=2): mass ratio qW=0.78, RV amplitudes; no period",agree
+211411112,J/AJ/163/152/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/ApJ/869/9/table3,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/ApJ/879/69/table2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/ApJ/903/55/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/ApJ/938/118/table2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/ApJS/224/2/table5,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/ApJS/262/7/members,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/MNRAS/459/1060/table2,ANALYSIS,21.175186,rotation,"Gonzalez 2016 periodogram period, class BM, not orbital",ANALYSIS,"K2 C5 photometric variability period; Class=BM, Cat=mult; type not stated (likely spot/rotation), not the 62.59 d orbit",agree
+211411112,J/MNRAS/503/236/gaia-cat,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/MNRAS/503/236/ngc2682,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"UVIT FUV source F154W=22.53 at _r=1.24 arcsec; plausible match, not verifiable",agree
+211411112,J/MNRAS/503/3279/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/MNRAS/517/2165/table3,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/other/RAA/21.292/table2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/other/RAA/21.292/tablea1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211411112,J/other/RAA/21.292/tablea3,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,M67 membership / astrometric / spectroscopic survey row; no period,agree
+211489484,J/A+A/672/A176/table1,LISTED,,,"contact-binary sample row, no period",LISTED,"contact-binary sample, Amp=0.123; no period",agree
+211489484,J/AJ/170/287/table13,PERIOD,106.9361;0.240513,TCE,"SPOC TCEs, ExoMiner FP",PERIOD,"2 SPOC TCEs for TIC 6951741, both ExoMiner FP; 0.2405 d may be the contact-binary signal; _r=0.58 same as rows with explicit EPIC",agree
+211489484,J/ApJS/244/11/stars,LISTED,,,Kruse+2019 star list,LISTED,"Kruse K2 catalogue star row: Np=0, EB=2; no period in this table",agree
+211503363,J/MNRAS/495/1252/table2,ANALYSIS,14.0529,rotation,Prot,ANALYSIS,"LAMOST-Kepler activity: Prot=14.05 d (3 rows), EWHa",agree
+211503363,J/MNRAS/495/1252/table3,LISTED,,,,LISTED,LAMOST EWHa row; no period,agree
+211503363,J/MNRAS/495/1252/table5,ANALYSIS,12.470412,rotation,"Prot, flare table",ANALYSIS,"flare event in K2 long cadence, Prot=12.47 d (differs from 14.05 d in table2)",agree
+211892898,I/357/tbosb1,PERIOD,72.53358,orbital,Gaia DR3 SB1,PERIOD,"Gaia DR3 SB1 orbit: P=72.5336+-0.0288 d, e=0.48, K1=22.7 km/s, 32 RV epochs",agree
+211892898,J/A+A/622/A133/cparam,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"flare-star cluster sample, 1 flare; no period",agree
+211892898,J/A+A/645/A42/stars,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,flare-study cluster star table; no period,agree
+211892898,J/A+A/677/A21/k2_apo,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,asteroseismic red-giant distance catalogue,agree
+211892898,J/A+A/678/A158/catalog,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,APOGEE red-giant spectroscopic ages,agree
+211892898,J/AJ/134/2340/table3,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,Praesepe membership survey (Pmem 99),agree
+211892898,J/AJ/154/224/table2,ANALYSIS,8.51,rotation,"Prot; plx 7.8 is the cluster value, Gaia DR3 plx 0.88 (background giant)",ANALYSIS,"K2 young-cluster target list, Prot=8.51 d; implausible as rotation of a 6.8 Rsun giant",agree
+211892898,J/AJ/163/152/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,APOGEE stellar parameters,agree
+211892898,J/AJ/167/208/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,APO-K2 red-giant ages (R=6.82 Rsun),agree
+211892898,J/AJ/167/50/catalog,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,APO-K2 red-giant catalogue,agree
+211892898,J/ApJ/795/161/table5,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"Praesepe activity sample, Bin?=Y; no period",agree
+211892898,J/ApJ/839/92/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,Praesepe K2 member list; no period fields filled,agree
+211892898,J/ApJ/842/83/table2,LISTED,,,photometric binary flag,LISTED,"Praesepe member list, Binary=photometric",agree
+211892898,J/ApJ/842/83/table3,ANALYSIS,,,"Notes=eclipse, Bin?=cand; no period",LISTED,"K2 rotation survey row with no Prot; Notes=eclipse, Bin?=cand",LISTED/ANALYSIS only
+211892898,J/ApJ/931/45/table2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"Praesepe membership; Dist=1088 pc, Bin=1",agree
+211892898,J/ApJS/224/2/table5,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,EPIC stellar properties,agree
+211924561,J/A+A/624/A19/catalog,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,GALAH-TGAS survey row,agree
+211924561,J/A+A/672/A176/table1,LISTED,,,contact-binary sample row,LISTED,"contact-binary sample, Amp=0.002; no period",agree
+211924561,J/A+A/691/A242/tessobaf,LISTED,0.119355,,"whole OBAF catalogue, not the EB subset; scoreSPOCy4=0; not an EB detection",LISTED,OBAF eclipse search SPOC yr4 0.1194 d with score=0; star absent from obaf-eb1 EB list; QLP -1 placeholder; not a claimed EB period,agree
+211924561,J/A+A/692/A243/mrs,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,stellar age survey,agree
+211924561,J/AJ/170/287/table13,PERIOD,31.26866;58.29026,TCE,"SPOC S42-46 TCEs (MES 7.4, 11.5), ExoMiner FP",PERIOD,"2 low-MES (11.5, 7.4) SPOC TCEs for TIC 238606535, both ExoMiner FP",agree
+211924561,J/ApJS/224/2/table5,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,EPIC stellar properties,agree
+211924561,J/ApJS/244/43/table1,LISTED,100.0,placeholder,Villanova placeholder copied (settled 2026-11-22),LISTED,"LAMOST+Kepler binary params; Per=100.0 with no error, Morph=0.0 is a placeholder, not a measurement",agree
+211924561,J/MNRAS/506/150/spect,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,GALAH DR3 survey row,agree
+211924561,J/MNRAS/506/150/stars,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,GALAH DR3 survey row,agree
+212012030,J/AJ/156/241/table4,LISTED,1.257543;6.794257;0.721049,,"ATLAS variable, Class=dubious; periodogram peaks, not orbital",LISTED,"ATLAS variable catalogue, Class=dubious (P=0.999): periodogram periods are not a variability claim; _r=0.46",agree
+246194159,II/361/mdfc-v10,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,HD 220967 diameter catalogue,agree
+246194159,III/272/ravedr4,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,RAVE survey row,agree
+246194159,III/279/rave_dr5,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,RAVE survey row,agree
+246194159,III/279/rave_on,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,RAVE survey row,agree
+246194159,III/283/ravedr6,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"RAVE survey row; P=n is a flag, not a period",agree
+246194159,III/283/xgaia2,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"Gaia DR2 xmatch; _r=1.75 is J2000-to-2015.5 proper motion (~110 mas/yr), G=9.38 fits",agree
+246194159,III/283/xgaiae3,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,"Gaia EDR3 xmatch; _r=1.80 is proper motion to 2016, same source",agree
+246194159,J/AJ/148/81/table1,LISTED,,,"survey/membership/stellar-parameter table, no period",LISTED,APASS photometry; _r=1.35 with V=9.55 consistent,agree

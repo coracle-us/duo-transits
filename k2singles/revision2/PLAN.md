@@ -153,6 +153,22 @@ Any change goes below with its date and reason.
 - **Test result (2026-11-15):** the rule flags 1 of 163 recovered catalogued events, 0.2% of K2 events, 0% of TESS
   events and 36 control events. It passes.
 
+**2026-11-22, after the VizieR census failed: a fixed catalogue list (Jon chose "both").**
+
+- **The problem:** the pre-registered all-catalogue census (`vizier_all.py`) cannot run. The CfA mirror's catalogue
+  database (`metaviz@CFA`) was down most of 2026-11-22/23. It answers HTTP 200 with "The database is not currently
+  reachable", which astroquery returns as an empty result. When the database is up, one star's all-catalogue reply
+  takes several minutes. The CDS host and the other mirrors did not answer.
+- **Decision:** `vizier_targeted.py` queries a fixed list of catalogues, chosen before any was queried:
+  - the recall papers' catalogues, plus Wang+2021;
+  - variable-star and period catalogues: VSX, Gaia DR3 variability and NSS, ASAS-SN, ATLAS, ZTF, WISE, TESS EBs;
+  - 11 K2 variability, EB, rotation and planet-candidate catalogues;
+  - for Table 1 stars only, the VizieR catalogue of every paper the ADS/SIMBAD search found.
+
+  Same 3" radius. `vizier_all.py` keeps running serially; if it finishes, it is the primary result.
+- **Consequence for recall:** the list holds the recall papers' catalogues by construction, so finding them measures
+  only whether the query works, not how a blind search would do. The revised note must say so.
+
 ## Run record, 2026-11-22
 
 - **Saved stage-2 outputs are current.** `check_outputs_current.py` recomputes thresholds, common-mode flags and
@@ -265,7 +281,7 @@ Table 3 lists it as EA with P = 8.6973 d from AAVSO VSX; A had searched the PDF,
 Also checked by reading: the Villanova K2 EB catalogue gives 211924561 and 211489484 "period 100, error -1", its
 placeholder for single eclipses; Zhang+2019 copies the 100.0 d. Not a measurement (both passes agree).
 
-**Per-star verdicts, Table 1, from what the search found** (VizieR still pending):
+**Per-star verdicts, Table 1, from what the search found** (before VizieR; superseded below):
 
 | EPIC | Verdict | Sources |
 |---|---|---|
@@ -281,3 +297,76 @@ placeholder for single eclipses; Zhang+2019 copies the 100.0 d. Not a measuremen
 
 So the search alone recovers the prior period of 2 of the 5 Table 1 stars known to have one (211411112, 211892898), and
 misses the 3 C0 binaries' catalogue periods. VizieR is the source that should find those.
+
+## Literature search: VizieR, 2026-11-23
+
+**All-catalogue census** (`vizier_all.py`):
+- Second run: 160 of 163 failed the I/355 check (database down).
+- Third run, serial, 8 tries per star: 12 of 12 failed in about 12 h. Still running.
+- Usable results: 3 stars. VizieR recall from the census is not measured.
+
+**Fixed-list query** (`vizier_targeted.py`, post-hoc, see "Things decided after first results"):
+- Catalogue IDs: 93 checked. 78 exist on the mirror, 13 are not found, and 2 list no tables in a cone search (no
+  positions).
+- Not found, among those that matter:
+  - recall papers: Sandquist+2021 (J/AJ/161/59) and Kovács 2020 (J/A+A/643/A169);
+  - general list: Zink+2021 (J/AJ/161/259), Pope+2016 (J/MNRAS/461/3399) and Armstrong+2016 (J/MNRAS/456/2260).
+    They were not searched.
+- Result: all 163 stars queried; 296 table matches on 95 stars (`data/literature/vizier_targeted.csv`).
+
+**Fixes during the run:**
+- A Postgres error in a "Table or Catalog not found" reply had been read as an outage.
+- `-out.all=` (empty) returns default columns only; it is now `-out.all=1`.
+- J/A+AS/100/243 answers with no tables; that now has its own status.
+- EPIC 211498244 moves 346 mas/yr, and its Gaia DR3 position is 5.2" from J2000. So a reply now passes on Gaia DR3 *or*
+  2MASS being present, in both scripts.
+
+**Known gaps:**
+- **Dropped tables.** The mirror sometimes drops single catalogues from an otherwise complete reply. One query for
+  202071902 returned nothing; on the Table 1 refetch, I/357/tbosb1, a VSX row and II/361 were missing until retried.
+  The 163-star run checks only that the Gaia DR3 or 2MASS control row is present, so it may have missed matches.
+  `table1_vizier_rows.py` retries until every table the main run found comes back, but it cannot recover a table
+  that the main run itself lost.
+- **High proper motion.** A 3" cone at J2000 can miss catalogues that give positions at Gaia's epoch for fast-moving
+  stars. Not yet counted: the Gaia archive was in downtime on 2026-11-23.
+
+**Fixed-list "recall"** (not recall; `recall.csv`, column `vizier_fixed_list`):
+- Found: 6 of the 7 pairs whose catalogue is on VizieR (IJspeert ×2, Valizadegan ×2, Kovalev, Guo).
+- Missed: Libralato+2016 for 211892898. Its table3 lists the star at 4.35" (blank 2MASS magnitudes, an instrumental
+  Kp; apparently their position for a saturated star), outside the pre-registered 3".
+
+**Table 1 classification, two independent passes on the VizieR rows:**
+- Input: `table1_vizier_rows.py` -> `table1_vizier_rows.txt` (130 rows, 106 star–table pairs, 11 stars).
+- B saw only that file and the class definitions.
+- `compare_classes.py --vizier`: 105 agree, including every PERIOD pair and its values. 1 differs LISTED vs ANALYSIS
+  (Douglas+2017 table3 for 211892898; no period either way).
+- Final (A): 83 LISTED, 15 PERIOD, 8 ANALYSIS (`table1_vizier_classes_final.csv`).
+- Both passes class SPOC TCE periods (Valizadegan+2025) as PERIOD, kind TCE.
+
+**Per-star verdicts, Table 1, search plus fixed-list VizieR:**
+
+| EPIC | Ours (d) | Verdict | Sources |
+|---|---|---|---|
+| 211411112 | 62.594821(27) | published, agrees | Sandquist+2021 (0.5σ); Geller+2021 SB2 62.593(3) (0.6σ) |
+| 211892898 | 72.5089(14) | published, agrees | Gaia DR3 SB1 72.534(29) (0.9σ). Also: Rizzuto+2017 Prot 8.51 (rotation; cluster parallax assumed, the star is a background giant) |
+| 202071902 | 22.904128(3) | published, agrees | Guo+2025 22.89(40) (0.04σ); Kovalev+2024 Keplerian 22.859(15) (3.0σ). Differs: Wang+2021/VSX 8.6973 (EA), which the note rules out |
+| 202072917 | 34.745586(7) | published, agrees | Valizadegan+2025 TCE 34.74574 (S1-46); IJspeert+2024 QLP 34.74438. No σ published; differences 1.5e-4 and 1.2e-3 d. Differs: VSX 3.842, IJspeert SPOC 23.255, other TCEs (34.742, 1007.6, 15.17, 14.20, 5.579) |
+| 202126877 | 21.77465(22) | published, agrees | IJspeert+2024 SPOC 21.7808, QLP 21.7755 (no σ published). Differs: VSX 3.877 |
+| 211503363 | 122.905 or 61.453 | estimate only | Kovács 2020 P ≳ 58 d. Also: Zhang+2020 Prot 14.05 and 12.47 (rotation) |
+| 211489484 | 82.258438(52) | published, differs | Valizadegan+2025 TCEs 106.936 (the note excludes it) and 0.2405, both ExoMiner FP |
+| 211924561 | 140.49392(14) or 70.24696(7) | published, differs | Valizadegan+2025 SPOC S42-46 TCEs 58.290 (MES 11.5) and 31.269 (MES 7.4), both ExoMiner FP. See below |
+| 212012030 | 220.32 | no prior period | ATLAS lists a "dubious" variable, periodogram peaks 0.721 / 1.258 / 6.794 d |
+| 246194159, 211390677 | | no prior period | survey rows only |
+| 248811085, 246089124, 246696483, 247967714 | | no paper or catalogue found | |
+
+**211924561 (TOI-5560) TCEs.**
+- 31.269 d: numbers.md and review_fable3 already note it as excluded by the ephemeris. The sentence was cut for length.
+- 58.290 d: the earlier census kept only the first row per table, so it was never seen.
+- Neither TCE is an alias of ours: ratios 2.41 and 4.49.
+- Both match events that `independent_211924561/` rejected:
+  - 2568.30 − 58.29 = 2510.01, the S44 2509.8 scattered-light step;
+  - 2509.8 + 31.27 = 2541.07, the S45 2541.05 event.
+- So both TCEs plausibly pair rejected events, not transits. This is not proven without the TCE epochs (SPOC DV report).
+
+**Open: do TCE periods block "new"?** The rules call a period new only if its star is "no prior period" or "estimate
+only". With TCEs classed PERIOD, 211489484 and 211924561 are "published, differs". Jon decides how the note words them.
