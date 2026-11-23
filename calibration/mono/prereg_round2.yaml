@@ -1,0 +1,138 @@
+# Pre-registration, round 2: a repaired single-transit rule, tested on stars it has not seen
+#
+# STATUS: DRAFT - not approved. Nothing has been run and no round-2 light curve has been read.
+# Approval is in two steps, both by Jon:
+#   step 1 (this file): the tuning plan, the test design and the pass criteria.
+#   step 2 (the freeze): the tuned rule, its parameter values and the code commit, recorded in
+#           APPROVALS.md BEFORE any test-set star is loaded. Nothing changes after the freeze.
+version: 0.1-draft
+written: 2026-11-22
+spec: docs/STRATEGY_living_alias_catalogue.md (section 5.2)
+follows: calibration/mono/RESULTS.md and INDEPENDENT_CHECK.md (round 1, outcome fail)
+
+why: >
+  Round 1 (pre-registration 1.1) failed. Period exclusion was wrong for 7 of 109 confirmed planets
+  and 4 of 515 injections; automatic second-transit calls were wrong for 15 of 74 and 84 of 201.
+  The diagnostics that followed were made after the outcome was known, so the fixes they suggest
+  count for nothing until they are tested on new stars. Round 2 is that test.
+
+round1_lessons:   # each is a hypothesis for tuning, not a result
+  - The exclusion rule has no floor - a brightening or a bad stretch counts as excluding (6 of the 11
+    false exclusions).
+  - Planets with large timing variations fail a linear-ephemeris test. Checked 2026-11-22 against the
+    literature - TOI-2525 (Trifonov et al. 2023, AJ 165, 179, semi-amplitude about 6 h), TOI-4504 c
+    (Vitkova et al. 2025, ApJL, about 2 d), TOI-216 (Dawson et al. 2021, AJ 161, 161, resonant pair
+    with timing variations; amplitude not looked up). Web search summaries, papers not read in full.
+  - A false event passes the search cuts on 26 of 76 single-TOI confirmed-planet hosts.
+  - Arm B's hosts carried their own signals - 110 of 303 false events recur across a host's draws.
+  - The first harness departed from the pipeline in three places and the independent run caught them
+    only after the run.
+
+tuning:
+  data: >
+    Anything already seen - the 83 stars of the 2026-11-01 test, the 109 scored arm-A stars and the
+    129 arm-B hosts of round 1, and new injections into those same stars. No other star.
+  what_may_change:
+    R1_floor: >
+      An epoch excludes only if its box depth is below 0.5 depth0 - 3 sigma AND consistent with no
+      change in flux (candidates - depth above -3 sigma; or abs(depth) below 3 sigma).
+    R2_weak_reference: >
+      Whether a reference that the pipeline could not measure (SNR below 5, catalogue depth used)
+      may exclude at all.
+    R3_timing_tolerance: >
+      An epoch excludes only if no box within +-W of the predicted time is as deep as the threshold.
+      Candidates for W - 0, half a duration, one duration; the same W for every star, or a larger
+      one for stars with more than one known planet candidate.
+    R4_event_vetting: >
+      Automatic vetoes on a second event before it is used - the same event time appears on the star
+      with nothing injected (a null run); depth or duration ratio closer to 1 than the present
+      factor of 2; minimum SNR above 7; a matching brightening nearby; the event is in a sector the
+      pipeline already masks or flags.
+    R5_probability: >
+      A false-exclusion probability attached to every excluded period - the tuning-set rate in bins
+      of reference SNR and reference cadence (30 min, 10 min, 200 s, 2 min), with its 95% upper bound.
+  objective: >
+    On the tuning set - false exclusion as low as possible while the median fraction of ln P excluded
+    at reference SNR 8 or more stays at or above 0.5 (round 1 gave 0.64 to 0.74), and false passing
+    events as few as possible while repeat recovery stays at or above 60% (round 1 gave 70% and 81%).
+  record: every variant tried and its tuning-set numbers go in calibration/mono/round2/TUNING_LOG.md.
+
+harness_check:   # new, because of round 1
+  rule: >
+    Before the freeze, a fresh agent that has not seen the round-2 harness re-implements it from this
+    file and the frozen rule, and both harnesses are run on 20 tuning-set stars. Every excluded-or-not
+    verdict and every call must agree, or the difference must be traced and fixed, before the freeze.
+
+test_set:   # nothing here is loaded before the freeze
+  arm_A_confirmed_planets:
+    pool: >
+      ExoFOP TOIs (table of 2026-11-22) dispositioned CP or KP, period 5 to 100 d, depth 500 to
+      25000 ppm, with epoch, duration and depth; not among the 83 tuning stars, not in round 1's
+      arm_a_sample.csv, not a frozen host. 246 stars, 209 of them with one TOI. The period floor is
+      lowered from 10 d to 5 d because only 59 unused stars remain above 10 d.
+    draw: up to 50 per depth bin (500-2000, 2000-5000, 5000-25000 ppm), numpy seed 20261201, after
+      sorting by TOI. Expected about 146 stars.
+    runs: as round 1 - A1 (other transits removed) and A2 (nothing removed)
+    primary_analysis: stars with one TOI. Stars with more than one TOI are reported separately and
+      do not count toward pass or fail. (Decided now, from round 1 and the literature check above.)
+  arm_B_injections:
+    hosts: >
+      150 frozen hosts not used in round 1 (1151 available), 50 per Tmag bin (<10, 10-12, >12), numpy
+      seed 20261202. Excluded before the draw - hosts with a stated period in any catalogue, an NSS
+      orbit in gaia_dr4/results_dr3, or one of this project's eclipsing-binary classifications. A host
+      with no SPOC, TESS-SPOC or QLP light curve is replaced by the next draw in its bin.
+    null_run: each host is first run once with nothing injected; every event that passes is recorded
+      as the host's own.
+    injection: as round 1 (batman, Claret coefficients, before detrending, 4 draws per host,
+      P log-uniform 20-1000 d, depth log-uniform 500-20000 ppm, b uniform 0-0.9, 15 min time error)
+    primary_analysis: all trials. Rates are also given with the host's own null-run events removed.
+
+metrics:   # definitions as in pre-registration 1.1, with the three harness corrections
+  false_exclusion_rate: share of trials whose true period is in the excluded set (A2 and B)
+  false_event_rate: share of A1 stars, and of arm-B null runs, with at least one event that passes
+    the cuts and the vetting
+  wrong_period_rate: among trials called resolved or narrowed, share whose alias set lacks the truth
+    (A2 and B)
+  repeat_recovery_rate: share of trials with a second transit in clean data where it is detected
+  log_period_excluded: median fraction of ln P between 1 and 1000 d excluded
+  probability_calibration: for R5, observed false-exclusion count in the test set against the count
+    the tuning-set probabilities predict, per bin and in total
+
+pass_criteria:   # fixed now; a miss is reported as a miss
+  false_exclusion_rate: "<= 5% in A2 (one-TOI stars) and in B, overall; and in every reference-SNR bin
+    at or above 6 that holds at least 60 trials. Smaller bins are reported, not judged. (Round 1 judged
+    bins of 14 to 17 trials, where one event is already above 5%.)"
+  log_period_excluded: ">= 0.5 median at reference SNR 8 or more, in A1 and in B. Guards against a rule
+    that passes by excluding nothing."
+  false_event_rate: "<= 5% of A1 one-TOI stars and <= 5% of arm-B null runs. (Round 1 - 34% of A1
+    one-TOI stars.)"
+  wrong_period_rate: "<= 3% in A2 (one-TOI stars) and in B. Unchanged from round 1."
+  repeat_recovery_rate: ">= 60% in A2 and in B. Guards against vetting that removes real repeats."
+  probability_calibration: "the total observed count lies inside the 95% Poisson interval of the
+    predicted count"
+
+outcomes:
+  pass: every criterion met
+  partial: false_exclusion_rate, log_period_excluded and probability_calibration met, the event
+    criteria not. Exclusions can then be published with their probabilities; second-transit calls
+    need vetting by a person.
+  fail: false_exclusion_rate or log_period_excluded missed
+  incomplete: fewer than 80 one-TOI arm-A stars or fewer than 400 arm-B trials are scored
+  if_tuning_cannot_reach_a_criterion: said so in TUNING_LOG.md and to Jon before the freeze; the test
+    still runs and the miss is reported.
+
+human_review:
+  - Every false exclusion and every wrong call in the test set, star by star.
+  - Whether the result supports a methods section in the paper, and with which claims.
+
+independent_rederivation: required after the test run, by a fresh agent, as in round 1.
+
+not_changed_from_round_1:
+  - The search cuts' definitions, the clean-epoch rule and the detrending, except where R1-R4 say so.
+  - The 15 min catalogued-time error, the masking of catalogued events by +-0.75 d.
+
+open_items:
+  - Whether 4 draws per host and 150 hosts give enough trials in the SNR 6-12 bins (round 1 had 73).
+    More draws at low depth would need a stated change to the depth distribution.
+  - TESScut photometry for hosts without a light curve is still not implemented.
+  - The four call differences left between the two round-1 harnesses are not traced.

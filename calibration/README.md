@@ -64,3 +64,11 @@ sample is needed.
 
 **Not done.** The arm-A driver (confirmed planets as fake singles), the draw of the 150 hosts (needs
 a TESS magnitude for all 1301 frozen hosts), and any scored trial.
+
+## Round 2 (drafted 2026-11-22, not approved, nothing run)
+
+`mono/prereg_round2.yaml`. Round 1's diagnostics were made after the outcome, so the fixes they suggest
+are hypotheses. Round 2 tunes a repaired rule on stars already seen (a floor on the exclusion rule, a
+timing tolerance, automatic vetting of second events, a false-exclusion probability per excluded
+period), freezes it with Jon's approval, and tests it once on about 146 confirmed planets and 150
+hosts that no earlier run has touched. Two harnesses must agree on 20 tuning stars before the freeze.
