@@ -10,3 +10,4 @@
 | Version | Approved by | Date | SHA-256 of `prereg_round2.yaml` | Note |
 |---|---|---|---|---|
 | 1.0 | Jon McBee | 2026-11-22 | `96ff8d7c0031abbefa8821d651114955e32ceec4c7aee1f6711d9f73ca91845e` | Step 1 of 2. "Approved", in the Claude Code session, after the draft and six changes from round 1 were put to him. Covers the tuning plan, the test design and the pass criteria. No tuning had been run and no test-set star loaded. Step 2 (the frozen rule) is a separate approval. |
+| 1.1 | Jon McBee | 2026-11-22 | `376532f74937f5877847c1a0be4b507c2e875324e6513c12bd5b785d9a42f004` | Still step 1 of 2. "Approved", in the Claude Code session, after `round2/TUNING_LOG.md` showed the event criteria could not be met as written. Three changes, listed in the file under `changes_from_1_0`. Tuning-set numbers had been seen; no rule was frozen and no test-set star loaded. Version 1.0 is commit 0be82f0. |
