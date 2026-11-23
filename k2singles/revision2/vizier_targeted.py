@@ -15,7 +15,8 @@ works, not how well a blind search would do.
 
 Each catalogue is first checked to exist (a query without a position must return a table). A reply counts only if it has
 no database error, ends in </VOTABLE> and (per star) contains the star's Gaia DR3 row, queried alongside as a control;
-otherwise it is retried (up to 30 times, 1-5 min apart). A catalogue counts as absent only if the mirror says "not found".
+otherwise it is retried (up to 30 times, 1-5 min apart). A catalogue counts as absent only if the mirror says "not found"; one whose reply lists no tables is recorded as "no
+tables in a cone search" and not queried.
 Server: vizier.cfa.harvard.edu (the CDS host and the other mirrors were unreachable on 2026-11-22).
 Output: data/literature/vizier_targeted.csv (one row per star and catalogue table), vizier_catalogues.csv. Resumable.
 Usage:  python k2singles/revision2/vizier_targeted.py
@@ -126,17 +127,19 @@ def tables(v):
 
 def check_catalogues(ids):
     f = OUT / "vizier_catalogues.csv"
-    done = pd.read_csv(f) if f.exists() else pd.DataFrame(columns=["catalog", "exists", "tables"])
+    done = pd.read_csv(f) if f.exists() else pd.DataFrame(columns=["catalog", "exists", "status", "tables"])
     rows = done.to_dict("records")
     for c in ids:
         if c in set(done.catalog):
             continue
-        # a catalogue is absent only if the mirror says so; a reply with neither tables nor that message is retried
-        v = patient({"-source": c, "-c": "0 +0", "-c.rs": 1, "-out.max": 1}, f"catalogue {c}",
-                    ok=lambda v: any(t.name for t, _ in tables(v)) or "Catalog not found" in v.raw_text)
+        # three outcomes: tables listed (queried); "Catalog not found" (absent); a clean reply with empty RESOURCE elements
+        # and no tables (e.g. J/A+AS/100/243: a catalogue without positions, which a cone search cannot query)
+        v = patient({"-source": c, "-c": "0 +0", "-c.rs": 1, "-out.max": 1}, f"catalogue {c}")
         names = [t.name for t, _ in tables(v) if t.name]
-        rows.append(dict(catalog=c, exists=bool(names), tables=" ".join(names)))
-        print(f"catalogue {c}: {'exists, ' + str(len(names)) + ' tables' if names else 'NOT FOUND'}", flush=True)
+        status = ("exists" if names else "not found" if "Catalog not found" in v.raw_text
+                  else "no tables in a cone search")
+        rows.append(dict(catalog=c, exists=bool(names), status=status, tables=" ".join(names)))
+        print(f"catalogue {c}: {status}{', ' + str(len(names)) + ' tables' if names else ''}", flush=True)
         pd.DataFrame(rows).to_csv(f, index=False)
     d = pd.DataFrame(rows)
     return set(d.catalog[d.exists.astype(bool)])
