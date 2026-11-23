@@ -1,0 +1,147 @@
+# Pre-registration, round 3: second-transit calls and alias tables, tested on stars not yet used
+#
+# STATUS: DRAFT. Not approved. Nothing here may be tuned or run until Jon approves step 1.
+# Approval is in two steps, both by Jon, as in round 2:
+#   step 1 (this file): the tuning plan, the test design and the pass criteria.
+#   step 2 (the freeze): the tuned rule, its parameter values and the code commit, recorded in
+#           APPROVALS.md BEFORE any test-set star is loaded. Nothing changes after the freeze.
+version: 0.1
+status: draft, not approved
+written: 2026-11-23
+spec: docs/STRATEGY_living_alias_catalogue.md (section 5.2)
+follows: calibration/mono/round2/RESULTS.md (round 2, outcome partial)
+
+why: >
+  Round 2 passed on period exclusion from one transit (0 false exclusions in 723 trials) and missed
+  on automatic second-transit calls - false events on 7 of 123 confirmed-planet stars (limit 5%),
+  wrong periods in 6 of 76 (confirmed planets) and 6 of 151 (injections) called trials (limit 3%).
+  Round 3 tests a repair of the call. The single-transit exclusion rule stays frozen as it is.
+
+round2_lessons:   # each is a hypothesis for tuning, not a result
+  - Six wrong periods had a real second transit. The alias period dt/n carries the timing error of
+    both transits; at the far end of the data the predicted transit had drifted 1.2 to 5.1 durations
+    and the true alias was excluded. Right calls drifted 0.09 (median) to 0.55 (90th percentile).
+  - Four of those were called resolved at n = 1, twice or more the true period.
+  - One injection was recovered 11.8 h from its true time (half a duration was 10.1 h), and its true
+    alias was below the minimum period from the duration, which the call treats as a hard limit.
+  - Six wrong periods and the seven arm-A false events are events 11 to 68 durations from any
+    transit. Four of the seven have reference SNR below 7.
+  - 51 of 150 arm-B hosts have a passing event with nothing injected.
+
+not_changed:
+  - The single-transit exclusion rule and its probability table (round2/FROZEN_RULE.md, R1-R3, R5).
+    It is re-measured on the round-3 test set as a replication.
+  - Light-curve choice, binning, detrending, the event search, the clean-epoch definition.
+
+tuning:
+  data: >
+    Anything already seen - every star of the 2026-11-01 test, of round 1 and of round 2 (tuning and
+    test sets), and new injections into those same stars. No other star.
+  what_may_change:
+    T1_period_tolerance: >
+      In the alias table, the window searched around predicted epoch k of alias n grows with the
+      timing error - half-width W + c * abs(k - k_near) * sigma_P, where sigma_P =
+      hypot(sigma_t1, sigma_t2) / n and k_near is the nearer of the two observed transits.
+      Candidates - sigma_t from the pipeline's fit or a fixed floor (15 min); c of 1, 2 or 3; a cap
+      on the half-width (for example one duration, or a tenth of the period), beyond which the
+      epoch is unconstrained rather than excluding.
+    T2_period_refinement: >
+      Before excluding, the alias period may be refitted using every epoch that supports it.
+    T3_minimum_period: >
+      Whether an alias below the minimum period from the duration is kept in the call; whether that
+      minimum uses the catalogued or the fitted duration; a safety factor on it.
+    T4_resolved_needs_support: >
+      Whether "resolved" requires a supported epoch other than the two transits, or is downgraded
+      to "narrowed" when the surviving alias is n = 1 with no other clean epoch.
+    T5_event_vetting: >
+      Further automatic vetoes on a second event - a higher minimum SNR when the reference SNR is
+      below a set value; a limit on how many passing events a star may have that fit no common
+      period with the reference; the event's depth against the scatter of same-duration boxes in
+      its own sector; agreement between two light-curve products where two exist.
+  objective: >
+    On the tuning set - wrong period and false events as few as possible, while repeat recovery
+    stays at or above 60% and the alias table keeps most of its power (see alias_power).
+  record: every variant tried and its tuning-set numbers go in calibration/mono/round3/TUNING_LOG.md.
+
+harness_check:
+  rule: >
+    Before the freeze, a fresh agent that has not seen the round-3 harness re-implements it from this
+    file and the frozen rule, and both are run on 20 tuning-set stars. Every status in every alias
+    table and every call must agree, or the difference is traced and fixed, before the freeze.
+
+test_set:   # nothing here is loaded before the freeze
+  arm_A_confirmed_planets:
+    stars: >
+      Every star of round 2's arm-A pool that was not drawn (111 stars, 86 with one TOI; periods 5
+      to 56 d), plus every ExoFOP TOI (table of 2026-11-22) dispositioned CP or KP with period above
+      100 d, depth 500 to 25000 ppm, with epoch, duration and depth, on a star not used in any round
+      and not a frozen host (13 stars, 12 with one TOI). No draw - all 124 stars are run.
+    runs: A1 (other transits removed, +-1.5 catalogued durations) and A2 (nothing removed)
+    primary_analysis: stars with one TOI (98). Multi-TOI stars are reported, not judged.
+  arm_B_injections:
+    hosts: >
+      The order already fixed in round2/samples/arm_b_test_order.csv, continuing after the hosts
+      tried in round 2 (756 left - 69 at Tmag < 10, 264 at 10-12, 423 above 12). Per bin, the next
+      100 hosts that have a SPOC, TESS-SPOC or QLP light curve; in the bright bin, all that have one.
+      Expected about 250 hosts.
+    null_run: as round 2 (once per draw, with the draw's catalogued depth and duration)
+    injection: >
+      As round 2 (batman, Claret coefficients, before detrending, 4 draws per host, P log-uniform
+      20-1000 d, depth log-uniform 500-20000 ppm, b uniform 0-0.9, 15 min time error), numpy seed
+      [20261203, tic]. New - the catalogued depth and the catalogued duration each get a Gaussian
+      error of 10% (round 2 gave the pipeline the exact values).
+    primary_analysis: as round 2 - event criteria with each host's own null-run events removed,
+      all-trials numbers beside them.
+
+metrics:   # as round 2, plus
+  wrong_period_rate: among trials called resolved or narrowed, share whose alias set lacks the truth
+  wrong_period_rate_true_event: the same, among called trials whose alias event is a true transit
+  false_event_rate: as round 2
+  repeat_recovery_rate: as round 2
+  alias_power: >
+    Among called trials whose alias event is a true transit - the median fraction of aliases
+    (P_n above 1 d) that the table excludes. Computed for the round-3 rule and, on the same trials,
+    for the round-2 rule.
+  false_exclusion_rate: as round 2 (replication of the frozen exclusion rule)
+
+pass_criteria:   # fixed now; a miss is reported as a miss
+  wrong_period_rate: "<= 3% in A2 (one-TOI stars) and in B (own events removed). Arm A is judged only
+    if it has at least 40 called trials; about 55 are expected, so one wrong call passes and two
+    do not."
+  wrong_period_rate_true_event: "<= 3% in A2 (one-TOI stars) and in B, same minimum of 40."
+  false_event_rate: "<= 5% of A1 one-TOI stars and <= 5% of arm-B trials (own events removed)."
+  repeat_recovery_rate: ">= 60% in A2 (one-TOI stars) and in B."
+  alias_power: "the round-3 median is at least 0.8 of the round-2 rule's median on the same trials,
+    in A2 and in B. Guards against a tolerance that passes by excluding nothing."
+  false_exclusion_rate: "<= 5% in A2 (one-TOI stars) and in B, overall (replication)."
+
+outcomes:
+  pass: every criterion met. Alias tables and calls can be published as computed.
+  calls_after_vetting: wrong_period_rate_true_event, alias_power, repeat_recovery_rate and
+    false_exclusion_rate met; false_event_rate or wrong_period_rate missed. Alias tables can be
+    published for second events that a person has vetted.
+  fail: wrong_period_rate_true_event or alias_power missed. Two-transit alias tables are not
+    published from this pipeline.
+  exclusion_regression: false_exclusion_rate missed. Reported at the top, whatever else happened;
+    round 2's exclusion result is then in doubt and is said to be.
+  incomplete: fewer than 60 one-TOI arm-A stars or fewer than 600 arm-B trials are scored
+  if_tuning_cannot_reach_a_criterion: said so in TUNING_LOG.md and to Jon before the freeze; the test
+    still runs and the miss is reported.
+
+human_review:
+  - Every wrong call, every false event on arm A, and every false exclusion, star by star.
+  - Whether the result supports publishing two-transit alias tables, and with which claims.
+
+independent_rederivation: required after the test run, by a fresh agent, as in round 2.
+
+open_items:   # for Jon, before approval
+  - This uses up the confirmed planets. After round 3 no unused CP or KP star with period above 5 d
+    is left; a round 4 would rest on injections alone, or on planet candidates (PC), whose periods
+    are not certain. 227 one-TOI PC stars with period above 20 d are unused and could be added now
+    as a third arm that is reported, not judged.
+  - Arm A's periods are mostly 5 to 20 d; the catalogue's are mostly longer. Arm B covers 20 to
+    1000 d but its hosts carry their own signals.
+  - Round 2's pre-registration said 246 stars in the arm-A pool; its stated rule gives 257. The
+    numbers here use 257.
+  - TESScut photometry for hosts without a light curve is still not implemented (50 of 200 hosts
+    tried in round 2 had none).
