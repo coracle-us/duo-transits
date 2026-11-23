@@ -1,6 +1,7 @@
-# Round 3: the rule proposed for the freeze
+# Round 3: the frozen rule
 
-**Status: proposed. Not frozen until Jon approves step 2 in `../APPROVALS.md`.** Chosen on
+**Status: FROZEN. Jon approved step 2 on 2026-11-23 (`../APPROVALS.md`), before any round-3 test-set
+star was loaded. Nothing in this file or in the files listed in `FREEZE3.json` may change.** Chosen on
 already-seen stars only (`TUNING_LOG.md`). In code: `harness3.FROZEN3` (a `rule3.Rule3`).
 
 Everything not listed here is as in round 2's frozen rule (`../round2/FROZEN_RULE.md`): light-curve
