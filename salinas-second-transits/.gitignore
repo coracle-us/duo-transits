@@ -16,3 +16,5 @@ work/aliases/*
 !work/aliases/hypotheses_summary.csv
 *.log
 work/tesscut/
+work/round3_novelty/
+.venv
