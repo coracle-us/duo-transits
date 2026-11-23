@@ -4,6 +4,10 @@ Independent analysis done 2026-11-22, follow-ups to 2026-11-23. I did not look a
 than this one, Drive, ExoFOP, TOI/CTOI tables, or any literature period for these TICs. The shared notes
 folder was empty. I did not come across any period from another source.
 
+Novelty (relayed by the parent session on 2026-11-23, not checked here): none of the four is a TOI or
+CTOI, and no paper reports their periods. This analysis stays blind to the first analysis until the TESS
+S111 predictions below have been scored.
+
 All times are BTJD (BJD_TDB − 2457000). "E" is the epoch number, with E = 0 at the paper's event.
 
 ## Summary

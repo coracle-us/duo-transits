@@ -77,12 +77,20 @@ within 1.6σ.
   - The companion is 1.7–1.9 R_J, and the transit fits a circular orbit poorly.
   - There is no significant secondary eclipse at any phase we tested, which argues against an M-dwarf companion.
   - It is in the far north, so it may not suit southern follow-up.
+  - Out of curiosity: did your pipeline see the other transits? I wondered why it was listed as a single.
 
 I'd be glad to send the light curves, timing tables and code. They are in a public repository:
 https://github.com/coracle-us/duo-transits, under `salinas-second-transits/`.
 
-I may write the search up as a short Research Note of the AAS. If you are already working on any of
-these stars, please let me know. I'd rather cite your work, or leave a star out, than step on it.
+**ExoFOP.** I can't get an ExoFOP account, because they need an institutional affiliation. If you think
+these ephemerides are useful, would you be willing to post them as CTOIs? You'd be welcome to credit me
+however you see fit. That would put them where TFOP observers can find them.
+
+**Your plans come first.** I may write the search up as a short Research Note of the AAS, probably after
+TESS Sector 111 tests the TIC 275647095 dip, around January. If you are already preparing a paper on any
+of these stars, please tell me. I'd rather you used or cited this analysis in your own work, or I left
+those stars out of the note, than publish anything that competes with yours. I'd also be glad to help
+with the analysis if that's useful.
 
 I am an independent researcher, and I did this work with the help of an AI assistant (Anthropic's
 Claude), which wrote and ran most of the analysis code under my direction. I have checked the results

@@ -305,7 +305,7 @@ odd/even difference or a secondary eclipse.
   107113048 E42 is 2026-12-25 21:44 UTC ± 11 min.
 
 **Not done yet:**
-- Jon to review and send the email. Nothing has been reported to anyone.
+- Jon to review and send the email, which now asks them to post CTOIs and puts their plans first. Nothing has been reported to anyone.
 - RNAAS: wait for the Salinas reply, then the checklist in `rnaas/numbers.md`.
 - MAST on 2026-11-23: there is no TESS data after S102 for any of the four. The next sectors are S111–S114
   for 275647095, 241550976 and 107113048, and S117+ for 230133616. When they are public, test:
@@ -313,3 +313,7 @@ odd/even difference or a secondary eclipse.
   - 107113048 in S114.
 
   Predictions are in `independent/RESULTS.md`, "Predictions".
+- Scheduled task `salinas-s111-s114-check` (Mondays 09:00, Dec–Apr, from 2026-12-07) checks MAST for S111+
+  data. When data arrive, it scores `predictions_2026-11-22.csv`, runs the 275647095 dip test and the 107113048
+  S114 tests, and opens a draft PR on `salinas-s111-check`. Disable it once S114 is scored.
+- The blind session (`salinas-blind-periods`) stays blind until it has scored its own S111 predictions.
