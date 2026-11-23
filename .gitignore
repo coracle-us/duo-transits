@@ -35,3 +35,4 @@ calibration/mono/independent/work/
 calibration/mono/results_corrected/arm_a/
 calibration/mono/results_corrected/arm_b/
 calibration/mono/round2/test_independent/*.ckpt.jsonl
+calibration/mono/round3/xcheck/independent/*.ckpt.jsonl

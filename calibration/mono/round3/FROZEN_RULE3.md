@@ -14,7 +14,8 @@ Round 3 changes two things: one more veto on second events (T5) and the alias ta
 
 An event passes if it passes round 2's R4 **and** its `sec_box_snr >= 9`.
 
-`sec_box_snr` of an event: take the detrended data of the event's own sector (t, f). Put boxes of
+`sec_box_snr` of an event: take the detrended data of the event's own sector (t, f), as the event
+search used it (nothing masked). `dur` here is the trial's reference duration, not the event's fitted one. Put boxes of
 length `dur` at centres `numpy.arange(t.min() + dur/2, t.max() - dur/2, dur/2)`. Keep the boxes with
 coverage `frac >= 0.8` whose centre is more than `dur` from the event time. If fewer than 10 are
 left, `sec_box_snr` is undefined and the event fails. Otherwise
@@ -22,8 +23,8 @@ left, `sec_box_snr` is undefined and the event fails. Otherwise
 (`core.box_stats`); if that scatter is zero the event fails. The event depth is the fitted depth
 of the event (`depth` in the pipeline's event record).
 
-The alias event is chosen as in round 2 among passing events: the highest SNR among clean events,
-else the highest SNR.
+The alias event is the passing event with the highest SNR (R4 already requires a passing event to
+be clean).
 
 ## Alias table (T1)
 
@@ -40,7 +41,8 @@ For n = 1, 2, ... while `P_n = dT/n >= 1 d` (at most 3000):
   with `far_k = min(|k|, |k - n|)` and `w0` round 2's tolerance in steps (4, or 8 on a star with
   more than one planet candidate).
 - If `h_k > 16` (the window is wider than +-2 durations) the epoch is **unconstrained**: it neither
-  excludes nor supports.
+  excludes nor supports. (On a star with more than one planet candidate w0 is 8, so the window can
+  grow by 8 steps before the cap; on other stars by 12.)
 - Otherwise the epoch **excludes** if (a) the box at the predicted time is clean and satisfies
   round 2's box rule (`-3 err <= depth < thr`, reference measured), and (b) no covered box at
   offsets j = -h_k .. h_k steps has `depth >= thr` (its own threshold).
@@ -58,6 +60,9 @@ Status of alias n: `excluded` if any epoch excludes; else `supported` if any epo
 As round 2: `n_ok` = number of aliases `allowed` or `supported`; `resolved` if 1, `narrowed` if
 more, `all excluded` if 0, `no repeat` if no event passes. The truth is in the alias set if
 `n = round(dT / P_true)` is in the table, `|dT - n P_true| < dur/2`, and alias n is not `excluded`.
+
+An unmeasured reference excludes nothing (R2), so a call on such a star is `narrowed` with nearly
+every alias allowed.
 
 ## Other definitions used by the score
 
