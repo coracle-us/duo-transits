@@ -107,12 +107,23 @@ observed count of false exclusions must lie in the central 95% Poisson interval 
 
 ## Tuning-set numbers under this rule (not results)
 
+From the exact harness (`harness.py`, then `score2.py`), full table in
+`tuning/exact_harness_on_tuning_set.md`. Its "incomplete" label is because the tuning set has 76
+one-TOI stars and the criterion asks for 80.
+
 | Metric | Confirmed planets (one TOI) | Injections (round-1 draws) | Criterion |
 |---|---|---|---|
 | false exclusion | 0 of 76 | 0 of 515 | <= 5% |
-| median ln P excluded, SNR >= 8 | 0.71 (A1) | 0.67 | >= 0.5 |
-| false event | 2 of 76 | 8 of 515 (own removed); 55 of 515 null runs | <= 5% |
-| wrong period | 1 of 53 | 1 of 116 (own removed); 26 of 135 (all) | <= 3% |
+| median ln P excluded, SNR >= 8 | 0.72 (A1) | 0.67 | >= 0.5 |
+| false event | 2 of 76 | 8 of 515 (own removed); 56 of 515 (all) | <= 5% |
+| wrong period | 0 of 52 | 1 of 115 (own removed); 26 of 134 (all) | <= 3% |
 | repeat recovery | 61 of 76 | 120 of 188 | >= 60% |
+| probability calibration | observed 0, predicted 1.37, interval 0-4 | | inside the interval |
 
-Numbers from `tune.py` (alias epochs looked up on the time grid); the exact harness is `harness.py`.
+Multi-TOI stars (not judged): 2 of 33 false exclusions.
+
+Known weak points going into the test:
+- Repeat recovery in arm B is 64% against a 60% guard.
+- In arm B only the SNR > 20 bin will reach the 60 trials needed to be judged (tuning: 26, 47 and 46
+  trials in the bins 6-8, 8-12 and 12-20). The pre-registration's open item on this was not changed.
+- The rule was chosen on 76 + 129 stars with few failures to learn from; the test can still fail.
