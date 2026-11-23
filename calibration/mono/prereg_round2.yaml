@@ -1,11 +1,12 @@
 # Pre-registration, round 2: a repaired single-transit rule, tested on stars it has not seen
 #
-# STATUS: DRAFT - not approved. Nothing has been run and no round-2 light curve has been read.
-# Approval is in two steps, both by Jon:
+# STATUS: step 1 APPROVED by Jon on 2026-11-22 (the tuning plan, the test design and the pass
+# criteria). This file is frozen; see APPROVALS.md. Approval is in two steps, both by Jon:
 #   step 1 (this file): the tuning plan, the test design and the pass criteria.
 #   step 2 (the freeze): the tuned rule, its parameter values and the code commit, recorded in
 #           APPROVALS.md BEFORE any test-set star is loaded. Nothing changes after the freeze.
-version: 0.1-draft
+version: 1.0
+status: approved (step 1); step 2 (the freeze) not yet approved
 written: 2026-11-22
 spec: docs/STRATEGY_living_alias_catalogue.md (section 5.2)
 follows: calibration/mono/RESULTS.md and INDEPENDENT_CHECK.md (round 1, outcome fail)
