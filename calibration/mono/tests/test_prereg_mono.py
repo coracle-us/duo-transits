@@ -10,7 +10,8 @@ HERE = Path(__file__).resolve().parents[1]
 def test_approved_prereg_is_frozen():
     cfg = yaml.safe_load(open(HERE / "prereg_mono_calibration.yaml"))
     assert cfg["status"] == "approved"
-    rows = [ln for ln in (HERE / "APPROVALS.md").read_text().splitlines() if ln.startswith("| ")]
+    text = (HERE / "APPROVALS.md").read_text().split("## Round 2")[0]   # round 2 has its own table
+    rows = [ln for ln in text.splitlines() if ln.startswith("| ")]
     row = [ln for ln in rows if ln.startswith(f"| {cfg['version']} |")]
     assert len(row) == 1
     assert hashlib.sha256((HERE / "prereg_mono_calibration.yaml").read_bytes()).hexdigest() in row[0]

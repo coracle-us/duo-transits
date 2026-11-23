@@ -133,17 +133,18 @@ def excluded_periods(t_ref, periods, c0, step, excl, tmin, tmax, max_elems=4_000
 
 # ------------------------------------------------------------------ one trial
 
-def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, truth_P=None,
-              truth_t0=None, with_grid=True, depth_cat_err=np.nan):
-    """sectors: [(sector, author, t, f)] raw, normalised (as pl.load_sector_lc returns them).
+def prepare(sectors, t_cat, dur_cat_d, depth_cat, depth_cat_err=np.nan):
+    """Reference, detrending and event search of one trial, exactly as run_trial has always done them.
 
-    t_cat, dur_cat_d, depth_cat play the catalogue's time, duration and depth of the single transit.
-    truth_P / truth_t0: the real ephemeris, used only to score the trial.
+    Returns None if the catalogued time is not in the data, else a dict with out (the trial's first
+    columns), T, F (all detrended data, sorted), det ({sector: (t, f)} detrended), events, passing,
+    depth_ref, dur_ref, derr_ref. Split from run_trial on 2026-11-22 so that round 2 can try other
+    rules on the same detrended data; run_trial's results are unchanged.
     """
     out = dict(status="ok")
     ref_i = [i for i, (_, _, t, _) in enumerate(sectors) if t.min() - 0.5 <= t_cat <= t.max() + 0.5]
     if not ref_i:
-        return dict(status="reference not in data")
+        return None
     ri = ref_i[0]
     s, a, t, f = sectors[ri]
     tr, fr = pl.detrend(t, f, dur_cat_d)
@@ -158,7 +159,7 @@ def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, 
     out.update(ref_snr=ref["snr"] if ref else np.nan, ref_measured=bool(ref and depth_ref == ref["depth"]),
                depth_ref=depth_ref, dur_ref_d=dur_ref, ref_sector=s, ref_author=a)
 
-    T, F, events = [tr], [fr], []
+    T, F, events, det = [tr], [fr], [], {s: (tr, fr)}
     for i, (s, a, t, f) in enumerate(sectors):
         if i == ri:
             td, fd = tr, fr
@@ -170,6 +171,7 @@ def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, 
                 continue
             T.append(td)
             F.append(fd)
+            det[s] = (td, fd)
         for ev in pl.sector_events(td, fd, s, a, dur_ref, depth_ref):
             if i == ri and abs(ev["tc"] - t_cat) < dur_ref:
                 continue  # the reference itself
@@ -180,6 +182,22 @@ def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, 
     passing = [e for e in events if pl.passes(e, CUTS)]
     out.update(n_sectors=len(sectors), n_points=int(T.size), baseline_d=float(np.ptp(T)),
                n_events=len(events), n_passing=len(passing))
+    return dict(out=out, T=T, F=F, det=det, events=events, passing=passing, depth_ref=depth_ref,
+                dur_ref=dur_ref, derr_ref=derr_ref, ref_cadence_d=core.cadence_days(tr))
+
+
+def run_trial(sectors, t_cat, dur_cat_d, depth_cat, mstar=np.nan, rstar=np.nan, truth_P=None,
+              truth_t0=None, with_grid=True, depth_cat_err=np.nan):
+    """sectors: [(sector, author, t, f)] raw, normalised (as pl.load_sector_lc returns them).
+
+    t_cat, dur_cat_d, depth_cat play the catalogue's time, duration and depth of the single transit.
+    truth_P / truth_t0: the real ephemeris, used only to score the trial.
+    """
+    prep = prepare(sectors, t_cat, dur_cat_d, depth_cat, depth_cat_err)
+    if prep is None:
+        return dict(status="reference not in data")
+    out, T, F, passing = prep["out"], prep["T"], prep["F"], prep["passing"]
+    depth_ref, dur_ref, derr_ref = prep["depth_ref"], prep["dur_ref"], prep["derr_ref"]
 
     pmin = core.pmin_from_duration(dur_ref, mstar, rstar, depth_ref)
     if passing:  # as st2_pipeline.alias_events: best clean event, else best event
