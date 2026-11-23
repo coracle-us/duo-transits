@@ -162,10 +162,35 @@ def test_overshoot():
           f"max overshoot {o['spline_overshoot'].max():.2f} mag, w1_quiet {d.w1_quiet:.2f}")
 
 
+def test_followup():
+    """Stage 6 log-bin merge keeps a flat spectrum flat; stage 6b group-difference test has
+    a ~5% false-positive rate when both groups share one slope."""
+    from s6_freq_beta import rebin
+    import s6b_inclination as S6B
+    from metrics import LOG_GRID
+    lg = np.log10(LOG_GRID)
+    S = np.full((3, len(lg)), 2.5)
+    S[2] = np.nan
+    a = rebin(S, lg, np.linspace(lg[0], lg[-1] + 1e-9, 31))
+    r = rebin(S, lg[None, :] - np.array([[0.0], [0.3], [0.0]]), np.linspace(-1.2, 1.2, 25))
+    check("rebin keeps a flat spectrum", np.allclose(a[:2], 2.5)
+          and np.allclose(r[:2][np.isfinite(r[:2])], 2.5) and np.isnan(r[2]).all())
+    rng = np.random.default_rng(4)
+    S6B.N_NULL = 400
+    hits = 0
+    for k in range(60):
+        sxx = rng.uniform(0.005, 0.2, 300)
+        sxy = 0.5 * sxx + rng.normal(0, 1, 300) * np.sqrt(sxx) * 0.3
+        hi = rng.random(300) < 0.5
+        hits += S6B.diff_test(hi, sxy, sxx, rng)[2] < 0.05
+    check("6b group-difference false-positive rate ~5%", hits / 60 <= 0.12, f"rate {hits/60:.2f}")
+
+
 if __name__ == "__main__":
     test_metrics()
     test_stage4()
     test_overshoot()
+    test_followup()
     if FAIL:
         print("FAILED:", FAIL)
         sys.exit(1)
