@@ -8,8 +8,10 @@
 - **Added in the LaTeX version** (not in the doc): ORCID and email (as in the three earlier notes), the UAT
   keywords, the MAST data DOIs in the acknowledgments, the facilities line and the AI disclosure statement (the
   EB note's wording without its blind re-analysis clause).
-- **Affiliation:** `AFFILIATION PLACEHOLDER`, for Jon to fill. The three earlier notes (AAS82207, AAS84033 and
-  the EB note) use "Independent researcher, USA".
+- **Affiliation:** "Independent researcher, USA" (Jon, 2026-11-24), as in the three earlier notes (AAS82207,
+  AAS84033 and the EB note). The doc says the same.
+- **Plain-text abstract for the AAS form:** `abstract_plaintext.txt`, from the LaTeX abstract with the markup
+  removed (~ for $\sim$, M_J, hyphens for en dashes); 143 words by `wc -w`.
 - **Figure:** `boyajian_alias_figure.png`, a copy of `../boyajian_alias_figure.png` (byte-identical; made by
   `../make_figure_cloud.py`). It is the same image as the doc's Figure 1.
 - **Compile:** tectonic with `aastex701.cls` v7.0.1 (from `singles/rnaas/arxiv/McBee_AAS82207_arXiv.tar.gz`):
@@ -20,7 +22,7 @@
 - `singles/rnaas/aas_wordcount.py` (the count AAS's quality check applied to AAS82207R1): abstract **144**
   (limit 150), text after the abstract without references **1086** (limit 1350).
 - Plain count of the whole PDF (`pdftotext rnaas.pdf - | wc -w`, so title, author block, headers, captions,
-  acknowledgments and references; the figure is a raster image, so its labels are not counted): **1457**
+  acknowledgments and references; the figure is a raster image, so its labels are not counted): **1458**
   (limit 1500). The doc ran about 1350 by the same kind of count; the additions above take about 100 words.
 
 ## Checks done for submission
