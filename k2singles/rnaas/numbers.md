@@ -273,6 +273,9 @@ Response letter: `k2singles/rnaas/response_letter.md`.
   - ethics: agreed;
   - AI usage: Yes, described as "Anthropic's Claude (Claude Code, with Claude Opus 5.5 and Claude Fable 5.2 models)
     wrote and ran the analysis code under my supervision, ...", following the note's AI statement.
-- **Response letter:** a new submission has no field for one. Jon sends
-  `k2singles/rnaas/response_letter.txt` by email to journals.manager@aas.org, cc Lintott, citing both AAS82225 and
-  AAS84033. The manuscript page also offers "Send Manuscript Correspondence", which is an alternative.
+- **Response letter:** a new submission has no field for one, so the letter went to AAS staff on 2026-11-24 through
+  the manuscript page's "Send Manuscript Correspondence" form. The system confirmed "1 Email sent." The subject was
+  "AAS84033: response letter (revision of AAS82225)"; there were no attachments, and Jon solved the CAPTCHA. The text
+  sent is `k2singles/rnaas/aas84033_correspondence_sent.txt`: a cover note asking staff to link the two manuscripts
+  and pass the letter to the editor, then `response_letter.txt` with paragraphs unwrapped and ASCII-only (3", '-').
+  There is no separate email to Lintott; if no editor is assigned in a week or two, send him a short pointer.
