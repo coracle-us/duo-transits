@@ -35,11 +35,22 @@ def _tic_by_cone(catalog=None, coordinates=None, radius=None, Tmag=None, **kw):
     sheets.neighbours calls it. From 2026-11-24 about 11:35 CST MAST's filtered TIC service stopped
     answering (the request hangs); the cone service answers. Same stars: every TIC entry within
     `radius` degrees, kept if lo <= Tmag <= hi."""
-    r = Catalogs.query_region(coordinates, radius=radius, catalog="TIC")
-    tm = np.ma.filled(np.ma.asarray(r["Tmag"], dtype=float), np.nan)
-    return r[(tm >= Tmag[0]) & (tm <= Tmag[1])]
+    if coordinates is None:               # e.g. the look-up by TIC ID in pl.tic_info: unchanged
+        return _ORIG_QUERY_CRITERIA(catalog=catalog, radius=radius, **kw) if radius is not None else _ORIG_QUERY_CRITERIA(catalog=catalog, **kw)
+    from astropy.coordinates import SkyCoord
+    ra, dec = (float(x) for x in str(coordinates).split())
+    # sheets.neighbours uses only the 10 nearest of the list, so a smaller cone that already holds
+    # 20 such stars gives the same 10. Crowded fields do not answer at 0.5 deg.
+    for rad in (0.12, 0.5):
+        rad = min(rad, radius)
+        r = Catalogs.query_region(SkyCoord(ra, dec, unit="deg"), radius=rad, catalog="TIC")
+        tm = np.ma.filled(np.ma.asarray(r["Tmag"], dtype=float), np.nan)
+        r = r[(tm >= Tmag[0]) & (tm <= Tmag[1])]
+        if len(r) >= 20 or rad >= radius:
+            return r
 
 
+_ORIG_QUERY_CRITERIA = Catalogs.query_criteria
 Catalogs.query_criteria = _tic_by_cone   # in every worker process, which imports this module
 
 
