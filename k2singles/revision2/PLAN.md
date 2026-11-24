@@ -437,3 +437,38 @@ against the repo. All numbers matched their sources. It found framing and covera
   separately on its own branch (Jon's decision, 2026-11-23); the note lists them as unvetted.
 - **Smaller fixes.** BLS range wording; 202126877's Events column is TESS-only; "independent re-analyses", not
   "blind"; "no orbital period"; 211503363's radius named for each R*.
+
+## Second review of the revised note, 2026-11-24
+
+A second independent agent checked the fixed draft. Every number in the table and text matched its source, and the
+LaTeX is balanced (not compiled: aastex701 is not installed). Findings and what was done:
+- **Serious: TESS-SPOC FFI DV reports exist for two "new" stars.** HD 220967 = 246194159 and 246089124 each have a
+  single-sector (S70) report. `dv_listing.py` had searched only the SPOC 2-min collection; it now lists HLSP too
+  (`results/literature/dv_listing.txt`, all 15 stars). Under Jon's 2026-11-23 rule, a TCE blocks "new". **Open:** the
+  two XMLs (about 100 kB each) need Jon's OK to download. Until they are read, the note no longer says "MAST holds no
+  SPOC validation report" for the eight, and the 8 / 6 count is unverified.
+- **VizieR:** 22 general catalogues for every star, plus 56 from Table 1 stars' papers (not "78 for each star").
+- **Why TOI-5560.01 is missed:** six of the two candidates' seven transits fall below the threshold, including both
+  K2 transits of TOI-5560.01 (SNR 32.2 and 25.8, under 53).
+- **Pre-registration:** the coincidence test *replaced* the planned common-mode rule. The note and letter now say so.
+- **"Aliases" changed to "periods":** 202126877 counts only through a BLS match.
+- **Smaller fixes:**
+  - "repeats" in the Conclusion;
+  - "none fits the C5 transit" (the 58.54-d TCE predicts C16 within 0.08 d);
+  - "best TESS pipeline light curve per sector";
+  - "≥0.16 d", and 202071902's spacing check now uses S71 to the S72 ingress;
+  - 202126877 "sec. 0.33";
+  - abstract and BLS wording;
+  - "probably" for the 0.24-d neighbour (ATLAS 0.0506 d vs TESS 0.0481 d unresolved);
+  - ExoFOP named;
+  - table heading "No prior orbital period";
+  - a 2027 May 9 transit added (BJD 2461535.210 ± 0.0046, cycle 31);
+  - the letter gives the first-stage SNRs of the candidates' transits and "13 of 93".
+- **Correction to the TOI-5560 TCE table above.** The S72 TCE's 3260.48 falls in cadences our quality filter removes
+  (the filtered S72 data start at 3262.17), so we have no data there. 3281.05 is not cleanly flat: the reviewer's
+  3.5-h box gives 0.24-0.49 ppt, against about 1.35 ppt for the transit, which is borderline under the flat rule. Not
+  rerun here. The note says "times without a transit-depth dip" and rests the exclusion on the C5 transit.
+- **Not acted on:**
+  - re-querying the 22 general catalogues for the eight stars, to guard against tables the mirror drops (VizieR was
+    down on 2026-11-24);
+  - Pope+2016 and Zink+2021, which are not on the mirror.
