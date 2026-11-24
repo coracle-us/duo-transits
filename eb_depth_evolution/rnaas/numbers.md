@@ -161,3 +161,13 @@ own. A K2 revision should cite this note for EPIC 202126877. Changes:
 
 **STATUS: ready to submit (Jon).**
 
+
+## Companion-note citation restored (2026-11-24)
+
+The K2 revision went in this morning as AAS84033 and reports the same EPIC 202126877 depths (6% in 2014 to 36% in
+2026; secondary 4% to 12%) without citing this note. To avoid two overlapping notes that don't mention each other,
+Jon chose to restore the October wording before submitting: the intro again says the companion note on K2 single
+events (J. McBee 2026, submitted) reported the deepening from the same TESS photometry and lists what is new here;
+Section 2 again says "The depths repeat those of the companion note" and "The ground data are new". No numbers
+changed. Count (`singles/rnaas/aas_wordcount.py`): abstract 142, AAS-counted text 1243 (was 1217; limit 1350).
+Build: tectonic with aastex701.cls 7.0.1, 4 pages, no undefined references.
