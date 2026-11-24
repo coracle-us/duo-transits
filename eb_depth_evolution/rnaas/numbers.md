@@ -221,3 +221,4 @@ keeping every result, number and the AI disclosure, with no change to the analys
 - **Build:** tectonic, aastex701.cls 7.0.1, 4 pages, no undefined references; `rnaas.pdf` committed.
 - **Note:** the AAS84041 form's IPAC answer is Yes. The form's instructions ask for an IPAC dataset DOI in a revised
   manuscript; none is in the text yet (adding one costs words).
+- **Gate** (`scripts/rnaas_gate.py`, required from 2026-11-24): rnaas_gate PASS: eb_depth_evolution/rnaas/rnaas.tex: abstract 142/150; main text with references 1298/1300 (AAS limit 1350)
