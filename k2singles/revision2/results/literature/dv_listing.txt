@@ -1,0 +1,8 @@
+EPIC 246194159 TIC 301328232: SPOC sectors [42]; DV reports: none
+EPIC 248811085 TIC 349987241: no SPOC time series on MAST, so no SPOC TCE or DV report
+EPIC 246089124 TIC 49603732: no SPOC time series on MAST, so no SPOC TCE or DV report
+EPIC 246696483 TIC 436612436: no SPOC time series on MAST, so no SPOC TCE or DV report
+EPIC 211390677 TIC 366568535: SPOC sectors [7]; DV reports: none
+EPIC 247967714 TIC 268396693: no SPOC time series on MAST, so no SPOC TCE or DV report
+EPIC 212012030 TIC 14394716: SPOC sectors [71, 72]; DV reports: none
+EPIC 211503363 TIC 20444116: no SPOC time series on MAST, so no SPOC TCE or DV report
