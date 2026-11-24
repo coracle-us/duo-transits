@@ -21,12 +21,13 @@ reading the paper settled it. A period is called new only if no source gives an 
 before the sources were classified.
 
 The result:
-- **8 of the 15 periods are new.** Seven eclipsing binaries have no prior period, and EPIC 211503363 had only a
+- **6 of the 15 periods are new.** Five eclipsing binaries have no prior period, and EPIC 211503363 had only a
   period estimate.
 - **5 match published periods** to within 0.2%. The note cites them and explains why the other catalogue periods for
   these stars do not fit.
-- **2 conflict with SPOC TCEs:** TOI-5560.01 and EPIC 211489484. I checked every TCE epoch in the SPOC validation
-  reports. The note explains why my data exclude each TCE, and does not call these two periods new.
+- **4 conflict with SPOC or TESS-SPOC TCEs:** TOI-5560.01, EPIC 211489484, HD 220967 and EPIC 246089124. I checked
+  every TCE epoch in the validation reports. The TCEs of the last two come from Sector 70 alone and each rest on one
+  eclipse. The note explains why my data exclude each TCE, and does not call these four periods new.
 
 The table is now grouped by these verdicts. The note also states the search's limits:
 - ADS and SIMBAD alone find only a third of the known star–paper pairs, because catalogue papers often name stars only
@@ -49,11 +50,12 @@ periods, but tests them with a blind search of all 163 stars:
 For 11 of the 15 systems, the reported period is among the blind search's allowed periods. The note says plainly that
 the four misses include both planet candidates, and explains the other two. The blind search's first stage does find
 every transit of both candidates (SNR 9-32 and 11-111). Six of the seven fall below the significance threshold, which
-is high because inverted brightenings such as glints and bad cadences inflate the control. A linked-event test added after the first full run is labelled as post hoc. It recovers one of the four
+is high because inverted brightenings such as glints and bad cadences inflate the control. A linked-event test
+added after the first full run is labelled as post hoc. It recovers one of the four
 misses, and the note explains why its result for TOI-5560.01 is not a detection.
 
-Blind signals on 47 other stars are listed in the repository and are not claimed. Their vetting is a separate piece
-of work.
+Blind signals on 47 other stars are listed in the repository and are not claimed. A first triage of them is under
+way in the repository; its results will be reported separately.
 
 **Other changes.** The title now names the blind search. The audit of the catalogued events is replaced by the blind
 recovery. Some descriptive detail was cut to stay within the word limit.
