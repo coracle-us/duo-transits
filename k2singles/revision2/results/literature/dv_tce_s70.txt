@@ -1,0 +1,28 @@
+######## HD 220967 = EPIC 246194159 (TIC 301328232); our P = 73.245178 d, primary T0 = 747.3850, secondary phase 0.867
+S70 TESS-SPOC quality-0 data span 3208.59-3232.96
+
+TCE 1: P = 4.472220 d, epoch 3210.1259, pulse 10.5 h, MES 2295.8, max SES 4711.8, transits observed 5 of 6
+   3205.654  PDCSAP no data (n_in 0, n_flank 0) | SAP no data (n_in 0, n_flank 0) | QLP no data (n_in 0, n_flank 0)  
+   3210.126  PDCSAP    -0.06 ppt  (n_in 189) | SAP    -0.03 ppt  (n_in 189) | QLP    +0.05 ppt  (n_in 189)  
+   3214.598  PDCSAP    +0.19 ppt  (n_in 95) | SAP    +0.02 ppt  (n_in 95) | QLP    -0.13 ppt  (n_in 98)  
+   3219.070  PDCSAP no data (n_in 0, n_flank 0) | SAP no data (n_in 0, n_flank 0) | QLP    -2.82 ppt  (n_in 106)  
+   3223.543  PDCSAP    +0.02 ppt  (n_in 189) | SAP    +0.04 ppt  (n_in 189) | QLP    +0.05 ppt  (n_in 189)  
+   3228.015  PDCSAP  +222.73 ppt  (n_in 189) | SAP  +221.92 ppt  (n_in 189) | QLP  +231.55 ppt  (n_in 189)  our secondary (+0.02 d)
+   3232.487  PDCSAP    -0.16 ppt  (n_in 189) | SAP    +0.20 ppt  (n_in 189) | QLP    +0.38 ppt  (n_in 189)  
+   3236.959  PDCSAP no data (n_in 0, n_flank 0) | SAP no data (n_in 0, n_flank 0) | QLP no data (n_in 0, n_flank 0)  
+  control (PDCSAP, 187 times 0.1 d apart, >1 d from our eclipses): median -0.01 ppt, 95th percentile +0.15 ppt, max +0.29 ppt
+  our eclipse times, offset from the TCE ephemeris (d): +1.45, -2.11, -0.02, +0.08, +0.86
+  our period / TCE period = 16.3778
+
+######## EPIC 246089124 (TIC 49603732); our P = 73.962413 d, primary T0 = 774.4695, secondary phase 0.494
+S70 TESS-SPOC quality-0 data span 3209.01-3232.94
+
+TCE 1: P = 9.537033 d, epoch 3215.2312, pulse 6.0 h, MES 101.6, max SES 177.1, transits observed 2 of 2
+   3205.694  PDCSAP no data (n_in 0, n_flank 0) | SAP no data (n_in 0, n_flank 0) | QLP no data (n_in 0, n_flank 0)  
+   3215.231  PDCSAP  +105.76 ppt  (n_in 108) | SAP  +105.57 ppt  (n_in 108) | QLP  +112.42 ppt  (n_in 108)  our primary (+0.00 d)
+   3224.768  PDCSAP    +1.47 ppt  (n_in 108) | SAP    +1.64 ppt  (n_in 108) | QLP    +1.33 ppt  (n_in 108)  
+   3234.305  PDCSAP no data (n_in 0, n_flank 0) | SAP no data (n_in 0, n_flank 0) | QLP no data (n_in 0, n_flank 8)  
+  control (PDCSAP, 178 times 0.1 d apart, >1 d from our eclipses): median -0.09 ppt, 95th percentile +1.71 ppt, max +3.96 ppt
+  our eclipse times, offset from the TCE ephemeris (d): +0.72, -0.92, -0.00, +0.40
+  our period / TCE period = 7.7553
+
