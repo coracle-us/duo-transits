@@ -18,4 +18,6 @@ EPIC 202072917: catalogue period 15.17 d; observed spacing 34.746 d = 2.290 cycl
 EPIC 202072917: catalogue period 14.2 d; observed spacing 34.746 d = 2.447 cycles; offset from an integer 6.346 d
 EPIC 202072917: catalogue period 5.579 d; observed spacing 34.746 d = 6.228 cycles; offset from an integer 1.272 d
 EPIC 202126877: catalogue period 3.877 d; observed spacing 21.785 d = 5.619 cycles; offset from an integer 1.477 d
-EPIC 202071902: catalogue period 8.6973 d; observed spacing 2725.592 d = 313.384 cycles; offset from an integer 3.337 d
+EPIC 202071902: catalogue period 8.6973 d; observed spacing 22.905 d = 2.634 cycles; offset from an integer 3.187 d
+TOI-5560.01 cycle 30 (140.49 d): BJD_TDB 2461394.716 +- 0.0044
+TOI-5560.01 cycle 31 (140.49 d): BJD_TDB 2461535.210 +- 0.0046

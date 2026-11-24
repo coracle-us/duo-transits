@@ -72,11 +72,19 @@ say(f"TESS target-sectors observed: {obs}; searched: {got}; not searched (no pip
 
 # other catalogue periods of the 'agrees' C0 binaries against consecutive observed eclipses
 # (eclipse times: independent_table/scripts/s7_final.py, results/ephemerides/202126877.json)
-SPACING = {202072917: 2531.533 - 2496.787, 202126877: 2510.368 - 2488.583, 202071902: 2517.165 - (-208.427)}
+SPACING = {202072917: 2531.533 - 2496.787, 202126877: 2510.368 - 2488.583, 202071902: 3273.002 - 3250.097}  # 202071902: S71 eclipse to the S72 ingress (consecutive)
 OTHER = {202072917: [3.842, 23.255, 34.742, 1007.6, 15.17, 14.20, 5.579], 202126877: [3.877], 202071902: [8.6973]}
 for e, ps in OTHER.items():
     for p in ps:
         n = SPACING[e] / p
         say(f"EPIC {e}: catalogue period {p} d; observed spacing {SPACING[e]:.3f} d = {n:.3f} cycles; "
             f"offset from an integer {abs(n - round(n)) * p:.3f} d")
+open(os.path.join(R, "note_numbers.txt"), "w").write("\n".join(out) + "\n")
+
+# TOI-5560.01 predicted transits shared by both periods (results/ephemerides/211924561.json)
+e = json.load(open(os.path.join(HERE, "..", "results", "ephemerides", "211924561.json")))
+for n in (30, 31):
+    t_ = e["T0"] + n * e["P"]
+    sig = (e["sigma_T0"] ** 2 + (n * e["sigma_P"]) ** 2) ** 0.5
+    say(f"TOI-5560.01 cycle {n} (140.49 d): BJD_TDB {t_ + 2457000:.3f} +- {sig:.4f}")
 open(os.path.join(R, "note_numbers.txt"), "w").write("\n".join(out) + "\n")
