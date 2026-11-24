@@ -8,9 +8,9 @@ Fetch the raw inputs for the host-rotation retest into data/ (git-ignored), with
     J/ApJS/255/17   Santos et al. 2021 (F and G stars)                      -> santos2021_<date>.csv
   NASA Exoplanet Archive TAP:
     cumulative (KOI table: kepid, koi disposition)                          -> koi_cumulative_<date>.csv
-  Gaia DR3 (ESA Gaia archive TAP, every source within 2 arcsec of each KIC position)
-                                                                            -> gaia_xmatch_<date>.csv
-Usage:  .venv/bin/python fetch.py [step ...]      steps: vizier koi gaia (default: all; a step is skipped if its file exists)
+    keplerstellar (KIC -> 2MASS designation)                                -> kic_2mass_<date>.csv
+  Gaia DR3, Kepler field, G < 17.5 (ESA Gaia archive TAP, RA strips)       -> gaia_field_<date>.csv.gz
+Usage:  .venv/bin/python fetch.py [step ...]      steps: vizier koi kicstellar gaia (default: all; a step is skipped if its file exists)
 """
 import datetime as dt
 import io
@@ -30,7 +30,7 @@ CATS = {"mma2013": "J/ApJ/775/L11", "mma2014": "J/ApJS/211/24", "santos2019": "J
 
 def latest(stem):
     """Newest file for a stem (tables are stem_table_date.csv)."""
-    fs = sorted(DATA.glob(f"{stem}_*.csv"))
+    fs = sorted(DATA.glob(f"{stem}_*.csv*"))
     return fs[-1] if fs else None
 
 
@@ -86,53 +86,70 @@ def koi():
     print("wrote", out.name, len(d), "rows")
 
 
-def gaia():
-    if latest("gaia_xmatch"):
-        print("gaia exists:", latest("gaia_xmatch").name)
+def kicstellar():
+    """KIC -> 2MASS designation, from the NASA Exoplanet Archive keplerstellar table."""
+    if latest("kic_2mass"):
+        print("kic_2mass exists:", latest("kic_2mass").name)
         return
-    # CDS XMatch was down on 2026-11-24 (as was gaia-kepler.fun's TLS certificate), so the match is a 2" cone search
-    # in the ESA Gaia archive (TAP, uploaded KIC positions, anonymous). Every Gaia source within 2" is kept;
-    # match.py picks the counterpart after moving Gaia positions back to J2000 with the proper motion.
-    from astropy.table import Table
+    q = "select distinct kepid, tm_designation from keplerstellar"
+    url = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?" + urllib.parse.urlencode(dict(query=q, format="csv"))
+    with urllib.request.urlopen(url, timeout=900) as r:
+        d = pd.read_csv(io.BytesIO(r.read()))
+    out = DATA / f"kic_2mass_{TODAY}.csv"
+    d.to_csv(out, index=False)
+    print("wrote", out.name, len(d), "rows,", d.kepid.nunique(), "KIC")
+
+
+def gaia():
+    """Gaia DR3 for the whole Kepler field (G < 17.5), downloaded in RA strips; the KIC match is done locally
+    (analysis.gaia_match: nearest source within 1 arcsec after moving Gaia back to J2000 with its proper motion).
+    Why not a server-side match (2026-11-24): gaia-kepler.fun failed its TLS check, CDS XMatch was down, and the
+    ESA archive timed out on joins with uploaded tables (positions and 2MASS IDs alike). Anonymous queries return at
+    most 50,000 rows, so a strip that hits the cap is split in two."""
+    if latest("gaia_field"):
+        print("gaia exists:", latest("gaia_field").name)
+        return
     from astroquery.gaia import Gaia
-    pos = []
-    for f in DATA.glob("*_table*_*.csv"):
-        d = pd.read_csv(f, usecols=lambda c: c in ("KIC", "_RAJ2000", "_DEJ2000"))
-        pos.append(d)
-    k = pd.read_csv(latest("koi_cumulative"))[["kepid", "ra", "dec"]].rename(
-        columns={"kepid": "KIC", "ra": "_RAJ2000", "dec": "_DEJ2000"})
-    pos = pd.concat(pos + [k]).dropna().drop_duplicates("KIC")
-    pos.columns = ["kic", "ra", "dec"]
-    print("positions:", len(pos))
-    cols = ("g.source_id, g.ra AS gra, g.dec AS gdec, g.pmra, g.pmdec, g.phot_g_mean_mag, g.bp_rp, g.parallax, "
-            "g.parallax_error, g.ruwe, g.teff_gspphot, g.logg_gspphot, g.mh_gspphot, g.distance_gspphot, "
-            "g.ag_gspphot, g.ebpminrp_gspphot")
-    q = (f"SELECT u.kic, u.ra, u.dec, {cols} FROM tap_upload.kic AS u JOIN gaiadr3.gaia_source AS g "
-         "ON 1 = CONTAINS(POINT('ICRS', g.ra, g.dec), CIRCLE('ICRS', u.ra, u.dec, 2.0/3600.0))")
-    parts = []
-    tmp = DATA / "_upload.xml"
-    step = 20000
-    for i in range(0, len(pos), step):
-        part = DATA / f"_gaia_part_{i:06d}.csv"
-        if part.exists():
-            parts.append(pd.read_csv(part))
-            continue
-        Table.from_pandas(pos.iloc[i:i + step].reset_index(drop=True)).write(tmp, format="votable", overwrite=True)
-        job = Gaia.launch_job_async(q, upload_resource=str(tmp), upload_table_name="kic")
-        r = job.get_results().to_pandas()
-        r.to_csv(part, index=False)
-        print(f"  rows {i}-{i + step}: {len(r)} Gaia sources within 2 arcsec", flush=True)
-        parts.append(r)
-    o = DATA / f"gaia_xmatch_{TODAY}.csv"
-    pd.concat(parts).to_csv(o, index=False)
-    for p in DATA.glob("_gaia_part_*.csv"):
-        p.unlink()
-    tmp.unlink(missing_ok=True)
-    print("wrote", o.name)
+    Gaia.ROW_LIMIT = -1
+    cols = ("source_id, ra, dec, pmra, pmdec, phot_g_mean_mag, bp_rp, parallax, parallax_error, ruwe, teff_gspphot, "
+            "logg_gspphot, mh_gspphot, distance_gspphot, ag_gspphot, ebpminrp_gspphot")
+    parts_dir = DATA / "_gaia_strips"
+    parts_dir.mkdir(exist_ok=True)
+
+    def strip(r0, r1):
+        f = parts_dir / f"{r0:.4f}_{r1:.4f}.csv"
+        if f.exists():
+            return [f]
+        q = (f"SELECT {cols} FROM gaiadr3.gaia_source WHERE ra >= {r0} AND ra < {r1} "
+             "AND dec BETWEEN 36.4 AND 52.7 AND phot_g_mean_mag < 17.5")
+        for k in range(4):
+            try:
+                t = Gaia.launch_job_async(q).get_results().to_pandas()
+                break
+            except Exception as e:  # noqa: BLE001
+                print("   retry", r0, str(e)[:120], flush=True)
+        else:
+            raise RuntimeError(f"Gaia strip {r0}-{r1} failed")
+        if len(t) >= 50000:
+            m = (r0 + r1) / 2
+            return strip(r0, m) + strip(m, r1)
+        t.to_csv(f, index=False)
+        print(f"  RA {r0:.3f}-{r1:.3f}: {len(t)}", flush=True)
+        return [f]
+
+    files = []
+    r = 279.5
+    while r < 301.9:
+        files += strip(round(r, 4), round(r + 0.25, 4))
+        r += 0.25
+    d = pd.concat([pd.read_csv(f) for f in files]).drop_duplicates("source_id")
+    o = DATA / f"gaia_field_{TODAY}.csv.gz"
+    d.to_csv(o, index=False)
+    print("wrote", o.name, len(d), "sources")
 
 
 if __name__ == "__main__":
     DATA.mkdir(parents=True, exist_ok=True)
-    steps = sys.argv[1:] or ["vizier", "koi", "gaia"]
+    steps = sys.argv[1:] or ["vizier", "koi", "kicstellar", "gaia"]
     for s in steps:
         globals()[s]()

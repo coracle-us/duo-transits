@@ -13,10 +13,12 @@ changed afterwards is listed at the end of this file with its date and reason.
   period). They share no KIC. Primary: every published Prot. Sensitivity: drop stars with the CP/CB-candidate flag
   set (Fl1 = 1 in 2019, flag1 = 1 in 2021).
 - **Gaia DR3** (B26 §2: GSP-Phot parameters, parallaxes, photometry, extinction): `teff_gspphot`, `mh_gspphot`,
-  `ag_gspphot`, `ebpminrp_gspphot`, `parallax`, `phot_g_mean_mag`, `bp_rp`. Counterpart: every Gaia source within
-  2" of the KIC position, moved back to J2000 with its proper motion; the nearest one within 1" is kept. A
-  KIC star with no source within 1" is dropped. (gaia-kepler.fun failed its TLS check and CDS XMatch was down on
-  2026-11-24, so the match is our own; B26 matched by KIC, method not stated.)
+  `ag_gspphot`, `ebpminrp_gspphot`, `parallax`, `phot_g_mean_mag`, `bp_rp`. Counterpart: the nearest Gaia DR3
+  source with G < 17.5 within 1" of the KIC position, after moving Gaia positions back to J2000 with their proper
+  motions; a KIC star with no such source is dropped. The Gaia sources come from a download of the whole Kepler
+  field (`fetch.py gaia`), matched locally. (gaia-kepler.fun failed its TLS check, CDS XMatch was down, and the ESA
+  archive timed out on joins with uploaded tables on 2026-11-24, so the match is our own; B26 matched by KIC, method
+  not stated. This paragraph was revised on 2026-11-24 before any analysis had run, MMA or Santos.)
 - **Hosts:** NASA Exoplanet Archive KOI cumulative table (accessed 2026-11-24; B26 used 2026-09-04). B26 says
   "stars associated with planets in the NASA Exoplanet Archive" without saying whether candidates count, so both
   are run: (C) confirmed only, koi_disposition = CONFIRMED; (C+K) CONFIRMED or CANDIDATE. Stars whose only KOIs are
