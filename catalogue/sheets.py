@@ -9,7 +9,7 @@ Panels, the same for every event:
   D  the event's sector: the whole light curve, flagged cadences (quality != 0, with the momentum-dump
      bit named), and the distance of the event from the sector's edges and gaps
   E  the event's times on up to five nearest stars of similar brightness (Tmag within 1) on the same
-     camera and CCD, same sector and same product type
+     camera and CCD, same sector and same product type (the 10 nearest within 0.5 deg are tried)
   F  a difference image if a TESScut cut-out of that sector is already on disk; else "no difference
      image"
   G  depth, duration and SNR of the event against the reference
@@ -38,7 +38,8 @@ import catrun  # noqa: E402
 pl, core = catrun.mc.pl, catrun.core
 CUTOUT_ROOTS = [Path("/Users/mcbee/Documents/GitHub/coracle/duo-transits-cache/raw/tesscut"),
                 Path("/Users/mcbee/Documents/GitHub/coracle/salinas-blind-periods/data/tesscut")]
-N_NEIGH, NEIGH_TRIES, NEIGH_RADIUS_DEG, NEIGH_DMAG = 5, 20, 1.0, 1.0
+N_NEIGH, NEIGH_TRIES, NEIGH_RADIUS_DEG, NEIGH_DMAG = 5, 10, 0.5, 1.0
+_NEIGH_CACHE = {}
 MOMENTUM_DUMP_BIT = 32
 
 
@@ -76,8 +77,13 @@ def _raw_file(sr, row, cache, **kw):
 def neighbours(ra, dec, tmag, tic, sector, author, cam_ccd, cache):
     """Up to N_NEIGH (tic, sep_arcmin, tmag, t, f) of the nearest stars within NEIGH_DMAG of the
     target's Tmag that have a light curve of the same author in the sector, on the same camera/CCD."""
+    import socket
     import lightkurve as lk
     from astroquery.mast import Catalogs
+    ck = (int(tic), int(sector), author)
+    if ck in _NEIGH_CACHE:                    # several events of one star in one sector share the stars
+        return _NEIGH_CACHE[ck]
+    socket.setdefaulttimeout(120)
     r = Catalogs.query_criteria(catalog="Tic", coordinates=f"{ra} {dec}", radius=NEIGH_RADIUS_DEG,
                                 Tmag=[tmag - NEIGH_DMAG, tmag + NEIGH_DMAG]).to_pandas()
     r["dstArcSec"] = 3600 * np.hypot((r.ra.astype(float) - ra) * np.cos(np.radians(dec)), r.dec.astype(float) - dec)
@@ -102,6 +108,7 @@ def neighbours(ra, dec, tmag, tic, sector, author, cam_ccd, cache):
                         np.asarray(lc.time.value, float), np.asarray(lc.flux.value, float)))
         except Exception:
             continue
+    _NEIGH_CACHE[ck] = (out, tried)
     return out, tried
 
 

@@ -38,7 +38,7 @@ Each is fixed in the code above. None was made after seeing a candidate's result
 7. **Events at another catalogued transit on the same star.** Marked on the sheet and in the table.
    Not a reason to reject: acceptance does not claim the same body.
 8. **Sheets are anonymous.** File names are hashes; no star name, period or alias table is shown.
-9. **Neighbour panel.** Up to five of the 20 nearest stars within 1 degree and 1 mag in Tmag that have
+9. **Neighbour panel.** Up to five of the 10 nearest stars within 0.5 degree and 1 mag in Tmag that have
    a light curve of the same product type in the sector, on the same camera and CCD.
 10. **Difference images.** Only from cut-outs already on disk; nothing is downloaded for them. Most
     sheets will say "no difference image".
