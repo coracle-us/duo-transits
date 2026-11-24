@@ -159,7 +159,7 @@ own. A K2 revision should cite this note for EPIC 202126877. Changes:
 - IPAC: yes. The note uses NASA Exoplanet Archive data (KELT).
 - Upload: `rnaas.tex`, `eb_history.png` and aastex701.cls.
 
-**STATUS: ready to submit (Jon).**
+**STATUS: submitted 2026-11-24 as AAS84041 (see the end of this file).**
 
 
 ## Companion-note citation restored (2026-11-24)
@@ -171,3 +171,28 @@ events (J. McBee 2026, submitted) reported the deepening from the same TESS phot
 Section 2 again says "The depths repeat those of the companion note" and "The ground data are new". No numbers
 changed. Count (`singles/rnaas/aas_wordcount.py`): abstract 142, AAS-counted text 1243 (was 1217; limit 1350).
 Build: tectonic with aastex701.cls 7.0.1, 4 pages, no undefined references.
+
+## Submitted 2026-11-24 as AAS84041
+
+- Submitted through the AAS Peer Review System from Jon's signed-in Chrome, driven by Claude on Jon's instruction
+  ("submit the EB note the same way" as AAS84040); the system answered "Manuscript Approved (AAS84041)".
+- **Submitted text:** `rnaas.tex` at commit `0d0714c` (tag `aas84041-submitted`), i.e. with the companion-note
+  citation restored that morning. Files: `rnaas.tex` (Manuscript file), `eb_history.png` (Figure file),
+  `aastex701.cls` v7.0.1 (Other LaTeX file); all byte-identical to main at that commit.
+- **Merged PDF:** built by AAS, 4 pages; checked page by page against our build (abstract, the companion-note
+  sentence, Sections 1-4, Figure 1, AI statement, references). Approved.
+- **Form fields:**
+  - corridor: Stars and Stellar Physics;
+  - author: Mr. Jon McBee, Independent researcher (from Jon's AAS profile);
+  - title as in `rnaas.tex`; abstract: `abstract_plaintext.txt`;
+  - ethics: "Yes, I agree";
+  - AI usage: Yes, "Anthropic's Claude (Claude Code, with Claude Opus 5.5 and Claude Fable 5.2 models) wrote and ran
+    the analysis code under my supervision, including a blind re-analysis and adversarial reviews by separate AI
+    instances, and drafted and edited the note. I reviewed the text, checked every number against the saved outputs
+    and every reference against ADS, and take full responsibility for the content. The figure was made by the
+    analysis code from the data; no AI-generated figures.";
+  - MAST DOIs: 10.17909/t9ws3r, 10.17909/t9-wpz1-8s54, 10.17909/0cp4-2j79, 10.17909/t9-r086-e880;
+  - IPAC: Yes (KELT-North from the NASA Exoplanet Archive; the form asks for no IPAC DOI at submission, but its
+    instructions say to cite an IPAC dataset DOI in a revised manuscript: worth adding if a revision is requested);
+  - digital assets: none; funding: No;
+  - UAT: Eclipsing binary stars (444), Trinary stars (1714), Orbital evolution (1178).

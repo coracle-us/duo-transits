@@ -211,6 +211,9 @@ It is now the current scope (see the box at the top of this file).
 - Boyajian's star RNAAS note (`boyajian-companion/rnaas/`) **submitted 2026-11-24 as AAS84040** (tag
   `aas84040-submitted`; corridor The Solar System, Exoplanets, and Astrobiology; see `boyajian-companion/rnaas/numbers.md`,
   "Submitted 2026-11-24 as AAS84040").
+- EB note (EPIC 202126877, `eb_depth_evolution/rnaas/`) **submitted 2026-11-24 as AAS84041** (tag `aas84041-submitted`;
+  corridor Stars and Stellar Physics). It cites the K2 revision (AAS84033) as the companion note; see
+  `eb_depth_evolution/rnaas/numbers.md`, "Submitted 2026-11-24 as AAS84041".
 - ExoFOP-ready ephemerides are in `singles/writeups/exofop_ephemeris_updates.md`, for
   someone with an account to submit.
 
