@@ -21,9 +21,7 @@ OUT = ROOT / "k2singles" / "rnaas"
 # (revision2/results/compare_table1.csv); "post hoc" = only the post-hoc linked-event test (link_calibrated.csv);
 # "no" = neither.
 ROWS = [
-    (246194159, 301328232, "none", [1], "C12; S70, S92", "", "no", "HD 220967; sec.\\ 0.867"),
     (248811085, 349987241, "none", [1], "C14; S46, S72", "", "yes", ""),
-    (246089124, 49603732, "none", [1], "C12; S70, S92", "", "yes", "sec.\\ 0.494"),
     (246696483, 436612436, "none", [1, 2], "C13; S43, S70", "", "yes", "$P/2$ disfavoured"),
     (211390677, 366568535, "none", [1, 2], "C5, C18; S45", "", "yes", ""),
     (247967714, 268396693, "none", [1, 2, 3], "C13; S44, S71", "", "yes", ""),
@@ -31,6 +29,9 @@ ROWS = [
     (211503363, 20444116, "estimate", [1, 2], "C5; S45, S72", "$\\gtrsim58$$^g$", "no", "planet cand."),
     (211924561, 238606535, "differs", [1, 2], "C5, C16; S46, S72", "TCEs$^h$", "no", "TOI-5560.01"),
     (211489484, 6951741, "differs", [1], "C5, C18; S7, S46", "TCEs$^h$", "post hoc", "sec.\\ 0.194"),
+    # S70 TESS-SPOC TCEs, each on one eclipse (revision2/dv_tce_s70.py; moved from "none" 2026-11-24)
+    (246194159, 301328232, "differs", [1], "C12; S70, S92", "TCE$^h$", "no", "HD 220967; sec.\\ 0.867"),
+    (246089124, 49603732, "differs", [1], "C12; S70, S92", "TCE$^h$", "yes", "sec.\\ 0.494"),
     (211411112, 437034781, "agrees", [1], "C5, C16; S46", "62.59484(3)$^a$", "yes", "Sanders 617"),
     (211892898, 184895645, "agrees", [1], "C5, C16, C18", "72.53(3)$^e$", "yes", "Gaia SB1"),
     (202126877, 86491361, "agrees", [1], "S43--45, S71--72", "21.78$^b$", "yes", "sec.\\ 0.33; deepening$^f$"),
