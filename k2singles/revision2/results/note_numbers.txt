@@ -1,0 +1,10 @@
+catalogue: 164 events on 163 stars
+stars with every catalogued event recovered: 162 of 163; not: [211939692] (catalogued events on it: 2, one recovered per PLAN.md)
+stars with catalogued events significant: 112
+thresholds: {"K2": {"S_star": 53.25, "n_stars": 163, "n_control_eligible": 429, "allowed_control_events": 8, "control_snr_top": [892.7, 198.2, 117.6, 106.6, 84.3, 75.0, 69.1, 57.9, 53.2, 48.6, 48.1, 46.8, 44.9]}, "TESS": {"S_star": 59.96, "n_stars": 141, "n_control_eligible": 115, "allowed_control_events": 7, "
+Table 1 systems: 15; blind period recovered: 11; not: [211489484, 211503363, 211924561, 246194159]
+post-hoc test: 11 stars detected; detected among Table 1 misses: [211489484, 211924561]
+new leads: 41 stars (56 rows); post-hoc detections not in Table 1: 8; union: 47 stars
+BLS blocks: 470; inverted blocks at or above the threshold: 5
+Table 1 sources classified: ADS/SIMBAD 97 + VizieR 106 = 203
+VizieR catalogue IDs: 93; exist on the mirror: 78
