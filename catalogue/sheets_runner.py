@@ -26,6 +26,21 @@ socket.setdefaulttimeout(120)          # also in every spawned worker, which imp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import make_sheets as ms  # noqa: E402
+import numpy as np  # noqa: E402
+from astroquery.mast import Catalogs  # noqa: E402
+
+
+def _tic_by_cone(catalog=None, coordinates=None, radius=None, Tmag=None, **kw):
+    """Stand-in for Catalogs.query_criteria(catalog="Tic", coordinates, radius, Tmag=[lo, hi]) as
+    sheets.neighbours calls it. From 2026-11-24 about 11:35 CST MAST's filtered TIC service stopped
+    answering (the request hangs); the cone service answers. Same stars: every TIC entry within
+    `radius` degrees, kept if lo <= Tmag <= hi."""
+    r = Catalogs.query_region(coordinates, radius=radius, catalog="TIC")
+    tm = np.ma.filled(np.ma.asarray(r["Tmag"], dtype=float), np.nan)
+    return r[(tm >= Tmag[0]) & (tm <= Tmag[1])]
+
+
+Catalogs.query_criteria = _tic_by_cone   # in every worker process, which imports this module
 
 
 def one(job):

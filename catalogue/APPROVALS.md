@@ -22,3 +22,16 @@
   agents, one per batch of sheets, with the same instructions (`VETTING.md`); no agent sees a verdict
   of the other vetter. The pre-registration says "two fresh agents". Reason: about 1,900 sheets do not
   fit in one agent's context.
+
+## Changes of procedure after the freeze that change no frozen file (not put to Jon for approval; reported to him)
+
+- 2026-11-23/24: `sheets_runner.py` runs the frozen sheet generators star by star, each in its own
+  process with a time limit, retries and checkpoints, because `make_sheets.py` hung on MAST.
+- 2026-11-24, about 11:35 CST: MAST's filtered TIC service (`Catalogs.query_criteria`, used by
+  `sheets.neighbours`) stopped answering. From then the runner supplies the same list of stars from
+  MAST's TIC cone service, filtered by Tmag locally. Sheets made before and after differ only if the
+  two services differ at an exact magnitude boundary.
+- The vetter-check sheets were vetted in two parts (616, then the rest), because two stars with
+  dozens of events each took hours longer.
+- An independent re-derivation of the search stage (`catalogue/independent/`) was run before
+  vetting finished, not after the tables. It read no sheet and no verdict.
