@@ -42,7 +42,7 @@
 | Numbers | File |
 |---|---|
 | Kepler survivors 776.17-776.60, 790.50-790.66, 792.08-792.92, 793.25-793.40 d; 781.6 and 800.9 d excluded | `../kepler_alias_survivors.csv`, `../kepler_alias_scan.py`, `../kepler_alias_scan_local.log` |
-| Window 4 n = -2 at BKJD 1205.9 on a 0.45% dip; windows 1, 2, 3, 5 recovered | `../README.md` (cloud run) and the figure (`../win_W4_n1.png`, Figure 1 bottom right). **Gap:** no saved log or output file holds this run; `../kepler_alias_scan.py 1345.6 1345.7` would make one (it downloads the Kepler light curves again) |
+| Window 4 n = -2 at BKJD 1205.9; windows 1, 2, 3, 5 recovered | `../window4_check.py` → `../window4_check_2026-11-24.log`, `../window_scan_1025_1375.csv` (rerun 2026-11-24, same data and rule as `kepler_alias_scan.py`). All 19 core cadences are dimmed by less than 0.8% at P = 1345.640, 1345.648 and 1345.656 d; median core deficit 0.37%, deepest within +-1 d **0.44%**. The note said 0.45% (the cloud run's `../README.md`, no log) until 2026-11-24, when Jon had it changed to 0.44% in the abstract, Section 3, `abstract_plaintext.txt` and the doc. No surviving range overlaps 1345.0-1346.3 d. Windows 1, 2, 3, 5 survive as 1029.62-1031.54, 1034.51-1035.46, 1300.48-1303.76 and 1366.16-1368.21 d. Kepler alone also leaves 33 other short ranges in 1025-1375 d, each with its transits in gaps |
 | TESS S15 fit: BTJD 1730.154 +- 0.003, depth 1.16%, T14 20.3 h | `../README.md` (cloud run) |
 | No TESS sector in window 3; next S120-S121 | `../RESULTS_LOCAL.md`, `../tess_sectors.log` |
 | AAVSO: 22,234 points; 19 visits on six nights from three observers; 43% coverage; dchi2 -3.4 to +13.3; window 3's 2023 March return +19.4 on 15% | `../RESULTS_AAVSO.md`, `../ground_check_aavso_run.log` |
