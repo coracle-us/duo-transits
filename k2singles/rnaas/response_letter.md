@@ -54,8 +54,8 @@ is high because inverted brightenings such as glints and bad cadences inflate th
 added after the first full run is labelled as post hoc. It recovers one of the four
 misses, and the note explains why its result for TOI-5560.01 is not a detection.
 
-Blind signals on 47 other stars are listed in the repository and are not claimed. Their vetting is a separate piece
-of work.
+Blind signals on 47 other stars are listed in the repository and are not claimed. A first triage of them is under
+way in the repository; its results will be reported separately.
 
 **Other changes.** The title now names the blind search. The audit of the catalogued events is replaced by the blind
 recovery. Some descriptive detail was cut to stay within the word limit.
