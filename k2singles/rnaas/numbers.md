@@ -223,6 +223,7 @@ note"). Word count (`singles/rnaas/aas_wordcount.py`): abstract 131, AAS-counted
 | Misses: both planet candidates (TESS transits below S*); 211489484 and 246194159 (primaries + secondaries in one family) | PLAN.md "What the blind first stage still found"; `data/periodic/211489484.json`, `246194159.json` |
 | Post-hoc test recovers 211489484 (support 4, control 0). TOI-5560.01: 140.4947 and 70.2474 d at support 4 = N*, among 16 periods passing; max support 5 at ~4.1 d; own control 6: not a detection | `revision2/results/link_calibrated.csv` |
 | 47 other stars with blind signals (41 new-lead stars + 8 post-hoc, 2 overlap) | `new_leads.csv`, `link_calibrated.csv`; `note_numbers.txt` |
+| Letter: triage of the 47, 0 on-target candidates; 19 EB, 14 systematic, 7 control-level, 1 off-target, 6 unclear (2 already known: 201132684, 211498244) | `k2singles/leads_triage/triage.csv` (`triage.py`, rules fixed before the full run); README there |
 | ADS under Gaia and 2MASS ids | SIMBAD stars: `literature.py`; the 61 stars SIMBAD does not know: `ads_extra_ids.py` -> `results/literature/ads_extra_ids.csv` (Gaia DR3 from `gaia_ids.csv`, Gaia DR2 and 2MASS from TIC v8.2): 0 papers. Positive control: 211892898's 2MASS id finds 1 paper |
 | 22 general VizieR catalogues for every star, plus 56 from Table 1 stars' papers (78 in all); 13 of 93 not on the mirror | `revision2/results/literature/vizier_catalogues.csv` |
 | SPOC / TESS-SPOC DV reports per Table 1 star | `revision2/dv_listing.py` -> `results/literature/dv_listing.txt` (both collections). Two stars (246194159, 246089124) have S70 TESS-SPOC reports, read by `dv_tce_s70.py` (below) |
@@ -279,3 +280,13 @@ Response letter: `k2singles/rnaas/response_letter.md`.
   sent is `k2singles/rnaas/aas84033_correspondence_sent.txt`: a cover note asking staff to link the two manuscripts
   and pass the letter to the editor, then `response_letter.txt` with paragraphs unwrapped and ASCII-only (3", '-').
   There is no separate email to Lintott; if no editor is assigned in a week or two, send him a short pointer.
+
+**Triage wording (2026-11-24, after the AAS84033 submission).** After the leads triage (`k2singles/leads_triage/`, PR 31), the note no longer calls
+the 47 stars' signals "unvetted". Results: "triage leaves none as an on-target candidate". Closing line: "the other
+signals' triage". `response_letter.md` says the same. Count (`singles/rnaas/aas_wordcount.py`): abstract 131, AAS-counted
+text 1294 (was 1286; limit 1350). Reading copy rebuilt (`k2singles/rnaas/reading_copy.py`). These edits came after the
+revision was submitted: the submitted text stays `rnaas.tex` at tag `aas84033-submitted` (1286 words, still saying
+"unvetted"). They go to AAS only with a correction or a further revision. The letter as sent
+(`response_letter.txt`, `aas84033_correspondence_sent.txt`) still says the triage is under way; only
+`response_letter.md` carries the triage sentence. The result reaches AAS only by a follow-up message or with a
+correction.
