@@ -203,6 +203,9 @@ It is now the current scope (see the box at the top of this file).
 - The weekly S107 recheck (scheduled task) for 268534931, 139726266 and 168702709.
 - Second RNAAS note (K2 single events x TESS, `k2singles/rnaas/`) **received 2026-10-12 as AAS82225**
   (submitted text = commit fb3bd0c; corrected ms.tex/ms.pdf sent 2026-10-13 = tag `aas82225-correction-sent`; see `k2singles/rnaas/numbers.md`).
+  Declined 2026-11-15 with an invitation to revise (literature search + blind search; `k2singles/revision2/PLAN.md`).
+  **Revision submitted 2026-11-24 as a new manuscript, AAS84033** (tag `aas84033-submitted`); the response letter
+  goes to AAS by email (`k2singles/rnaas/numbers.md`, "Submitted 2026-11-24 as AAS84033").
 - RNAAS note **received by AAS 2026-10-12 as AAS82207**; revision requested 2026-10-13, **resubmitted 2026-10-13 as AAS82207R1** (tag `aas82207R1-submitted`), shortened after a length bounce (tag `aas82207R1-length-fix`), and after a one-sentence clarification request **resubmitted 2026-10-15 as AAS82207R2** (tag `aas82207R2-submitted`; `singles/rnaas/rnaas.tex`; see
   `singles/rnaas/numbers.md`, "After submission"). **Accepted 2026-11-14.** The arXiv package is in `singles/rnaas/arxiv/`; add the journal reference and DOI to arXiv once the note is published.
 - ExoFOP-ready ephemerides are in `singles/writeups/exofop_ephemeris_updates.md`, for
