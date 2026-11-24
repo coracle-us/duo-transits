@@ -1,0 +1,138 @@
+%% Research Note of the AAS: the transiting companion of Boyajian's star. 2026-11-24.
+%% Text from the Claude Doc "RNAAS draft: Boyajian's star companion period" (rev 20, Notes section removed).
+%% Source, numbers and provenance: https://github.com/coracle-us/duo-transits (boyajian-companion/; see rnaas/numbers.md).
+\documentclass{aastex701}
+
+\begin{document}
+
+\title{Kepler Rules Out Most $\sim$780-Day Periods and Window 4 for the Transiting Companion of Boyajian's Star}
+
+\author[orcid=0009-0000-7524-4470]{Jon McBee}
+\affiliation{Independent researcher, USA}
+\email{jon.mcbee@gmail.com}
+
+\begin{abstract}
+A symmetric, 1.1\%-deep, $\sim$21\,h single transit of KIC~8462852 in TESS Sector~15 has been attributed to a
+$\sim$9\,$M_{\rm J}$ companion with five Kepler-allowed period windows between 1030 and 1368\,d, while a recurrence
+model of the star's dimming families favors $\sim$780\,d. I test trial periods from 770 to 845\,d, and the five
+windows, against Kepler long-cadence photometry under one constraint: flux deficits add, so a transit cannot hide
+in data dimmed by less than the transit itself. Near 780\,d, Kepler allows only 776.17--776.60, 790.50--790.66,
+792.08--792.92 and 793.25--793.40\,d, excluding the model's maximum-likelihood (781.6\,d) and median (800.9\,d)
+periods. The same test excludes window~4 (1345.65\,d), whose earlier transit falls on a dip only 0.45\% deep.
+Public AAVSO and ASAS-SN photometry can neither detect nor exclude a transit in window~3 (2026 October 18--23),
+the published favorite.
+\end{abstract}
+
+\keywords{\uat{Exoplanet detection methods}{489} --- \uat{Transit photometry}{1709}}
+
+\section{Introduction}
+
+Boyajian's star (KIC~8462852) shows deep, aperiodic, chromatic dips usually attributed to dust from disrupted
+exocomets or planetesimals \citep{Boyajian2016}. \citet[hereafter MF26]{MF26} found a single symmetric transit
+in TESS Sector~15 (2019 September~3; depth $\sim$1.1\%, duration $\sim$21\,h). With SOPHIE radial velocities
+(RVs), it implies a $9.4^{+4.9}_{-4.1}\,M_{\rm J}$ companion with $P=1211^{+89}_{-78}$\,d. Assuming any earlier
+transit fell in a Kepler gap or under a dip deeper than 0.1\%, MF26 allow five windows near 1030, 1035, 1302,
+1345 and 1368\,d, and rank window~3 (1301.0--1303.6\,d) most probable. \citet{Zhu2026} fit the same transit with
+a ringed Jupiter-sized planet.
+
+\citet[hereafter SN26]{SN26} instead models the dimming families as returns of a disrupted population, with
+maximum likelihood at 781.6\,d and posterior median $800.9^{+41.1}_{-28.4}$\,d. SN26 suggests the TESS object
+may be the surviving remnant, noting that the D800-to-TESS interval is four orbits of 776.1\,d. I test which of
+these periods Kepler still allows.
+
+\section{Data and method}
+
+I used Kepler Q0--Q17 long-cadence PDCSAP photometry \citep[][SAP\_QUALITY $=0$, each quarter normalized to its
+median]{Borucki2010} and TESS SPOC 2-minute photometry \citep{Ricker2015} from Sectors 14, 15, 41, 54 and 55, all
+from MAST. A trapezoid fit to the Sector~15 event gives mid-transit BTJD $1730.154\pm0.003$, depth 1.16\% and
+total duration 20.3\,h, within $2\sigma$ of MF26's $T_0=$ BJD $2458730.164\pm0.004$, which I adopt.
+
+For each trial period $P$ I predict $t_n=T_0+nP$ within the Kepler baseline and take the local quiet level as
+the 95th percentile of flux within $\pm3$\,d. Because dust and companion dim the star together, a real transit
+leaves every cadence in its core ($|t-t_n|<0.25$\,d) at least $\sim$1\% below that level. I exclude $P$ if any
+predicted core holds three or more cadences dimmed by less than 0.8\%; cores in gaps, or inside dips at least
+0.8\% deep, survive. Core half-widths of 0.20--0.25\,d, or my own $T_0$, shift the surviving ranges by
+$\leq0.02$\,d. As a check, the code recovers MF26's windows 1, 2, 3 and 5 to within $\sim$0.5\,d at each edge.
+
+\section{Results}
+
+\textbf{The $\sim$780\,d hypothesis.} Between 770 and 845\,d, the $n=-4$ and $n=-3$ transits fall in Kepler
+Quarters 7--9 and 15--17 (Figure~\ref{fig:alias}). Four narrow ranges survive. At 776.17--776.60\,d, both earlier
+transits land inside the two deepest events, D800 and the final D1500 dip; at 790.50--790.66\,d, both fall in
+gaps; at 792.08--792.92 and 793.25--793.40\,d, $n=-4$ falls in the Q7/Q8 gap and $n=-3$ in the deepest D1500
+dip. SN26's 781.6 and 800.9\,d periods are excluded: their earlier transits land on quiet data with
+0.02--0.07\% scatter, where a 1.1\% transit would stand out at $>30\sigma$. Even 776.1\,d is marginally excluded,
+because its $n=-3$ core falls on the egress of the last D1500 dip, within 0.6--0.8\% of quiet.
+
+Every surviving range needs a transit hidden in a gap or in one of the deepest dips. That is allowed, but not
+evidence. If the TESS object is SN26's remnant, its period must be 776.2--776.6\,d, plausible only if D800 and
+the final D1500 dip came from material near the companion.
+
+\textbf{The $\gtrsim$1030\,d bound.} MF26's $\sim$1030\,d floor, repeated by \citet{Zhu2026}, is not a Kepler
+limit. It comes from their TESS plus RV posterior, which rests on a $2.3\sigma$ semi-amplitude; Kepler alone
+excludes only $P<776$\,d, and their TESS-only fit gives $1103^{+242}_{-234}$\,d. The 776.2--776.6\,d range is
+therefore disfavored by the RVs, not excluded. MF26 report no transit on the night of 2023 December~3 (BJD
+2460282.2--2460282.4), but that night covers one only for $P\leq776.31$\,d, leaving 776.3--776.6\,d untested.
+
+\textbf{Window 4.} For $P=1345.648\pm0.008$\,d, the $n=-2$ transit falls at BKJD 1205.9, on a 0.45\%-deep dip,
+not a gap. MF26's 0.1\% rule masks it, but a 1.1\% transit cannot produce a shallower dip. Window~4 is excluded
+unless the transit is much shallower than in TESS. Windows 1, 2, 3 and 5 survive.
+
+\section{Window 3 (2026 October)}
+
+MF26's most probable window predicted a transit between 2026 October 18 and 23. No TESS sector covers it; the
+next visits are expected in Sectors 120--121 (2027 August--September). I tested it with AAVSO photometry
+\citep[22,234 observations from 2021 July to 2026 October 29 after cuts;][]{AAVSO} and ASAS-SN
+\citep{Kochanek2017,Hart2023}, comparing each observer and band with its own median over $\pm15$\,d. A trial
+mid-time is excluded if a 1.1\% transit raises $\chi^2$ by more than 25 over the core points, and supported if it
+lowers $\chi^2$ by more than 25.
+
+Window~3 remains untested. AAVSO holds 19 single visits in the window, on six nights from three observers. Only
+43\% of trial mid-times put any point in the core, and none reaches either threshold ($\Delta\chi^2$ from $-3.4$
+to $+13.3$); night-to-night scatter of 7--24\,mmag is comparable to the $\sim$12\,mmag depth. The ASAS-SN light
+curve ends in 2025 June. Earlier returns of the surviving $\sim$780\,d ranges (2021 October--November, 2023
+December, 2024 January) and of windows 3 and 5 (2023 March and June) are also unconstrained; the closest, window
+3's 2023 March return, reaches $\Delta\chi^2=+19.4$ on 15\% of its mid-times. The 2026 returns of the $\sim$780\,d
+ranges fell at solar conjunction or in morning twilight.
+
+Gaia DR4 epoch astrometry (2026 December), suggested by both MF26 and \citet{Zhu2026}, can constrain the orbit
+without another transit.
+
+\begin{figure}[ht!]
+\plotone{boyajian_alias_figure.png}
+\caption{Top: Kepler status of the predicted $n=-4$ and $n=-3$ transits for trial periods of 770--812\,d: blue,
+quiet data that exclude a 1.1\% transit; orange, a dip at least 0.8\% deep; grey, a gap. Red marks surviving
+periods. The shaded band is SN26's 68\% interval, the dashed line their maximum-likelihood period and the dotted
+line 776.1\,d. Bottom: Kepler flux at predicted epochs. The 781.63\,d and window~4 epochs (top row) are compared
+with the expected transit (red); for 776.30\,d (bottom row) the predicted transit (shaded) falls inside D800 and
+the final D1500 dip.\label{fig:alias}}
+\end{figure}
+
+\begin{acknowledgments}
+I acknowledge with thanks the variable star observations from the AAVSO International Database contributed by
+observers worldwide and used in this research. This work uses Kepler
+\dataset[doi:10.17909/T9488N]{https://doi.org/10.17909/T9488N} and TESS SPOC
+\dataset[doi:10.17909/t9-nmc8-f686]{https://doi.org/10.17909/t9-nmc8-f686} light curves from MAST.
+\end{acknowledgments}
+
+\facilities{Kepler, TESS, AAVSO, ASAS-SN}
+
+\section*{AI disclosure statement}
+I used Anthropic's Claude, an AI assistant, under my supervision to write and run the analysis code and to draft
+and edit this note. I reviewed the text, checked every number against the saved outputs and every reference
+against ADS, and take full responsibility for the content. The figure was made by the analysis code from the
+data; the note contains no AI-generated figures.
+
+\begin{thebibliography}{}
+\bibitem[AAVSO(2026)]{AAVSO} American Association of Variable Star Observers (AAVSO) 2026, AAVSO International Database
+\bibitem[Borucki et al.(2010)]{Borucki2010} Borucki, W.~J., Koch, D., Basri, G., et al. 2010, Science, 327, 977
+\bibitem[Boyajian et al.(2016)]{Boyajian2016} Boyajian, T.~S., LaCourse, D.~M., Rappaport, S.~A., et al. 2016, MNRAS, 457, 3988
+\bibitem[Hart et al.(2023)]{Hart2023} Hart, K., Shappee, B.~J., Hey, D., et al. 2023, arXiv:2304.03791
+\bibitem[Kochanek et al.(2017)]{Kochanek2017} Kochanek, C.~S., Shappee, B.~J., Stanek, K.~Z., et al. 2017, PASP, 129, 104502
+\bibitem[Madurga-Favieres et al.(2026)]{MF26} Madurga-Favieres, C., Str{\o}m, P.~A., Wilson, T.~G., Heidari, N., \& Kiefer, F. 2026, MNRAS, 550, stag1273
+\bibitem[Ricker et al.(2015)]{Ricker2015} Ricker, G.~R., Winn, J.~N., Vanderspek, R., et al. 2015, JATIS, 1, 014003
+\bibitem[Socas-Navarro(2026)]{SN26} Socas-Navarro, H. 2026, arXiv:2609.02726
+\bibitem[Zhu \& Liu(2026)]{Zhu2026} Zhu, W., \& Liu, Q. 2026, arXiv:2610.34806
+\end{thebibliography}
+
+\end{document}
