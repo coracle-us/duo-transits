@@ -4,7 +4,8 @@ Truth files for validation arms V2 and V3 of prereg_catalogue.yaml. No light cur
 V2: Hawthorn candidates with a solved period (data/catalog/status.csv, status "resolved").
 V3: Pages Navarrete, arXiv:2611.03019 version 2 - the ancillary table of 187 TOIs
     (arxiv_2611.03019/source/anc/table2_full.csv) and the 12 published periods of its Table
-    "Published periods recovered blindly" (main.tex), matched to our scored rows: a TOI row by its TOI
+    "Published periods recovered blindly" (main.tex; the 12 rows are kept in
+    arxiv_2611.03019/published_periods.csv, the paper's source text is not in the repo), matched to our scored rows: a TOI row by its TOI
     number, any other row by TIC.
 
 Inputs  : catalogue/defs.csv, data/catalog/status.csv, data/catalog/candidates.csv,
@@ -44,7 +45,8 @@ def main():
         columns=dict(period_claim_d="P_true_d")).to_csv(HERE / "v2_truth.csv", index=False)
 
     t = pd.read_csv(SRC / "anc/table2_full.csv")
-    pub = published((SRC / "main.tex").read_text())
+    tex = SRC / "main.tex"                 # not in the repo; published_periods.csv is its extracted table
+    pub = published(tex.read_text()) if tex.exists() else pd.read_csv(HERE / "arxiv_2611.03019/published_periods.csv")
     assert len(t) == 187 and len(pub) == 12
     t = t.merge(pub, on="TOI", how="left")
     toi = defs[defs.catalogue == "toi_single"].assign(TOI=lambda d: d.cand_id.str[3:].astype(float))
