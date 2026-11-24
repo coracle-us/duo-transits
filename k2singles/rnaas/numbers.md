@@ -248,3 +248,31 @@ type, the 211892898 SB1 conjunction match (Gaia SB1 stays in the table), the TOI
 eclipses per sector" argument (replaced by the eclipse-spacing check), 202126877's K2 timing offset and secondary limit.
 
 Response letter: `k2singles/rnaas/response_letter.md`.
+
+## Submitted 2026-11-24 as AAS84033
+
+- AAS82225 carries the formal decision "Reject" (15-Nov-2026), with Lintott's invitation to revise. The AAS system
+  offers no revision link for it, so the revision went in as a **new submission**: **AAS84033**, received
+  24-Nov-2026 10:32:48 (AAS Peer Review System). Corridor: Stars and Stellar Physics, as AAS82225.
+- **Submitted text:** `k2singles/rnaas/rnaas.tex` at commit `c89dfc1` (git tag `aas84033-submitted`). It was uploaded
+  directly to AAS, not through Overleaf, as the single file `McBee_AAS82225_R1.tex`, byte-identical to that commit's
+  `rnaas.tex`. The other three files were `aastex701.cls` (v7.0.1), `aasjournalv7.bst` and `orcid-ID.png`. These were
+  taken from the AAS82225 record, so they are the same files AAS accepted in October. Their file type is "Other
+  LaTeX file", with the description "Source file"; the PNG is not typed as a figure, so it does not use up the
+  note's one figure-or-table slot.
+- **Merged PDF:** built by AAS, 3 pages (261 KB). Pages 1 and 3 were checked against the Overleaf build of the same
+  commit (project "RNAAS K2 single events x TESS", linked file `k2_note_R1.tex`): the same layout, abstract, table
+  and references. Page 2 has the same source and class files but was not compared closely. Approved by Jon.
+- **Word count** (`singles/rnaas/aas_wordcount.py`): abstract 131, AAS-counted text 1286, about 1335 by AAS's count.
+- **Form fields:**
+  - abstract: plain text from `k2singles/rnaas/abstract_plaintext.txt` (139 words by the form's count);
+  - UAT: 489, 1709, 444;
+  - MAST DOIs: the five in the acknowledgments;
+  - IPAC: Yes (ExoFOP);
+  - funding: No;
+  - ethics: agreed;
+  - AI usage: Yes, described as "Anthropic's Claude (Claude Code, with Claude Opus 5.5 and Claude Fable 5.2 models)
+    wrote and ran the analysis code under my supervision, ...", following the note's AI statement.
+- **Response letter:** a new submission has no field for one. Jon sends
+  `k2singles/rnaas/response_letter.txt` by email to journals.manager@aas.org, cc Lintott, citing both AAS82225 and
+  AAS84033. The manuscript page also offers "Send Manuscript Correspondence", which is an alternative.
