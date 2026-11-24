@@ -397,7 +397,7 @@ data products, not papers or catalogues.
 period" or "estimate only", and both classification passes class the TCEs as PERIOD. So the rule stays as
 pre-registered, and the note does not call the periods of 211489484 and 211924561 new.
 - The note presents each as a resolved period that conflicts with the SPOC TCEs, and says why each TCE is excluded.
-- 211489484, 106.936 d: the 10-cycle alias of our S7 and S46 primaries, excluded by the other four (table below).
+- 211489484, 106.936 d: the 10-cycle alias of our S7 and S46 primaries, excluded by the other four (table above).
 - 211489484, 0.2405 d: a sub-day signal, not a competing eclipse period. One line saying so.
 - 211924561: all four SPOC TCEs (58.28, 31.25, 58.54, 10.28 d) are checked against the DV epochs (table above).
   Each combines our TESS transits with a rejected event or an empty time, and none fits the K2 transits.
