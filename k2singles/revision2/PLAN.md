@@ -378,13 +378,26 @@ data products, not papers or catalogues.
   one or both of our real TESS transits.
 - Correction to the 2026-11-23 note above: the 58.29 d TCE does not pair two rejected events. It pairs the rejected
   S44 step with our real S46 transit. The 31.25 d TCE uses no transit of ours.
-- 211489484's TCEs were not checked against its DV report.
+
+**211489484 TCEs.** Checked 2026-11-23 against its SPOC DV report (XML, from MAST with Jon's OK:
+`tess2018206190142-s0001-s0046-0000000006951741-00555_dvr.xml`; same script and output). One run (S1–S46), two TCEs:
+
+| SPOC run | P (d) | MES | Its transit times |
+|---|---|---|---|
+| S1–S46 | 106.936 | 31.8 | our S7 and S46 primary eclipses, ten cycles apart (1069.36 d = 10 × 106.936 = 13 × 82.258) |
+| S1–S46 | 0.2405 | 8.5 | 363 of 4520 expected events, 0.5 h pulse |
+
+- 106.936 d is the 10-cycle alias of the S7–S46 pair. Our C5, C18, S34 and S71 primaries fall 8.2–32.9 d from its
+  ephemeris, so it is excluded.
+- 0.2405 d cannot be the eclipse period: our 4-h eclipses would then recur every 5.8 h, and our searches find
+  isolated events only. It is a separate low-significance signal. Its cause is not checked: one possibility is the S34
+  primary, which the 106.94 d ephemeris does not mask. Not proven.
 
 **Decided 2026-11-23 (Jon): TCE periods do block "new".** The rules call a period new only if its star is "no prior
 period" or "estimate only", and both classification passes class the TCEs as PERIOD. So the rule stays as
 pre-registered, and the note does not call the periods of 211489484 and 211924561 new.
 - The note presents each as a resolved period that conflicts with the SPOC TCEs, and says why each TCE is excluded.
-- 211489484, 106.936 d: already excluded in the note.
-- 211489484, 0.2405 d: a short-period signal, not a competing transit period. One line saying so.
+- 211489484, 106.936 d: the 10-cycle alias of our S7 and S46 primaries, excluded by the other four (table below).
+- 211489484, 0.2405 d: a sub-day signal, not a competing eclipse period. One line saying so.
 - 211924561: all four SPOC TCEs (58.28, 31.25, 58.54, 10.28 d) are checked against the DV epochs (table above).
   Each combines our TESS transits with a rejected event or an empty time, and none fits the K2 transits.
