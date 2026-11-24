@@ -1,0 +1,47 @@
+# Boyajian's star RNAAS note: build, counts and provenance
+
+## Source and build (2026-11-24)
+
+- **Text:** the Claude Doc "RNAAS draft: Boyajian's star companion period"
+  (https://claude.ai/artifact/9mW8wn3XzkgUs2u1NcQTye), rev 20, converted to AASTeX by hand. The doc's
+  "Notes for Jon" section is left out, and it has been deleted from the doc too.
+- **Added in the LaTeX version** (not in the doc): ORCID and email (as in the three earlier notes), the UAT
+  keywords, the MAST data DOIs in the acknowledgments, the facilities line and the AI disclosure statement (the
+  EB note's wording without its blind re-analysis clause).
+- **Affiliation:** `AFFILIATION PLACEHOLDER`, for Jon to fill. The three earlier notes (AAS82207, AAS84033 and
+  the EB note) use "Independent researcher, USA".
+- **Figure:** `boyajian_alias_figure.png`, a copy of `../boyajian_alias_figure.png` (byte-identical; made by
+  `../make_figure_cloud.py`). It is the same image as the doc's Figure 1.
+- **Compile:** tectonic with `aastex701.cls` v7.0.1 (from `singles/rnaas/arxiv/McBee_AAS82207_arXiv.tar.gz`):
+  3 pages, no undefined references or overfull boxes. `rnaas.pdf` is that build.
+
+## Word counts
+
+- `singles/rnaas/aas_wordcount.py` (the count AAS's quality check applied to AAS82207R1): abstract **144**
+  (limit 150), text after the abstract without references **1086** (limit 1350).
+- Plain count of the whole PDF (`pdftotext rnaas.pdf - | wc -w`, so title, author block, headers, captions,
+  acknowledgments and references; the figure is a raster image, so its labels are not counted): **1457**
+  (limit 1500). The doc ran about 1350 by the same kind of count; the additions above take about 100 words.
+
+## Checks done for submission
+
+- **Figure 1 vs text, window 4:** the bottom-right panel (Window 4, P = 1345.65 d, n = -2, BKJD 1205.9)
+  shows a dip of about 0.4% against the expected 1.1% transit (red), so the core holds data dimmed by less
+  than 0.8%: excluded, as the text says. The top panel's "allowed" row shows the four surviving ranges near
+  780 d (776.2-776.6, 790.5-790.7, 792.1-792.9, 793.3-793.4 d), as in the text.
+- **References:** all nine checked in ADS (2026-11-24). Zhu & Liu = 2026arXiv261034806Z, "The anomalously
+  large transiting planet around Boyajian's star: evidence for a circumplanetary ring" (Wei Zhu, Quanyi Liu);
+  cited in Sections 1, 3 and 4. Madurga-Favieres et al. = 2026MNRAS.550g1273M.
+- **MAST DOIs:** 10.17909/T9488N resolves to "Kepler LC, Q0-Q17", 10.17909/t9-nmc8-f686 to "TESS Light
+  Curves - All Sectors".
+
+## Where the numbers come from
+
+| Numbers | File |
+|---|---|
+| Kepler survivors 776.17-776.60, 790.50-790.66, 792.08-792.92, 793.25-793.40 d; 781.6 and 800.9 d excluded | `../kepler_alias_survivors.csv`, `../kepler_alias_scan.py`, `../kepler_alias_scan_local.log` |
+| Window 4 n = -2 at BKJD 1205.9 on a 0.45% dip; windows 1, 2, 3, 5 recovered | `../README.md` (cloud run) and the figure (`../win_W4_n1.png`, Figure 1 bottom right). **Gap:** no saved log or output file holds this run; `../kepler_alias_scan.py 1345.6 1345.7` would make one (it downloads the Kepler light curves again) |
+| TESS S15 fit: BTJD 1730.154 +- 0.003, depth 1.16%, T14 20.3 h | `../README.md` (cloud run) |
+| No TESS sector in window 3; next S120-S121 | `../RESULTS_LOCAL.md`, `../tess_sectors.log` |
+| AAVSO: 22,234 points; 19 visits on six nights from three observers; 43% coverage; dchi2 -3.4 to +13.3; window 3's 2023 March return +19.4 on 15% | `../RESULTS_AAVSO.md`, `../ground_check_aavso_run.log` |
+| ASAS-SN curve ends 2025 June | `../RESULTS_ASASSN.md` |
