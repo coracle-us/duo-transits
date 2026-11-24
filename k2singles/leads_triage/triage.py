@@ -502,7 +502,7 @@ def main():
         star.append(dict(EPIC=e, TIC=b.TIC, verdict=b.verdict, best_signal=b.sig_id, best_kind=b.kind,
                          reasons=b.reasons, n_signals=len(g),
                          all_signals=" ; ".join(f"{x.sig_id}:{x.verdict}" for x in g.itertuples()),
-                         posthoc=e in __import__("leads").POSTHOC, comment=b.comment, flags=b.flags))
+                         posthoc=e in __import__("leads").POSTHOC, comment=b["comment"], flags=b["flags"], known_period=b["known_period"]))
     T = pd.DataFrame(star)
     T.to_csv(HERE / "triage.csv", index=False)
     print(T.verdict.value_counts().to_string())
