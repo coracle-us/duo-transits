@@ -124,6 +124,10 @@ in A1 rows 33/36/38/41/53, A2 rows 77–85 missing) are in `data/catalog/transcr
 - Moderated, not peer reviewed (Lead Editor Chris Lintott); fast publication; indexed in
   ADS, citable. No author publication charges (as of Oct 2026).
 - ≤ 1,500 words, abstract required, **one figure or one table, not both**.
+- **Word-count gate (required since 2026-11-24):** no RNAAS upload or resubmission unless
+  `python scripts/rnaas_gate.py <note.tex>` passes (abstract ≤ 150; main text **including references** ≤ 1,300, a
+  50-word margin under AAS's 1,350), with its output pasted in the commit message of the uploaded version. AAS
+  bounced AAS84041 and AAS84033 for counting references, which our old counter left out.
 - AASTeX (v7+) preferred; Overleaf/Word accepted.
 - Author: Jon McBee (independent; consider listing Coracle as affiliation). Claude is
   not an author: add an acknowledgment disclosing AI assistance, and **check current AAS

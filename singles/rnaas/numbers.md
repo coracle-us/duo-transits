@@ -37,6 +37,9 @@ The CLAUDE.md rule is that every number in the note must trace to a file and a s
 
 ## Before submitting
 
+- [ ] **Word-count gate** (rule since 2026-11-24, for every RNAAS note and resubmission): `python
+      scripts/rnaas_gate.py <note.tex>` must pass (abstract ≤ 150; main text including references ≤ 1,300),
+      with its output pasted in the commit message of the uploaded version. No upload without it.
 - [x] **References** (verified 2026-10-12). All 12 entries were checked for first and co-authors,
       journal, volume and page against arXiv API metadata, ASCL, the NASA TESS BibTeX file
       (Huang 2020, Caldwell 2020) and the A&A/arXiv listing (Heidari 2024). All match `rnaas.tex`;
