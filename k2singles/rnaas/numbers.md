@@ -290,3 +290,11 @@ revision was submitted: the submitted text stays `rnaas.tex` at tag `aas84033-su
 (`response_letter.txt`, `aas84033_correspondence_sent.txt`) still says the triage is under way; only
 `response_letter.md` carries the triage sentence. The result reaches AAS only by a follow-up message or with a
 correction.
+
+**Triage follow-up sent (2026-11-24).** The triage result went to AAS staff through the AAS84033 "Send Manuscript
+Correspondence" form; the system confirmed "1 Email sent." Recipient: Staff. Subject: "AAS84033: result of the
+triage mentioned in the response letter". No attachments; Jon solved the CAPTCHA. The text sent is
+`k2singles/rnaas/aas84033_triage_followup_sent.txt` (subject line first, then the message as typed into the form). It
+gives the triage counts (0 of 47 on target; 19 EB, 14 systematic, 7 control-level, 1 off target, 6 unclear, 2 of
+them already known) and offers the version of the note with the two "unvetted" phrases changed (1294 words), which
+is `rnaas.tex` on main after PR 34. AAS84033 had no scientific editor assigned when it was sent.
