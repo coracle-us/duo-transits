@@ -1,0 +1,12 @@
+Subject: AAS84033: result of the triage mentioned in the response letter
+
+Dear Alex and Dr Lintott,
+
+A short addition to the response letter for AAS84033 (revision of AAS82225). The letter said that a triage of the blind-search signals on 47 stars not in the note's table was under way. It has now finished.
+
+The rules were fixed before the triage ran. None of the 47 stars is left as an on-target periodic candidate: 19 are eclipsing binaries, 14 are systematics, 7 are at the level of the star's own inverted-flux control, 1 is off target, and 6 are unclear, two of them already known. The details are in the repository (k2singles/leads_triage/).
+
+This does not change the note's results. If it would help, two phrases in the note can say the same: the Results would read "listed in the repository; triage leaves none as an on-target candidate" instead of "listed in the repository, unvetted", and the closing line would cite "the other signals' triage" instead of "unvetted signals". The note would then be 1294 words. I can send that version if you would like it.
+
+Thank you,
+Jon McBee
