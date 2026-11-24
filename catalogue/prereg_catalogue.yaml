@@ -1,14 +1,15 @@
 # Pre-registration: the catalogue run (phase 4 of docs/STRATEGY_living_alias_catalogue.md)
 #
-# STATUS: DRAFT 0.1 for Jon's approval. Nothing here has been run and no candidate has been scored.
+# STATUS: step 1 APPROVED by Jon on 2026-11-23, as drafted (0.1, commit 3 of PR 28). This file is
+# frozen; see catalogue/APPROVALS.md. Nothing has been run and no candidate has been scored.
 # Approval is in two steps, both by Jon, as in the calibration rounds:
 #   step 1 (this file): scope, what is computed, what each row reports, the vetting, the validation
 #           arms and their criteria, what may be claimed.
 #   step 2 (the freeze): the driver code, the trial definitions built from catalogues only, and the
 #           vetting sheet, recorded in catalogue/APPROVALS.md BEFORE any candidate is scored.
 # Any change after step 1 is a new version and needs Jon's approval.
-version: 0.1
-status: draft, not approved
+version: 1.0
+status: approved (step 1); step 2 (the freeze) not yet approved
 written: 2026-11-23
 spec: docs/STRATEGY_living_alias_catalogue.md (sections 5.1 to 5.3, phase 4)
 follows:

@@ -31,7 +31,9 @@ def test_solved_hawthorn_count():
     assert (st.status == "resolved").sum() == 26
 
 
-def test_not_approved_until_recorded():
-    approvals = ROOT / "catalogue/APPROVALS.md"
-    if "draft" in PRE["status"]:
-        assert not approvals.exists() or "Jon McBee" not in approvals.read_text()
+def test_prereg_frozen_by_hash():
+    """Version 1.0 as approved (catalogue/APPROVALS.md). Any change is a new version and needs Jon."""
+    import hashlib
+    h = hashlib.sha256((ROOT / "catalogue/prereg_catalogue.yaml").read_bytes()).hexdigest()
+    assert h == "1177568b08db3431af02d488cab5bcd7fbee8db7306ebd6d80dab73adfb75d72"
+    assert h in (ROOT / "catalogue/APPROVALS.md").read_text()
