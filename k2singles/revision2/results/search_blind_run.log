@@ -1,0 +1,164 @@
+163 stars to search, 12 workers
+[1/163] EPIC 201854636 ok K2 [14] TESS 2 sectors | events 2 control 5 | catalogued hit [True] | 0.2 s 
+[2/163] EPIC 248847494 ok K2 [14] TESS 3 sectors | events 1 control 0 | catalogued hit [True] | 0.2 s 
+[3/163] EPIC 248607265 ok K2 [14] TESS 0 sectors | events 5 control 6 | catalogued hit [True] | 0.2 s 
+[4/163] EPIC 248912804 ok K2 [14] TESS 0 sectors | events 5 control 4 | catalogued hit [True] | 0.2 s 
+[5/163] EPIC 248873506 ok K2 [14] TESS 0 sectors | events 6 control 7 | catalogued hit [True] | 0.2 s 
+[6/163] EPIC 201792207 ok K2 [14] TESS 0 sectors | events 3 control 7 | catalogued hit [True] | 0.2 s 
+[7/163] EPIC 248749087 ok K2 [14] TESS 3 sectors | events 3 control 7 | catalogued hit [True] | 0.3 s 
+[8/163] EPIC 248854690 ok K2 [14] TESS 3 sectors | events 6 control 9 | catalogued hit [True] | 0.3 s 
+[9/163] EPIC 248657359 ok K2 [14] TESS 3 sectors | events 7 control 4 | catalogued hit [True] | 0.3 s 
+[10/163] EPIC 247692298 ok K2 [13] TESS 1 sectors | events 9 control 9 | catalogued hit [True] | 0.5 s 
+[11/163] EPIC 248811085 ok K2 [14] TESS 2 sectors | events 14 control 17 | catalogued hit [True] | 0.6 s 
+[12/163] EPIC 248555345 ok K2 [14] TESS 3 sectors | events 24 control 14 | catalogued hit [True] | 0.9 s 
+[13/163] EPIC 247865067 ok K2 [13] TESS 4 sectors | events 2 control 8 | catalogued hit [True] | 0.2 s 
+[14/163] EPIC 247762843 ok K2 [13] TESS 3 sectors | events 10 control 9 | catalogued hit [True] | 0.4 s 
+[15/163] EPIC 247967714 ok K2 [13] TESS 4 sectors | events 10 control 7 | catalogued hit [True] | 0.3 s 
+[16/163] EPIC 246696483 ok K2 [13] TESS 7 sectors | events 13 control 13 | catalogued hit [True] | 0.5 s 
+[17/163] EPIC 247450113 ok K2 [13] TESS 2 sectors | events 4 control 4 | catalogued hit [True] | 0.2 s 
+[18/163] EPIC 246849982 ok K2 [13] TESS 5 sectors | events 17 control 14 | catalogued hit [True] | 0.6 s 
+[19/163] EPIC 246906371 ok K2 [13] TESS 0 sectors | events 9 control 11 | catalogued hit [True] | 0.3 s 
+[20/163] EPIC 246732631 ok K2 [13] TESS 6 sectors | events 17 control 32 | catalogued hit [True] | 0.7 s 
+[21/163] EPIC 247015294 ok K2 [13] TESS 0 sectors | events 4 control 1 | catalogued hit [True] | 0.1 s 
+[22/163] EPIC 247814074 ok K2 [13] TESS 0 sectors | events 10 control 18 | catalogued hit [True] | 0.4 s 
+[23/163] EPIC 247594337 ok K2 [13] TESS 2 sectors | events 9 control 13 | catalogued hit [True] | 1.0 s 
+[24/163] EPIC 247756662 ok K2 [13] TESS 4 sectors | events 33 control 25 | catalogued hit [True] | 1.4 s 
+[25/163] EPIC 246194159 ok K2 [12, 19] TESS 3 sectors | events 9 control 9 | catalogued hit [True] | 0.4 s 
+[26/163] EPIC 245964933 ok K2 [12] TESS 5 sectors | events 10 control 9 | catalogued hit [True] | 0.4 s 
+[27/163] EPIC 246394998 ok K2 [12] TESS 2 sectors | events 8 control 13 | catalogued hit [True] | 0.3 s 
+[28/163] EPIC 246089124 ok K2 [12] TESS 3 sectors | events 6 control 4 | catalogued hit [True] | 0.3 s 
+[29/163] EPIC 246361128 ok K2 [12, 19] TESS 2 sectors | events 13 control 8 | catalogued hit [True] | 0.3 s 
+[30/163] EPIC 245929407 ok K2 [12] TESS 7 sectors | events 13 control 16 | catalogued hit [True] | 0.7 s 
+[31/163] EPIC 247795097 ok K2 [13] TESS 4 sectors | events 27 control 23 | catalogued hit [True] | 1.9 s 
+[32/163] EPIC 246301164 ok K2 [12] TESS 1 sectors | events 9 control 4 | catalogued hit [True] | 0.3 s 
+[33/163] EPIC 246359551 ok K2 [12] TESS 3 sectors | events 18 control 13 | catalogued hit [True] | 0.9 s 
+[34/163] EPIC 246163364 ok K2 [12, 19] TESS 1 sectors | events 10 control 10 | catalogued hit [True] | 0.4 s 
+[35/163] EPIC 246425172 ok K2 [12, 19] TESS 1 sectors | events 4 control 7 | catalogued hit [True] | 0.4 s 
+[36/163] EPIC 246302531 ok K2 [12] TESS 1 sectors | events 14 control 5 | catalogued hit [True] | 0.3 s 
+[37/163] EPIC 246020606 ok K2 [12, 19] TESS 1 sectors | events 6 control 9 | catalogued hit [True] | 0.3 s 
+[38/163] EPIC 246279882 ok K2 [12] TESS 1 sectors | events 3 control 4 | catalogued hit [True] | 0.2 s 
+[39/163] EPIC 246331715 ok K2 [12, 19] TESS 1 sectors | events 2 control 5 | catalogued hit [True] | 0.2 s 
+[40/163] EPIC 223332021 ok K2 [111, 112] TESS 2 sectors | events 2 control 2 | catalogued hit [True] | 0.1 s 
+[41/163] EPIC 224937601 ok K2 [111, 112] TESS 2 sectors | events 7 control 9 | catalogued hit [True] | 0.4 s 
+[42/163] EPIC 230887315 ok K2 [111, 112] TESS 1 sectors | events 3 control 6 | catalogued hit [True] | 0.4 s 
+[43/163] EPIC 226600397 ok K2 [111, 112] TESS 2 sectors | events 4 control 6 | catalogued hit [True] | 0.3 s 
+[44/163] EPIC 231312005 ok K2 [111, 112] TESS 1 sectors | events 5 control 10 | catalogued hit [True] | 0.2 s 
+[45/163] EPIC 232334247 ok K2 [111, 112] TESS 1 sectors | events 9 control 10 | catalogued hit [True] | 0.4 s 
+[46/163] EPIC 236157481 ok K2 [111, 112] TESS 1 sectors | events 8 control 10 | catalogued hit [True] | 0.3 s 
+[47/163] EPIC 235099239 ok K2 [111, 112] TESS 2 sectors | events 4 control 2 | catalogued hit [True] | 0.2 s 
+[48/163] EPIC 240410914 ok K2 [111, 112] TESS 2 sectors | events 4 control 4 | catalogued hit [True] | 0.2 s 
+[49/163] EPIC 240323152 ok K2 [111, 112] TESS 1 sectors | events 6 control 8 | catalogued hit [True] | 0.2 s 
+[50/163] EPIC 231674968 ok K2 [111, 112] TESS 2 sectors | events 11 control 12 | catalogued hit [True] | 0.7 s 
+[51/163] EPIC 242209485 ok K2 [111, 112] TESS 2 sectors | events 9 control 8 | catalogued hit [True] | 0.3 s 
+[52/163] EPIC 224703312 ok K2 [111, 112] TESS 2 sectors | events 6 control 5 | catalogued hit [True] | 0.3 s 
+[53/163] EPIC 229021605 ok K2 [102] TESS 2 sectors | events 5 control 9 | catalogued hit [True] | 0.3 s 
+[54/163] EPIC 201132684 ok K2 [102] TESS 2 sectors | events 9 control 11 | catalogued hit [True] | 0.4 s 
+[55/163] EPIC 201479221 ok K2 [102] TESS 0 sectors | events 2 control 4 | catalogued hit [True] | 0.2 s 
+[56/163] EPIC 229022237 ok K2 [102] TESS 1 sectors | events 3 control 1 | catalogued hit [True] | 0.1 s 
+[57/163] EPIC 201092629 ok K2 [102] TESS 2 sectors | events 6 control 5 | catalogued hit [True] | 0.3 s 
+[58/163] EPIC 228804202 ok K2 [102] TESS 2 sectors | events 3 control 3 | catalogued hit [True] | 0.2 s 
+[59/163] EPIC 228786343 ok K2 [102] TESS 2 sectors | events 9 control 6 | catalogued hit [True] | 0.3 s 
+[60/163] EPIC 201093731 ok K2 [102] TESS 2 sectors | events 5 control 6 | catalogued hit [True] | 0.2 s 
+[61/163] EPIC 201496916 ok K2 [102] TESS 1 sectors | events 5 control 4 | catalogued hit [True] | 0.2 s 
+[62/163] EPIC 201510813 ok K2 [102] TESS 0 sectors | events 12 control 6 | catalogued hit [True] | 0.3 s 
+[63/163] EPIC 228891397 ok K2 [102] TESS 0 sectors | events 16 control 4 | catalogued hit [True] | 0.4 s 
+[64/163] EPIC 220186865 ok K2 [8] TESS 6 sectors | events 6 control 5 | catalogued hit [True] | 0.3 s 
+[65/163] EPIC 220315458 ok K2 [8] TESS 3 sectors | events 18 control 7 | catalogued hit [True] | 0.4 s 
+[66/163] EPIC 220562610 ok K2 [8] TESS 2 sectors | events 4 control 7 | catalogued hit [True] | 0.2 s 
+[67/163] EPIC 220515668 ok K2 [8] TESS 0 sectors | events 4 control 5 | catalogued hit [True] | 0.1 s 
+[68/163] EPIC 220606084 ok K2 [8] TESS 3 sectors | events 4 control 7 | catalogued hit [True] | 0.3 s 
+[69/163] EPIC 220605820 ok K2 [8] TESS 3 sectors | events 8 control 7 | catalogued hit [True] | 0.2 s 
+[70/163] EPIC 220152847 ok K2 [8] TESS 6 sectors | events 3 control 11 | catalogued hit [True] | 0.3 s 
+[71/163] EPIC 220208795 ok K2 [8] TESS 1 sectors | events 5 control 6 | catalogued hit [True] | 0.3 s 
+[72/163] EPIC 216831785 ok K2 [7] TESS 0 sectors | events 3 control 6 | catalogued hit [True] | 0.2 s 
+[73/163] EPIC 213832800 ok K2 [7] TESS 1 sectors | events 8 control 7 | catalogued hit [True] | 0.4 s 
+[74/163] EPIC 218751675 ok K2 [7] TESS 1 sectors | events 6 control 1 | catalogued hit [True] | 0.4 s 
+[75/163] EPIC 218187050 ok K2 [7] TESS 1 sectors | events 2 control 1 | catalogued hit [True] | 0.1 s 
+[76/163] EPIC 215307988 ok K2 [7] TESS 1 sectors | events 5 control 4 | catalogued hit [True] | 0.3 s 
+[77/163] EPIC 215067200 ok K2 [7] TESS 1 sectors | events 21 control 21 | catalogued hit [True] | 0.8 s 
+[78/163] EPIC 213332545 ok K2 [7] TESS 3 sectors | events 8 control 8 | catalogued hit [True] | 0.5 s 
+[79/163] EPIC 215894766 ok K2 [7] TESS 1 sectors | events 16 control 5 | catalogued hit [True] | 0.4 s 
+[80/163] EPIC 219240689 ok K2 [7] TESS 1 sectors | events 3 control 6 | catalogued hit [True] | 0.4 s 
+[81/163] EPIC 212549089 ok K2 [6] TESS 2 sectors | events 6 control 9 | catalogued hit [True] | 0.3 s 
+[82/163] EPIC 213867148 ok K2 [7] TESS 1 sectors | events 6 control 9 | catalogued hit [True] | 0.6 s 
+[83/163] EPIC 212542155 ok K2 [6] TESS 1 sectors | events 1 control 3 | catalogued hit [True] | 0.1 s 
+[84/163] EPIC 214783208 ok K2 [7] TESS 1 sectors | events 18 control 13 | catalogued hit [True] | 0.9 s 
+[85/163] EPIC 212555615 ok K2 [6] TESS 1 sectors | events 2 control 3 | catalogued hit [True] | 0.1 s 
+[86/163] EPIC 212685467 ok K2 [6, 17] TESS 1 sectors | events 7 control 4 | catalogued hit [True] | 0.3 s 
+[87/163] EPIC 212820423 ok K2 [6, 17] TESS 1 sectors | events 14 control 8 | catalogued hit [True] | 0.7 s 
+[88/163] EPIC 212694013 ok K2 [6, 17] TESS 2 sectors | events 5 control 8 | catalogued hit [True] | 0.5 s 
+[89/163] EPIC 212805678 ok K2 [6, 17] TESS 1 sectors | events 8 control 14 | catalogued hit [True] | 0.5 s 
+[90/163] EPIC 212477236 ok K2 [6, 17] TESS 1 sectors | events 5 control 6 | catalogued hit [True] | 0.2 s 
+[91/163] EPIC 212343520 ok K2 [6] TESS 1 sectors | events 7 control 11 | catalogued hit [True] | 0.3 s 
+[92/163] EPIC 212325089 ok K2 [6] TESS 3 sectors | events 8 control 5 | catalogued hit [True] | 0.4 s 
+[93/163] EPIC 212332380 ok K2 [6] TESS 1 sectors | events 7 control 9 | catalogued hit [True] | 0.3 s 
+[94/163] EPIC 212554009 ok K2 [6, 17] TESS 1 sectors | events 5 control 27 | catalogued hit [True] | 0.5 s 
+[95/163] EPIC 212715204 ok K2 [6, 17] TESS 1 sectors | events 4 control 6 | catalogued hit [True] | 0.2 s 
+[96/163] EPIC 212732378 ok K2 [6, 17] TESS 1 sectors | events 14 control 7 | catalogued hit [True] | 0.4 s 
+[97/163] EPIC 212775521 ok K2 [6, 17] TESS 1 sectors | events 15 control 16 | catalogued hit [True] | 0.5 s 
+[98/163] EPIC 211633458 ok K2 [5, 18] TESS 5 sectors | events 8 control 5 | catalogued hit [True] | 0.5 s 
+[99/163] EPIC 212152316 ok K2 [5, 18] TESS 4 sectors | events 5 control 7 | catalogued hit [True] | 0.5 s 
+[100/163] EPIC 212026444 ok K2 [5, 16] TESS 4 sectors | events 5 control 14 | catalogued hit [True] | 0.5 s 
+[101/163] EPIC 211351543 ok K2 [5, 18] TESS 6 sectors | events 10 control 8 | catalogued hit [True] | 0.5 s 
+[102/163] EPIC 211953574 ok K2 [5, 16, 18] TESS 4 sectors | events 24 control 15 | catalogued hit [True] | 0.8 s 
+[103/163] EPIC 211939692 ok K2 [5, 18] TESS 2 sectors | events 16 control 4 | catalogued hit [True, False] | 0.5 s 
+[104/163] EPIC 211351097 ok K2 [5, 18] TESS 5 sectors | events 6 control 11 | catalogued hit [True] | 0.4 s 
+[105/163] EPIC 211821192 ok K2 [5, 18] TESS 5 sectors | events 6 control 3 | catalogued hit [True] | 0.3 s 
+[106/163] EPIC 211924561 ok K2 [5, 16, 18] TESS 4 sectors | events 23 control 24 | catalogued hit [True] | 1.2 s 
+[107/163] EPIC 212011230 ok K2 [5, 16] TESS 4 sectors | events 8 control 8 | catalogued hit [True] | 0.7 s 
+[108/163] EPIC 211598816 ok K2 [5, 16, 18] TESS 4 sectors | events 37 control 42 | catalogued hit [True] | 1.8 s 
+[109/163] EPIC 211498244 ok K2 [5, 18] TESS 7 sectors | events 14 control 41 | catalogued hit [True] | 1.1 s 
+[110/163] EPIC 211840710 ok K2 [5, 18] TESS 5 sectors | events 9 control 5 | catalogued hit [True] | 0.4 s 
+[111/163] EPIC 211894612 ok K2 [5, 18] TESS 3 sectors | events 7 control 13 | catalogued hit [True] | 0.4 s 
+[112/163] EPIC 212070574 ok K2 [5, 16, 18] TESS 5 sectors | events 25 control 24 | catalogued hit [True] | 1.2 s 
+[113/163] EPIC 211892898 ok K2 [5, 16, 18] TESS 1 sectors | events 13 control 17 | catalogued hit [True] | 1.5 s 
+[114/163] EPIC 211490542 ok K2 [5, 18] TESS 4 sectors | events 10 control 14 | catalogued hit [True] | 0.5 s 
+[115/163] EPIC 211503363 ok K2 [5, 18] TESS 4 sectors | events 6 control 3 | catalogued hit [True] | 0.3 s 
+[116/163] EPIC 211995462 ok K2 [5, 18] TESS 4 sectors | events 18 control 12 | catalogued hit [True] | 0.6 s 
+[117/163] EPIC 212012030 ok K2 [5, 18] TESS 2 sectors | events 10 control 14 | catalogued hit [True] | 0.5 s 
+[118/163] EPIC 211390677 ok K2 [5, 18] TESS 5 sectors | events 11 control 5 | catalogued hit [True] | 0.6 s 
+[119/163] EPIC 210857749 ok K2 [4] TESS 2 sectors | events 4 control 1 | catalogued hit [True] | 0.2 s 
+[120/163] EPIC 211489484 ok K2 [5, 18] TESS 4 sectors | events 14 control 10 | catalogued hit [True] | 0.5 s 
+[121/163] EPIC 211064647 ok K2 [4] TESS 4 sectors | events 8 control 1 | catalogued hit [True] | 0.3 s 
+[122/163] EPIC 210823406 ok K2 [4] TESS 2 sectors | events 3 control 4 | catalogued hit [True] | 0.2 s 
+[123/163] EPIC 210843533 ok K2 [4] TESS 0 sectors | events 1 control 1 | catalogued hit [True] | 0.0 s 
+[124/163] EPIC 211411112 ok K2 [5, 16, 18] TESS 4 sectors | events 21 control 30 | catalogued hit [True] | 0.8 s 
+[125/163] EPIC 211075893 ok K2 [4] TESS 0 sectors | events 1 control 4 | catalogued hit [True] | 0.1 s 
+[126/163] EPIC 210825751 ok K2 [4] TESS 3 sectors | events 1 control 1 | catalogued hit [True] | 0.1 s 
+[127/163] EPIC 211087003 ok K2 [4] TESS 5 sectors | events 15 control 11 | catalogued hit [True] | 0.9 s 
+[128/163] EPIC 210760314 ok K2 [4, 13] TESS 0 sectors | events 9 control 14 | catalogued hit [True] | 0.6 s 
+[129/163] EPIC 210725198 ok K2 [4] TESS 4 sectors | events 2 control 1 | catalogued hit [True] | 1.3 s 
+[130/163] EPIC 206253908 ok K2 [3] TESS 2 sectors | events 2 control 7 | catalogued hit [True] | 0.2 s 
+[131/163] EPIC 205936222 ok K2 [3] TESS 6 sectors | events 8 control 16 | catalogued hit [True] | 0.5 s 
+[132/163] EPIC 206008070 ok K2 [3] TESS 2 sectors | events 5 control 7 | catalogued hit [True] | 0.5 s 
+[133/163] EPIC 204918110 ok K2 [2] TESS 1 sectors | events 9 control 10 | catalogued hit [True] | 0.4 s 
+[134/163] EPIC 203311200 ok K2 [2] TESS 1 sectors | events 4 control 5 | catalogued hit [True] | 0.2 s 
+[135/163] EPIC 203746451 ok K2 [2] TESS 1 sectors | events 9 control 10 | catalogued hit [True] | 0.5 s 
+[136/163] EPIC 203914123 ok K2 [2] TESS 1 sectors | events 8 control 13 | catalogued hit [True] | 0.7 s 
+[137/163] EPIC 204533587 ok K2 [2, 15] TESS 0 sectors | events 10 control 6 | catalogued hit [True] | 0.4 s 
+[138/163] EPIC 204086428 ok K2 [2] TESS 1 sectors | events 2 control 5 | catalogued hit [True] | 0.2 s 
+[139/163] EPIC 205966706 ok K2 [3] TESS 4 sectors | events 32 control 36 | catalogued hit [True] | 1.4 s 
+[140/163] EPIC 204634789 ok K2 [2] TESS 1 sectors | events 9 control 17 | catalogued hit [True] | 0.4 s 
+[141/163] EPIC 203865172 ok K2 [2, 111, 112] TESS 1 sectors | events 25 control 23 | catalogued hit [True] | 1.0 s 
+[142/163] EPIC 203011840 ok K2 [2] TESS 2 sectors | events 8 control 7 | catalogued hit [True] | 0.3 s 
+[143/163] EPIC 204546592 ok K2 [2, 15] TESS 1 sectors | events 18 control 23 | catalogued hit [True] | 1.4 s 
+[144/163] EPIC 205272592 ok K2 [2] TESS 1 sectors | events 7 control 10 | catalogued hit [True] | 0.3 s 
+[145/163] EPIC 204952800 ok K2 [2] TESS 1 sectors | events 1 control 15 | catalogued hit [True] | 0.7 s 
+[146/163] EPIC 201631267 ok K2 [1] TESS 2 sectors | events 1 control 3 | catalogued hit [True] | 0.2 s 
+[147/163] EPIC 201775904 ok K2 [1] TESS 3 sectors | events 5 control 10 | catalogued hit [True] | 0.4 s 
+[148/163] EPIC 201663371 ok K2 [1] TESS 0 sectors | events 3 control 0 | catalogued hit [True] | 0.1 s 
+[149/163] EPIC 201720401 ok K2 [1] TESS 0 sectors | events 3 control 2 | catalogued hit [True] | 0.2 s 
+[150/163] EPIC 201176672 ok K2 [1] TESS 5 sectors | events 7 control 3 | catalogued hit [True] | 0.3 s 
+[151/163] EPIC 201635132 ok K2 [1] TESS 3 sectors | events 12 control 5 | catalogued hit [True] | 0.3 s 
+[152/163] EPIC 204100531 ok K2 [2] TESS 1 sectors | events 16 control 5 | catalogued hit [True] | 1.0 s 
+[153/163] EPIC 204776782 ok K2 [2] TESS 1 sectors | events 19 control 16 | catalogued hit [True] | 1.0 s 
+[154/163] EPIC 202071902 ok K2 [0] TESS 4 sectors | events 4 control 6 | catalogued hit [True] | 0.3 s 
+[155/163] EPIC 201207683 ok K2 [1] TESS 4 sectors | events 7 control 13 | catalogued hit [True] | 1.3 s 
+[156/163] EPIC 202126877 ok K2 [0] TESS 5 sectors | events 14 control 8 | catalogued hit [True] | 0.5 s 
+[157/163] EPIC 202067195 ok K2 [0] TESS 0 sectors | events 4 control 0 | catalogued hit [True] | 0.1 s 
+[158/163] EPIC 202135247 ok K2 [0] TESS 0 sectors | events 3 control 4 | catalogued hit [True] | 0.1 s 
+[159/163] EPIC 202073476 ok K2 [0] TESS 0 sectors | events 4 control 6 | catalogued hit [True] | 0.2 s 
+[160/163] EPIC 202137580 ok K2 [0] TESS 5 sectors | events 5 control 4 | catalogued hit [True] | 0.4 s 
+[161/163] EPIC 202060921 ok K2 [0] TESS 5 sectors | events 11 control 8 | catalogued hit [True] | 0.5 s 
+[162/163] EPIC 202085278 ok K2 [0] TESS 0 sectors | events 20 control 3 | catalogued hit [True] | 0.3 s 
+[163/163] EPIC 202072917 ok K2 [0] TESS 6 sectors | events 11 control 7 | catalogued hit [True] | 1.0 s 

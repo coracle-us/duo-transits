@@ -1,0 +1,42 @@
+
+######## TOI-5560 = EPIC 211924561 (TIC 238606535); our period 140.49401 d
+
+SPOC run s0002-s0072, TCE 1: P = 58.536507 d, epoch 2509.7740, MES 14.6, transits observed 3 of 14 expected, pulse 2.5 h
+    2509.774  S44 rejected (scattered-light step) (-0.04 d)
+    2568.311  S46 transit (+0.01 d)
+    3270.749  S72 transit (-0.02 d)
+   our events, offset from the TCE ephemeris (d): C5 +11.584, C16 -0.079, S46 -0.012, S72 +0.016  -> does not fit all of them
+   our period / TCE period = 2.4001
+
+SPOC run s0042-s0046, TCE 1: P = 58.283306 d, epoch 2510.0133, MES 11.5, transits observed 2 of 2 expected, pulse 2.5 h
+    2510.013  S44 rejected (scattered-light step) (+0.20 d)
+    2568.297  S46 transit (-0.00 d)
+   our events, offset from the TCE ephemeris (d): C5 +1.217, C16 -6.142, S46 +0.002, S72 +3.068  -> does not fit all of them
+   our period / TCE period = 2.4105
+
+SPOC run s0042-s0046, TCE 2: P = 31.252764 d, epoch 2509.8021, MES 7.4, transits observed 3 of 3 expected, pulse 3.5 h
+    2509.802  S44 rejected (scattered-light step) (-0.01 d)
+    2541.055  S45 vetted, not a transit (< 0.5 ppt, on a steep background ramp) (+0.00 d)
+    2572.308  not an event in our search
+    3259.868  -0.31 d from the first S72 cadence; not an event in our search
+   our events, offset from the TCE ephemeris (d): C5 +14.053, C16 -2.578, S46 -4.009, S72 +10.896  -> does not fit all of them
+   our period / TCE period = 4.4954
+
+SPOC run s0072-s0072, TCE 1: P = 10.284718 d, epoch 3260.4754, MES 7.8, transits observed 2 of 3 expected, pulse 3.5 h
+    2509.691  S44 rejected (scattered-light step) (-0.12 d)
+    3260.475  +0.30 d from the first S72 cadence; not an event in our search
+    3270.760  S72 transit (-0.00 d)
+    3281.045  not an event in our search
+   our events, offset from the TCE ephemeris (d): C5 +4.838, C16 +0.962, S46 -3.101, S72 +0.004  -> does not fit all of them
+   our period / TCE period = 13.6605
+
+######## EPIC 211489484 (TIC 6951741); our period 82.25843 d
+
+SPOC run s0001-s0046, TCE 1: P = 106.936066 d, epoch 1508.7526, MES 31.8, transits observed 2 of 11 expected, pulse 2.5 h
+    1508.753  S7 primary (-0.00 d)
+    2578.113  S46 primary (-0.00 d)
+   our events, offset from the TCE ephemeris (d): C5 -32.899, C18 -32.897, S7 +0.004, S34 -8.218, S46 +0.005, S71 +16.450  -> does not fit all of them
+   our period / TCE period = 0.7692
+
+SPOC run s0001-s0046, TCE 2: P = 0.240513 d, epoch 1491.6647, MES 8.5, transits observed 363 of 4520 expected, pulse 0.5 h
+   sub-day period; our period / TCE period = 342.0129

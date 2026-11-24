@@ -1,0 +1,48 @@
+{
+ "K2": {
+  "S_star": 53.25,
+  "n_stars": 163,
+  "n_control_eligible": 429,
+  "allowed_control_events": 8,
+  "control_snr_top": [
+   892.7,
+   198.2,
+   117.6,
+   106.6,
+   84.3,
+   75.0,
+   69.1,
+   57.9,
+   53.2,
+   48.6,
+   48.1,
+   46.8,
+   44.9
+  ]
+ },
+ "TESS": {
+  "S_star": 59.96,
+  "n_stars": 141,
+  "n_control_eligible": 115,
+  "allowed_control_events": 7,
+  "control_snr_top": [
+   1509.1,
+   873.1,
+   242.7,
+   97.1,
+   87.0,
+   78.2,
+   73.9,
+   60.0,
+   58.8,
+   58.7,
+   57.1,
+   52.1
+  ]
+ },
+ "n_common_mode_events": 3,
+ "BLS": {
+  "sde_threshold": 7.787417395082972,
+  "n_control_blocks": 470
+ }
+}

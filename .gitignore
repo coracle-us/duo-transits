@@ -28,6 +28,9 @@ eb_depth_evolution/independent/data/
 singles/revision/data/
 
 k2singles/revision/audit21/data/
+
+k2singles/revision2/data
+k2singles/cache
 calibration/mono/work/
 calibration/mono/results/arm_a/
 calibration/mono/results/arm_b/

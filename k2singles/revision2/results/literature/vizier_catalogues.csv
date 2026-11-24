@@ -1,0 +1,94 @@
+catalog,exists,status,tables
+B/vsx,True,exists,B/vsx/vsx
+I/357,True,exists,I/357/tboasb1c I/357/tboeb I/357/tboes I/357/tbooc I/357/tbooac I/357/tbooavc I/357/tbootsc I/357/tbootsvc I/357/tbosb1 I/357/tbosb1c I/357/tbosb2 I/357/tbosb2c I/357/acc7 I/357/acc9 I/357/linspec1 I/357/linspec2 I/357/vimfl
+I/358,True,exists,I/358/scalerts I/358/alertsms I/358/varisum I/358/vclassre I/358/vagn I/358/vcep I/358/vcc I/358/veb I/358/veprv I/358/vrvstat I/358/vlpv I/358/vmicro I/358/vmsosc I/358/vrm I/358/vpltrans I/358/vrrlyr I/358/vst
+II/366,True,exists,II/366/catv2021
+J/A+A/418/357,False,not found,
+J/A+A/516/A3,True,exists,J/A+A/516/A3/clusters J/A+A/516/A3/table5
+J/A+A/579/A19,True,exists,J/A+A/579/A19/table3
+J/A+A/594/A100,True,exists,J/A+A/594/A100/table3 J/A+A/594/A100/table5
+J/A+A/616/A10,True,exists,J/A+A/616/A10/tablea1a J/A+A/616/A10/tablea1b J/A+A/616/A10/tablea3 J/A+A/616/A10/tablea4
+J/A+A/622/A133,True,exists,J/A+A/622/A133/cparam
+J/A+A/624/A19,True,exists,J/A+A/624/A19/catalog
+J/A+A/624/A8,True,exists,J/A+A/624/A8/table1 J/A+A/624/A8/clusters
+J/A+A/627/A119,True,exists,J/A+A/627/A119/table
+J/A+A/633/A99,True,exists,J/A+A/633/A99/table1 J/A+A/633/A99/members
+J/A+A/635/A43,True,exists,J/A+A/635/A43/table2
+J/A+A/640/A1,True,exists,J/A+A/640/A1/table1 J/A+A/640/A1/nodup
+J/A+A/643/A169,False,not found,
+J/A+A/645/A42,True,exists,J/A+A/645/A42/stars
+J/A+A/647/A19,True,exists,J/A+A/647/A19/orbits
+J/A+A/659/A59,True,exists,J/A+A/659/A59/table1 J/A+A/659/A59/table2
+J/A+A/665/A126,False,not found,
+J/A+A/668/A4,True,exists,J/A+A/668/A4/clusterp J/A+A/668/A4/memberl
+J/A+A/672/A176,True,exists,J/A+A/672/A176/table1
+J/A+A/674/A34,False,not found,
+J/A+A/677/A21,True,exists,J/A+A/677/A21/kep_apo J/A+A/677/A21/k2_apo J/A+A/677/A21/k2_gal J/A+A/677/A21/tess_apo
+J/A+A/678/A158,True,exists,J/A+A/678/A158/catalog
+J/A+A/690/A323,True,exists,J/A+A/690/A323/table2
+J/A+A/691/A242,True,exists,J/A+A/691/A242/tessobaf J/A+A/691/A242/obaf-eb1
+J/A+A/691/A28,True,exists,J/A+A/691/A28/clusters J/A+A/691/A28/members
+J/A+A/692/A243,True,exists,J/A+A/692/A243/mrs J/A+A/692/A243/lrs
+J/A+A/703/A116,False,not found,
+J/A+A/704/A167,True,exists,J/A+A/704/A167/members
+J/A+AS/100/243,False,no tables in a cone search,
+J/A+AS/27/89,False,not found,
+J/AJ/112/628,True,exists,J/AJ/112/628/cat2000 J/AJ/112/628/standard
+J/AJ/134/2340,True,exists,J/AJ/134/2340/table3 J/AJ/134/2340/table4
+J/AJ/146/134,True,exists,III/272/ravedr4
+J/AJ/148/81,True,exists,J/AJ/148/81/table1
+J/AJ/150/97,True,exists,J/AJ/150/97/table2
+J/AJ/153/75,True,exists,III/279/rave_dr5 III/279/rave_on
+J/AJ/154/224,True,exists,J/AJ/154/224/table2 J/AJ/154/224/Transit
+J/AJ/155/136,True,exists,J/AJ/155/136/table3
+J/AJ/155/21,True,exists,J/AJ/155/21/table1 J/AJ/155/21/table2
+J/AJ/156/142,True,exists,J/AJ/156/142/clusters
+J/AJ/156/241,True,exists,J/AJ/156/241/table4
+J/AJ/160/120,True,exists,III/284/allstars III/284/allvis III/284/allplate
+J/AJ/160/83,True,exists,III/283/ravedr6 III/283/xgaia2 III/283/xgaiae3 III/283/fields
+J/AJ/161/190,True,exists,J/AJ/161/190/table1 J/AJ/161/190/table2 J/AJ/161/190/table3
+J/AJ/161/259,False,not found,
+J/AJ/161/59,False,not found,
+J/AJ/162/184,True,exists,J/AJ/162/184/table1 J/AJ/162/184/dr17samp J/AJ/162/184/tablea1
+J/AJ/163/152,True,exists,J/AJ/163/152/table1
+J/AJ/167/208,True,exists,J/AJ/167/208/table1 J/AJ/167/208/table2 J/AJ/167/208/table3 J/AJ/167/208/table4
+J/AJ/167/50,True,exists,J/AJ/167/50/catalog
+J/AJ/170/287,True,exists,J/AJ/170/287/table5 J/AJ/170/287/table13 J/AJ/170/287/table14 J/AJ/170/287/table16
+J/AJ/98/227,False,not found,
+J/ApJ/795/161,True,exists,J/ApJ/795/161/table5 J/ApJ/795/161/table6
+J/ApJ/839/92,True,exists,J/ApJ/839/92/table1 J/ApJ/839/92/table4 J/ApJ/839/92/table5 J/ApJ/839/92/table6 J/ApJ/839/92/table7 J/ApJ/839/92/table8 J/ApJ/839/92/outliers J/ApJ/839/92/table11 J/ApJ/839/92/table12
+J/ApJ/842/83,True,exists,J/ApJ/842/83/table1 J/ApJ/842/83/table2 J/ApJ/842/83/table3
+J/ApJ/869/9,True,exists,J/ApJ/869/9/table3 J/ApJ/869/9/table4
+J/ApJ/879/69,True,exists,J/ApJ/879/69/table2
+J/ApJ/903/55,True,exists,J/ApJ/903/55/table2 J/ApJ/903/55/table1
+J/ApJ/931/45,True,exists,J/ApJ/931/45/table2 J/ApJ/931/45/table3 J/ApJ/931/45/table4
+J/ApJ/938/118,True,exists,J/ApJ/938/118/table1 J/ApJ/938/118/table2
+J/ApJS/222/14,True,exists,J/ApJS/222/14/table2 J/ApJS/222/14/table1
+J/ApJS/224/2,True,exists,J/ApJS/224/2/table5
+J/ApJS/226/7,True,exists,J/ApJS/226/7/table3 J/ApJS/226/7/table4 J/ApJS/226/7/table5 J/ApJS/226/7/table7 J/ApJS/226/7/table10
+J/ApJS/237/28,True,exists,J/ApJS/237/28/table2 J/ApJS/237/28/table6
+J/ApJS/244/11,True,exists,J/ApJS/244/11/stars J/ApJS/244/11/table7
+J/ApJS/244/43,True,exists,J/ApJS/244/43/table1
+J/ApJS/249/18,True,exists,J/ApJS/249/18/table2 J/ApJS/249/18/table3
+J/ApJS/258/16,True,exists,J/ApJS/258/16/tess-ebs
+J/ApJS/259/35,False,not found,
+J/ApJS/259/63,True,exists,J/ApJS/259/63/table1
+J/ApJS/262/7,True,exists,J/ApJS/262/7/clusters J/ApJS/262/7/members
+J/ApJS/264/12,True,exists,J/ApJS/264/12/param J/ApJS/264/12/ews
+J/ApJS/264/17,True,exists,J/ApJS/264/17/table1 J/ApJS/264/17/table2 J/ApJS/264/17/table3 J/ApJS/264/17/table4
+J/ApJS/278/46,True,exists,J/ApJS/278/46/table1
+J/MNRAS/452/3561,True,exists,J/MNRAS/452/3561/table1 J/MNRAS/452/3561/table2 J/MNRAS/452/3561/table3 J/MNRAS/452/3561/table4 J/MNRAS/452/3561/table6
+J/MNRAS/456/2260,False,no tables in a cone search,
+J/MNRAS/459/1060,True,exists,J/MNRAS/459/1060/table2
+J/MNRAS/461/3399,False,not found,
+J/MNRAS/463/1780,True,exists,J/MNRAS/463/1780/table3 J/MNRAS/463/1780/list
+J/MNRAS/490/3158,True,exists,II/361/mdfc-v10
+J/MNRAS/495/1252,True,exists,J/MNRAS/495/1252/table2 J/MNRAS/495/1252/table3 J/MNRAS/495/1252/table5 J/MNRAS/495/1252/table6
+J/MNRAS/503/236,True,exists,J/MNRAS/503/236/gaia-cat J/MNRAS/503/236/ber67 J/MNRAS/503/236/king2 J/MNRAS/503/236/ngc2420 J/MNRAS/503/236/ngc2477 J/MNRAS/503/236/ngc2682 J/MNRAS/503/236/ngc6940
+J/MNRAS/503/3279,True,exists,J/MNRAS/503/3279/table1 J/MNRAS/503/3279/table2
+J/MNRAS/506/150,True,exists,J/MNRAS/506/150/stars J/MNRAS/506/150/spect
+J/MNRAS/517/2165,True,exists,J/MNRAS/517/2165/table1 J/MNRAS/517/2165/table3
+J/MNRAS/527/521,True,exists,J/MNRAS/527/521/tableb1 J/MNRAS/527/521/tablec1 J/MNRAS/527/521/tablec2
+J/MNRAS/532/2860,False,not found,
+J/MNRAS/538/1720,False,not found,
+J/other/RAA/21.292,True,exists,J/other/RAA/21.292/table2 J/other/RAA/21.292/table3 J/other/RAA/21.292/tablea1 J/other/RAA/21.292/tablea2 J/other/RAA/21.292/tablea3 J/other/RAA/21.292/tablea4

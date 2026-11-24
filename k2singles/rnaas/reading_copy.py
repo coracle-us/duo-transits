@@ -90,7 +90,7 @@ def main():
     kw = re.findall(r"\\uat\{([^}]*)\}\{(\d+)\}", TEX)
     story.append(Paragraph("<b>Keywords:</b> " + "; ".join(f"{a} ({b})" for a, b in kw), small))
 
-    main_txt = TEX[TEX.index(BS + "section{Sample and Methods}"):TEX.index(BS + "begin{acknowledgments}")]
+    main_txt = TEX[TEX.index(BS + "section{"):TEX.index(BS + "begin{acknowledgments}")]
     table_tex = re.search(r"\\begin\{deluxetable\*\}.*?\\end\{deluxetable\*\}", main_txt, re.S).group(0)
     main_txt = main_txt.replace(table_tex, "@@TABLE@@")
     parts = re.split(r"\\section\{([^}]*)\}", main_txt)

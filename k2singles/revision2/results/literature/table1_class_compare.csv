@@ -1,0 +1,98 @@
+EPIC,bibcode,class_A,period_d_A,period_err_d_A,period_kind_A,read_A,where_A,notes_A,class_B,period_d_B,period_err_d_B,period_kind_B,read_B,where_B,notes_B,compare
+211924561,1995AN....316..225A,LISTED,,,,title (survey list),,,LISTED,,,,no,,UBVR photometric survey; star is [AKS95] 419,agree
+211924561,1996AN....317..127A,LISTED,,,,title (survey list),,,LISTED,,,,no,,UBVR photometry/finding charts; photometric survey row,agree
+211924561,1997KFNT...13e..70R,LISTED,,,,title (survey list),,,LISTED,,,,no,,GPM proper-motion catalogue row,agree
+211924561,2004A&A...418..357K,LISTED,,,,title (survey list),,,LISTED,,,,no,,Pul-3 astrometric catalogue row,agree
+211924561,2016ApJS..224....2H,LISTED,,,,title (survey list),,,LISTED,,,,no,,EPIC catalogue (Huber+2016),agree
+211924561,2019A&A...624A..19B,LISTED,,,,title (survey list),,,LISTED,,,,no,,GALAH-TGAS survey,agree
+211924561,2019ApJS..244...43Z,LISTED,,,,table (VizieR J/ApJS/244/43),table1,"Per=100.0 d is the Villanova K2 EB catalogue placeholder (period 100, error -1, single eclipse); not a measurement",LISTED,,,,yes,Table 1 (VizieR J/ApJS/244/43/table1),"Per=100.0 d, Morph=0.0 from the Kepler/K2 EB catalogue; only 2 K2 rows in the table have an integer period (both 100.000 d): a placeholder, not a measured period; no arXiv version",agree
+211924561,2021MNRAS.506..150B,LISTED,,,,title (survey list),,,LISTED,,,,no,,GALAH DR3,agree
+211924561,2023A&A...672A.176P,LISTED,,,,table (VizieR J/A+A/672/A176),table1,Kepler/K2 EB catalogue contact-binary screening; ProbLate=ProbEarly=0; no period,LISTED,,,,yes,Table 1 (VizieR J/A+A/672/A176/table1),"Kepler EB Catalogue contact-binary candidates: amplitude 0.00205 mag, P(contact late)=0, P(contact early)=0; no period column",agree
+211924561,2024A&A...692A.243C,LISTED,,,,title,,ages for LAMOST/Gaia survey stars,LISTED,,,,no,,Gaia DR3 photometry + LAMOST DR8 age catalogue,agree
+211503363,2020A&A...643A.169K,ESTIMATE,58.0,,transit (lower limit),yes,"Table 1, Sect. 4 footnote 13",single transit; Porb=73.91 d is the formal BLS period ~ data span; minimum P ~58 d from duration,ESTIMATE,58.0,,transit,yes,Table 1 + note; footnote 13; Table B.1,"Single transit (Nev=1), Tc=2457197.518 BJD, depth 4.0 ppt; minimum period ~58 d (lower limit; formal BLS P=73.91 d is just the data span); duration argues for longer P",agree
+211503363,2020MNRAS.495.1252Z,LISTED,,,,title,,LAMOST activity survey,LISTED,14.05,,rotation,yes,"Tables 2,5 (VizieR J/MNRAS/495/1252)",LAMOST-MRS Halpha + K2 flare catalogue; one flare; rotation period 14.05 d (Table 2) / 12.47 d (Table 5); no arXiv version,agree
+211411112,1977A&AS...27...89S,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,M67 proper-motion membership (Sanders 617),agree
+211411112,1989AJ.....98..227G,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,M67 relative proper motions,agree
+211411112,1993A&AS..100..243Z,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,M67 proper motions/membership (ZTP 517),agree
+211411112,1996AJ....112..628F,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,yes,VizieR J/AJ/112/628 cat2000,M67 spectrophotometry catalogue row (ID 2002),agree
+211411112,2010A&A...516A...3K,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,Bordeaux PM2000 cluster membership,agree
+211411112,2015AJ....150...97G,ANALYSIS,,,,abstract-only,,"RV membership and binary flags; no row within 5"" in VizieR J/AJ/150/97",LISTED,,,,yes,Table 2 (VizieR J/AJ/150/97/table2),"WOCS 11028 flagged SB2 binary member (BM), mean RV 32.91 km/s; no orbit given in this paper",LISTED/ANALYSIS only
+211411112,2016ApJS..224....2H,LISTED,,,,title (survey list),,,LISTED,,,,no,,EPIC catalogue (Huber+2016),agree
+211411112,2016MNRAS.459.1060G,ANALYSIS,21.175186,,"other (periodogram, category 'mult')",yes,table2 (VizieR J/MNRAS/459/1060),"variability periodogram period, not orbital; class BM (binary member)",LISTED,21.175186,,other,yes,Table 2 (VizieR J/MNRAS/459/1060/table2),"K2 C5 variability: photometric period 21.175 d, category ""mult"" (multiple periods), not an orbital period",LISTED/ANALYSIS only
+211411112,2018A&A...616A..10G,LISTED,,,,title (survey list),,,LISTED,,,,no,,Gaia DR2 HRD paper (Gaia main-catalogue),agree
+211411112,2018ApJ...869....9G,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,yes,VizieR J/ApJ/869/9/table3,"ML membership, PRF=1.0",agree
+211411112,2018AJ....156..142D,LISTED,,,,title (survey list),,,LISTED,,,,no,,OCCAM/APOGEE DR14 cluster abundances,agree
+211411112,2019A&A...624A...8A,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,open-cluster dynamical properties; membership,agree
+211411112,2019A&A...627A.119C,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,M67 halo from Gaia DR2; membership,agree
+211411112,2019ApJ...879...69T,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,The Payne (APOGEE stellar parameters),agree
+211411112,2020A&A...640A...1C,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,Cantat-Gaudin cluster catalogue,agree
+211411112,2020AJ....160..120J,LISTED,,,,title (survey list),,,LISTED,,,,no,,APOGEE DR16,agree
+211411112,2020A&A...633A..99C,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,Cantat-Gaudin cluster membership,agree
+211411112,2020ApJ...903...55P,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,OCCAM cluster chemical homogeneity (APOGEE),agree
+211411112,2021AJ....161...59S,PERIOD,62.59484,3e-05,eclipsing+spectroscopic,yes,abstract; Table,the note's validation reference,PERIOD,62.59484,3e-05,eclipsing,yes,Sect 2.1; Table 2,"Detached EB + SB2 with one (secondary) eclipse per orbit; joint RV+K2 fit P=62.59484 +/- 0.00003 d, e=0.6227; eclipses at BJD 2457178.9531 and 2458117.8789",agree
+211411112,2021AJ....161..190G,PERIOD,62.593,0.003,spectroscopic (SB2),yes,table3 (VizieR J/AJ/161/190),"WOCS 11028 SB2 orbit, e=0.625",PERIOD,62.593,0.003,spectroscopic,yes,Table 3 (VizieR J/AJ/161/190/table3),"SB2 orbit: P=62.593 +/- 0.003 d, e=0.625, K1=38.1, K2=50.3 km/s",agree
+211411112,2021A&A...647A..19T,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,3D kinematics of open clusters; membership,agree
+211411112,2021A&A...645A..42I,LISTED,,,,title,,flare survey sample,LISTED,,,,yes,VizieR J/A+A/645/A42/stars,"K2 flare study, C16 target list row",agree
+211411112,2021MNRAS.503..236J,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,UVIT open-cluster catalogue; membership,agree
+211411112,2021MNRAS.503.3279S,LISTED,,,,title (survey list),,,LISTED,,,,no,,GALAH open clusters,agree
+211411112,2021RAA....21..292W,LISTED,,,,abstract-only,,LAMOST time-domain first results; star not in text,LISTED,,,,yes,"Tables 2, A1, A3 (VizieR J/other/RAA/21.292)",LAMOST-TD mass and stellar parameters; not in the Table 3 binary list; no period,agree
+211411112,2021AJ....162..184K,ANALYSIS,,,,yes,table1 (VizieR J/AJ/162/184),"APOGEE SB2 identification, q=0.778; no orbit fitted",LISTED,,,,yes,Table 1 (VizieR J/AJ/162/184/table1),"APOGEE SB2 catalogue: SB2, q=0.778; no period",LISTED/ANALYSIS only
+211411112,2022A&A...665A.126N,LISTED,,,,title,,membership / cluster or survey sample,ANALYSIS,,,,yes,Sect on M67 (text),PARSEC v2.0: discusses WOCS 11028 primary mass 1.222 Msun vs isochrone; no period,LISTED/ANALYSIS only
+211411112,2022A&A...659A..59T,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,structural parameters of open clusters; membership,agree
+211411112,2022A&A...668A...4F,LISTED,,,,title (survey list),,,LISTED,,,,no,,LAMOST meets Gaia open clusters; membership,agree
+211411112,2022ApJS..262....7H,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,Gaia EDR3 cluster search; membership,agree
+211411112,2022ApJ...938..118D,LISTED,,,,title,,M-dwarf gyrochrone sample field,LISTED,,,,yes,Table 2 (VizieR J/ApJ/938/118/table2),M67 gyrochrone input table; no rotation fit for this star,agree
+211411112,2022AJ....163..152S,LISTED,,,,title (survey list),,,LISTED,,,,no,,APOGEE Net stellar parameters,agree
+211411112,2022ApJS..259...35A,LISTED,,,,title (survey list),,,LISTED,,,,no,,SDSS DR17,agree
+211411112,2022MNRAS.517.2165C,LISTED,,,,title,,starspot sample,LISTED,,,,yes,Table 3 (VizieR J/MNRAS/517/2165/table3),"APOGEE two-temperature spot fit row (turnoff, fspot 0.32); no period",agree
+211411112,2024MNRAS.532.2860R,LISTED,,,,title,,M67 isochrone sample,ANALYSIS,,,,yes,Sect 3.6; Table 4,Uses the EB WOCS 11028 masses/magnitudes as an isochrone constraint; no period quoted,LISTED/ANALYSIS only
+211411112,2024RNAAS...8..201B,LISTED,,,,title,,M67 model test sample,ANALYSIS,,,,yes,Introduction,Passing mention: Sandquist+2021 age from the EB WOCS 11028; no period,LISTED/ANALYSIS only
+211411112,2024A&A...691A..28K,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,no,,tidal tails of open clusters; membership,agree
+211411112,2025MNRAS.538.1720R,ANALYSIS,,,,yes,"Sect. 5, Fig.",uses WOCS 11028 (Sandquist+2021 masses) as a comparison,ANALYSIS,,,,yes,Sect 5 discussion; CMD figure,Compares seismic masses with the EB WOCS 11028a; no period quoted,agree
+211411112,2025A&A...703A.116L,LISTED,,,,title,,NGC 2516 asteroseismology; M67 comparison,ANALYSIS,,,,yes,Discussion (Sect 5),NGC 2516 paper; passing mention of WOCS 11028 mass discrepancy; no period,LISTED/ANALYSIS only
+211411112,2025A&A...704A.167S,LISTED,,,,title,,membership / cluster or survey sample,LISTED,,,,yes,VizieR J/A+A/704/A167/members,M67 Gaia DR3 member list row,agree
+211411112,2026MNRAS.551g1398M,PERIOD,62.6,,eclipsing (quoted),yes,Sect. 5,quotes the 62.6 d period of Sandquist+2021; no new measurement,PERIOD,62.6,,eclipsing,yes,Sect 5 (comparison with M67),"AI Phe paper; quotes WOCS 11028 ""orbital period of 62.6 days"" from Sandquist+2021 (quoted, not new)",agree
+246194159,1993yCat.3135....0C,LISTED,,,,title (survey list),,,LISTED,,,,no,,Henry Draper catalogue,agree
+246194159,1999MSS...C05....0H,LISTED,,,,title (survey list),,,LISTED,,,,no,,Michigan HD spectral types (HD),agree
+246194159,2012JPCM...24u5405B,NOMATCH,,,,title,,thorium dioxide physics paper; identifier collision,NOMATCH,,,,abstract-only,,Condensed-matter paper on ThO2 atomistic models; number string matched by chance,agree
+246194159,2013AJ....146..134K,LISTED,,,,title (survey list),,,LISTED,,,,no,,RAVE DR4,agree
+246194159,2014ASPC..485..223B,LISTED,,,,title (survey list),,,LISTED,,,,no,,JSDC v2,agree
+246194159,2014AJ....148...81M,LISTED,,,,title (survey list),,,LISTED,,,,no,,APASS photometry of RAVE stars,agree
+246194159,2017AJ....153...75K,LISTED,,,,title (survey list),,,LISTED,,,,no,,RAVE DR5,agree
+246194159,2019MNRAS.490.3158C,LISTED,,,,title,,stellar diameter catalogue,LISTED,,,,no,,MDFC stellar diameters catalogue (JSDC-type),agree
+246194159,2020AJ....160...83S,LISTED,,,,title (survey list),,,LISTED,,,,no,,RAVE DR6,agree
+211489484,2019ApJS..244...11K,LISTED,,,,yes,Table 9,"EB with two single eclipses (BKJD 2192.619, 106720 ppm; 2208.606, 55140 ppm), no period",LISTED,,,,yes,Table 9 EBs (VizieR J/ApJS/244/11/table9),"EB with two single eclipses, no period: t0=2192.61935 and 2208.60573 (BJD-2455000), depths 10.7% and 5.5%, dur 4.6 h and 5.1 h",agree
+211489484,2023A&A...672A.176P,LISTED,,,,table (VizieR J/A+A/672/A176),table1,Kepler/K2 EB catalogue contact-binary screening; ProbLate=ProbEarly=0; no period,LISTED,,,,yes,Table 1 (VizieR J/A+A/672/A176/table1),"Kepler EB Catalogue contact-binary candidates: amplitude 0.123 mag, P(contact)=0; no period column",agree
+211892898,2007AJ....134.2340K,LISTED,,,,title,,cluster membership,LISTED,,,,yes,Table 3 (VizieR J/AJ/134/2340/table3),"Praesepe membership: K4.0, Pmem 99.1%",agree
+211892898,2014ApJ...795..161D,LISTED,,,,title,,activity/rotation sample,LISTED,,,,yes,Table 5 (VizieR J/ApJ/795/161/table5),Praesepe activity/rotation catalogue row; flagged binary (Bin?=Y); no rotation period,agree
+211892898,2016MNRAS.463.1780L,ESTIMATE,50.0,,eclipsing (lower limit),yes,Sect. 4.3.1,one primary + one secondary eclipse in C5; P > 50 d,ESTIMATE,50.0,,eclipsing,yes,Sect 4.3.1; Fig. 5,"One primary (0.085 mag) and one secondary (0.002 mag) eclipse in C5, ~2 d long; ""period greater than 50 d"" (lower limit); possibly eccentric",agree
+211892898,2016ApJS..224....2H,LISTED,,,,title (survey list),,,LISTED,,,,no,,EPIC catalogue (Huber+2016),agree
+211892898,2017ApJ...842...83D,ANALYSIS,,,,yes,table2/3 (VizieR J/ApJ/842/83),"photometric binary, Bin?=cand, note 'eclipse'; no rotation or orbital period",ANALYSIS,,,,yes,"Appendix A, Fig. A1; Table 3","Single-eclipse candidate in C5 (one of three single-eclipse systems), blended companions; no period, no rotation period",agree
+211892898,2017AJ....154..224R,LISTED,,,,yes,,ZEIT transit search target list; not named in text,LISTED,,,,yes,Table 3 (detections) checked,ZEIT young-cluster transit search; star not among detections; in searched sample only,agree
+211892898,2017ApJ...839...92R,LISTED,,,,title,,rotation sample,LISTED,,,,yes,Table 1 (VizieR J/ApJ/839/92/table1),Praesepe K2 rotation table row; no period,agree
+211892898,2019A&A...622A.133I,LISTED,,,,title,,flare survey sample,LISTED,,,,yes,VizieR J/A+A/622/A133/cparam,K2 flare study row (1 flare candidate),agree
+211892898,2021A&A...645A..42I,LISTED,,,,title,,flare survey sample,LISTED,,,,yes,VizieR J/A+A/645/A42/stars,K2 flare study target row,agree
+211892898,2022ApJ...931...45N,LISTED,,,,title,,rotation/X-ray sample,LISTED,,,,yes,Table 2 (VizieR J/ApJ/931/45/table2),"Praesepe/Hyades member table row; Bin=1, RUWE 1.6, dist 1088 pc (background)",agree
+211892898,2022AJ....163..152S,LISTED,,,,title (survey list),,,LISTED,,,,no,,APOGEE Net,agree
+211892898,2022ApJS..259...35A,LISTED,,,,title (survey list),,,LISTED,,,,no,,SDSS DR17,agree
+211892898,2023A&A...674A..34G,PERIOD,72.533578,0.028819,spectroscopic (SB1),yes,Gaia DR3 nss_two_body_orbit (gaia_nss.csv),"the multiplicity paper presents the NSS catalogue; SB1 solution for this source_id, e=0.48; not named in the paper text",PERIOD,72.5336,0.0288,spectroscopic,yes,Gaia DR3 nss_two_body_orbit (VizieR I/357/tbosb1),"Not named in paper text; linked via the Gaia DR3 NSS catalogue the paper presents: SB1 P=72.534 +/- 0.029 d, e=0.48, K1=22.7 km/s (source 660920219027943552)",agree
+211892898,2023A&A...677A..21K,LISTED,,,,title,,asteroseismic giants sample,LISTED,,,,no,,asteroseismic distance catalogue of red giants,agree
+211892898,2023A&A...678A.158A,LISTED,,,,title,,APOGEE ages,LISTED,,,,no,,APOGEE red-giant spectroscopic ages,agree
+211892898,2024AJ....167..208W,LISTED,,,,title,,APO-K2 catalogue,LISTED,,,,no,,APO-K2 catalogue II (ages),agree
+211892898,2024AJ....167...50S,LISTED,,,,title,,APO-K2 catalogue,LISTED,,,,no,,APO-K2 catalogue I (APOGEE + K2-GAP),agree
+211390677,2021MNRAS.506..150B,LISTED,,,,title (survey list),,,LISTED,,,,no,,GALAH DR3,agree
+211390677,2022AJ....163..152S,LISTED,,,,title (survey list),,,LISTED,,,,no,,APOGEE Net,agree
+211390677,2022ApJS..259...35A,LISTED,,,,title (survey list),,,LISTED,,,,no,,SDSS DR17,agree
+211390677,2023ApJS..264...17Z,LISTED,,,,title (survey list),,,LISTED,,,,yes,Table 1 (VizieR J/ApJS/264/17),"LAMOST spectra of TESS objects: stellar parameters, Halpha; no period",agree
+211390677,2023A&A...677A..21K,LISTED,,,,title,,asteroseismic giants sample,LISTED,,,,no,,asteroseismic distance catalogue of red giants,agree
+211390677,2024AJ....167..208W,LISTED,,,,title,,APO-K2 catalogue,LISTED,,,,no,,APO-K2 catalogue II (ages),agree
+211390677,2024AJ....167...50S,LISTED,,,,title,,APO-K2 catalogue,LISTED,,,,no,,APO-K2 catalogue I,agree
+211390677,2024A&A...690A.323V,LISTED,,,,title,,APO-K2 model tests,LISTED,,,,no,,stellar-model tests on APO-K2 RGB sample,agree
+202126877,2015MNRAS.452.3561L,LISTED,,,,yes,"Table 1, flag 1","previously known EB, single eclipse in C0 (BJD-2454833 = 1955.44), no period",LISTED,,,,yes,Table 1 (note flag 1),"K2 C0 EB catalogue: single eclipse observed in C0, no period; eclipse at 1955.44 (BJD-2454833), morph 0.02",agree
+202126877,2022ApJS..259...63S,LISTED,,,,title,,chemically peculiar star classification,LISTED,,,,yes,Table 1 (VizieR J/ApJS/259/63/table1),LAMOST CP-star catalogue: CP1; no period; no arXiv version,agree
+202072917,2015MNRAS.452.3561L,LISTED,,,,yes,"Sect. 4; Table 2, flag 1","single eclipse in C0, 'no period yet determined'",LISTED,,,,yes,Table 2 (note flag 1); Sect 7,"K2 C0 EB catalogue: single eclipse, ""no period is yet determined""; eclipse at 1953.6261 (BJD-2454833)",agree
+202072917,2023ApJS..264...17Z,LISTED,,,,title (survey list),,,LISTED,,,,yes,"Tables 1,3 (VizieR J/ApJS/264/17)","LAMOST TESS objects: flagged RV variable (VarRV=Y; RVs 24.5-49.9 km/s, 3 epochs); no period; no arXiv version",agree
+202071902,2015MNRAS.452.3561L,LISTED,,,,yes,"Sect. 4; Table 2, flag 1","single eclipse in C0, 'no period yet determined'",LISTED,,,,yes,Table 2 (note flag 1); Sect 7,"K2 C0 EB catalogue: single eclipse, ""no period is yet determined""; eclipse at 1958.5707 (BJD-2454833)",agree
+202071902,2015A&A...579A..19A,LISTED,,,,table (VizieR J/A+A/579/A19),table3,"classified EB, no period",LISTED,,,,yes,Table 3 (VizieR J/A+A/579/A19/table3),"K2 variable catalogue: class EB, no period, no amplitude",agree
+202071902,2021RAA....21..292W,LISTED,,,,abstract-only,,LAMOST time-domain first results; star not in text,PERIOD,8.6973,,eclipsing,yes,Table 3 (VizieR J/other/RAA/21.292/table3),"LAMOST-TD binary candidates: Type EA, light-curve P=8.6973 d taken from AAVSO VSX cross-match (not derived by authors; VSX lists 8.69725 d, EA/RS); no Joker RV orbit",class differs
+202071902,2023ApJS..264...12H,LISTED,,,,title,,LAMOST-K2 activity survey,LISTED,,,,yes,param table (VizieR J/ApJS/264/12),LAMOST-K2 chromospheric activity (Halpha) row; no rotation period listed,agree

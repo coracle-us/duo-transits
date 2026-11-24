@@ -1,0 +1,6 @@
+thresholds: K2 S*=53.25, TESS S*=59.96, BLS SDE=7.787417395082972
+stars: 163; searched ok: 163
+catalogued event recovered blindly: 162; significant: 112
+stars with a linked family (>= 2 significant events): 31; >= 3 events: 10; BLS detections: 35
+Table 1 periods: 25; among blind allowed periods: 18; matched by BLS: 2
+new leads (not in Table 1): 41 stars, 56 rows

@@ -1,0 +1,297 @@
+EPIC,TIC,catalog,title,n_rows,sep_arcsec,periods
+248555345,277748041,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.06,Period=32.12
+248555345,277748041,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.357,
+248555345,277748041,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.357,
+248555345,277748041,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.34,
+248555345,277748041,J/MNRAS/527/521/tableb1,"SB2s in LAMOST-MRS (Kovalev+, 2024)",1,0.34,
+248847494,392876254,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.06,Period=3650.0
+248657359,364961529,J/A+A/635/A43/table2,"Stellar rotation periods from K2 Campaigns 0-18 (Reinhold+, 2020)",1,0.0,Prot=16.489999771118164
+247756662,59683523,I/357/tbosb1,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.013,Per=610.6949857322719
+246849982,411749174,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.26,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=-1.0; PerSPOCy4=--; PerQLPy1=--; PerQLPy2=--; PerQLPy3=5.9514733029980835; PerQLPy4=-1.0
+246849982,411749174,J/A+A/691/A242/obaf-eb1,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.26,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=-1.0; PerSPOCy4=--; PerQLPy1=--; PerQLPy2=--; PerQLPy3=5.951473302998084; PerQLPy4=-1.0
+247865067,268281800,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=--
+247865067,268281800,II/366/catv2021,"ASAS-SN catalog of variable stars (Jayasinghe+, 2018-2020)",1,0.02,Per=--; Perd=false
+247865067,268281800,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.31,
+247795097,268324580,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.17,Period=--
+247795097,268324580,II/366/catv2021,"ASAS-SN catalog of variable stars (Jayasinghe+, 2018-2020)",1,1.22,Per=--; Perd=false
+247795097,268324580,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.12,
+247594337,26976418,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.17,
+247450113,18872848,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",1,0.01,Per=38.04778671
+246194159,301328232,III/272/ravedr4,"RAVE 4th data release (Kordopatis+, 2013)",1,0.04,
+246194159,301328232,J/AJ/148/81/table1,"APASS BVgri photometry of RAVE stars. I. Data (Munari+, 2014)",1,1.354,
+246194159,301328232,III/279/rave_dr5,"RAVE 5th data release (Kunder+, 2017)",1,0.04,
+246194159,301328232,III/279/rave_on,"RAVE 5th data release (Kunder+, 2017)",1,0.04,
+246194159,301328232,III/283/ravedr6,"RAVE 6th data release (Steinmetz+, 2020)",1,0.042,P=n
+246194159,301328232,III/283/xgaia2,"RAVE 6th data release (Steinmetz+, 2020)",1,1.749,
+246194159,301328232,III/283/xgaiae3,"RAVE 6th data release (Steinmetz+, 2020)",1,1.804,
+246194159,301328232,II/361/mdfc-v10,"MDFC Version 10 (Cruzalebes+, 2019)",1,0.061,
+246359551,279009745,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.1,Period=21.861
+246359551,279009745,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.335,
+246359551,279009745,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.335,
+246359551,279009745,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.3,
+245929407,49733422,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.27,
+245964933,49711069,I/357/tbosb1,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.617,Per=79.45250186652467
+246361128,311055966,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",1,0.03,Per=15.37201405
+246163364,38315113,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.136,
+246163364,38315113,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.136,
+246163364,38315113,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.14,
+246425172,38333631,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.03,Period=--
+246425172,38333631,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.09,
+246425172,38333631,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.09,
+246302531,301287939,J/A+A/635/A43/table2,"Stellar rotation periods from K2 Campaigns 0-18 (Reinhold+, 2020)",1,0.0,Prot=20.010000228881836
+230887315,198977103,I/357/tbosb2,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.453,Per=5.915108640207178
+236157481,78806505,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.09,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=--; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=--
+235099239,87238725,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.06,Period=0.996509
+235099239,87238725,J/A+A/635/A43/table2,"Stellar rotation periods from K2 Campaigns 0-18 (Reinhold+, 2020)",1,0.0,Prot=10.510000228881836
+235099239,87238725,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,1.0,
+240410914,201980990,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.13,Period=337.8
+240410914,201980990,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.155,
+240410914,201980990,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.155,
+240410914,201980990,I/358/vlpv,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.155,Freq=0.00296046795546077
+229021605,51759568,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.08,Period=19.172978
+229021605,51759568,I/357/tbootsvc,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.505,Per=115.3477508722823
+229021605,51759568,I/357/tbosb1,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.505,Per=114.83750869279662
+229021605,51759568,II/366/catv2021,"ASAS-SN catalog of variable stars (Jayasinghe+, 2018-2020)",1,0.94,Per=--; Perd=false
+201132684,35021200,J/AJ/155/136/table3,"Planets orbiting bright stars in K2 campaigns 0-10 (Mayo+, 2018)",1,0.0,
+201132684,35021200,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",1,0.05,Per=9.964892387
+201092629,152805642,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.89,Period=26.8199
+201479221,376812471,I/357/tbosb1,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.73,Per=148.8888072616554
+228786343,156599401,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.09,
+220315458,344773428,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.57,
+220562610,376906028,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.02,
+220562610,376906028,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.02,Per=--
+220606084,429052510,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+220606084,429052510,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,Per=--
+220605820,369478173,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+220605820,369478173,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,Per=46.47688
+213832800,108274842,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.13,
+218751675,225490302,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.046,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=--; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=--
+215307988,154409095,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.041,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=--; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=--
+215307988,154409095,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+215894766,3881465,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.06,
+215894766,3881465,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.06,Per=--
+212549089,178942976,I/357/tbosb1,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.252,Per=28.949111452156924
+212549089,178942976,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.23,
+212549089,178942976,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.02,
+212820423,61099940,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.0,Period=100.0
+212685467,2539506,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.03,
+212685467,2539506,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.03,Per=--
+212805678,61070575,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.03,
+212325089,357446579,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.07,Period=0.0145986
+212325089,357446579,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.054,
+212325089,357446579,I/358/vst,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.054,Freq=68.49994000995201
+212343520,345984388,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.07,
+212554009,771930,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.06,
+212332380,287335140,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.03,
+212732378,178942052,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+211598816,257217497,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.1,Period=--
+211598816,257217497,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.062,
+211598816,257217497,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.062,
+211598816,257217497,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.077,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=0.213832948465162; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=0.19236350654173595
+211924561,238606535,J/A+A/624/A19/catalog,"GALAH survey, chemodynamical analyse with TGAS (Buder+, 2019)",1,0.044,
+211924561,238606535,J/A+A/672/A176/table1,"Mass-ratio distribution of contact binary stars (Pesta+, 2023)",1,0.05,
+211924561,238606535,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.037,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=0.11935541745156697; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=-1.0
+211924561,238606535,J/A+A/692/A243/mrs,"New stellar age estimates using SPInS (Casamiquela+, 2024)",1,0.04,
+211924561,238606535,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",2,0.04,Per=31.26865768
+211924561,238606535,J/ApJS/224/2/table5,"K2 EPIC stellar properties for 138600 targets (Huber+, 2016)",1,0.0,
+211924561,238606535,J/ApJS/244/43/table1,"Binary stars parameters from LAMOST & Kepler obs. (Zhang+, 2019)",1,0.269,Per=100.0
+211924561,238606535,J/MNRAS/506/150/stars,"The GALAH+ Survey DR3 (Buder+, 2021)",1,0.264,
+211924561,238606535,J/MNRAS/506/150/spect,"The GALAH+ Survey DR3 (Buder+, 2021)",1,0.264,
+212026444,203254318,I/357/acc9,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.799,
+211953574,175265677,J/MNRAS/463/1780/table3,"Exoplanet candidates in Praesepe (M 44) (Libralato+, 2016)",1,0.263,
+211939692,178278676,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.186,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=--; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=--
+211939692,178278676,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.19,
+211939692,178278676,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",4,0.19,Per=--
+211939692,178278676,J/MNRAS/463/1780/table3,"Exoplanet candidates in Praesepe (M 44) (Libralato+, 2016)",1,0.737,
+211892898,184895645,I/357/tbosb1,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.343,Per=72.53357809046564
+211892898,184895645,J/A+A/622/A133/cparam,"M45, M44 and M67 flare stars (Ilin+, 2019)",1,0.001,
+211892898,184895645,J/A+A/645/A42/stars,"Flares in 5 open clusters (Ilin+, 2021)",1,0.02,
+211892898,184895645,J/A+A/677/A21/k2_apo,"Asteroseismic distances to 12500 red-giant stars (Khan+, 2023)",1,0.343,
+211892898,184895645,J/A+A/678/A158/catalog,APOGEE red-giant stars spectroscopic age estimates (Anders+ 2023),1,0.03,
+211892898,184895645,J/AJ/134/2340/table3,"Membership of Praesepe and Coma Berenices clusters (Kraus+, 2007)",1,0.03,
+211892898,184895645,J/AJ/154/224/table2,"Transiting planets in young clusters from K2 (Rizzuto+, 2017)",1,0.03,Prot=8.510000228881836
+211892898,184895645,J/AJ/163/152/table1,"Stellar parameters for ~650000 stars with APOGEE (Sprague+, 2022)",1,0.039,
+211892898,184895645,J/AJ/167/208/table1,"The APO-K2 Catalog. II. Red giants stellar ages (Warfield+, 2024)",1,0.0,
+211892898,184895645,J/AJ/167/50/catalog,"The APO-K2 Catalog. I. 7672 Red giants (Schonhut-Stasik+, 2024)",1,0.0,
+211892898,184895645,J/ApJ/795/161/table5,"Activity and rotation in Praesepe and the Hyades (Douglas+, 2014)",1,0.015,
+211892898,184895645,J/ApJ/839/92/table1,"Praesepe members with K2 light curve data (Rebull+, 2017)",1,0.2,
+211892898,184895645,J/ApJ/842/83/table2,"Praesepe members rotational periods from K2 LCs (Douglas+, 2017)",1,0.015,
+211892898,184895645,J/ApJ/842/83/table3,"Praesepe members rotational periods from K2 LCs (Douglas+, 2017)",1,0.001,P=
+211892898,184895645,J/ApJ/931/45/table2,"The factory & the beehive. IV. Praesepe & Hyades (Nunez+, 2022)",1,0.039,Prot=--
+211892898,184895645,J/ApJS/224/2/table5,"K2 EPIC stellar properties for 138600 targets (Huber+, 2016)",1,0.0,
+211498244,27654301,J/AJ/170/287/table5,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",1,0.32,Per=12.96487617
+211498244,27654301,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",3,0.32,Per=521.6387939
+211498244,27654301,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.36,
+211351097,437030979,J/other/RAA/21.292/table2,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.31,
+211351097,437030979,J/other/RAA/21.292/tablea1,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.22,
+211351097,437030979,J/other/RAA/21.292/tablea2,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.22,
+211351097,437030979,J/other/RAA/21.292/tablea3,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.22,
+211351097,437030979,J/other/RAA/21.292/tablea4,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.22,
+211894612,14678155,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+211894612,14678155,J/MNRAS/527/521/tableb1,"SB2s in LAMOST-MRS (Kovalev+, 2024)",1,0.29,
+211490542,20423102,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.05,
+211490542,20423102,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.02,
+211995462,175265898,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.16,
+211995462,175265898,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.06,
+211995462,175265898,J/MNRAS/463/1780/table3,"Exoplanet candidates in Praesepe (M 44) (Libralato+, 2016)",1,0.321,
+212012030,14394716,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.46,
+211503363,20444116,J/MNRAS/495/1252/table2,"Magnetic activity based on LAMOST and Kepler (Zhang+, 2020)",3,0.12,Prot=14.0529285
+211503363,20444116,J/MNRAS/495/1252/table3,"Magnetic activity based on LAMOST and Kepler (Zhang+, 2020)",1,0.011,
+211503363,20444116,J/MNRAS/495/1252/table5,"Magnetic activity based on LAMOST and Kepler (Zhang+, 2020)",1,0.007,Prot=12.470412
+211390677,366568535,J/A+A/677/A21/k2_apo,"Asteroseismic distances to 12500 red-giant stars (Khan+, 2023)",1,0.071,
+211390677,366568535,J/A+A/677/A21/k2_gal,"Asteroseismic distances to 12500 red-giant stars (Khan+, 2023)",1,0.071,
+211390677,366568535,J/A+A/690/A323/table2,"RGB stars from the APO-K2 catalogue (Valle+, 2024)",1,0.05,
+211390677,366568535,J/AJ/163/152/table1,"Stellar parameters for ~650000 stars with APOGEE (Sprague+, 2022)",1,0.104,
+211390677,366568535,J/AJ/167/208/table1,"The APO-K2 Catalog. II. Red giants stellar ages (Warfield+, 2024)",1,0.1,
+211390677,366568535,J/AJ/167/50/catalog,"The APO-K2 Catalog. I. 7672 Red giants (Schonhut-Stasik+, 2024)",1,0.1,
+211390677,366568535,J/ApJS/264/17/table1,"Spectroscopic data of TESS objects with LAMOST (Zhang+, 2023)",1,0.09,
+211390677,366568535,J/MNRAS/506/150/stars,"The GALAH+ Survey DR3 (Buder+, 2021)",1,0.07,
+211390677,366568535,J/MNRAS/506/150/spect,"The GALAH+ Survey DR3 (Buder+, 2021)",1,0.07,
+211411112,437034781,J/A+A/516/A3/table5,"Proper motions of PM2000 open clusters (Krone-Martins+, 2010)",1,0.307,
+211411112,437034781,J/A+A/616/A10/tablea1b,"46 open clusters GaiaDR2 HR diagrams (Gaia Collaboration, 2018)",1,0.01,
+211411112,437034781,J/A+A/624/A8/clusters,"Evolved Galactic open clusters dynamical properties (Angelo+, 2019)",1,0.003,
+211411112,437034781,J/A+A/627/A119/table,Extended halo of NGC 2682 (M 67) (Carrera+ 2019),1,0.18,
+211411112,437034781,J/A+A/633/A99/members,"Gaia DR2 open clusters in the Milky Way. II (Cantat-Gaudin+, 2020)",1,0.17,
+211411112,437034781,J/A+A/640/A1/nodup,"Portrait Galactic disc (Cantat-Gaudin+, 2020)",1,0.17,
+211411112,437034781,J/A+A/645/A42/stars,"Flares in 5 open clusters (Ilin+, 2021)",1,0.01,
+211411112,437034781,J/A+A/659/A59/table2,"Structural parameters of 389 local open clusters (Tarricq+, 2022)",1,0.176,
+211411112,437034781,J/A+A/668/A4/memberl,"LAMOST open clusters (Fu+, 2022)",5,0.009,
+211411112,437034781,J/A+A/691/A28/members,"Tidal tails of open clusters (Kos, 2024)",1,0.176,
+211411112,437034781,J/A+A/704/A167/members,"Tidal tails in open clusters (Sharma+, 2025)",1,0.176,
+211411112,437034781,J/AJ/112/628/cat2000,BATC Color Survey of M67 (Fan+ 1996),1,0.115,
+211411112,437034781,J/AJ/150/97/table2,"Radial velocities in M67. I. 1278 candidate members (Geller+, 2015)",1,0.01,
+211411112,437034781,III/284/allstars,"APOGEE-2 data from DR16 (Johnsson+, 2020)",2,0.003,
+211411112,437034781,III/284/allvis,"APOGEE-2 data from DR16 (Johnsson+, 2020)",5,0.004,
+211411112,437034781,J/AJ/161/190/table1,"Radial Velocities of binary population in M67 (Geller+, 2021)",5,0.038,
+211411112,437034781,J/AJ/161/190/table3,"Radial Velocities of binary population in M67 (Geller+, 2021)",1,0.01,Per=62.593
+211411112,437034781,J/AJ/162/184/table1,"APOGEE: Properties & radial velocities of binaries (Kounkel+, 2021)",1,0.003,Per=--; PerTESS=--
+211411112,437034781,J/AJ/163/152/table1,"Stellar parameters for ~650000 stars with APOGEE (Sprague+, 2022)",1,0.004,
+211411112,437034781,J/ApJ/869/9/table3,"Machine-learning investigation of the open cluster M67 (Gao, 2018)",1,0.17,
+211411112,437034781,J/ApJ/879/69/table2,"The Payne applied to the APOGEE DR14 data set (Ting+, 2019)",1,0.01,
+211411112,437034781,J/ApJ/903/55/table1,"APOGEE parameters through 83 open clusters (Poovelil+, 2020)",1,0.003,
+211411112,437034781,J/ApJ/938/118/table2,"CFHT monitoring of M67 & members from Gaia EDR3 (Dungee+, 2022)",1,0.176,Prot=--
+211411112,437034781,J/ApJS/224/2/table5,"K2 EPIC stellar properties for 138600 targets (Huber+, 2016)",1,0.0,
+211411112,437034781,J/ApJS/262/7/members,"886 nearby star clusters (He+, 2022)",1,0.2,
+211411112,437034781,J/MNRAS/459/1060/table2,"M67 variable stars from Kepler/K2-Campaign-5 (Gonzalez, 2016)",1,0.0,Period=21.175186
+211411112,437034781,J/MNRAS/503/236/gaia-cat,"UVIT catalog and membership of 6 open clusters (Jadhav+, 2021)",1,0.176,
+211411112,437034781,J/MNRAS/503/236/ngc2682,"UVIT catalog and membership of 6 open clusters (Jadhav+, 2021)",1,1.24,
+211411112,437034781,J/MNRAS/503/3279/table1,"GALAH survey. Galactic disc with open clusters (Spina+, 2021)",1,0.188,
+211411112,437034781,J/MNRAS/517/2165/table3,"Star-spots properties of Pleiades and M67 stars (Cao+, 2022)",1,0.17,
+211411112,437034781,J/other/RAA/21.292/table2,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.11,
+211411112,437034781,J/other/RAA/21.292/tablea1,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.01,
+211411112,437034781,J/other/RAA/21.292/tablea3,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.01,
+211489484,6951741,J/A+A/672/A176/table1,"Mass-ratio distribution of contact binary stars (Pesta+, 2023)",1,0.69,
+211489484,6951741,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",2,0.58,Per=106.9360504
+211489484,6951741,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.58,
+210725198,17291350,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=0.409108
+210725198,17291350,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.061,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=0.8176051439737637; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=0.8184248262916543
+211087003,149923858,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=6.646038
+211087003,149923858,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.11,
+211087003,149923858,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",2,0.11,Per=--
+211087003,149923858,J/other/RAA/21.292/table2,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.16,
+211087003,149923858,J/other/RAA/21.292/tablea1,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.1,
+211087003,149923858,J/other/RAA/21.292/tablea2,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.1,
+211087003,149923858,J/other/RAA/21.292/tablea3,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.1,
+211087003,149923858,J/other/RAA/21.292/tablea4,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.1,
+210857749,440687603,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+211064647,56621708,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.07,
+211064647,56621708,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.07,Per=--
+210823406,114086684,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=16.661872
+210823406,114086684,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.12,
+210760314,17388893,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=15.363604
+210760314,17388893,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.68,
+210825751,440705068,J/A+A/635/A43/table2,"Stellar rotation periods from K2 Campaigns 0-18 (Reinhold+, 2020)",1,0.0,Prot=20.40999984741211
+210843533,15817581,J/A+A/635/A43/table2,"Stellar rotation periods from K2 Campaigns 0-18 (Reinhold+, 2020)",1,0.0,Prot=27.469999313354492
+205966706,240663587,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=3.488599
+205966706,240663587,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.035,PerSPOCy1=10.95289896423509; PerSPOCy2=--; PerSPOCy3=-1.0; PerSPOCy4=0.23748512213993755; PerQLPy1=7.562834158809794; PerQLPy2=--; PerQLPy3=-1.0; PerQLPy4=0.6712614464606196
+205966706,240663587,J/A+A/691/A242/obaf-eb1,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.035,PerSPOCy1=10.95289896423509; PerSPOCy2=--; PerSPOCy3=-1.0; PerSPOCy4=0.23748512213993755; PerQLPy1=7.562834158809794; PerQLPy2=--; PerQLPy3=-1.0; PerQLPy4=0.6712614464606196
+205966706,240663587,J/AJ/170/287/table5,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",2,0.04,Per=17.5676899
+205966706,240663587,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",1,0.04,Per=13.5223074
+205966706,240663587,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+206253908,38352398,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=4.896381
+206253908,38352398,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.04,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=-1.0; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=0.3706200126089034
+206253908,38352398,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+205936222,240810327,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.17,
+206008070,206241017,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.05,Period=10.558974
+204546592,12629920,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.11,
+204546592,12629920,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.11,Per=--
+203865172,15977832,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.04,Period=4.061756
+204918110,162786753,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=18.802186
+204918110,162786753,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.04,
+203311200,67235717,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.28,
+203311200,67235717,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.13,
+203311200,67235717,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.13,Per=--
+204086428,9911506,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.03,Period=17.433567
+203011840,68164464,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=15.672611
+203011840,68164464,I/357/tbooc,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.609,Per=232.5888245193249
+203011840,68164464,I/357/tbosb1,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.609,Per=83.02848943497204
+204952800,49077102,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=4.121082
+204952800,49077102,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.31,
+205272592,437442497,I/357/acc7,"Gaia DR3 Part 3. Non-single stars (Gaia Collaboration, 2022)",1,0.275,
+204100531,48967526,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.03,Period=1.254315
+204100531,48967526,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.351,
+204100531,48967526,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.351,
+204100531,48967526,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.3,
+204776782,49580574,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.444,
+204776782,49580574,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.444,
+204776782,49580574,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.36,
+201207683,49419483,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.1,Period=17.02579
+201207683,49419483,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.151,
+201207683,49419483,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.151,
+201207683,49419483,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.03,
+201775904,425280270,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=5.016849
+201775904,425280270,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.09,
+201775904,425280270,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.09,Per=--
+201176672,443616789,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=11.625781
+201176672,443616789,J/ApJS/226/7/table4,"Planet candidates discovered using K2's 1st yr (Crossfield+, 2016)",4,0.01,
+201176672,443616789,J/ApJS/226/7/table5,"Planet candidates discovered using K2's 1st yr (Crossfield+, 2016)",1,0.01,
+201176672,443616789,J/ApJS/226/7/table7,"Planet candidates discovered using K2's 1st yr (Crossfield+, 2016)",1,0.01,
+201176672,443616789,J/ApJS/226/7/table10,"Planet candidates discovered using K2's 1st yr (Crossfield+, 2016)",1,0.01,
+201176672,443616789,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.05,
+201176672,443616789,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.05,Per=--
+201663371,281884907,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.02,Period=19.940412
+201663371,281884907,J/A+A/635/A43/table2,"Stellar rotation periods from K2 Campaigns 0-18 (Reinhold+, 2020)",1,0.0,Prot=19.56999969482422
+201663371,281884907,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.11,
+201635132,363478545,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.06,Period=--
+201635132,363478545,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.07,
+201635132,363478545,J/ApJS/244/11/table7,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.07,Per=--
+202071902,57051340,J/A+A/579/A19/table3,"K2 Variable Catalogue (Armstrong+, 2015)",1,0.0,Per=--
+202071902,57051340,J/ApJS/264/12/param,"Chromospheric activities from LAMOST and K2 (Han+, 2023)",2,0.14,PRot=--
+202071902,57051340,J/ApJS/278/46/table1,"Orbits of 665 SB2s in Lamost-MRS (Guo+, 2025)",1,1.056,Per=22.889999389648438
+202071902,57051340,J/MNRAS/452/3561/table2,"Kepler eclipsing binary stars. K2 Campaign 0 (LaCourse+, 2015)",1,0.05,Per=--
+202071902,57051340,J/MNRAS/527/521/tableb1,"SB2s in LAMOST-MRS (Kovalev+, 2024)",1,0.14,
+202071902,57051340,J/MNRAS/527/521/tablec1,"SB2s in LAMOST-MRS (Kovalev+, 2024)",1,0.14,
+202071902,57051340,J/MNRAS/527/521/tablec2,"SB2s in LAMOST-MRS (Kovalev+, 2024)",1,0.14,
+202071902,57051340,J/other/RAA/21.292/table2,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.14,
+202071902,57051340,J/other/RAA/21.292/table3,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.14,Plc=8.69729995727539
+202071902,57051340,J/other/RAA/21.292/tablea2,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.08,
+202071902,57051340,J/other/RAA/21.292/tablea4,"LAMOST Time-Domain survey, first results (Wang+, 2021)",1,0.08,
+202126877,86491361,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=3.877092
+202126877,86491361,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.039,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=21.78076464403265; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=21.77554690098332
+202126877,86491361,J/A+A/691/A242/obaf-eb1,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.039,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=21.78076464403265; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=21.77554690098332
+202126877,86491361,J/ApJS/259/63/table1,"Chemically peculiar stars CP1 & CP2 from LAMOST (Shang+, 2022)",1,1.0,
+202126877,86491361,J/MNRAS/452/3561/table1,"Kepler eclipsing binary stars. K2 Campaign 0 (LaCourse+, 2015)",1,0.0,Per=--
+202072917,308255000,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=3.842372
+202072917,308255000,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.115,PerSPOCy1=-1.0; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=23.25528449591261; PerQLPy1=-1.0; PerQLPy2=--; PerQLPy3=--; PerQLPy4=34.7443838490379
+202072917,308255000,J/A+A/691/A242/obaf-eb1,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.115,PerSPOCy1=-1.0; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=23.25528449591261; PerQLPy1=-1.0; PerQLPy2=--; PerQLPy3=--; PerQLPy4=34.7443838490379
+202072917,308255000,J/AJ/170/287/table5,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",1,0.11,Per=5.578824043
+202072917,308255000,J/AJ/170/287/table13,"2min TESS data vetting with Exominer++ (Valizadegan+, 2025)",5,0.11,Per=34.74573517
+202072917,308255000,J/ApJS/264/17/table1,"Spectroscopic data of TESS objects with LAMOST (Zhang+, 2023)",1,0.05,
+202072917,308255000,J/ApJS/264/17/table3,"Spectroscopic data of TESS objects with LAMOST (Zhang+, 2023)",3,0.1,
+202072917,308255000,J/MNRAS/452/3561/table2,"Kepler eclipsing binary stars. K2 Campaign 0 (LaCourse+, 2015)",1,0.0,Per=--
+202060921,45376175,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.05,Period=4.2342
+202060921,45376175,J/ApJS/244/11/stars,"Planet candidates and EBs in K2 campaigns 0-8 (Kruse+, 2019)",1,0.2,
+202060921,45376175,J/MNRAS/452/3561/table2,"Kepler eclipsing binary stars. K2 Campaign 0 (LaCourse+, 2015)",1,0.0,Per=--
+202137580,238479066,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.04,Period=9.90152
+202137580,238479066,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.11,
+202137580,238479066,J/MNRAS/452/3561/table2,"Kepler eclipsing binary stars. K2 Campaign 0 (LaCourse+, 2015)",1,0.05,Per=--
+202067195,284401476,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.04,Period=0.069293
+202067195,284401476,I/358/varisum,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.089,
+202067195,284401476,I/358/vclassre,"Gaia DR3 Part 4. Variability (Gaia Collaboration, 2022)",1,0.089,
+202067195,284401476,J/A+A/691/A242/tessobaf,"TESS OBAF-type eclipsing binaries (IJspeert+, 2024)",1,0.073,PerSPOCy1=--; PerSPOCy2=--; PerSPOCy3=--; PerSPOCy4=--; PerQLPy1=--; PerQLPy2=--; PerQLPy3=--; PerQLPy4=--
+202135247,59549623,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.01,Period=9.46468
+202135247,59549623,J/MNRAS/452/3561/table2,"Kepler eclipsing binary stars. K2 Campaign 0 (LaCourse+, 2015)",1,0.0,Per=--
+202073476,80792346,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.27,Period=51.261
+202073476,80792346,J/AJ/156/241/table4,"A first catalog of variable stars measured by ATLAS (Heinze+, 2018)",1,0.28,
+202073476,80792346,J/MNRAS/452/3561/table1,"Kepler eclipsing binary stars. K2 Campaign 0 (LaCourse+, 2015)",1,0.0,Per=--
+202085278,429907655,B/vsx/vsx,"AAVSO International Variable Star Index VSX (Watson+, 2006-)",1,0.06,Period=--
