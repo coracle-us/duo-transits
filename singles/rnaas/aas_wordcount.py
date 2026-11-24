@@ -4,6 +4,10 @@ after the abstract except the reference list counts against the 1350-word limit,
 + facilities/software + AI statement. The abstract (limit 150) is counted separately.
 Calibration: on the AAS82207R1 text (tag aas82207R1-submitted) AAS reported 1706 words; this script's estimate is
 printed for comparison.
+Update (AAS84041 bounce, 2026-11-24): AAS now says the 1350 words include the references as well ("text,
+acknowledgments, figure/table captions and references"). On the AAS84041 text (tag aas84041-submitted) AAS reported
+the main text as 300 over the limit; this script gives 1662 with references (1243 without). The "with references"
+figure is the one to keep under 1350 (it also counts the \bibitem keys, about 80 words that are not in the PDF).
 Usage:  python singles/rnaas/aas_wordcount.py FILE.tex [FILE.tex ...]
 """
 import re
@@ -29,8 +33,10 @@ def count(path):
     abstract = words(t[a0 + len("\\begin{abstract}"):a1])
     rest = words(t[a1:end])
     body = words(t[a1:t.index("\\begin{deluxetable")]) if "\\begin{deluxetable" in t else rest
-    print(f"{path}: abstract {abstract} (limit 150); AAS-counted text {rest} (limit 1350)")
-    return abstract, rest
+    full = words(t[a1:t.index("\\end{document}")])
+    print(f"{path}: abstract {abstract} (limit 150); text without references {rest}; "
+          f"AAS-counted text with references {full} (limit 1350)")
+    return abstract, full
 
 
 if __name__ == "__main__":

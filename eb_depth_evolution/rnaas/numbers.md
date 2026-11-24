@@ -196,3 +196,28 @@ Build: tectonic with aastex701.cls 7.0.1, 4 pages, no undefined references.
     instructions say to cite an IPAC dataset DOI in a revised manuscript: worth adding if a revision is requested);
   - digital assets: none; funding: No;
   - UAT: Eclipsing binary stars (444), Trinary stars (1714), Orbital evolution (1178).
+
+## AAS84041 bounced on length at the initial quality check (2026-11-24); shortened
+
+AAS: "Your abstract is 143 words. Your main text is over the 1350 word limit by 300 words", counting text,
+acknowledgments, figure/table captions **and references**. Our old counter left the references out (1243); with them
+the submitted text is 1662 (`singles/rnaas/aas_wordcount.py`, which now prints both). Jon asked for 1,300 or fewer,
+keeping every result, number and the AI disclosure, with no change to the analysis.
+
+- **New count:** abstract 142 (unchanged); AAS-counted text with references 1298 (was 1662); without references 941.
+  pdftotext of the new PDF gives 1181 words after the abstract including references (1667 for the submitted PDF).
+- **What was cut:** wording only. Every number in the old text after the abstract is still there (checked by
+  script); the abstract, title, figure and AI disclosure are unchanged.
+  - Headings: "Introduction" dropped; "Data and depths" -> "Data"; Predictions merged into "Timing and a third body".
+  - Intro: dropped "a few dozen Kepler and TESS systems" and "constrain the architecture of hierarchical triples";
+    V907 Sco now cites Zasche et al. 2023 only (Lacy et al. 1999 removed from the references).
+  - Data list as one sentence instead of bullets; fit description as prose instead of bullets.
+  - Dropped: "The data cannot tell whether the rate is still increasing" (the predictions paragraph still says the
+    coming timings will test it); "within reach of small telescopes"; "set by the timing variations" after
+    +/-30 min.
+  - Caption, from 92 to about 60 words; acknowledgments, from 85 to 39 words (same four MAST DOIs, same NSF
+    grants for DASCH; standard long-form archive sentences shortened).
+  - References: ASCL titles removed for Astrocut and Lightkurve; editors and publisher removed for Grindlay 2012.
+- **Build:** tectonic, aastex701.cls 7.0.1, 4 pages, no undefined references; `rnaas.pdf` committed.
+- **Note:** the AAS84041 form's IPAC answer is Yes. The form's instructions ask for an IPAC dataset DOI in a revised
+  manuscript; none is in the text yet (adding one costs words).

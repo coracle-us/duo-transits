@@ -1,6 +1,7 @@
 """
-Word count for eb_depth_evolution/rnaas/rnaas.tex (RNAAS limits: 1,350 words of text and a 150-word abstract;
-the figure, caption, acknowledgments, AI statement and references are excluded).
+Old word count for eb_depth_evolution/rnaas/rnaas.tex: body only (figure, caption, acknowledgments, AI statement and
+references excluded). AAS counts far more than this (AAS84041 bounce, 2026-11-24): use
+singles/rnaas/aas_wordcount.py, whose "with references" figure is what AAS checks against 1350.
 Usage:  python eb_depth_evolution/rnaas/wordcount.py
 """
 import re
