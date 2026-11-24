@@ -1,4 +1,5 @@
 %% Research Note of the AAS (K2 single events x TESS), AASTeX v7.0.1. Revision of AAS82225.
+%% 2026-11-24: shortened after the AAS84033 length check (AAS counts the references too).
 %% Source, numbers and provenance: https://github.com/coracle-us/duo-transits (k2singles/rnaas/, k2singles/revision2/).
 \documentclass{aastex701}
 
@@ -26,80 +27,70 @@ EPIC~202126877 deepened from 6\% in 2014 to 36\% in 2026.
 
 \section{Methods}
 
-\textit{Periods.} A box of the catalogued depth and
-duration was matched to repeats in K2 PDCSAP \citep{Howell2014}, TESS SPOC, TESS-SPOC
-\citep{Caldwell2020} and QLP \citep{Huang2020} light curves and my own TESScut photometry
-\citep{Brasseur2019}. Final periods come from trapezoid fits to each eclipse and a linear
-ephemeris. Independent re-analyses agree within $2\sigma$
-(EPIC~202126877 shows timing variations).
+\textit{Periods.} Boxes of the catalogued depth and duration were matched to repeats in K2 PDCSAP
+\citep{Howell2014}, TESS SPOC, TESS-SPOC \citep{Caldwell2020}, QLP \citep{Huang2020} and my TESScut
+\citep{Brasseur2019} light curves. Trapezoid fits give linear ephemerides, which independent
+re-analyses match within $2\sigma$ (EPIC~202126877 has timing variations).
 
-\textit{Blind search.} I then searched all 163 stars, with no sample cut and no use of the
-catalogued depth, duration or epoch: every K2 light curve (PDCSAP, EVEREST, K2SFF; all campaigns)
-and the best TESS pipeline light curve per sector, plus my own photometry for Sectors $\geq80$. This covers 364 of
-447 TESS target-sectors; the other 83, of faint stars before Sector 80, have no pipeline light
-curve. Dips of 1--48\,h are fitted against a local baseline. The identical search on inverted light
-curves sets the threshold at 0.05 false events per star (SNR 53 in K2, 60 in TESS). Significant
-events of similar depth and duration on one star are linked as $P=\Delta T/n$, rejecting any period
-with a predicted epoch on flat data. A box least-squares search of each data block (periods up to
-the shorter of half its span and 100\,d) is thresholded at the 99th percentile of inverted blocks' maximum power.
-The rules were fixed before the full run, the threshold after a one-star test. After it, a
-coincidence test replaced the planned rule for systematics shared between stars, and a linked-event
-test calibrated on inverted data was added.
+\textit{Blind search.} All 163 stars were searched, ignoring catalogued depths, durations and epochs,
+in every K2 light curve (PDCSAP, EVEREST, K2SFF), the best TESS pipeline light curve per sector and my
+photometry for Sectors $\geq80$: 364 of 447 TESS target-sectors (the other 83, faint stars before
+Sector 80, lack pipeline data). Dips of 1--48\,h are fitted against a local baseline; the same search
+of inverted light curves sets the threshold at 0.05 false events per star (SNR 53 in K2, 60 in TESS).
+Significant events of similar depth and duration are linked as $P=\Delta T/n$, rejecting periods with
+an epoch on flat data. Box least-squares (BLS) searches of each data block (periods up to half its
+span, at most 100\,d) are thresholded at the 99th percentile of inverted blocks' maximum power. The
+threshold followed a one-star test; a coincidence test for shared systematics (replacing the planned
+rule) and a linked-event test calibrated on inverted data came after the full run.
 
-\textit{Literature.} For each star I searched ADS full text under its EPIC, TIC, Gaia and 2MASS
-identifiers and any others in SIMBAD; SIMBAD bibliographies; ExoFOP; 22 variable-star and K2 VizieR
-catalogues, plus 56 from papers on Table~\ref{tab:k2} stars; Gaia DR3 orbits
-\citep{Arenou2023}; and SPOC and TESS-SPOC TCEs \citep{Jenkins2016,Twicken2018,Valizadegan2025}. Two independent classifications of
-the 203 sources for Table~\ref{tab:k2} stars disagreed once; reading the paper
-settled it. A period is new only if no source gives an orbital period. Gaps: ADS and SIMBAD found 3 of
-9 known (star, paper) pairs, as catalogue papers often name stars only in tables; the VizieR list,
-chosen after an all-catalogue query failed, includes those papers' catalogues, so cannot measure
-recall; 13 of 93
-listed catalogues were not on the mirror; and the 3$''$ radius misses the 4.4$''$ entry of
-\citet{Libralato2016} for EPIC~211892898.
+\textit{Literature.} I searched ADS full text under each star's SIMBAD identifiers, SIMBAD
+bibliographies, ExoFOP, 22 variable-star and K2 VizieR catalogues plus 56 from papers on
+Table~\ref{tab:k2} stars, Gaia DR3 orbits \citep{Arenou2023}, and SPOC and TESS-SPOC TCEs
+\citep{Jenkins2016,Twicken2018,Valizadegan2025}. Two independent classifications of the 203 sources
+disagreed once (settled by reading the paper). A period is new only if no source gives one. Limits:
+ADS and SIMBAD found 3 of 9 known (star, paper) pairs; the VizieR list's recall is unmeasurable; 13 of
+93 listed catalogues were missing from the mirror; the 3$''$ radius misses the 4.4$''$
+\citet{Libralato2016} entry for EPIC~211892898.
 
 \section{Results}
 
-The blind search finds a first-stage event (SNR $\geq8$) at 163 of the 164 catalogued epochs, and a
-significant one for 112 stars (with the post-hoc coincidence test). For 11 of the 15
-Table~\ref{tab:k2} systems, my period is among the blind search's allowed periods. It misses both planet candidates, six of whose seven transits fall below the threshold, and two eccentric binaries whose
-primaries and secondaries it groups as one family. The post-hoc test recovers EPIC~211489484. For
-TOI-5560.01 it links all four transits at 140.49\,d, but only at threshold support, among 16
-periods and below that star's inverted control, so this is not a detection. Another 47 stars show
-blind signals (36 of 470 box least-squares blocks pass, against 5 inverted ones), listed in the
-repository; triage leaves none as an on-target candidate.
+The blind search finds a first-stage event (SNR $\geq8$) at 163 of 164 catalogued epochs and a
+significant one for 112 stars (with the post-hoc test). It recovers 11 of the 15 periods, missing both
+planet candidates (six of their seven transits are below threshold) and two eccentric binaries whose
+eclipses it merges; the post-hoc test recovers EPIC~211489484. It links all four TOI-5560.01 transits
+at 140.49\,d, but only at threshold support, among 16 periods and below the star's inverted control:
+not a detection. Another 47 stars show blind signals (36 of 470 BLS blocks pass, against 5 inverted);
+triage leaves no on-target candidate. Code, fits, literature tables and triage:
+\url{https://github.com/coracle-us/duo-transits}.
 
-Of the 15 periods, six have no prior orbital period, five match a
-published period within 0.2\%, and four conflict with SPOC TCEs that my data exclude. Catalogue periods
-for the C0 binaries that differ from mine (VSX 3.84--8.70\,d; 5.6--1008\,d for EPIC~202072917)
-miss consecutive observed eclipses by $\geq0.16$\,d.
+Most of the 15 systems are eclipsing binaries. Six have no prior orbital period, five match a
+published one within 0.2\%, and four conflict with SPOC TCEs that my data exclude. Differing catalogue
+periods for the C0 binaries (VSX 3.84--8.70\,d; 5.6--1008\,d for EPIC~202072917) miss consecutive
+observed eclipses by $\geq0.16$\,d.
 
-\textit{TOI-5560.01 (EPIC~211924561).} Transits in TESS Sectors 46 and 72 left $P\leq702.47$\,d.
-The K2 C5 and C16 transits fit one linear ephemeris with them, and flat data exclude all its submultiples
-except half: $P=140.49392\pm0.00014$ or $70.24696\pm0.00007$\,d,
-$T_0={\rm BJD_{TDB}}\,2457179.8979\pm0.0014$. SPOC TCEs at 58.28, 31.25, 58.54 and 10.28\,d each
-include a scattered-light step at BJD~2459509.8 or times without a transit-depth dip, and none fits
-the C5 transit. The V-shaped 3.0-h transit (2.3\,ppt) is far shorter than a central one
-(12--15\,h), so the orbit is grazing, eccentric or both. Both periods predict
-transits at ${\rm BJD_{TDB}}\,2461394.716\pm0.004$ (2026 December 20) and $2461535.210\pm0.005$
-(2027 May 9); one at 2461464.963 (2027 February 28) would confirm 70.25\,d.
+\textit{TOI-5560.01 (EPIC~211924561).} Sectors 46 and 72 left $P\leq702.47$\,d. The K2 C5 and C16
+transits share their linear ephemeris ($T_0={\rm BJD_{TDB}}\,2457179.8979\pm0.0014$), and flat data
+exclude all its submultiples but half (Table~\ref{tab:k2}). SPOC TCEs at 58.28, 31.25, 58.54 and
+10.28\,d rely on a scattered-light step at BJD~2459509.8 or on dip-free times, and none fits the C5
+transit. The V-shaped 3.0-h, 2.3-ppt transit is far shorter than a central one (12--15\,h): the orbit
+is grazing, eccentric or both. Both periods predict transits at ${\rm BJD_{TDB}}\,2461394.716\pm0.004$
+(2026 December 20) and $2461535.210\pm0.005$ (2027 May 9); one at 2461464.963 (2027 February 28) would
+confirm 70.25\,d.
 
 \textit{EPIC~211503363.} This single-transit candidate of \citet{Kovacs2020} ($P\gtrsim58$\,d)
-transits again in Sectors 45 and 72 (3.4--3.8\,ppt, 23\,h): $P=122.9052\pm0.0006$ or
-$61.4526\pm0.0003$\,d. With $R_\star=3.6\,R_\odot$ ($\log g=3.46$; Gaia DR3) the companion is
-$\approx2.1\,R_{\rm J}$ ($2.4\,R_{\rm J}$ with Kov\'acs's $R_\star$), probably an M dwarf.
+transits again in Sectors 45 and 72 (3.4--3.8\,ppt, 23\,h; periods in Table~\ref{tab:k2}). With
+$R_\star=3.6\,R_\odot$ ($\log g=3.46$; Gaia DR3) the companion is $\approx2.1\,R_{\rm J}$
+($2.4\,R_{\rm J}$ with Kov\'acs's $R_\star$), probably an M dwarf.
 
-\textit{Eclipsing binaries.} HD~220967 shows eclipses 37\% and 30\% deep; the secondary
-at phase 0.867 gives $e\geq0.58$. TESS-SPOC TCEs of HD~220967 (4.47\,d) and EPIC~246089124
-(9.54\,d) each rest on one Sector~70 eclipse; their other epochs are flat. For EPIC~211489484 the 106.94-d TCE
-joins two primaries ten cycles apart, and four other primaries exclude it. Its 0.24-d TCE is five
-cycles of a $\delta$~Scuti-type pulsation (20.79\,d$^{-1}$), probably of a neighbour 26$''$ away.
+\textit{Eclipsing binaries.} HD~220967's eclipses are 37\% and 30\% deep; the phase-0.867 secondary
+gives $e\geq0.58$. TESS-SPOC TCEs of HD~220967 (4.47\,d) and EPIC~246089124 (9.54\,d) each rest on
+one Sector~70 eclipse, with flat other epochs. EPIC~211489484's 106.94-d TCE joins two primaries ten
+cycles apart and is excluded by four others; its 0.24-d TCE is five cycles of a $\delta$~Scuti-type
+pulsation (20.79\,d$^{-1}$), probably from a neighbour 26$''$ away.
 
-EPIC~202126877 \citep{IJspeert2024} was 6.2\% deep in K2, with no secondary. In my fixed-aperture
-TESS photometry the primary is 21\% deep in 2021, 27\% in 2023 and 36\% in January 2026, and the
-secondary grows from 4\% to 12\% (2021--2023). The
-secondary-to-primary ratio doubles, which constant dilution cannot do; the orbit may be
-precessing.
+EPIC~202126877 \citep{IJspeert2024} deepened from 6.2\% (K2, no secondary) to 21\%, 27\% and 36\% in
+2021, 2023 and January 2026 in my fixed-aperture TESS photometry, and its secondary from 4\% to 12\%
+(2021--2023). The ratio doubles, which constant dilution cannot do; the orbit may be precessing.
 
 \begin{deluxetable*}{llllll}
 \tabletypesize{\scriptsize}
@@ -113,32 +104,24 @@ precessing.
 247967714 & C13; S44, S71 & 185.626676(21)/$n$, $n=1$--$3$ &  & yes &  \\
 212012030 & C5, C18; S71 & 220.321779(57)/$n$, $n=1$--$5$ &  & yes &  \\
 \cutinhead{Prior estimate only}
-211503363 & C5; S45, S72 & 122.90522(64), 61.45261(32) & $\gtrsim58$$^g$ & no & planet cand. \\
+211503363 & C5; S45, S72 & 122.90522(64), 61.45261(32) & $\gtrsim58$$^f$ & no & planet cand. \\
 \cutinhead{Published periods differ}
-211924561 & C5, C16; S46, S72 & 140.49392(14), 70.246961(70) & TCEs$^h$ & no & TOI-5560.01 \\
-211489484 & C5, C18; S7, S46 & 82.258438(52) & TCEs$^h$ & post hoc & sec.\ 0.194 \\
-246194159 & C12; S70, S92 & 73.2451778(74) & TCE$^h$ & no & HD 220967; sec.\ 0.867 \\
-246089124 & C12; S70, S92 & 73.962413(20) & TCE$^h$ & yes & sec.\ 0.494 \\
+211924561 & C5, C16; S46, S72 & 140.49392(14), 70.246961(70) & TCEs$^g$ & no & TOI-5560.01 \\
+211489484 & C5, C18; S7, S46 & 82.258438(52) & TCEs$^g$ & post hoc & sec.\ 0.194 \\
+246194159 & C12; S70, S92 & 73.2451778(74) & TCE$^g$ & no & HD 220967; sec.\ 0.867 \\
+246089124 & C12; S70, S92 & 73.962413(20) & TCE$^g$ & yes & sec.\ 0.494 \\
 \cutinhead{Published period agrees}
 211411112 & C5, C16; S46 & 62.594821(27) & 62.59484(3)$^a$ & yes & Sanders 617 \\
 211892898 & C5, C16, C18 & 72.5089(14) & 72.53(3)$^e$ & yes & Gaia SB1 \\
-202126877 & S43--45, S71--72 & 21.775 & 21.78$^b$ & yes & sec.\ 0.33; deepening$^f$ \\
+202126877 & S43--45, S71--72 & 21.775 & 21.78$^b$ & yes & sec.\ 0.33; deepening \\
 202072917 & C0; S6, S43, S45 & 34.7455865(70) & 34.744$^b$, 34.7457$^c$ & yes &  \\
 202071902 & C0; S44, S71 & 22.9041282(30) & 22.859(15)$^d$ & yes &  \\
 \enddata
-\tablecomments{Events: K2 campaigns (C) and TESS sectors (S) fitted. Uncertainties in the last
-digits in parentheses. Without a secondary eclipse (``sec.'', at the given phase), twice the period
-cannot be excluded. Blind: period among the blind search's aliases, only in the post-hoc test, or
-neither. $^a$\citet{Sandquist2021}; $^b$\citet{IJspeert2024}; $^c$SPOC TCE \citep{Valizadegan2025};
-$^d$\citet{Kovalev2024}, see also \citet{Guo2025}; $^e$Gaia DR3 SB1; $^f$primary 6\% deep in 2014,
-21--36\% in 2021--2026; $^g$\citet{Kovacs2020}; $^h$excluded, see text.}
+\tablecomments{Events: K2 campaigns (C) and TESS sectors (S) fitted; last-digit uncertainties in
+parentheses. Without a secondary eclipse (``sec.'', at the given phase), twice the period is not
+excluded. Blind: period among the blind search's aliases, only post hoc, or neither. $^a$\citet{Sandquist2021}; $^b$\citet{IJspeert2024}; $^c$SPOC TCE \citep{Valizadegan2025};
+$^d$\citet{Kovalev2024}, see also \citet{Guo2025}; $^e$Gaia DR3 SB1; $^f$\citet{Kovacs2020}; $^g$excluded, see text.}
 \end{deluxetable*}
-
-\section{Conclusion}
-
-Most K2 single events with repeats are eclipsing binaries, but repeats narrow a TESS planet
-candidate to two periods and show a K2 planet candidate is probably an M dwarf. Code, fits,
-literature tables and the other signals' triage: \url{https://github.com/coracle-us/duo-transits}.
 
 \begin{acknowledgments}
 This work uses data from MAST: K2 \dataset[doi:10.17909/t9ws3r]{https://doi.org/10.17909/t9ws3r},
@@ -161,7 +144,7 @@ outputs and every reference against ADS, arXiv, Crossref or VizieR, and take ful
 for the content.
 
 \begin{thebibliography}{}
-\bibitem[Brasseur et al.(2019)]{Brasseur2019} Brasseur, C.~E., Phillip, C., Fleming, S.~W., Mullally, S.~E., \& White, R.~L. 2019, Astrocut: Tools for creating cutouts of TESS images, Astrophysics Source Code Library, ascl:1905.007
+\bibitem[Brasseur et al.(2019)]{Brasseur2019} Brasseur, C.~E., Phillip, C., Fleming, S.~W., Mullally, S.~E., \& White, R.~L. 2019, Astrocut, ascl:1905.007
 \bibitem[Caldwell et al.(2020)]{Caldwell2020} Caldwell, D.~A., Tenenbaum, P., Twicken, J.~D., et al. 2020, RNAAS, 4, 201
 \bibitem[Gaia Collaboration, Arenou et al.(2023)]{Arenou2023} Gaia Collaboration, Arenou, F., Babusiaux, C., et al. 2023, A\&A, 674, A34
 \bibitem[Ginsburg et al.(2019)]{Ginsburg2019} Ginsburg, A., Sip{\H o}cz, B.~M., Brasseur, C.~E., et al. 2019, AJ, 157, 98
@@ -174,7 +157,7 @@ for the content.
 \bibitem[Kovalev et al.(2024)]{Kovalev2024} Kovalev, M., Zhou, Z., Chen, X., \& Han, Z. 2024, MNRAS, 527, 521
 \bibitem[LaCourse \& Jacobs(2018)]{LaCourse2018} LaCourse, D.~M., \& Jacobs, T.~L. 2018, RNAAS, 2, 28
 \bibitem[Libralato et al.(2016)]{Libralato2016} Libralato, M., Nardiello, D., Bedin, L.~R., et al. 2016, MNRAS, 463, 1780
-\bibitem[Lightkurve Collaboration et al.(2018)]{Lightkurve2018} Lightkurve Collaboration, Cardoso, J.~V.~d.~M., Hedges, C., et al. 2018, Lightkurve: Kepler and TESS time series analysis in Python, Astrophysics Source Code Library, ascl:1812.013
+\bibitem[Lightkurve Collaboration et al.(2018)]{Lightkurve2018} Lightkurve Collaboration, Cardoso, J.~V.~d.~M., Hedges, C., et al. 2018, Lightkurve, ascl:1812.013
 \bibitem[Sandquist et al.(2021)]{Sandquist2021} Sandquist, E.~L., Latham, D.~W., Mathieu, R.~D., et al. 2021, AJ, 161, 59
 \bibitem[Twicken et al.(2018)]{Twicken2018} Twicken, J.~D., Catanzarite, J.~H., Clarke, B.~D., et al. 2018, PASP, 130, 064502
 \bibitem[Valizadegan et al.(2025)]{Valizadegan2025} Valizadegan, H., Martinho, M.~J.~S., Jenkins, J.~M., et al. 2025, AJ, 170, 287
