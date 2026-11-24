@@ -1,0 +1,27 @@
+row_id,tic,P_true_d,tier,source
+hawthorn:H11,39167176,21.7883,thesis,"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.2"
+hawthorn:H18,77437543,60.33,peer-reviewed,"Henderson et al. 2024, MNRAS 533, 2823 (2024MNRAS.533.2823H)"
+hawthorn:H19,81089255,46.8905,exofop-community,"https://exofop.ipac.caltech.edu/tess/target.php?id=81089255 (upload: mason, 2023-06-01)"
+hawthorn:H23,118339710,80.4,peer-reviewed,"Eberhardt et al. 2025, AJ 169, 298 (2025AJ....169..298E)"
+hawthorn:H25,124029677,20.33003,peer-reviewed,"Ulmer-Moll et al. 2022, A&A 666, A46 (2022A&A...666A..46U)"
+hawthorn:H28,142278054,26.4937,thesis,"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.3"
+hawthorn:H34,157698565,61.6277,peer-reviewed,"Brahm et al. 2023, AJ 165, 227 (2023AJ....165..227B)"
+hawthorn:H38,188620407,43.448716,exofop-community,"https://exofop.ipac.caltech.edu/tess/target.php?id=188620407 (upload: mason, 2023-11-17); ExoFOP TOI comment"
+hawthorn:H39,193318850,15.717856,toi-catalog,ExoFOP TOI table (data/raw/exofop_toi.csv)
+hawthorn:H46,224279805,22.984,thesis,"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.4; https://exofop.ipac.caltech.edu/tess/target.php?id=224279805"
+hawthorn:H49,242241304,26.7517,exofop-community,"https://exofop.ipac.caltech.edu/tess/target.php?id=242241304 (upload: slee, 2026-06-09)"
+hawthorn:H52,265465927,31.1287617,exofop-community,"https://exofop.ipac.caltech.edu/tess/target.php?id=265465927 (upload: mason, 2026-05-29; TFOP notes files)"
+hawthorn:H55,269333648,64.5949,peer-reviewed,"Jones et al. 2024, A&A 683, A192 (2024A&A...683A.192J)"
+hawthorn:H59,289840544,25.9308,exofop-community,"https://exofop.ipac.caltech.edu/tess/target.php?id=289840544 (upload: slee, 2026-04-20)"
+hawthorn:H65,303317324,29.566602,peer-reviewed,"Collier et al. 2026, arXiv:2608.21560; ExoFOP TOI comment"
+hawthorn:H66,304339227,51.0497543,exofop-community,"https://exofop.ipac.caltech.edu/tess/target.php?id=304339227 (upload: mason, 2026-06-14)"
+hawthorn:H67,306249066,26.162212,toi-catalog,ExoFOP TOI table; https://exofop.ipac.caltech.edu/tess/target.php?id=306249066 (TFOP files; not opened by us)
+hawthorn:H70,323295479,185.62807,exofop-community,"https://exofop.ipac.caltech.edu/tess/edit_obsnotes.php?id=323295479 (lhill, 2026-07-14); Lofvenholm 2026 MSc thesis, Chalmers https://odr.chalmers.se/items/50878040-03ee-4d18-a2f4-64202738fd83"
+hawthorn:H72,333736132,25.241192,peer-reviewed,"Kendall et al. 2026, MNRAS 547 (2026MNRAS.547f2189K, arXiv:2512.07716)"
+hawthorn:H73,339399841,27.2487,thesis,"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.6"
+hawthorn:H74,349091983,549.065,catalog-paper,"Hawthorn et al. 2024, MNRAS 528, 1841 (arXiv:2310.17268) Sec. 4.2 / Table A3 (N_alias=1)"
+hawthorn:H79,404518509,25.1292,peer-reviewed,"Nies et al. 2024, MNRAS 534, 3744 (2024MNRAS.534.3744N)"
+hawthorn:H80,412386707,39.295951,toi-catalog,ExoFOP TOI table (data/raw/exofop_toi.csv)
+hawthorn:H82,439491923,27.3608,thesis,"Hawthorn 2024, PhD thesis (Univ. Warwick), Ch. 6 https://warwick.ac.uk/fac/sci/physics/research/astro/theses/faithhawthorn.phd.pdf Sec. 6.4.7"
+hawthorn:H84,457649900,26.74387,exofop-community,"https://exofop.ipac.caltech.edu/tess/target.php?id=457649900 (upload: vincent, 2026-08-15)"
+hawthorn:H85,466206508,75.12375,peer-reviewed,"Grieves et al. 2022, A&A 668, A29 (2022A&A...668A..29G)"

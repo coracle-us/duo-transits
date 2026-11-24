@@ -37,3 +37,10 @@ calibration/mono/results_corrected/arm_b/
 calibration/mono/round2/test_independent/*.ckpt.jsonl
 calibration/mono/round3/xcheck/independent/*.ckpt.jsonl
 calibration/mono/round3/test_independent/*.ckpt.jsonl
+catalogue/validation/arxiv_2611.03019/eprint_v2
+catalogue/validation/arxiv_2611.03019/source/*.pdf
+catalogue/validation/arxiv_2611.03019/source/*.cls
+catalogue/validation/arxiv_2611.03019/source/00README.json
+catalogue/results/*/vetting/sheets/
+catalogue/results/*/vetter_check/sheets/
+catalogue/work/
