@@ -51,7 +51,9 @@ Light curves (`data/lc/`) and `results/prepared_*.pkl`, which holds light-curve 
 - **Secondary − primary:** +12.7 ± 1.9 s overall; per sector +14.8 ± 18.4, +12.1 ± 2.4 and
   +13.2 ± 3.1 s.
   - The inner-orbit Rømer delay predicted from Lee's K values is P(K_B − K_A)/(πc) = +9.4 s.
-  - The rest, 3.3 ± 1.9 s, corresponds to e cos ω ≈ (2.5 ± 1.5) × 10⁻⁵.
+  - The blind re-analysis gets +6.8 ± 2.0 s. The difference is a method systematic (it
+    symmetrized the template), explained in `COMPARISON.md`. Both values agree with the Rømer
+    delay. The e cos ω estimate made from the main value alone is withdrawn.
   - Lee et al. saw this offset (0.00019 d) and suggested pulsations as the cause; light travel
     time across the binary explains most of it.
 
@@ -87,13 +89,19 @@ sin i3 = 1.
 
 | P3 range | A95 (main) | m3 excluded above (main) | With S18 from QLP |
 |---|---|---|---|
-| 12–100 d | median 9 s, max 30 s | median 0.19 M☉ (max 0.40) | 0.17 M☉ |
-| 100–1,000 d | median 42 s | median 0.20 M☉ | 0.15 M☉ |
-| 1,000–1,820 d | median 93 s | median 0.17 M☉ | 0.11 M☉ |
-| 1,820–3,000 d | median 124 s | median 0.17 M☉ | 0.08 M☉ |
+| 12–100 d | median 9 s (7–32) | median 0.21 M☉ | 0.18 M☉ |
+| 100–1,000 d | median 40 s (15–118) | median 0.19 M☉ | 0.15 M☉ |
+| 1,000–3,000 d | median 103 s (79–207) | median 0.17 M☉ | 0.09 M☉ |
+| 1,820–3,000 d | median 130 s | median 0.17 M☉ | 0.08 M☉ |
 
-- **Blind spot:** P3 ≈ 364 d. S18, S58 and S85 fall at the same season, so the limit there is
-  only A < 350 s, m3 < 2.1 M☉.
+These figures use the 600-point P3 grid (change log item 7). Over P3 ≥ 12 d, excluding
+330–400 d, the median is 0.19 M☉ and 94% of grid periods are below 0.3 M☉.
+
+- **Blind spots:** one year and its harmonics. S18, S58 and S85 fall at the same season, so
+  the limit is weak there:
+  - near 364 d: A < 310 s, m3 < 1.8 M☉;
+  - near 182.5 d: m3 < 0.75 M☉;
+  - near 121 d: m3 < 0.50 M☉.
 - **Caveats:**
   - For P3 longer than the 1,820 d TESS baseline, LTTE trades off against the linear and
     quadratic terms.
@@ -144,8 +152,10 @@ between the two sectors absorbed by the frequency.
 
 ## Draft
 
-`DRAFT_RNAAS.md`: 1,195 words in total including the title, caption and references, with a
-148-word abstract. The count is a plain word count of the Markdown.
+`DRAFT_RNAAS.md`, after the blind re-derivation: 1,366 words in total including the title,
+caption and references, with a 149-word abstract. The count is a plain word count of the Markdown.
 
-Excluding P3 < 12 d and the 330–400 d blind spot, the limit is below 0.3 M☉ at 94% of grid
-periods. The median is 0.18 M☉ and the worst case 0.45 M☉.
+## Independent re-derivation
+
+See `COMPARISON.md`. The period, χ², BIC choice and limit agree. The secondary-eclipse offset
+differs by 2.2σ because of the template, and both values are consistent with the Rømer delay.

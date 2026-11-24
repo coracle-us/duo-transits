@@ -55,7 +55,7 @@ ax.set_xlabel("Tertiary period $P_3$ (d)", fontsize=8)
 ax.set_ylabel("LTTE semi-amplitude (s)", fontsize=8)
 ax.set_ylim(2, 3e3)
 ax.tick_params(labelsize=7)
-for p, a, m in lim[["P3_d", "A95_s", "m3min_msun"]].values[::20]:
+for p, a, m in lim[["P3_d", "A95_s", "m3min_msun"]].values[::100]:
     ax.annotate(f"{m:.2f}", (p, a), textcoords="offset points", xytext=(0, 5), fontsize=6, color="C0",
                 ha="center")
 ax.legend(fontsize=7, frameon=False, loc="upper left")

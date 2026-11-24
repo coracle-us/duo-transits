@@ -1,0 +1,15 @@
+N=53 dof=50 chi2_M0(real)=55.649 threshold(99.73%)=82.319
+P3 grid: 600 log-spaced points 10-3000 d; 1000 random phases per P3
+median m3min, P3>=12 d excl 330-400 d: 0.1986 Msun (median A95 28.88 s) [n=560]
+  median   12- 100 d: m3min=0.2245 Msun, A95=9.74 s [n=222]
+  median  100-1000 d: m3min=0.1987 Msun, A95=40.47 s [n=222]
+  median 1000-3000 d: m3min=0.1779 Msun, A95=108.92 s [n=115]
+max m3min (P3>=12, excl 330-400): 0.8725 Msun at P3=182.52 d (A95=109.90 s)
+max m3min (all P3 10-3000, excl 330-400): 0.8725 Msun at P3=182.52 d (A95=109.90 s)
+max m3min incl 330-400: 1.9610 Msun at P3=362.29 d
+min m3min: 0.1238 Msun at P3=129.55 d
+brute-force check (P3, A95 brute on 400-pt log A grid, A95 analytic, same phases):
+  P3=   15.0  brute=9.25 s  analytic=9.18 s
+  P3=  120.0  brute=42.81 s  analytic=42.24 s
+  P3=  700.0  brute=71.97 s  analytic=71.92 s
+  P3= 2500.0  brute=145.10 s  analytic=144.93 s

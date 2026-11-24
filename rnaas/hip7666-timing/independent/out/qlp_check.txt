@@ -1,0 +1,6 @@
+S18 primary   QLP N= 8 O-C=  -2.50+- 2.32 | main N= 8 O-C= +10.80+-12.45 | diff -13.30+-12.66 (1.1 sigma)
+S18 secondary QLP N= 8 O-C=  -0.10+- 3.08 | main N= 9 O-C= +14.69+-13.66 | diff -14.80+-14.00 (1.1 sigma)
+S58 primary   QLP N=10 O-C=  +1.47+- 1.52 | main N=10 O-C=  -0.16+- 1.31 | diff  +1.63+- 2.01 (0.8 sigma)
+S58 secondary QLP N=12 O-C=  +1.53+- 2.17 | main N=12 O-C=  -1.23+- 2.10 | diff  +2.76+- 3.02 (0.9 sigma)
+S85 primary   QLP N= 8 O-C= -25.86+-10.48 | main N= 7 O-C=  +0.10+- 2.05 | diff -25.96+-10.68 (2.4 sigma)
+S85 secondary QLP N= 8 O-C= -45.36+- 9.46 | main N= 7 O-C=  +1.25+- 2.49 | diff -46.60+- 9.79 (4.8 sigma)  >3 sigma: systematic

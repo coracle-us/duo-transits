@@ -9,9 +9,10 @@ empirical template, with the pulsations subtracted first. A linear ephemeris fit
 (χ² = 56.7 for 50 dof). A quadratic term and a light-travel-time orbit are both
 disfavoured by the Bayesian information criterion. The TESS period agrees with the 2000–2022
 ephemeris to 0.020 ± 0.016 s. Injection–recovery excludes light-travel-time semi-amplitudes
-above about 9 s for tertiary periods of 12–100 d and 90–200 s for 1,000–3,000 d. Away from
-a blind spot near one year, this excludes tertiaries above 0.3 M☉ at most periods (0.45 M☉ at worst). Secondary eclipses
-arrive 12.7 ± 1.9 s late, which is mostly the 9.4 s Rømer delay across the binary. Pulsation
+above about 9 s for tertiary periods of 12–100 d and 80–210 s for 1,000–3,000 d. Away from
+blind spots at one year and its harmonics, this excludes tertiaries above about 0.2 M☉. A blind
+re-analysis reproduces these results. Secondary eclipses arrive 7–13 s late, consistent with the
+9.4 s Rømer delay across the binary. Pulsation
 phases vary with orbital phase beyond light travel time, so they cannot serve as a clock here.
 
 ## 1. Introduction
@@ -58,6 +59,9 @@ body. TESS has observed the star in three sectors; this note uses all three.
 - The limit comes from injecting circular LTTE signals at 1,000 random phases into the real
   times. It is the amplitude that makes the linear fit fail at 3σ in 95% of cases.
 - A synthetic test recovers injected signals in both clocks, with the correct sign.
+- A separate analysis, given only the rules, the raw light curves and Lee et al. (2026), and
+  written from scratch without sight of this one, re-timed the eclipses and recomputed the
+  models and the limit. Its results are compared in Section 3.
 
 ## 3. Results
 
@@ -69,24 +73,37 @@ body. TESS has observed the star in three sectors; this note uses all three.
 - The primary and secondary periods agree (2.37222211(7) and 2.37222212(11) d), so there is no
   apsidal motion.
 - Our S58 times match Lee et al.'s Table 1 to −1.4 s on average.
+- The blind re-analysis gives P = 2.372222090(68) d (0.2σ from ours), M0 χ² = 55.6 for 50 dof,
+  and ΔBIC +1.7 (quadratic) and +6.0 (LTTE): the same choice of the linear model.
 
-**Secondary-eclipse delay.** Secondary eclipses come +12.7 ± 1.9 s after phase 0.5. The Rømer
-delay across the inner orbit, P(K_B − K_A)/(πc) = +9.4 s (Kaplan 2010), accounts for most of
-this. Lee et al. suggested pulsations as the cause. The remaining 3.3 ± 1.9 s corresponds to
-e cos ω ≈ 2.5 × 10⁻⁵.
+**Secondary-eclipse delay.** Secondary eclipses come +12.7 ± 1.9 s after phase 0.5 with our
+template, and +6.8 ± 2.0 s in the blind re-analysis. The difference (2.2σ) comes from method,
+not noise:
+- the S58 eclipse profiles have a small odd part (0.2–0.3 ppt);
+- the blind analysis fitted a symmetrized template, which moves every primary by +2.5 s and
+  every secondary by −2.7 s;
+- doing the same in our code reproduces the shift.
+
+Both values agree with the Rømer delay across the inner orbit, P(K_B − K_A)/(πc) = +9.4 s
+(Kaplan 2010), within 1.7σ. Lee et al. suggested pulsations as the cause.
 
 **Limit.** For circular LTTE orbits, the 95% upper limits on the semi-amplitude are:
 
 | P3 | Limit | Tertiary mass excluded above (sin i3 = 1) |
 |---|---|---|
-| 12–100 d | about 9 s (median) | about 0.19 M☉ |
-| 100–1,000 d | about 40 s | about 0.20 M☉ |
-| 1,000–3,000 d | 90–200 s | 0.17 M☉ |
+| 12–100 d | about 9 s (median) | about 0.21 M☉ |
+| 100–1,000 d | about 40 s | about 0.19 M☉ |
+| 1,000–3,000 d | 80–210 s | about 0.17 M☉ |
+
+The overall median is 0.19 M☉ (blind: 0.20 M☉), and 94% of grid periods are below 0.3 M☉.
 
 - With QLP for S18, whose light curve is cleaner than TESS-SPOC's, the limit at 2,000–3,000 d
   falls to about 0.08 M☉.
-- The limit is weak near P3 ≈ 364 d: all three sectors fall in the same season, and there
-  m3 < 2.1 M☉ is all that can be said.
+- The three sectors fall in the same season, so the limit is weak near one year and its
+  harmonics:
+  - near 364 d, only m3 < 1.8 M☉ is excluded;
+  - near 182 d, m3 < 0.75 M☉ (blind: 0.87 M☉);
+  - near 121 d, m3 < 0.5 M☉.
 - Periods below about 12 d would be dynamically unstable (Mardling & Aarseth 2001).
 
 **Pulsation delays**
@@ -103,8 +120,9 @@ amount. QLP Sectors 18 and 58 agree with the SPOC products.
 
 ## 4. Conclusion
 
-Five years of TESS eclipse times show no third body around HIP 7666 above 0.2–0.45 M☉
-(median 0.18 M☉) for periods of two weeks to eight years, apart from a gap near one year. Further TESS sectors and
+Five years of TESS eclipse times show no third body around HIP 7666 above about 0.2 M☉
+(median 0.19 M☉) for periods of two weeks to eight years, apart from gaps near one year and its
+harmonics. An independent blind re-analysis confirms the period, the model choice and the limit. Further TESS sectors and
 the historical minima would extend the baseline.
 
 ## Figure 1 caption

@@ -1,0 +1,11 @@
+texp= 1800 P: injected +40.0 s, recovered mean +53.29 s, scatter 23.92 s, mean boot err 22.58 s, N=8
+texp= 1800 S: injected -20.0 s, recovered mean -21.13 s, scatter 56.41 s, mean boot err 27.22 s, N=7
+texp=  200 P: injected +40.0 s, recovered mean +40.43 s, scatter 7.17 s, mean boot err 3.66 s, N=8
+texp=  200 S: injected -20.0 s, recovered mean -19.29 s, scatter 6.19 s, mean boot err 6.09 s, N=7
+texp=  120 P: injected +40.0 s, recovered mean +38.35 s, scatter 3.22 s, mean boot err 3.17 s, N=8
+texp=  120 S: injected -20.0 s, recovered mean -22.66 s, scatter 5.84 s, mean boot err 4.99 s, N=7
+S85 real data, time stamps +30 s: shift difference mean 30.001 s, range 29.425..30.594
+texp=  200 P: injected +40.0 s, recovered mean +40.44 s, scatter 6.11 s, mean boot err 3.50 s, N=33
+texp=  200 S: injected -20.0 s, recovered mean -20.15 s, scatter 8.81 s, mean boot err 6.08 s, N=33
+texp= 1800 P: injected +40.0 s, recovered mean +45.73 s, scatter 23.85 s, mean boot err 19.89 s, N=33
+texp= 1800 S: injected -20.0 s, recovered mean -20.25 s, scatter 45.63 s, mean boot err 31.37 s, N=33

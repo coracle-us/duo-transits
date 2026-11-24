@@ -182,3 +182,8 @@ Changes made after this file was committed (6010f4a). For each one, the change a
    SAP_FLUX is still the flux used.
 6. **Synthetic injection test** (`tests/test_synthetic.py`) for both clocks, including the sign of
    the pulsation delay.
+7. **Finer limit grid (after the blind re-derivation).**
+   - Change: the injection–recovery P3 grid goes from 120 to 600 log-spaced points.
+   - Why: the 120-point grid missed the narrow blind spots at 182.5 d and 121 d, where the
+     three sectors' common season makes the limit weak. The blind analysis used 600 points and
+     found them. Nothing else changed.

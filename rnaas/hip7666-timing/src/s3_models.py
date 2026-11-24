@@ -132,7 +132,7 @@ if KIND in ("main", "mixq18"):
     phis = rng.uniform(0, 2 * np.pi, 1000)
     Agrid = np.geomspace(1, 20000, 300) / DAY
     rows = []
-    for p3 in np.geomspace(10, 3000, 120):
+    for p3 in np.geomspace(10, 3000, 600):
         rc, rs = R @ np.cos(2 * np.pi * t / p3), R @ np.sin(2 * np.pi * t / p3)
         A95 = np.nan
         for A in Agrid:

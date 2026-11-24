@@ -1,0 +1,50 @@
+N eclipses = 53 (primaries 25, secondaries 28)
+  S18: P=8 S=9
+  S58: P=10 S=12
+  S85: P=7 S=7
+
+M0 linear: chi2=55.649 dof=50 chi2nu=1.113 BIC=67.560  p(chi2>obs)=0.2706
+  T0(E=3420) = 2882.5620367 +- 0.0000141 BTJD
+  P = 2.372222090 +- 0.000000068 d  (+- 0.0059 s); with sqrt(chi2nu) inflation: +- 0.000000072 d
+  P - P_Lee = 0.018 +- 0.006 s
+  secondary offset from phase 0.5 = 6.84 +- 1.95 s (inflated: +- 2.05 s)
+
+M1 quadratic: chi2=53.341 dof=49 BIC=69.222 dBIC(M1-M0)=1.662
+  Q = 4.9214e-10 +- 3.2387e-10 d/cycle^2 ; dP/dE = 2Q = 9.8427e-10 +- 6.4775e-10 d/cycle ; dP/dt = 4.1492e-10 +- 2.7306e-10 (d/d)
+  P(E_ref) = 2.37222197 +- 0.00000010 ; dsec = 6.62 +- 1.95 s
+
+M2 linear+circular LTTE: best P3=10.230 d, A=3.03 s, chi2=49.706 dof=47 BIC=73.527 dBIC(M2-M0)=5.967
+  (k counts T0, P, dsec, a, b and P3 = 6; grid of 20000 P3 values uniform in frequency, 10-3000 d)
+    local min: P3=10.23 d chi2=49.706 A=3.03 s
+    local min: P3=11.19 d chi2=49.849 A=3.12 s
+    local min: P3=11.94 d chi2=50.019 A=3.24 s
+    local min: P3=12.57 d chi2=50.549 A=3.09 s
+    local min: P3=76.97 d chi2=51.229 A=5.62 s
+    local min: P3=63.48 d chi2=51.331 A=5.15 s
+
+Summary table:
+  model  chi2     dof  BIC      dBIC_vs_M0
+  M0    55.649   50    67.560    +0.000
+  M1    53.341   49    69.222    +1.662
+  M2    49.706   47    73.527    +5.967
+  preferred over M0 (dBIC < -10): none -> M0
+
+Per-type linear fits (all sectors):
+  primary: N=25 P=2.372222072 +- 0.000000087 d (+- 0.0075 s) chi2=21.53 dof=23; inflated err 0.000000087
+  secondary: N=28 P=2.372222120 +- 0.000000111 d (+- 0.0096 s) chi2=34.00 dof=26; inflated err 0.000000127
+
+M0 with unscaled errors: chi2=75.437 dof=50 P=2.37222208 +- 0.00000006 dsec=6.41 +- 1.73 s
+
+Per-sector secondary - primary offset (P fixed at M0; offset = secondary O-C minus primary O-C):
+  S18: dsec = 10.73 +- 18.48 s (chi2=18.68, dof=15)
+  S58: dsec = 5.77 +- 2.47 s (chi2=18.17, dof=20)
+  S85: dsec = 7.99 +- 3.23 s (chi2=16.28, dof=12)
+  predicted inner-orbit Romer delay P(K_B-K_A)/(pi c) = 9.36 s
+
+Sector-mean O-C (weighted), seconds:
+  S18 primary   N= 8  O-C(Lee)= +21.29 +- 12.45   O-C(M0)= +10.80
+  S18 secondary N= 9  O-C(Lee)= +32.02 +- 13.66   O-C(M0)= +14.69
+  S58 primary   N=10  O-C(Lee)= +18.71 +-  1.31   O-C(M0)=  -0.16
+  S58 secondary N=12  O-C(Lee)= +24.46 +-  2.10   O-C(M0)=  -1.23
+  S85 primary   N= 7  O-C(Lee)= +24.51 +-  2.05   O-C(M0)=  +0.10
+  S85 secondary N= 7  O-C(Lee)= +32.53 +-  2.49   O-C(M0)=  +1.25

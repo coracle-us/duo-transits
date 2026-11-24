@@ -1,0 +1,3 @@
+texp 200 P n=123: true scatter 5.79 s; boot L=1 mean err 4.82 s; boot L=22 mean err 3.28 s
+texp 120 P n=205: true scatter 4.19 s; boot L=1 mean err 3.91 s; boot L=36 mean err 2.83 s
+texp 200 S n=123: true scatter 8.54 s; boot L=1 mean err 8.06 s; boot L=22 mean err 6.35 s
