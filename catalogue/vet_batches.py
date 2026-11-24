@@ -19,14 +19,20 @@ ap.add_argument("mode", choices=["split", "join"])
 ap.add_argument("dir")
 ap.add_argument("vetter", type=int)
 ap.add_argument("--size", type=int, default=40)
+ap.add_argument("--ids", help="split only these sheet ids (one per line), skipping any already in a batch")
 a = ap.parse_args()
 d = Path(a.dir)
 root = d / "batches" / f"v{a.vetter}"
 if a.mode == "split":
     ids = sorted(p.stem for p in (d / "sheets").glob("*.png"))
-    ids = list(np.random.default_rng([20261205, a.vetter]).permutation(ids))
+    if a.ids:
+        ids = sorted(set(ids) & set(Path(a.ids).read_text().split()))
+    done = {p.stem for p in root.glob("b*/*.png")}
+    ids = [s for s in ids if s not in done]
+    first = len(list(root.glob("b*")))
+    ids = list(np.random.default_rng([20261205, a.vetter, first]).permutation(ids))
     for k in range(0, len(ids), a.size):
-        b = root / f"b{k // a.size:03d}"
+        b = root / f"b{first + k // a.size:03d}"
         b.mkdir(parents=True, exist_ok=True)
         for s in ids[k:k + a.size]:
             for ext in ("png", "json"):

@@ -11,7 +11,9 @@ Usage   : python catalogue/sheets_runner.py vetter-check|candidates [--out catal
 """
 import argparse
 import json
-import multiprocessing as mp
+import pickle
+import subprocess
+from multiprocessing.pool import ThreadPool
 import socket
 import sys
 import time
@@ -19,6 +21,7 @@ from pathlib import Path
 
 import pandas as pd
 
+STAR_TIMEOUT = 1500
 socket.setdefaulttimeout(120)          # also in every spawned worker, which imports this module
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -31,7 +34,7 @@ def one(job):
     if ck.exists():
         return json.loads(ck.read_text())
     fn = ms.star_v1_sheets if mode == "vetter-check" else ms.star_candidates
-    for attempt in range(4):
+    for attempt in range(2):
         key = fn(args)
         if not any("error" in k and k["error"] == k["error"] and k["error"] for k in key):
             ck.write_text(json.dumps(key, default=str))
@@ -73,14 +76,38 @@ def main():
                 for t, g in ev.groupby("tic")]
     ckdir = base / "_checkpoints"
     ckdir.mkdir(parents=True, exist_ok=True)
+    jobdir = base / "_jobs"
+    jobdir.mkdir(exist_ok=True)
     jobs = [(m, n, x, str(ckdir)) for m, n, x, _ in jobs]
+
+    def guarded(job):
+        """One star in its own process, killed after STAR_TIMEOUT s (a MAST read can hang for hours
+        whatever the socket timeout) and tried again, up to 3 times."""
+        ck = ckdir / f"{job[1]}.json"
+        if ck.exists():
+            return json.loads(ck.read_text())
+        jf = jobdir / f"{job[1]}.pkl"
+        jf.write_bytes(pickle.dumps(job))
+        for _ in range(3):
+            try:
+                subprocess.run([sys.executable, "-W", "ignore", __file__, "--one", str(jf)], timeout=STAR_TIMEOUT + 300 * len(job[2][1] if job[0] == "vetter-check" else job[2][3]),
+                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            except subprocess.TimeoutExpired:
+                pass
+            if ck.exists():
+                return json.loads(ck.read_text())
+        return [dict(sheet_id="", tic=job[1], error="no sheets after 3 tries (timeout or error)")]
+
     key = []
-    with mp.get_context("spawn").Pool(a.workers) as pool:
-        for i, r in enumerate(pool.imap_unordered(one, jobs), 1):
+    with ThreadPool(a.workers) as pool:
+        for i, r in enumerate(pool.imap_unordered(guarded, jobs), 1):
             print(f"[{i}/{len(jobs)}]", flush=True)
             key += r
     pd.DataFrame(key).to_csv(base / "key.csv", index=False)
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) == 3 and sys.argv[1] == "--one":
+        one(pickle.loads(Path(sys.argv[2]).read_bytes()))
+    else:
+        main()
