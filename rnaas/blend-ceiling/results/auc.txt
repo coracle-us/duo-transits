@@ -1,0 +1,93 @@
+Scored objects: 336 CP/KP, 215 FP/FA (47 blends by C, 154 by C or G), 410 EBs, 1146 TCE-like, 50 sanity windows
+Unscored (fold with one class): 0
+
+== s_gbm (max over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.643 [0.595, 0.689]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.668 [0.621, 0.716]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.555 [0.472, 0.630]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.694 [0.619, 0.766]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.623 [0.572, 0.676]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.949 [0.934, 0.962]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.963 [0.952, 0.973]
+== s_gbm (mean over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.682 [0.636, 0.724]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.709 [0.664, 0.754]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.585 [0.514, 0.657]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.711 [0.632, 0.779]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.670 [0.622, 0.718]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.963 [0.950, 0.974]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.905 [0.888, 0.921]
+== s_gbm (first over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.649 [0.602, 0.696]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.667 [0.619, 0.717]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.582 [0.500, 0.655]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.673 [0.597, 0.751]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.639 [0.584, 0.694]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.960 [0.947, 0.972]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.906 [0.887, 0.924]
+== s_shape (max over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.643 [0.599, 0.687]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.673 [0.622, 0.720]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.537 [0.463, 0.615]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.722 [0.652, 0.786]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.612 [0.560, 0.662]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.945 [0.930, 0.959]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.968 [0.957, 0.976]
+== s_shape (mean over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.678 [0.633, 0.721]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.706 [0.657, 0.753]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.578 [0.507, 0.651]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.721 [0.650, 0.791]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.661 [0.610, 0.709]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.962 [0.949, 0.973]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.909 [0.893, 0.925]
+== s_shape (first over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.650 [0.605, 0.695]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.669 [0.620, 0.721]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.581 [0.504, 0.651]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.701 [0.626, 0.772]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.630 [0.577, 0.682]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.958 [0.945, 0.970]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.908 [0.890, 0.924]
+== s_cnn (max over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.605 [0.559, 0.654]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.615 [0.560, 0.665]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.568 [0.481, 0.646]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.704 [0.632, 0.775]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.566 [0.512, 0.619]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.926 [0.906, 0.944]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.969 [0.956, 0.980]
+== s_cnn (mean over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.670 [0.624, 0.718]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.675 [0.627, 0.725]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.653 [0.581, 0.722]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.739 [0.663, 0.813]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.643 [0.591, 0.692]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.958 [0.945, 0.971]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.914 [0.896, 0.930]
+== s_cnn (first over windows)
+  CP/KP (336) vs all FP/FA (215): AUC 0.614 [0.569, 0.664]
+  CP/KP (336) vs non-blend FP/FA (C) (168): AUC 0.619 [0.565, 0.671]
+  CP/KP (336) vs blend FP/FA (C) (47): AUC 0.597 [0.519, 0.674]
+  CP/KP (336) vs non-blend FP/FA (C or G) (61): AUC 0.658 [0.566, 0.742]
+  CP/KP (336) vs blend FP/FA (C or G) (154): AUC 0.597 [0.543, 0.649]
+  CP/KP (336) vs catalogued EBs (Prsa) (410): AUC 0.944 [0.927, 0.959]
+  CP/KP (336) vs TCE-like windows (1146): AUC 0.904 [0.884, 0.922]
+
+== depth bins (table depth), s_gbm_max, CP/KP vs all FP/FA
+       0-1000   ppm: 109 pos, 27 neg, AUC 0.612 [0.496, 0.715]
+    1000-3000   ppm: 111 pos, 59 neg, AUC 0.536 [0.447, 0.627]
+    3000-10000  ppm: 78 pos, 83 neg, AUC 0.588 [0.496, 0.674]
+   10000-inf    ppm: 38 pos, 46 neg, AUC 0.598 [0.475, 0.718]
+
+== depth and Tmag of the scored CP/KP and FP/FA
+  depth_ppm: CP/KP median 1678.5 (IQR 855.2-5111.8); FP/FA median 4085.7 (IQR 1760.0-8767.4); KS D = 0.278, p = 1.9e-09
+  tmag: CP/KP median 10.1 (IQR 9.0-11.3); FP/FA median 10.4 (IQR 9.8-11.7); KS D = 0.188, p = 0.00015
+
+== sanity windows (out of transit, positives' light curves), s_gbm window scores
+  sanity (50): median 0.914, 10-90% 0.586-0.989
+  FP/FA objects: median 0.975, 10-90% 0.523-0.997
+  TCE-like: median 0.099, 10-90% 0.005-0.780
+  CP/KP objects: median 0.988, 10-90% 0.876-0.998
+
+Salinas et al. overlap: their CNN was trained on synthetic light curves only and its 120 real validation TOIs are not listed in the paper, so the overlap could not be checked (RULES section 4).
