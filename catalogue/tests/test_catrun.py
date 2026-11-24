@@ -81,3 +81,13 @@ def test_duotransit_keeps_true_period_and_third_event():
     if "t3" in cols:                                                    # a third transit was found and accepted
         assert rows[k2 - 1][3] in ("yes", "unconstrained")
         assert tabs[1][0] == "ref_third"
+
+
+def test_stated_period_check(searched):
+    _, d, (row, ev, ctx) = searched
+    exc, nep = catrun.period_excluded(ctx, d["t_cat"], P)
+    assert not exc and nep > 5
+    assert catrun.period_excluded(ctx, d["t_cat"], 13.37)[0]             # a wrong period with clean epochs
+    cols, tabs = catrun.finish_row(d, ctx, ev, {e["event_id"] for e in ev if e["passes"]})
+    assert catrun.alias_status(ctx, tabs, P)["single"] != "excluded"
+    assert catrun.alias_status(ctx, tabs, 13.37)["single"] == "not an alias"

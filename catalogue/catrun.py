@@ -90,6 +90,35 @@ def search_row(d, sectors, other_times=()):
     return row, events, ctx
 
 
+def period_excluded(ctx, t_cat, P):
+    """Step 1 at one stated period, exactly as the calibration tested a true period
+    (round2/harness.score, truth_excluded): does any epoch t_cat + k P (k != 0) in the data exclude?
+    Returns (excluded, number of epochs inside the data span)."""
+    T, F, dur = ctx["T"], ctx["F"], ctx["dur"]
+    k, ep = mc.epochs(t_cat, P, T.min(), T.max())
+    ep = ep[k != 0]
+    if not ep.size:
+        return False, 0
+    off = np.arange(-dump.M_OFF, dump.M_OFF + 1) * dur * dump.STEP_FRAC
+    c = ep[:, None] + off[None, :]
+    dd, fr, _ = core.box_stats(T, F, c.ravel(), dur)
+    ed = core.edge_distance(core.gap_edges(T), c.ravel())
+    ex = rule2.epoch_excludes(dd.reshape(c.shape), fr.reshape(c.shape), ed.reshape(c.shape), ctx["sig"],
+                              ctx["depth0"], ctx["derr"], h2.FROZEN, ctx["ref_measured"], ctx["multi"])
+    return bool(ex.any()), int(ep.size)
+
+
+def alias_status(ctx, tables, P):
+    """Status of a stated period in each alias table of the row: the status of alias n = round(dT/P)
+    if |dT - nP| < dur/2 (as the calibration's truth test), else 'not an alias'."""
+    out = {}
+    for kind, t1, t2, rows in tables:
+        dT = t2 - t1
+        n = int(round(dT / P))
+        out[kind] = rows[n - 1][2] if 1 <= n <= len(rows) and abs(dT - n * P) < ctx["dur"] / 2 else "not an alias"
+    return out
+
+
 def table_rows(ctx, ta, tb, derr_event):
     """T1 alias table through two transit times: [(n, P, status)]."""
     t1, t2 = sorted([float(ta), float(tb)])
