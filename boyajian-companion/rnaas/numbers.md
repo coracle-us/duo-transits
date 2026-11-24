@@ -47,3 +47,27 @@
 | No TESS sector in window 3; next S120-S121 | `../RESULTS_LOCAL.md`, `../tess_sectors.log` |
 | AAVSO: 22,234 points; 19 visits on six nights from three observers; 43% coverage; dchi2 -3.4 to +13.3; window 3's 2023 March return +19.4 on 15% | `../RESULTS_AAVSO.md`, `../ground_check_aavso_run.log` |
 | ASAS-SN curve ends 2025 June | `../RESULTS_ASASSN.md` |
+
+## Submitted 2026-11-24 as AAS84040
+
+- Submitted through the AAS Peer Review System (aas.msubmit.net) from Jon's signed-in Chrome, driven by Claude with
+  Jon's approval at each decision; the system answered "Manuscript Approved (AAS84040)".
+- **Submitted text:** `rnaas.tex` at commit `7ef61ff` (tag `aas84040-submitted`; the file was last changed in
+  `a74c9a0`). Files: `rnaas.tex` (Manuscript file), `boyajian_alias_figure.png` (Figure file), `aastex701.cls` v7.0.1
+  (Other LaTeX file). All three are byte-identical to main at that commit (the class file to the copy in
+  `singles/rnaas/arxiv/McBee_AAS82207_arXiv.tar.gz`). No bst file (the note uses `thebibliography`) and no ORCID icon
+  file; AAS's build showed the icon anyway.
+- **Merged PDF:** built by AAS, 3 pages; all three pages checked against our build (title, affiliation, abstract with
+  0.44%, Sections 1-4, Figure 1, acknowledgments with both DOIs, AI statement, nine references). Approved on Jon's yes.
+- **Form fields:**
+  - corridor: The Solar System, Exoplanets, and Astrobiology (Jon's choice; the K2 notes used Stars and Stellar Physics);
+  - author: Mr. Jon McBee, Independent researcher, filled from Jon's AAS profile;
+  - title: the LaTeX title with `$\sim$` written as `~`;
+  - abstract: `abstract_plaintext.txt`;
+  - ethics: "Yes, I agree" (ticked on Jon's yes);
+  - AI usage: Yes, described as "Anthropic's Claude (Claude Code and claude.ai, with Claude Opus 5.5) wrote and ran
+    the analysis code under my supervision and drafted and edited the note. I reviewed the text, checked every number
+    against the saved outputs and every reference against ADS, and take full responsibility for the content. The
+    figure was made by the analysis code from the data; no AI-generated figures.";
+  - MAST DOIs: 10.17909/T9488N, 10.17909/t9-nmc8-f686; IPAC: No; digital assets: none; funding: No;
+  - UAT: Exoplanet detection methods (489), Transit photometry (1709).
