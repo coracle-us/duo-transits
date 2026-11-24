@@ -201,3 +201,38 @@ AAS-counted text 1274 (about 1320 by AAS's count, using the AAS82207 calibration
 **Decision 2026-10-15:** the shortened text (commit 3a709d7) is held. Jon will wait for the AAS quality check; if it
 bounces on length, upload `private/AAS82225_correction/ms.tex` (= 3a709d7) plus a fresh ms.pdf from Overleaf
 (`k2_note_short.tex`). The cover email draft is `private/AAS82225_correction/reply_to_alex_length.txt`.
+
+## AAS82225 revision (2026-11-23): provenance of the new and changed numbers
+
+Lintott declined AAS82225 on 2026-11-15 and invited a revision with (1) a thorough literature search and (2) a blind
+transit search. Plan, rules and every post-hoc change: `k2singles/revision2/PLAN.md`. Counts below are recomputed by
+`k2singles/revision2/note_numbers.py` -> `revision2/results/note_numbers.txt` unless another source is given.
+Word count (`singles/rnaas/aas_wordcount.py`): abstract 138, AAS-counted text 1261.
+
+| Number in the note | Source |
+|---|---|
+| 164 events on 163 stars, no cut | `k2singles/data/k2_singles.csv`; PLAN.md "Sample" |
+| Thresholds: 0.05 false events per star; SNR 53 (K2), 60 (TESS) | `revision2/results/thresholds.json` (S* 53.25, 59.96) |
+| BLS threshold: 99th percentile of inverted blocks' max SDE; 470 blocks, 5 inverted above it | `note_numbers.txt`; `search_periodic.py` |
+| 163 of 164 catalogued events recovered; 112 stars significant | `revision2/results/compare.csv`; the one miss is one of EPIC 211939692's two events (PLAN.md, 2026-11-15 entry) |
+| 11 of 15 Table 1 periods recovered blindly; misses 211489484, 211503363, 211924561, 246194159 | `revision2/results/compare_table1.csv` |
+| Misses explained: below S* (211924561, 211503363); primaries + secondaries in one family (211489484, 246194159) | PLAN.md "What the blind first stage still found"; families in `data/periodic/211489484.json` (T 192.62, 208.61, 1261.98, 1277.98) and `246194159.json` (747.37 primary, 810.91 secondary, mean D 10.84 h) |
+| Post-hoc test: recovers 211489484 and, weakly, 211924561 (own control 6 vs support 5); 11 real vs 7 inverted stars | `revision2/results/link_calibrated.csv`; PLAN.md run record 2026-11-22 |
+| 47 other stars with blind signals (41 new-lead stars + 8 post-hoc, 2 overlap) | `revision2/results/new_leads.csv`, `link_calibrated.csv`; `note_numbers.txt` |
+| 78 VizieR catalogues | `revision2/results/literature/vizier_catalogues.csv` (93 IDs, 78 exist) |
+| 203 sources classified twice; one period disagreement settled | `table1_classes_final.csv` (97) + `table1_vizier_classes_final.csv` (106); PLAN.md (Wang+2021 for 202071902) |
+| Libralato+2016 lists 211892898 at 4.4" | `recall.csv`; PLAN.md (4.35") |
+| 8 of 15 periods new (7 no prior, 1 estimate only); 5 agree; 2 differ | PLAN.md "Per-star verdicts, Table 1, search plus fixed-list VizieR" |
+| Kovács 2020 estimate P ≳ 58 d | PLAN.md verdict table |
+| TOI-5560 TCEs 58.28, 31.25, 58.54, 10.28 d; scattered-light step BTJD 2509.8 (= BJD 2459509.8) | `revision2/results/literature/dv_tce_check.txt` (`dv_tce_check.py`) |
+| 211489484 TCE 106.94 d joins two primaries ten cycles apart; four others exclude it | `dv_tce_check.txt` |
+| 211489484 0.24-d TCE = 5 cycles of 20.79 c/d; neighbour 26" (Gaia DR3 651067327828913280, DSCT\|GDOR\|SXPHE) | `revision2/results/literature/tce024_check.txt` (`tce024_check.py`) |
+| SPOC DV references Jenkins+2016 (2016SPIE.9913E..3EJ), Twicken+2018 (2018PASP..130f4502T) | ADS, checked 2026-11-23 |
+
+Unchanged from the submitted text (sources above in this file): every period, T0 and alias list; TOI-5560 shape, Gaia
+RV limit and predicted transits; 211503363 radius; HD 220967 eclipse depths and e ≥ 0.58; 211892898 SB1 match;
+202126877 depths and ratio. Dropped for length: catalogued-event audit (123/144, now replaced by the blind recovery),
+C16 masking detail, HD 220967 spectral type, the VSX periods of the C0 binaries, 202126877's K2 timing offset and
+EVEREST/K2SFF secondary limit.
+
+Response letter: `k2singles/rnaas/response_letter.md`.
