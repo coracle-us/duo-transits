@@ -15,3 +15,10 @@
   it. PR 28 is squash-merged so that `main` never holds it. The old commit remains reachable through
   the pull request's own reference on GitHub.
 
+
+## Deviations approved after the freeze
+
+- 2026-11-23, Jon ("Agreed, split the vetters into batches"): each of the two vetters is several fresh
+  agents, one per batch of sheets, with the same instructions (`VETTING.md`); no agent sees a verdict
+  of the other vetter. The pre-registration says "two fresh agents". Reason: about 1,900 sheets do not
+  fit in one agent's context.
