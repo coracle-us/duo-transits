@@ -1,0 +1,23 @@
+## Brasseur2019: 1 match(es) for bibstem:ascl year:2019 "astrocut"
+  2019ascl.soft05007B  p.ascl:1905.007  Brasseur, C. E.; Phillip, Carlita; Fleming, Scott W.  | Astrocut: Tools for creating cutouts of TESS images  | pub: Astrophysics Source Code Library  doi: 
+## Caldwell2020: 1 match(es) for author:"^Caldwell, D" year:2020 bibstem:RNAAS volume:4 page:201
+  2020RNAAS...4..201C  p.201  Caldwell, Douglas A.; Tenenbaum, Peter; Twicken, Joseph D.  | TESS Science Processing Operations Center FFI Target List Products  | pub: Research Notes of the American Astronomical Society  doi: 10.3847/2515-5172/abc9b3
+## Gaia2023: 1 match(es) for year:2023 bibstem:A&A volume:674 page:A1
+  2023A&A...674A...1G  p.A1  Gaia Collaboration; Vallenari, A.; Brown, A. G. A.  | Gaia Data Release 3. Summary of the content and survey properties  | pub: Astronomy and Astrophysics  doi: 10.1051/0004-6361/202243940
+## Ginsburg2019: 1 match(es) for author:"^Ginsburg" year:2019 bibstem:AJ volume:157 page:98
+  2019AJ....157...98G  p.98  Ginsburg, Adam; Sipőcz, Brigitta M.; Brasseur, C. E.  | astroquery: An Astronomical Web-querying Package in Python  | pub: The Astronomical Journal  doi: 10.3847/1538-3881/aafc33
+## Hippke2019: 1 match(es) for author:"^Hippke" year:2019 bibstem:AJ volume:158 page:143
+  2019AJ....158..143H  p.143  Hippke, Michael; David, Trevor J.; Mulders, Gijs D.  | Wōtan: Comprehensive Time-series Detrending in Python  | pub: The Astronomical Journal  doi: 10.3847/1538-3881/ab3984
+## Huang2020: 1 match(es) for author:"^Huang, C" year:2020 bibstem:RNAAS volume:4 page:204
+  2020RNAAS...4..204H  p.204  Huang, Chelsea X.; Vanderburg, Andrew; Pl, Andras  | Photometry of 10 Million Stars from the First Two Years of TESS Full Frame Images: Part I  | pub: Research Notes of the American Astronomical Society  doi: 10.3847/2515-5172/abca2e
+## Lightkurve2018: 1 match(es) for bibstem:ascl year:2018 title:"Lightkurve"
+  2018ascl.soft12013L  p.ascl:1812.013  Lightkurve Collaboration; Cardoso, José Vinícius de Miranda; Hedges, Christina  | Lightkurve: Kepler and TESS time series analysis in Python  | pub: Astrophysics Source Code Library  doi: 
+## Prsa2022: 1 match(es) for author:"^Prsa" year:2022 bibstem:ApJS volume:258 page:16
+  2022ApJS..258...16P  p.16  Prša, Andrej; Kochoska, Angela; Conroy, Kyle E.  | TESS Eclipsing Binary Stars. I. Short-cadence Observations of 4584 Eclipsing Binaries in S  | pub: The Astrophysical Journal Supplement Series  doi: 10.3847/1538-4365/ac324a
+## Salinas2026: 1 match(es) for identifier:"arXiv:2610.24882"
+  2026arXiv261024882S  p.arXiv:2610.24882  Salinas, Helem; Brahm, Rafael; Olmschenk, Greg  | Single-Transit Parameter Estimation with Calibrated Uncertainties  | pub: arXiv e-prints  doi: 
+## Seager2003: 1 match(es) for author:"^Seager" year:2003 bibstem:ApJ volume:585 page:1038
+  2003ApJ...585.1038S  p.1038  Seager, S.; Mallén-Ornelas, G.  | A Unique Solution of Planet and Star Parameters from an Extrasolar Planet Transit Light Cu  | pub: The Astrophysical Journal  doi: 10.1086/346105
+## Watson2006: 1 match(es) for author:"^Watson, C" year:2006 bibstem:SASS volume:25 page:47
+  2006SASS...25...47W  p.47  Watson, C. L.; Henden, A. A.; Price, A.  | The International Variable Star Index (VSX)  | pub: Society for Astronomical Sciences Annual Symposium  doi: 
+## arXiv 2610.24882 (export.arxiv.org): {'title': 'Single-Transit Parameter Estimation with Calibrated Uncertainties', 'updated': '2026-10-17T21:40:39Z', 'journal_ref': '', 'doi': '', 'authors': ['Helem Salinas', 'Rafael Brahm', 'Greg Olmschenk', 'Melinda Soares-Furtado']}
