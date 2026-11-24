@@ -214,6 +214,9 @@ It is now the current scope (see the box at the top of this file).
 - EB note (EPIC 202126877, `eb_depth_evolution/rnaas/`) **submitted 2026-11-24 as AAS84041** (tag `aas84041-submitted`;
   corridor Stars and Stellar Physics). It cites the K2 revision (AAS84033) as the companion note; see
   `eb_depth_evolution/rnaas/numbers.md`, "Submitted 2026-11-24 as AAS84041".
+- Be-star variability vs WISE disk excess RNAAS note (`be-star-pulsations/rnaas/`) **submitted 2026-11-24 as
+  AAS84043** (tag `aas84043-submitted`; corridor Stars and Stellar Physics); see
+  `be-star-pulsations/rnaas/numbers.md`, "Submitted 2026-11-24 as AAS84043".
 - ExoFOP-ready ephemerides are in `singles/writeups/exofop_ephemeris_updates.md`, for
   someone with an account to submit.
 

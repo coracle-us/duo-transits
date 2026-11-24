@@ -1,6 +1,6 @@
 # Be-star RNAAS draft: provenance of every number
 
-Draft: `rnaas/ms.tex`, v3 of 2026-11-24, ready to submit (not submitted). v3 = v2 (revised after
+Draft: `rnaas/ms.tex`, v3 of 2026-11-24. **Submitted 2026-11-24 as AAS84043** (tag `aas84043-submitted`; see the end of this file). v3 = v2 (revised after
 `REVIEW_mythos.md` and `REVIEW_mythos_v2.md`) plus an AI note in the figure caption and a trim to
 fit the 1,500-word total (see "v3" at the end of this file).
 
@@ -159,3 +159,25 @@ Time domain astronomy 2109. All four match their names and none has a change not
   without its title (ASCL id kept).
 - Test build with `tectonic` and `aastex701.cls`: 4 pages, no undefined references, figure on one page.
 
+## Submitted 2026-11-24 as AAS84043
+
+- Submitted through the AAS Peer Review System (aas.msubmit.net) from Jon's signed-in Chrome, driven by Claude on
+  Jon's instruction; the ethics statement was ticked on Jon's explicit yes. The system answered
+  "Manuscript Approved (AAS84043)".
+- **Submitted text:** `rnaas/ms.tex` at main commit `104032a` (tag `aas84043-submitted`; the file was last changed in
+  `35ba2d0`). Files: `ms.tex` (Manuscript file), `rnaas_fig1.pdf` (Figure file), `aastex701.cls` v7.0.1 (Other LaTeX
+  file, the copy in `singles/rnaas/arxiv/McBee_AAS82207_arXiv.tar.gz`). `ms.tex` and the figure are byte-identical to
+  main at that commit.
+- **Merged PDF:** built by AAS, 4 pages; checked page by page against our tectonic build (title, author with ORCID
+  icon, abstract, keywords, Sections 1-3, Figure 1 with the Claude caption line, acknowledgments with the five DOIs,
+  facilities, software with matplotlib, AI statement, 13 references). Approved.
+- **Form fields:**
+  - corridor: Stars and Stellar Physics;
+  - author: Mr. Jon McBee, Independent researcher, United States (from Jon's AAS profile);
+  - title: from `ms.tex`; abstract: `rnaas/abstract_plaintext.txt` (form count 148 of 150);
+  - ethics: "Yes, I agree";
+  - AI usage: Yes, with the note's AI disclosure paragraph verbatim (no model version given);
+  - MAST DOIs: 10.17909/t9-nmc8-f686, 10.17909/t9-wpz1-8s54, 10.17909/t9-r086-e880, 10.17909/j2yt-t417;
+  - IPAC: Yes (NEOWISE-R from IRSA; the form takes no DOI, and 10.26131/IRSA144 is cited in the note);
+  - digital assets: none; funding: No;
+  - UAT: Be stars (142), Circumstellar disks (235), Stellar pulsations (1625), Time domain astronomy (2109).
