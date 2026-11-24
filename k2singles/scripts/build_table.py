@@ -33,7 +33,7 @@ ROWS = [
     (211489484, 6951741, "differs", [1], "C5, C18; S7, S46", "TCEs$^h$", "post hoc", "sec.\\ 0.194"),
     (211411112, 437034781, "agrees", [1], "C5, C16; S46", "62.59484(3)$^a$", "yes", "Sanders 617"),
     (211892898, 184895645, "agrees", [1], "C5, C16, C18", "72.53(3)$^e$", "yes", "Gaia SB1"),
-    (202126877, 86491361, "agrees", [1], "S43--45, S71--72", "21.78$^b$", "yes", "deepening$^f$"),
+    (202126877, 86491361, "agrees", [1], "S43--45, S71--72", "21.78$^b$", "yes", "sec.\\ 0.33; deepening$^f$"),
     (202072917, 308255000, "agrees", [1], "C0; S6, S43, S45", "34.744$^b$, 34.7457$^c$", "yes", ""),
     (202071902, 57051340, "agrees", [1], "C0; S44, S71", "22.859(15)$^d$", "yes", ""),
 ]
@@ -47,7 +47,7 @@ def fmt(p, s):
     return f"{p:.{nd}f}({round(s * 10 ** nd):d})"
 
 
-GROUPS = {"none": "No prior period", "estimate": "Prior estimate only", "differs": "Published periods differ",
+GROUPS = {"none": "No prior orbital period", "estimate": "Prior estimate only", "differs": "Published periods differ",
           "agrees": "Published period agrees"}
 
 
