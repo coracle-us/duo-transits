@@ -1,0 +1,13 @@
+MMA stars with a period: 34792 | with a Gaia match: 34778
+Teff 4500-6000 + parallax/extinction      23722 stars,  447 confirmed hosts
++ MS +-1 mag                              22012 stars,  439 confirmed hosts
++ d<=1300                                 19849 stars,  424 confirmed hosts
++ [M/H]>-0.4                              16951 stars,  406 confirmed hosts
+B26: 12525 stars, 400 hosts in the final region
+MS half-width 1.00 mag:  16951 stars, 406 hosts
+MS half-width 0.75 mag:  16414 stars, 395 hosts
+MS half-width 0.50 mag:  14117 stars, 351 hosts
+MS half-width 0.40 mag:  12392 stars, 323 hosts
+MS half-width 0.30 mag:  10223 stars, 264 hosts
+MS -1..+0.5 mag (asymmetric): 15356 stars
+[M/H] missing among Teff-cut stars: 0 | dist>1300: 3324 | [M/H]<=-0.4: 4272

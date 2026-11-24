@@ -1,0 +1,12 @@
+MS locus (cubic in (BP-RP)0): [3.7705, -16.1282, 25.8784, -8.141]
+[C] region before period cut: 406 hosts / 16951 stars (B26: 400 / 12525)
+  1<P<=20 own fit : hosts 192, non-hosts 8992; median r 0.906 vs 0.777; offset +16.7% (68% +11.8 to +18.3; 95% +6.4 to +21.1); KS D 0.184, p 4.9e-06; coef [2.8494, -0.7558, -1.1733, -0.5518]; coef sd [0.0068, 0.0199, 0.0621, 0.0709]
+  1<P<=20 B26 coef: hosts 192, non-hosts 8992; median r 0.912 vs 0.783; offset +16.6% (68% +11.7 to +18.6; 95% +6.6 to +21.3); KS D 0.181, p 7.3e-06; coef [2.846, -0.769, -1.211, -0.559]
+  20<P<=30        : hosts 161, non-hosts 5341; median r 1.304 vs 1.283; offset +1.7% (68% +0.5 to +3.2; 95% -1.1 to +4.3); KS D 0.061, p 0.58; coef [2.8494, -0.7558, -1.1733, -0.5518]
+[C+K] region before period cut: 555 hosts / 16951 stars (B26: 400 / 12525)
+  1<P<=20 own fit : hosts 269, non-hosts 8915; median r 0.837 vs 0.777; offset +7.7% (68% +6.1 to +12.2; 95% +4.2 to +16.3); KS D 0.145, p 3.1e-05; coef [2.8496, -0.7553, -1.1751, -0.5539]; coef sd [0.0066, 0.0201, 0.0618, 0.0705]
+  1<P<=20 B26 coef: hosts 269, non-hosts 8915; median r 0.848 vs 0.782; offset +8.5% (68% +6.1 to +12.1; 95% +4.1 to +16.2); KS D 0.142, p 4.5e-05; coef [2.846, -0.769, -1.211, -0.559]
+  20<P<=30        : hosts 216, non-hosts 5286; median r 1.303 vs 1.283; offset +1.6% (68% -0.1 to +2.6; 95% -1.5 to +3.7); KS D 0.045, p 0.77; coef [2.8496, -0.7553, -1.1751, -0.5539]
+PASS (counts within 10%, offset in 8.7-15.9%): {'C': False, 'C+K': False}
+  [C] sensitivity, GSP-Phot distance: 1<P<=20: hosts 195, non-hosts 9478; median r 0.912 vs 0.781; offset +16.9% (68% +12.1 to +18.8; 95% +8.3 to +21.3); KS D 0.195, p 8.3e-07; coef [2.8441, -0.7739, -1.1823, -0.5461]
+  [C+K] sensitivity, GSP-Phot distance: 1<P<=20: hosts 277, non-hosts 9396; median r 0.845 vs 0.780; offset +8.3% (68% +6.4 to +12.3; 95% +4.4 to +16.5); KS D 0.153, p 6.2e-06; coef [2.8442, -0.7733, -1.1839, -0.5475]

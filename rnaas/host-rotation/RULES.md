@@ -64,3 +64,9 @@ that have a period, out of all stars each catalogue analysed (with and without a
 ## Changes after the Santos run
 
 (none yet)
+
+## Step 2 outcome (2026-11-24): did not pass; Santos step not run
+
+`results/mma.txt`, `results/mma.json`, `results/mma_cutflow.txt`. Confirmed-only hosts: 192 hosts (B26 188) but
+8,992 non-hosts (B26 7,274, +24%); offset +16.7% (B26 interval 8.7-15.9%). Confirmed + candidates: 269 hosts
+(+43%), offset +7.7%. Neither passes. Stopped here for Jon, as the brief asks.
