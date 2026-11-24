@@ -1,0 +1,75 @@
+## 1. SPOC 2-min PDCSAP, eclipses masked
+
+S7: 16343 good cadences, 15983 after masking eclipses, rms 40807 ppm
+   LS peaks (period d, power): 9.60714 (0.001), 0.08725 (0.001), 0.28856 (0.001)
+   fold at P = 0.24051265 d: -4540 +- 1099 ppm;  at 2P, phase 0: -3039 +- 1558, phase 0.5: -5475 +- 1550
+S44: 15211 good cadences, 15097 after masking eclipses, rms 39183 ppm
+   LS peaks (period d, power): 6.15147 (0.001), 9.41121 (0.001), 0.21004 (0.001)
+   fold at P = 0.24051265 d: -4856 +- 1075 ppm;  at 2P, phase 0: -5963 +- 1523, phase 0.5: -3250 +- 1524
+S45: 15515 good cadences, 15515 after masking eclipses, rms 47779 ppm
+   LS peaks (period d, power): 0.98257 (0.001), 0.06398 (0.001), 0.41236 (0.001)
+   fold at P = 0.24051265 d: -5848 +- 1311 ppm;  at 2P, phase 0: -3617 +- 1839, phase 0.5: -7590 +- 1864
+S46: 16283 good cadences, 15923 after masking eclipses, rms 40854 ppm
+   LS peaks (period d, power): 5.15779 (0.001), 0.81919 (0.001), 0.63033 (0.001)
+   fold at P = 0.24051265 d: -7255 +- 1099 ppm;  at 2P, phase 0: -7470 +- 1555, phase 0.5: -6413 +- 1554
+all four sectors: fold at P: -5638 +- 575 ppm
+S44-46 combined LS peak: 0.407293 d (power 0.000); 2x = 0.814586 d
+
+## 2. Neighbours within 60" (VizieR, CfA mirror)
+
+I/355/gaiadr3: 9 rows
+   r =   0.8"  dRA   -0.2"  dDec   -0.6"  Source=651067323532471168  Plx=2.9607  RUWE=0.987  Gmag=16.351347  BPmag=17.623903  RPmag=15.22961  VarFlag=NOT_AVAILABLE
+   r =   7.6"  dRA   -2.2"  dDec   -7.3"  Source=651067327828912896  Plx=0.7613  RUWE=0.945  Gmag=16.673353  BPmag=17.086033  RPmag=16.090036  VarFlag=NOT_AVAILABLE
+   r =  26.3"  dRA   +2.4"  dDec  -26.0"  Source=651067327828913280  Plx=0.3041  RUWE=1.139  Gmag=15.80941  BPmag=15.963822  RPmag=15.541679  VarFlag=VARIABLE
+   r =  43.7"  dRA  -25.4"  dDec  -35.5"  Source=651067327828913920  Plx=0.759  RUWE=1.118  Gmag=14.489699  BPmag=14.794729  RPmag=14.014563  VarFlag=NOT_AVAILABLE
+   r =  39.3"  dRA  -37.1"  dDec  -12.7"  Source=651067392251945216  Plx=-0.2191  RUWE=0.903  Gmag=19.93912  BPmag=20.668379  RPmag=18.985825  VarFlag=NOT_AVAILABLE
+   r =  30.2"  dRA  -30.0"  dDec   -1.8"  Source=651067396547497088  Plx=0.778  RUWE=0.993  Gmag=20.548826  BPmag=20.494318  RPmag=19.541025  VarFlag=NOT_AVAILABLE
+   r =  56.8"  dRA  +55.8"  dDec  +10.4"  Source=651067426611688448  Plx=0.4131  RUWE=1.047  Gmag=18.435608  BPmag=19.057505  RPmag=17.764921  VarFlag=NOT_AVAILABLE
+   r =  36.5"  dRA  +32.7"  dDec  +16.6"  Source=651067426611688704  Plx=1.1622  RUWE=1.041  Gmag=20.211065  BPmag=20.8433  RPmag=19.028183  VarFlag=NOT_AVAILABLE
+   r =  54.0"  dRA  +39.0"  dDec  +38.0"  Source=651067495331169024  Plx=2.0819  RUWE=0.954  Gmag=19.365084  BPmag=20.885632  RPmag=18.119133  VarFlag=NOT_AVAILABLE
+
+## 3. Variability catalogues at the neighbour (Gaia DR3 651067327828913280), 3"
+
+I/355/gaiadr3: _r=0.0; DR3Name=Gaia DR3 651067327828913280; RA_ICRS=126.02336039141; DE_ICRS=12.9805850322; SolID=1636148068921376768; Source=651067327828913280; RandomI=160748342; e_RA_ICRS=0.038; e_DE_ICRS=0.0306; Plx=0.3041; e_Plx=0.04820000007748604; RPlx=6.3049; PM=12.602; pmRA=-4.631; e_pmRA=0.04699999839067459; pmDE=-11.72; e_pmDE=0.03500000014901161; RADEcor=-0.2979; RAPlxcor=-0.0719; RApmRAcor=-0.1816; RApmDEcor=0.1049; DEPlxcor=-0.2674; DEpmRAcor=-0.0202; DEpmDEcor=0.1076; PlxpmRAcor=0.4156; PlxpmDEcor=-0.3222; pmRApmDEcor=-0.3486; NAL=282; NAC=0; NgAL=276; NbAL=6; gofAL=3.1899; chi2AL=366.5; epsi=0.145; sepsi=2.316999912261963; Solved=31; APF=0; nueff=1.6460000276565552; MatchObsA=33; Nper=17; amax=0.071195; MatchObs=35; NewMatchObs=10; MatchObsrm=0; IPDgofha=0.027899999171495438; IPDgofhp=122.0; IPDfmp=0; IPDfow=0; RUWE=1.139; SDSk1=0.22499999403953552; SDSk2=0.3959999978542328; SDSk3=0.30799999833106995; SDSk4=0.6119999885559082; SDMk1=-118.409; SDMk2=27.581; SDMk3=-26.967; SDMk4=-36.019; Dup=0; o_Gmag=297; FG=8936.81384; e_FG=14.237000465393066; RFG=627.719970703125; Gmag=15.80941; e_Gmag=0.003253; o_BPmag=33; FBP=5622.0; e_FBP=34.5099983215332; RFBP=162.91000366210938; BPmag=15.963822; e_BPmag=0.007225; o_RPmag=31; FRP=4813.7998046875; e_FRP=35.35499954223633; RFRP=136.16000366210938; RPmag=15.541679; e_RPmag=0.008825; E(BP/RP)=1.168; NBPcont=0; NBPblend=5; NRPcont=0; NRPblend=3; Mode=0; BP-RP=0.422143; BP-G=0.154412; G-RP=0.267731; VarFlag=VARIABLE; GLON=211.32539815236; GLAT=26.33158117644; ELON=125.19921957539; ELAT=-6.16582255656; QSO=0; Gal=0; NSS=0; XPcont=1; XPsamp=0; RVS=0; EpochPh=1; EpochRV=0; MCMCGSP=1; MCMCMSC=1; And=0; PQSO=0.0; PGal=0.0; PSS=0.99984; Teff=7336.1; b_Teff=7244.9; B_Teff=7425.5; logg=4.0134; b_logg=3.9277; B_logg=4.0817; [Fe/H]=-1.5127; b_[Fe/H]=-1.7723; B_[Fe/H]=-1.3347; Dist=4118.144; b_Dist=3745.1782; B_Dist=4670.8447; A0=0.1217; b_A0=0.08420000225305557; B_A0=0.1571; AG=0.10980000346899033; b_AG=0.07580000162124634; B_AG=0.14190000295639038; E(BP-RP)=0.05920000001788139; b_E(BP-RP)=0.040800001472234726; B_E(BP-RP)=0.07649999856948853; Lib=MARCS; PS1coid=1252726927; PS1=123571260234057216; dPS1=0.03174; nPS1=1; mPS1=0; f_PS1=40; SDSS13coid=180520603; SDSS13=1237667783883686000; dSDSS13=0.043601; nSDSS13=1; mSDSS13=0; f_SDSS13=40; URAT1=URAT1-515149184; dURAT1=0.034332; f_URAT1=8; URAT1oid=68262430; nURAT1=1; mURAT1=0; AllWISE=J082405.60+125850.2; dAllWISE=0.074882; f_AllWISE=8; AllWISEoid=461672901; nAllWISE=1; mAllWISE=0; APASS9coid=39014115; APASS9=5337890; dAPASS9=0.574085; nAPASS9=1; mAPASS9=0; f_APASS9=8; GSC23=N900003941; dGSC23=0.189592; f_GSC23=8; GSC23coid=628946731; nGSC23=1; mGSC23=0; 2MASS=08240561+1258501; d2MASS=0.131885; f_2MASS=8; 2MASScoid=332224391; n2MASS=1; m2MASS=0; RAJ2000=126.02338151434; DEJ2000=12.98063712167; e_RAJ2000=0.759365; e_DEJ2000=0.553793; RADEcorJ2000=-0.3516
+I/358/varisum: _r=0.0; Source=651067327828913280; RA_ICRS=126.02336039141; DE_ICRS=12.9805850322; NG=35; TimeG=2169.780282; DurG=966.0509; Gmagmin=15.742063; Gmagmax=15.846065; Gmagmean=15.80921; Gmagmed=15.817285; dGmag=0.104003; tdGmag=0.091595; s_Gmagmean=0.028371; GmagSkew=-0.610124; GmagKur=-0.68277; GmagMAD=0.029557; GmagAbbe=1.413138; iqrGmag=0.046974; GmagStet=3.928074; GmagS/N=8.922605; RGmag=27.359455; NBP=33; TimeBP=2162.589008; DurBP=966.05096; BPmagmin=15.877881; BPmagmax=16.015429; BPmagmean=15.962462; BPmagmed=15.974675; dBPmag=0.137548; tdBPmag=0.120537; s_BPmag=0.038125; BPmagSkew=-0.728172; BPmagKur=-0.528105; BPmagMAD=0.03052; BPmagAbbe=1.351664; iqrBPmag=0.05861; BPmagStet=1.675882; BPmagS/N=4.518102; RBPmag=13.425397; NRP=31; TimeRP=2169.56118; DurRP=966.05096; RPmagmin=15.272077; RPmagmax=15.624152; RPmagmean=15.526479; RPmagmed=15.537488; dRPmag=0.352076; tdRPmag=0.111112; s_RPmag=0.057508; RPmagSkew=-2.895688; RPmagKur=12.790949; RPmagMAD=0.040808; RPmagAbbe=1.214589; iqrRPmag=0.045666; RPmagStet=2.598169; RPmagS/N=6.549723; RRPmag=36.841507; VCR=1; VRRLyr=0; VCep=0; VPN=0; VST=0; VLPV=0; VEB=0; VRM=0; VMSO=0; VAGN=0; Vmicro=0; VCC=0
+I/358/vclassre: _r=0.0; recno=9534621; Source=651067327828913280; SolID=375316653866487564; Classifier=nTransits:5+; Class=DSCT|GDOR|SXPHE; ClassSc=0.88863456; RA_ICRS=126.02336039141; DE_ICRS=12.9805850322
+B/vsx/vsx: _r=0.21; recno=2098899; OID=3790196; Name=Gaia DR3 651067327828913280; V=0; RAJ2000=126.02337646484375; DEJ2000=12.980640411376953; Type=DSCT|GDOR|SXPHE; max=15.74; n_max=G; min=15.85; n_min=G; Sp=A
+J/AJ/156/241/table4: _r=0.02; recno=2323560; ATOID=J126.0233+12.9805; RAJ2000=126.02336; DEJ2000=12.98059; fp-c-pts=137; fp-o-pts=110; fp-LSper=0.050609; fp-origLogFAP=17.0609; fp-origRMS=0.035234; fp-magrms-c=0.03371; fp-magrms-o=0.037141; fp-lngfitper=24.372189; fp-lngfitrms=0.032777; fp-lngfitchi=2.062286; fp-Nfourl=4; fp-lngmin-c=15.902847; fp-lngmax-c=15.858392; fp-lngmin-o=15.866969; fp-lngmax-o=15.815533; fp-lngfitrms-c=0.032458; fp-lngfitrms-o=0.033308; fp-lngfitchi-c=2.83282; fp-lngfitchi-o=1.10262; fp-lngconst-c=15.88122; fp-lngconst-o=15.846692; fp-sin1-c=0.005985; fp-cos1-c=-0.008238; fp-sin1-o=0.001578; fp-cos1-o=-0.01399; fp-PPFAPlong1=18.2399; fp-sin2-c=-0.005101; fp-cos2-c=0.001173; fp-sin2-o=0.007458; fp-cos2-o=-0.002408; fp-PPFAPlong2=18.0913; fp-sin3-c=-0.00376; fp-cos3-c=0.001259; fp-sin3-o=-0.002821; fp-cos3-o=0.006415; fp-PPFAPlong3=17.5409; fp-sin4-c=-0.002095; fp-cos4-c=-0.011751; fp-sin4-o=-0.004557; fp-cos4-o=0.008824; fp-PPFAPlong4=18.5656; fp-hifreq-c=1.031476; fp-hifreq-o=0.772946; fp-timerev-c=1.984751; fp-timerev-o=0.583368; fp-phase180-c=0.778267; fp-phase180-o=0.641717; fp-power-c=4; fp-power-o=1; fp-domper-c=6.093047; fp-domper-o=24.372189; fp-fit=1; fp-period=0.101094; fp-fitrms=0.026968; fp-fitchi=1.09747; fp-Nfours=2; fp-mult=2; fp-phaseoff=1.0875; fp-min-c=15.914984; fp-max-c=15.84678; fp-min-o=15.883162; fp-max-o=15.815458; fp-fitrms-c=0.022942; fp-fitrms-o=0.031376; fp-fitchi-c=1.25495; fp-fitchi-o=0.901337; fp-const-c=15.880262; fp-const-o=15.8487; fp-sin1=-0.001663; fp-cos1=-0.002021; fp-PPFAPshort1=13.6983; fp-sin2=0.015524; fp-cos2=0.028387; fp-PPFAPshort2=0.222867; fp-hifreq=12.361323; fp-timerev=12.660762; fp-phase180=6.200851; fp-power=2; fp-domperiod=0.050547; vf-Nc=139; vf-No=115; vf-c-med=15.883000373840332; vf-o-med=15.848999977111816; vf-per5=-0.05900000035762787; vf-per10=-0.050999999046325684; vf-per25=-0.024000000208616257; vf-per75=0.019999999552965164; vf-per90=0.03999999910593033; vf-per95=0.04699999839067459; vf-Hday=1.7400000095367432; vf-Hlong=0.42; vf-wsd=0.03700000047683716; vf-iqr=0.05000000074505806; vf-chin=2.31; vf-roms=1.1339999437332153; vf-nxs=0.0005200000014156103; vf-nppa=0.014000000432133675; vf-inu=0.5550000071525574; vf-WS-I=-0.15; vf-S-J=-0.06300000101327896; vf-S-K=0.7450000047683716; df-Ndet=2; df-medmag=18.979999542236328; df-meanmag=18.979999542236328; df-medsig=5.079999923706055; df-meansig=5.079999923706055; df-r2sig=5.079999923706055; df-r1sig=5.079999923706055; df-medchin=1.4900000095367432; df-Nbright=2; df-medPvar=0.0; df-meanPvar=0.0; df-r2Pvar=0; df-r1Pvar=0; df-medPscar=916.0; df-meanPscar=916.0; ps-dist=19.399999618530273; ps-dist0=29.299999237060547; ls-Npt=254; ls-Nuse=254; ls-c-med=15.871000289916992; ls-o-med=15.842000007629395; ls-Pday=0.101094; ls-PPFAP=15.633000373840332; ls-Chin=0.2329999953508377; ls-Cchin=1.032; ls-Pchin=1.0019999742507935; ls-Xchin=2.541; ls-Fraclo=0.0038999998942017555; ls-Frachi=0.0038999998942017555; ls-txclo=-0.010999999940395355; ls-txchi=-0.010999999940395355; ls-Chin-minus-1=0.493; ls-Chin-minus-h=0.369; ls-Chin-plus-h=0.33000001311302185; ls-Chin-plus-1=0.48899999260902405; ls-Ply1=-0.02199999988079071; ls-Ply2=0.04600000008940697; ls-Phgap=0.01899999938905239; ls-D=1; ls-RMS=0.035; ls-F0=-0.00800000037997961; ls-F1cos=0.03200000151991844; ls-F1sin=0.10599999874830246; ls-F2cos=-0.06300000101327896; ls-F2sin=0.9829999804496765; ls-F3cos=0.0430000014603138; ls-F3sin=-0.004999999888241291; ls-F4cos=0.10000000149011612; ls-F4sin=-0.07000000029802322; Class=MSINE; ddc=0; prox=1; P(CBF)=0.0270000007003546; P(CBH)=0.0; P(DBF)=0.00300000002607703; P(DBH)=0.0; P(HARD)=0.00100000004749745; P(MIRA)=0.0; P(MPULSE)=0.0; P(MSINE)=0.968999981880188; P(NSINE)=0.0; P(PULSE)=0.0; P(SINE)=0.0; P(IRR)=0.0; P(LPV)=0.0; P(dubious)=0.0; gmag=16.006000518798828; e_gmag=0.006000000052154064; rmag=15.927000045776367; e_rmag=0.006000000052154064; imag=15.944999694824219; e_imag=0.004999999888241291; zmag=16.027000427246094; e_zmag=0.00800000037997961; ymag=16.02400016784668; e_ymag=0.014999999664723873; starID=126+12.3196; objID=123571260233607202; SimbadName=[-- --]
+
+## 4. Shape of the 0.2405 d signal in the target's light curve (all four sectors, eclipses masked)
+
+phase bin centre: mean flux - 1 (ppm) +- error
+   -0.479:   +4952 +- 838
+   -0.438:   -1973 +- 808
+   -0.396:   -5106 +- 816
+   -0.354:   -1858 +- 830
+   -0.312:   +3667 +- 819
+   -0.271:   +3591 +- 828
+   -0.229:    -949 +- 826
+   -0.188:   -4379 +- 838
+   -0.146:     +92 +- 827
+   -0.104:   +5391 +- 804
+   -0.063:   +3177 +- 827
+   -0.021:   -2922 +- 806
+   +0.021:   -7418 +- 837
+   +0.062:    +912 +- 843
+   +0.104:   +6344 +- 824
+   +0.146:   +2536 +- 814
+   +0.187:   -5146 +- 817
+   +0.229:   -4355 +- 829
+   +0.271:    +967 +- 829
+   +0.312:   +6714 +- 825
+   +0.354:    +149 +- 851
+   +0.396:   -4002 +- 816
+   +0.437:   -4428 +- 835
+   +0.479:   +1612 +- 809
+LS power at f, 2f, 3f, f/2 (f = 1/0.24051265 d): 2.88e-05, 4.89e-05, 4.38e-06, 8.07e-05;  99.9th percentile over 0.05-2 d: 2.34e-04; max 4.16e-04 at 0.40727 d
+
+## 5. Periodogram to 50 c/d (the section 1 periodogram stopped at 20 c/d)
+
+S7      : peak 20.78653 c/d (P = 0.048108 d), power 1.81e-02 (median 9.8e-05), semi-amplitude 7756 ppm;  5 x f_TCE = 20.78893 c/d
+S44     : peak 20.78497 c/d (P = 0.048112 d), power 3.39e-03 (median 9.1e-05), semi-amplitude 3226 ppm;  5 x f_TCE = 20.78893 c/d
+S45     : peak 20.78461 c/d (P = 0.048113 d), power 1.19e-02 (median 9.4e-05), semi-amplitude 7384 ppm;  5 x f_TCE = 20.78893 c/d
+S46     : peak 20.78605 c/d (P = 0.048109 d), power 1.82e-02 (median 8.5e-05), semi-amplitude 7784 ppm;  5 x f_TCE = 20.78893 c/d
+S44-46  : peak 20.78653 c/d (P = 0.048108 d), power 1.04e-02 (median 3.1e-05), semi-amplitude 6155 ppm;  5 x f_TCE = 20.78893 c/d
+all four: peak 20.78617 c/d (P = 0.048109 d), power 1.20e-02 (median 2.3e-05), semi-amplitude 6555 ppm;  5 x f_TCE = 20.78893 c/d

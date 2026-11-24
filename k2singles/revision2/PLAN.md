@@ -390,8 +390,17 @@ data products, not papers or catalogues.
 - 106.936 d is the 10-cycle alias of the S7–S46 pair. Our C5, C18, S34 and S71 primaries fall 8.2–32.9 d from its
   ephemeris, so it is excluded.
 - 0.2405 d cannot be the eclipse period: our 4-h eclipses would then recur every 5.8 h, and our searches find
-  isolated events only. It is a separate low-significance signal. Its cause is not checked: one possibility is the S34
-  primary, which the 106.94 d ephemeris does not mask. Not proven.
+  isolated events only.
+- **Cause of the 0.2405 d TCE** (`tce024_check.py`, output `results/literature/tce024_check.txt`; SPOC 2-min light
+  curves of S7, S44, S45, S46 downloaded with Jon's OK; S34 was not in this SPOC run):
+  - The target's light curve, eclipses masked, has a δ Scuti-type pulsation at 20.786 c/d (P = 0.048109 d,
+    semi-amplitude 3.2–7.8 ppt) in every sector. 0.2405 d is five pulsation cycles (5 × f_TCE = 20.789 c/d): the TPS
+    fold stacks every fifth minimum. Folded at 0.2405 d the light curve shows five ripples, not one dip.
+  - The DV difference images put the source 24.5 ± 3.5" from the target (S44–46), at RA +2.6", Dec −24.4".
+    Gaia DR3 651067327828913280 is at +2.4", −26.0" (26.3"), G = 15.81, BP−RP = 0.42. Gaia DR3 classifies it
+    DSCT|GDOR|SXPHE (score 0.89) and VSX lists it the same. ATLAS gives 0.0506 d, not the TESS 0.0481 d (ATLAS
+    sampling is sparse; not resolved).
+  - So the 0.2405 d TCE is a subharmonic of a pulsating neighbour 26" away, unrelated to the eclipses.
 
 **Decided 2026-11-23 (Jon): TCE periods do block "new".** The rules call a period new only if its star is "no prior
 period" or "estimate only", and both classification passes class the TCEs as PERIOD. So the rule stays as
