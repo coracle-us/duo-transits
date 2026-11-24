@@ -1,0 +1,10 @@
+TIC 241550976  P=21.196873  T0=2339.44506  model depth 17936 ppm
+odd/even depth scale: odd 1.009±0.020 (n=3)  even 0.995±0.016 (n=4)  diff = +0.55 sigma
+depth scale [QLP] n=2: mean 0.959±0.028, chi2=10.4/1, min 0.88 max 1.06
+depth scale [TESS-SPOC] n=1: 1.068±0.023
+depth scale [TESScut] n=4: mean 0.977±0.018, chi2=22.7/3, min 0.76 max 1.04
+phase-0.5 eclipse (circular): 8 epochs, depth = -105 ± 256 ppm (-0.006±0.014 of primary)
+shape fit: Rp/R*=0.1247 a/R*=31.57 b=0.45 -> rho*(circ) = 0.94 rho_sun; TIC rho = 1.28 rho_sun
+S100 E82: QLP - TESScut = +0.92 ± 3.28 min (cov QLP 1.00, TESScut 0.99)
+S101 E84: QLP - TESScut = -10.29 ± 7.46 min (cov QLP 0.55, TESScut 0.76)
+S102 E85: QLP - TESScut = -6.38 ± 2.92 min (cov QLP 1.00, TESScut 1.00)

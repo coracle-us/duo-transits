@@ -1,0 +1,22 @@
+TIC 275647095 paper: t0=2315.5171 depth=10298 dur=8.50h
+S 10 QLP       n=   888 cad= 30.0m rms=  1294ppm beta=1.07 box-depth-err=  346ppm span 1571.72-1595.64
+S 37 TESS-SPOC n=  3097 cad= 10.0m rms=  1716ppm beta=1.00 box-depth-err=  240ppm span 2308.36-2332.58
+S 64 QLP       n= 10901 cad=  3.3m rms=  3520ppm beta=1.18 box-depth-err=  335ppm span 3041.15-3067.78
+S 90 QLP       n= 11257 cad=  3.3m rms=  3762ppm beta=2.48 box-depth-err=  755ppm span 3747.39-3774.99
+S 99 QLP       n=  7210 cad=  3.3m rms=  2366ppm beta=1.00 box-depth-err=  192ppm span 4046.37-4070.98
+S100 QLP       n=  8276 cad=  3.3m rms=  2555ppm beta=1.65 box-depth-err=  342ppm span 4074.50-4098.28
+S101 QLP       n=  8215 cad=  3.3m rms=  2433ppm beta=1.72 box-depth-err=  339ppm span 4101.61-4124.94
+
+Events SNR>5 (box of paper duration), sorted by SNR:
+ sec source        tc        depth[ppm]  err  SNR  depth/paper
+  37 TESS-SPOC   2315.5184     8460    240  35.2   0.82
+  64 QLP         3049.2820     9071    335  27.1   0.88
+ 101 QLP         4124.3096     7541    347  21.7   0.73
+ 100 QLP         4090.1545     6797    342  19.9   0.66
+  64 QLP         3066.3306     6488    335  19.4   0.63
+  10 QLP         1581.6714     6616    417  15.9   0.64
+  90 QLP         3765.9487     8006    755  10.6   0.78
+  90 QLP         3748.8862     7950    755  10.5   0.77
+ 101 QLP         4107.3096     3780    433   8.7   0.37
+  37 TESS-SPOC   2332.3934     1743    240   7.3   0.17
+ 100 QLP         4074.6754     1745    342   5.1   0.17

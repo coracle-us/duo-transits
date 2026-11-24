@@ -1,0 +1,22 @@
+criterion,k,n,rate,upper95,limit,verdict
+"wrong period, A2 one-TOI",1.0,49,0.02040816326530612,0.0931924714342012,0.03,pass
+"wrong period (true event), A2 one-TOI",0.0,48,0.0,0.0605034093488943,0.03,pass
+"repeat recovery, A2 one-TOI",49.0,90,0.5444444444444444,0.6342121942899698,0.6,FAIL
+"alias power, A2 one-TOI: median excluded 0.9757, round-2 rule 0.9846",,48,0.9909190949548161,,0.8,pass
+"wrong period, B, own events removed",3.0,208,0.014423076923076924,0.03685314107507797,0.03,pass
+"wrong period (true event), B, own events removed",0.0,205,0.0,0.014507071700215769,0.03,pass
+"repeat recovery, B, own events removed",203.0,365,0.5561643835616439,0.5998529484592505,0.6,FAIL
+"alias power, B, own events removed: median excluded 0.9838, round-2 rule 0.9848",,205,0.9990040673584979,,0.8,pass
+"wrong period, A2 multi-TOI",6.0,14,0.42857142857142855,0.6749715183962249,0.03,"reported, not judged"
+"wrong period (true event), A2 multi-TOI",0.0,8,0.0,0.3123439780663678,0.03,"reported, not judged"
+"repeat recovery, A2 multi-TOI",12.0,26,0.46153846153846156,0.637910760927509,0.6,"reported, not judged"
+"alias power, A2 multi-TOI: median excluded 0.9241, round-2 rule 0.9756",,8,0.9472102611081112,,0.8,"reported, not judged"
+"wrong period, B, all events",54.0,242,0.2231404958677686,0.27166057273656724,0.03,"reported, not judged"
+"wrong period (true event), B, all events",0.0,188,0.0,0.015808459739054478,0.03,"reported, not judged"
+"repeat recovery, B, all events",203.0,365,0.5561643835616439,0.5998529484592505,0.6,"reported, not judged"
+"alias power, B, all events: median excluded 0.9839, round-2 rule 0.9848",,188,0.9990519087677169,,0.8,"reported, not judged"
+"false event, A1 one-TOI",3.0,90,0.03333333333333333,0.08390002415112975,0.05,pass
+"false event, B, own events removed",10.0,1072,0.009328358208955223,0.015771586368112888,0.05,pass
+"false event, B, all events",93.0,1072,0.08675373134328358,0.1022193764047091,0.05,"reported, not judged"
+"false exclusion, A2 one-TOI",0.0,90,0.0,0.03273803383353457,0.05,pass
+"false exclusion, B",0.0,1072,0.0,0.002790625320467116,0.05,pass

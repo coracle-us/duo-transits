@@ -1,0 +1,93 @@
+TIC 275647095: 10 detected events, span 2542.542 d; 17 event-consistent periods >= 1.0 d (tol 45.0 min)
+  N=  149 P=   17.06403  extra covered epochs=  0  worst z=   +nan  ALLOWED
+  N=  298 P=    8.53202  extra covered epochs= 11  worst z=  -24.7  RULED OUT
+  N=  447 P=    5.68801  extra covered epochs= 17  worst z=  -27.2  RULED OUT
+  N=  596 P=    4.26601  extra covered epochs= 29  worst z=  -29.3  RULED OUT
+  N=  745 P=    3.41281  extra covered epochs= 39  worst z=  -26.6  RULED OUT
+  N=  894 P=    2.84401  extra covered epochs= 45  worst z=  -27.2  RULED OUT
+  N= 1043 P=    2.43772  extra covered epochs= 57  worst z=  -27.8  RULED OUT
+  N= 1192 P=    2.13300  extra covered epochs= 65  worst z=  -29.3  RULED OUT
+  N= 1341 P=    1.89600  extra covered epochs= 76  worst z=  -29.9  RULED OUT
+  N= 1490 P=    1.70640  extra covered epochs= 87  worst z=  -26.6  RULED OUT
+  N= 1639 P=    1.55128  extra covered epochs= 98  worst z=  -28.3  RULED OUT
+  N= 1788 P=    1.42200  extra covered epochs=105  worst z=  -29.3  RULED OUT
+  N= 1937 P=    1.31262  extra covered epochs=115  worst z=  -28.5  RULED OUT
+  N= 2086 P=    1.21886  extra covered epochs=125  worst z=  -27.8  RULED OUT
+  N= 2235 P=    1.13760  extra covered epochs=134  worst z=  -27.4  RULED OUT
+  N= 2384 P=    1.06650  extra covered epochs=141  worst z=  -29.3  RULED OUT
+  N= 2533 P=    1.00377  extra covered epochs=150  worst z=  -27.6  RULED OUT
+Predicted epochs for P=17.064034 T0=1581.76070: depth scale s (1 = transit, 0 = flat)
+   E=    0 Tc= 1581.7607 S10  QLP       cov=0.41  s= 0.85 ± 0.21
+   E=   43 Tc= 2315.5142 S37  QLP       cov=1.00  s= 1.06 ± 0.06
+   E=   44 Tc= 2332.5782 S37  TESS-SPOC cov=0.51  s= 0.75 ± 0.15
+   E=   86 Tc= 3049.2676 S64  QLP       cov=1.00  s= 1.18 ± 0.05
+   E=   87 Tc= 3066.3316 S64  QLP       cov=1.00  s= 0.93 ± 0.07
+   E=  127 Tc= 3748.8930 S90  QLP       cov=1.00  s= 0.97 ± 0.06
+   E=  128 Tc= 3765.9570 S90  QLP       cov=1.00  s= 0.94 ± 0.06
+   E=  146 Tc= 4073.1096 S99  TESScut   cov=0.59  s= 0.94 ± 0.07
+   E=  147 Tc= 4090.1737 S100 TESScut   cov=1.00  s= 0.87 ± 0.06
+   E=  148 Tc= 4107.2377 S101 TESScut   cov=0.40  s= 1.17 ± 0.14
+   E=  149 Tc= 4124.3017 S101 TESScut   cov=1.00  s= 0.93 ± 0.05
+
+Evidence against P=8.53202 (N=298):
+   E=-1 Tc=1573.2287 S10 QLP cov=1.00 s=0.03±0.05
+   E=1 Tc=1590.2927 S10 QLP cov=0.94 s=0.08±0.06
+   E=87 Tc=2324.0462 S37 QLP cov=1.00 s=-0.00±0.06
+   E=173 Tc=3057.7996 S64 QLP cov=1.00 s=0.04±0.05
+   E=255 Tc=3757.4250 S90 QLP cov=1.00 s=-0.03±0.10
+   E=257 Tc=3774.4890 S90 QLP cov=0.98 s=-0.11±0.16
+   E=289 Tc=4047.5136 S99 TESScut cov=1.00 s=0.02±0.04
+   E=291 Tc=4064.5776 S99 TESScut cov=1.00 s=-0.06±0.04
+   E=293 Tc=4081.6417 S100 TESScut cov=1.00 s=-0.02±0.05
+   E=295 Tc=4098.7057 S100 TESScut cov=1.00 s=-0.09±0.05
+   E=297 Tc=4115.7697 S101 TESScut cov=1.00 s=0.03±0.04
+
+Evidence against P=5.68801 (N=447):
+   E=-1 Tc=1576.0727 S10 QLP cov=1.00 s=0.01±0.05
+   E=1 Tc=1587.4487 S10 QLP cov=1.00 s=0.03±0.05
+   E=2 Tc=1593.1367 S10 QLP cov=0.94 s=-0.08±0.06
+   E=128 Tc=2309.8261 S37 QLP cov=1.00 s=0.04±0.07
+   E=131 Tc=2326.8902 S37 QLP cov=1.00 s=-0.12±0.06
+   E=257 Tc=3043.5796 S64 QLP cov=1.00 s=-0.00±0.06
+   E=260 Tc=3060.6436 S64 QLP cov=0.99 s=0.03±0.06
+   E=382 Tc=3754.5810 S90 QLP cov=1.00 s=-0.01±0.06
+   E=385 Tc=3771.6450 S90 QLP cov=1.00 s=-0.02±0.06
+   E=434 Tc=4050.3576 S99 TESScut cov=1.00 s=0.03±0.04
+   E=437 Tc=4067.4216 S99 TESScut cov=0.54 s=0.18±0.05
+   E=439 Tc=4078.7976 S100 TESScut cov=1.00 s=-0.01±0.05
+   E=440 Tc=4084.4857 S100 TESScut cov=1.00 s=-0.17±0.04
+   E=442 Tc=4095.8617 S100 TESScut cov=1.00 s=0.04±0.04
+   E=443 Tc=4101.5497 S101 TESScut cov=1.00 s=-0.02±0.04
+   E=445 Tc=4112.9257 S101 TESScut cov=1.00 s=0.08±0.08
+   E=446 Tc=4118.6137 S101 TESScut cov=1.00 s=-0.01±0.04
+
+Evidence against P=4.26601 (N=596):
+   E=-2 Tc=1573.2287 S10 QLP cov=1.00 s=0.03±0.05
+   E=-1 Tc=1577.4947 S10 QLP cov=1.00 s=0.07±0.06
+   E=2 Tc=1590.2927 S10 QLP cov=0.94 s=0.08±0.06
+   E=3 Tc=1594.5587 S10 QLP cov=0.94 s=0.09±0.06
+   E=171 Tc=2311.2481 S37 QLP cov=1.00 s=0.11±0.06
+   E=174 Tc=2324.0462 S37 QLP cov=1.00 s=-0.00±0.06
+   E=175 Tc=2328.3122 S37 QLP cov=1.00 s=-0.00±0.07
+   E=343 Tc=3045.0016 S64 QLP cov=1.00 s=0.05±0.05
+   E=345 Tc=3053.5336 S64 QLP cov=1.00 s=0.13±0.08
+   E=346 Tc=3057.7996 S64 QLP cov=1.00 s=0.04±0.05
+   E=347 Tc=3062.0656 S64 QLP cov=0.82 s=0.06±0.11
+   E=509 Tc=3753.1590 S90 QLP cov=1.00 s=-0.04±0.06
+   E=510 Tc=3757.4250 S90 QLP cov=1.00 s=-0.03±0.10
+   E=511 Tc=3761.6910 S90 QLP cov=1.00 s=0.09±0.08
+   E=513 Tc=3770.2230 S90 QLP cov=1.00 s=0.04±0.06
+   E=514 Tc=3774.4890 S90 QLP cov=0.98 s=-0.11±0.16
+   E=578 Tc=4047.5136 S99 TESScut cov=1.00 s=0.02±0.04
+   E=579 Tc=4051.7796 S99 QLP cov=1.00 s=0.02±0.04
+   E=582 Tc=4064.5776 S99 TESScut cov=1.00 s=-0.06±0.04
+   E=583 Tc=4068.8436 S99 QLP cov=1.00 s=-0.07±0.04
+   E=585 Tc=4077.3756 S100 TESScut cov=1.00 s=-0.02±0.05
+   E=586 Tc=4081.6417 S100 TESScut cov=1.00 s=-0.02±0.05
+   E=587 Tc=4085.9077 S100 TESScut cov=1.00 s=-0.10±0.05
+   E=589 Tc=4094.4397 S100 TESScut cov=0.82 s=-0.12±0.05
+   E=590 Tc=4098.7057 S100 TESScut cov=1.00 s=-0.09±0.05
+   E=591 Tc=4102.9717 S101 TESScut cov=1.00 s=0.01±0.04
+   E=593 Tc=4111.5037 S101 TESScut cov=1.00 s=-0.02±0.04
+   E=594 Tc=4115.7697 S101 TESScut cov=1.00 s=0.03±0.04
+   E=595 Tc=4120.0357 S101 TESScut cov=0.52 s=-0.35±0.07

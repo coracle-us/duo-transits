@@ -1,0 +1,76 @@
+TIC 230133616 paper: t0=2396.1307 depth=5703 dur=9.20h
+S 16 TESS-SPOC n=  1003 cad= 30.0m rms=   847ppm beta=1.00 box-depth-err=  194ppm span 1738.68-1762.45
+S 17 TESS-SPOC n=   668 cad= 30.0m rms=   853ppm beta=1.14 box-depth-err=  229ppm span 1764.72-1784.99
+S 18 TESS-SPOC n=   821 cad= 30.0m rms=   826ppm beta=1.00 box-depth-err=  195ppm span 1790.70-1812.45
+S 19 TESS-SPOC n=  1004 cad= 30.0m rms=   858ppm beta=1.00 box-depth-err=  202ppm span 1816.12-1840.01
+S 20 TESS-SPOC n=  1171 cad= 30.0m rms=   808ppm beta=1.00 box-depth-err=  185ppm span 1842.53-1868.80
+S 21 TESS-SPOC n=  1211 cad= 30.0m rms=   894ppm beta=1.00 box-depth-err=  205ppm span 1870.64-1897.76
+S 22 TESS-SPOC n=  1072 cad= 30.0m rms=   822ppm beta=1.00 box-depth-err=  194ppm span 1900.51-1926.47
+S 23 TESS-SPOC n=   941 cad= 30.0m rms=   947ppm beta=1.02 box-depth-err=  227ppm span 1929.84-1954.87
+S 24 TESS-SPOC n=  1208 cad= 30.0m rms=   954ppm beta=1.13 box-depth-err=  254ppm span 1955.82-1982.26
+S 25 TESS-SPOC n=  1157 cad= 30.0m rms=   933ppm beta=1.01 box-depth-err=  223ppm span 1983.70-2009.28
+S 26 TESS-SPOC n=  1136 cad= 30.0m rms=   980ppm beta=1.31 box-depth-err=  303ppm span 2010.30-2035.11
+S 40 TESS-SPOC n=  3916 cad= 10.0m rms=  1557ppm beta=1.00 box-depth-err=  210ppm span 2390.66-2418.85
+S 47 TESS-SPOC n=  3373 cad= 10.0m rms=  1452ppm beta=1.11 box-depth-err=  215ppm span 2580.93-2606.93
+S 48 TESS-SPOC n=  2952 cad= 10.0m rms=  1513ppm beta=1.07 box-depth-err=  217ppm span 2610.95-2635.98
+S 49 TESS-SPOC n=  2511 cad= 10.0m rms=  1542ppm beta=1.07 box-depth-err=  223ppm span 2641.16-2664.31
+S 50 TESS-SPOC n=  2721 cad= 10.0m rms=  1615ppm beta=1.00 box-depth-err=  218ppm span 2665.28-2691.50
+S 51 TESS-SPOC n=  2704 cad= 10.0m rms=  1915ppm beta=1.05 box-depth-err=  272ppm span 2692.96-2717.53
+S 52 TESS-SPOC n=  3343 cad= 10.0m rms=  1614ppm beta=1.25 box-depth-err=  271ppm span 2718.64-2743.07
+S 53 TESS-SPOC n=  3454 cad= 10.0m rms=  1554ppm beta=1.00 box-depth-err=  209ppm span 2744.02-2768.98
+S 54 TESS-SPOC n=  2367 cad= 10.0m rms=  1839ppm beta=1.90 box-depth-err=  471ppm span 2769.91-2796.12
+S 56 TESS-SPOC n=  8718 cad=  3.3m rms=  2595ppm beta=1.38 box-depth-err=  278ppm span 2825.26-2853.14
+S 57 TESS-SPOC n= 10723 cad=  3.3m rms=  2499ppm beta=1.00 box-depth-err=  194ppm span 2853.35-2882.11
+S 58 QLP       n= 11049 cad=  3.3m rms=  2896ppm beta=1.14 box-depth-err=  256ppm span 2882.36-2910.02
+S 59 TESS-SPOC n=  9117 cad=  3.3m rms=  2401ppm beta=1.00 box-depth-err=  186ppm span 2912.46-2936.69
+S 60 TESS-SPOC n=  7363 cad=  3.3m rms=  2483ppm beta=1.00 box-depth-err=  193ppm span 2939.82-2962.58
+S 73 TESS-SPOC n=  6860 cad=  3.3m rms=  2404ppm beta=1.00 box-depth-err=  187ppm span 3285.80-3312.65
+S 74 TESS-SPOC n=  9021 cad=  3.3m rms=  2894ppm beta=1.06 box-depth-err=  239ppm span 3312.87-3339.57
+S 75 TESS-SPOC n=  6995 cad=  3.3m rms=  2970ppm beta=1.10 box-depth-err=  253ppm span 3339.79-3367.48
+S 76 TESS-SPOC n=  7237 cad=  3.3m rms=  3136ppm beta=1.11 box-depth-err=  272ppm span 3367.70-3394.78
+S 77 TESS-SPOC n=  7684 cad=  3.3m rms=  2964ppm beta=2.12 box-depth-err=  490ppm span 3395.49-3423.55
+S 78 TESS-SPOC n=  6434 cad=  3.3m rms=  2793ppm beta=1.30 box-depth-err=  282ppm span 3434.27-3449.61
+S 79 TESS-SPOC n= 11437 cad=  3.3m rms=  2702ppm beta=1.00 box-depth-err=  210ppm span 3452.54-3479.67
+S 80 TESS-SPOC n=  8400 cad=  3.3m rms=  2540ppm beta=1.23 box-depth-err=  244ppm span 3479.89-3506.33
+S 81 TESS-SPOC n=  8552 cad=  3.3m rms=  2571ppm beta=1.00 box-depth-err=  200ppm span 3506.55-3533.17
+S 82 TESS-SPOC n=  9493 cad=  3.3m rms=  2601ppm beta=1.22 box-depth-err=  247ppm span 3533.39-3559.24
+S 83 TESS-SPOC n= 10462 cad=  3.3m rms=  2485ppm beta=1.00 box-depth-err=  193ppm span 3559.44-3584.37
+S 84 TESS-SPOC n=  8843 cad=  3.3m rms=  2562ppm beta=1.00 box-depth-err=  199ppm span 3584.59-3610.34
+S 86 TESS-SPOC n=  7410 cad=  3.3m rms=  2654ppm beta=1.28 box-depth-err=  263ppm span 3636.26-3662.83
+
+Events SNR>5 (box of paper duration), sorted by SNR:
+ sec source        tc        depth[ppm]  err  SNR  depth/paper
+  20 TESS-SPOC   1849.8140     6241    191  32.8   1.09
+  57 TESS-SPOC   2871.1853     5936    194  30.6   1.04
+  60 TESS-SPOC   2942.4501     5840    193  30.3   1.02
+  16 TESS-SPOC   1754.7921     5614    200  28.1   0.98
+  84 TESS-SPOC   3607.5261     5550    199  27.9   0.97
+  59 TESS-SPOC   2918.6998     5112    187  27.4   0.90
+  53 TESS-SPOC   2752.4240     5459    209  26.1   0.96
+  81 TESS-SPOC   3512.5238     5187    201  25.8   0.91
+  48 TESS-SPOC   2633.6542     5571    217  25.7   0.98
+  22 TESS-SPOC   1921.0643     5242    205  25.5   0.92
+  21 TESS-SPOC   1873.5642     5174    211  24.6   0.91
+  25 TESS-SPOC   1992.3066     5447    223  24.5   0.96
+  86 TESS-SPOC   3655.0383     6336    263  24.1   1.11
+  21 TESS-SPOC   1897.3142     4949    211  23.5   0.87
+  82 TESS-SPOC   3536.2667     5745    247  23.3   1.01
+  19 TESS-SPOC   1826.0637     4831    208  23.2   0.85
+  79 TESS-SPOC   3465.0105     4798    211  22.7   0.84
+  76 TESS-SPOC   3393.7534     6148    272  22.6   1.08
+  40 TESS-SPOC   2396.1254     4729    210  22.5   0.83
+  74 TESS-SPOC   3322.4893     5260    239  22.0   0.92
+  17 TESS-SPOC   1778.5284     4903    229  21.4   0.86
+  47 TESS-SPOC   2586.1471     4717    221  21.3   0.83
+  83 TESS-SPOC   3560.0260     4126    193  21.3   0.72
+  58 QLP         2894.9425     5457    256  21.3   0.96
+  23 TESS-SPOC   1944.8141     4715    227  20.8   0.83
+  73 TESS-SPOC   3298.7692     3980    193  20.7   0.70
+  49 TESS-SPOC   2657.3903     4592    223  20.6   0.81
+  52 TESS-SPOC   2728.6673     5487    271  20.2   0.96
+  56 TESS-SPOC   2847.4351     5334    278  19.2   0.94
+  78 TESS-SPOC   3441.2561     5206    282  18.4   0.91
+  83 TESS-SPOC   3583.7690     3545    193  18.4   0.62
+  26 TESS-SPOC   2016.0632     5431    321  16.9   0.95
+  77 TESS-SPOC   3417.5125     6116    489  12.5   1.07
+  54 TESS-SPOC   2776.1945     5790    490  11.8   1.02

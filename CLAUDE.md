@@ -207,3 +207,113 @@ It is now the current scope (see the box at the top of this file).
   `singles/rnaas/numbers.md`, "After submission"). **Accepted 2026-11-14.** The arXiv package is in `singles/rnaas/arxiv/`; add the journal reference and DOI to arXiv once the note is published.
 - ExoFOP-ready ephemerides are in `singles/writeups/exofop_ephemeris_updates.md`, for
   someone with an account to submit.
+
+### Salinas second transits (status 2026-11-22)
+
+This is a search for a second transit, in S61 or later, of each single-transit candidate in Salinas et al.
+(arXiv 2610.24882).
+- Method and known limits: `salinas-second-transits/README.md`.
+- Round 2 summary: `salinas-second-transits/results/round2/SUMMARY_2026-10-27.md`.
+- Rounds 2 and 3 ran from briefs in the Claude relay Drive folder (`briefs/`, reports in `results/`).
+- Merged as PRs #2, #3, #7, #9, #10, #11, #12 and #18.
+
+**Epoch rule.** Since 2026-11-01, an epoch excludes a period only if its box depth is below
+0.5 depth0 − 3σ (half3s). Test on 83 confirmed planets, with a box reference depth as the pipeline uses
+(`results/round2/EPOCH_RULE_TEST_2026-11-01.md`):
+- The true period is excluded for 3 planets, against 46 under the old rule.
+- An epoch below SNR ~6 can barely exclude anything, so long alias lists at low SNR mean little.
+
+**Round 3: odd/even, secondary eclipse, shape.** Script `round3/s11_oddeven.py`; outputs in
+`results/round3/`, summary in `oddeven_summary.csv`. It covers the four stars round 2 flagged as
+periodic. None of them is a TOI or CTOI; none is in the TESS EB catalog or VSX within 30″; none shows an
+odd/even difference or a secondary eclipse.
+
+| TIC | P (d) | Odd − even | Phase 0.5 (3σ) | Rp (R_J) | ρ/ρ_TIC | Verdict |
+|---|---|---|---|---|---|---|
+| 275647095 | 17.06402 ± 0.00003 | 1.3σ (7 transits) | < 44 ppm | 1.07 | 0.22 | unclear |
+| 241550976 | 21.19694 ± 0.00004 | 0.7σ (1 odd) | < 479 ppm | 1.19 | 0.70 | no EB signs |
+| 107113048 | 49.70152 ± 0.00017 | 1.0σ (3 transits) | < 705 ppm | 0.91 | 0.66 | no EB signs |
+| 230133616 | 23.75297 ± 0.00002 | 0.6σ (31 transits) | < 50 ppm | 1.89 | 1.65 | unclear |
+
+- **275647095:** the duration is too long for P around this star (1.42× the circular value).
+  - The blind follow-up rules out a larger star: R★ = 1.14 ± 0.06 R☉ from the Gaia parallax, as in the TIC.
+  - It also rules out every Gaia neighbour, including the G = 14.3 star at 19.6″ that causes TIC
+    contratio 0.21.
+  - Left: an eccentric orbit (e ≳ 0.34, Rp ≈ 11 R⊕), or an eclipsing system blended within ~2″ that Gaia
+    does not resolve. RVs or high-resolution imaging would tell them apart.
+  - Details: `results/round3/independent/RESULTS.md`, the "Follow-up" section for each star.
+  - **Possible false positive.** The blind `s17` finds a marginal dip at phase 0.872: 694 ± 147 ppm, in
+    8 of 9 orbits, with no background or centroid change. The transiting object can't make it. If it is
+    real, this is a blended eccentric EB. S111–S114 hold six of these dips.
+- **241550976 and 107113048:** the blind follow-up finds Gaia radii of 0.96 and 1.0 R☉, and circular orbits
+  fit both. The leading reading is a giant planet (~13 and ~9.5 R⊕). The fallback for both is an
+  eclipsing pair within ~2″ that Gaia does not see.
+- **107113048 E29 (S90)** lands within 0.7 h of an eclipse of a G = 12.74 eclipsing binary 97″ away
+  (Gaia DR3 3463196954429755904).
+  - Round 3 had called this a pointing excursion; the bright star ~5 px east in its difference image is that
+    binary.
+  - E29 still fits the ephemeris (O−C −1.1 min), and the binary's other eclipses don't dim the target's pixels.
+  - E29 is the only transit that rules out 74.55 and 149.10 d.
+  - E42 (2026-12-25 21:43 UTC) is outside TESS coverage, so only a ground-based observation would catch
+    it. The first TESS test is S114 (Feb–Mar 2027): flat data at BTJD 4474.96 and 4460.05 rule out 74.55
+    and 29.82 d, and an E43 transit (4450.11) would rule out 149.10 d.
+- **230133616:**
+  - Rp ≈ 1.9 R_J is very large for a 23.75 d planet, and Gaia RUWE is 3.79.
+  - The Gaia radius is 2.45 R☉ (a subgiant). A circular orbit around it fits worse by Δχ² ≈ 49. A companion
+    diluting the light, e ≥ 0.33, or a blend hidden in the unresolved companion could explain that.
+  - There is no secondary eclipse at any phase (blind `s17`). A 3100 K M dwarf is ruled out at > 2σ on
+    218 of the 228 orbits the transit shape allows, so the companion is more likely substellar.
+    Radial velocities would settle it.
+  - It transits in the old data too (34 epochs), so it was never really a single.
+  - Its period is the n = 51 alias, about 24σ from the 23.7535 d hypothesis.
+- **Lessons:**
+  - Our TESScut aperture photometry is diluted: depths 10–40% under QLP's for the same events. Use it for
+    S94+ mid-times only, and QLP for depths.
+  - QLP's S100+ clock is off by up to ~6 min (`round2/s6_qlp_times.py`).
+
+**Pixel-level and Gaia vetting** (`round3/s12_pixels.py`, `results/round3/PIXELS_2026-11-22.md`;
+230133616 was done in round 2 §5):
+- 275647095, 241550976 and 107113048 are all on target: the difference centroids are 2.2–3.7″ from the
+  star, and every neighbour that could make the dip is ≥ 15σ away.
+- Their Gaia RUWE is 1.02–1.09, with no binarity flags.
+- One 107113048 transit (S90, E29) is left out of the stack. It overlaps an eclipse of the 97″ binary
+  (see above), not a pointing excursion.
+
+**Independent re-derivation (§5)** (`results/round3/independent/`, `COMPARISON.md`):
+- A blind session that never saw round 2 or 3 found the same four periods, all within 1.6σ:
+  17.064042, 21.196873, 49.70148 and 23.752987 d.
+- It raised the same concerns on its own: the long 275647095 transit, and that 230133616 is not a single.
+- It then ran Gaia radius, neighbour and difference-image checks on all four stars
+  (`scripts/s11`–`s16`). All four dips come from within ~2″ of the target, and no period changed.
+
+**Novelty (2026-11-22)** (`results/round3/NOVELTY_2026-11-22.md`, `round3/s13_novelty.py`):
+- None of the four is a TOI or CTOI. ExoFOP has no files for them, they are not in the NASA Exoplanet
+  Archive, and a web search finds no paper.
+- Of the other four round 2 "periodic" stars:
+  - 317132251 and 454039549 are already TOI-7717 and TOI-7743;
+  - 141423461 has no clean event;
+  - 198009543's 11.71 d is below its 42.8 d circular minimum.
+- The 107113048 neighbour, TIC 107116357, is an uncatalogued EB: not in Gaia DR3 EBs, the TESS EB
+  catalogue or VSX (`round3/s14_eb_neighbour_catalogs.py`).
+
+**Drafts, nothing sent or submitted:**
+- Email to the Salinas team: `outreach/2026-11-22-salinas-team-email-draft.md`. They follow up their own
+  singles, so they should hear first.
+- RNAAS note: `rnaas/rnaas.tex`. Abstract 149 words, text 1,109 counted words, one table. Numbers are
+  traced in `rnaas/numbers.md`, which also has the pre-submission checklist.
+- Next transits: `results/round3/predictions_2026-11-22.csv` (`round3/s15_predictions.py`).
+  107113048 E42 is 2026-12-25 21:44 UTC ± 11 min.
+
+**Not done yet:**
+- Jon to review and send the email, which now asks them to post CTOIs and puts their plans first. Nothing has been reported to anyone.
+- RNAAS: wait for the Salinas reply, then the checklist in `rnaas/numbers.md`.
+- MAST on 2026-11-23: there is no TESS data after S102 for any of the four. The next sectors are S111–S114
+  for 275647095, 241550976 and 107113048, and S117+ for 230133616. When they are public, test:
+  - the 275647095 phase-0.872 dip;
+  - 107113048 in S114.
+
+  Predictions are in `independent/RESULTS.md`, "Predictions".
+- Scheduled task `salinas-s111-s114-check` (Mondays 09:00, Dec–Apr, from 2026-12-07) checks MAST for S111+
+  data. When data arrive, it scores `predictions_2026-11-22.csv`, runs the 275647095 dip test and the 107113048
+  S114 tests, and opens a draft PR on `salinas-s111-check`. Disable it once S114 is scored.
+- The blind session (`salinas-blind-periods`) stays blind until it has scored its own S111 predictions.

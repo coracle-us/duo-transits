@@ -1,0 +1,6 @@
+TIC 230133616  P=23.752987  T0=2396.12748  model depth 6324 ppm
+odd/even depth scale: odd 1.021±0.011 (n=19)  even 1.018±0.012 (n=18)  diff = +0.19 sigma
+depth scale [QLP] n=4: mean 1.066±0.033, chi2=12.8/3, min 0.93 max 1.33
+depth scale [TESS-SPOC] n=33: mean 1.017±0.008, chi2=91.0/32, min 0.72 max 1.15
+phase-0.5 eclipse (circular): 37 epochs, depth = -113 ± 74 ppm (-0.018±0.012 of primary)
+shape fit: Rp/R*=0.0722 a/R*=21.04 b=0.00 -> rho*(circ) = 0.22 rho_sun; TIC rho = 0.07 rho_sun

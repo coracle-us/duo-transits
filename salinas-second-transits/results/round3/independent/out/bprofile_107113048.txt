@@ -1,0 +1,10 @@
+TIC 107113048: b profile, 4 full transits, 1314 points, chi2/dof at best = 1.40
+  b = 0.00: Rp/R* = 0.0843  a/R* =  57.84  chi2 = 1830.6  scaled dchi2 =    0.3
+  b = 0.10: Rp/R* = 0.0843  a/R* =  57.55  chi2 = 1830.6  scaled dchi2 =    0.3
+  b = 0.20: Rp/R* = 0.0846  a/R* =  56.66  chi2 = 1830.6  scaled dchi2 =    0.3
+  b = 0.30: Rp/R* = 0.0851  a/R* =  55.08  chi2 = 1830.6  scaled dchi2 =    0.3
+  b = 0.40: Rp/R* = 0.0859  a/R* =  52.86  chi2 = 1830.4  scaled dchi2 =    0.1
+  b = 0.50: Rp/R* = 0.0870  a/R* =  49.95  chi2 = 1830.2  scaled dchi2 =    0.0
+  b = 0.60: Rp/R* = 0.0887  a/R* =  46.12  chi2 = 1831.1  scaled dchi2 =    0.7
+  b = 0.70: Rp/R* = 0.0912  a/R* =  41.29  chi2 = 1834.9  scaled dchi2 =    3.3
+  no 2-sigma upper limit on b within the grid

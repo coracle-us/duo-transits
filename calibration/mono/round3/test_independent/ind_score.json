@@ -1,0 +1,197 @@
+{
+ "outcome": "NOT DEFINED by the pre-registration",
+ "verdict": {
+  "wrong_period_rate": true,
+  "wrong_period_rate_true_event": true,
+  "false_event_rate": true,
+  "repeat_recovery_rate": false,
+  "alias_power": true,
+  "false_exclusion_rate": true
+ },
+ "rows": [
+  {
+   "criterion": "wrong_period_rate",
+   "arm": "A2 one-TOI",
+   "k": 1,
+   "n": 49,
+   "verdict": "met"
+  },
+  {
+   "criterion": "wrong_period_rate",
+   "arm": "B own removed",
+   "k": 3,
+   "n": 208,
+   "verdict": "met"
+  },
+  {
+   "criterion": "wrong_period_rate",
+   "arm": "B all events",
+   "k": 54,
+   "n": 242,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "wrong_period_rate",
+   "arm": "A2 multi-TOI",
+   "k": 6,
+   "n": 14,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "wrong_period_rate_true_event",
+   "arm": "A2 one-TOI",
+   "k": 0,
+   "n": 48,
+   "verdict": "met"
+  },
+  {
+   "criterion": "wrong_period_rate_true_event",
+   "arm": "B own removed",
+   "k": 0,
+   "n": 205,
+   "verdict": "met"
+  },
+  {
+   "criterion": "wrong_period_rate_true_event",
+   "arm": "B all events",
+   "k": 0,
+   "n": 188,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "wrong_period_rate_true_event",
+   "arm": "A2 multi-TOI",
+   "k": 0,
+   "n": 8,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "false_event_rate",
+   "arm": "A1 one-TOI",
+   "k": 3,
+   "n": 90,
+   "verdict": "met"
+  },
+  {
+   "criterion": "false_event_rate",
+   "arm": "A1 one-TOI, passing event not at a true transit",
+   "k": 3,
+   "n": 90,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "false_event_rate",
+   "arm": "B own removed",
+   "k": 10,
+   "n": 1072,
+   "verdict": "met"
+  },
+  {
+   "criterion": "false_event_rate",
+   "arm": "B all events",
+   "k": 93,
+   "n": 1072,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "false_event_rate",
+   "arm": "A1 multi-TOI",
+   "k": 8,
+   "n": 26,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "false_event_rate",
+   "arm": "A2 one-TOI (not a criterion)",
+   "k": 4,
+   "n": 90,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "null runs with a passing event",
+   "arm": "B",
+   "k": 100,
+   "n": 1072,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "repeat_recovery_rate",
+   "arm": "A2 one-TOI",
+   "k": 49,
+   "n": 90,
+   "verdict": "MISSED"
+  },
+  {
+   "criterion": "repeat_recovery_rate",
+   "arm": "B own removed",
+   "k": 203,
+   "n": 365,
+   "verdict": "MISSED"
+  },
+  {
+   "criterion": "repeat_recovery_rate",
+   "arm": "B all events",
+   "k": 203,
+   "n": 365,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "repeat_recovery_rate",
+   "arm": "A2 multi-TOI",
+   "k": 12,
+   "n": 26,
+   "verdict": "reported"
+  },
+  {
+   "criterion": "false_exclusion_rate",
+   "arm": "A2 one-TOI",
+   "k": 0,
+   "n": 90,
+   "verdict": "met"
+  },
+  {
+   "criterion": "false_exclusion_rate",
+   "arm": "B",
+   "k": 0,
+   "n": 1072,
+   "verdict": "met"
+  },
+  {
+   "criterion": "false_exclusion_rate",
+   "arm": "A2 multi-TOI",
+   "k": 0,
+   "n": 26,
+   "verdict": "reported"
+  }
+ ],
+ "alias_power": [
+  {
+   "arm": "A2 one-TOI",
+   "n": 48,
+   "r3": 0.9756676041678848,
+   "r2": 0.984608742666699,
+   "verdict": "met"
+  },
+  {
+   "arm": "B own removed",
+   "n": 205,
+   "r3": 0.9837837837837838,
+   "r2": 0.984764542936288,
+   "verdict": "met"
+  },
+  {
+   "arm": "A2 all stars",
+   "n": 56,
+   "r3": 0.9750548415143898,
+   "r2": 0.984608742666699,
+   "verdict": "reported"
+  },
+  {
+   "arm": "B all events",
+   "n": 188,
+   "r3": 0.983891891891892,
+   "r2": 0.9848255964051718,
+   "verdict": "reported"
+  }
+ ]
+}

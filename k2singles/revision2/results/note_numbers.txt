@@ -1,0 +1,23 @@
+catalogue: 164 events on 163 stars
+stars with every catalogued event recovered: 162 of 163; not: [211939692] (catalogued events on it: 2, one recovered per PLAN.md)
+stars with catalogued events significant: 112
+thresholds: {"K2": {"S_star": 53.25, "n_stars": 163, "n_control_eligible": 429, "allowed_control_events": 8, "control_snr_top": [892.7, 198.2, 117.6, 106.6, 84.3, 75.0, 69.1, 57.9, 53.2, 48.6, 48.1, 46.8, 44.9]}, "TESS": {"S_star": 59.96, "n_stars": 141, "n_control_eligible": 115, "allowed_control_events": 7, "
+Table 1 systems: 15; blind period recovered: 11; not: [211489484, 211503363, 211924561, 246194159]
+post-hoc test: 11 stars detected; detected among Table 1 misses: [211489484, 211924561]
+new leads: 41 stars (56 rows); post-hoc detections not in Table 1: 8; union: 47 stars
+BLS blocks: 470; inverted blocks at or above the threshold: 5
+Table 1 sources classified: ADS/SIMBAD 97 + VizieR 106 = 203
+VizieR catalogue IDs: 93; exist on the mirror: 78
+real BLS blocks with a detection: 36
+TESS target-sectors observed: 447; searched: 364; not searched (no pipeline light curve, sector < 80): 83
+EPIC 202072917: catalogue period 3.842 d; observed spacing 34.746 d = 9.044 cycles; offset from an integer 0.168 d
+EPIC 202072917: catalogue period 23.255 d; observed spacing 34.746 d = 1.494 cycles; offset from an integer 11.491 d
+EPIC 202072917: catalogue period 34.742 d; observed spacing 34.746 d = 1.000 cycles; offset from an integer 0.004 d
+EPIC 202072917: catalogue period 1007.6 d; observed spacing 34.746 d = 0.034 cycles; offset from an integer 34.746 d
+EPIC 202072917: catalogue period 15.17 d; observed spacing 34.746 d = 2.290 cycles; offset from an integer 4.406 d
+EPIC 202072917: catalogue period 14.2 d; observed spacing 34.746 d = 2.447 cycles; offset from an integer 6.346 d
+EPIC 202072917: catalogue period 5.579 d; observed spacing 34.746 d = 6.228 cycles; offset from an integer 1.272 d
+EPIC 202126877: catalogue period 3.877 d; observed spacing 21.785 d = 5.619 cycles; offset from an integer 1.477 d
+EPIC 202071902: catalogue period 8.6973 d; observed spacing 22.905 d = 2.634 cycles; offset from an integer 3.187 d
+TOI-5560.01 cycle 30 (140.49 d): BJD_TDB 2461394.716 +- 0.0044
+TOI-5560.01 cycle 31 (140.49 d): BJD_TDB 2461535.210 +- 0.0046

@@ -1,0 +1,33 @@
+{
+  "frozen": "2026-11-23",
+  "approved_by": "Jon McBee",
+  "code_commit_before_freeze": "1b47842",
+  "rule": "Rule3(c_drift=2.0, sig_floor_min=15.0, sig_dur_snr=0.0, cap_dur=2.0, need_window=False, use_ref_time=False, pmin_mode='hard', pmin_factor=1.0, lowref_snr=0.0, lowref_event_snr=0.0, sec_box_snr_min=9.0, common_period=False, cp_pmin_frac=0.0, cp_tol_dur=1.0, local_anti_max=inf)",
+  "rule_note": "fields left at their defaults are switched off; the single-transit exclusion and R4 vetting are round 2's frozen rule (rule3.BASE)",
+  "seeds": {
+    "arm_b_injection": "[20261203, tic]",
+    "arm_b_catalogue_error": "[20261204, tic]"
+  },
+  "sha256": {
+    "calibration/mono/prereg_round3.yaml": "9d17bf0bf972557675655a08ca908be23291d4dfce748ae54ce9ef3e64409e4c",
+    "calibration/mono/round3/FROZEN_RULE3.md": "5b6e7958798065e1d956b2eae7c73553501d8030e5d67064608c8b4c18268b77",
+    "calibration/mono/round3/harness3.py": "b8eee1a35c527b7929aa36d0903c3712ec80d4d107931d674a743b21ad240b67",
+    "calibration/mono/round3/rule3.py": "9e3f92ce0d8bde21bd81ca9ec72f7eeaba612e26845c57490f40d38f9626a27b",
+    "calibration/mono/round3/dump3.py": "0f727f2a62d9573e4e16d029d0ea02ceedb03115ffa52dd035ce8179728c2250",
+    "calibration/mono/round3/run_test3.py": "ef532f0d9f8c0fa1bd667609e5448667eb578e0fe61873fc66b5fe47f49ea109",
+    "calibration/mono/round3/score3.py": "705399b9d4628a4b0c115980a939b000564012fd387f0d600d32d12ca49f3ee4",
+    "calibration/mono/round3/samples/arm_a_test.csv": "b9b1f6e765e412ecc91bf036c062a97f1d0072010a0c8cedbd9afc9b5c0d8926",
+    "calibration/mono/round3/samples/arm_b_test_order.csv": "39fa8d7053c8bddfe75ac0f33406dfb507f181f30c1aa32082261240141eb5c8",
+    "calibration/mono/round2/FROZEN_RULE.md": "abdd204651d95378bbe599eef4c30697c755cab0105743f7c90b139ca51defb3",
+    "calibration/mono/round2/harness.py": "16b12a191e5a785fee6e5b31241697e1acaee0af6665e7e4c01166ab99eb4a53",
+    "calibration/mono/round2/rule2.py": "596238db832e4ffb39a9c7052fe36ebcf845f7a2037997e7ea879cf396ad4847",
+    "calibration/mono/round2/dump.py": "3d1ea9f7d1c60a63b6dfe28f75598c092e2de42f138d2bc0d732ab918f9b9151",
+    "calibration/mono/round2/run_test.py": "d944d01e47ddc98732938cca9c23112f06312e9f507e5ed6b72fd464f5be5efc",
+    "calibration/mono/round2/score2.py": "43482c1c343d64ce5d979b53b6887d4268074ccc767ec6cc1cacbcecbaf2c953",
+    "calibration/mono/monocal.py": "17c5e980cb6b85a1d06ebc964ab81b905f9409ed4ad8318d50a286e1919a806e",
+    "calibration/mono/run_arm_a.py": "73a5be61b3d844ebb7cbabc28344c667e03e356abbae2a62e9ecde72fe0a4de4",
+    "calibration/mono/run_arm_b.py": "297baa0a53366ff969353d94bf20aa6dbd7d0c65a7bf88bd74fed317a56a1d4d",
+    "salinas-second-transits/st2core.py": "a353e2ba7a4c982746a08c9a92a31c7736df9798ea79e80d3cf40e513a091fd1",
+    "salinas-second-transits/st2_pipeline.py": "880bfe95f89bb7b301f4e020c724f31a6de1a2449678bfb44fb46b4132a2b66c"
+  }
+}

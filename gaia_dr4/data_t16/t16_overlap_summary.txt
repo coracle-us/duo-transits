@@ -1,0 +1,13 @@
+T16 single-transit overlap check, run 2026-11-22
+rows 411; distinct TICs 411; sectors 1-13
+depth (mag): median 0.0136, max 0.3040; deeper than 0.05 mag: 42
+duration (h): median 4.9, max 31.3
+star has a TOI: 10 (dispositions {'PC': 7, 'APC': 1, 'CP': 1, 'FP': 1})
+star has a CTOI: 13 (users {'hawthorn': 4, 'salinas': 3, 'steuer': 1, 'hawthorn;sedgley': 1, 'brahm': 1, 'montalto': 1, 'eisner': 1, 'essack': 1})
+  of those, CTOI with a period > 0: 4
+confirmed-planet host: 2
+TESS EB (Prsa+2022): 0
+already in our lists: 8 ({'hawthorn': 4, 'hawthorn;toi_single': 1, 'toi_single': 1, 'hawthorn;salinas': 1, 'salinas': 1})
+transit time shared with another T16 single on the same sector/cam/CCD (0.1 d): 72
+dropped: 10 ({'star has a TOI': 8, 'host has a confirmed planet (pscomppars)': 2})
+kept: 401 rows on 401 stars

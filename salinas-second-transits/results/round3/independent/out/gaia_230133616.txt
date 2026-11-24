@@ -1,0 +1,41 @@
+Target astrophysical parameters (Gaia DR3):
+  source_id              1649273145380855936
+  teff_gspphot           --
+  logg_gspphot           --
+  radius_gspphot         --
+  radius_flame           --
+  radius_flame_lower     --
+  radius_flame_upper     --
+  mass_flame             --
+  mass_flame_lower       --
+  mass_flame_upper       --
+  lum_flame              --
+  age_flame              --
+  evolstage_flame        --
+  distance_gspphot       --
+
+TIC 230133616  Gaia DR3 1649273145380855936  depth used 6300 ppm
+Target: G=12.591 BP-RP=0.739 plx=0.9533±0.0396 RUWE=3.785 ipd_multi_peak=0 ipd_gof_harm=0.0198 non_single_star=0 variable=NOT_AVAILABLE
+
+Neighbours within 200" (62); depth needed if the neighbour were the eclipsing source:
+  1649273355835139584 sep=  53.6" G= 14.99 dG=+2.40 needed depth=   6.4%  <-- could mimic
+  1649273321475400576 sep=  84.2" G= 16.09 dG=+3.50 needed depth=  16.4%  <-- could mimic
+  1649273424554616576 sep=  89.7" G= 12.52 dG=-0.07 needed depth=   1.2%  <-- could mimic
+  1649273287115660672 sep= 115.1" G= 16.47 dG=+3.88 needed depth=  23.1%  <-- could mimic
+  1649273458914355840 sep= 115.9" G= 14.78 dG=+2.19 needed depth=   5.4%  <-- could mimic
+  1649285175585186816 sep= 121.4" G= 15.73 dG=+3.14 needed depth=  11.9%  <-- could mimic
+  1649272290683251584 sep= 137.5" G= 16.37 dG=+3.78 needed depth=  21.0%  <-- could mimic
+  1649272733064222976 sep= 138.1" G= 18.08 dG=+5.49 needed depth=  99.8%
+  1649273557697953792 sep= 140.4" G= 17.22 dG=+4.63 needed depth=  45.3%  <-- could mimic
+  1649273458914357120 sep= 145.2" G= 15.98 dG=+3.39 needed depth=  15.0%  <-- could mimic
+  1649273768152003072 sep= 149.7" G= 16.97 dG=+4.38 needed depth=  36.4%  <-- could mimic
+  1649272664344743552 sep= 152.2" G= 17.62 dG=+5.03 needed depth=  65.5%
+  1649249746399250560 sep= 156.8" G= 17.03 dG=+4.44 needed depth=  38.1%  <-- could mimic
+  1649272737359851904 sep= 157.5" G= 16.79 dG=+4.20 needed depth=  30.7%  <-- could mimic
+  1649272664344745344 sep= 164.6" G= 17.12 dG=+4.53 needed depth=  41.6%  <-- could mimic
+  1649285141225399552 sep= 169.6" G= 16.92 dG=+4.33 needed depth=  34.5%  <-- could mimic
+  1649285240009012864 sep= 181.1" G= 18.03 dG=+5.44 needed depth=  95.1%
+  1649272153244294784 sep= 184.4" G= 14.00 dG=+1.41 needed depth=   2.9%  <-- could mimic
+  1649272118884555648 sep= 191.6" G= 16.75 dG=+4.16 needed depth=  29.8%  <-- could mimic
+  1649272767423733760 sep= 195.2" G= 12.78 dG=+0.19 needed depth=   1.4%  <-- could mimic
+  1649285278664355840 sep= 199.1" G= 15.57 dG=+2.98 needed depth=  10.4%  <-- could mimic

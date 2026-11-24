@@ -1,0 +1,75 @@
+TIC 107113048: 4 detected events, span 1789.254 d; 49 event-consistent periods >= 1.0 d (tol 45.0 min)
+  N=   36 P=   49.70148  extra covered epochs=  0  worst z=   +nan  ALLOWED
+  N=   72 P=   24.85074  extra covered epochs=  2  worst z=  -17.0  RULED OUT
+  N=  108 P=   16.56716  extra covered epochs=  4  worst z=  -18.7  RULED OUT
+  N=  144 P=   12.42537  extra covered epochs=  8  worst z=  -21.8  RULED OUT
+  N=  180 P=    9.94030  extra covered epochs=  9  worst z=  -15.3  RULED OUT
+  N=  216 P=    8.28358  extra covered epochs= 11  worst z=  -18.7  RULED OUT
+  N=  252 P=    7.10021  extra covered epochs= 14  worst z=  -19.7  RULED OUT
+  N=  288 P=    6.21269  extra covered epochs= 19  worst z=  -21.8  RULED OUT
+  N=  324 P=    5.52239  extra covered epochs= 23  worst z=  -19.8  RULED OUT
+  N=  360 P=    4.97015  extra covered epochs= 22  worst z=  -17.0  RULED OUT
+  N=  396 P=    4.51832  extra covered epochs= 29  worst z=  -17.8  RULED OUT
+  N=  432 P=    4.14179  extra covered epochs= 28  worst z=  -21.8  RULED OUT
+  N=  468 P=    3.82319  extra covered epochs= 32  worst z=  -21.6  RULED OUT
+  N=  504 P=    3.55011  extra covered epochs= 33  worst z=  -19.7  RULED OUT
+  N=  540 P=    3.31343  extra covered epochs= 37  worst z=  -20.4  RULED OUT
+  N=  576 P=    3.10634  extra covered epochs= 43  worst z=  -21.8  RULED OUT
+  N=  612 P=    2.92362  extra covered epochs= 43  worst z=  -20.6  RULED OUT
+  N=  648 P=    2.76119  extra covered epochs= 48  worst z=  -19.8  RULED OUT
+  N=  684 P=    2.61587  extra covered epochs= 51  worst z=  -21.5  RULED OUT
+  N=  720 P=    2.48507  extra covered epochs= 50  worst z=  -21.8  RULED OUT
+  N=  756 P=    2.36674  extra covered epochs= 56  worst z=  -21.8  RULED OUT
+  N=  792 P=    2.25916  extra covered epochs= 59  worst z=  -19.6  RULED OUT
+  N=  828 P=    2.16093  extra covered epochs= 61  worst z=  -20.6  RULED OUT
+  N=  864 P=    2.07090  extra covered epochs= 63  worst z=  -21.8  RULED OUT
+  N=  900 P=    1.98806  extra covered epochs= 66  worst z=  -20.5  RULED OUT
+  N=  936 P=    1.91160  extra covered epochs= 69  worst z=  -21.6  RULED OUT
+  N=  972 P=    1.84080  extra covered epochs= 71  worst z=  -20.7  RULED OUT
+  N= 1008 P=    1.77505  extra covered epochs= 73  worst z=  -21.9  RULED OUT
+  N= 1044 P=    1.71384  extra covered epochs= 75  worst z=  -19.9  RULED OUT
+  N= 1080 P=    1.65672  extra covered epochs= 77  worst z=  -20.4  RULED OUT
+  N= 1116 P=    1.60327  extra covered epochs= 81  worst z=  -20.8  RULED OUT
+  N= 1152 P=    1.55317  extra covered epochs= 86  worst z=  -21.8  RULED OUT
+  N= 1188 P=    1.50611  extra covered epochs= 90  worst z=  -21.2  RULED OUT
+  N= 1224 P=    1.46181  extra covered epochs= 92  worst z=  -20.6  RULED OUT
+  N= 1260 P=    1.42004  extra covered epochs= 94  worst z=  -22.8  RULED OUT
+  N= 1296 P=    1.38060  extra covered epochs= 96  worst z=  -21.8  RULED OUT
+  N= 1332 P=    1.34328  extra covered epochs=101  worst z=  -21.1  RULED OUT
+  N= 1368 P=    1.30793  extra covered epochs=103  worst z=  -21.5  RULED OUT
+  N= 1404 P=    1.27440  extra covered epochs=104  worst z=  -21.6  RULED OUT
+  N= 1440 P=    1.24254  extra covered epochs=105  worst z=  -22.3  RULED OUT
+  N= 1476 P=    1.21223  extra covered epochs=110  worst z=  -19.5  RULED OUT
+  N= 1512 P=    1.18337  extra covered epochs=114  worst z=  -21.8  RULED OUT
+  N= 1548 P=    1.15585  extra covered epochs=116  worst z=  -20.5  RULED OUT
+  N= 1584 P=    1.12958  extra covered epochs=118  worst z=  -21.8  RULED OUT
+  N= 1620 P=    1.10448  extra covered epochs=121  worst z=  -22.1  RULED OUT
+  N= 1656 P=    1.08047  extra covered epochs=126  worst z=  -22.0  RULED OUT
+  N= 1692 P=    1.05748  extra covered epochs=125  worst z=  -23.2  RULED OUT
+  N= 1728 P=    1.03545  extra covered epochs=131  worst z=  -21.8  RULED OUT
+  N= 1764 P=    1.01432  extra covered epochs=133  worst z=  -19.9  RULED OUT
+Predicted epochs for P=49.701482 T0=2312.94343: depth scale s (1 = transit, 0 = flat)
+   E=    0 Tc= 2312.9434 S37  QLP       cov=0.98  s= 0.83 ± 0.07
+   E=   15 Tc= 3058.4657 S64  QLP       cov=1.00  s= 0.94 ± 0.08
+   E=   29 Tc= 3754.2864 S90  QLP       cov=1.00  s= 1.11 ± 0.08
+   E=   36 Tc= 4102.1968 S101 QLP       cov=1.01  s= 0.74 ± 0.06
+
+Evidence against P=24.85074 (N=72):
+   E=-29 Tc=1592.2719 S10 TESS-SPOC cov=0.93 s=0.02±0.06
+   E=71 Tc=4077.3460 S100 TESScut cov=1.00 s=0.00±0.07
+
+Evidence against P=16.56716 (N=108):
+   E=1 Tc=2329.5106 S37 QLP cov=1.00 s=-0.13±0.07
+   E=88 Tc=3770.8536 S90 QLP cov=1.00 s=-0.00±0.08
+   E=107 Tc=4085.6296 S100 TESScut cov=1.00 s=0.12±0.08
+   E=109 Tc=4118.7639 S101 TESScut cov=1.00 s=-0.10±0.06
+
+Evidence against P=12.42537 (N=144):
+   E=-59 Tc=1579.8466 S10 TESS-SPOC cov=1.00 s=-0.13±0.05
+   E=-58 Tc=1592.2719 S10 TESS-SPOC cov=0.93 s=0.02±0.06
+   E=1 Tc=2325.3688 S37 TESS-SPOC cov=1.00 s=0.01±0.06
+   E=59 Tc=3046.0403 S64 QLP cov=1.00 s=-0.04±0.08
+   E=117 Tc=3766.7118 S90 QLP cov=0.98 s=-0.06±0.07
+   E=142 Tc=4077.3460 S100 TESScut cov=1.00 s=0.00±0.07
+   E=143 Tc=4089.7714 S100 TESScut cov=1.00 s=0.04±0.07
+   E=145 Tc=4114.6221 S101 TESScut cov=1.00 s=-0.12±0.07
