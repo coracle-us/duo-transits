@@ -1,0 +1,71 @@
+201132684-B0   BLS      unclear              binary host
+201176672-B0   BLS      systematic           R fail: K2:K2PDC 3962+-5926ppm n=1; K2:K2SFF 3576+-439ppm n=2
+201176672-B1   BLS      systematic           R fail: K2:EVEREST 147+-113ppm n=1; K2:K2SFF 4633+-453ppm n=2
+201207683-F0   family   EB                   Rp 11.6 R_J > 2; VSX EA/RS
+201635132-B0   BLS      control-level        SDE 8.324 vs own control 7.101
+201635132-B1   BLS      systematic           R fail: K2:K2PDC 6797+-333ppm n=1; K2:K2SFF 2058+-2032ppm n=1
+201663371-B0   BLS      EB                   VSX E
+201775904-B0   BLS      systematic           R fail: K2:K2PDC -435+-124ppm n=1; K2:K2SFF -120+-62ppm n=2
+201792207-B0   BLS      systematic           R fail: K2:K2PDC -52799+-23398ppm n=1; K2:K2SFF -56614+-25449ppm n=1
+202085278-H    posthoc  EB                   phase-0.5 dip 460 ppm, 4.7 sigma
+204776782-H    posthoc  control-level        support 12 vs own control 11
+205966706-H    posthoc  control-level        support 6 vs own control 10
+210725198-B0   BLS      control-level        SDE 7.88 vs own control 6.534
+210725198-B1   BLS      control-level        SDE 8.035 vs own control 6.534
+211064647-B0   BLS      systematic           R fail: K2:EVEREST 1054+-153ppm n=1 ok; K2:K2PDC 4619+-156ppm n=2; K2:K2SFF 6983+-132ppm n=2
+211498244-F0   family   unclear              binary host
+211598816-F0   family   EB                   Rp 2.1 R_J > 2
+211598816-H    posthoc  unclear              centroid not informative | binary host
+211821192-B0   BLS      systematic           R fail: K2:K2PDC 837+-38ppm n=1; K2:K2SFF 834+-171ppm n=1
+211894612-F0   family   EB                   Rp 2.2 R_J > 2
+211894612-B0   BLS      EB                   Rp 2.5 R_J > 2
+211995462-B0   BLS      systematic           R fail: K2:EVEREST 121+-22ppm n=2 ok; K2:K2PDC 1344+-211ppm n=3; K2:K2SFF 136+-30ppm n=2
+212152316-B0   BLS      systematic           R fail: K2:EVEREST 163+-67ppm n=1; K2:K2PDC 81+-304ppm n=1; K2:K2SFF 21+-21ppm n=2
+212325089-F0   family   EB                   Rp 14.4 R_J > 2
+212325089-B0   BLS      systematic           R fail: K2:K2PDC 101+-446ppm n=1; K2:K2SFF 834+-262ppm n=1
+212325089-B1   BLS      systematic           R fail: K2:K2PDC 8436+-15544ppm n=1; K2:K2SFF 5602+-17823ppm n=1
+212332380-F0   family   EB                   catalogue comment: secondary eclipse; Rp 3.2 R_J > 2 | odd/even 4.2 sigma
+212332380-B0   BLS      EB                   catalogue comment: secondary eclipse; Rp 2.9 R_J > 2 | odd/even 5.1 sigma
+212343520-B0   BLS      EB                   catalogue comment: secondary eclipse
+212343520-B1   BLS      EB                   catalogue comment: secondary eclipse
+212549089-B0   BLS      unclear              reductions untestable | centroid not informative | binary host | one-event BLS (dominance 1.00)
+212685467-B0   BLS      unclear              reductions untestable | centroid not informative | one-event BLS (dominance 1.00)
+212685467-B1   BLS      systematic           R fail: K2:EVEREST 91+-87ppm n=1; K2:K2PDC 625+-195ppm n=2; K2:K2SFF -24+-100ppm n=2
+212694013-F0   family   EB                   Rp 3.8 R_J > 2
+212732378-B0   BLS      systematic           R fail: K2:EVEREST 506+-226ppm n=1; K2:K2PDC 866+-193ppm n=3; K2:K2SFF 1231+-191ppm n=2 ok
+212805678-F0   family   EB                   catalogue comment: secondary eclipse; Rp 7.6 R_J > 2
+212805678-B0   BLS      systematic           R fail: K2:K2PDC -7665+-13013ppm n=1; K2:K2SFF -102+-225ppm n=2
+212805678-B1   BLS      EB                   catalogue comment: secondary eclipse; Rp 7.1 R_J > 2
+212805678-H    posthoc  EB                   catalogue comment: secondary eclipse; Rp 8.5 R_J > 2
+213832800-F0   family   EB                   Rp 8.0 R_J > 2
+215067200-H    posthoc  control-level        support 6 vs own control 5
+215307988-F0   family   EB                   catalogue comment: secondary eclipse
+215894766-B0   BLS      systematic           R fail: K2:K2PDC 3604+-672ppm n=2 ok; K2:K2SFF 383+-115ppm n=3
+220152847-B0   BLS      systematic           R fail: K2:K2PDC -248+-1213ppm n=1; K2:K2SFF -1149+-2197ppm n=1
+220606084-B0   BLS      systematic           R fail: K2:K2PDC 301+-989ppm n=1; K2:K2SFF 368+-793ppm n=1
+223332021-B0   BLS      EB                   catalogue comment: secondary eclipse
+229021605-F0   family   EB                   Rp 7.2 R_J > 2
+236157481-F0   family   EB                   Rp 8.9 R_J > 2
+245929407-F0   family   off-target           K2 centroid offset 6.1" +- 0.5" (dx +0.7, dy -6.1; n=1)
+246331715-B0   BLS      systematic           R fail: K2:K2PDC 53325+-2268ppm n=1; K2:K2SFF 44958+-731ppm n=1
+246359551-F0   family   EB                   catalogue comment: secondary eclipse; Rp 20.8 R_J > 2
+246425172-F0   family   systematic           R fail: 1 epochs confirmed in >=2 products, 0 in only 1 of >=2, 0 covered by 1 product, 1 confirmed nowhere; products EVEREST K2PDC K2SFF
+246425172-B0   BLS      systematic           R fail: K2:EVEREST 3176+-2422ppm n=1; K2:K2PDC 4606+-2430ppm n=2; K2:K2SFF 4602+-3870ppm n=2
+246732631-F0   family   EB                   catalogue comment: secondary eclipse; Rp 3.4 R_J > 2
+246732631-B0   BLS      EB                   catalogue comment: secondary eclipse; Rp 3.0 R_J > 2
+246849982-F0   family   EB                   Rp 8.3 R_J > 2
+247756662-H    posthoc  EB                   Rp 16.9 R_J > 2 | phase-0.5 dip 291 ppm, 3.7 sigma
+247795097-H    posthoc  control-level        support 10 vs own control 8
+248555345-F0   family   EB                   Rp 18.4 R_J > 2
+248555345-B0   BLS      systematic           R fail: K2:K2PDC 12425+-2128ppm n=2; K2:K2SFF -323+-72ppm n=2
+248657359-B0   BLS      control-level        SDE 8.134 vs own control 7.061
+248749087-B0   BLS      systematic           R fail: TESS:SPOC_120 34747+-5270ppm n=1 ok; TESS:TESS-SPOC 10738+-2814ppm n=1
+248912804-B0   BLS      unclear              reductions untestable | centroid not informative
+248912804-B1   BLS      systematic           R fail: K2:EVEREST -209+-773ppm n=1; K2:K2PDC 3379+-1132ppm n=2; K2:K2SFF 3857+-2433ppm n=2
+verdict
+EB               19
+systematic       14
+control-level     7
+unclear           6
+off-target        1
+signals: {'EB': 26, 'systematic': 23, 'control-level': 8, 'unclear': 6, 'off-target': 1}
