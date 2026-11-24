@@ -51,6 +51,23 @@ def _window(t, f, tc, half):
     return t[m] - tc, f[m]
 
 
+def _bin10(t, f):
+    """10-min bins, as the pipeline bins faster cadences."""
+    if t.size < 3 or np.nanmedian(np.diff(t)) >= 9 / 1440:
+        return t, f
+    idx = np.floor((t - t.min()) / (10 / 1440)).astype(int)
+    n = np.bincount(idx)
+    ok = n > 0
+    return (np.bincount(idx, t) / np.maximum(n, 1))[ok], (np.bincount(idx, f) / np.maximum(n, 1))[ok]
+
+
+def _local(x, y, dur):
+    """Divide by the median outside 1.5 durations of the marked time (a product with its own trend)."""
+    out = np.abs(x) > 1.5 * dur
+    m = np.nanmedian(y[out]) if out.sum() >= 5 else np.nanmedian(y) if y.size else 1.0
+    return y / m if np.isfinite(m) and m != 0 else y
+
+
 def _raw_file(sr, row, cache, **kw):
     with pl.DOWNLOAD_LOCK:
         return sr[row["idx"]].download(download_dir=str(cache), **kw)
@@ -61,8 +78,9 @@ def neighbours(ra, dec, tmag, tic, sector, author, cam_ccd, cache):
     target's Tmag that have a light curve of the same author in the sector, on the same camera/CCD."""
     import lightkurve as lk
     from astroquery.mast import Catalogs
-    r = Catalogs.query_region(f"{ra} {dec}", radius=NEIGH_RADIUS_DEG, catalog="TIC",
-                              Tmag=[tmag - NEIGH_DMAG, tmag + NEIGH_DMAG]).to_pandas()
+    r = Catalogs.query_criteria(catalog="Tic", coordinates=f"{ra} {dec}", radius=NEIGH_RADIUS_DEG,
+                                Tmag=[tmag - NEIGH_DMAG, tmag + NEIGH_DMAG]).to_pandas()
+    r["dstArcSec"] = 3600 * np.hypot((r.ra.astype(float) - ra) * np.cos(np.radians(dec)), r.dec.astype(float) - dec)
     r = r[r.ID.astype(int) != int(tic)].sort_values("dstArcSec")
     out, tried = [], 0
     for x in r.itertuples():
@@ -112,7 +130,7 @@ def make_sheet(d, ev, ref, sectors, sr, prod_rows, info, out_dir, cache, inject=
     depth_scale = max(ref["depth"], ev["depth"], 1e-5)
     ylim = (1 - 2.5 * depth_scale, 1 + 1.5 * depth_scale)
 
-    def lcpanel(ax, t, f, t0, title, det_dur=None):
+    def lcpanel(ax, t, f, t0, title, det_dur=None, local=False):
         if det_dur is not None:
             try:
                 t, f = pl.detrend(t, f, det_dur)
@@ -120,6 +138,8 @@ def make_sheet(d, ev, ref, sectors, sr, prod_rows, info, out_dir, cache, inject=
                 ax.set_title(f"{title}: detrend failed")
                 return
         x, y = _window(t, f, t0, half)
+        if local:
+            y = _local(x, y, dur)
         ax.plot(x, y, ".", ms=3, color="k")
         ax.axvspan(-dur / 2, dur / 2, color="C1", alpha=0.2)
         ax.axhline(1, color="0.6", lw=0.6)
@@ -156,7 +176,7 @@ def make_sheet(d, ev, ref, sectors, sr, prod_rows, info, out_dir, cache, inject=
     for i in range(2):
         ax = fig.add_subplot(gs[1, i])
         if i < len(shown):
-            lcpanel(ax, shown[i][1], shown[i][2], tc, f"B{i + 1} EVENT in another product: {shown[i][0]}")
+            lcpanel(ax, shown[i][1], shown[i][2], tc, f"B{i + 1} EVENT in another product: {shown[i][0]}", local=True)
         else:
             ax.text(0.5, 0.5, "no other product for this sector" if not shown else "no further product",
                     ha="center", va="center", transform=ax.transAxes)
@@ -184,8 +204,8 @@ def make_sheet(d, ev, ref, sectors, sr, prod_rows, info, out_dir, cache, inject=
             ts, fs = t_all[ok], sap[ok] / np.nanmedian(sap[ok])
             if inject:
                 fs = inject(s_ev, best["author"], ts, fs)
-            x, y = _window(ts, fs, tc, half)
-            ax_c.plot(x, y - (np.nanmedian(y) - 1), ".", ms=3, color="C3", label="SAP")
+            x, y = _window(*_bin10(ts, fs), tc, half)
+            ax_c.plot(x, _local(x, y, dur), ".", ms=3, color="C3", label="SAP (10-min bins)")
             x2, y2 = _window(t_e, f_e, tc, half)
             ax_c.plot(x2, y2 + 2.0 * depth_scale, ".", ms=3, color="k", label="pipeline flux (offset up)")
             ax_c.axvspan(-dur / 2, dur / 2, color="C1", alpha=0.2)
@@ -216,9 +236,7 @@ def make_sheet(d, ev, ref, sectors, sr, prod_rows, info, out_dir, cache, inject=
     edges = core.gap_edges(t_e)
     notes.update(days_from_sector_start=float(tc - t_e.min()), days_to_sector_end=float(t_e.max() - tc),
                  days_to_nearest_gap_or_edge=float(core.edge_distance(edges, np.array([tc]))[0]))
-    ax_d.set_title(f"D EVENT's sector, raw (green lines: momentum dumps). Event is {notes['days_from_sector_start']:.2f} d "
-                   f"after the start, {notes['days_to_sector_end']:.2f} d before the end, "
-                   f"{notes['days_to_nearest_gap_or_edge']:.2f} d from the nearest gap or edge", fontsize=9)
+    ax_d.set_title("D EVENT's sector, raw (green lines: momentum dumps; red ticks: flagged cadences)", fontsize=9)
     ax_d.set_xlabel("BTJD", fontsize=8)
 
     # E: neighbours
@@ -229,18 +247,18 @@ def make_sheet(d, ev, ref, sectors, sr, prod_rows, info, out_dir, cache, inject=
         nb, tried = [], 0
         notes["neighbour_error"] = str(e)[:150]
     for i, (_, sep, tm, t, f) in enumerate(nb):
-        x, y = _window(t, f, tc, half)
+        x, y = _window(*_bin10(t, f), tc, half)
         if x.size:
-            ax_e.plot(x, y - np.nanmedian(y) + 1 + i * 2.5 * depth_scale, ".", ms=2, color=f"C{i}",
+            ax_e.plot(x, _local(x, y, dur) + i * 2.5 * depth_scale, ".", ms=2, color=f"C{i}",
                       label=f"{sep:.1f}' away, Tmag {tm:.1f}")
     ax_e.axvspan(-dur / 2, dur / 2, color="C1", alpha=0.2)
     ax_e.set_xlim(-half, half)
     ax_e.set_ylim(1 - 2.5 * depth_scale, 1 + (max(len(nb), 1) * 2.5 + 1) * depth_scale)
     if nb:
         ax_e.legend(fontsize=7, loc="upper right", ncol=2)
-    ax_e.set_title(f"E EVENT's times on {len(nb)} neighbouring stars, same camera and CCD (offset; {tried} tried)",
+    ax_e.set_title(f"E EVENT's times on {len(nb)} neighbouring stars, same camera and CCD (offset)",
                    fontsize=9)
-    notes["n_neighbours"] = len(nb)
+    notes.update(n_neighbours=len(nb), n_neighbours_tried=tried)
 
     # F: difference image, only from a cut-out already on disk
     ax_f = fig.add_subplot(gs[1, 3])
@@ -290,6 +308,8 @@ def make_sheet(d, ev, ref, sectors, sr, prod_rows, info, out_dir, cache, inject=
            f"Flagged cadences within 2 durations: {notes.get('n_flagged_within_2_durations', 'unknown')} "
            f"(quality values {notes.get('quality_values_within_2_durations', 'unknown')}); "
            f"momentum dump within 2 durations: {notes.get('momentum_dump_within_2_durations', 'unknown')}\n"
+           f"Event is {notes['days_from_sector_start']:.2f} d after its sector's first point, "
+           f"{notes['days_to_sector_end']:.2f} d before its last, {notes['days_to_nearest_gap_or_edge']:.2f} d from the nearest gap or edge\n"
            f"Other products shown: {notes['n_other_products']}; SAP shown: {notes.get('sap_shown', False)}; "
            f"neighbours shown: {notes['n_neighbours']}; difference image: {notes['difference_image']}\n"
            f"Event coincides with another catalogued transit on this star: "
