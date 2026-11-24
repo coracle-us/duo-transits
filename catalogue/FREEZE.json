@@ -1,0 +1,27 @@
+{
+  "frozen": "2026-11-23",
+  "approved_by": "Jon McBee",
+  "note": "step 2 of 2 of prereg_catalogue.yaml 1.0; every file of round3/FREEZE3.json is frozen too and checked against that file",
+  "sha256": {
+    "catalogue/prereg_catalogue.yaml": "1177568b08db3431af02d488cab5bcd7fbee8db7306ebd6d80dab73adfb75d72",
+    "catalogue/defs.csv": "16f9a5ca70885e23420a05fea574c20c757a208375eb849013a36bb184d6adc3",
+    "catalogue/defs_not_scored.csv": "74eb5b1f9860f70338800aac9f240eec3825e7a937c468aa5ac1cfc46c111f09",
+    "catalogue/tic_info.csv": "01339a7f20d145f93cb413708d66f5766425b9bde042bc26ad35174aca2a5390",
+    "catalogue/check_periods.csv": "cf697b76828b60683459112ce6a24a342ff9602f7dc83d02f61123fdd7bbdb40",
+    "catalogue/validation/v2_truth.csv": "30512a9f973b468ced6f0a60f82269902f9bd8d91a2a92de0abe2ef022fa9006",
+    "catalogue/validation/v3_truth.csv": "d40066c1a5402221e0a213ce2169f2b0b86e2710f80fa355472c66691ce920fa",
+    "catalogue/validation/arxiv_2611.03019/published_periods.csv": "b3b78301465b955152f6f823e149979e0a6b62d151db83d83188212a01e22832",
+    "catalogue/validation/arxiv_2611.03019/source/anc/table2_full.csv": "10856d7939506705e1292b22307b3a0bf98532acfb1a2e9887968cf142ed7373",
+    "catalogue/build_defs.py": "fbbdad96d4bf42561cda3a3c331ba4a3708310cadcf22717ca34f2bc94b8012d",
+    "catalogue/build_check_periods.py": "3d97f067e5f9faa3c629be4924e07f97552358705e1b411fe202ff5a4c7fd5f1",
+    "catalogue/validation/build_truth.py": "e06393c54c4b2add022fde6087e1109cb48c36cc41f758f029d528a88c28bc9b",
+    "catalogue/catrun.py": "cb5ba3dd94ead172d18c3df384ca95c45ca918f1a898c28258aebd717aa711be",
+    "catalogue/run_catalogue.py": "9aa2ce6c337f4681f5bf62377bd7da83e471ea5b4de9716fc3b636e4cc5c6538",
+    "catalogue/sheets.py": "7ec4f5138b5dc2ec40ebb76b964944d488c1fe77b8a39a4aadc3cd39a7cc4ed7",
+    "catalogue/make_sheets.py": "e78f6874e4cc4d70f82a03ec8cc04c0fb105d026b3ebc7477e16f9818c7c4f3c",
+    "catalogue/VETTING.md": "4cc2101c897a8026f3345798fb46a8f56823557eef52bda09c04f2390c66c57e",
+    "catalogue/merge_verdicts.py": "38d7112258f722ca0bd35755e33dd98bf45a112ec5195d7e8befe5abbfa541eb",
+    "catalogue/report.py": "769f94d4e2efa2e63d37140dca8bdffe1efaa6ffd122122b59e81369c0723894",
+    "calibration/mono/round3/FREEZE3.json": "19a5faf1a8a798b283d18886c69288d7fca9431b45f2e3f9caf69cbd3e9205b4"
+  }
+}

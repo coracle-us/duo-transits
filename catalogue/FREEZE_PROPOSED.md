@@ -1,9 +1,10 @@
-# The freeze (step 2 of 2): what is proposed
+# The freeze (step 2 of 2)
 
-**Status: PROPOSED, not approved. No candidate's light curve has been read.** On approval the files
-below are hashed into `FREEZE.json`, the approval goes in `APPROVALS.md`, and the run may start.
+**Status: APPROVED by Jon on 2026-11-23 (`APPROVALS.md`), before any candidate's light curve was read.**
+The files below are hashed in `FREEZE.json`; `make_freeze.py --check` and `tests/test_freeze.py` verify
+them. (This file keeps its name; it is the text that was put to Jon, plus item 14.)
 
-## Files that would be frozen
+## Files frozen
 
 `prereg_catalogue.yaml`, `defs.csv`, `defs_not_scored.csv`, `tic_info.csv`, `check_periods.csv`,
 `validation/v2_truth.csv`, `validation/v3_truth.csv`, `validation/arxiv_2611.03019/published_periods.csv`,
@@ -48,6 +49,9 @@ Each is fixed in the code above. None was made after seeing a candidate's result
     50 ppm. They are run as they are and flagged.
 13. **Network failures.** A star whose light curves fail to load is retried and, if it still fails,
     reported as an error, not as "no light curve".
+14. **Results stay out of git.** `catalogue/results/` is ignored. After each stage the SHA-256 of every
+    result file is committed to `catalogue/results_hashes/`, so the results are dated and cannot be
+    changed unseen, while no row is public before Jon releases it. (Added on approval, 2026-11-23.)
 
 ## Known before the run
 
