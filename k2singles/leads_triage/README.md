@@ -58,7 +58,9 @@ Per signal (64): EB 26, systematic 23, control-level 8, unclear 6, off-target 1.
 - **Off-target (1):** 245929407.
   - Its K2 centroid puts the source 6.1″ ± 0.5″ from the target (one epoch). A Gaia neighbour sits 4.8″ away
     (ΔG = +2.4).
-  - The TESS centroid gives 2.5″ ± 0.6″, small for 21″ pixels. A pixel test would settle it.
+  - The TESS centroid gives 2.5″ ± 0.6″, small for 21″ pixels.
+  - **Confirmed by the pixel test (below):** the K2 C12 dip is on the neighbour Gaia DR3 2433468825703524480
+    (G = 14.17), not on the target.
 
 ## The six unclear stars (none is a clean candidate)
 
@@ -74,16 +76,50 @@ Per signal (64): EB 26, systematic 23, control-level 8, unclear 6, off-target 1.
 **Closest to a candidate: 211894612 (EB by the size rule).**
 - Three events: K2 C5, K2 C18 and TESS S44.
 - 6 aliases from 55.7 to 111.4 d.
-- K2 and TESS centroids on target. RUWE 1.006, and no Gaia neighbour within 60″.
+- K2 and TESS centroids on target, confirmed in pixels in K2 C5 and C18 (below). RUWE 1.006, and no Gaia
+  neighbour within 60″.
 - Rp = 2.2–2.8 R_J (family box depth to catalogued depth, R★ = 1.31 R☉). That points to a low-mass stellar
   companion of an F star (an EBLM-type system), not a planet.
 
+## Pixel difference images (2026-11-24, with Jon's OK)
+
+Two stars, the only ones where a difference image could change the outcome.
+
+- **Data** (`pixels_download.py`, about 80 MB, in `data/pixels/` → `duo-transits-cache/leads_triage/`, outside git):
+  - K2 long-cadence TPFs: 245929407 C12; 211894612 C5 and C18.
+  - 15×15 TESScut cutouts: S69 (245929407) and S44 (211894612). Both TESS events are in FFI-only sectors.
+- **Method** (`pixels_diff.py`, rules in its docstring):
+  - **K2:** a per-pixel deficit image, as in `independent_211924561/s09_k2_pixels.py`. It gets a free Gaussian fit,
+    then a fit with PSF templates at the Gaia positions of the target and its neighbours.
+  - **TESS:** the `scripts/diff_image.py` difference image and Gaussian fit.
+- **Output:** `pixels.csv`, `figs/pix_*.png`.
+
+| Star | Data | Fitted source vs target | Template fit | Verdict |
+|---|---|---|---|---|
+| 245929407 | K2 C12 | 6.6″ ± 0.6″ (11.5σ) from the target's Gaia position; 5.8″ from the out-of-event image centroid | target 0.4σ (depth 0.6 %); neighbour at 4.8″, ΔG +2.44: **9.0σ**, implied depth ≈ 10 % | **off-target** |
+| 245929407 | TESS S69 | 4.1″ ± 0.6″; the nearest Gaia star to the fit is the 4.8″ neighbour (1.7″ away) | – | unresolved (< 0.5 px), consistent with K2 |
+| 211894612 | K2 C5 | 0.5″ ± 0.2″ (2.7σ) | target 5.9σ, implied depth 2.3 % (no neighbour in the stamp) | **on-target** |
+| 211894612 | K2 C18 | 2.4″ ± 0.35″ from the WCS position, but 0.1″ from the out-of-event image centroid; the C18 WCS is off by 2.5″ | target 8.8σ, implied depth 3.1 % | **on-target** |
+| 211894612 | TESS S44 | 2.6″ ± 0.4″; the nearest Gaia star to the fit is the target; target pixel diff/err = 72 | – | unresolved (< 0.5 px), on target in practice: no Gaia star within 60″ |
+
+**What this changes:** no verdict.
+- 245929407 stays off-target, now with the source named. Its K2 C12 event is an eclipse of a G = 14.2 star 4.8″
+  away (ΔG ≈ 2.4, needing roughly 10 % or more depth there). That is most likely an eclipsing binary.
+- 211894612 stays on target and EB by size. The yield remains 0 of 47.
+
+**Two changes made while running, before anything was committed:**
+- The TESS fit now starts at the peak of diff/err. `diff_image.py` starts at the largest absolute difference. In
+  S44 that was a saturated G = 9.8 star on the cutout edge (diff/err ≈ 3), and the free fit converged there
+  (151″ off). The target pixel has diff/err ≈ 72.
+- A TESS offset that is significant but under half a pixel is labelled "unresolved", not "on-target". The
+  shared `scripts/diff_image.py` is unchanged.
+- TESS offsets of 2.6–4.1″ at 6–7σ also appear for the isolated 211894612. TESS's formal errors are below its
+  systematic floor at this scale.
+
 ## What could not run, and limits
 
-- **No pixel difference images.** No K2 TPFs or TESS TPFs/TESScut cutouts for these sectors are in the cache.
-  X is a light-curve (moment-centroid) test.
-  - It is informative for 34 of the 64 signals, and on target for 33 of those.
-  - Downloading TPFs needs Jon's OK. Only 245929407 (off-target call) and 211894612 would gain from it.
+- **Pixel difference images: only for 245929407 and 211894612** (section above). For the other 45 stars, X is a
+  light-curve (moment-centroid) test. It is informative for 34 of the 64 signals, and on target for 33 of those.
 - **SPOC DV reports:** cached only for two Table 1 stars. None was fetched for the leads.
 - **Odd/even and phase 0.5:** run only for signals with a single period: the BLS and post-hoc signals, and
   families with one allowed period. They can't run on two-event alias lists.
@@ -109,9 +145,12 @@ Per signal (64): EB 26, systematic 23, control-level 8, unclear 6, off-target 1.
 ```
 python k2singles/leads_triage/catalog_lookup.py   # network: ESA Gaia TAP, VizieR CfA mirror
 python k2singles/leads_triage/triage.py           # offline; needs the symlinks below
+python k2singles/leads_triage/pixels_download.py  # network: MAST (K2 TPFs, TESScut)
+python k2singles/leads_triage/pixels_diff.py      # network: ESA Gaia TAP for the field stars
 ```
 
 The search's data cache must be linked in (none of it is edited):
 - `k2singles/revision2/data` → `duo-transits-cache/revision2`
 - `data/raw/lightcurves` and `data/raw/tesscut` → `duo-transits-cache/raw/…`
 - `k2singles/cache` → `duo-transits-cache/k2cache`
+- `k2singles/leads_triage/data` → `duo-transits-cache/leads_triage` (the downloaded pixels)
