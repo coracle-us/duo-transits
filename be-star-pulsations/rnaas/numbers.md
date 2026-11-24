@@ -132,4 +132,6 @@ The figure is `figures/rnaas_fig1.pdf`, copied to `rnaas/` and unchanged in v2. 
 - NEOWISE-R single-exposure source table: 10.26131/IRSA144. That is the table queried in
   `src/s2_wise.py` (`neowiser_p1bs_psd`).
 
-**Still unchecked:** the UAT keyword IDs.
+**UAT keyword IDs** (checked 2026-11-24 against `UAT.json` in github.com/astrothesaurus/UAT,
+release 6.0.0 of 2025-12-17): Be stars 142, Circumstellar disks 235, Stellar pulsations 1625,
+Time domain astronomy 2109. All four match their names and none has a change note.
