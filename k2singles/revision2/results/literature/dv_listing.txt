@@ -1,8 +1,15 @@
-EPIC 246194159 TIC 301328232: SPOC sectors [42]; DV reports: none
-EPIC 248811085 TIC 349987241: no SPOC time series on MAST, so no SPOC TCE or DV report
-EPIC 246089124 TIC 49603732: no SPOC time series on MAST, so no SPOC TCE or DV report
-EPIC 246696483 TIC 436612436: no SPOC time series on MAST, so no SPOC TCE or DV report
-EPIC 211390677 TIC 366568535: SPOC sectors [7]; DV reports: none
-EPIC 247967714 TIC 268396693: no SPOC time series on MAST, so no SPOC TCE or DV report
-EPIC 212012030 TIC 14394716: SPOC sectors [71, 72]; DV reports: none
-EPIC 211503363 TIC 20444116: no SPOC time series on MAST, so no SPOC TCE or DV report
+EPIC 246194159 TIC 301328232 (none): collections ['HLSP', 'TESS']; DV reports: hlsp_tess-spoc_tess_phot_0000000301328232-s0070-s0070_tess_v1_dvr.xml (98161 B)
+EPIC 248811085 TIC 349987241 (none): collections ['HLSP']; DV reports: none
+EPIC 246089124 TIC 49603732 (none): collections ['HLSP']; DV reports: hlsp_tess-spoc_tess_phot_0000000049603732-s0070-s0070_tess_v1_dvr.xml (100109 B)
+EPIC 246696483 TIC 436612436 (none): collections ['HLSP']; DV reports: none
+EPIC 211390677 TIC 366568535 (none): collections ['HLSP', 'TESS']; DV reports: none
+EPIC 247967714 TIC 268396693 (none): collections ['HLSP']; DV reports: none
+EPIC 212012030 TIC 14394716 (none): collections ['HLSP', 'TESS']; DV reports: none
+EPIC 211503363 TIC 20444116 (estimate): collections ['HLSP']; DV reports: none
+EPIC 211924561 TIC 238606535 (differs): collections ['HLSP', 'TESS']; DV reports: tess2021233042500-s0042-s0046-0000000238606535-00550_dvr.xml (446729 B); tess2023315161428-s0072-s0072-0000000238606535-00827_dvr.xml (110375 B); tess2018235142541-s0002-s0072-0000000238606535-00829_dvr.xml (286782 B)
+EPIC 211489484 TIC 6951741 (differs): collections ['HLSP', 'TESS']; DV reports: tess2018206190142-s0001-s0046-0000000006951741-00555_dvr.xml (602077 B)
+EPIC 211411112 TIC 437034781 (agrees): collections ['HLSP', 'TESS']; DV reports: hlsp_tess-spoc_tess_phot_0000000437034781-s0046-s0046_tess_v1_dvr.xml (108364 B)
+EPIC 211892898 TIC 184895645 (agrees): collections ['HLSP']; DV reports: none
+EPIC 202126877 TIC 86491361 (agrees): collections ['HLSP']; DV reports: hlsp_tess-spoc_tess_phot_0000000086491361-s0043-s0043_tess_v1_dvr.xml (164137 B); hlsp_tess-spoc_tess_phot_0000000086491361-s0044-s0044_tess_v1_dvr.xml (217414 B); hlsp_tess-spoc_tess_phot_0000000086491361-s0045-s0045_tess_v1_dvr.xml (101389 B)
+EPIC 202072917 TIC 308255000 (agrees): collections ['HLSP', 'TESS']; DV reports: hlsp_tess-spoc_tess_phot_0000000308255000-s0043-s0043_tess_v1_dvr.xml (98714 B); hlsp_tess-spoc_tess_phot_0000000308255000-s0045-s0045_tess_v1_dvr.xml (101860 B); tess2018349182737-s0006-s0006-0000000308255000-00415_dvr.xml (106268 B); tess2018349182739-s0006-s0006-0000000308255000-00144_dvr.xml (120515 B); tess2021259155059-s0043-s0043-0000000308255000-00522_dvr.xml (107864 B); tess2021311000057-s0045-s0045-0000000308255000-00542_dvr.xml (107188 B); tess2021233042500-s0042-s0046-0000000308255000-00550_dvr.xml (177885 B); tess2018206190142-s0001-s0046-0000000308255000-00555_dvr.xml (507355 B)
+EPIC 202071902 TIC 57051340 (agrees): collections ['HLSP']; DV reports: hlsp_tess-spoc_tess_phot_0000000057051340-s0044-s0044_tess_v1_dvr.xml (113383 B); hlsp_tess-spoc_tess_phot_0000000057051340-s0071-s0071_tess_v1_dvr.xml (111389 B)
