@@ -15,32 +15,27 @@ ROOT = Path(__file__).resolve().parents[2]
 EPH = ROOT / "k2singles" / "results" / "ephemerides"
 OUT = ROOT / "k2singles" / "rnaas"
 
-# EPIC, TIC, group, alias divisors n (P = P_fit / n), events, prior period (with source), note
+# EPIC, TIC, group, alias divisors n (P = P_fit / n), events, prior period (with source), blind recovery, note.
+# Groups are the literature verdicts of the AAS82225 revision (k2singles/revision2/PLAN.md, "Per-star verdicts").
+# Blind: "yes" = the Table 1 period is among the pre-registered blind search's allowed periods or BLS
+# (revision2/results/compare_table1.csv); "post hoc" = only the post-hoc linked-event test (link_calibrated.csv);
+# "no" = neither.
 ROWS = [
-    (211924561, 238606535, "planet", [1, 2], "C5, C16; S46, S72",
-     "$\\leq702.47$ (TOI)", "TOI-5560.01"),
-    (211503363, 20444116, "planet", [1, 2], "C5; S45, S72",
-     "none$^g$", ""),
-    (211411112, 437034781, "validation", [1], "C5, C16; S46",
-     "62.59484(3)$^a$", "Sanders 617 (M67)"),
-    (246194159, 301328232, "eb", [1], "C12; S70, S92",
-     "none", "HD 220967; sec.\\ 0.867"),
-    (211489484, 6951741, "eb", [1], "C5, C18; S7, S46",
-     "TCE 106.94 (excl.)", "sec.\\ 0.194"),
-    (211892898, 184895645, "eb", [1], "C5, C16, C18",
-     "Gaia SB1 72.53(3)", ""),
-    (248811085, 349987241, "eb", [1], "C14; S46, S72", "none", ""),
-    (246089124, 49603732, "eb", [1], "C12; S70, S92", "none", "sec.\\ 0.494"),
-    (246696483, 436612436, "eb", [1, 2], "C13; S43, S70", "none", "$P/2$ disfavoured"),
-    (211390677, 366568535, "eb", [1, 2], "C5, C18; S45", "none", ""),
-    (247967714, 268396693, "eb", [1, 2, 3], "C13; S44, S71", "none", ""),
-    (212012030, 14394716, "eb", [1, 2, 3, 4, 5], "C5, C18; S71", "none", ""),
-    (202126877, 86491361, "known", [1], "C0; S43--45, S71--72",
-     "21.78$^b$", "deepening$^f$"),
-    (202072917, 308255000, "known", [1], "C0; S6, S43, S45",
-     "34.744$^{b}$, 34.7457$^{c}$", ""),
-    (202071902, 57051340, "known", [1], "C0; S44, S71",
-     "22.859(15)$^d$", ""),
+    (246194159, 301328232, "none", [1], "C12; S70, S92", "", "no", "HD 220967; sec.\\ 0.867"),
+    (248811085, 349987241, "none", [1], "C14; S46, S72", "", "yes", ""),
+    (246089124, 49603732, "none", [1], "C12; S70, S92", "", "yes", "sec.\\ 0.494"),
+    (246696483, 436612436, "none", [1, 2], "C13; S43, S70", "", "yes", "$P/2$ disfavoured"),
+    (211390677, 366568535, "none", [1, 2], "C5, C18; S45", "", "yes", ""),
+    (247967714, 268396693, "none", [1, 2, 3], "C13; S44, S71", "", "yes", ""),
+    (212012030, 14394716, "none", [1, 2, 3, 4, 5], "C5, C18; S71", "", "yes", ""),
+    (211503363, 20444116, "estimate", [1, 2], "C5; S45, S72", "$\\gtrsim58$$^g$", "no", "planet cand."),
+    (211924561, 238606535, "differs", [1, 2], "C5, C16; S46, S72", "TCEs$^h$", "post hoc", "TOI-5560.01"),
+    (211489484, 6951741, "differs", [1], "C5, C18; S7, S46", "TCEs$^h$", "post hoc", "sec.\\ 0.194"),
+    (211411112, 437034781, "agrees", [1], "C5, C16; S46", "62.59484(3)$^a$", "yes", "Sanders 617"),
+    (211892898, 184895645, "agrees", [1], "C5, C16, C18", "72.53(3)$^e$", "yes", "Gaia SB1"),
+    (202126877, 86491361, "agrees", [1], "C0; S43--45, S71--72", "21.78$^b$", "yes", "deepening$^f$"),
+    (202072917, 308255000, "agrees", [1], "C0; S6, S43, S45", "34.744$^b$, 34.7457$^c$", "yes", ""),
+    (202071902, 57051340, "agrees", [1], "C0; S44, S71", "22.859(15)$^d$", "yes", ""),
 ]
 
 
@@ -52,14 +47,14 @@ def fmt(p, s):
     return f"{p:.{nd}f}({round(s * 10 ** nd):d})"
 
 
-GROUPS = {"planet": "Planet candidates (as catalogued)", "validation": "Validation (published orbit)",
-          "eb": "Eclipsing binaries: new or refined periods", "known": "Eclipsing binaries: published periods"}
+GROUPS = {"none": "No prior period", "estimate": "Prior estimate only", "differs": "Published periods differ",
+          "agrees": "Published period agrees"}
 
 
 def main():
     rows, tex = [], []
     last = None
-    for epic, tic, grp, ns, events, prior, note in ROWS:
+    for epic, tic, grp, ns, events, prior, blind, note in ROWS:
         if grp != last:
             tex.append(f"\\cutinhead{{{GROUPS[grp]}}}")
             last = grp
@@ -77,8 +72,8 @@ def main():
             ptxt = ", ".join(fmt(P / n, sP / n) for n in ns)
         rows.append(dict(EPIC=epic, TIC=tic, group=grp, events=events, P_fit=P, sigma_P=sP,
                          n_allowed=" ".join(map(str, ns)), periods=ptxt, T0_btjd=j["T0"], sigma_T0=j["sigma_T0"],
-                         prior=prior, note=note))
-        tex.append(f"{epic} & {events} & {ptxt} & {prior} & {note} \\\\")   # TIC IDs are in table.csv
+                         prior=prior, blind=blind, note=note))
+        tex.append(f"{epic} & {events} & {ptxt} & {prior} & {blind} & {note} \\\\")   # TIC IDs are in table.csv
     OUT.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).to_csv(OUT / "table.csv", index=False)
     (OUT / "table_rows.tex").write_text("\n".join(tex) + "\n")
