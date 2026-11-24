@@ -472,3 +472,24 @@ LaTeX is balanced (not compiled: aastex701 is not installed). Findings and what 
   - re-querying the 22 general catalogues for the eight stars, to guard against tables the mirror drops (VizieR was
     down on 2026-11-24);
   - Pope+2016 and Zink+2021, which are not on the mirror.
+
+## The two S70 TESS-SPOC DV reports, 2026-11-24
+
+Downloaded with Jon's OK into `data/literature/dv_tic301328232/` and `dv_tic49603732/` (sizes match the MAST
+listing). Read by `dv_tce_s70.py` -> `results/literature/dv_tce_s70.txt`, which measures our cached S70 light curves
+(TESS-SPOC PDCSAP and SAP, quality 0; QLP) at each TCE epoch, against a control of the same statistic every 0.1 d.
+Neither DV fit converged, and neither report has centroid results.
+- **HD 220967 = 246194159:** one TCE, P = 4.47222 d, epoch 3210.126, MES 2296, 5 of 6 transits "observed". Our
+  secondary at 3228.02 is 222 ppt in the 10.5-h window; the other four epochs in the data are -0.06 to +0.19 ppt
+  (control: 95th percentile 0.15, maximum 0.29). The TCE is the one eclipse folded onto flat data.
+- **246089124:** one TCE, P = 9.53703 d, epoch 3215.231, MES 102, 2 of 2 observed. Our primary at 3215.23 is 106 ppt;
+  the other epoch, 3224.77, is 1.47 ppt in PDCSAP (SAP 1.64, QLP 1.33) against a control 95th percentile of 1.71 ppt.
+  It is not an eclipse.
+- Neither period fits our eclipse times (ratios 16.38 and 7.76), and each would put many eclipses in the 80-d K2 C12
+  light curve, which has one primary and one secondary.
+
+**Verdict, by Jon's 2026-11-23 rule (a TCE period blocks "new"):** both stars move to "Published periods differ" with
+prior "TCE (excluded)". The count is now **6 new** (5 no prior, 1 estimate only), 5 agree, 4 TCE conflicts. The note,
+table, letter and `numbers.md` say so. The exclusion here is stronger than for TOI-5560: S70 itself contradicts each
+TCE.
+
