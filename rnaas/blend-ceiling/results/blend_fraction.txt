@@ -1,0 +1,9 @@
+Sample (kept TOIs): 337 positives (CP/KP), 216 negatives (FP/FA: 178 FP, 38 FA)
+Gaia target unmatched: 2 negatives, 1 positives
+
+comment rule (C): 47 of 216 negatives, f = 0.218 (95% Wilson 0.168-0.277); AUC_max = 1 - f/2 = 0.891 (0.861-0.916)
+comment or Gaia (C or G): 155 of 216 negatives, f = 0.718 (95% Wilson 0.654-0.773); AUC_max = 1 - f/2 = 0.641 (0.613-0.673)
+Gaia rule alone (G), for reference: 151 of 216 negatives, f = 0.699 (95% Wilson 0.635-0.756); AUC_max = 1 - f/2 = 0.650 (0.622-0.683)
+
+Diagnostic: Gaia rule (G) flags 202 of 337 positives (0.599, 95% Wilson 0.546-0.650)
+Comment matches on negatives: 66 matches on 49 TOIs; 5 removed by a negation

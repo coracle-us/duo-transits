@@ -233,5 +233,11 @@ duration, period, Tmag or position is used.
   20261124;
 - the same folds as A4, with no early stopping or tuning on any FP/FA window.
 
+**A7. Data-service notes**, which change no rule:
+- On 2026-11-24 the ESA Gaia archive timed out or returned errors on the DR2→DR3 join, ahead of
+  its DR4 shutdown on 25 November. The same ADQL queries on the same `gaiadr3` tables were run on
+  the ARI Heidelberg TAP mirror (`gaia.ari.uni-heidelberg.de/tap`), with ESA as the fallback.
+- VizieR and the CDS archive were down. The Prša table was already in the repo, as above.
+
 **A6.** Hyperparameters are not tuned on anything. If a model fails to train (for example,
 a fold has no positives), that is reported and nothing is refit to rescue it.

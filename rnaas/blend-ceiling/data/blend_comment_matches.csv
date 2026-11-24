@@ -1,0 +1,68 @@
+toi,tic,disposition,pattern,match,negated_by,segment
+226.01,47484268,FP,\bNEBs?\b,NEB,,Retired as TFOP FP/NEB
+336.01,55452495,FP,\bNEBs?\b,NEB,,TFOPWG FP Retired as NEB
+389.01,271900960,FP,\bNEBs?\b,NEB,,retired as NEB
+482.01,365639282,FP,\bNEBs?\b,NEB,,retired as NEB
+592.01,196286587,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset to the NW
+792.01,294780517,FP,\bNEBs?\b,NEB,,TFOP FP/NEB
+803.01,143526444,FP,\bNEBs?\b,NEB,,TFOP FP/NEB
+886.01,120269103,FP,\bNEBs?\b,NEB,,NEB
+898.01,124543547,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+916.01,348844154,FP,\boff[- ]target,off target,,slightly off target
+916.01,348844154,FP,\bNEBs?\b,NEB,,retired as NEB
+925.01,300599466,FP,\bNEBs?\b,NEB,,TFOP NEB
+928.01,300557619,FP,\bNEBs?\b,NEB,,retired as NEB
+956.01,146434840,FP,\bNEBs?\b,NEB,,retired as NEB
+1016.01,175310067,FP,\bNEBs?\b,NEB,,retired as NEB
+1026.01,388624270,FP,\bNEBs?\b,NEB,,TFOP NEB
+1029.01,374908020,FP,\bNEBs?\b,NEB,,retired as NEB
+1030.01,464296022,FP,\bblend(ed|ing)?\b,blended,,Looks like a ~12 day transit candidate blended with a ~1.5 day EB/variability
+1030.01,464296022,FP,\bNEBs?\b,NEB,,TFOP FP/NEB
+1033.01,149601557,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+1058.01,31553893,FP,\bcentroid\s+(offset|shift|motion),Centroid offset,,Centroid offset and a single transit in Y3
+1058.01,31553893,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset centered near TIC 31553886 Tmag ~13.3 in spoc-s1-s69
+1058.01,31553893,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+1100.01,318608749,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset towards TIC 318608752 in spoc s1-s39 multisector
+1171.01,101929303,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+1191.01,237185205,FP,\bNEBs?\b,NEB,,retired as NEB
+1191.01,237185205,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset centered on offset to TIC 237194795
+1210.01,33878688,FP,\bNEBs?\b,NEB,\bnot\b,Potential egress detected on nearby star with SG1 suggesting possible NEB but not high-enough SNR to be sure
+1210.01,33878688,FP,nearby\s+(eclipsing\s+binar|EB\b|star|source|target|neighbou?r),nearby star,\bnot\b,Potential egress detected on nearby star with SG1 suggesting possible NEB but not high-enough SNR to be sure
+1210.01,33878688,FP,\bon\s+(a\s+|the\s+)?(nearby\s+)?(neighbou?r|companion|nearby),on nearby,\bnot\b,Potential egress detected on nearby star with SG1 suggesting possible NEB but not high-enough SNR to be sure
+1210.01,33878688,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+1223.01,382437043,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,Some centroid offset across sectors
+1223.01,382437043,FP,\bNEBs?\b,NEB,,TFOP FP/NEB
+1428.01,377304435,FP,\bNEBs?\b,NEB,,Retired as TFOP NEB
+1506.01,64836837,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset centered on another star in spoc-s57-b0A
+1506.01,64836837,FP,\bNEBs?\b,NEB,,TFOP/NEB
+1587.01,458914949,FP,\bcentroid\s+(offset|shift|motion),Centroid offset,,Centroid offset
+1587.01,458914949,FP,\bNEBs?\b,NEB,,NEB/TFOP FP
+1705.01,137500798,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset to NW on TIC 37500799
+1705.01,137500798,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+1744.01,229455001,CP,\bcentroid\s+(offset|shift|motion),centroid offset,,inconsistent centroid offset between sectors
+1946.01,127315102,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+1947.01,460140752,FP,\bNEBs?\b,NEB,,TFOP FP/retired as NEB
+1957.01,302659412,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset centered on another star in spoc-s1-s65 multisector
+1957.01,302659412,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+1977.01,383531859,FP,\bNEBs?\b,NEB,,retired as NEB
+2099.01,230386397,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset onto two fainter stars (TIC 230386395
+2099.01,230386397,FP,\bNEBs?\b,NEB,,retired as NEB
+2117.01,279212407,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,slight depth aperture and a slight centroid offset towards NW
+2162.01,284564230,FP,\bNEBs?\b,NEB,,TFOP FP retired as NEB on TIC 284564232
+2168.01,364075352,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+2299.01,362220495,FA,\bcentroid\s+(offset|shift|motion),centroid offset,\bnot\b,centroid offset towards not a particular star
+2418.01,65347776,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+2468.01,31114545,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+2477.01,412054152,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset centered on 412060659
+2480.01,1449756,FP,\bon\s+(a\s+|the\s+)?(nearby\s+)?(neighbou?r|companion|nearby),on neighbor,,could be on neighboring star
+2805.01,5024743,FP,\bNEBs?\b,NEB,,TFOP NEB/FP
+4053.01,235684392,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,centroid offset towards TIC 235684390
+4053.01,235684392,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+4323.01,143022742,FA,\bcentroid\s+(offset|shift|motion),centroid offset,\bnot\b,centroid offset but not centered on anything
+4421.01,141412823,FP,\bNEBs?\b,NEB,,TFOP NEB/FP
+4564.01,400786146,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,slight centroid offset to W
+4564.01,400786146,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+5396.01,202428245,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,possible centroid offset towards TIC 202428245
+5396.01,202428245,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
+6876.01,377024332,FP,\bcentroid\s+(offset|shift|motion),centroid offset,,possible centroid offset to S
+7164.01,326470400,FP,\bNEBs?\b,NEB,,retired as TFOP FP/NEB
