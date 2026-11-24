@@ -1,0 +1,35 @@
+{
+  "frozen": "2026-11-23",
+  "approved_by": "Jon McBee",
+  "code_commit_before_freeze": "0deedb1",
+  "rule": "Rule(floor_sig=3.0, min_thr_sig=-inf, weak_ref_excludes=False, w_dur=0.5, w_dur_multi=1.0, snr_min=8.0, depth_ratio_max=1.7, dur_ratio_max=2.0, anti_ratio=1.5, local_anti_max=inf, require_clean=True)",
+  "r5_false_exclusion_probability": {
+    "unmeasured_or_snr<5": 0.001,
+    "5-8": 0.0024,
+    "8-12": 0.0025,
+    "12-20": 0.0026,
+    ">20": 0.0029
+  },
+  "seeds": {
+    "arm_a_draw": 20261201,
+    "arm_b_order": 20261202,
+    "arm_b_injection": "[20261202, tic]"
+  },
+  "sha256": {
+    "calibration/mono/prereg_round2.yaml": "376532f74937f5877847c1a0be4b507c2e875324e6513c12bd5b785d9a42f004",
+    "calibration/mono/round2/FROZEN_RULE.md": "abdd204651d95378bbe599eef4c30697c755cab0105743f7c90b139ca51defb3",
+    "calibration/mono/round2/harness.py": "16b12a191e5a785fee6e5b31241697e1acaee0af6665e7e4c01166ab99eb4a53",
+    "calibration/mono/round2/rule2.py": "596238db832e4ffb39a9c7052fe36ebcf845f7a2037997e7ea879cf396ad4847",
+    "calibration/mono/round2/dump.py": "3d1ea9f7d1c60a63b6dfe28f75598c092e2de42f138d2bc0d732ab918f9b9151",
+    "calibration/mono/round2/run_test.py": "d944d01e47ddc98732938cca9c23112f06312e9f507e5ed6b72fd464f5be5efc",
+    "calibration/mono/round2/score2.py": "43482c1c343d64ce5d979b53b6887d4268074ccc767ec6cc1cacbcecbaf2c953",
+    "calibration/mono/round2/samples/arm_a_test.csv": "c40186993f2ae6c11a2e5f09ee4ed3f19086225ad4446fd470d94edfe3a7c8cf",
+    "calibration/mono/round2/samples/arm_b_test_order.csv": "03ec59a2cdae80ac6d9cc8951f9f3e2c82ad12ebbca14d73233ddcff6d3ca2b0",
+    "calibration/mono/monocal.py": "17c5e980cb6b85a1d06ebc964ab81b905f9409ed4ad8318d50a286e1919a806e",
+    "calibration/mono/run_arm_a.py": "73a5be61b3d844ebb7cbabc28344c667e03e356abbae2a62e9ecde72fe0a4de4",
+    "calibration/mono/run_arm_b.py": "297baa0a53366ff969353d94bf20aa6dbd7d0c65a7bf88bd74fed317a56a1d4d",
+    "salinas-second-transits/st2core.py": "a353e2ba7a4c982746a08c9a92a31c7736df9798ea79e80d3cf40e513a091fd1",
+    "salinas-second-transits/st2_pipeline.py": "880bfe95f89bb7b301f4e020c724f31a6de1a2449678bfb44fb46b4132a2b66c"
+  },
+  "rule_note": "min_thr_sig=-inf and local_anti_max=inf are switched off (tried in tuning, not adopted)"
+}

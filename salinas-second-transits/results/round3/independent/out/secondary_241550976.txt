@@ -1,0 +1,63 @@
+TIC 241550976: P = 21.196873 d, T14 = 5.28 h, Rp/R* = 0.1247, transit depth 17936 ppm, Teff = 6034 K
+a/R* from the Gaia density = 34.91; largest transit b allowed at 2 sigma (s18): 0.59
+transiting object: Rp/R* x R* (Gaia 0.96 Rsun) = 0.119 Rsun = 13.0 Rearth; a main-sequence star that size would have Teff ~ 2640 K
+data: 7 sectors (1 TESS-SPOC, 6 QLP-only, 0 TESScut-only), 21455 points after 10-min binning
+D =  1.85 h (0.35 T14): 1064 phases, noise scale 1.06; max depth/err +3.06 at phase 0.7583 (1038 ppm, 4 orbits); min -2.96; median err 314 ppm
+D =  2.64 h (0.50 T14): 744 phases, noise scale 1.07; max depth/err +3.09 at phase 0.7588 (945 ppm, 4 orbits); min -3.50; median err 268 ppm
+D =  3.70 h (0.70 T14): 530 phases, noise scale 1.11; max depth/err +2.75 at phase 0.8182 (608 ppm, 7 orbits); min -2.18; median err 235 ppm
+D =  5.28 h (1.00 T14): 370 phases, noise scale 1.09; max depth/err +2.84 at phase 0.9755 (620 ppm, 7 orbits); min -2.61; median err 194 ppm
+D =  7.39 h (1.40 T14): 263 phases, noise scale 1.11; max depth/err +2.71 at phase 0.0479 (499 ppm, 6 orbits); min -3.51; median err 168 ppm
+D = 10.56 h (2.00 T14): 183 phases, noise scale 1.32; max depth/err +2.43 at phase 0.8354 (374 ppm, 8 orbits); min -2.37; median err 170 ppm
+expected secondary depth = transit depth x S_c/S_* (TESS band as a 600-1000 nm top hat, blackbodies);
+the ratio to the transit depth is the same whether or not another star dilutes both:
+  companion Teff 2640 K: 342 ppm  <- main-sequence star of this radius
+  companion Teff 2700 K: 397 ppm
+  companion Teff 2900 K: 626 ppm
+  companion Teff 3100 K: 935 ppm
+  companion Teff 3300 K: 1332 ppm
+  planet or brown dwarf at Teq ~1100 K: thermal 0.05 ppm, reflected (Ag = 0.3) 4 ppm
+eccentric orbits with (1 + e sin w)/sqrt(1-e^2) = g: g = 1.013 at transit b = 0, 0.820 at b = 0.59; e < 0.94 (periastron > 2 R*)
+  transit b = 0.00: omega -44..224 deg, e 0.01..0.94; no occultation for 0/135; not covered 0; measured 135
+    depth/err along the locus -2.47..+1.97; 3-sigma upper limits 85..2040 ppm
+    Teff 2640 K (342 ppm): excluded at > 3 sigma for 16/135 omegas, > 2 sigma for 56; weakest -1.1 sigma at omega 218
+    Teff 2700 K (397 ppm): excluded at > 3 sigma for 25/135 omegas, > 2 sigma for 69; weakest -1.0 sigma at omega 218
+    Teff 2900 K (626 ppm): excluded at > 3 sigma for 76/135 omegas, > 2 sigma for 113; weakest -0.4 sigma at omega 218
+    Teff 3100 K (935 ppm): excluded at > 3 sigma for 122/135 omegas, > 2 sigma for 130; weakest 0.3 sigma at omega 218
+    Teff 3300 K (1332 ppm): excluded at > 3 sigma for 130/135 omegas, > 2 sigma for 131; weakest 1.3 sigma at omega 218
+    omega  -44: e = 0.94, phase 0.979,  1.11 h, b_occ 0.00:  +584 +- 417 ppm
+    omega  -12: e = 0.44, phase 0.768,  4.39 h, b_occ 0.00:   +52 +- 218 ppm
+    omega   22: e = 0.03, phase 0.519,  5.41 h, b_occ 0.00:   -42 +- 187 ppm
+    omega   56: e = 0.02, phase 0.505,  5.42 h, b_occ 0.00:  -125 +- 185 ppm
+    omega   90: e = 0.01, phase 0.500,  5.42 h, b_occ 0.00:  -171 +- 176 ppm
+    omega  122: e = 0.01, phase 0.495,  5.42 h, b_occ 0.00:  +151 +- 191 ppm
+    omega  156: e = 0.03, phase 0.483,  5.41 h, b_occ 0.00:  +111 +- 189 ppm
+    omega  190: e = 0.39, phase 0.261,  4.61 h, b_occ 0.00:  +222 +- 201 ppm
+    omega  224: e = 0.94, phase 0.021,  1.11 h, b_occ 0.00:  +521 +- 439 ppm
+  transit b = 0.59: omega -90..270 deg, e 0.20..0.94; no occultation for 0/72; not covered 0; measured 72
+    depth/err along the locus -2.17..+2.17; 3-sigma upper limits 205..1680 ppm
+    Teff 2640 K (342 ppm): excluded at > 3 sigma for 6/72 omegas, > 2 sigma for 18; weakest -0.9 sigma at omega 216
+    Teff 2700 K (397 ppm): excluded at > 3 sigma for 8/72 omegas, > 2 sigma for 27; weakest -0.7 sigma at omega 216
+    Teff 2900 K (626 ppm): excluded at > 3 sigma for 25/72 omegas, > 2 sigma for 49; weakest 0.2 sigma at omega 216
+    Teff 3100 K (935 ppm): excluded at > 3 sigma for 52/72 omegas, > 2 sigma for 67; weakest 1.2 sigma at omega -48
+    Teff 3300 K (1332 ppm): excluded at > 3 sigma for 68/72 omegas, > 2 sigma for 72; weakest 2.2 sigma at omega -48
+    omega  -90: e = 0.20, phase 0.500,  3.91 h, b_occ 0.40:   -69 +- 213 ppm
+    omega  -74: e = 0.21, phase 0.537,  3.89 h, b_occ 0.40:  -360 +- 188 ppm
+    omega  -56: e = 0.25, phase 0.590,  3.84 h, b_occ 0.39:  -301 +- 203 ppm
+    omega  -44: e = 0.32, phase 0.650,  3.71 h, b_occ 0.37:  +261 +- 228 ppm
+    omega  -36: e = 0.69, phase 0.861,  2.57 h, b_occ 0.25:   -30 +- 239 ppm
+    omega  224: e = 0.32, phase 0.350,  3.71 h, b_occ 0.37:  +255 +- 249 ppm
+    omega  234: e = 0.26, phase 0.403,  3.83 h, b_occ 0.39:   -13 +- 227 ppm
+    omega  252: e = 0.21, phase 0.458,  3.89 h, b_occ 0.40:  +112 +- 238 ppm
+    omega  270: e = 0.20, phase 0.500,  3.91 h, b_occ 0.40:   -69 +- 213 ppm
+circular orbit: phase 0.5, 5.28 h: -166 +- 179 ppm over 8 orbits; 3-sigma upper limit 373 ppm; excluded: 2640 K at 2.8 sigma, 2700 K at 3.1 sigma, 2900 K at 4.4 sigma, 3100 K at 6.1 sigma, 3300 K at 8.3 sigma
+injection of a 342 ppm eclipse into the flux, recovered with the same fit:
+  phase 0.500,  5.28 h: -166 -> +177 +- 179 ppm (recovered 1.00 of injected)
+  phase 0.519,  5.41 h: -42 -> +301 +- 187 ppm (recovered 1.00 of injected)
+  phase 0.500,  5.42 h: -171 -> +171 +- 176 ppm (recovered 1.00 of injected)
+  phase 0.483,  5.41 h: +111 -> +454 +- 189 ppm (recovered 1.00 of injected)
+strongest peak of the search: phase 0.7588, 2.64 h, 945 +- 305 ppm (+3.09); most negative over all durations -3.51
+  each orbit alone (white-noise error x the noise scale):
+    E  -1 (S38, BTJD 2334.33):  +312 +-  876 ppm
+    E   0 (S38, BTJD 2355.53):  +731 +-  819 ppm
+    E  80 (S99, BTJD 4051.28):  +700 +-  500 ppm
+    E  84 (S102, BTJD 4136.07): +1413 +-  574 ppm

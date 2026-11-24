@@ -1,0 +1,17 @@
+# Approvals: the catalogue run (`prereg_catalogue.yaml`)
+
+| Version | Approved by | Date | SHA-256 of `prereg_catalogue.yaml` | Note |
+|---|---|---|---|---|
+| 1.0 | Jon McBee | 2026-11-23 | `1177568b08db3431af02d488cab5bcd7fbee8db7306ebd6d80dab73adfb75d72` | Step 1 of 2. "Approved", in the Claude Code session, after draft 0.1 (PR 28) was put to him with four calls to check (K2 rows left out; two blind agents do the first vetting; Hawthorn tables through the two catalogued times; rows with a stated period kept as candidates), the four validation arms and the known limits. The text is draft 0.1 with only the version and status lines changed. The approval also grants two downloads: MAST light curves of the scored stars, and the arXiv source of 2611.03019. Nothing had been run and no candidate scored. The freeze is a separate approval. |
+| 1.0 | Jon McBee | 2026-11-23 | `1177568b08db3431af02d488cab5bcd7fbee8db7306ebd6d80dab73adfb75d72` | Step 2 of 2 (the freeze). "Agreed", in the Claude Code session, to the freeze as proposed in `FREEZE_PROPOSED.md` (commit 0fdfb9f) with its 13 choices, plus a 14th put to him the same day: results stay out of git until he releases them, and only their SHA-256 hashes are committed. Frozen files and hashes: `FREEZE.json` (SHA-256 `f2caf9e2deaaad551d10b5266fe6dac16d6dd694a9c007031bc4357b0746b58c`). No candidate's light curve had been read. He also agreed: PR 28 is squash-merged and the run is made from `main`; no force-push. |
+
+## Corrections that do not change a frozen file
+
+- `prereg_catalogue.yaml`, line 3, says the draft was "commit 3 of PR 28". It was the first commit of
+  PR 28, 7f3944c. The file is frozen by hash and is left as it is (Jon, 2026-11-23).
+- Its line 12 still reads "step 2 (the freeze) not yet approved", for the same reason. Step 2 is the
+  row above.
+- Commit 1735b23 of PR 28 put the LaTeX source of arXiv:2611.03019 in the repository; 60d0753 removed
+  it. PR 28 is squash-merged so that `main` never holds it. The old commit remains reachable through
+  the pull request's own reference on GitHub.
+

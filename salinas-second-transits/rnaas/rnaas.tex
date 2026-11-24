@@ -1,0 +1,162 @@
+%% DRAFT, NOT SUBMITTED. RNAAS draft, AASTeX v7.0.1 (compile on Overleaf; the AAS template ships aastex701.cls).
+%% Every number traces to a file in this repository; see salinas-second-transits/rnaas/numbers.md.
+%% Hold until (1) the Salinas team has replied or had a fair chance to (outreach/), (2) the blind
+%% session's new-sector check is in results/round3/independent/RESULTS.md, (3) the 2026-12-25
+%% transit of TIC 107113048 has been looked for, and (4) the AAS AI policy has been re-checked.
+\documentclass{aastex701}
+
+\begin{document}
+
+\title{Periods for Four TESS Single-transit Candidates from Later Sectors}
+
+\author[orcid=0009-0000-7524-4470]{Jon McBee}
+\affiliation{Independent researcher, USA}
+\email{jon.mcbee@gmail.com}
+
+\begin{abstract}
+\citet{Salinas2026} listed 108 single-transit candidates and 4 multi-planet systems from TESS
+Sectors 27--60. I searched Sectors 61--107 for repeats of each catalogued event. On 112 stars, 53
+candidates show at least one matching event and 8 have three or more events on one period. Two of these
+are already TOIs, two are unreliable, and four are new. Their periods are
+$17.06402$, $21.19694$, $49.70152$ and $23.75297$\,d. All four pass odd/even, difference-image and
+Gaia checks, and a blind re-analysis with separate code recovers each period
+within $1.6\sigma$. TIC 241550976 and TIC 107113048 look like warm giants on circular orbits. The
+transit of TIC 275647095 is too long for a circular orbit, and a marginal dip at phase 0.87 may make it
+an eclipsing binary. TIC 230133616
+was never a single: it transits 37 times in the northern continuous viewing zone, and its host is a
+subgiant with an unresolved companion.
+\end{abstract}
+
+\keywords{\uat{Exoplanet detection methods}{489} --- \uat{Transit photometry}{1709}}
+
+\section{Sample and Search}
+
+\citet{Salinas2026} found 169 candidates in TESS Sectors 27--60 and fitted their transits with a
+CNN that gives calibrated uncertainties. I took the 108 single-transit candidates and the 8
+single events in 4 multi-planet systems: 116 events on 112 stars. Of these stars, 101 have
+light curves from Sector 61 or later, through Sector 107. I used TESS-SPOC \citep{Caldwell2020},
+QLP \citep{Huang2020} and SPOC light curves. I also made my own TESScut aperture photometry
+\citep{Brasseur2019} for mid-times in Sectors $\geq$94, where QLP times are offset by up to
+7\,min.
+
+The search detrends each sector with a biweight filter \citep{Hippke2019}. It then slides a box of
+the catalogued duration across the sector. An event passes if it has SNR $\geq7$ (with red noise),
+a depth and duration within 0.5--2 times the catalogued values, and an SNR at least 1.5 times
+that of the strongest brightening in the sector. I masked four windows in Sectors 94--97 where
+most stars dip together. Then 191 events pass, on 53 candidates. Of the 36 candidates with two
+or more distinct events, 8 fit one period that includes the catalogued event.
+
+Two of the eight were already TOIs with the same period: TIC 317132251 (TOI-7717.01, 25.21\,d) and
+TIC 454039549 (TOI-7743.01, 10.97\,d). Two are unreliable. TIC 141423461 has no clean event, and
+its new events are twice the catalogued duration. For TIC 198009543, a 9.7\,h transit on an
+11.71\,d orbit would need a star larger than the TIC gives: the shortest circular orbit allowed is
+42.8\,d. The other four are not TOIs or CTOIs, have no ExoFOP follow-up, and appear in no paper I
+could find.
+
+\section{Vetting}
+
+For each of the four stars I fitted supersampled trapezoids to every clean transit. I took
+mid-times from TESS-SPOC, QLP before Sector 94, and my TESScut photometry after that, and depths
+from QLP and TESS-SPOC. A weighted linear ephemeris fits the times with reduced $\chi^2$ of
+0.3--3.2 and no point beyond $3\sigma$. Every shorter alias predicts transits on flat data, and the
+blind analysis below excludes each of them at $\geq15\sigma$.
+
+Odd and even depths agree within $1.3\sigma$ ($2.2\sigma$ in the blind analysis, for the star with
+2+2 transits). A box scan at all phases finds no secondary eclipse
+once single bad orbits are dropped, except a marginal dip for TIC 275647095 (Section~3). The $3\sigma$ limits at phase 0.5 are 44--705\,ppm.
+None of the stars is in the TESS EB catalogue \citep{Prsa2022} or VSX \citep{Watson2006} within
+$30''$.
+
+TESScut difference images put each dip 1--4$''$ from the target, 0.1--0.2 pixel and within the
+systematic error of the method. Every resolved Gaia DR3 \citep{Gaia2023} neighbour bright enough to
+cause the dip is excluded as its source. I compared transit durations with the
+stellar density from the Gaia parallax \citep{Seager2003}.
+
+A separate analysis then re-derived every period from the light curves alone. It used new code
+written without access to the first analysis. It recovered all four periods within $1.6\sigma$,
+and it raised the same concerns independently.
+
+\section{Results}
+
+\textit{TIC 241550976} is the cleanest case. The Gaia radius ($0.96\,R_\odot$) gives a
+stellar density that fits a circular orbit. The $\approx1.2\,R_{\rm J}$ companion is most likely a
+warm giant planet.
+
+\textit{TIC 107113048} also fits a circular orbit ($\approx0.9\,R_{\rm J}$, $R_\star=1.0\,R_\odot$),
+from four transits. The Sector 90 transit falls within 0.7\,h of an eclipse of TIC 107116357.
+That star is $97''$ away, and its 7--18\% eclipses are not in Gaia DR3, the TESS EB catalogue or
+VSX. The transit is on time to 1\,min, and the binary's other eclipses do not dim the target's
+pixels. Still, it is the only transit that rules out 74.55 and 149.10\,d. The next transit, 2026
+December 25 21:44\,UTC ($\pm11$\,min), falls outside TESS coverage; Sector 114 (2027 February--March)
+can rule out 74.55 and 29.82\,d independently.
+
+\textit{TIC 275647095} has a transit 1.42 times longer than a circular orbit allows for its star
+($R_\star=1.14\pm0.06\,R_\odot$ from Gaia). The contamination from a $G=14.3$ star $20''$ away
+does not explain it: that star lies 42$\sigma$ from the dip's position. An orbit with
+$e\gtrsim0.34$ would explain it. But the blind analysis also finds a dip of $694\pm147$\,ppm at
+phase 0.872, in 8 of 9 orbits, with no background or centroid change. The transiting object cannot
+make it. If real, it is the secondary eclipse of an eccentric eclipsing binary blended within
+$\approx2''$, and the signal is a false positive. Sectors 111--114 cover six of these dips.
+
+\textit{TIC 230133616} lies at ecliptic latitude $+83^\circ$. Its transits appear in Sectors 16--86,
+37 in all, so it was never a single-transit candidate. The host is a $2.45\,R_\odot$ subgiant with
+Gaia RUWE 3.8, which points to an unresolved companion. The transiting object is
+$1.7$--$1.9\,R_{\rm J}$, and a circular orbit around this star fits worse by $\Delta\chi^2\approx49$.
+A search over the orbits allowed by the transit shape finds no secondary eclipse. That excludes a
+3100\,K M dwarf at $>2\sigma$ for 218 of 228 orbits, but not a blend in the unresolved pair.
+
+\begin{deluxetable*}{lllllll}
+\tablecaption{The four new periodic candidates.\label{tab:four}}
+\tablehead{\colhead{TIC} & \colhead{$P$ (d)} & \colhead{$T_0$ (BTJD)} & \colhead{Depth (ppm)} &
+\colhead{$T_{14}$ (h)} & \colhead{$N_{\rm tr}$} & \colhead{Notes}}
+\startdata
+241550976 & $21.19694\pm0.00004$ & $2339.4442\pm0.0019$ & 16350 & 5.1 & 5 & $\approx1.2\,R_{\rm J}$; circular fits \\
+107113048 & $49.70152\pm0.00017$ & $2312.9429\pm0.0033$ & 8240 & 7.1 & 4 & $\approx0.9\,R_{\rm J}$; EB $97''$ away$^a$ \\
+275647095 & $17.06402\pm0.00003$ & $2315.5125\pm0.0018$ & 9130 & 8.4 & 7 & $e\gtrsim0.34$ or EB$^c$ \\
+230133616 & $23.75297\pm0.00002$ & $2396.1280\pm0.0007$ & 5880 & 9.3 & 31$^b$ & $1.7$--$1.9\,R_{\rm J}$; RUWE 3.8 \\
+\enddata
+\tablecomments{$T_0$ is the \citet{Salinas2026} event, refitted. $N_{\rm tr}$ counts the
+clean transits fitted. $^a$Its eclipse overlaps the Sector 90 transit. $^b$37 transits in all,
+including partial ones. $^c$Marginal dip at phase 0.872; Sectors 111--114 will test it.}
+\end{deluxetable*}
+
+\section{Conclusion}
+
+Later TESS sectors give periods for four candidates of \citet{Salinas2026}. Sectors 111--114
+will test TIC 275647095 and TIC 107113048 again. Three are
+southern stars with $T=12.2$--12.4 and transits 0.8--1.6\% deep, well suited to RV follow-up.
+Code and tables are at \url{https://github.com/coracle-us/duo-transits}.
+
+\begin{acknowledgments}
+This work uses TESS data from MAST: SPOC \dataset[doi:10.17909/t9-nmc8-f686]{https://doi.org/10.17909/t9-nmc8-f686},
+TESS-SPOC \dataset[doi:10.17909/t9-wpz1-8s54]{https://doi.org/10.17909/t9-wpz1-8s54} and QLP
+\dataset[doi:10.17909/t9-r086-e880]{https://doi.org/10.17909/t9-r086-e880} light curves and
+full-frame images \dataset[doi:10.17909/0cp4-2j79]{https://doi.org/10.17909/0cp4-2j79}; Gaia DR3;
+ExoFOP \dataset[doi:10.26134/ExoFOP5]{https://doi.org/10.26134/ExoFOP5}; and the NASA Exoplanet
+Archive \dataset[doi:10.26133/NEA13]{https://doi.org/10.26133/NEA13}.
+\end{acknowledgments}
+
+\facilities{TESS, Gaia}
+\software{lightkurve \citep{Lightkurve2018}, astroquery \citep{Ginsburg2019}, astrocut \citep{Brasseur2019}, wotan \citep{Hippke2019}}
+
+\section*{AI disclosure statement}
+I used Anthropic's Claude, an AI assistant, under my supervision to write and run the analysis code
+and to draft and edit this note. I reviewed the text, checked every number against the saved
+outputs and every reference against ADS and arXiv, and take full responsibility for the content.
+The note contains no AI-generated figures.
+
+\begin{thebibliography}{}
+\bibitem[Brasseur et al.(2019)]{Brasseur2019} Brasseur, C.~E., Phillip, C., Fleming, S.~W., Mullally, S.~E., \& White, R.~L. 2019, Astrocut: Tools for creating cutouts of TESS images, Astrophysics Source Code Library, ascl:1905.007
+\bibitem[Caldwell et al.(2020)]{Caldwell2020} Caldwell, D.~A., Tenenbaum, P., Twicken, J.~D., et al. 2020, RNAAS, 4, 201
+\bibitem[Gaia Collaboration et al.(2023)]{Gaia2023} Gaia Collaboration, Vallenari, A., Brown, A.~G.~A., et al. 2023, A\&A, 674, A1
+\bibitem[Ginsburg et al.(2019)]{Ginsburg2019} Ginsburg, A., Sip{\H o}cz, B.~M., Brasseur, C.~E., et al. 2019, AJ, 157, 98
+\bibitem[Hippke et al.(2019)]{Hippke2019} Hippke, M., David, T.~J., Mulders, G.~D., \& Heller, R. 2019, AJ, 158, 143
+\bibitem[Huang et al.(2020)]{Huang2020} Huang, C.~X., Vanderburg, A., P\'al, A., et al. 2020, RNAAS, 4, 204
+\bibitem[Lightkurve Collaboration et al.(2018)]{Lightkurve2018} Lightkurve Collaboration, Cardoso, J.~V.~d.~M., Hedges, C., et al. 2018, Lightkurve: Kepler and TESS time series analysis in Python, Astrophysics Source Code Library, ascl:1812.013
+\bibitem[Pr{\v s}a et al.(2022)]{Prsa2022} Pr{\v s}a, A., Kochoska, A., Conroy, K.~E., et al. 2022, ApJS, 258, 16
+\bibitem[Salinas et al.(2026)]{Salinas2026} Salinas, H., Brahm, R., Olmschenk, G., et al. 2026, arXiv:2610.24882
+\bibitem[Seager \& Mall{\'e}n-Ornelas(2003)]{Seager2003} Seager, S., \& Mall{\'e}n-Ornelas, G. 2003, ApJ, 585, 1038
+\bibitem[Watson et al.(2006)]{Watson2006} Watson, C.~L., Henden, A.~A., \& Price, A. 2006, SASS, 25, 47
+\end{thebibliography}
+
+\end{document}

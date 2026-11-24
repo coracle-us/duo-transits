@@ -1,0 +1,99 @@
+Target astrophysical parameters (Gaia DR3):
+  source_id              5377927940883353216
+  teff_gspphot           --
+  logg_gspphot           --
+  radius_gspphot         --
+  radius_flame           --
+  radius_flame_lower     --
+  radius_flame_upper     --
+  mass_flame             --
+  mass_flame_lower       --
+  mass_flame_upper       --
+  lum_flame              --
+  age_flame              --
+  evolstage_flame        --
+  distance_gspphot       --
+
+TIC 275647095  Gaia DR3 5377927940883353216  depth used 9600 ppm
+Target: G=12.742 BP-RP=0.975 plx=2.5542±0.0146 RUWE=1.033 ipd_multi_peak=0 ipd_gof_harm=0.0102 non_single_star=0 variable=NOT_AVAILABLE
+
+Neighbours within 200" (329); depth needed if the neighbour were the eclipsing source:
+  5377927940885029504 sep=  10.3" G= 17.92 dG=+5.18 needed depth= 114.5%
+  5377928662439768960 sep=  17.9" G= 20.35 dG=+7.61 needed depth=1065.0%
+  5377927945181990016 sep=  19.6" G= 14.31 dG=+1.56 needed depth=   5.0%  <-- could mimic
+  5377927940885034368 sep=  23.5" G= 19.94 dG=+7.19 needed depth= 724.5%
+  5377929422649153024 sep=  25.8" G= 20.69 dG=+7.94 needed depth=1447.1%
+  5377928666733519488 sep=  26.2" G= 18.95 dG=+6.21 needed depth= 294.2%
+  5377928696799276544 sep=  26.6" G= 20.52 dG=+7.78 needed depth=1241.9%
+  5377928666733519616 sep=  27.1" G= 19.62 dG=+6.88 needed depth= 543.3%
+  5377928666733518336 sep=  28.9" G= 19.95 dG=+7.20 needed depth= 731.4%
+  5377928666733518592 sep=  29.5" G= 17.33 dG=+4.59 needed depth=  66.7%
+  5377928696799277312 sep=  33.3" G= 17.82 dG=+5.08 needed depth= 104.0%
+  5377927945180403584 sep=  37.5" G= 20.61 dG=+7.87 needed depth=1344.6%
+  5377927906525269248 sep=  49.2" G= 17.08 dG=+4.33 needed depth=  53.0%
+  5377928701096237696 sep=  52.4" G= 15.80 dG=+3.05 needed depth=  17.0%  <-- could mimic
+  5377928563657269376 sep=  65.5" G= 16.08 dG=+3.33 needed depth=  21.6%  <-- could mimic
+  5377928563657272448 sep=  65.7" G= 17.76 dG=+5.02 needed depth=  98.9%
+  5377927910822242560 sep=  74.5" G= 15.70 dG=+2.96 needed depth=  15.6%  <-- could mimic
+  5377928559360299904 sep=  78.2" G= 17.68 dG=+4.94 needed depth=  91.8%
+  5377929452713538560 sep=  86.6" G= 17.69 dG=+4.95 needed depth=  92.5%
+  5377928632376746752 sep=  95.2" G= 14.57 dG=+1.83 needed depth=   6.1%  <-- could mimic
+  5377927807743019264 sep=  97.6" G= 14.37 dG=+1.63 needed depth=   5.3%  <-- could mimic
+  5377929487073279232 sep= 101.0" G= 16.52 dG=+3.78 needed depth=  32.1%  <-- could mimic
+  5377929388291017344 sep= 101.5" G= 17.28 dG=+4.54 needed depth=  63.6%
+  5377929555792764672 sep= 105.4" G= 17.36 dG=+4.62 needed depth=  68.6%
+  5377927842102764160 sep= 107.9" G= 14.78 dG=+2.04 needed depth=   7.2%  <-- could mimic
+  5377930212924738048 sep= 109.3" G= 17.74 dG=+5.00 needed depth=  96.6%
+  5377929383994050688 sep= 110.6" G= 15.83 dG=+3.09 needed depth=  17.5%  <-- could mimic
+  5377928525000534656 sep= 113.0" G= 17.61 dG=+4.86 needed depth=  85.6%
+  5377928769815719168 sep= 115.0" G= 17.58 dG=+4.83 needed depth=  83.4%
+  5377928529297519744 sep= 115.9" G= 16.09 dG=+3.35 needed depth=  22.0%  <-- could mimic
+  5377928769815715456 sep= 120.6" G= 13.75 dG=+1.01 needed depth=   3.4%  <-- could mimic
+  5377929555792771840 sep= 124.3" G= 17.73 dG=+4.99 needed depth=  95.9%
+  5377928834238231424 sep= 124.6" G= 14.59 dG=+1.85 needed depth=   6.2%  <-- could mimic
+  5377929491370402816 sep= 125.8" G= 17.12 dG=+4.38 needed depth=  55.0%
+  5377929491370235520 sep= 128.2" G= 15.62 dG=+2.87 needed depth=  14.5%  <-- could mimic
+  5377928834236550016 sep= 128.6" G= 14.55 dG=+1.81 needed depth=   6.0%  <-- could mimic
+  5377930212924739456 sep= 129.7" G= 16.85 dG=+4.11 needed depth=  43.3%  <-- could mimic
+  5377929487073290496 sep= 130.5" G= 17.73 dG=+4.99 needed depth=  95.7%
+  5377928735455973504 sep= 131.6" G= 15.58 dG=+2.84 needed depth=  14.0%  <-- could mimic
+  5377927734724924800 sep= 132.2" G= 11.37 dG=-1.37 needed depth=   1.2%  <-- could mimic
+  5377928765518781056 sep= 133.7" G= 17.53 dG=+4.78 needed depth=  79.6%
+  5377929491370402688 sep= 134.9" G= 16.05 dG=+3.31 needed depth=  21.2%  <-- could mimic
+  5377930247284474624 sep= 136.8" G= 16.92 dG=+4.18 needed depth=  46.1%  <-- could mimic
+  5377928838535179520 sep= 136.9" G= 15.99 dG=+3.25 needed depth=  20.1%  <-- could mimic
+  5377927666007090304 sep= 137.6" G= 17.74 dG=+4.99 needed depth=  96.4%
+  5377928765518778240 sep= 138.2" G= 17.56 dG=+4.82 needed depth=  82.1%
+  5377927739023542784 sep= 140.4" G= 17.68 dG=+4.94 needed depth=  91.6%
+  5377929182132577664 sep= 144.9" G= 16.65 dG=+3.91 needed depth=  36.2%  <-- could mimic
+  5377929555792779008 sep= 147.0" G= 17.70 dG=+4.96 needed depth=  93.2%
+  5377928151340596352 sep= 153.2" G= 16.47 dG=+3.73 needed depth=  30.7%  <-- could mimic
+  5377929560089719808 sep= 155.6" G= 14.72 dG=+1.97 needed depth=   6.9%  <-- could mimic
+  5377929560089719680 sep= 157.3" G= 14.30 dG=+1.56 needed depth=   5.0%  <-- could mimic
+  5377930316003963648 sep= 159.4" G= 17.35 dG=+4.60 needed depth=  67.6%
+  5377927739023540096 sep= 160.5" G= 15.19 dG=+2.45 needed depth=  10.1%  <-- could mimic
+  5377928769815722368 sep= 162.2" G= 16.90 dG=+4.16 needed depth=  45.2%  <-- could mimic
+  5377928804175432064 sep= 162.7" G= 16.04 dG=+3.30 needed depth=  21.0%  <-- could mimic
+  5377928112683657472 sep= 163.6" G= 14.18 dG=+1.44 needed depth=   4.6%  <-- could mimic
+  5377927773383271680 sep= 165.6" G= 17.64 dG=+4.90 needed depth=  88.6%
+  5377929319571550592 sep= 167.6" G= 16.24 dG=+3.50 needed depth=  25.0%  <-- could mimic
+  5377928799878487040 sep= 170.9" G= 17.51 dG=+4.77 needed depth=  78.7%
+  5377927704663797888 sep= 171.4" G= 17.30 dG=+4.56 needed depth=  64.7%
+  5377927670304074752 sep= 172.4" G= 14.34 dG=+1.60 needed depth=   5.1%  <-- could mimic
+  5377928975974150912 sep= 176.5" G= 17.12 dG=+4.38 needed depth=  55.0%
+  5377929972406586368 sep= 177.0" G= 17.62 dG=+4.87 needed depth=  86.5%
+  5377928838535179776 sep= 177.3" G= 14.21 dG=+1.47 needed depth=   4.7%  <-- could mimic
+  5377929903687109888 sep= 177.7" G= 16.57 dG=+3.83 needed depth=  33.7%  <-- could mimic
+  5377928391858556160 sep= 179.0" G= 13.93 dG=+1.19 needed depth=   3.8%  <-- could mimic
+  5377928185700121984 sep= 179.8" G= 14.70 dG=+1.96 needed depth=   6.8%  <-- could mimic
+  5377927734726534272 sep= 180.1" G= 17.26 dG=+4.52 needed depth=  62.5%
+  5377928426218305920 sep= 180.8" G= 13.39 dG=+0.64 needed depth=   2.7%  <-- could mimic
+  5377928116980644736 sep= 182.8" G= 15.36 dG=+2.61 needed depth=  11.6%  <-- could mimic
+  5377929903687110912 sep= 183.1" G= 13.34 dG=+0.60 needed depth=   2.6%  <-- could mimic
+  5377928181403136000 sep= 189.4" G= 17.40 dG=+4.66 needed depth=  70.9%
+  5377928872894910080 sep= 190.5" G= 12.08 dG=-0.66 needed depth=   1.5%  <-- could mimic
+  5377928185700117632 sep= 194.6" G= 14.61 dG=+1.87 needed depth=   6.3%  <-- could mimic
+  5377929903687112576 sep= 195.0" G= 16.86 dG=+4.12 needed depth=  43.7%  <-- could mimic
+  5377929246555104640 sep= 195.6" G= 17.40 dG=+4.66 needed depth=  71.2%
+  5377928941614403584 sep= 198.7" G= 15.26 dG=+2.52 needed depth=  10.7%  <-- could mimic
+  5377928284482365440 sep= 199.9" G= 17.58 dG=+4.84 needed depth=  84.0%

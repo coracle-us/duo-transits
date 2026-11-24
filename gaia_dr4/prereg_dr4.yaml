@@ -1,0 +1,72 @@
+# Pre-registration: Gaia DR4 sweep of long-period TESS candidate hosts
+#
+# STATUS: APPROVED by Jon McBee on 2026-11-22, as drafted. This file is frozen; its SHA-256 is in
+# gaia_dr4/APPROVALS.md and tests/test_prereg.py checks it. A change needs a new version, a dated
+# reason and Jon's approval; results under a changed version are labelled post-hoc.
+# The open_items at the end were open at approval. Settling one from the DR4 documentation is a
+# version change like any other.
+version: 1.0
+status: approved
+approved_by: Jon McBee
+approved_on: 2026-11-22
+written: 2026-11-22
+release: Gaia DR4, archive opens 2026-12-02 12:00 CET
+spec: docs/STRATEGY_living_alias_catalogue.md (sections 5.4 and 6a)
+
+inputs:
+  # the files are built by build_hosts.py; SHA-256 of each as approved
+  candidates: gaia_dr4/candidates_frozen.csv   # 1368 rows (T16 singles added 2026-11-22)
+  hosts: gaia_dr4/hosts_frozen.csv             # 1301 stars
+  dr3_baseline: gaia_dr4/results_dr3/report.csv
+  candidates_sha256: 112831ad813d27cf3bc5489987e7309f0d7dda13b5dc76918ca3f01d8b3ee93f
+  hosts_sha256: fbdab65f2b7ef7302e21c69877b70f99e669a164216643a7f88b30a79619df84
+  dr3_baseline_sha256: a53f339a57b3b0116bc3a1545b37b6c55ba061fa7039058856e5825dbd825a6f
+  not_included:
+    - TSTPC and Planet Hunters TESS lists: owned by active groups; not in this repo
+
+questions:
+  Q1: Which hosts does DR4 flag as non-single (RUWE, non_single_star, RV variability, an NSS orbit)
+      that DR3 did not, and which DR3 flags disappear?
+  Q2: For duotransits (two catalogued times), is the gap a whole number of a DR4 orbital period?
+  Q3: For candidates with a stated period, does a DR4 orbital period agree, directly or at 1/2 or 2x?
+  Q4: Is any host in the DR4 exoplanet candidate table?
+  # TIC 147035057 and TIC 159614322 epoch-RV fits (singles/TODO_gaia_dr4.md) are separate claims with
+  # their own pre-registration; they are not covered here.
+
+tables:
+  - gaia_source
+  - nss_two_body_orbit        # every solution per source is kept
+  - gaia_exoplanet_candidates # name from ESA's provisional content page (2026-09-14)
+
+thresholds:
+  ruwe_max: 1.4
+  # RV variability: rv_chisq_pvalue <= 0.01 and rv_renormalised_gof > 4 and rv_nb_transits >= 10
+  # (Katz et al. 2023, defined for DR3; if DR4 documents a different cut, that is a version change)
+  nsig: 3.0
+  dt_err_d: 0.02            # assumed 1-sigma error of a catalogued transit-time gap, in days
+  max_window: 0.5           # phase test is 'uninformative' if it would accept > 50% of all phases
+  period_rel_floor: 0.001   # period agreement tolerance is at least 0.1% of the stated period
+  harmonics: [0.5, 1.0, 2.0]
+
+outcomes:
+  companion_flag: any of ruwe_flag, nss_flag, rv_flag. A flag is a reason to look, not a verdict that
+    the transit signal is stellar.
+  period_from_gaia: phase_verdict or period_verdict is 'match'. The phase window is reported with
+    it; it is the chance that an unrelated orbit would match.
+  no_match: an NSS orbit exists and the test is informative but fails. The Gaia orbit is then a
+    different companion, or the candidate period is wrong.
+  uninformative: reported as such; never counted as a match or a non-match.
+  incomplete: a table or a host could not be queried; the error is recorded.
+
+human_review:
+  - Any period_from_gaia with phase_window > 0.1.
+  - Any host whose DR3 and DR4 source differ, or with id_method = positional.
+  - "The 11 T16 stars whose published Gaia DR3 ID differs from ours
+    (gaia_dr4/data_t16/t16_gaia_id_disagreements.csv). Query both sources."
+  - Whether a flagged host changes what a note or an email says. Nothing is sent by an agent.
+
+open_items:   # to settle from the DR4 documentation before approval or on release day
+  - Do DR3 source_ids carry over to DR4, or is a neighbourhood table needed?
+  - Column names of nss_two_body_orbit and gaia_exoplanet_candidates in DR4.
+  - Whether DR4 publishes its own RV-variability criterion.
+  - Catalogued timing errors are not carried per candidate; dt_err_d is a single assumed value.

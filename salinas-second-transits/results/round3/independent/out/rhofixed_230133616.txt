@@ -1,0 +1,4 @@
+TIC 230133616: 34 full transits, 9902 points; Gaia rho = 0.08 rho_sun -> a/R* = 14.98 (circular)
+  free:  Rp/R* = 0.0722  b = 0.00  a/R* = 21.04  chi2 = 9484.3
+  fixed: Rp/R* = 0.0781  b = 0.70  a/R* = 14.98 (fixed)  chi2 = 9531.6
+  delta chi2 (fixed - free) = 47.3 for 1 fewer parameter; chi2/dof(free) = 0.96  scaled delta chi2 = 49.0

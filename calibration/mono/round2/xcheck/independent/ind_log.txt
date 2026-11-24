@@ -1,0 +1,26 @@
+Warning: 30% (5872/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[1/20] TIC 49428710: 2 trials (5 s)
+[2/20] TIC 63898957: 2 trials (7 s)
+[3/20] TIC 123357864: 2 trials (2 s)
+[4/20] TIC 120255950: 2 trials (7 s)
+[5/20] TIC 23434737: 2 trials (7 s)
+Warning: 30% (5871/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5871/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[6/20] TIC 153065527: 2 trials (4 s)
+[7/20] TIC 349095149: 2 trials (5 s)
+[8/20] TIC 9902522: 4 trials (21 s)
+[9/20] TIC 59683523: 4 trials (1 s)
+Warning: 30% (5872/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+Warning: 30% (5879/19412) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[10/20] TIC 20904104: 4 trials (18 s)
+[11/20] TIC 149923858: 4 trials (1 s)
+[12/20] TIC 19026420: 4 trials (21 s)
+[13/20] TIC 91987762: 2 trials (32 s)
+[14/20] TIC 206241017: 4 trials (1 s)
+[15/20] TIC 237597612: 4 trials (1 s)
+[16/20] TIC 466314014: 4 trials (2 s)
+[17/20] TIC 409011538: 4 trials (2 s)
+[18/20] TIC 102840239: 2 trials (34 s)
+[19/20] TIC 271971130: 2 trials (30 s)
+[20/20] TIC 373026096: 4 trials (11 s)
+wrote 60 rows to /Users/mcbee/Documents/GitHub/coracle/duo-transits-dr4/calibration/mono/round2/xcheck/independent/ind_rows.csv

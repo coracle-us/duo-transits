@@ -30,6 +30,39 @@ kind
 flat               1.0000            1.0           0.9841
 transit            0.2222            0.0           0.0000
 
+KNOWN STARS, set toi_boxref: 90 total, 83 used
+box reference used for 63 of 83; box/catalogue depth quartiles [0.85, 0.94, 1.01]
+skipped
+under 3 clean transits or under 300 d apart    7
+median epoch SNR quartiles [4.1, 7.4, 16.7]
+current  true period {'excluded': 46, 'supported': 37}  false survivors median 16 mean 20.3 max 85.0  of median 1853 aliases
+both     true period {'supported': 69, 'excluded': 13, 'allowed': 1}  false survivors median 20 mean 28.0 max 286.0  of median 1853 aliases
+half3s   true period {'supported': 78, 'excluded': 3, 'allowed': 2}  false survivors median 32 mean 82.5 max 397.0  of median 1853 aliases
+epoch rates on real data (fraction of clean epochs that exclude)
+                              current_excludes  both_excludes  half3s_excludes    n  n_stars  ratio_p05  ratio_p50
+kind    snr_bin                                                                                                   
+flat    (0.0, 4.0]                      0.9325         0.5203           0.0632  934       21      -0.65      -0.00
+        (4.0, 6.0]                      0.9899         0.9620           0.1969  894       18      -0.27       0.00
+        (6.0, 8.0]                      1.0000         1.0000           0.7539  256       10      -0.18      -0.01
+        (8.0, 10.0]                     1.0000         1.0000           0.9833   60        6      -0.14      -0.02
+        (10.0, 15.0]                    1.0000         1.0000           1.0000  830       14      -0.09       0.00
+        (15.0, 20.0]                    1.0000         1.0000           1.0000  152        5      -0.06      -0.00
+        (20.0, 30.0]                    1.0000         1.0000           1.0000  397       12      -0.05       0.00
+        (30.0, 1000000000.0]            1.0000         1.0000           1.0000  715        9      -0.03       0.00
+transit (0.0, 4.0]                      0.2033         0.0070           0.0000  428       21       0.10       0.78
+        (4.0, 6.0]                      0.1399         0.0536           0.0070  429       18       0.35       0.77
+        (6.0, 8.0]                      0.0089         0.0089           0.0089  112        9       0.67       0.88
+        (8.0, 10.0]                     0.4091         0.3636           0.0000   22        5       0.30       0.91
+        (10.0, 15.0]                    0.0050         0.0000           0.0000  397       14       0.82       0.99
+        (15.0, 20.0]                    0.0154         0.0000           0.0000   65        4       0.90       1.01
+        (20.0, 30.0]                    0.1818         0.0253           0.0051  198       11       0.65       0.95
+        (30.0, 1000000000.0]            0.2711         0.0000           0.0000  343        9       0.86       0.95
+median across stars, so stars with many epochs don't dominate
+         current_excludes  both_excludes  half3s_excludes
+kind                                                     
+flat                  1.0            1.0           0.8219
+transit               0.0            0.0           0.0000
+
 KNOWN STARS, set multi: 57 total, 35 used
 skipped
 period at edge of refinement grid               9
