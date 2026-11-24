@@ -91,3 +91,47 @@ class DiskCurve:
             near = np.abs(self.mjd[None, :] - t[:, None]).argmin(axis=1)
             out["w1w2"] = self.w1w2[near]
         return out
+
+
+# ---------------------------------------------------------------- spline-free check (checks/c2)
+LIN_MAX_DIST = 200.0  # days from a sector mid-time to either bracketing visit
+
+
+class LinearDiskCurve:
+    """W1 by straight-line interpolation between the two visits bracketing each time.
+
+    A time is unusable outside the WISE span or if either bracketing visit is more than
+    LIN_MAX_DIST days away. w1_quiet = faintest visit; dw1dt = the segment's slope; phase
+    labels use the same thresholds as DiskCurve. Same output keys as DiskCurve.at."""
+
+    def __init__(self, mjd, w1, w1w2=None):
+        o = np.argsort(mjd)
+        self.mjd = np.asarray(mjd, float)[o]
+        self.w1 = np.asarray(w1, float)[o]
+        self.w1w2 = None if w1w2 is None else np.asarray(w1w2, float)[o]
+        self.w1_quiet = float(np.max(self.w1))
+        self.t0, self.t1 = self.mjd[0], self.mjd[-1]
+
+    def at(self, t_mjd):
+        t = np.atleast_1d(np.asarray(t_mjd, float))
+        j = np.clip(np.searchsorted(self.mjd, t, side="right"), 1, len(self.mjd) - 1)
+        ta, tb = self.mjd[j - 1], self.mjd[j]
+        wa, wb = self.w1[j - 1], self.w1[j]
+        span = np.where(tb > ta, tb - ta, np.nan)
+        slope = (wb - wa) / span
+        w1_fit = np.where(np.isfinite(slope), wa + slope * (t - ta), 0.5 * (wa + wb))
+        d = np.nan_to_num(slope) * 100.0
+        inside = (t >= self.t0) & (t <= self.t1)
+        near = (t - ta <= LIN_MAX_DIST) & (tb - t <= LIN_MAX_DIST)
+        excess = self.w1_quiet - w1_fit
+        lab = np.where(d < BUILD_SLOPE, "building",
+              np.where(d > DISS_SLOPE, "dissipating",
+              np.where(excess < QUIET_EXCESS, "quiescent", "plateau")))
+        gap = np.where(inside, tb - ta, np.inf)
+        out = dict(w1_fit=w1_fit, disk_excess=excess, dw1dt=d, wise_gap=gap,
+                   spline_overshoot=np.zeros(len(t)), phase_label=lab,
+                   wise_usable=inside & near)
+        if self.w1w2 is not None:
+            k = np.abs(self.mjd[None, :] - t[:, None]).argmin(axis=1)
+            out["w1w2"] = self.w1w2[k]
+        return out
