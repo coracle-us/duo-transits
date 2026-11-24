@@ -8,3 +8,14 @@ new leads: 41 stars (56 rows); post-hoc detections not in Table 1: 8; union: 47 
 BLS blocks: 470; inverted blocks at or above the threshold: 5
 Table 1 sources classified: ADS/SIMBAD 97 + VizieR 106 = 203
 VizieR catalogue IDs: 93; exist on the mirror: 78
+real BLS blocks with a detection: 36
+TESS target-sectors observed: 447; searched: 364; not searched (no pipeline light curve, sector < 80): 83
+EPIC 202072917: catalogue period 3.842 d; observed spacing 34.746 d = 9.044 cycles; offset from an integer 0.168 d
+EPIC 202072917: catalogue period 23.255 d; observed spacing 34.746 d = 1.494 cycles; offset from an integer 11.491 d
+EPIC 202072917: catalogue period 34.742 d; observed spacing 34.746 d = 1.000 cycles; offset from an integer 0.004 d
+EPIC 202072917: catalogue period 1007.6 d; observed spacing 34.746 d = 0.034 cycles; offset from an integer 34.746 d
+EPIC 202072917: catalogue period 15.17 d; observed spacing 34.746 d = 2.290 cycles; offset from an integer 4.406 d
+EPIC 202072917: catalogue period 14.2 d; observed spacing 34.746 d = 2.447 cycles; offset from an integer 6.346 d
+EPIC 202072917: catalogue period 5.579 d; observed spacing 34.746 d = 6.228 cycles; offset from an integer 1.272 d
+EPIC 202126877: catalogue period 3.877 d; observed spacing 21.785 d = 5.619 cycles; offset from an integer 1.477 d
+EPIC 202071902: catalogue period 8.6973 d; observed spacing 2725.592 d = 313.384 cycles; offset from an integer 3.337 d

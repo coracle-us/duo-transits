@@ -53,3 +53,30 @@ say(f"Table 1 sources classified: ADS/SIMBAD {len(a)} + VizieR {len(b)} = {len(a
 vc = pd.read_csv(os.path.join(lit, "vizier_catalogues.csv"))
 say(f"VizieR catalogue IDs: {len(vc)}; exist on the mirror: {int(vc.exists.astype(bool).sum())}")
 open(os.path.join(R, "note_numbers.txt"), "w").write("\n".join(out) + "\n")
+
+# real BLS blocks above the threshold (against the inverted count above)
+nr = 0
+for f in glob.glob(os.path.join(D, "periodic", "*.json")):
+    d = json.load(open(f))
+    nr += sum(any(s.get("detected") for s in b["signals"]) for b in d["bls"])
+say(f"real BLS blocks with a detection: {nr}")
+
+# TESS coverage of the blind search: observed target-sectors (catalogue) vs sectors searched (per_star json)
+obs = got = 0
+for r in cat.drop_duplicates("EPIC").itertuples():
+    o = {int(x) for x in str(r.tess_sectors_observed).split() if x.isdigit()} if pd.notna(r.tess_sectors_observed) else set()
+    g = set(json.load(open(os.path.join(D, "per_star", f"{r.EPIC}.json"))).get("tess_sectors") or [])
+    obs += len(o)
+    got += len(o & g)
+say(f"TESS target-sectors observed: {obs}; searched: {got}; not searched (no pipeline light curve, sector < 80): {obs - got}")
+
+# other catalogue periods of the 'agrees' C0 binaries against consecutive observed eclipses
+# (eclipse times: independent_table/scripts/s7_final.py, results/ephemerides/202126877.json)
+SPACING = {202072917: 2531.533 - 2496.787, 202126877: 2510.368 - 2488.583, 202071902: 2517.165 - (-208.427)}
+OTHER = {202072917: [3.842, 23.255, 34.742, 1007.6, 15.17, 14.20, 5.579], 202126877: [3.877], 202071902: [8.6973]}
+for e, ps in OTHER.items():
+    for p in ps:
+        n = SPACING[e] / p
+        say(f"EPIC {e}: catalogue period {p} d; observed spacing {SPACING[e]:.3f} d = {n:.3f} cycles; "
+            f"offset from an integer {abs(n - round(n)) * p:.3f} d")
+open(os.path.join(R, "note_numbers.txt"), "w").write("\n".join(out) + "\n")
