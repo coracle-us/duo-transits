@@ -338,14 +338,18 @@ def catalogues():
     cat = pd.read_csv(ROOT / "k2singles" / "data" / "k2_singles.csv", dtype={"EPIC": str}).drop_duplicates("EPIC").set_index("EPIC")
     vz = pd.read_csv(REV / "results" / "literature" / "vizier_targeted.csv", dtype={"EPIC": str})
     nss = pd.read_csv(REV / "results" / "literature" / "gaia_nss.csv", dtype={"EPIC": str})
-    look = pd.read_csv(HERE / "catalog_lookup.csv", dtype={"EPIC": str}).set_index("EPIC")
+    f = HERE / "catalog_lookup.csv"
+    look = pd.read_csv(f, dtype={"EPIC": str}) if f.exists() else pd.DataFrame(columns=["EPIC", "status"])
+    look = look[look.status == "ok"].set_index("EPIC")
     eb = pd.read_csv(ROOT / "data" / "raw" / "tess_eb_prsa2022.tsv", sep="\t", comment="#", skiprows=[0, 1] , dtype=str)
     eb_tics = set(pd.to_numeric(eb.iloc[:, 0].str.strip(), errors="coerce").dropna().astype(int))
-    return cat, vz, nss, look, eb_tics
+    allc = pd.read_csv(ROOT / "k2singles" / "data" / "k2_singles.csv", dtype={"EPIC": str})
+    cat_epochs = allc.groupby("EPIC").epoch_btjd.apply(list).to_dict()
+    return cat, vz, nss, look, eb_tics, cat_epochs
 
 
 def check_cat(sig, cats):
-    cat, vz, nss, look, eb_tics = cats
+    cat, vz, nss, look, eb_tics, cat_epochs = cats
     e = sig["EPIC"]
     c = cat.loc[e]
     eb, flags, var_periods = [], [], []
@@ -373,6 +377,10 @@ def check_cat(sig, cats):
             (eb if g.startswith("ECL") else flags).append(f"Gaia class {g}")
         if pd.notna(L.get("RUWE")) and float(L.RUWE) > 1.4:
             flags.append(f"binary host: RUWE {float(L.RUWE):.2f}")
+        if pd.notna(L.get("NSS")) and int(L.NSS) > 0:
+            flags.append(f"binary host: Gaia non_single_star {int(L.NSS)}")
+        if pd.notna(L.get("nearest_nb_sep")):
+            flags.append(f"Gaia neighbour {L.nearest_nb_sep}\" dG {L.nearest_nb_dG:+.1f} ({int(L.n_nb30)} within 30\")")
     else:
         flags.append("catalog_lookup missing")
     for r in nss[nss.EPIC == e].itertuples():
@@ -409,7 +417,9 @@ def check_cat(sig, cats):
                 if abs(sig["P"] / (k * vp) - 1) < 0.01:
                     sysv = True
                     flags.append(f"P = {k} x variable period {vp}")
-    return dict(Rp_RJ=rp, EB_cat="; ".join(eb), flags="; ".join(flags), period_is_variability=sysv, comment=com,
+    ce = cat_epochs.get(e, [])
+    hit = [T for T in sig["T_events"] if any(abs(T - x) <= max(0.1, sig["D"] / 2 + 0.1) for x in ce)]
+    return dict(includes_catalogued_event=len(hit), Rp_RJ=rp, EB_cat="; ".join(eb), flags="; ".join(flags), period_is_variability=sysv, comment=com,
                 known_period="; ".join(sorted(set(known))[:5]))
 
 
