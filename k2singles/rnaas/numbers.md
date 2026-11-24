@@ -249,3 +249,8 @@ type, the 211892898 SB1 conjunction match (Gaia SB1 stays in the table), the TOI
 eclipses per sector" argument (replaced by the eclipse-spacing check), 202126877's K2 timing offset and secondary limit.
 
 Response letter: `k2singles/rnaas/response_letter.md`.
+
+**Triage wording (2026-11-24).** After the leads triage (`k2singles/leads_triage/`, PR 31), the note no longer calls
+the 47 stars' signals "unvetted". Results: "triage leaves none as an on-target candidate". Closing line: "the other
+signals' triage". The letter says the same. Count (`singles/rnaas/aas_wordcount.py`): abstract 131, AAS-counted
+text 1294 (was 1286; limit 1350). Reading copy rebuilt (`k2singles/rnaas/reading_copy.py`).
