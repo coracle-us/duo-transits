@@ -250,7 +250,38 @@ eclipses per sector" argument (replaced by the eclipse-spacing check), 202126877
 
 Response letter: `k2singles/rnaas/response_letter.md`.
 
-**Triage wording (2026-11-24).** After the leads triage (`k2singles/leads_triage/`, PR 31), the note no longer calls
+## Submitted 2026-11-24 as AAS84033
+
+- AAS82225 carries the formal decision "Reject" (15-Nov-2026), with Lintott's invitation to revise. The AAS system
+  offers no revision link for it, so the revision went in as a **new submission**: **AAS84033**, received
+  24-Nov-2026 10:32:48 (AAS Peer Review System). Corridor: Stars and Stellar Physics, as AAS82225.
+- **Submitted text:** `k2singles/rnaas/rnaas.tex` at commit `c89dfc1` (git tag `aas84033-submitted`). It was uploaded
+  directly to AAS, not through Overleaf, as the single file `McBee_AAS82225_R1.tex`, byte-identical to that commit's
+  `rnaas.tex`. The other three files were `aastex701.cls` (v7.0.1), `aasjournalv7.bst` and `orcid-ID.png`. These were
+  taken from the AAS82225 record, so they are the same files AAS accepted in October. Their file type is "Other
+  LaTeX file", with the description "Source file"; the PNG is not typed as a figure, so it does not use up the
+  note's one figure-or-table slot.
+- **Merged PDF:** built by AAS, 3 pages (261 KB). Pages 1 and 3 were checked against the Overleaf build of the same
+  commit (project "RNAAS K2 single events x TESS", linked file `k2_note_R1.tex`): the same layout, abstract, table
+  and references. Page 2 has the same source and class files but was not compared closely. Approved by Jon.
+- **Word count** (`singles/rnaas/aas_wordcount.py`): abstract 131, AAS-counted text 1286, about 1335 by AAS's count.
+- **Form fields:**
+  - abstract: plain text from `k2singles/rnaas/abstract_plaintext.txt` (139 words by the form's count);
+  - UAT: 489, 1709, 444;
+  - MAST DOIs: the five in the acknowledgments;
+  - IPAC: Yes (ExoFOP);
+  - funding: No;
+  - ethics: agreed;
+  - AI usage: Yes, described as "Anthropic's Claude (Claude Code, with Claude Opus 5.5 and Claude Fable 5.2 models)
+    wrote and ran the analysis code under my supervision, ...", following the note's AI statement.
+- **Response letter:** a new submission has no field for one. Jon sends
+  `k2singles/rnaas/response_letter.txt` by email to journals.manager@aas.org, cc Lintott, citing both AAS82225 and
+  AAS84033. The manuscript page also offers "Send Manuscript Correspondence", which is an alternative.
+
+**Triage wording (2026-11-24, after the AAS84033 submission).** After the leads triage (`k2singles/leads_triage/`, PR 31), the note no longer calls
 the 47 stars' signals "unvetted". Results: "triage leaves none as an on-target candidate". Closing line: "the other
 signals' triage". The letter says the same. Count (`singles/rnaas/aas_wordcount.py`): abstract 131, AAS-counted
-text 1294 (was 1286; limit 1350). Reading copy rebuilt (`k2singles/rnaas/reading_copy.py`).
+text 1294 (was 1286; limit 1350). Reading copy rebuilt (`k2singles/rnaas/reading_copy.py`). These edits came after the
+revision was submitted: the submitted text stays `rnaas.tex` at tag `aas84033-submitted` (1286 words, still saying
+"unvetted"). They go to AAS only with a correction or a further revision. The plain-text letter
+(`response_letter.txt`, not yet sent when this was written) carries the triage sentence.
