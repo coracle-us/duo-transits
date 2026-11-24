@@ -27,7 +27,9 @@ Checks
      sigma from the out-of-event scatter (red-noise inflated). Epochs with SAP d/sigma < 3 are skipped. Weighted mean
      per mission, in arcsec (K2 3.98"/px, TESS 21"/px).
      off-target if |offset| >= 3 sigma and >= 0.5 px; on-target if not off-target and sigma <= 0.5 px;
-     else uninformative.  This is a light-curve centroid test, not a pixel difference image.
+     else uninformative.  Added 2026-11-24 after the first full run: |offset| >= 5 px is "excursion" (a source that
+     far off cannot shift a moment centroid in proportion to the depth; it means a pointing or systematic jump),
+     which is neither off- nor on-target.  This is a light-curve centroid test, not a pixel difference image.
   E  eclipsing binary.  Any of: LaCourse & Jacobs comment says "secondary eclipse"; odd-even depth difference
      >= 3 sigma; box depth at phase 0.5 >= 3 sigma (circular orbit, single-period signals only); sqrt(depth) R* >
      2 R_Jup (R* from the K2 catalogue; box depth); VSX type starting with E; Gaia DR3 classifier ECL; TESS EB
@@ -307,7 +309,9 @@ def check_X(sig, ep):
         off = np.hypot(ox, oy)
         s = float(np.sqrt(((ox * sx) ** 2 + (oy * sy) ** 2) / off ** 2)) if off > 0 else max(sx, sy)
         smax = max(sx, sy)
-        if off / s >= 3 and off >= 0.5:
+        if off >= 5:  # added 2026-11-24 after the first full run (README): larger than a K2 aperture
+            v = "excursion"
+        elif off / s >= 3 and off >= 0.5:
             v = "off-target"
         elif smax <= 0.5:
             v = "on-target"
