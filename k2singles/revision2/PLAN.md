@@ -410,3 +410,30 @@ pre-registered, and the note does not call the periods of 211489484 and 21192456
 - 211489484, 0.2405 d: a sub-day signal, not a competing eclipse period. One line saying so.
 - 211924561: all four SPOC TCEs (58.28, 31.25, 58.54, 10.28 d) are checked against the DV epochs (table above).
   Each combines our TESS transits with a rejected event or an empty time, and none fits the K2 transits.
+
+## Review of the revised note, 2026-11-24
+
+An independent agent checked every number and claim in the draft (`rnaas/rnaas.tex`, `rnaas/response_letter.md`)
+against the repo. All numbers matched their sources. It found framing and coverage overstatements, now fixed:
+- **Blind framing.** The planet candidates' periods come from the targeted search, and the blind search misses both.
+  The title is now "... Checked by a Blind Search", and the abstract says so.
+- **TOI-5560.01 post hoc.** 140.49 d is at threshold support among 16 periods, below the star's own control. It is not
+  a detection, and the table's Blind column now says "no".
+- **"11 of 15"** means among 2-40 allowed aliases per star. The text says so.
+- **TESS coverage.** Own photometry covers only S80-200, so 83 of 447 observed target-sectors (all < S80, faint stars
+  without pipeline light curves) were not searched. The only Table 1 star affected is 211489484 (S34, S71, S72). The
+  note states the gap.
+- **ADS identifiers.** For the 61 stars SIMBAD does not know, `literature.py` searched only EPIC and TIC.
+  `ads_extra_ids.py` adds Gaia DR3, Gaia DR2 and 2MASS: 0 papers. Positive control: 211892898's 2MASS id finds 1.
+- **SPOC DV.** These were read for 2 stars only. `dv_listing.py`: MAST has no SPOC DV report for any of the 8 new-period
+  stars (3 have SPOC 2-min data).
+- **Gaps** (ADS/SIMBAD recall, post-hoc VizieR list, 13 catalogues not on the mirror) are now stated in the note.
+- **Pre-registration wording.** "Fixed before the full run, the threshold after a one-star test". The 112 is
+  labelled as using the post-hoc coincidence test.
+- **Other catalogue periods of the "agrees" binaries.** Each misses consecutive observed eclipses by >= 0.17 d
+  (`note_numbers.py`).
+- **The 47 other blind-signal stars.** 36 of 470 real BLS blocks pass against 5 inverted ones, so most are real
+  variability. **Deviation from this plan ("Comparison"):** they are not vetted in this revision. Triage runs
+  separately on its own branch (Jon's decision, 2026-11-23); the note lists them as unvetted.
+- **Smaller fixes.** BLS range wording; 202126877's Events column is TESS-only; "independent re-analyses", not
+  "blind"; "no orbital period"; 211503363's radius named for each R*.
