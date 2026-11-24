@@ -1,12 +1,16 @@
 # Be-star RNAAS draft: provenance of every number
 
-Draft: `rnaas/ms.tex`, v2 of 2026-11-24, revised after `rnaas/REVIEW_mythos.md`. Not submitted.
+Draft: `rnaas/ms.tex`, v3 of 2026-11-24, ready to submit (not submitted). v3 = v2 (revised after
+`REVIEW_mythos.md` and `REVIEW_mythos_v2.md`) plus an AI note in the figure caption and a trim to
+fit the 1,500-word total (see "v3" at the end of this file).
 
-Word count, from `singles/rnaas/aas_wordcount.py`:
-- abstract 146 words (limit 150);
-- AAS-counted text 1,264 words (limit 1,350).
-
-That counter ran about 2% low on AAS82207R1, so the AAS count is about 1,295. Updated after the second review (`REVIEW_mythos_v2.md`).
+Word count (v3):
+- abstract 146 words (limit 150), from `singles/rnaas/aas_wordcount.py`;
+- text after the abstract, excluding references, 1,132 words (the 1,350 limit AAS enforced on
+  AAS82207R1), from the same script;
+- total with title, abstract, headers, caption and references: 1,473 by the same word rule, and
+  1,455 from the compiled PDF's text scaled by the AAS82207R1 calibration (1706/1753). Limit 1,500
+  per https://journals.aas.org/research-note-preparation-guidelines/ (read 2026-11-24).
 
 All paths below are under `be-star-pulsations/`. Scripts run with `BE_RUN=full`. Abbreviations:
 "stage-4 test" is `stats4.run_test`, and "the c5 log" is the printed output of
@@ -135,3 +139,23 @@ The figure is `figures/rnaas_fig1.pdf`, copied to `rnaas/` and unchanged in v2. 
 **UAT keyword IDs** (checked 2026-11-24 against `UAT.json` in github.com/astrothesaurus/UAT,
 release 6.0.0 of 2025-12-17): Be stars 142, Circumstellar disks 235, Stellar pulsations 1625,
 Time domain astronomy 2109. All four match their names and none has a change note.
+
+## v3 (2026-11-24): AI note in the caption, trimmed to the 1,500-word total
+
+- The caption now ends "Plotting code was written with Claude (Anthropic).", following the AAS LLM
+  guidelines (https://journals.aas.org/author-llm-guidelines, posted 9 Sep 2026). matplotlib is
+  added to `\software`.
+- The AAS page counts title, headers, captions and references towards 1,500 words. v2 came to
+  1,626 on that rule, so the text was tightened. A number-by-number diff against v2 shows these
+  removals only (their sources above still hold):
+  - the product counts (QLP 2,020, TESS-SPOC 219, SPOC 120-s 198, GSFC-ELEANOR-LITE 104);
+  - "755 of the stars from QLP" in Method (still given in the dilution paragraph);
+  - the mixed-pipeline and W1 < 8 robustness checks;
+  - "2,449 stars" for the no-crowding-cut run (B1 0.59 kept);
+  - the SPOC formal flux error check (beta 0.09, p 0.56);
+  - "15--24 c/d" in the white-noise paragraph (it is defined in Method).
+- Other edits are wording only: shorter caption, swap-null sentence, white-noise, dilution,
+  scatter and Discussion paragraphs, the AI statement's list of uses, and the Lightkurve reference
+  without its title (ASCL id kept).
+- Test build with `tectonic` and `aastex701.cls`: 4 pages, no undefined references, figure on one page.
+
