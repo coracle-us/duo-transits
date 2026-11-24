@@ -311,7 +311,7 @@ odd/even difference or a secondary eclipse.
 **Drafts, nothing sent or submitted:**
 - Email to the Salinas team: `outreach/2026-11-22-salinas-team-email-draft.md`. They follow up their own
   singles, so they should hear first.
-- RNAAS note: `rnaas/rnaas.tex`. Abstract 149 words, text 1,109 counted words, one table. Numbers are
+- RNAAS note: `rnaas/rnaas.tex`. Abstract 146 words (150 as printed), text 1,109 counted words, one table. Desk checks done 2026-11-24. Numbers are
   traced in `rnaas/numbers.md`, which also has the pre-submission checklist.
 - Next transits: `results/round3/predictions_2026-11-22.csv` (`round3/s15_predictions.py`).
   107113048 E42 is 2026-12-25 21:44 UTC ± 11 min.

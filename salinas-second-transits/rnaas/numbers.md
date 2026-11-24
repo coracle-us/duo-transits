@@ -64,12 +64,38 @@ file and a script. Paths below are relative to `salinas-second-transits/`.
   - the 275647095 phase-0.872 dip (six events);
   - 107113048 E43 and the 74.55 / 29.82 d tests in S114;
   - a ground-based 107113048 E42 (2026-12-25), if anyone observes it.
-- [ ] **References.** Check every entry against ADS and arXiv (not done yet). Salinas et al. 2026 is
-  arXiv-only so far; check for a journal reference.
-- [ ] **AAS AI policy.** Re-check the current AAS journals policy; the disclosure text is copied from
-  AAS82207.
-- [ ] **Word count.** `python ../singles/rnaas/aas_wordcount.py rnaas.tex` gives an abstract of 149
-  (limit 150) and 1,109 counted words (limit 1,350), as of this draft.
-- [ ] **Compile.** Compile on Overleaf and read the PDF. `rnaas_draft_reading_copy.pdf` is a check build with
-  the older aastex631 class (tectonic), because aastex701.cls only ships with the Overleaf template. It
-  compiles with no errors or undefined citations.
+- [x] **References (2026-11-24).** `checks/verify_refs.py` → `checks/refs_check.txt`: each of the 11 entries matches
+  exactly one ADS record (authors, year, journal, volume, page), and the two ASCL entries match their ascl ids.
+  Salinas et al. 2026 is still arXiv-only: arXiv:2610.24882 has no journal reference or DOI (last updated
+  2026-10-17). Re-check just before submitting.
+- [x] **AAS AI policy (2026-11-24).** Read https://journals.aas.org/author-llm-guidelines (posted 9 Sep 2026,
+  no later update shown). It asks for a disclosure statement at the end of the article naming the tool and
+  what it was used for, with responsibility resting on the author; AI cannot be an author; every reference
+  must be checked to exist (ADS recommended); AI-made figures need a caption note. The draft's "AI disclosure
+  statement" names Claude (Anthropic) and its uses, takes responsibility, and the note has no figure, so it
+  complies. Nothing specific to Research Notes. Optional: the page suggests telling the editor at submission
+  which sections the LLM helped with.
+- [x] **Word count (2026-11-24).** The RNAAS page (https://journals.aas.org/research-note-preparation-guidelines/,
+  read 2026-11-24) counts title, headers, captions and references towards 1,500 words, with 150 reserved for
+  the abstract; the Editorial Office's count is final.
+  - **Abstract trimmed by 3 words** ("Two of these are" → "Two are"; "TIC 241550976 and TIC 107113048" →
+    "TIC 241550976 and 107113048"). `aas_wordcount.py` counts `\citet{Salinas2026}` as one word, but it prints
+    as "Salinas et al. (2026)", so the printed abstract was 152. Now: 146 by `aas_wordcount.py`, 150 as
+    printed (PDF text) and 150 in `abstract_plaintext.txt` by `wc -w` (limit 150).
+  - Text after the abstract, without references: 1,109 by `aas_wordcount.py` (the 1,350 AAS enforced on
+    AAS82207R1).
+  - Total by `checks/total_words.py` (same word rule): 1,486 with the table body, 1,430 without it (the page
+    says table contents don't count), 1,491 with the author line. From the PDF text: 1,529 raw, 1,488 scaled
+    by the AAS82207R1 calibration (1706/1753). Limit 1,500: it fits, but with little room; any added
+    sentence (for example after the Salinas reply or S111) needs a matching cut.
+- [x] **Compile (2026-11-24).** tectonic 0.17.0 with `aastex701.cls` v7.0.1 (2025/05/09, from
+  `singles/rnaas/arxiv/McBee_AAS82207_arXiv.tar.gz`, as for AAS84040/41/43): 3 pages, the table on page 2, no
+  undefined references or citations, no overfull boxes. `rnaas.pdf` is that build. It replaces
+  `rnaas_draft_reading_copy.pdf` (aastex631) as the copy to read.
+- [x] **Keywords and data DOIs (2026-11-24).** UAT 489 "Exoplanet detection methods" and 1709 "Transit
+  photometry" match their names in the current UAT.json (github.com/astrothesaurus/UAT), with no change notes.
+  All six `\dataset` DOIs resolve (doi.org handle API): SPOC t9-nmc8-f686, TESS-SPOC t9-wpz1-8s54, QLP
+  t9-r086-e880 and TESS FFI 0cp4-2j79 at MAST; ExoFOP5 and NEA13 at IPAC.
+- [x] **Plain-text abstract for the AAS form:** `abstract_plaintext.txt` (markup removed; hyphens for en
+  dashes, "sigma" for σ), 150 words by `wc -w`. Affiliation "Independent researcher, USA", as in the other
+  notes.
