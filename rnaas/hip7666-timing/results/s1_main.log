@@ -1,0 +1,4 @@
+template recentring (phase): {'p': 7.500000000000041e-05, 's': 0.00013500000000000057} -> secondary offset from 0.5 P: 12.3 s
+S18 main: 991 cadences, exptime 1800 s, oot rms 4.484 ppt
+S58 main: 19238 cadences, exptime 120 s, oot rms 0.886 ppt
+S85 main: 7130 cadences, exptime 200 s, oot rms 0.823 ppt

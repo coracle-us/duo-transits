@@ -1,0 +1,33 @@
+template recentring (phase): {'p': 7.500000000000041e-05, 's': 0.00013500000000000057} -> secondary offset from 0.5 P: 12.3 s
+S18 qlp: 993 cadences, exptime 1800 s, oot rms 0.553 ppt
+Traceback (most recent call last):
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/.venv/lib/python3.13/site-packages/astropy/io/fits/column.py", line 2152, in _get_index
+    return names.index(key.rstrip())
+           ~~~~~~~~~~~^^^^^^^^^^^^^^
+ValueError: 'KSPSAP_FLUX_ERR' is not in list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/src/s1_eclipses.py", line 129, in <module>
+    main()
+    ~~~~^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/src/s1_eclipses.py", line 111, in main
+    d = prepare(s, tpl=tpl, kind=KIND)
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/src/s1_eclipses.py", line 29, in prepare
+    t, f, e, exptime = hip.load(kind, sector)
+                       ~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/src/hip.py", line 57, in load
+    e = np.array(d["KSPSAP_FLUX_ERR"], float)
+                 ~^^^^^^^^^^^^^^^^^^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/.venv/lib/python3.13/site-packages/astropy/io/fits/fitsrec.py", line 573, in __getitem__
+    return self.field(key)
+           ~~~~~~~~~~^^^^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/.venv/lib/python3.13/site-packages/astropy/io/fits/fitsrec.py", line 756, in field
+    column = self.columns[key]
+             ~~~~~~~~~~~~^^^^^
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/.venv/lib/python3.13/site-packages/astropy/io/fits/column.py", line 1759, in __getitem__
+    key = _get_index(self.names, key)
+  File "/Users/mcbee/Documents/GitHub/coracle/duo-transits-hip7666/rnaas/hip7666-timing/.venv/lib/python3.13/site-packages/astropy/io/fits/column.py", line 2160, in _get_index
+    raise KeyError(f"Key '{key}' does not exist.")
+KeyError: "Key 'KSPSAP_FLUX_ERR' does not exist."

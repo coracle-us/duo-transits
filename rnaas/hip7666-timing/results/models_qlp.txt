@@ -1,0 +1,28 @@
+Eclipse times (qlp): 57 used; per sector and type, scatter about a line:
+  S18 p: n=8, median boot err 6.0 s, rms about line 4.9 s, chi2/dof 5.6/6, error scale 1.00
+  S18 s: n=8, median boot err 9.4 s, rms about line 7.3 s, chi2/dof 5.7/6, error scale 1.00
+  S58 p: n=11, median boot err 3.9 s, rms about line 4.0 s, chi2/dof 12.2/9, error scale 1.17
+  S58 s: n=12, median boot err 6.4 s, rms about line 6.8 s, chi2/dof 16.2/10, error scale 1.27
+  S85 p: n=9, median boot err 5.0 s, rms about line 29.7 s, chi2/dof 335.0/7, error scale 6.92
+  S85 s: n=9, median boot err 7.0 s, rms about line 23.9 s, chi2/dof 105.2/7, error scale 3.88
+
+M0 linear: T0 = 2557.567574 +/- 0.000013 BTJD (cycle 3283), P = 2.37222207 +/- 0.00000005 d, secondary offset = +12.8 +/- 2.0 s; chi2 = 123.9 for 54 dof, BIC 136.0
+   P(TESS) - P(Lee Eq.1) = +0.016 +/- 0.016 s
+M1 quadratic: Q = -1.871e-09 +/- 3.567e-10 d/cycle^2 (dP/dE = 2Q = -3.743e-09); chi2 = 96.4, BIC 112.5, dBIC vs M0 -23.5
+M2 LTTE (best on grid): P3 = 115.2 d, A = 16.8 s; chi2 = 89.2, BIC 113.4, dBIC vs M0 -22.6
+Preferred by BIC with the dBIC < -10 rule: M1
+
+p only: P = 2.37222213 +/- 0.00000006 d, chi2 48.4/26
+s only: P = 2.37222196 +/- 0.00000008 d, chi2 72.7/27
+
+Per sector, weighted mean O-C (s) [against Lee Eq. 1 | against own M0 linear]:
+  S18 p: n=8, Lee +5.4 +/- 2.1, own -2.5 +/- 2.1
+  S18 s: n=8, Lee +21.4 +/- 2.8, own +0.7 +/- 2.8
+  S18 secondary - primary: +15.9 +/- 3.5 s
+  S58 p: n=11, Lee +17.0 +/- 1.4, own +1.5 +/- 1.4
+  S58 s: n=12, Lee +30.1 +/- 2.2, own +1.9 +/- 2.2
+  S58 secondary - primary: +13.1 +/- 2.6 s
+  S85 p: n=9, Lee -5.9 +/- 10.9, own -26.4 +/- 10.9
+  S85 s: n=9, Lee -3.8 +/- 8.8, own -37.0 +/- 8.8
+  S85 secondary - primary: +2.1 +/- 14.0 s
+  inner-orbit Romer delay predicted (Kaplan 2010): +9.4 s

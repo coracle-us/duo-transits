@@ -153,4 +153,32 @@ Fitted to the eclipse O−C, with primary and secondary together and a free seco
 
 ## Change log
 
-(none yet)
+Changes made after this file was committed (6010f4a). For each one, the change and why.
+
+1. **Detrending (implementation detail; made before any timing was looked at).**
+   - Change: a straight line per orbit-long stretch is replaced by a cubic least-squares spline
+     with knots every 1.5 d, one per continuous chunk, fitted to the out-of-eclipse flux divided
+     by the binary template. A first pass, before the template exists, uses 5 d knots.
+   - Why: a line over a window that ends at a secondary eclipse would put a step in that
+     eclipse. The 1.5 d spline cannot follow the 20–38 d⁻¹ pulsations, and the template carries
+     the ellipsoidal and reflection shape.
+2. **Ingress and egress coverage, made concrete.**
+   - Change: an eclipse needs at least 50% of the expected cadences in 0.015 < |Δφ| < 0.044 on
+     each side.
+   - Dropped eclipses are listed in `results/dropped_eclipses_*.csv`.
+3. **Common delay added (pulsations).**
+   - Change: besides the per-mode phases of f1, f3 and f4, each segment also gets one delay τ,
+     fitted by shifting the whole 14-frequency sector model in time (`s2_pulsation.common_tau`).
+     The 0.3 d orbital-phase check uses this common τ.
+   - Why: in 0.3 d segments f3 and f4 are not resolved, so a single τ is the only workable
+     estimator there.
+4. **Sensitivity variant "S18 from QLP" (`mixq18`), added after seeing the data.**
+   - The trigger: the S18 TESS-SPOC 1800 s PDCSAP light curve has about 1% systematics over the
+     first orbit, an out-of-eclipse rms of 4.5 ppt and eclipse-time scatter of about 36 s.
+     QLP S18 has 0.55 ppt and about 5 s.
+   - The main result stays on the main products, as written above. The variant is reported next
+     to it.
+5. **QLP error columns.** S58 and S85 QLP files have `DET_FLUX_ERR` instead of `KSPSAP_FLUX_ERR`.
+   SAP_FLUX is still the flux used.
+6. **Synthetic injection test** (`tests/test_synthetic.py`) for both clocks, including the sign of
+   the pulsation delay.
