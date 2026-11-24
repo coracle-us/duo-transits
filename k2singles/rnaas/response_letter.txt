@@ -1,0 +1,69 @@
+Dear Dr Lintott,
+
+Thank you for your decision on AAS82225, "Orbital Periods for K2 Single-transit and Single-eclipse Events from K2
+Revisits and TESS", and for inviting a revision along the two lines you described.
+
+1. A thorough search of the existing literature.
+
+For each of the 163 stars I searched:
+- ADS full text, under the star's EPIC, TIC, Gaia and 2MASS identifiers and any others SIMBAD lists;
+- SIMBAD bibliographies;
+- ExoFOP;
+- VizieR: 22 variable-star, eclipsing-binary, K2 rotation and K2 planet-candidate catalogues for every star, plus 56
+  catalogues of the papers found for the stars in the table;
+- the Gaia DR3 orbit catalogue;
+- SPOC threshold-crossing events (TCEs) from Valizadegan et al. (2025) for every star, and the SPOC and TESS-SPOC
+  data-validation reports on MAST for the stars in the table.
+
+Each source for the 15 stars in the table was classified twice, independently: as giving a period, a period
+estimate, another kind of study, or only a catalogue listing. The two classifications disagreed on one period, and
+reading the paper settled it. A period is called new only if no source gives an orbital period. That rule was fixed
+before the sources were classified.
+
+The result:
+- 6 of the 15 periods are new. Five eclipsing binaries have no prior period, and EPIC 211503363 had only a
+  period estimate.
+- 5 match published periods to within 0.2%. The note cites them and explains why the other catalogue periods for
+  these stars do not fit.
+- 4 conflict with SPOC or TESS-SPOC TCEs: TOI-5560.01, EPIC 211489484, HD 220967 and EPIC 246089124. I checked
+  every TCE epoch in the validation reports. The TCEs of the last two come from Sector 70 alone and each rest on one
+  eclipse. The note explains why my data exclude each TCE, and does not call these four periods new.
+
+The table is now grouped by these verdicts. The note also states the search's limits:
+- ADS and SIMBAD alone find only a third of the known star–paper pairs, because catalogue papers often name stars only
+  in machine-readable tables. That is why VizieR was searched.
+- The VizieR catalogue list was fixed after an all-catalogue query failed, because the mirror's database was
+  unavailable.
+- 13 of the 93 listed catalogues were not on the mirror.
+- One known paper lists a star just outside the 3″ search radius.
+
+2. A blind search for transits.
+
+The submitted note slid a box with the catalogued depth and duration along the data. The revised note keeps those
+periods, but tests them with a blind search of all 163 stars:
+- no sample cut, and no use of the catalogued depth, duration or epoch;
+- every K2 light curve (three reductions, all campaigns) and the best TESS pipeline light curve per sector, with my
+  own photometry for recent sectors. This covers 364 of 447 TESS target-sectors; the other 83 have no pipeline light
+  curve and were not searched;
+- thresholds from the same search run on inverted light curves.
+
+For 11 of the 15 systems, the reported period is among the blind search's allowed periods. The note says plainly that
+the four misses include both planet candidates, and explains the other two. The blind search's first stage does find
+every transit of both candidates (SNR 9-32 and 11-111). Six of the seven fall below the significance threshold, which
+is high because inverted brightenings such as glints and bad cadences inflate the control. A linked-event test
+added after the first full run is labelled as post hoc. It recovers one of the four
+misses, and the note explains why its result for TOI-5560.01 is not a detection.
+
+Blind signals on 47 other stars are listed in the repository and are not claimed. A first triage of them is under
+way in the repository; its results will be reported separately.
+
+Other changes. The title now names the blind search. The audit of the catalogued events is replaced by the blind
+recovery. Some descriptive detail was cut to stay within the word limit.
+
+The search rules were fixed before the full run; the detection threshold was set after a one-star test. After the
+full run, a coincidence test replaced the planned rule for systematics shared between stars, and a linked-event test
+was added. Every such change is dated and explained in the repository (k2singles/revision2/PLAN.md), and every number in the note traces to a script there
+(https://github.com/coracle-us/duo-transits).
+
+Sincerely,
+Jon McBee
