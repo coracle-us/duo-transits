@@ -298,3 +298,17 @@ triage mentioned in the response letter". No attachments; Jon solved the CAPTCHA
 gives the triage counts (0 of 47 on target; 19 EB, 14 systematic, 7 control-level, 1 off target, 6 unclear, 2 of
 them already known) and offers the version of the note with the two "unvetted" phrases changed (1294 words), which
 is `rnaas.tex` on main after PR 34. AAS84033 had no scientific editor assigned when it was sent.
+
+**AAS84033 bounced on length (2026-11-24).** AAS's quality check now counts the references: main text 1,640
+(290 over 1,350), abstract 138. Our counter gave 1,605 for the same text, so AAS runs about 2% higher. Shortened in
+`rnaas.tex` (wording only, abstract unchanged), in two commits: 0dcf8ce (rewording, 1,400) and the commit that
+records the gate output below (1,299). What went:
+- the EPIC 202126877 paragraph (its depths are in the abstract here and in full in the EB note, AAS84041), and
+  table footnote f, which repeated them;
+- the `\software` line and its Lightkurve and astroquery references (astrocut stays, cited in Methods);
+- the Conclusion section (its two sentences moved into Results);
+- the TOI-5560.01 and EPIC 211503363 period values in the text (Table 1 gives them at higher precision);
+- small wording cuts.
+Every other number in the submitted body is kept (script comparison against tag `aas84033-submitted`).
+Gate: `rnaas_gate PASS: k2singles/rnaas/rnaas.tex: abstract 131/150; main text with references 1299/1300 (AAS limit 1350)`.
+`rnaas.pdf` is the tectonic build (3 pages) of the file uploaded as `McBee_AAS84033_R1.tex`.

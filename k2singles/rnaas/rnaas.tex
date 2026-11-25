@@ -27,7 +27,7 @@ EPIC~202126877 deepened from 6\% in 2014 to 36\% in 2026.
 
 \section{Methods}
 
-\textit{Periods.} Boxes of the catalogued depth and duration were matched to repeats in K2 PDCSAP
+\textit{Periods.} Boxes of catalogued depth and duration were matched to repeats in K2 PDCSAP
 \citep{Howell2014}, TESS SPOC, TESS-SPOC \citep{Caldwell2020}, QLP \citep{Huang2020} and my TESScut
 \citep{Brasseur2019} light curves. Trapezoid fits give linear ephemerides, which independent
 re-analyses match within $2\sigma$ (EPIC~202126877 has timing variations).
@@ -47,7 +47,7 @@ rule) and a linked-event test calibrated on inverted data came after the full ru
 bibliographies, ExoFOP, 22 variable-star and K2 VizieR catalogues plus 56 from papers on
 Table~\ref{tab:k2} stars, Gaia DR3 orbits \citep{Arenou2023}, and SPOC and TESS-SPOC TCEs
 \citep{Jenkins2016,Twicken2018,Valizadegan2025}. Two independent classifications of the 203 sources
-disagreed once (settled by reading the paper). A period is new only if no source gives one. Limits:
+disagreed once (settled by reading it). A period is new only if no source gives one. Limits:
 ADS and SIMBAD found 3 of 9 known (star, paper) pairs; the VizieR list's recall is unmeasurable; 13 of
 93 listed catalogues were missing from the mirror; the 3$''$ radius misses the 4.4$''$
 \citet{Libralato2016} entry for EPIC~211892898.
@@ -60,7 +60,7 @@ planet candidates (six of their seven transits are below threshold) and two ecce
 eclipses it merges; the post-hoc test recovers EPIC~211489484. It links all four TOI-5560.01 transits
 at 140.49\,d, but only at threshold support, among 16 periods and below the star's inverted control:
 not a detection. Another 47 stars show blind signals (36 of 470 BLS blocks pass, against 5 inverted);
-triage leaves no on-target candidate. Code, fits, literature tables and triage:
+triage leaves no on-target candidate. Code and outputs:
 \url{https://github.com/coracle-us/duo-transits}.
 
 Most of the 15 systems are eclipsing binaries. Six have no prior orbital period, five match a
@@ -78,19 +78,15 @@ is grazing, eccentric or both. Both periods predict transits at ${\rm BJD_{TDB}}
 confirm 70.25\,d.
 
 \textit{EPIC~211503363.} This single-transit candidate of \citet{Kovacs2020} ($P\gtrsim58$\,d)
-transits again in Sectors 45 and 72 (3.4--3.8\,ppt, 23\,h; periods in Table~\ref{tab:k2}). With
+transits again in Sectors 45 and 72 (3.4--3.8\,ppt, 23\,h; Table~\ref{tab:k2}). With
 $R_\star=3.6\,R_\odot$ ($\log g=3.46$; Gaia DR3) the companion is $\approx2.1\,R_{\rm J}$
 ($2.4\,R_{\rm J}$ with Kov\'acs's $R_\star$), probably an M dwarf.
 
 \textit{Eclipsing binaries.} HD~220967's eclipses are 37\% and 30\% deep; the phase-0.867 secondary
 gives $e\geq0.58$. TESS-SPOC TCEs of HD~220967 (4.47\,d) and EPIC~246089124 (9.54\,d) each rest on
 one Sector~70 eclipse, with flat other epochs. EPIC~211489484's 106.94-d TCE joins two primaries ten
-cycles apart and is excluded by four others; its 0.24-d TCE is five cycles of a $\delta$~Scuti-type
+cycles apart, excluded by four others; its 0.24-d TCE is five cycles of a $\delta$~Scuti-type
 pulsation (20.79\,d$^{-1}$), probably from a neighbour 26$''$ away.
-
-EPIC~202126877 \citep{IJspeert2024} deepened from 6.2\% (K2, no secondary) to 21\%, 27\% and 36\% in
-2021, 2023 and January 2026 in my fixed-aperture TESS photometry, and its secondary from 4\% to 12\%
-(2021--2023). The ratio doubles, which constant dilution cannot do; the orbit may be precessing.
 
 \begin{deluxetable*}{llllll}
 \tabletypesize{\scriptsize}
@@ -124,7 +120,7 @@ $^d$\citet{Kovalev2024}, see also \citet{Guo2025}; $^e$Gaia DR3 SB1; $^f$\citet{
 \end{deluxetable*}
 
 \begin{acknowledgments}
-This work uses data from MAST: K2 \dataset[doi:10.17909/t9ws3r]{https://doi.org/10.17909/t9ws3r},
+This work uses MAST data: K2 \dataset[doi:10.17909/t9ws3r]{https://doi.org/10.17909/t9ws3r},
 SPOC \dataset[doi:10.17909/t9-nmc8-f686]{https://doi.org/10.17909/t9-nmc8-f686}, TESS-SPOC
 \dataset[doi:10.17909/t9-wpz1-8s54]{https://doi.org/10.17909/t9-wpz1-8s54} and QLP
 \dataset[doi:10.17909/t9-r086-e880]{https://doi.org/10.17909/t9-r086-e880} light curves and TESS
@@ -134,7 +130,6 @@ SIMBAD.
 \end{acknowledgments}
 
 \facilities{Kepler (K2), TESS, Gaia}
-\software{lightkurve \citep{Lightkurve2018}, astroquery \citep{Ginsburg2019}, astrocut \citep{Brasseur2019}}
 
 \section*{AI disclosure statement}
 I used Anthropic's Claude, an AI assistant, under my supervision to write and run the analysis code
@@ -147,7 +142,6 @@ for the content.
 \bibitem[Brasseur et al.(2019)]{Brasseur2019} Brasseur, C.~E., Phillip, C., Fleming, S.~W., Mullally, S.~E., \& White, R.~L. 2019, Astrocut, ascl:1905.007
 \bibitem[Caldwell et al.(2020)]{Caldwell2020} Caldwell, D.~A., Tenenbaum, P., Twicken, J.~D., et al. 2020, RNAAS, 4, 201
 \bibitem[Gaia Collaboration, Arenou et al.(2023)]{Arenou2023} Gaia Collaboration, Arenou, F., Babusiaux, C., et al. 2023, A\&A, 674, A34
-\bibitem[Ginsburg et al.(2019)]{Ginsburg2019} Ginsburg, A., Sip{\H o}cz, B.~M., Brasseur, C.~E., et al. 2019, AJ, 157, 98
 \bibitem[Guo et al.(2025)]{Guo2025} Guo, S., Kovalev, M., Li, J., et al. 2025, ApJS, 278, 46
 \bibitem[Howell et al.(2014)]{Howell2014} Howell, S.~B., Sobeck, C., Haas, M., et al. 2014, PASP, 126, 398
 \bibitem[Huang et al.(2020)]{Huang2020} Huang, C.~X., Vanderburg, A., P\'al, A., et al. 2020, RNAAS, 4, 204
@@ -157,7 +151,6 @@ for the content.
 \bibitem[Kovalev et al.(2024)]{Kovalev2024} Kovalev, M., Zhou, Z., Chen, X., \& Han, Z. 2024, MNRAS, 527, 521
 \bibitem[LaCourse \& Jacobs(2018)]{LaCourse2018} LaCourse, D.~M., \& Jacobs, T.~L. 2018, RNAAS, 2, 28
 \bibitem[Libralato et al.(2016)]{Libralato2016} Libralato, M., Nardiello, D., Bedin, L.~R., et al. 2016, MNRAS, 463, 1780
-\bibitem[Lightkurve Collaboration et al.(2018)]{Lightkurve2018} Lightkurve Collaboration, Cardoso, J.~V.~d.~M., Hedges, C., et al. 2018, Lightkurve, ascl:1812.013
 \bibitem[Sandquist et al.(2021)]{Sandquist2021} Sandquist, E.~L., Latham, D.~W., Mathieu, R.~D., et al. 2021, AJ, 161, 59
 \bibitem[Twicken et al.(2018)]{Twicken2018} Twicken, J.~D., Catanzarite, J.~H., Clarke, B.~D., et al. 2018, PASP, 130, 064502
 \bibitem[Valizadegan et al.(2025)]{Valizadegan2025} Valizadegan, H., Martinho, M.~J.~S., Jenkins, J.~M., et al. 2025, AJ, 170, 287
