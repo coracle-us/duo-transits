@@ -242,3 +242,13 @@ branch `eb-aas84041-fix`: the heading is back, and "As in the companion note," i
 lists these depths). No number changed. Gate (d385d67): abstract 142, main text 1294, AAS range 1285-1322; page 1
 checked by eye. `rnaas.pdf` is the tectonic build of this TeX (4 pages). To reach AAS it needs the manuscript back
 in Author Approval.
+
+**Page-1 fix uploaded (2026-11-25), awaiting Jon's approval.** AAS staff returned AAS84041 to Author Approval after
+our correspondence. Uploaded `McBee_AAS84041_R1.tex` = c5d040a `rnaas.tex`, replacing the manuscript file; figure
+and class file unchanged. Gate (d385d67) on the upload set: abstract 142/150, main text with references 1294/1300,
+AAS range 1285-1322, page 1 checked by eye. The merged PDF is our tectonic build of that TeX (4 pages, 236,791 bytes,
+SHA-256 666b4bbd…69566), uploaded with "replace" on the merged-PDF row; the portal's stored copy has the same hash.
+Abstract (143-word plain text) and author (Find Person, "Independent researcher") restored after the re-upload;
+dataset DOIs match the four in the TeX. Stopped before "Submit Manuscript" for Jon. Open point: the Introduction still
+cites "A companion note on K2 single events (J. McBee 2026, submitted)", and that note (AAS84033) was withdrawn on
+2026-11-25.
