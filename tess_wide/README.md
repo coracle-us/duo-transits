@@ -46,7 +46,13 @@ emailed or posted. Files that name candidate stars are in `tess_wide/data/` (a l
   of scattered-light structure that both signs of the search pick up. The 0.5× control rule caught this, which is
   what it was for.
 
-## If the search continues (proposals only; none run)
+## If the search continues
+
+`PLAN_v1.1_DRAFT.md` (2026-11-25, not approved, nothing run) turns ideas 1, 2 and 3 below into fixed rules: a per-CCD
+common-basis detrending, background and centroid cuts with thresholds set on S104 injections, the CNN kept as a
+measurement only, and S99 as a held-out test sector with success criteria fixed in advance.
+
+The original proposals:
 
 A v1.1 would need Jon's decision, a new PLAN version committed before the run, and a test on a **different
 sector**, so that nothing is tuned on S104. Ideas, roughly in order of expected gain:
