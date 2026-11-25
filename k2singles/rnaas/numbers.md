@@ -319,3 +319,14 @@ merged PDF, so the merged PDF is our tectonic build of the same TeX (= `rnaas.pd
 "replace" on the merged-PDF row. Re-reading the TeX reset the abstract to raw LaTeX and blanked the author's title,
 email, city and country; the abstract was restored to the 139-word plain text on file (`abstract_plaintext.txt`) and
 the author re-filled with Find Person. Stopped before "Approve Manuscript" for Jon.
+
+**Table note h prepared (2026-11-25), not uploaded.** The 2026-11-25 audit (`rnaas/audit-2026-11-25.md`, branch
+`rnaas-audit-2026-11-25`) found that the abstract's last sentence (EPIC 202126877 deepened from 6% in 2014 to 36%
+in 2026) had no support in the body after the length cut. Branch `k2-aas84033-tablenote`: the table row's
+"deepening" now carries note h, "primary 6% (2014) to 36% (2026) deep (J. McBee 2026, AAS84041)". Its 13 words are
+offset by wording trims in the text and table notes, so the gate count stays 1299 (abstract 131, AAS range
+1290-1328). The trims: "Blind: period among blind-search aliases, post hoc only, or neither"; "Of the 15, mostly
+eclipsing binaries, six ..."; "TCEs my data exclude"; "consecutive eclipses"; "light curves, TESS full-frame
+images"; "only at threshold support"; "faint pre-Sector-80 stars"; "(resolved by reading)"; "or dip-free times";
+"(six of their seven transits below threshold)". Abstract identical; no number lost. `rnaas.pdf` is the tectonic
+build (3 pages; page 1 and the table page checked by eye).
