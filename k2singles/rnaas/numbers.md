@@ -312,3 +312,10 @@ records the gate output below (1,299). What went:
 Every other number in the submitted body is kept (script comparison against tag `aas84033-submitted`).
 Gate: `rnaas_gate PASS: k2singles/rnaas/rnaas.tex: abstract 131/150; main text with references 1299/1300 (AAS limit 1350)`.
 `rnaas.pdf` is the tectonic build (3 pages) of the file uploaded as `McBee_AAS84033_R1.tex`.
+
+**Uploaded in Author Approval (2026-11-24, evening).** `McBee_AAS84033_R1.tex` (= `rnaas.tex` at a2f5aaf) replaced
+`McBee_AAS82225_R1.tex` as the manuscript file; cls, bst and ORCID logo unchanged. The portal did not rebuild its
+merged PDF, so the merged PDF is our tectonic build of the same TeX (= `rnaas.pdf`, 3 pages), uploaded through
+"replace" on the merged-PDF row. Re-reading the TeX reset the abstract to raw LaTeX and blanked the author's title,
+email, city and country; the abstract was restored to the 139-word plain text on file (`abstract_plaintext.txt`) and
+the author re-filled with Find Person. Stopped before "Approve Manuscript" for Jon.
