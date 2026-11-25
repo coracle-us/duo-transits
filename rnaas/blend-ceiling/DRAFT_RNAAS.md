@@ -2,23 +2,25 @@
 
 Jon McBee (Coracle)
 
-> Draft status (2026-11-24): every number traces to `results/auc.txt` and
-> `results/blend_fraction.txt` (scripts in this folder, rules in `RULES.md`). **The
-> classifier fails the pre-registered sanity check** (section 3), and the text says so. Not
-> submitted, and not checked against the RNAAS word count tool.
+> Draft status (2026-11-24): every number traces to `results/auc.txt` (amendment B, the model
+> reported here), `results/amendmentA/auc.txt` (the first, pre-registered model) and
+> `results/blend_fraction.txt`; the scripts are in this folder and the rules in `RULES.md`. The
+> quiet training class (amendment B) was added **after** the first model failed the
+> pre-registered no-transit check, and the text says so. RNAAS allows one figure or one table, so
+> this draft has the figure only. Not submitted, and not checked against the RNAAS word-count tool.
 
 ## Abstract
 
 Classifiers of TESS candidates are often tested against catalogued eclipsing binaries (EBs).
 At short periods that flatters them, because many real false positives are blends. We repeat
-the test at long periods (P > 10 d or single transits). The sample is 336 confirmed or known
-planets and 215 TFOP false positives or false alarms from the TOI table. We use a
-gradient-boosting classifier trained without any TFOP false positives. It reaches AUC 0.949
-(0.934–0.962) against catalogued EBs but 0.643 (0.595–0.689) against TFOP false positives,
-and 0.555 (0.472–0.630), consistent with chance, against those whose TOI comments name a blend.
-Comments flag 22% of the false positives as blends, which caps any light-curve-only classifier
-at AUC 0.89. Within depth bins the AUC falls to 0.54–0.61. Random out-of-transit windows score
-like planets, so this baseline responds to dip strength, not transit presence.
+the test at long periods (P > 10 d or single transits): 336 confirmed or known planets against
+215 TFOP false positives or false alarms. A gradient-boosting classifier, never trained on TFOP
+false positives, reaches AUC 0.959 (0.945–0.971) against catalogued EBs and 0.959 against
+windows with no transit, but 0.649 (0.603–0.695) against TFOP false positives. Against those
+whose TOI comments name a blend it scores 0.525 (0.441–0.607), consistent with chance. Comments
+flag 22% of the false positives as blends, which caps any light-curve-only classifier at AUC
+0.89. Within depth bins the AUC is 0.57–0.63. A first model without no-transit training windows
+failed a no-transit check but gave the same picture.
 
 ## 1. Introduction
 
@@ -51,7 +53,9 @@ and measure the blend fraction among long-period TFOP false positives.
 - Easy negatives:
   - 410 Prša et al. (2022) EBs with P > 10 d that are not TOIs, at their primary eclipses;
   - 1146 "TCE-like" windows: the highest-SNR box dip in each light curve of those stars, at
-    least 3 d from any known transit or eclipse.
+    least 3 d from any known transit or eclipse;
+  - 1182 "quiet" windows: random windows from the same stars, at least 3 d from any known
+    transit or eclipse.
 - TFOP FP/FA are never used in training.
 
 **Classifier.**
@@ -60,63 +64,66 @@ and measure the blend fraction among long-period TFOP false positives.
   brightening and gap fraction.
 - Cross-fitted over 5 folds by TIC, so no star is scored by a model that saw it.
 - An object's score is its maximum over its windows.
-- Secondary models: one without the three depth-scale features, and a small 1D CNN.
 
 **Blends.** An FP/FA counts as a blend under either of two rules:
 - **(C)** its TOI comments name an NEB, a centroid offset or an off-target source;
 - **(G)** a Gaia DR3 neighbour within 42″ could produce the TOI depth on its own (G-band flux).
 
 We give f and the ceiling with Wilson intervals, and AUCs with 2,000-sample bootstrap 95% CIs.
-All rules were committed before any window was scored.
+
+**Order of work.** The rules were committed before any window was scored. The first model
+(model A) had no quiet windows. It failed the pre-registered no-transit check: 50 random
+out-of-transit windows from planet hosts scored a median of 0.91, against 0.99 for planets,
+because every training negative was a strong dip. We then added the quiet class as a dated rule
+change, with a pass criterion fixed in advance (median no-transit score below 0.5 and below the
+FP/FA median), and retrained once (model B). We report B and give A's values in brackets.
 
 ## 3. Results
 
 **Blend fraction.**
-- Rule C: 47 of the 216 false positives (one has no valid window, so 215 are scored) are blends, f = 0.218 (0.168–0.277), so
-  AUC_max = 0.891 (0.861–0.916). This is half the short-period fraction.
+- Rule C: 47 of the 216 false positives are blends (215 have a valid window and are scored),
+  f = 0.218 (0.168–0.277), so AUC_max = 0.891 (0.861–0.916). This is half the short-period
+  fraction.
 - Rule G alone flags 70% of the false positives but also 60% of the confirmed planets, so it
   barely tells the two apart. C or G gives f = 0.718 and AUC_max = 0.641, but we regard that as
   an overcount.
 
-**AUCs (CP/KP vs each set, Figure 1):**
-
-| Negative set | AUC (95% CI) |
-|---|---|
-| Prša EBs | 0.949 (0.934–0.962) |
-| All TFOP FP/FA | 0.643 (0.595–0.689) |
-| Non-blend FP/FA (C) | 0.668 (0.621–0.716) |
-| Blend FP/FA (C) | 0.555 (0.472–0.630) |
-
-The shape-only model gives 0.643 and the CNN 0.605 against all FP/FA.
+**AUCs**, CP/KP against each negative set (Figure 1; model A in brackets):
+- catalogued EBs: 0.959 (0.945–0.971) [0.949];
+- no-transit windows: 0.959 (0.939–0.976) [0.786];
+- all TFOP FP/FA: 0.649 (0.603–0.695) [0.643];
+- non-blend FP/FA (rule C): 0.684 (0.637–0.730) [0.668];
+- blend FP/FA (rule C): 0.525 (0.441–0.607) [0.555].
 
 **Checks.**
+- No-transit check, passed by B: the 50 out-of-transit windows score a median of 0.46
+  (10–90%: 0.21–0.74), against 0.98 for planets and 0.97 for TFOP false positives. A
+  feature model without the three depth-scale features and a small 1D CNN, both trained the
+  same way, fail it (medians 0.56 and 0.68); they reach 0.664 and 0.629 against all FP/FA.
 - The false positives are deeper than the planets (median 4,090 vs 1,680 ppm, KS p = 2e-9)
   and slightly fainter (Tmag 10.4 vs 10.1).
-- Within four fixed depth bins the AUC is 0.54–0.61, and every 95% CI includes 0.5. Most of the 0.643 therefore comes from depth.
-- **Sanity check, failed:** 50 random out-of-transit windows from planet hosts score a median
-  of 0.91, close to the planets (0.99). The easy negatives are all strong dips (median box SNR
-  125 for EBs and 17 for TCE-like windows, against 9 for planets). So the model learned "a
-  modest dip or none means planet", not "transit present". The rules forbade retraining after
-  seeing this, and we report the model as it stands.
+- Within four fixed depth bins the AUC is 0.57–0.63. The lower limits of the 95% CIs run from
+  0.49 to 0.52, so much of the 0.649 comes from depth.
 
 ## 4. Discussion
 
-At long periods, as at short ones, catalogued EBs flatter a light-curve classifier: AUC 0.95
-against them, 0.64 against real TFOP false positives. Blends are scored at chance.
+At long periods, as at short ones, catalogued EBs flatter a light-curve classifier: AUC 0.96
+against them, 0.65 against real TFOP false positives. Blends are scored at chance. Teaching the
+model what an empty window looks like fixed the no-transit check (0.79 to 0.96) but left the
+TFOP comparison where it was. The two failures are separate: easy negatives say little about
+the false positives TFOP actually rejects.
 
 The blend ceiling from TOI comments, 0.89, sits well above what this baseline reaches. So for
-it, blends are not yet the binding limit; its easy training negatives are. The sanity failure
-makes the same point from the other side: easy negatives teach a model to reject strong
-signals, not to recognise transits.
+it, blends are not yet the binding limit. The non-blend false positives, scored at 0.68, are.
 
 Any long-period classifier, including a detection head added to networks like that of
 Salinas et al., should be scored against TFOP FP/FA, within depth bins, and on no-transit
 windows. Our sample, rules and code are public.
 
 **Figure 1.** Left: ROC curves of CP/KP against all TFOP FP/FA, non-blend FP/FA and blend
-FP/FA (comment rule). Right: AUC with 95% bootstrap CIs per negative set. The horizontal lines
-are the blend ceilings 1 − f/2 (bands: Wilson intervals) for the comment rule and for comment
-or Gaia, and the dashed line is chance.
+FP/FA (comment rule), for model B. Right: AUC with 95% bootstrap CIs per negative set, for model
+B (filled) and model A (open). The horizontal lines are the blend ceilings 1 − f/2 (bands:
+Wilson intervals) for the comment rule and for comment or Gaia, and the dashed line is chance.
 
 ## Acknowledgments
 
