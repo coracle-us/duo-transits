@@ -127,7 +127,10 @@ in A1 rows 33/36/38/41/53, A2 rows 77–85 missing) are in `data/catalog/transcr
 - **Word-count gate (required since 2026-11-24):** no RNAAS upload or resubmission unless
   `python scripts/rnaas_gate.py <note.tex>` passes (abstract ≤ 150; main text **including references** ≤ 1,300, a
   50-word margin under AAS's 1,350), with its output pasted in the commit message of the uploaded version. AAS
-  bounced AAS84041 and AAS84033 for counting references, which our old counter left out.
+  bounced AAS84041 and AAS84033 for counting references, which our old counter left out. Since 2026-11-25 the gate
+  also counts `.bib` references (via the `.bbl`), fails on body text before the first `\section` (AASTeX 7 sets it
+  above the title, as on AAS84041's first upload), and renders page 1 of the built PDF to `<stem>_page1.png`:
+  look at that PNG before uploading.
 - AASTeX (v7+) preferred; Overleaf/Word accepted.
 - Author: Jon McBee (independent; consider listing Coracle as affiliation). Claude is
   not an author: add an acknowledgment disclosing AI assistance, and **check current AAS
