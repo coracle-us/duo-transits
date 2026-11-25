@@ -1,5 +1,8 @@
 # DRAFT: Catalogued Eclipsing Binaries Flatter Light-curve Classifiers of Long-period TESS Candidates
 
+> **Superseded by `rnaas.tex` (2026-11-25)**, which rewords the introduction after the reference check; see
+> `numbers.md`.
+
 Jon McBee (Coracle)
 
 > Draft status (2026-11-24): every number traces to `results/auc.txt` (amendment B, the model
