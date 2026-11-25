@@ -252,3 +252,9 @@ Abstract (143-word plain text) and author (Find Person, "Independent researcher"
 dataset DOIs match the four in the TeX. Stopped before "Submit Manuscript" for Jon. Open point: the Introduction still
 cites "A companion note on K2 single events (J. McBee 2026, submitted)", and that note (AAS84033) was withdrawn on
 2026-11-25.
+
+**Companion-note sentence dropped (2026-11-25).** With AAS84033 withdrawn, the Introduction sentence "A companion
+note on K2 single events (J. McBee 2026, submitted) reported the deepening from the same TESS photometry." is
+removed; it had no reference-list entry. Nothing else in the text changed. Gate (d385d67): abstract 142/150, main text
+with references 1275/1300, AAS range 1266-1303; page 1 checked by eye. `rnaas.pdf` is the build uploaded to AAS84041
+(4 pages, 236,538 bytes, SHA-256 15da573e…49fce8).
