@@ -104,13 +104,25 @@ def main():
     ap.add_argument("--cnn", action="store_true")
     ap.add_argument("--amend", choices=["A", "B"], required=True)
     ap.add_argument("--out", default="results")
+    ap.add_argument("--fig-only", action="store_true",
+                    help="skip training: reload <out>/object_scores.csv, redo the AUCs and redraw the figure")
     args = ap.parse_args()
     out_dir = os.path.join(HERE, args.out)
     os.makedirs(out_dir, exist_ok=True)
+    if args.amend == "B":
+        TRAIN_KINDS.append("quiet")
+    if args.fig_only:
+        O = pd.read_csv(os.path.join(out_dir, "object_scores.csv"))
+        models = [m for m in ("s_gbm", "s_shape", "s_cnn") if f"{m}_max" in O]
+    else:
+        O, models = train(args, out_dir)
+    report(O, models, args, out_dir)
+
+
+def train(args, out_dir):
     F = pd.read_csv(os.path.join(D, "features.csv"))
     X = np.load(os.path.join(D, "windows_flux.npz"))["x"]
     if args.amend == "B":
-        TRAIN_KINDS.append("quiet")
         F = pd.concat([F, pd.read_csv(os.path.join(D, "features_quiet.csv"))], ignore_index=True)
         X = np.concatenate([X, np.load(os.path.join(D, "windows_flux_quiet.npz"))["x"]])
     fmap = folds(F.tic)
@@ -135,6 +147,10 @@ def main():
     O = O.merge(s[["obj_id", "disposition", "depth_ppm", "tmag", "period_d"]], on="obj_id", how="left")
     O = O.merge(bl[["obj_id", "blend_C", "blend_G", "blend_CG"]], on="obj_id", how="left")
     O.to_csv(os.path.join(out_dir, "object_scores.csv"), index=False)
+    return O, models
+
+
+def report(O, models, args, out_dir):
 
     rng = np.random.default_rng(SEED)
     pos, fp = O[O.kind == "pos"], O[O.kind == "fpfa"]
@@ -231,9 +247,9 @@ def make_fig(pos, fp, res, where, ref=None, extra=None):
     a1.set(xlabel="False-positive rate", ylabel="True-positive rate", xlim=(0, 1), ylim=(0, 1))
     a1.legend(fontsize=7, loc="lower right", frameon=False)
     names = ["all FP/FA", "non-blend FP/FA (C)", "blend FP/FA (C)", "catalogued EBs (Prsa)"]
-    lab = ["all FP/FA", "non-blend (C)", "blend (C)", "Prša EBs"]
+    lab = ["all\nFP/FA", "non-blend\nFP/FA (C)", "blend\nFP/FA (C)", "Prša\nEBs"]
     if extra:
-        names, lab = names + [extra[0]], lab + [extra[1]]
+        names, lab = names + [extra[0]], lab + [extra[1].replace(" ", "\n")]
     for i, nm in enumerate(names):
         a, lo, hi, _ = res[("s_gbm_max", nm)]
         a2.errorbar(i, a, yerr=[[a - lo], [hi - a]], fmt="o", color="k", ms=4, capsize=3,
@@ -248,8 +264,8 @@ def make_fig(pos, fp, res, where, ref=None, extra=None):
         a2.axhspan(1 - fhi / 2, 1 - flo / 2, color=c, alpha=0.12, lw=0)
     a2.axhline(0.5, color="0.6", lw=0.8, ls="--", label="chance")
     a2.set_xticks(range(len(lab)), lab, fontsize=8)
-    a2.set(ylabel="AUC vs CP/KP (95% CI)", ylim=(0.3, 1.02), xlim=(-0.5, len(lab) - 0.5))
-    a2.legend(fontsize=7, loc="lower left", frameon=False)
+    a2.set(ylabel="AUC vs CP/KP (95% CI)", ylim=(0.1, 1.02), xlim=(-0.5, len(lab) - 0.5))
+    a2.legend(fontsize=6.5, loc="lower right", frameon=False)
     fig.tight_layout()
     for ext in ("pdf", "png"):
         fig.savefig(os.path.join(where, f"fig1.{ext}"), dpi=200)
