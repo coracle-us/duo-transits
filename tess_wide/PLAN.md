@@ -197,4 +197,12 @@ The report (`tess_wide/PILOT_S104.md`, counts only) gives:
 
 ## Changes
 
-(none yet)
+No rule of v1.0 was changed. Implementation notes from the pilot run (2026-11-25), none of which touches a
+threshold:
+- TIC rows: MAST TAP caps cones at 0.5° and long IN lists hit a 414 error, so rows were fetched by TIC id in chunks
+  of 300 (`s1_starcut.py`). VizieR TAP and the MAST filtered-catalogue service did not answer in 10 min.
+- Downloads started on the stars cut from the chunks fetched first (`--partial`, same cut code) and resumed on the
+  full list.
+- ExoFOP tables and the MAST bulk-script sizes are fetched with curl: Python's urllib never finished reading from
+  either.
+- Injection model shared by s3 and s5 (`inject.py`), so the CNN sees the same injected light curve as the search.

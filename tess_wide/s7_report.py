@@ -14,7 +14,8 @@ Usage:  python tess_wide/s7_report.py --sector 104
 """
 import argparse
 import json
-import urllib.request
+import re
+import subprocess
 from pathlib import Path
 
 import numpy as np
@@ -61,7 +62,7 @@ def table(g):
         cells = []
         for j in range(len(DUR_EDGES) - 1):
             r = g.iloc[i * (len(DUR_EDGES) - 1) + j]
-            cells.append("–" if r.n == 0 else f"{100 * r.frac:.0f} ± {100 * r.err:.0f} % ({r.k}/{r.n})")
+            cells.append("–" if r.n == 0 else f"{100 * r.frac:.0f} ± {100 * r.err:.0f} % ({int(r.k)}/{int(r.n)})")
         lines.append(f"| {DEPTH_EDGES[i]:,.0f}–{DEPTH_EDGES[i + 1]:,.0f} | " + " | ".join(cells) + " |")
     return "\n".join(lines)
 
@@ -73,11 +74,10 @@ def script_sizes(s_pilot):
         if str(s) in sizes:
             continue
         u = f"https://archive.stsci.edu/hlsps/qlp/download_scripts/hlsp_qlp_tess_ffi_s{s:04d}_tess_v01_llc-fits.sh"
-        try:
-            with urllib.request.urlopen(urllib.request.Request(u, method="HEAD"), timeout=60) as r:
-                sizes[str(s)] = int(r.headers["Content-Length"])
-        except Exception:  # noqa: BLE001
-            sizes[str(s)] = None
+        # curl, not urllib: urllib HEAD requests to MAST failed for every sector on 2026-11-25
+        r = subprocess.run(["curl", "-s", "-I", "--max-time", "60", u], capture_output=True, text=True)
+        m = re.search(r"(?im)^content-length:\s*(\d+)", r.stdout) if " 200" in r.stdout.split("\n")[0] else None
+        sizes[str(s)] = int(m.group(1)) if m else None
     f.write_text(json.dumps(sizes, indent=1))
     return sizes
 
@@ -107,6 +107,17 @@ def main():
     cr, cc = cnn["real"]["verdicts"], cnn["ctrl"]["verdicts"]
     final_real, final_ctrl = cr.get("pass", 0), cc.get("pass", 0)
     control_level = final_real == 0 or final_ctrl >= 0.5 * final_real
+    # PLAN 5.4 flags (not cuts) among CNN passes, real vs control
+    flags = {}
+    for kind in ("real", "ctrl"):
+        st = pd.read_csv(DATA / f"s{s:04d}_stage_{kind}.csv")
+        cn = pd.read_csv(DATA / f"s{s:04d}_cnn_{kind}.csv")
+        m = st[st.survivor].reset_index(drop=True).assign(cnn=cn.cnn.values)
+        p_ = m[m.cnn == "pass"]
+        flags[kind] = dict(n=len(p_), bkg=int((p_.bkg_sig.abs() > 3).sum()),
+                           centroid=int(((p_.x_sig.abs() > 3) | (p_.y_sig.abs() > 3)).sum()),
+                           either=int(((p_.bkg_sig.abs() > 3) | (p_.x_sig.abs() > 3) | (p_.y_sig.abs() > 3)).sum()),
+                           camera=p_.camera.value_counts().sort_index().to_dict())
     # cost and projection
     n_star = cut["passed"]
     prev = dl.get("previous", {})
@@ -136,7 +147,7 @@ def main():
                     search_cpu_h=P.stars_est.sum() * sec_per_star["search"] / 3600)
     rep = dict(starcut=cut, download=dl, search=se, stages=stg, cnn=cnn, crossmatch=xm,
                completeness_total={k: dict(frac=v[0], err=v[1]) for k, v in tot.items()},
-               control_level=control_level, sec_per_star=sec_per_star, projection=proj_tot)
+               control_level=control_level, flags_cnn_pass=flags, sec_per_star=sec_per_star, projection=proj_tot)
     (DATA / f"s{s:04d}_report.json").write_text(json.dumps(rep, indent=1, default=float))
     xp, xo = xm.get("pass", {}), xm.get("out_of_range", {})
     md = f"""# Pilot: wide single-transit search, Sector {s} (QLP)
@@ -181,6 +192,16 @@ Cross-match hits among CNN passes, by catalogue: {json.dumps(xp.get('by_catalogu
 **Control rule (PLAN 4):** final-stage control count {final_ctrl} against real {final_real}:
 {"**control-level** — by the rule fixed in PLAN.md, the search is not yet separating signal from systematics in this sector" if control_level else "below half the real count"}.
 
+**Flags among CNN passes (PLAN 5.4; recorded, not used to cut):**
+
+| | Real | Control |
+|---|---|---|
+| CNN passes | {flags['real']['n']} | {flags['ctrl']['n']} |
+| in-event SAP_BKG change > 3σ | {flags['real']['bkg']} | {flags['ctrl']['bkg']} |
+| SAP_X or SAP_Y shift > 3σ | {flags['real']['centroid']} | {flags['ctrl']['centroid']} |
+| either flag | {flags['real']['either']} | {flags['ctrl']['either']} |
+| by camera (1/2/3/4) | {'/'.join(str(flags['real']['camera'].get(c, 0)) for c in (1, 2, 3, 4))} | {'/'.join(str(flags['ctrl']['camera'].get(c, 0)) for c in (1, 2, 3, 4))} |
+
 ## Completeness (injection–recovery, {len(tr):,} injections)
 
 Overall: detection {100 * tot['detect'][0]:.0f} ± {100 * tot['detect'][1]:.0f} %; end to end (through the CNN pass,
@@ -200,7 +221,7 @@ true Rp ≤ 2 R_J, {int(e2e_mask.sum()):,} injections) {100 * tot['e2e'][0]:.0f}
 | Step | Time | Notes |
 |---|---|---|
 | TIC rows for {cut['qlp_files']:,} stars (MAST TAP, 300 ids per query) | {cut['tap_seconds'] / 60:.0f} min | the TAP server slowed for ~10 min mid-run |
-| download + extract {n_dl:,} stars (two runs: started on a partial star list) | {s_dl / 60:.0f} min | {b_dl / 1e9:.1f} GB in; FITS deleted after extraction; 16 parallel requests |
+| download + extract {n_dl:,} stars (two runs, started on a partial star list; 200 more in a timing test) | {s_dl / 60:.0f} min | {b_dl / 1e9:.1f} GB in; FITS deleted after extraction; 16 parallel requests |
 | search (real + control) | {se['real']['seconds'] / 60:.1f} min on {se['real']['workers']} cores | {sec_per_star['search'] * 1000:.0f} ms CPU per star |
 | injections ({se['inj']['stars']:,}) | {se['inj']['seconds'] / 60:.1f} min | |
 | CNN (real / control / injections) | {cnn['real']['seconds']:.0f} / {cnn['ctrl']['seconds']:.0f} / {cnn['inj']['seconds']:.0f} s | CPU, weights loaded once |
@@ -210,7 +231,8 @@ true Rp ≤ 2 R_J, {int(e2e_mask.sum()):,} injections) {100 * tot['e2e'][0]:.0f}
 
 Assumes every sector passes the same fraction of its QLP stars as S{s} ({100 * frac:.1f} %), file sizes by cadence era
 as measured on MAST, and the pilot's download rate ({rate:.1f} stars/s) and per-star search cost.
-- stars (star-sectors): {proj_tot['stars'] / 1e6:.2f} million over {proj_tot['sectors']} sectors;
+- stars (star-sectors): {proj_tot['stars'] / 1e6:.2f} million over {proj_tot['sectors']} sectors (MAST has no QLP bulk
+  script for {', '.join('S' + k for k, v in sizes.items() if v is None) or 'none'}; they are left out);
 - download: {proj_tot['dl_TB']:.2f} TB in, {proj_tot['kept_GB']:.0f} GB kept, about {proj_tot['dl_days']:.1f} days at the pilot's rate;
 - search: {proj_tot['search_cpu_h']:.0f} CPU-hours ({proj_tot['search_cpu_h'] / 16:.1f} h on 16 cores), plus injections;
 - the CNN cost is per surviving event and negligible next to downloads.
