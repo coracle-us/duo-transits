@@ -19,6 +19,7 @@ import argparse
 import datetime as dt
 import json
 import re
+import subprocess
 import sys
 import time
 import urllib.parse
@@ -41,10 +42,11 @@ VSX_ECL = re.compile(r"^E($|A|B|W|[:/|+ ])")
 
 
 def fetch(url, out):
+    """curl, not urllib: on 2026-11-25 ExoFOP answered curl in ~20 s but never finished a urllib read."""
     if not out.exists():
-        req = urllib.request.Request(url, headers={"User-Agent": "python-urllib (research script)"})
-        with urllib.request.urlopen(req, timeout=600) as r:
-            out.write_bytes(r.read())
+        tmp = out.with_suffix(".tmp")
+        subprocess.run(["curl", "-s", "-f", "--max-time", "600", "-o", str(tmp), url], check=True)
+        tmp.rename(out)
     return out
 
 
