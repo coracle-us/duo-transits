@@ -181,3 +181,13 @@ Time domain astronomy 2109. All four match their names and none has a change not
   - IPAC: Yes (NEOWISE-R from IRSA; the form takes no DOI, and 10.26131/IRSA144 is cited in the note);
   - digital assets: none; funding: No;
   - UAT: Be stars (142), Circumstellar disks (235), Stellar pulsations (1625), Time domain astronomy (2109).
+
+## Shortened for the AAS word count (2026-11-25), not uploaded
+
+The 2026-11-25 audit (`rnaas/audit-2026-11-25.md`, branch `rnaas-audit-2026-11-25`) found the submitted text at 1366
+words by the gate (references included), AAS range 1356-1396, over AAS's 1350. It passed the quality check and is
+Under Review. Branch `be-aas84043-length` cuts 94 words of wording: no result, number or citation changed; the
+abstract is identical; a numeric-token diff against tag `aas84043-submitted` shows nothing lost (two "at least two"
+became "$\geq2$"). Gate (d385d67): abstract 146, main text 1272, AAS range 1263-1300. `ms.pdf` is the tectonic
+build (4 pages; page 1 checked by eye). The pre-existing "Float too large for page by 28.4pt" warning for the figure
+is unchanged (the figure was not touched). To reach AAS it needs the manuscript back in Author Approval.

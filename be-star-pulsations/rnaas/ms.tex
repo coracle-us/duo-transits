@@ -1,5 +1,6 @@
 %% Research Note of the AAS (Be-star TESS variability vs WISE disk excess), AASTeX v7.0.1.
-%% v3 2026-11-24: v2 (after the Mythos reviews) plus an AI note in the figure caption. Not yet submitted.
+%% v3 2026-11-24: submitted as AAS84043. v4 2026-11-25: wording shortened for AAS's word count (references
+%% included); no change to numbers or results. Not uploaded.
 %% Provenance of every number: rnaas/numbers.md. Code: https://github.com/coracle-us/duo-transits.
 \documentclass{aastex701}
 
@@ -28,27 +29,27 @@ tendency, not a rule for each star.
 \section{Data and Method}
 
 \citet{Jia2026} selected 3,300 Gaia OBA candidates whose W1 brightness and W1$-$W2 colour changed
-together, the signature of a disk changing state; most lack spectroscopic confirmation. Of the
-3,237 not flagged as eclipsing binaries, 2,541 have at least two TESS sectors within the NEOWISE
-baseline \citep{Wright2010,Mainzer2014}. For each star I took one product: QLP \citep{Huang2020},
-TESS-SPOC \citep{Caldwell2020}, SPOC 120-s or GSFC-ELEANOR-LITE. Each sector was binned to 30\,min and detrended with a spline with 5-d knots. From its
-amplitude spectrum (0.25--24\,c\,d$^{-1}$) I measured the rms in the band 0.25--0.8\,c\,d$^{-1}$
-($B_1$); the median residual amplitude at 0.5--3\,c\,d$^{-1}$ after
-prewhitening (red noise); the rms of the 1-d-smoothed residuals (flicker); the amplitude $A_1$ of
-the strongest peak; and the median amplitude at 15--24\,c\,d$^{-1}$ (white noise, a control).
+together, the signature of a changing disk; most lack spectroscopic confirmation. Of the
+3,237 not flagged as eclipsing binaries, 2,541 have $\geq2$ TESS sectors within the NEOWISE
+baseline \citep{Wright2010,Mainzer2014}. Each star uses one product: QLP \citep{Huang2020},
+TESS-SPOC \citep{Caldwell2020}, SPOC 120-s or GSFC-ELEANOR-LITE. Each sector was binned to 30\,min and spline-detrended (5-d knots). From its amplitude
+spectrum (0.25--24\,c\,d$^{-1}$) I measured the 0.25--0.8\,c\,d$^{-1}$ rms ($B_1$); the median
+residual amplitude at 0.5--3\,c\,d$^{-1}$ after prewhitening (red noise); the rms of 1-d-smoothed
+residuals (flicker); the strongest peak's amplitude $A_1$; and the median 15--24\,c\,d$^{-1}$
+amplitude (white noise, a control).
 
-For W1 I added later NEOWISE visits from IRSA to the catalogue's and fitted a smoothing spline as \citet{Jia2026} did. The disk excess of a sector is the spline at mid-sector,
+For W1 I added later IRSA NEOWISE visits to the catalogue's and fitted a smoothing spline like \citet{Jia2026}. A sector's disk excess is the spline at mid-sector,
 measured from the star's faintest W1 level. TESS and WISE view a star about three months apart, so
-the excess is always interpolated, which biases $\beta$ towards zero. A sector is used only if the
-visits on either side are $\leq250$\,d apart and the spline stays within 0.1\,mag of them. The main
+the interpolated excess biases $\beta$ towards zero. A sector is used only if the flanking
+visits are $\leq250$\,d apart and the spline stays within 0.1\,mag of them. The main
 sample keeps sectors with CROWDSAP $\geq0.9$ (SPOC products) or a contamination ratio $\leq0.1$
-(others), and stars with at least two such sectors: 1,084 stars and 4,108 sectors.
+(others), and stars with $\geq2$ such sectors: 1,084 stars, 4,108 sectors.
 
-For each metric $m$ I fitted $\ln m$ against disk excess with a per-star mean removed, so that
-$\beta$ (per mag) uses only changes within each star. Uncertainties are 68\% bootstrap intervals
-over stars. Two nulls of 10,000 draws each give $p$-values: permuting sectors within each star, and a swap
-that gives each star another star's W1 spline, evaluated at its own sector times.
-The swap keeps trends shared by sectors of the same epoch, so it tests whether the star's own disk
+For each metric $m$ I fitted $\ln m$ against disk excess with a per-star mean removed, so
+$\beta$ (per mag) uses only within-star changes. Uncertainties are 68\% bootstrap intervals
+over stars. Two nulls of 10,000 draws give the $p$-values: permuting sectors within each star, and a swap
+giving each star another star's W1 spline at its own sector times.
+Keeping trends shared by same-epoch sectors, the swap tests whether a star's own disk
 history matters. Injection tests recover $\beta$ and give
 calibrated nulls.
 
@@ -57,45 +58,44 @@ calibrated nulls.
 The low-frequency signal rises with disk excess (Figure~\ref{fig:beta}): $\beta=0.80\,[0.70,0.91]$
 for $B_1$, 0.74 for red noise and $0.84\,[0.73,0.96]$ for flicker, with $p<10^{-4}$ under both
 nulls. The slopes hold without
-the crowding cut ($B_1$ 0.59), without the 100 highest-leverage stars ($B_1$ 1.03),
-with straight-line interpolation of W1, and with TESS-sector fixed effects (every $\beta$ within 0.03). In the 256
-stars that Gaia DR3 classifies as Be stars from H$\alpha$ emission
+the crowding cut ($B_1$ 0.59) or the 100 highest-leverage stars ($B_1$ 1.03), and
+with straight-line W1 interpolation or TESS-sector fixed effects (every $\beta$ within 0.03). In the 256
+stars Gaia DR3 classifies as Be from H$\alpha$ emission
 \citep{Creevey2023}, $B_1$ gives $0.58\,[0.29,0.87]$ ($p_{\rm swap}=5\times10^{-4}$).
 
 In post hoc narrow frequency bins, $\beta=0.71$--0.92 below 1\,c\,d$^{-1}$ and
 0.31--0.37 above 5\,c\,d$^{-1}$. Relative to each star's dominant frequency $f_1$, $\beta$ is
 0.74--1.17 below $0.9f_1$, $0.43\,[0.34,0.53]$ in the bin centred on $f_1$, and 0.28--0.49 above.
-$A_1$ gives 0.40, but the strongest peak is coherent in some stars and stochastic in others. In the 510 stars whose $f_1$ stays within 10\% across sectors, $A_1$
-gives $0.23\,[0.10,0.36]$, and 0.08 ($p\geq0.29$) where $f_1>0.8$\,c\,d$^{-1}$. I find no separate
-response of the dominant pulsation.
+$A_1$ gives 0.40, but the strongest peak is coherent in some stars, stochastic in others. In the 510 stars whose $f_1$ stays within 10\% across sectors, $A_1$
+gives $0.23\,[0.10,0.36]$, and 0.08 ($p\geq0.29$) where $f_1>0.8$\,c\,d$^{-1}$. The dominant pulsation shows
+no separate response.
 
-The white-noise control also rises ($\beta=0.33$), but not where photon noise dominates it: in
+The white-noise control also rises ($\beta=0.33$), but not where photon noise dominates: in
 the noisiest third of stars it is flat (0.00, $p\geq0.87$) while $B_1$ still rises (0.63,
-$p<10^{-4}$). Across the sample it tracks $B_1$ (within-star correlation 0.47; slope
-$-0.03\pm0.09$ with $\ln B_1$ in the fit), so the band appears to carry the tail of the stochastic
-signal and dividing by it over-corrects. Even so, $B_1$, red noise and flicker divided by it rise
+$p<10^{-4}$). It tracks $B_1$ (within-star correlation 0.47; slope
+$-0.03\pm0.09$ with $\ln B_1$ in the fit), so the band likely carries the stochastic signal's
+tail and normalizing by it over-corrects. Even so, normalized $B_1$, red noise and flicker rise
 (0.41--0.51, $p<10^{-3}$), though not significantly in SPOC stars alone ($p_{\rm swap}\geq0.13$).
 
-SPOC fluxes are relative to the measured brightness, so added
-disk light dilutes them; QLP adds the TIC-expected flux to a difference-image flux
-\citep{Huang2020}, so it does not. From SAP photometry of 125 SPOC and TESS-SPOC stars the $T$
-magnitude brightens by $k=0.21$ (95\% range 0.11--0.30) per mag of W1 excess, which lowers SPOC
+Added disk light dilutes SPOC fluxes, which are relative to the measured brightness, but not
+QLP's, which add the TIC-expected flux to a difference-image flux \citep{Huang2020}. From SAP photometry of 125 SPOC and TESS-SPOC stars, $T$
+brightens by $k=0.21$ (95\% range 0.11--0.30) per mag of W1 excess, which lowers SPOC
 $\beta$ by $0.921k$ if the variable light is photospheric. Corrected, the 329 SPOC stars give 0.37
-for $A_1$, 0.88 for $B_1$ and 0.94 for flicker ($p_{\rm swap}\leq0.005$), close to the 755 QLP
-stars (0.52, 0.86, 0.90). Removing four likely shell stars (e.g.\ TIC~55295028) changes $\beta$ by less than 0.01.
+($A_1$), 0.88 ($B_1$) and 0.94 (flicker) ($p_{\rm swap}\leq0.005$), close to the 755 QLP
+stars (0.52, 0.86, 0.90). Removing four likely shell stars (e.g.\ TIC~55295028) changes $\beta$ by $<0.01$.
 
 The effect is small against the scatter: within-star rank correlations are 0.09--0.20, and at
-fixed excess $\ln A_1$ varies by 0.54 rms between sectors. Nearly half
-(48\%) of the stars change by less than 0.1\,mag between sectors and cannot show a trend; of the 177 that change
-by more than 0.4\,mag, 71\% have a positive $B_1$ slope. The $p$-values are not corrected for the
-several metrics and samples; the main results sit at the $10^{-4}$ floor.
+fixed excess $\ln A_1$ varies by 0.54 rms between sectors. Of the stars,
+48\% change by $<0.1$\,mag between sectors and cannot show a trend; of the 177 that change
+by $>0.4$\,mag, 71\% have a positive $B_1$ slope. The $p$-values are uncorrected for
+multiple metrics and samples; the main results sit at the $10^{-4}$ floor.
 
 \begin{figure}[ht!]
 \plotone{rnaas_fig1.pdf}
 \caption{Within-star change in (a) $\ln B_1$ (0.25--0.8\,c\,d$^{-1}$ rms) and (b) $\ln$ flicker rms
-against W1 disk excess, for 4,108 sectors of 1,084 Be-star candidates, with each star's mean
-removed. Symbols mark disk phase; squares are binned means; the line and band show the pooled
-$\beta$ and its 68\% interval. Plotting code was written with Claude
+against W1 disk excess, for 4,108 sectors of 1,084 Be-star candidates, with star means
+removed. Symbols: disk phase; squares: binned means; line and band: pooled
+$\beta$ and 68\% interval. Plotting code was written with Claude
 (Anthropic).\label{fig:beta}}
 \end{figure}
 
@@ -104,22 +104,22 @@ $\beta$ and its 68\% interval. Plotting code was written with Claude
 Earlier work found the pulsation spectrum changing through outbursts of single stars and small
 samples \citep{Huat2009,Semaan2018}, with extra power on the low-frequency side of the frequency
 groups and in stochastic variability \citep{LabadieBartz2022,LabadieBartz2025}. $B_1$ and flicker
-also include the days-long brightening of outbursts, so a plausible reading is that a star with a
-growing or dense disk has more ejection episodes per sector. This note extends that picture to years-long disk states in
+also include days-long outburst brightenings, so a star with a growing or dense disk
+plausibly has more ejection episodes per sector. I extend this to years-long disk states in
 1,084 stars. \citet{Niwano2024} found the main pulsation amplitude falling as the disk grew in four
-of five Be X-ray binaries; one, RX~J0440.9+4431, is in my sample and also has a negative slope.
-Their statistic is not my $A_1$, but with 48\% of sample stars having a negative $A_1$ slope, four
+of five Be X-ray binaries; one, RX~J0440.9+4431, is in my sample, also with a negative slope.
+Their statistic is not my $A_1$, but with 48\% of my stars having a negative $A_1$ slope, four
 of five is unremarkable. Any extra dependence on disk phase
-changes with how W1 is interpolated, so I claim none. Code and per-sector tables are at \url{https://github.com/coracle-us/duo-transits}.
+depends on the W1 interpolation, so I claim none. Code and per-sector tables: \url{https://github.com/coracle-us/duo-transits}.
 
 \begin{acknowledgments}
-This work uses TESS data from MAST: SPOC
+This work uses MAST TESS light curves: SPOC
 \dataset[doi:10.17909/t9-nmc8-f686]{https://doi.org/10.17909/t9-nmc8-f686}, TESS-SPOC
 \dataset[doi:10.17909/t9-wpz1-8s54]{https://doi.org/10.17909/t9-wpz1-8s54}, QLP
 \dataset[doi:10.17909/t9-r086-e880]{https://doi.org/10.17909/t9-r086-e880} and GSFC-ELEANOR-LITE
-\dataset[doi:10.17909/j2yt-t417]{https://doi.org/10.17909/j2yt-t417} light curves; NEOWISE-R
-single-exposure photometry from IRSA \dataset[doi:10.26131/IRSA144]{https://doi.org/10.26131/IRSA144};
-Gaia DR3; and the WISE light curves of \citet{Jia2026} from China-VO.
+\dataset[doi:10.17909/j2yt-t417]{https://doi.org/10.17909/j2yt-t417}; NEOWISE-R
+photometry from IRSA \dataset[doi:10.26131/IRSA144]{https://doi.org/10.26131/IRSA144};
+Gaia DR3; and the \citet{Jia2026} WISE light curves (China-VO).
 \end{acknowledgments}
 
 \facilities{TESS, WISE, NEOWISE, Gaia}
