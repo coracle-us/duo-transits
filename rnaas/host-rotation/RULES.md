@@ -70,3 +70,9 @@ that have a period, out of all stars each catalogue analysed (with and without a
 `results/mma.txt`, `results/mma.json`, `results/mma_cutflow.txt`. Confirmed-only hosts: 192 hosts (B26 188) but
 8,992 non-hosts (B26 7,274, +24%); offset +16.7% (B26 interval 8.7-15.9%). Confirmed + candidates: 269 hosts
 (+43%), offset +7.7%. Neither passes. Stopped here for Jon, as the brief asks.
+
+## Step 2 diagnosis (2026-11-25): gate still not passed
+
+`DIAGNOSIS.md`, `diagnose.py`, `results/diagnose.*`. Twelve single changes tested against all of B26's Kepler
+checkpoints; none explains the +24% non-host excess consistently (a G < 15.5 limit passes the gate numerically but
+breaks the host checkpoints and is not adopted). No rule above was changed. Santos step still held.

@@ -1,0 +1,41 @@
+B26 checkpoints: {"region": [12525, 400], "far_metal_rich": [902, 9], "near_metal_poor": [1398, 18], "p1_20": [188, 7274], "med_r": [0.909, 0.8], "offset": 13.7, "ks_D": 0.156, "ks_p": 0.00024, "coef": [2.846, -0.769, -1.211, -0.559]}
+0 baseline (RULES.md)              region 16951/406 (+35%/+1%); far rich 1368/10 (+52%/+11%); near poor 2898/18 (+107%/+0%); 1-20 d 192/8992 (+2%/+24%); med r 0.906/0.777; offset +16.7% (B26 coef +16.6%); KS D 0.184 p 4.9e-06; gate fail
+1 candidates out of non-hosts      region 16802/406 (+34%/+1%); far rich 1356/10 (+50%/+11%); near poor 2879/18 (+106%/+0%); 1-20 d 192/8915 (+2%/+23%); med r 0.907/0.777; offset +16.7% (B26 coef +16.6%); KS D 0.184 p 4.9e-06; gate fail
+2 all non-confirmed KOIs out       region 16660/406 (+33%/+1%); far rich 1340/10 (+49%/+11%); near poor 2847/18 (+104%/+0%); 1-20 d 192/8837 (+2%/+21%); med r 0.906/0.777; offset +16.6% (B26 coef +16.5%); KS D 0.183 p 5.4e-06; gate fail
+3 RUWE < 1.4                       region 15527/388 (+24%/-3%); far rich 1277/8 (+42%/-11%); near poor 1993/8 (+43%/-56%); 1-20 d 185/8204 (-2%/+13%); med r 0.907/0.777; offset +16.7% (B26 coef +16.8%); KS D 0.192 p 2.6e-06; gate fail
+4a parallax/error > 5              region 16912/403 (+35%/+1%); far rich 1359/10 (+51%/+11%); near poor 2879/18 (+106%/+0%); 1-20 d 191/8971 (+2%/+23%); med r 0.91/0.777; offset +17.1% (B26 coef +16.6%); KS D 0.182 p 6.8e-06; gate fail
+4b parallax/error > 10             region 16828/401 (+34%/+0%); far rich 1332/8 (+48%/-11%); near poor 2794/14 (+100%/-22%); 1-20 d 190/8927 (+1%/+23%); med r 0.91/0.777; offset +17.1% (B26 coef +16.8%); KS D 0.187 p 3.6e-06; gate fail
+5 single Gaia source within 2"     region 16724/401 (+34%/+0%); far rich 1354/10 (+50%/+11%); near poor 2724/16 (+95%/-11%); 1-20 d 189/8879 (+1%/+22%); med r 0.903/0.777; offset +16.3% (B26 coef +16.5%); KS D 0.184 p 5.9e-06; gate fail
+  MS locus, MMA-analysed [3.7705, -16.1282, 25.8784, -8.141] (101325 stars); all Kepler targets [5.7383, -22.5604, 32.7932, -10.5901] (129553 stars)
+6 MS locus from all Kepler targets region 16956/406 (+35%/+1%); far rich 1379/10 (+53%/+11%); near poor 2902/18 (+108%/+0%); 1-20 d 192/8992 (+2%/+24%); med r 0.906/0.777; offset +16.7% (B26 coef +16.6%); KS D 0.184 p 4.8e-06; gate fail
+7 2013 KOI-table non-hosts out     region 16898/406 (+35%/+1%); far rich 1354/10 (+50%/+11%); near poor 2893/18 (+107%/+0%); 1-20 d 192/8963 (+2%/+23%); med r 0.907/0.777; offset +16.7% (B26 coef +16.7%); KS D 0.185 p 4.3e-06; gate fail
+8 logg_gspphot >= 4.0              region 16763/403 (+34%/+1%); far rich 1270/9 (+41%/+0%); near poor 2775/15 (+98%/-17%); 1-20 d 190/8860 (+1%/+22%); med r 0.908/0.777; offset +16.9% (B26 coef +16.7%); KS D 0.185 p 4.6e-06; gate fail
+round 2
+9 MMA2014 w > 0.35                 region 13787/406 (+10%/+1%); far rich 1110/10 (+23%/+11%); near poor 2338/18 (+67%/+0%); 1-20 d 192/8272 (+2%/+14%); med r 0.945/0.797; offset +18.5% (B26 coef +20.8%); KS D 0.205 p 2.1e-07; gate fail
+9 MMA2014 w > 0.40                 region 12409/406 (-1%/+1%); far rich 1011/10 (+12%/+11%); near poor 2101/18 (+50%/+0%); 1-20 d 192/7927 (+2%/+9%); med r 0.985/0.815; offset +20.9% (B26 coef +22.6%); KS D 0.225 p 8.7e-09; gate fail
+9 MMA2014 w > 0.45                 region 11104/406 (-11%/+1%); far rich 905/10 (+0%/+11%); near poor 1870/18 (+34%/+0%); 1-20 d 192/7561 (+2%/+4%); med r 1.037/0.839; offset +23.7% (B26 coef +24.6%); KS D 0.24 p 5.3e-10; gate fail
+9 MMA2014 w > 0.50                 region 9851/405 (-21%/+1%); far rich 793/10 (-12%/+11%); near poor 1683/18 (+20%/+0%); 1-20 d 192/7104 (+2%/-2%); med r 1.099/0.862; offset +27.6% (B26 coef +27.4%); KS D 0.275 p 5.7e-13; gate fail
+10 MMA2014 Ref=1 out               region 16948/406 (+35%/+1%); far rich 1368/10 (+52%/+11%); near poor 2865/18 (+105%/+0%); 1-20 d 192/8992 (+2%/+24%); med r 0.906/0.777; offset +16.7% (B26 coef +16.6%); KS D 0.184 p 4.9e-06; gate fail
+11 MMA2014 n_Prot-flagged out      region 16802/406 (+34%/+1%); far rich 1356/10 (+50%/+11%); near poor 2866/18 (+105%/+0%); 1-20 d 192/8948 (+2%/+23%); med r 0.907/0.777; offset +16.7% (B26 coef +16.7%); KS D 0.186 p 3.8e-06; gate fail
+12 G < 15.0                        region 9694/261 (-23%/-35%); far rich 268/0 (-70%/-100%); near poor 1670/16 (+19%/-11%); 1-20 d 139/5853 (-26%/-20%); med r 0.924/0.813; offset +13.6% (B26 coef +13.8%); KS D 0.164 p 0.0012; gate fail
+12 G < 15.5                        region 13461/348 (+7%/-13%); far rich 744/5 (-18%/-44%); near poor 2318/17 (+66%/-6%); 1-20 d 170/7588 (-10%/+4%); med r 0.912/0.795; offset +14.8% (B26 coef +15.1%); KS D 0.158 p 0.00043; gate PASS
+12 G < 16.0                        region 16874/405 (+35%/+1%); far rich 1355/10 (+50%/+11%); near poor 2867/18 (+105%/+0%); 1-20 d 191/8949 (+2%/+23%); med r 0.908/0.777; offset +16.9% (B26 coef +16.5%); KS D 0.187 p 3.2e-06; gate fail
+  duplicate Gaia source_id among Teff-cut MMA stars: 0
+  Fig. 2 distance panel: bin, our hosts/stars, our %, B26 %, our stars / B26-implied stars
+    0..300: 41/907, 4.52%, 6.40%, x1.42
+    300..500: 101/3006, 3.36%, 4.60%, x1.37
+    500..700: 98/4601, 2.13%, 2.85%, x1.34
+    700..900: 89/4124, 2.16%, 2.80%, x1.30
+    900..1100: 50/2872, 1.74%, 2.35%, x1.35
+    1100..1300: 27/1441, 1.87%, 2.35%, x1.25
+    1300..1500: 9/709, 1.27%, 1.60%, x1.26
+    1500..1800: 1/424, 0.24%, 0.35%, x1.48
+  Fig. 2 mh panel: bin, our hosts/stars, our %, B26 %, our stars / B26-implied stars
+    -1.0..-0.8: 1/221, 0.45%, 0.95%, x2.10
+    -0.8..-0.6: 3/656, 0.46%, 1.40%, x3.06
+    -0.6..-0.4: 14/1825, 0.77%, 1.30%, x1.69
+    -0.4..-0.2: 61/4271, 1.43%, 1.80%, x1.26
+    -0.2..0.0: 163/6962, 2.34%, 2.90%, x1.24
+    0.0..0.2: 133/3693, 3.60%, 5.00%, x1.39
+    0.2..0.4: 37/1302, 2.84%, 5.55%, x1.95
+    0.4..0.8: 12/723, 1.66%, 2.60%, x1.57
