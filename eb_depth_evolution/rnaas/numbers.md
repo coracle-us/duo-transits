@@ -222,3 +222,15 @@ keeping every result, number and the AI disclosure, with no change to the analys
 - **Note:** the AAS84041 form's IPAC answer is Yes. The form's instructions ask for an IPAC dataset DOI in a revised
   manuscript; none is in the text yet (adding one costs words).
 - **Gate** (`scripts/rnaas_gate.py`, required from 2026-11-24): rnaas_gate PASS: eb_depth_evolution/rnaas/rnaas.tex: abstract 142/150; main text with references 1298/1300 (AAS limit 1350)
+
+**Back to Author Approval, files uploaded (2026-11-24, evening).** A note went to AAS staff through the AAS84041
+"Send Manuscript Correspondence" form (Recipient: Staff; no attachments; Jon solved the CAPTCHA; the system said
+"1 Email sent."). Subject "AAS84041: please return to Author Approval for the shortened version"; it gave the new
+count (1,298 with references, abstract 142 and unchanged) and asked staff to return the manuscript. It was then in
+Awaiting Author Approval. Uploaded: `McBee_AAS84041_R1.tex` (= 4438ecf `rnaas.tex`) replacing the old manuscript
+file; figure and class file unchanged (byte-identical). The portal did not rebuild its merged PDF, so the merged PDF
+is our tectonic build of the same TeX (4 pages, 236,450 bytes), uploaded through the portal's "replace" on the
+merged-PDF row. Re-reading the TeX reset two form fields, which were put back: the abstract (restored to the
+143-word plain-text version already on file, identical to `abstract_plaintext.txt`) and the author (Find Person, the
+account with "Independent researcher"). Stopped before "Approve Manuscript" for Jon. The stray new submission started
+earlier (no manuscript number) was deleted with Jon's OK.
