@@ -51,3 +51,6 @@ catalogue/work/
 catalogue/validation/arxiv_2611.03019/source/main.tex
 catalogue/results/*/_checkpoints/
 catalogue/results/
+
+# tess_wide: downloaded light curves and every file that names candidate stars stay outside git
+tess_wide/data
