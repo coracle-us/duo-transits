@@ -3,8 +3,11 @@ Steps 4-5 of the blend-ceiling test: cross-fitted gradient boosting (RULES.md am
 bootstrap CIs (section 4), the confounder and sanity checks, and the figure.
 
 Input:  data/features.csv (make_windows.py), data/blends.csv (tag_blends.py), data/sample.csv, data/eb_sample.csv
-Output: results/window_scores.csv, results/object_scores.csv, results/auc.txt, fig1.pdf, fig1.png
-Usage:  .venv/bin/python -I train_eval.py [--cnn]
+        amendment B also: data/features_quiet.csv, data/windows_flux_quiet.npz (make_quiet.py)
+Output: <out>/window_scores.csv, <out>/object_scores.csv, <out>/auc.txt, and the figure (fig1.pdf, fig1.png in this
+        folder for amendment B; in <out> for amendment A)
+Usage:  .venv/bin/python -I train_eval.py --amend B --cnn
+        .venv/bin/python -I train_eval.py --amend A --cnn --out results/amendmentA   (the amendment-A run, unchanged)
 """
 import argparse
 import os
@@ -22,7 +25,7 @@ import lcwin
 HERE = os.path.dirname(os.path.abspath(__file__))
 D, R = os.path.join(HERE, "data"), os.path.join(HERE, "results")
 SEED, NFOLD, NBOOT = 20261124, 5, 2000
-TRAIN_KINDS = ["pos", "eb", "tce"]  # FP/FA never trained on (amendment A2)
+TRAIN_KINDS = ["pos", "eb", "tce"]  # FP/FA never trained on (amendment A2); amendment B adds "quiet"
 
 
 def folds(tics):
@@ -99,10 +102,17 @@ def auc_ci(pos, neg, rng):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cnn", action="store_true")
+    ap.add_argument("--amend", choices=["A", "B"], required=True)
+    ap.add_argument("--out", default="results")
     args = ap.parse_args()
-    os.makedirs(R, exist_ok=True)
+    out_dir = os.path.join(HERE, args.out)
+    os.makedirs(out_dir, exist_ok=True)
     F = pd.read_csv(os.path.join(D, "features.csv"))
     X = np.load(os.path.join(D, "windows_flux.npz"))["x"]
+    if args.amend == "B":
+        TRAIN_KINDS.append("quiet")
+        F = pd.concat([F, pd.read_csv(os.path.join(D, "features_quiet.csv"))], ignore_index=True)
+        X = np.concatenate([X, np.load(os.path.join(D, "windows_flux_quiet.npz"))["x"]])
     fmap = folds(F.tic)
     F["fold"] = F.tic.map(fmap)
     F[lcwin.FEATURES] = F[lcwin.FEATURES].astype(float)
@@ -112,7 +122,7 @@ def main():
     if args.cnn:
         F["s_cnn"] = crossfit_cnn(F, X)
         models.append("s_cnn")
-    F.to_csv(os.path.join(R, "window_scores.csv"), index=False)
+    F.to_csv(os.path.join(out_dir, "window_scores.csv"), index=False)
 
     # per object: max (main), mean, and first window by time (RULES section 2)
     F = F.sort_values(["obj_id", "t_c"])
@@ -124,19 +134,24 @@ def main():
     bl["obj_id"] = "TOI-" + bl.toi.astype(str)
     O = O.merge(s[["obj_id", "disposition", "depth_ppm", "tmag", "period_d"]], on="obj_id", how="left")
     O = O.merge(bl[["obj_id", "blend_C", "blend_G", "blend_CG"]], on="obj_id", how="left")
-    O.to_csv(os.path.join(R, "object_scores.csv"), index=False)
+    O.to_csv(os.path.join(out_dir, "object_scores.csv"), index=False)
 
     rng = np.random.default_rng(SEED)
     pos, fp = O[O.kind == "pos"], O[O.kind == "fpfa"]
     eb, tce, san = O[O.kind == "eb"], O[O.kind == "tce"], O[O.kind == "sanity"]
-    out = [f"Scored objects: {len(pos)} CP/KP, {len(fp)} FP/FA ({int(fp.blend_C.sum())} blends by C, "
-           f"{int(fp.blend_CG.sum())} by C or G), {len(eb)} EBs, {len(tce)} TCE-like, {len(san)} sanity windows",
+    qu = O[O.kind == "quiet"]
+    out = [f"Amendment {args.amend}; training kinds: {', '.join(TRAIN_KINDS)}",
+           f"Scored objects: {len(pos)} CP/KP, {len(fp)} FP/FA ({int(fp.blend_C.sum())} blends by C, "
+           f"{int(fp.blend_CG.sum())} by C or G), {len(eb)} EBs, {len(tce)} TCE-like, {len(san)} sanity windows"
+           + (f", {len(qu)} quiet windows on {qu.tic.nunique()} stars" if len(qu) else ""),
            f"Unscored (fold with one class): {int(O.s_gbm_max.isna().sum())}", ""]
     comps = [("all FP/FA", fp), ("non-blend FP/FA (C)", fp[~fp.blend_C.astype(bool)]),
              ("blend FP/FA (C)", fp[fp.blend_C.astype(bool)]),
              ("non-blend FP/FA (C or G)", fp[~fp.blend_CG.astype(bool)]),
              ("blend FP/FA (C or G)", fp[fp.blend_CG.astype(bool)]),
              ("catalogued EBs (Prsa)", eb), ("TCE-like windows", tce)]
+    if args.amend == "B":  # B3; kept out of the A run so its bootstrap stream is unchanged
+        comps += [("sanity windows", san), ("quiet windows", qu)]
     res = {}
     for m in models:
         for agg_ in ("max", "mean", "first"):
@@ -168,15 +183,36 @@ def main():
     out.append(f"  FP/FA objects: {q(fp.s_gbm_max.dropna())}")
     out.append(f"  TCE-like: {q(tce.s_gbm_max.dropna())}")
     out.append(f"  CP/KP objects: {q(pos.s_gbm_max.dropna())}")
+    if args.amend == "B":
+        out.append(f"  quiet (training class, out-of-fold): {q(qu.s_gbm_max.dropna())}")
+        for m in models:
+            ms, mf = san[f"{m}_max"].median(), fp[f"{m}_max"].median()
+            ok = ms < 0.5 and ms < mf
+            out.append(f"  B3 criterion, {m}: sanity median {ms:.3f} vs 0.5 and FP/FA median {mf:.3f}: "
+                       + ("PASSED" if ok else "FAILED"))
     out.append("\nSalinas et al. overlap: their CNN was trained on synthetic light curves only and its 120 real "
                "validation TOIs are not listed in the paper, so the overlap could not be checked (RULES section 4).")
     txt = "\n".join(out)
     print(txt)
-    open(os.path.join(R, "auc.txt"), "w").write(txt + "\n")
-    make_fig(pos, fp, res)
+    open(os.path.join(out_dir, "auc.txt"), "w").write(txt + "\n")
+    if args.amend == "A":
+        make_fig(pos, fp, res, out_dir)
+    else:
+        A = pd.read_csv(os.path.join(R, "amendmentA", "object_scores.csv"))
+        ref = {nm: roc_auc_score(np.r_[np.ones(len(p)), np.zeros(len(n))], np.r_[p, n])
+               for nm, p, n in [(nm, A[A.kind == "pos"].s_gbm_max.dropna(), sel(A).s_gbm_max.dropna())
+                                for nm, sel in FIG_SETS]}
+        make_fig(pos, fp, res, HERE, ref=ref, extra=("sanity windows", "no transit"))
 
 
-def make_fig(pos, fp, res):
+FIG_SETS = [("all FP/FA", lambda A: A[A.kind == "fpfa"]),
+            ("non-blend FP/FA (C)", lambda A: A[(A.kind == "fpfa") & ~A.blend_C.astype(bool)]),
+            ("blend FP/FA (C)", lambda A: A[(A.kind == "fpfa") & A.blend_C.astype(bool)]),
+            ("catalogued EBs (Prsa)", lambda A: A[A.kind == "eb"]),
+            ("sanity windows", lambda A: A[A.kind == "sanity"])]
+
+
+def make_fig(pos, fp, res, where, ref=None, extra=None):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -196,9 +232,15 @@ def make_fig(pos, fp, res):
     a1.legend(fontsize=7, loc="lower right", frameon=False)
     names = ["all FP/FA", "non-blend FP/FA (C)", "blend FP/FA (C)", "catalogued EBs (Prsa)"]
     lab = ["all FP/FA", "non-blend (C)", "blend (C)", "Prša EBs"]
+    if extra:
+        names, lab = names + [extra[0]], lab + [extra[1]]
     for i, nm in enumerate(names):
         a, lo, hi, _ = res[("s_gbm_max", nm)]
-        a2.errorbar(i, a, yerr=[[a - lo], [hi - a]], fmt="o", color="k", ms=4, capsize=3)
+        a2.errorbar(i, a, yerr=[[a - lo], [hi - a]], fmt="o", color="k", ms=4, capsize=3,
+                    label="with quiet negatives (B)" if ref and i == 0 else None)
+        if ref and nm in ref:
+            a2.plot(i + 0.18, ref[nm], "o", mfc="none", mec="0.4", ms=4,
+                    label="without (A)" if i == 0 else None)
     for col, c, nm in (("blend_C", "C3", "ceiling, comments"), ("blend_CG", "C1", "ceiling, comments or Gaia")):
         f = fp[col].astype(bool).mean()
         _, flo, fhi = wilson(fp[col].astype(bool).sum(), len(fp))
@@ -210,7 +252,7 @@ def make_fig(pos, fp, res):
     a2.legend(fontsize=7, loc="lower left", frameon=False)
     fig.tight_layout()
     for ext in ("pdf", "png"):
-        fig.savefig(os.path.join(HERE, f"fig1.{ext}"), dpi=200)
+        fig.savefig(os.path.join(where, f"fig1.{ext}"), dpi=200)
 
 
 if __name__ == "__main__":

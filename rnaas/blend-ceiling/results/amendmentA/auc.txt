@@ -1,3 +1,4 @@
+Amendment A; training kinds: pos, eb, tce
 Scored objects: 336 CP/KP, 215 FP/FA (47 blends by C, 154 by C or G), 410 EBs, 1146 TCE-like, 50 sanity windows
 Unscored (fold with one class): 0
 
