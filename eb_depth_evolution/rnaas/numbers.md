@@ -234,3 +234,11 @@ merged-PDF row. Re-reading the TeX reset two form fields, which were put back: t
 143-word plain-text version already on file, identical to `abstract_plaintext.txt`) and the author (Find Person, the
 account with "Independent researcher"). Stopped before "Approve Manuscript" for Jon. The stray new submission started
 earlier (no manuscript number) was deleted with Jon's OK.
+
+**Page-1 fix prepared (2026-11-25), not uploaded.** The 2026-11-25 audit (`rnaas/audit-2026-11-25.md`, branch
+`rnaas-audit-2026-11-25`) found that the PDF uploaded from 4438ecf typesets the opening paragraph above the title:
+the length cut removed `\section{Introduction}`, and AASTeX 7 sets the title block at the first `\section`. Fix on
+branch `eb-aas84041-fix`: the heading is back, and "As in the companion note," is dropped (the K2 note no longer
+lists these depths). No number changed. Gate (d385d67): abstract 142, main text 1294, AAS range 1285-1322; page 1
+checked by eye. `rnaas.pdf` is the tectonic build of this TeX (4 pages). To reach AAS it needs the manuscript back
+in Author Approval.
