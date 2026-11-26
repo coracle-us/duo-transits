@@ -35,3 +35,9 @@
   dozens of events each took hours longer.
 - An independent re-derivation of the search stage (`catalogue/independent/`) was run before
   vetting finished, not after the tables. It read no sheet and no verdict.
+- 2026-11-26: one vetter-2 batch of the vetter check (`b003`) had 39 verdict lines for 40 sheets.
+  The missing sheet (8303517e81d7, a false event) was vetted by one more fresh agent, which saw
+  only that sheet and `VETTING.md`; its line was appended. Both vetters reject it.
+- 2026-11-26: vetter check (V1) scored by `merge_verdicts.py` on all 682 sheets: true events
+  accepted 332 of 341 (vetter 1) and 333 of 341 (vetter 2). Criterion (at least 90% each) met, so
+  the candidate sheets (1,199, in 30 batches per vetter) go to vetting.
